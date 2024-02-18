@@ -1,0 +1,12 @@
+.DS_Store
+out/chapters/
+out/*.aux
+out/*.gz
+out/*.log
+!out/Begin_Modern_Programming_with_Python.pdf
+./program_code/.idea
+program_code/lib
+program_code/out
+program_code/CodeExamples.iml
+*.pyttex
+out/_minted-Begin_Modern_Programming_with_Python/

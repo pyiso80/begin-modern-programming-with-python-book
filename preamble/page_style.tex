@@ -1,0 +1,36 @@
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\chaptername}{အခန်း}
+
+\setlength{\headheight}{14pt}
+
+\titleformat{\chapter}[display]
+    {\bfseries\Huge}
+    {\fCh\chaptertitlename\ \fChNo\thechapter} % အခန်း ၁
+    {20pt}
+    {\Large\fCh} % အခန်းခေါင်းစဉ်
+
+\titleformat{\section}
+    {\bfseries\large}
+    {\fSecNo\thesection}
+    {8pt}
+    {\bfseries\fSec}
+
+\titleformat{\subsection}
+    {\bfseries}
+    {\fSecNo\thesubsection}
+    {8pt}
+    {\bfseries\fSubSec}
+
+\fancypagestyle{plain}{% plain style is used by pages where new chapter begins
+    \fancyhf{}% clear all header and footer fields
+    \fancyfoot[C]{\bfseries\fPageNo\thepage}% have page no at the btm for chapter start
+}
+
+\fancypagestyle{fancy}{%
+    \fancyhf{} % clear all header and footer fields
+    \fancyhead[LO,RE]{\bfseries\fPageNo\thepage}
+    %\fancyhead[RE]{\leftmark}
+    %\fancyhead[LO]{\rightmark}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}

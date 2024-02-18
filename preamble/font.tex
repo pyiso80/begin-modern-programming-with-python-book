@@ -1,0 +1,288 @@
+\defaultfontfeatures[Padauk Book]{}
+\setmainfont[
+    Path = fonts/,
+    UprightFont = PadaukBook-Regular.ttf,
+    BoldFont = PadaukBook-Bold.ttf,
+    ItalicFont = PadaukBook-Regular.ttf,    
+]{Padauk Book}
+[Renderer = Graphite, RawFeature = {Tear drop style washwe=True}]
+
+\newfontfamily{\padaukfamily}{Padauk Book}[
+    Path = fonts/,
+    UprightFont = PadaukBook-Regular.ttf,
+    BoldFont = PadaukBook-Bold.ttf,
+    ItalicFont = PadaukBook-Regular.ttf,
+    Renderer=OpenType]
+\DeclareTextFontCommand{\textpadauk}{\padaukfamily}
+
+\newfontfamily{\jetbrainsmonofamily}{JetBrainsMonoNL}[
+    Path = fonts/jetbrains_mono/,
+    Scale = 0.80,
+    UprightFont=*-Regular.ttf,
+    ItalicFont=*-Italic.ttf,
+    BoldFont=*-Bold.ttf,
+    SmallCapsFont=*-Regular.ttf,
+    BoldItalicFont=*-BoldItalic.ttf,
+    NFSSFamily=JetBrainsMonoFamily]
+\DeclareTextFontCommand{\textjetbrainsmono}{\jetbrainsmonofamily}
+
+\newfontfamily{\ibmplexmonofamily}{IBMPlexMono}[
+    Path = fonts/ibm_plex_mono/,
+    Scale = 0.84,
+    UprightFont=*-Text.ttf,
+    ItalicFont=*-TextItalic.ttf,
+    BoldFont=*-Bold.ttf,
+    SmallCapsFont=*-Regular.ttf,
+    BoldItalicFont=*-BoldItalic.ttf,
+    HyphenChar=None,
+    NFSSFamily=IBMPlexMonoFamily]
+\DeclareTextFontCommand{\textibmplexmono}{\ibmplexmonofamily}
+\newfontfamily{\ibmplexmonofamilya}{IBMPlexMono}[
+    Path = fonts/ibm_plex_mono/,
+    UprightFont=*-Text.ttf,
+    ItalicFont=*-TextItalic.ttf,
+    BoldFont=*-SemiBold.ttf,
+    SmallCapsFont=*-Regular.ttf,
+    BoldItalicFont=*-SemiBoldItalic.ttf]
+\DeclareTextFontCommand{\textibmplexmonoa}{\ibmplexmonofamilya}
+
+\newfontfamily{\ibmplexsansfamily}{IBMPlexSans}[
+    Path = fonts/ibm_plex_sans/,
+    Scale = 1,
+    UprightFont=*-Text.ttf,
+    ItalicFont=*-TextItalic.ttf,
+    BoldFont=*-Bold.ttf,
+    SmallCapsFont=*-Regular.ttf,
+    BoldItalicFont=*-BoldItalic.ttf,
+    HyphenChar=None]
+\DeclareTextFontCommand{\textibmplexsans}{\ibmplexsansfamily}
+
+\newfontfamily{\ibmplexseriffamily}{IBMPlexSerif}[
+    Path = fonts/ibm_plex_serif/,
+    Scale = 1,
+    UprightFont=*-Text.ttf,
+    ItalicFont=*-TextItalic.ttf,
+    BoldFont=*-Bold.ttf,
+    SmallCapsFont=*-Regular.ttf,
+    BoldItalicFont=*-BoldItalic.ttf,
+    HyphenChar=None]
+\DeclareTextFontCommand{\textibmplexserif}{\ibmplexseriffamily}
+
+%
+\newfontfamily{\latinmodernfamily}{lmroman10}[
+    Path = fonts/latin_modern/,
+    Extension = .otf,
+    UprightFont = *-regular, 
+    BoldFont = *-bold,
+    ItalicFont = *-italic,
+    BoldItalicFont = *-bolditalic,
+    SmallCapsFont = lmromancaps10-regular
+]
+\DeclareTextFontCommand{\textlatinmodern}{\latinmodernfamily}
+
+% downloaded from https://notofonts.github.io/myanmar/ 
+\newfontfamily{\notoserifmmfamily}{Noto Serif Myanmar SemiCondensed}[
+    Path=fonts/noto_serif_mm/,
+    UprightFont=NotoSerifMyanmar-SemiCondensedLight.ttf,
+    ItalicFont = NotoSerifMyanmar-SemiCondensedLight.ttf,
+    BoldItalicFont = NotoSerifMyanmar-SemiCondensedMedium.ttf,
+    BoldFont=NotoSerifMyanmar-SemiCondensedMedium.ttf, Script=Myanmar]
+\DeclareTextFontCommand{\textnotoserifmm}{\notoserifmmfamily}
+
+
+% for normal paragraphs
+\NewDocumentCommand{\fEn}{m}{%
+    \textlatinmodern{\addfontfeatures{Scale=MatchLowercase}#1}%
+}
+\NewDocumentCommand{\fEnBf}{m}{%
+    \textlatinmodern{\bfseries\addfontfeatures{Scale=MatchLowercase}{#1}}%
+}
+\NewDocumentCommand{\fEnEmp}{m}{%
+    \textlatinmodern{\itshape #1}%
+}
+
+\NewDocumentCommand{\fEnEmpBf}{m}{%
+    \textlatinmodern{\bfseries\itshape #1}%
+}
+
+% for page numbers on each page
+\newfontfamily{\padaukbook}{Padauk Book}[
+        Path = fonts/,
+        UprightFont = PadaukBook-Regular.ttf,
+        BoldFont = PadaukBook-Bold.ttf, Renderer = Graphite, RawFeature = {Tear drop style washwe=True}]
+\DeclareTextFontCommand{\textpadaukbook}{\padaukbook}
+\NewDocumentCommand{\fPageNo}{m}{%
+    \textpadaukbook{%
+        \addfontfeatures{Mapping = mmdigit_mapping} #1}%
+}
+\NewDocumentCommand{\fMM}{m}{%
+    \textpadaukbook{%
+        \addfontfeatures{} #1}%
+}
+
+\NewDocumentCommand{\fMMSm}{m}{%
+    \textpadaukbook{%
+        \addfontfeatures{Scale=0.94} #1}%
+}
+
+%=========================================================================================
+% Chapter Title
+\NewDocumentCommand{\fChNo}{m}{%
+    \begingroup%
+    \textnotoserifmm{\addfontfeatures{FakeSlant=0.25, Mapping = mmletter_digit_mapping}#1}%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fCh}{m}{%
+    \begingroup%
+    \textnotoserifmm{\addfontfeatures{FakeSlant=0.25}#1}%
+    \endgroup%
+}
+
+% for section and subsection
+\NewDocumentCommand{\fSec}{m}{%
+    \begingroup%
+    \textnotoserifmm{%
+    \addfontfeatures{}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fSubSec}{m}{%
+    \begingroup%
+    \textnotoserifmm{%
+    \addfontfeatures{}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fSecNo}{m}{%
+    \begingroup%
+    \textnotoserifmm{%
+    \addfontfeatures{Mapping = mmletter_digit_mapping}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fCpt}{m}{%
+    \begingroup%
+    \textnotoserifmm{%
+    \addfontfeatures{Scale=0.9}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fCptNo}{m}{%
+    \begingroup%
+    \textnotoserifmm{%
+    \addfontfeatures{Mapping = mmletter_digit_mapping,Scale=0.9}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fSecCode}{m}{%
+    \begingroup%
+    \textibmplexmonoa{%
+    \addfontfeatures{Scale=1}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fChCode}{m}{%
+    \begingroup%
+    \itshape\textibmplexmonoa{%
+    \addfontfeatures{Scale=1}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fCode}{m}{%
+    \begingroup%
+    \textibmplexmono{#1}%
+    \endgroup%
+}
+\NewDocumentCommand{\fCodeBf}{m}{%
+    \begingroup%
+    \bfseries\textibmplexmono{#1}%
+    \endgroup%
+}%
+\NewDocumentCommand{\fSecCodeBf}{m}{%
+    \begingroup%
+    \textibmplexmonoa{%
+    \bfseries\addfontfeatures{Scale=1}%
+    #1%
+    }%
+    \endgroup%
+}
+\NewDocumentCommand{\fSubSecCodeBf}{m}{%
+    \begingroup%
+    \textibmplexmonoa{%
+    \bfseries\addfontfeatures{}%
+    #1%
+    }%
+    \endgroup%
+}
+\NewDocumentCommand{\fCptCodeBf}{m}{%
+    \begingroup%
+    \textibmplexmonoa{%
+    \bfseries\addfontfeatures{Scale=MatchLowercase}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fRefNo}{m}{%
+    \begingroup%
+    \textpadaukbook{%
+    \addfontfeatures{Mapping = mmletter_digit_mapping}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fOpn}{m}{%
+    \begingroup%
+    \textpadauk{%
+    \addfontfeatures{Renderer=OpenType}%
+    #1%
+    }%
+    \endgroup%
+}
+
+% for table head
+\NewDocumentCommand{\fTblHead}{m}{%
+    \begingroup%
+    \bfseries\textnotoserifmm{%
+    \addfontfeatures{Scale=MatchLowercase}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fCoverTitle}{m}{%
+    \begingroup%
+    \textibmplexserif{%
+    \Huge\addfontfeatures{Color=PythonYellow,Scale=7}%
+    #1%
+    }%
+    \endgroup%
+}
+
+\NewDocumentCommand{\fCoverTitleII}{m}{%
+    \begingroup%
+    \textibmplexsans{%
+    \Huge\addfontfeatures{Color=White, Scale=1.4}%
+    #1%
+    }%
+    \endgroup%
+}
+
+
+

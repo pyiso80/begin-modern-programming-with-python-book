@@ -1,0 +1,53 @@
+\renewcommand{\figurename}{ပုံ}
+\renewcommand{\tablename}{တေဘဲလ်}
+\DeclareCaptionFont{cptfont}{\notoserifmmfamily\addfontfeatures{Scale=0.9}}
+
+
+% Separator style using colon, dash, etc
+% to get "Figure (1):", "Figure(1) - Some caption" etc
+\DeclareCaptionLabelSeparator{cptSep}{\quad}
+
+% to get "Figure (1)", "Figure [1]", etc, set to labelformat below
+% #1 is Figure, #2 is the figure number 1.1, 1,2, etc
+\DeclareCaptionLabelFormat{cptFmt}
+    {{\bfseries\fCpt{#1}} {\bfseries\fCptNo{#2}}}
+
+\DeclareCaptionLabelFormat{subCptFmt}
+    {{\bfseries\fCptNo{(#2)}}}
+
+
+\captionsetup[figure]
+{
+    labelformat=cptFmt,
+    singlelinecheck=false,
+    margin=0pt,
+    justification=raggedright,
+    labelsep=cptSep,
+    %font={cptfont,bf} % both
+    %labelfont={cptfont, bf}, % affect label num and sep 
+    textfont={cptfont, bf} % affect only caption title   
+}
+
+\captionsetup[subfigure]
+{
+    labelformat=subCptFmt,
+    singlelinecheck=false,
+    margin=0pt,
+    justification=raggedright,
+    labelsep=cptSep,
+    %font={cptfont,bf} % both
+    %labelfont={cptfont, bf}, % affect label num and sep 
+    textfont={cptfont, bf} % affect only caption title   
+}
+
+\captionsetup[table]
+{
+    labelformat=cptFmt,
+    singlelinecheck=false,
+    margin=0pt,
+    justification=raggedright,
+    labelsep=cptSep,
+    %font={cptfont,bf} % both
+    %labelfont={cptfont, bf}, % affect label num and sep 
+    textfont={cptfont, bf} % affect only caption title   
+}

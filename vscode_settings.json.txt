@@ -1,0 +1,143 @@
+{
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontFamily": "'JetBrains Mono ExtraLight'",
+    "terminal.integrated.fontWeight": 300,
+    "editor.fontSize": 16,
+    "editor.fontLigatures": false,
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.fontWeight": 400,
+    "editor.lineHeight": 1.7,
+    "editor.rulers": [
+      90,
+      100
+    ],
+    "editor.wordWrapColumn": 120,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.minimap.enabled": false,
+    "files.associations": {
+      "*.rmd": "markdown"
+    },
+    "r.bracketedPaste": true,
+    "r.plot.useHttpgd": true,
+    "r.lsp.args": [],
+    "r.rterm.mac": "/Users/pyisoe/.pyenv/shims/radian",
+    "r.rpath.mac": "/opt/homebrew/Cellar/r/4.1.3/lib/R/bin/R",
+    "editor.codeActionsOnSave": {},
+    "oz.enableLinter": true,
+    "oz.showCompilerOutput": true,
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk",
+        "tools": [
+          "latexmk",
+        ]
+      },
+      {
+        "name": "PDFlatex",
+        "tools": [
+          "pdflatex",
+        ]
+      },
+      {
+        "name": "pdflatex -> bibtex -> pdflatex2",
+        "tools": [
+          "pdflatex",
+          "bibtex",
+          "pdflatex",
+          "pdflatex",
+        ]
+      },
+      {
+        "name": "xelatex",
+        "tools": [
+          "xelatex",
+        ]
+      },
+      {
+        "name": "xelatex -> bibtex -> xelatex",
+        "tools": [
+          "xelatex",
+          "bibtex",
+          "xelatex",
+          "-aux-directory=out",
+          "-output-directory=out",
+        ]
+      }
+    ],
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          "--shell-escape",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-xelatex",
+          "-aux-directory=out",
+          "-output-directory=out",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+          "--shell-escape",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-aux-directory=out",
+          "-output-directory=out",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+          "--shell-escape",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-aux-directory=out",
+          "-output-directory=out",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+          "%DOCFILE%"
+        ],
+        "env": {}
+      }
+    ],
+    "latex-workshop.latex.recipe.default": "xelatex",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "editor.tabSize": 4,
+    //"editor.autoIndent": "none",
+    //"editor.detectIndentation": false,
+    "workbench.colorCustomizations": {
+      "terminal.foreground": "#A2CD5A"
+    },
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "haskell.manageHLS": "PATH",
+    "haskell.formattingProvider": "brittany",
+    "[haskell]": {
+      "editor.defaultFormatter": "MaxGabriel.brittany"
+    },
+    "workbench.colorTheme": "Default Dark+",
+    "haskell.plugin.importLens.codeLensOn": false,
+    "haskell.plugin.importLens.codeActionsOn": false,
+    "haskell.plugin.refineImports.globalOn": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "none",
+    "window.commandCenter": false,
+  }

@@ -1,0 +1,23 @@
+\pagestyle{empty}
+\definecolor{PythonBlue}{RGB}{67, 110, 155}
+\definecolor{PythonYellow}{RGB}{250, 224, 117}
+
+\begin{tikzpicture}[remember picture,overlay] 
+
+\node[rectangle,
+    draw=PythonBlue,
+    text = White,
+    fill = PythonBlue, 
+    minimum width = 7.4in, 
+    minimum height = 10.2in, anchor=west]
+    at (current page.west) 
+    {};  
+\node[left, black, anchor=north west] at (-3, 1)
+    {\fCoverTitleII{Begin Modern Programming}};
+\node[left, black, anchor=north west] at (-3, -1)
+    {\fCoverTitleII{with}};
+\node[left, black, rotate=90] at (11, -1)
+    {\fCoverTitle{Python}};
+\node[left, black, anchor=west] at (-3,-22)
+    {\fCoverTitleII{Pyi Soe}};
+\end{tikzpicture}

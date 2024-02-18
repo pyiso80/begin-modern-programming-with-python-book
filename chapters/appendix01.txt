@@ -1,0 +1,492 @@
+\chapter{လိုအပ်သည့် ဆော့ဖ်ဝဲများ ထည့်သွင်းခြင်း} \label{apdx1}
+
+ဒီစာအုပ်မှာပါတဲ့ ဥပမာတွေကို လက်တွေ့စမ်းသပ် \fEn{run} ကြည့်ဖို့၊ လေ့ကျင့်ခန်းတွေ ပရောဂျက်တွေကို ပရိုဂရမ်လက်တွေ့ လိုက်ရေး လေ့ကျင့်နိုင်ဖို့အတွက် လိုအပ်တဲ့ ဆော့ဖ်ဝဲတွေ ထည့်ထားရပါမယ်။
+
+\section*{JDK နှင့် IntelliJ IDE ထည့်သွင်းခြင်း}
+ကွန်ပျူတာ ဆော့ဖ်ဝဲထည့်သွင်းတာ \fEn{(Software Installation)} အတွေ့အကြုံ ရှိထားပြီးသူတွေအတွက် အကျဉ်းချုံး အရင်ဖော်ပြပေးပါမယ်။ အတွေ့အကြုံ မရှိသေးတဲ့သူတွေအတွက်လည်း ဒါပြီးတဲ့အခါ တစ်ဆင့်ချင်းအသေးစိတ် ဆက်လက် ဖော်ပြပေးသွားမှာပါ။ 
+
+\fCode{https://adoptium.net} လင့်မှ မိမိစက်နဲ့ ကိုက်ညီမဲ့ \fEn{JDK installer} ဖိုင်ကို ဒေါင်းလုဒ်လုပ်ပြီး  \fEn{install} လုပ်ပါ။ ပုံ \fRefNo{\ref{fig:jdk_download_home}} မှာ ဒေါင်းလုဒ်လုပ်နိုင်တဲ့ ပင်မစာမျက်နှာကို ပြထားတယ်။ \fEn{“Latest LTS Release”} ကို နှိပ်ပြီး နောက်ဆုံးထွက် \fEn{Long Term Support (LTS)} ဗားရှင်းကို ဒေါင်းလုဒ် လုပ်နိုင်ပါတယ်။ ကိုယ့်ကွန်ပျူတာနဲ့ အကိုက်ညီဆုံး \fEn{JDK} ကို စိတ်ကြိုက် \fEn{option} ရွေး ဒေါင်းလုဒ်လုပ်ချင်ရင်တော့ \fEn{“Other platforms and versions”} ကို နှိပ်ပြီး \fEn{Operating System}\fEn{,} \fEn{CPU Architecture}\fEn{,} \fEn{JDK Version} တို့ကို ရွေးလို့ရပါတယ်။ \fEn{LTS} ဗားရှင်းကိုပဲ ရွေးသင့်ပါတယ်။ ဒီစာရေးနေချိန်မှာ နောက်ဆုံးထုတ်ထားတဲ့ \fEn{LTS} ဗားရှင်းက \fEn{17} ဖြစ်ပြီး မကြာခင်ထွက်မဲ့ \fEn{21} ကလည်း \fEn{LTS} ပဲ။ မိမိ ဒေါင်းလုဒ် လုပ်ချိန်မှာ \fEn{21} ထွက်ပြီးပြီဆိုရင် ရွေးလို့ရပါတယ်။ (\fEn{Windows} စက်အတွက် နမူနာ ရွေးထားတာကို ပုံ \fRefNo{\ref{fig:jdk_for_windows}} မှာ ကြည့်ပါ)။
+
+\fCode{https://www.jetbrains.com/idea/} လင့်ကိုဖွင့်ပါ။ မိမိကွန်ပျူတာနဲ့ ကိုက်ညီတဲ့ \fEn{IntelliJ IDEA Community Edition} ကို ဒေါင်းလုဒ်လုပ်ပြီး \fEn{install} လုပ်ပါ။ (ဝယ်သုံးရတာဖြစ်တဲ့ \fEn{IntelliJ IDEA Ultimate} ကို ဒေါင်းလုဒ် မှားမလုပ်မိဖို့ သတိပြုပါ)။ 
+
+\fEn{IntelliJ} ကိုဖွင့်ပြီး \fEn{New Project} နှိပ်ပြီး \fEn{project} အသစ်ယူပါ။ \fEn{MeetKarel.zip} ကို \todo{ဒေါင်းလုဒ်လင့်ထည့်ရန်} ဒီ \fCode{https://tinyurl.com/yesz8a6j} လင့်ကနေ ဒေါင်းလုဒ်လုပ်၊ \fEn{extract} လုပ်ပြီး \fEn{lib, src, worlds} ဖိုဒါတို့ကို ပင်မ \fEn{project} ဖိုဒါအောက်မှာ ကော်ပီကူးထည့်ပါ။ \fEn{lib} ဖိုဒါကို \fEn{right click} နှိပ်ပြီး \fEn{Add as Library} လုပ်ပါ။ \fEn{src} ဖိုဒါထဲက \fEn{MeetKarel.java} ကိုဖွင့်ပြီး ပရိုဂရမ်ကို \fEn{run} ပါ။ ကားရဲလ် \fEn{Window} ပေါ်လာပါလိမ့်မယ်။ \fEn{Start Program} နှိပ်ရင် ကားရဲလ်က ဘိပါတုံးလေးကို နေရာရွှေ့ပေးပါလိမ့်မယ်။ (ပုံ \fRefNo{\ref{fig:proj_create01}} စာမျက်နှာ \fRefNo{\pageref{fig:proj_create01}} မှစ၍ \fRefNo{\ref{fig:proj_create13}} ထိ လိုအပ်ရင်ကြည့်ပါ)။ 
+
+ဆော့ဖ်ဝဲထည့်သွင်းတာ အတွေ့အကြုံမရှိသေးတဲ့ သူတွေအတွက် တစ်ဆင့်ချင်း ဆက်လက်ဖော်ပြ ပေးပါမယ်။
+
+\section*{JDK ထည့်သွင်းခြင်း}
+
+\fCode{https://adoptium.net} လင့်ကို \fEn{Microsoft Edge, Mozilla Firefox, Google Chrome} စတဲ့ \fEn{web browser} တစ်ခုခုနဲ့ ဖွင့်ပါ။ အခုလို တွေ့ရသင့်ပါတယ်။
+%
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/jdk_install/adoptium_home.jpg}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Adoptium JDK ပင်မ စာမျက်နှာ}
+\label{fig:jdk_download_home}
+\end{figure}
+%
+
+\fEn{“Latest LTS Release”} ကို နှိပ်ပြီး နောက်ဆုံးထွက် \fEn{Long Term Support (LTS)} ဗားရှင်းကို ဒေါင်းလုဒ် လုပ်နိုင်ပါတယ်။ ဒီနည်းက အလွယ်ဆုံးပဲ။ ဒေါင်းလုဒ်လုပ်တဲ့ စက်နဲ့ အသင့်တော်ဆုံး \fEn{JDK installer} ကို အော်တို ဆွဲချပေးသွားမှာပါ။
+
+နောက်တစ်နည်းက \fEn{“Other platforms and versions”} ကို နှိပ်ပြီး \fEn{Operating System}\fEn{,} \fEn{CPU Architecture}\fEn{,} \fEn{JDK Version} တို့ကို ကိုယ့်ကွန်ပျူတာနဲ့ အကိုက်ညီဆုံးဟာ ရွေးချယ်တာ။ နည်းနည်းတော့ ပိုရှုပ်ပါတယ်။ ကိုယ့်စက်အကြောင်း ကိုယ်သိထားပြီး ဘာရွေးရမှာလဲ သိတော့မှ ဒီနည်းက အဆင်ပြေပါမယ်။ စိတ်ကြိုက် ရွေးလို့ရတာက ဒီနည်းရဲ့ အားသာချက်ပေါ့။ မိုက်ခရိုဆော့ဖ် \fEnBf{Windows} \fEn{Operating System}\fEn{, } အင်တဲလ် \fEnBf{x64} \fEn{CPU Architecture}\fEn{,} \fEn{Package Type} ကို \fEnBf{JDK}\fEn{,} \fEn{Version} ကို \fEnBf{17-LTS} ရွေးထားတာ ပုံ \fRefNo{\ref{fig:jdk_for_windows}} မှာ ကြည့်ပါ။ မြန်မာမှာက \fEn{Windows} စက် သုံးကြတာများတဲ့အတွက် ဒီအတိုင်းရွေးရင် အများစုအတွက် အဆင်ပြေပါလိမ့်မယ်။ \fEn{Package Type} မှာ \fEn{JDK} သို့မဟုတ် \fEn{JRE} နှစ်ခုရှိတယ်။ \fEn{JDK} ကိုပဲ ရွေးရပါမယ်။ \fEn{JRE} ရွေးမိရင် ပရိုဂရမ်ရေးဖို့ အဆင်ပြေမှာ မဟုတ်ပါဘူး။ \fEn{Version} မှာ \fEn{LTS} ကိုပဲ ရွေးသင့်ပါတယ်။ ဒီစာရေးနေချိန်မှာ နောက်ဆုံးထုတ်ထားတဲ့ \fEn{LTS} ဗားရှင်းက \fEn{17} ဖြစ်ပြီး မကြာခင်ထွက်မဲ့ \fEn{21} ကလည်း \fEn{LTS} ပဲ။ မိမိ ဒေါင်းလုဒ် လုပ်ချိန်မှာ \fEn{21} ထွက်ပြီးပြီဆိုရင် ရွေးလို့ရပါတယ်။ \fEnEmpBf{.msi} နဲ့ \fEnEmpBf{.zip} ဖိုင် နှစ်မျိုးရှိတာ \fEn{install} လုပ်ရ ပိုအဆင်ပြေတဲ့ \fEnEmpBf{.msi} ကိုပဲ ရွေးပြီး ဒေါင်းလုဒ်လုပ်ပါ။ 
+
+ဒေါင်းလုဒ်ပြီးရင် \fEn{OpenJDK17U-jdk\_x64\_windows\_hotspot\_<version>}\fEnEmp{.msi} ဖိုင်ကို  တွေ့ရပါမယ်။ ပုံ \fRefNo{\ref{fig:jdk_installer_file}} မှာကြည့်ပါ။ \fEn{Update} ဗာရှင်းတွေ မကြာခဏ အသစ်ထွက်နေတာမို့လို့ ပုံမှာတွေ့ရတာနဲ့ မိမိဒေါင်းလုဒ်လုပ်ထားတာ နံပါတ်တွေ တူချင်မှတူမှာပါ။ \fEn{Version} ကို \fEn{21} ရွေးခဲ့ရင် \fEn{OpenJDK21U-jdk...<version>}\fEnEmp{.msi} ဖြစ်မှာပါ။ 
+
+\fEn{Install} လုပ်ဖို့အတွက် ဒေါင်းလုဒ်လုပ်ထားတဲ့ ဖိုင်ကို \fEn{double click} နှိပ်လိုက်ပါ။ \fEn{Welcome dialog} ပွင့်လာပါလိမ့်မယ်။ \fEn{Dialog box} တစ်ခုချင်း \fEn{Next, Next, Install, Yes, Finish} သာ နှိပ်သွားပါ။ \fEn{Dialog box} တွေကို ပုံ \fRefNo{\ref{fig:jdk_install_dialog1}} စာမျက်နှာ \fRefNo{\pageref{fig:jdk_install_dialog1}}  မှစ၍ ပုံ \fRefNo{\ref{fig:jdk_install_dialog5}} အထိ လိုအပ်ရင် ကြည့်နိုင်ပါတယ်။ အကယ်၍ \fEn{install} လုပ်တာ အဆင်မပြေဖြစ်ခဲ့ရင် အဖြစ်များတဲ့ ပြဿနာတွေအတွက် ဘယ်လိုဖြေရှင်းရမလဲ ဒီနောက်ဆက်တွဲ (က) နောက်ဆုံးမှာ ထည့်ပေးထားတာကို ဖတ်ကြည့်ပြီး ကြိုးစားဖြေရှင်းကြည့်ပါ။ နောက်တစ်နည်းကတော့ ဒီစာအုပ်ရဲ့ \fEn{Facebook Group} မှာ အကူအညီတောင်းနိုင်ပါတယ်။ \todo{စာအုပ် ဖေ့စ်ဘုတ်ဂရု စာမျက်နှာထောင်ရန်} \todo{အဖြစ်များ၊ အမှားများ အတွက် installation troubleshooting section ထည့်ရန်}  
+
+\begin{figure}[tb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=0.98\linewidth]{images/jdk_install/windows_msi_installer.jpg}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Windows စက် အများစုနဲ့ ကိုက်ညီမဲ့ installer}
+\label{fig:jdk_for_windows}
+\end{figure}
+
+\begin{figure}[tb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=0.98\linewidth]{images/jdk_install/downloaded_jdk.jpg}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{JDK Installer File for Windows OS}
+\label{fig:jdk_installer_file}
+\end{figure}
+
+\section*{IntelliJ IDE ထည့်သွင်းခြင်း}
+\fEn{JDK} ထည့်ပြီးရင် \fEn{IntelliJ IDE} ကို \fEn{install} လုပ်ရပါမယ်။ \fEn{IDE (Integrated Development Environment)} ဆိုတာ ပရိုဂရမ်ရေးဖို့ အထောက်အကူပြု ဆော့ဖ်ဝဲလို့ ယူဆနိုင်တယ်။ ပရိုဂရမ်မာတွေကို အကူအညီပေးတဲ့ ဆော့ဖ်ဝဲတစ်မျိုးပါပဲ။ \fEn{Java} ပရိုဂရမ်မာတွေအတွက် \fEn{Eclipse, Netbeans, IntelliJ} စတဲ့ \fEn{IDE} တွေ ရှိပါတယ်။ ကွာလတီ၊ ပါဝင်တဲ့ ဖီချာတွေ၊ ဈေးနှုန်း စတာတွေ ကွာခြားကြတယ်။ ဒီစာအုပ်အတွက်တော့ အလကားရတဲ့ \fEn{IntelliJ IDEA CE (Community Edition)} ကို သုံးမှာပါ။ \fEn{Eclipse} သုံးလို့လည်း ရပေမဲ့ ပထမပိုင်း ပရိုဂရမ်တွေ \fEn{run} ရတာ အခက်အခဲရှိတဲ့အတွက် \fEn{IntelliJ} ကိုပဲ ရွေးထားတာပါ။ 
+
+\fCode{https://www.jetbrains.com/idea/} လင့်ကို \fEn{web browser} တစ်ခုခုနဲ့ ဖွင့်ပါ။ \fEn{Microsoft Edge, Mozilla Firefox, Google Chrome} အဆင်ပြေတဲ့ \fEn{browser} တစ်ခုနဲ့ ဖွင့်နိုင်ပါတယ်။ အခုလို တွေ့ရသင့်ပါတယ်။ \fEn{“Download”} ကိုနှိပ်ပါ။ 
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_install/intellij_home_page.jpg}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ Home Page}
+\label{fig:intellij_home_page}
+\end{figure}
+
+\fEn{Operating System} အတွက် \fEn{Windows, macOS, Linux} မှ မိမိစက်နဲ့ ကိုက်ညီတာကို ရွေးပါ။ အခု \fEn{install} လုပ်ပြမှာက \fEn{Windows} အတွက်ပါ။ \fEn{IntelliJ IDEA Community Edition} ဒေါင်းလုဒ်လုပ်ဖို့ ဝဘ်စာမျက်နှာ အောက်ပိုင်းကို \fEn{scroll down} လုပ်ပြီး နည်းနည်းဆင်းပါ။ ပုံ \fRefNo{\ref{fig:intellij_community}} မှာ ပြထားတဲ့ \fEn{IntelliJ IDEA Community Edition} ကို ဒေါင်းလုဒ်လုပ်တာ သေချာပါစေ။ (အပေါ်မှာ ပထမ စတွေ့ရတဲ့ \fEn{IntelliJ IDEA Ultimate} က အလကားမရပါဘူး။ ဝယ်သုံးရတာ။ ဒေါင်းလုဒ် မှားမလုပ်မိဖို့ သတိပြုပါ။)
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_install/intellij_community.jpg}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ IDEA Community Edition (Free)}
+\label{fig:intellij_community}
+\end{figure}
+
+\fEn{Install} လုပ်ဖို့ ဒေါင်းလုဒ်ပြီးတဲ့အခါ ရလာတဲ့ \fEn{installer file} (ပုံ \fRefNo{\ref{fig:intellij_installer}} မှာကြည့်ပါ) ကို \fEn{double click} နှိပ်ပါ။ \fEn{“User Account Control”} \fEn{dialog box} တက်လာပါလိမ့်မယ်။ စက်ထဲမှာ \fEn{install} လုပ်ဖို့အတွက် လိုအပ်တဲ့ \fEn{access right} ခွင့်ပြုချက် \fEn{Windows} အကောင့်ပိုင်ရှင်ထံမှ တောင်းတာပါ။ \fEn{Yes} ကိုနှိပ်ပြီး ခွင့်ပြုပေးရပါမယ်။ 
+
+\begin{figure}[tb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_install/intellij_installer.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Installer File for IntelliJ IDEA Community Edition}
+\label{fig:intellij_installer}
+\end{figure}
+
+ပြီးတဲ့အခါ \fEn{installation} လုပ်ဖို့ \fEn{Welcome Dialog} စတက်လာပါမယ်။ \fEn{Dialog box} တစ်ခုချင်း \fEn{Next, Next, Next, Install, Finish} နှိပ်ပြီး ဆက်သွားပါ။ (လိုအပ်ရင် စာမျက်နှာ \fRefNo{\pageref{fig:install_dialog2}} မှ ပုံ \fRefNo{\ref{fig:install_dialog2}} ကနေ ပုံ \fRefNo{\ref{fig:install_dialog6}} ထိ ကြည့်နိုင်ပါတယ်)။
+
+\section*{IntelliJ ဖြင့် ပရောဂျက် အသစ်ဆောက်ခြင်း} \label{apdx1:new_proj}
+\fEn{Install} လုပ်ပြီး \fEn{Windows Search} မှာ \fEn{IntelliJ} ရိုက်ထည့်တဲ့အခါ ပုံ \fRefNo{\ref{fig:intellij_open}} မှာလို အပ်ပလီကေးရှင်း အိုင်ကွန် တွေ့ရသင့်ပါတယ်။ အိုင်ကွန်ကို ကလစ်နှိပ် အပ်ပလီကေးရှင်း ဖွင့်လိုက်ရင် ပထမဆုံး \fEn{Terms and Conditions} သဘောတူညီချက် တောင်းခံပါတယ်။ ပုံ \fRefNo{\ref{fig:t_and_c}} ကို ကြည့်ပါ။ သဘောတူရပါမယ်။ \fEn{Confirm} လုပ်ဖို့ \fEn{checkbox} ကိုနှိပ်ပြီး \fEn{Continue} ဆက်လုပ်ပါ။ \fEn{Data Sharing} သဘောတူညီချက် ဆက်လက်တောင်းခံ ပါလိမ့်မယ်။ %ပုံ \fRefNo{\ref{fig:data_sharing}} ကိုကြည့်ပါ။ 
+\fEn{Don't Send} သို့မဟုတ် \fEn{Send Anonymous Statistics} ကြိုက်တာရွေးပါ။ 
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.95\linewidth]{images/intellij_proj_create/intellij_open.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Opening IntelliJ from Search}
+\label{fig:intellij_open}
+\end{figure}
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/intellij_install/t_and_c.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{User Agreement for Terms and Conditions}
+\label{fig:t_and_c}
+\end{figure}
+
+%\begin{figure}[tbh!]
+%\begin{tikzpicture}
+%    \node[anchor=south west,inner sep=0] (image) at (0,0)
+%        {\includegraphics[width=.98\linewidth]{images/intellij_install/data_sharing.png}};
+%    \drawshadow{image}
+%\end{tikzpicture}
+%\caption{Data Sharing Preferences}
+%\label{fig:data_sharing}
+%\end{figure}
+
+ပုံ \fRefNo{\ref{fig:proj_create01} စာမျက်နှာ \fRefNo{\pageref{fig:proj_create01}}} မှ \fEn{Welcome Screen} ပေါ်လာရင် \fEn{“New Project”} နှိပ်ပြီး ပရောဂျက် အသစ်ယူပါ။ ပရောဂျက်နံမည်ကို \fEn{MeetKarel} ဖြည့်၊ \fEn{Add sample code} ကို \fEn{uncheck} လုပ်ပြီး \fEn{“Create”} လုပ်လိုက်ရင် ပရောဂျက်အသစ် ဆောက်ပေးသွားမှာပါ (ပုံ \fRefNo{\ref{fig:proj_create02}} နဲ့ ပုံ \fRefNo{\ref{fig:proj_create03}})။ 
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/intellij_proj_create/proj_create01.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ IDE Welcome Screen}
+\label{fig:proj_create01}
+\end{figure}
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/intellij_proj_create/proj_create02.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{New Project Dialog}
+\label{fig:proj_create02}
+\end{figure}
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/intellij_proj_create/proj_create03.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{MeetKarel Project}
+\label{fig:proj_create03}
+\end{figure}
+
+\fEn{MeetKarel.zip} ဖိုင်ကို \todo{ဖိုင်တင်ထားရန်၊ လင့်ဖန်တီးရန်} ဒီလင့် \fCode{https://tinyurl.com/yesz8a6j} မှာ ဒေါင်းလုဒ်လုပ်ပြီး \fEn{extract} လုပ်ပါ။ \fEn{WinRAR, WinZip, 7-Zip} အပ်ပလီကေးရှင်း တစ်ခုခုနဲ့ \fEn{extract} လုပ်လို့ရပါတယ်။ \fEn{Extract} လုပ်ပြီး \fEn{MeetKarel} ဖိုဒါထဲမှ \fEn{lib, src, worlds} ဖိုဒါသုံးခုကို ကော်ပီယူပြီး \fEn{MeetKarel} ပရောဂျက် ပင်မဖိုဒါပေါ်မှာ \fEn{right click} နှိပ်ပြီး  \fEn{paste} လုပ်ပါ။ ပုံ \fRefNo{\ref{fig:proj_create07}} ကိုကြည့်ပါ။ (ပရောဂျက် ပင်မဖိုဒါ \fEn{MeetKarel} ပေါ်မှာ \fEn{right click} နှိပ်ပြီး  \fEn{paste} လုပ်ဖို့ အရေးကြီးပါတယ်။ မှားလို့မရပါ။)
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/intellij_proj_create/proj_create06.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Extracted MeetKarel Folder and Its Containing Folders}
+\label{fig:proj_create06}
+\end{figure}
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_proj_create/proj_create07.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{ပင်မ MeetKarel Project အောက်တွင် lib, src, worlds ကော်ပီကူးထည့်ပုံ}
+\label{fig:proj_create07}
+\end{figure}
+
+\fEn{Paste} လုပ်လိုက်တဲ့အခါ \fEn{dialog} ပေါ်လာရင် \fEn{OK} ကို နှိပ်ပါ။ %ပုံ \fRefNo{\ref{fig:proj_create09}} မှာ \fEn{Paste} လုပ်ပြီး \fEn{project} ဖိုဒါစထရက်ချာကို ပြထားပါတယ်။ အဲ့ဒီ စထရက်ချာအတိုင်း ဖြစ်ဖို့ အရေးကြီးတယ်။ 
+\fEn{lib, src, worlds} ဖိုဒါတို့ဟာ \fEn{MeetKarel} အောက်မှာ တိုက်ရိုက်ရှိနေရပါမယ်။ \fEn{lib} ဖိုဒါကို \fEn{right click} နှိပ်ပြီး \fEn{Add as Library} လုပ်ပေးဖို့လိုပါတယ်။ ပုံ \fRefNo{\ref{fig:proj_create10}} စာမျက်နှာ \fRefNo{\pageref{fig:proj_create10}} မှာ ကြည့်ပါ။ \fEn{Create Library dialog} ပေါ်လာရင် \fEn{OK} နှိပ်ပါ။ ပရောဂျက်အတွက် လိုအပ်တဲ့ လိုက်ဘရီဖိုင်တွေ \fEn{lib} ဖိုဒါထဲမှာ ရှိတယ်လို့ \fEn{IntelliJ} သိအောင်လုပ်ပေးတာပါ။ \fEn{lib} ဖိုဒါထဲမှာ \fEn{karel.jar} လိုက်ဘရီဖိုင်ရှိတယ်။ 
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_proj_create/proj_create10.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Adding as Library}
+\label{fig:proj_create10}
+\end{figure}
+
+%\begin{figure}[htb!]
+%\begin{tikzpicture}
+%    \node[anchor=south west,inner sep=0] (image) at (0,0)
+%        {\includegraphics[width=.98\linewidth]{images/intellij_proj_create/proj_create11.png}};
+%    \drawshadow{image}
+%\end{tikzpicture}
+%\caption{Create Library Option}
+%\label{fig:proj_create11}
+%\end{figure}
+
+\fEn{src} ဖိုဒါမှ \fEn{MeetKarel.java} ဖိုင်ကိုဖွင့်၊ \fEn{right click} နှိပ်ပြီး \fEn{run} ပါ (ပုံ \fRefNo{\ref{fig:proj_create12} နဲ့ \fRefNo{\ref{fig:proj_create13}} စာမျက်နှာ \fRefNo{\pageref{fig:proj_create12}}})။ ကားရဲလ် ပရိုဂရမ် \fEn{Window} တက်လာမယ် (ပုံ \fRefNo{\ref{fig:MeetKarel}} စာမျက်နှာ \fRefNo{\pageref{fig:MeetKarel}})။ \fEn{Start Program} ခလုပ်ကို နှိပ်ရင် ကားရဲလ်က ဘိပါကို ရွှေ့ပေးပါလိမ့်မယ်။
+%
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_proj_create/proj_create12.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{MeetKarel.java File}
+\label{fig:proj_create12}
+\end{figure}
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_proj_create/proj_create13.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Running MeetKarel.java File}
+\label{fig:proj_create13}
+\end{figure}
+%
+
+%
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/intellij_proj_create/MeetKarel.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{MeetKarel ပရိုဂရမ် }
+\label{fig:MeetKarel}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{IntelliJ ဖြင့် ကလပ်စ်အသစ် ဖန်တီးခြင်း} \label{apdx1:new_class}
+ပရောဂျက် \fEn{src} ဖိုဒါမှာ \fEn{right click} နှိပ်၊ \fEn{New} မီနူးမှ \fEn{Java Class} ရွေးပါ (ပုံ \fRefNo{\ref{fig:new_class1}} စာမျက်နှာ \fRefNo{\pageref{fig:new_class1}})။ ကလပ်စ်နံမည် ဖြည့်ခိုင်းပါလိမ့်မယ် (ပုံ \fRefNo{\ref{fig:new_class2}} စာမျက်နှာ \fRefNo{\pageref{fig:new_class2}})။ \fCode{MoveBeeperToOtherSide} ဖြည့်ပေးပါ။ စာလုံးအကြီးအသေး ကွက်တိတူပါစေ။ ကလပ်စ်အသစ်တစ်ခု ထုတ်ပေးသွားပါလိမ့်မယ် (ပုံ \fRefNo{\ref{fig:new_class3}} စာမျက်နှာ \fRefNo{\pageref{fig:new_class3}})။ 
+
+ကလပ်စ်နံမည်နောက်မှာ စပေ့စ်ခြားပြီး \fCode{ext} လောက်ထိ ရိုက်လိုက်တာနဲ့ \fCode{extends} ကို ပြပေးပါလိမ့်မယ် (ပုံ \fRefNo{\ref{fig:new_class4}} စာမျက်နှာ \fRefNo{\pageref{fig:new_class4}})။ \fEn{Enter} ခေါက်လိုက်ရင် ဆက်ရိုက်စရာမလိုဘဲ \fCode{extends} ရေးပြီး ဖြစ်သွားမှာပါ။ \fEn{IntelliJ} က အခြေအနေ \fEn{(context)} အရ စာရိုက်နေတဲ့နေရာမှာ ရှိနိုင်တဲ့ အဖြစ်နိုင်ဆုံး သက်ဆိုင်တာတွေကိုပဲ ပြပေးတာဖြစ်တယ်။ စာရိုက်ရတာ သက်သာအောင်၊ စာလုံးပေါင်းမမှားအောင် ကူညီပေးတာအပြင် အခြေအနေအရ ပြပေးတဲ့ထဲက ရွေးရတာမို့လို့ ခေါင်းထဲမှာ မှတ်ထားရတာလည်း အများကြီး သက်သာသွားပါတယ်။ ဒီလိုလုပ်ပေးတာကို \fEn{code completion} လို့ ခေါ်ပါတယ်။
+
+\fCode{extends} နောက် စပေ့စ်ခြားပြီး \fCode{Kar} ရိုက်လိုက်ရင် \fEn{code completion} အတွက် ရွေးချယ်စရာတွေ ပြပေးမှာပါ (ပုံ \fRefNo{\ref{fig:new_class6}} စာမျက်နှာ \fRefNo{\pageref{fig:new_class6}})။ \fCode{Karel} ကို ရွေးလိုက်ရင် \fCode{import} စတိတ်မန့်ကိုပါ အော်တိုဖြည့်ပေးသွားတာ။ အဖွင့်တွန့်ကွင်းဘေးမှာ \fEn{cursor} ထားပြီး \fEn{Enter} နှိပ်ပါ။ အောက်တစ်ကြောင်း \fEn{cursor} ချထားပေးထားတဲ့ နေရာမှာပဲ \fCode{run} ရိုက်ထည့်ပြီး \fEn{Enter} နှိပ်လိုက်တာနဲ့ \fCode{run} မက်သဒ်ကို ဖြည့်ပေးသွားမှာပါ။ \fCode{@Override} နဲ့ ဘော်ဒီထဲက \fCode{super.run();} ကိုတော့ မလိုတဲ့အတွက် ဖျက်လိုက်ပါ။ လက်ရှိအနေအထားမှာပဲ ဖိုင်ကို \fEn{right click} နှိပ် \fEn{run} ရင် စာမျက်နှာ \fRefNo{\pageref{fig:move_beeper_to_other_side}} ပုံ \fRefNo{\ref{fig:move_beeper_to_other_side}} မှာပြထားတဲ့ ကမ္ဘာကို တွေ့ရသင့်တယ်။ ဘိပါကို နံရံအခြားဘက် အောက်ခြေမှာထားဖို့ ပရိုဂရမ် ဆက်ရေးကြည့်ပါ။
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_new_class/new_class1.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ ဖြင့် ကလပ်စ်အသစ် ယူနည်း}
+\label{fig:new_class1}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_new_class/new_class2.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{ကလပ်စ်နံမည် ဖြည့်ပေးရန် Text Box}
+\label{fig:new_class2}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_new_class/new_class3.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ ဖြင့် ဖန်တီးလိုက်သည့် ကလပ်စ်}
+\label{fig:new_class3}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_new_class/new_class4.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ ၏ code-completion အထောက်အကူပြု ဖီချာ}
+\label{fig:new_class4}
+\end{figure}
+
+%\begin{figure}[htb!]
+%\begin{tikzpicture}
+%    \node[anchor=south west,inner sep=0] (image) at (0,0)
+%        {\includegraphics[width=.98\linewidth]{images/intellij_new_class/new_class5.png}};
+%    \drawshadow{image}
+%\end{tikzpicture}
+%\caption{IntelliJ မှ \fCptCodeBf{extends} ဖြည့်ပေးသွားပုံ}
+%\label{fig:new_class5}
+%\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.8\linewidth]{images/intellij_new_class/new_class6.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ မှ \fCptCodeBf{extends} လုပ်နိုင်သည့် ကလပ်စ်များကို ပြပေးပုံ}
+\label{fig:new_class6}
+\end{figure}
+
+%\begin{figure}[htb!]
+%\begin{tikzpicture}
+%    \node[anchor=south west,inner sep=0] (image) at (0,0)
+%        {\includegraphics[width=.98\linewidth]{images/intellij_new_class/new_class7.png}};
+%    \drawshadow{image}
+%\end{tikzpicture}
+%\caption{\fCptCodeBf{import} စတိတ်မန့် တစ်ခါတည်း ထည့်ပေးသွားပုံ}
+%\label{fig:new_class7}
+%\end{figure}
+
+%\begin{figure}[htb!]
+%\begin{tikzpicture}
+%    \node[anchor=south west,inner sep=0] (image) at (0,0)
+%        {\includegraphics[width=.98\linewidth]{images/intellij_new_class/new_class8.png}};
+%    \drawshadow{image}
+%\end{tikzpicture}
+%\end{figure}
+
+
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.75\linewidth]{images/intellij_new_class/move_beeper_to_other_side.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{\fCptCodeBf{MoveBeeperToOtherSide} ကားရဲလ်ကမ္ဘာ}
+\label{fig:move_beeper_to_other_side}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.75\linewidth]{images/jdk_install/install_dialog1.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Welcome Dialog}
+\label{fig:jdk_install_dialog1}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/jdk_install/install_dialog2.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Customization Dialog}
+\label{fig:jdk_install_dialog2}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/jdk_install/install_dialog3.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Ready to Install Dialog}
+\label{fig:jdk_install_dialog3}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/jdk_install/install_dialog4.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Allowing File Access}
+\label{fig:jdk_install_dialog4}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.85\linewidth]{images/jdk_install/install_dialog5.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Finish Dialog}
+\label{fig:jdk_install_dialog5}
+\end{figure}
+
+
+
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.9\linewidth]{images/intellij_install/install_dialog1.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{Giving Required Access}
+\label{fig:install_dialog1}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.9\linewidth]{images/intellij_install/install_dialog2.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ Installation Process (Welcome Dialog)}
+\label{fig:install_dialog2}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_install/install_dialog3.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ Installation Process (Choose Install Location)}
+\label{fig:install_dialog3}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_install/install_dialog4.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ Installation Process (Installation Options)}
+\label{fig:install_dialog4}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_install/install_dialog5.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ Installation Process (Choose Start Menu Folder)}
+\label{fig:install_dialog5}
+\end{figure}
+
+\begin{figure}[htb!]
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0)
+        {\includegraphics[width=.98\linewidth]{images/intellij_install/install_dialog6.png}};
+    \drawshadow{image}
+\end{tikzpicture}
+\caption{IntelliJ Installation Process (Finish Dialog)}
+\label{fig:install_dialog6}
+\end{figure}

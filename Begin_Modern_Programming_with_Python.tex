@@ -1,0 +1,134 @@
+%!TeX program = XeLaTex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt,twoside]{book}
+\XeTeXlinebreaklocale "my_MM"  %Myanmar line and character breaks
+\XeTeXinterwordspaceshaping=2
+
+\usepackage[
+    paperheight = 10.2in,
+    paperwidth = 7.4in,
+    right = 0.8in,
+    left = 1.45in,
+    top = 0.75in,
+    bottom = 0.9in,
+    heightrounded,
+    asymmetric,
+    %showframe
+]{geometry}
+\usepackage[parfill,indent=2em,skip=3pt plus 1pt]{parskip}
+
+\usepackage{fontspec}
+
+\usepackage{bm}
+
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\newcommand{\rowsep}{\arrayrulecolor{black!30}\midrule[0.25pt]\arrayrulecolor{black}}
+\usepackage{siunitx}
+
+\usepackage{caption}
+\usepackage[labelformat=simple]{subcaption}
+%\renewcommand\thesubfigure{\alph{subfigure}}
+
+\usepackage[outputdir=out]{minted}
+\usepackage{pifont}
+
+%\usemintedstyle{bw}
+\setminted[java]{fontfamily=IBMPlexMonoFamily}
+\setminted[text]{fontfamily=IBMPlexMonoFamily}
+
+\AtBeginEnvironment{minted}{\let\special\mintedspecial} 
+\def\mintedspecial{\kern0pt\primitive\special}
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\makeatother
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usepackage{onimage}
+\usetikzlibrary{arrows.meta}
+\usepackage{adjustbox}
+%https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
+\usepackage[textcolor=blue,
+    textsize=scriptsize,
+    textwidth=17.5mm,
+    color=red!25,
+    disable]{todonotes}
+
+\definecolor{boxfillcolor}{RGB}{242,242,242}
+\definecolor{boxfillcolor2}{RGB}{232,232,232}
+
+%\newcommand{\mintrule}{0.0pt}
+%\newcommand{\mintsep}{5pt}
+%\newcommand{\mintframe}{lines}
+%\newcommand{\xlftmargin}{2pt}
+%\definecolor{mintbgcolor}{RGB}{251, 251, 249}
+%\definecolor{mintrulecolor}{RGB}{190,190,190}
+
+\newcommand{\mintrule}{0.5pt}
+\newcommand{\mintsep}{2pt}
+\newcommand{\mintframe}{leftline}
+\newcommand{\xlftmargin}{0pt}
+\definecolor{mintbgcolor}{RGB}{255, 255, 255}
+\definecolor{mintrulecolor}{RGB}{190,190,190}
+
+
+\usepackage[most]{tcolorbox}
+\newtcolorbox{mytcbox}{
+    left=3pt,right=3pt,top=3pt,bottom=3pt,
+    colframe=gray,
+    boxrule=0.6pt,
+    colback=boxfillcolor,
+}
+
+\newtcbox{\mytcboxinl}[1][boxfillcolor2]{
+    on line,
+    arc=1.5pt,colback=#1,colframe=#1!50!black,
+    before upper={\rule[-3pt]{0pt}{10pt}},
+    boxrule=0pt,
+    boxsep=0pt,left=1pt,right=1pt,top=1.25pt,bottom=.7pt
+}
+    
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\usepackage{appendix}
+\renewcommand\appendixname{နောက်ဆက်တွဲ}
+\renewcommand\appendixpagename{နောက်ဆက်တွဲ}
+
+\newcommand{\bropn}{\{}
+
+\input{preamble/font}
+\input{preamble/page_style}
+\input{preamble/image_shadow.tex}
+\input{preamble/caption_style.tex}
+\input{preamble/bullets.tex}
+
+
+
+\begin{document}
+\include{cover}
+\pagestyle{fancy}
+\pagenumbering{arabic}
+
+\include{chapters/chapter01.tex}
+
+
+\renewcommand\thefigure{A/\arabic{figure}}    
+\appendix
+\include{chapters/appendix01.tex}
+%\include{chapters/appendix02.tex}
+%\include{chapters/appendix03.tex}
+\end{document}

@@ -1,0 +1,10 @@
+%\renewcommand{\labelitemi}{\normalfont\ding{239}}
+%\renewcommand{\labelitemi}{\color{myItmiColor}\RIGHTarrow}
+\let\oldding\ding% Store old \ding in \oldding
+\renewcommand{\ding}[2][1]{\scalebox{#1}{\oldding{#2}}}% Scale \oldding via optional argument
+\renewcommand{\labelitemi}{\ding[0.6]{110}}
+
+\renewcommand{\labelitemii}{\ding[0.85]{229}}
+\renewcommand{\labelitemiii}{\ding[0.85]{229}}
+%\renewcommand{\labelitemiii}{\tiny\ding{110}}
+\renewcommand{\labelitemiv}{\tiny\ding{110}}
