@@ -86,8 +86,9 @@
 \newtcolorbox{mytcbox}{
     left=3pt,right=3pt,top=3pt,bottom=3pt,
     colframe=gray,
-    boxrule=0.6pt,
+    boxrule=0.4pt,
     colback=boxfillcolor,
+    before upper={\parindent2em}
 }
 
 \newtcbox{\mytcboxinl}[1][boxfillcolor2]{
@@ -124,11 +125,13 @@
 \pagenumbering{arabic}
 
 \include{chapters/chapter01.tex}
+\include{chapters/chapter02.tex}
 
 
 \renewcommand\thefigure{A/\arabic{figure}}    
 \appendix
 \include{chapters/appendix01.tex}
-%\include{chapters/appendix02.tex}
+\renewcommand\thefigure{B/\arabic{figure}} 
+\include{chapters/appendix02.tex}
 %\include{chapters/appendix03.tex}
 \end{document}
