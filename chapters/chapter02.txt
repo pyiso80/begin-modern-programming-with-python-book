@@ -1,0 +1,95 @@
+\chapter{ကားရဲလ်နှင့် ကွန်ထရိုးလ် စတိတ်မန့်များ} \label{ch:ch02}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Nested \fSubSecCodeBf{if} စတိတ်မန့်}
+
+အခြေအနေနှစ်ခုလုံးနဲ့ ကိုက်ညီမှ လုပ်ဆောင်စေချင်တဲ့အခါ \fCode{if} နှစ်ခုကို \fEn{nest} လုပ်ပြီး ရေးလို့ရပါတယ်။ ညာဘက်မှာလည်းရှင်း၊ လက်ရှိကွန်နာမှာလည်း ဘိပါမရှိမှ ဘိပါတစ်ခုချခိုင်းချင်ရင် ဒီလိုဖြစ်မယ်။ 
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+ if (rightIsClear()) {
+    if (noBeepersPresent()) {
+        putBeeper();
+    }
+}
+\end{minted}
+%
+အပြင် \fCode{if} စတိတ်မန့် \fCode{rightIsClear} မှန်မှပဲ အတွင်း \fCode{if} ကို လုပ်ဆောင်မယ်။ အတွင်း \fCode{if} ကလည်း \fCode{noBeepersPresent} ဖြစ်မှပဲ \fCode{putBeeper} လုပ်မှာပါ။ \fCode{rightIsClear} နဲ့ \fCode{noBeepersPresent} ကွန်ဒီရှင်နှစ်ခုထဲက တစ်ခုမှားတာနဲ့ \fCode{putBeeper} လုပ်မှာ မဟုတ်ပါဘူး။ ကွန်ဒီရှင် နှစ်ခုလုံးမှားရင်လည်း လုပ်မှာမဟုတ်ဘူး။
+
+ပုံ \fRefNo{\ref{fig:st_repair}} (က)၊ (၂) လမ်းတစ်လျှောက် ကွန်နာတွေမှာ ဘိပါလည်းမရှိ၊ အောက်ဘက်မှာ နံရံလည်းမရှိရင်  ဘိပါချထားခိုင်းဖို့ \fEn{nesting} သုံးထားတာ လေ့လာကြည့်ပါ။ 
+%
+\begin{listing}
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+import stanford.karel.Karel;
+
+public class RepairStreet extends Karel {
+    public void run() {
+        while (frontIsClear()) {
+            if (rightIsClear()) {
+                if (noBeepersPresent()) {
+                    putBeeper();
+                }
+            }
+            move();
+        }
+        if (rightIsClear()) {
+            if (noBeepersPresent()) {
+                putBeeper();
+            }
+        }
+    }
+}
+\end{minted}
+\caption*{}
+\label{mnt:repair_street}
+\end{listing}
+%
+
+\begin{figure}[tbh!]
+    \newcommand{\figpctw}{0.48}
+    \newcommand{\figscale}{0.15}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch02/st_repair/init.jpg}
+        \caption{မူလ အနေအထား}    
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch02/st_repair/after.jpg}
+        \caption{လမ်းပြင်ပြီး အနေအထား}    
+    \end{subfigure}
+    \caption{}
+    \label{fig:st_repair}
+\end{figure}
