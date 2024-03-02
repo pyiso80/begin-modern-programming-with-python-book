@@ -512,6 +512,20 @@ else:
 \subsection*{Nested \fSubSecCodeBf{for} loop}
 %
 \setlength{\fboxsep}{0pt}
+ဘိပါသုံးခုချလိုက်၊ ရှေ့တိုးလိုက် လုပ်တာကို လေးကြိမ်ကျော့ချင်ရင် \fCode{for} \fEn{loop} နဲ့ အခုလို ရေးရမယ်ဆိုတာ သိခဲ့ပြီးပါပြီ။
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+for i in range(4):
+    put_beeper()
+    put_beeper()
+    put_beeper()
+    move()
+\end{minted}
+%
+ဒီ \fCode{for} \fEn{loop} ထဲက \fCode{put\_beeper} သုံးကြောင်းကိုလည်း နောက်ထပ် \fCode{for} တစ်ခုနဲ့ ရေးလို့ ရရမှာပေါ့။ ဒီလို ဖြစ်သွားမှာပါ
+%
+\setlength{\fboxsep}{0pt}
 \begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
     , bgcolor=mintbgcolor,rulecolor=mintrulecolor
     , python3=true,escapeinside=ßß]{python}
@@ -521,32 +535,8 @@ for i in range(4):
     move()
 \end{minted}
 %
-အခုလို \fCode{for} \fEn{loop} နှစ်ခု ဆင့်ရေးထားတာကို \fEn{nested} \fCode{for} \fEn{loop} လို့ခေါ်ပါတယ်။ ပထမ \fCode{for} ဘလောက်ထဲမှာ နောက်ထပ် \fCode{for} \fEn{loop} တစ်ခု ပါဝင်နေတာပါ။ \fEn{Loop} တစ်ခုချင်းကို သီးခြား ရည်ညွှန်းချင်တဲ့အခါ အပြင် \fCode{for} \fEn{loop} နဲ့ အတွင်း \fCode{for} \fEn{loop} လို့ ပြောလေ့ရှိတယ်။ အပြင် \fCode{for} \fEn{loop} မှာ ဗေရီရေဘဲလ် \fCode{i} ဆိုရင် အတွင်းမှာ \fCode{i} မဖြစ်ရပါဘူး။ \fCode{j}\fEn{,} ဒါမှမဟုတ် \fCode{k} မတူတာ  တစ်ခုခုဖြစ်ရပါမယ်။ 
+\fCode{for} \fEn{loop} နှစ်ခု ဆင့်ရေးထားလို့ \fEn{nested} \fCode{for} \fEn{loop} လို့ခေါ်ပါတယ်။  \fEn{Loop} တစ်ခုချင်းကို သီးခြား ရည်ညွှန်းချင်တဲ့အခါ အပြင် \fCode{for} \fEn{loop} နဲ့ အတွင်း \fCode{for} \fEn{loop} လို့ ပြောလေ့ရှိတယ်။ အင်ဒန့်ထ် လုပ်ထားပုံအရ အပြင် \fCode{for} \fEn{loop} ဘလောက်ထဲမှာ အတွင်း \fCode{for} \fEn{loop} နဲ့ \fCode{move} ပါဝင်တယ်။ အတွင်း \fCode{for} \fEn{loop} ဘလောက်ထဲမှာတော့ \fCode{put\_beeper} ပဲပါတယ်၊ \fCode{move} မပါ ပါဘူး။ အပြင် \fCode{for} \fEn{loop} မှာ ဗေရီရေဘဲလ် \fCode{i} ဆိုရင် အတွင်းမှာ \fCode{i} မဖြစ်ရပါဘူး။ \fCode{j}\fEn{,} ဒါမှမဟုတ် \fCode{k} မတူတာ  တစ်ခုခုဖြစ်ရပါမယ်။ 
 
-အပြင် \fCode{for} \fEn{loop} ဘလောက်ထဲမှာ အတွင်း \fCode{for} \fEn{loop} နဲ့ \fCode{move} ပါဝင်တယ်။ အတွင်း \fCode{for} \fEn{loop} က  \fCode{put\_beeper} သုံးကြိမ်ကျော့ထားတာ ဖြစ်တဲ့အတွက် အဲဒီ အပြင် \fCode{for} \fEn{loop} ဘလောက်ဟာ အောက်ပါအတိုင်း \fCode{put\_beeper} သုံးကြိမ်လုပ်ပြီး \fCode{move} လုပ်တာနဲ့ တူတယ်လို့ မြင်နိုင်တယ်။ 
-%
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
-for i in range(4):
-    put_beeper()
-    put_beeper()
-    put_beeper()
-    move()
-\end{minted}
-%
-%
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
-for i in range(4):
-    for j in range(3):
-        put_beeper()
-    move()
-\end{minted}
-%
 
 အတန်းလိုက် ကွန်နာ ငါးခုမှာ တစ်ကွန်နာ ဘိပါ (၂၅) ခုစီ ချထားပေးဖို့  \fEn{nested loop} နဲ့ ရေးထားတာကို လေ့လာကြည့်ပါ။
 %

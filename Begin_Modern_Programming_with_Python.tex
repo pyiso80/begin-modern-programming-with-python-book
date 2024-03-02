@@ -81,7 +81,12 @@
 \newcommand{\xlftmargin}{0pt}
 \definecolor{mintbgcolor}{RGB}{255, 255, 255}
 \definecolor{mintrulecolor}{RGB}{190,190,190}
-
+% control vspace between two minted env
+%\AfterEndEnvironment{minted}{\par\vspace{-\baselineskip}}
+\newcommand{\betweenminted}[1]{%
+  \par\vspace{-\medskipamount}\vspace{-0.5\baselineskip}%
+  \vspace{#1}%
+}
 
 \usepackage[most]{tcolorbox}
 \newtcolorbox{mytcbox}{
@@ -89,7 +94,16 @@
     colframe=gray,
     boxrule=0.4pt,
     colback=boxfillcolor,
-    before upper={\parindent2em}
+    before upper={\parindent0em}
+}
+
+\newtcolorbox{mytcboxflt}{
+    left=3pt,right=3pt,top=3pt,bottom=3pt,
+    float=htb,
+    colframe=gray,
+    boxrule=0.4pt,
+    colback=boxfillcolor,
+    before upper={\parindent0em}
 }
 
 \newtcbox{\mytcboxinl}[1][boxfillcolor2]{
@@ -129,6 +143,7 @@
 
 \include{chapters/chapter01.tex}
 \include{chapters/chapter02.tex}
+\include{chapters/chapter03.tex}
 
 
 \renewcommand\thefigure{A/\arabic{figure}}    

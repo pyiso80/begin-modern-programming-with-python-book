@@ -1,0 +1,1057 @@
+
+
+\section{မက်သဒ်သတ်မှတ်ခြင်း}
+ညာဘက်ကို လှည့်ချင်တဲ့အခါတိုင်း \fCode{turnLeft} သုံးခါလုပ်ရတာ ရေရှည်အဆင်မပြေပါဘူး။ \fCode{turnRight} ရရင် ပိုအဆင်ပြေမှာပါ။ ဒီအတွက်ကို \fCode{turnRight} မက်သဒ် သတ်မှတ်ပေးနိုင်ပါတယ်။ 
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void turnRight() {
+    turnLeft();
+    turnLeft();
+    turnLeft();
+}
+\end{minted}
+%
+
+မက်သဒ်သတ်မှတ်တယ်ဆိုတာ စတိတ်မန့်တစ်ခု (သို့) တစ်စုကို နံမည်ပေးလိုက်တာပါပဲ။ အခုသတ်မှတ်ထားချက်အရ \fCode{turnLeft} စတိတ်မန့် သုံးခုကို \fCode{turnRight} လို့ နံမည်ပေးလိုက်တာ။ ဒီမက်သဒ်ကိုအသုံးပြုပြီး
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+turnRight();
+\end{minted}
+%
+နဲ့ \fCode{turnLeft} သုံးခါလုပ်ခိုင်းလို့ ရသွားပါတယ်။ တနည်းအားဖြင့် \fCode{turnRight} ကို လုပ်ဆောင်တဲ့အခါ မက်သဒ်ဘော်ဒီထဲက စတိတ်မန့်တွေကို လုပ်ဆောင်ပေးတာ ဖြစ်တယ်။ စာရေးတာပဲဖြစ်ဖြစ်၊ ပရိုဂရမ်ကုဒ် ရေးတာပဲဖြစ်ဖြစ် စိတ်ထဲမှာ တွေးတဲ့အတိုင်း၊ စဉ်းစားတဲ့အတိုင်း ပေါ်လွင်အောင် ဖော်ပြနိုင်တာဟာ အားသာချက်တစ်ခုပဲ။ ကုဒ်ကို ပြန်ဖတ်တဲ့အခါမှာလည်း နားလည်ရလွယ်ကူစေတယ်။ မက်သဒ်သတ်မှတ်ထားခြင်းအားဖြင့် ညာဘက်လှည့်တာကို \fCode{turnRight} လို့ တိုက်ရိုက် ခိုင်းလို့ရသွားတာဟာ အရေးပါတဲ့ ကိစ္စဖြစ်တယ်။
+
+ကားရဲလ်ပရိုဂရမ်တွေမှာ မက်သဒ်သတ်မှတ်တဲ့ပုံစံက ယေဘုယျ ဒီလိုရှိတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+void ß\fEnEmp{name}ß() {
+    ß\fEnEmp{one or more statements}ß
+}
+\end{minted}
+%
+\fEnEmp{name} က မက်သဒ်နံမည်ဖြစ်ပြီး \fCode{turnRight}\fEn{,} \fCode{pickAllBeepers} စသည်ဖြင့် ဖြစ်နိုင်ပါတယ်။ ပထမဆုံး စကားလုံးကို အသေးနဲ့ရေးပြီး နောက်စကားလုံးတွေအစကို အကြီးနဲ့ရေးလေ့ရှိတယ်။ ရေးလေ့ရှိတဲ့ ပုံစံကို လိုက်နာသင့်ပါတယ်။ နံမည်ပေးတဲ့အခါ မက်သဒ်လုပ်ဆောင်ပေးတဲ့ ကိစ္စကို သိသာစေမဲ့ နားလည်ရလွယ်မဲ့ နံမည်မျိုး ဂရုစိုက်ရွေးချယ် ပေးသင့်တယ်။ ကားရဲလ်ပရိုဂရမ်တွေမှာ အမိန့်ပေးခိုင်းစေတဲ့ ပုံစံနဲ့ မက်သဒ်နံမည်ပေးလေ့ရှိတယ်။ ဥပမာ \fCode{turnNorth} ‘မြောက်ဘက်လှည့်ပါ’၊ \fCode{pickAllBeepers} ‘ဘိပါအားလုံးကောက်ပါ’။
+
+မက်သဒ်ကို အသုံးပြုတာကို \fEn{“Method Call”, “Method Application”, “Method Invocation”} စသည်ဖြင့် အမျိုးမျိုးပြောလေ့ရှိတယ်။ ကားရဲလ်ပရိုဂရမ်တွေမှာ
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+ß\fEnEmp{name}ß();
+\end{minted}
+%
+ပုံစံနဲ့ တွေ့ရတယ်။ 
+
+မှတ်ချက်။\qquad ။ မက်သဒ်သတ်မှတ်ချက်ဟာ ကလပ်စ်ဘော်ဒီအတွင်း တိုက်ရိုက်ရှိရပါမယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+public class ClassName {
+    public void run {
+    }
+
+    void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
+\end{minted}
+%
+
+
+\section{Composing methods}
+\fCode{pickAllBeepers} မက်သဒ်ဟာ ကွန်နာတစ်ခုမှာရှိတဲ့ ဘိပါအားလုံးကိုကောက်ပေးပါတယ်။ ဘိပါမရှိတဲ့ ကွန်နာမှာလည်း သုံးလို့ရတယ်။ တစ်ခုနဲ့အထက်ရှိရင်တော့ အားလုံးကုန်တဲ့ထိ ကောက်ပေးမှာပါ။ 
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void pickAllBeepers() {
+    while (beepersPresent()) {
+        pickBeeper();
+    }
+}
+\end{minted}
+%
+
+\fCode{pickAllBeepers} ကို အခြေခံအစိတ်အပိုင်းတစ်ခုအနေနဲ့ အသုံးပြုပြီး လမ်းတစ်လျှောက် ကွန်နာတွေအားလုံးက ဘိပါတွေကို ရှင်းပေးမဲ့ \fCode{cleanTheStreet} မက်သဒ်ကို သတ်မှတ်နိုင်ပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void cleanTheStreet() {
+    while (frontIsClear()) {
+        pickAllBeepers();
+    }
+    pickAllBeepers();
+}
+\end{minted}
+%
+
+အခြေခံကျပြီး ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေကနေ ပိုပြီးရှုပ်ထွေးခက်ခဲတဲ့ ကိစ္စတွေကို ဖြေရှင်းဆောင်ရွက်ပေးနိုင်တဲ့ မက်သဒ်တွေဖြစ်လာအောင် ဖွဲစည်းတည်ဆောက်လို့ရတာကို တွေ့ရပါတယ်။ ဒီလိုနည်းနဲ့ မက်သဒ်တွေ ဖွဲ့စည်းတည်ဆောက်တာကို \fEn{Method Composition} လို့ခေါ်ပါတယ်။  \fEn{Composition} ကို တစ်ဆင့်ပြီးတစ်ဆင့် လုပ်လို့ရတယ်။ ကားရဲကမ္ဘာထဲရှိ ကွန်နာအားလုံးက ဘိပါတွေကို ရှင်းပေးမဲ့ \fCode{cleanTheWorld} မက်သဒ် သတ်မှတ်တဲ့အခါ \fCode{cleanTheStreet} ကို အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုနိုင်မှာ ဖြစ်တယ်။ (လမ်းတွေအားလုံး ရှင်းတာဟာ ကားရဲကမ္ဘာထဲရှိ ကွန်နာအားလုံးကို ရှင်းတာပါပဲ)။
+
+\fCode{pickAllBeepers} က အရိုးရှင်းဆုံး အခြေခံအကျဆုံး ဖြစ်တယ်။ ဒါကိုအသုံးပြုပြီး အတန်အသင့်ပိုရှုပ်ထွေးတဲ့ \fCode{cleanTheStreet} ကို တည်ဆောက်တယ်။ တစ်ခါ \fCode{cleanTheStreet} ကို အခြေခံပြီး \fCode{cleanTheWorld} ကို ဆက်လက်တည်ဆောက်တယ်။ ဒီလိုနည်းလမ်းနဲ့ ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေကနေ ပို၍ပို၍ ကြီးမားရှုပ်ထွေးတဲ့ အစိတ်အပိုင်းတွေကို တစ်ဆင့်ပြီးတစ်ဆင့် တည်ဆောက်ယူလို့ရနိုင်တာကို တွေ့ရပါတယ်။
+
+\section{Precondition and postcondition}
+\fEn{Precondition} နဲ့ \fEn{Postcondition} ဟာ မက်သဒ်တွေနဲ့ ပါတ်သက်ပြီး ဂဃနဏ နားလည်ဖို့လိုအပ်တဲ့ အရေးကြီးတဲ့ သဘောတရားနှစ်ခုပါ။ မက်သဒ်တစ်ခု မလုပ်ဆောင်မီ ကြိုတင်ရှိနေရမဲ့ အခြေအနေကို  ပရီကွန်ဒီးရှင်းလို့ ခေါ်ပြီး လုပ်ဆောင်ပြီး ရှိရမဲ့ အခြေအနေကို ပို့စ်ကွန်ဒီးရှင်းလို့ ခေါ်ပါတယ်။ သတ်မှတ်ထားတဲ့ ပရီကွန်ဒီရှင်နဲ့ ကိုက်ညီမှသာ မက်သဒ်တစ်ခုဟာ သူလုပ်ဆောင်ပေးရမဲ့ ကိစ္စကို မှန်ကန်အောင် ဆောင်ရွက်ပေးနိုင်မှာပါ။ မက်သဒ် အသုံးပြုတဲ့အခါမှာရော တည်ဆောက်တဲ့အခါမှာပါ ပရီကွန်ဒီးရှင်း ပို့စ်ကွန်ဒီးရှင်းတွေအပေါ် အခြေခံပြီး တိတိကျကျစဉ်းစားဖို့ ပဓာနကျပါတယ်။
+
+ပုံ \fRefNo{\ref{fig:to_the_top}} (\fRefNo{\subref{fig:to_the_top_pre}}) မှ  (\fRefNo{\subref{fig:to_the_top_post}}) အနေအထားသို့  ကားရဲလ်က နံရံထိပ်အရောက် တက်သွားရပါမယ်။  တိုင်အကွာအဝေး၊ အမြင့် အမျိုးမျိုးနဲ့ အလားတူ ကမ္ဘာတွေမှာလည်း အလုပ်လုပ်ရပါမယ်။ (နံရံကို တိုင်ဟု ယူဆပါ)။
+%
+\begin{figure}[htb!]
+    \hfuzz=100pt
+    \newcommand{\figpctw}{0.52}
+    \newcommand{\figscale}{0.165}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch03/to_the_top/to_the_top_pre.jpg}
+        \caption{မတိုင်မီ အခြေအနေ}   
+        \label{fig:to_the_top_pre}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch03/to_the_top/to_the_top_post.jpg}
+        \caption{ပြီးနောက် အခြေအနေ} 
+        \label{fig:to_the_top_post}   
+    \end{subfigure}
+    \caption{တိုင်ထိပ်သို့}
+    \label{fig:to_the_top}
+\end{figure}
+%
+တိုင်အောက်ခြေကိုသွားတာနဲ့ တိုင်ထိပ်တက်တာ အလုပ်နှစ်ခု ပါဝင်တယ်လို့ မြင်နိုင်တယ်။ ဒီအတွက် မက်သဒ်နှစ်ခု သတ်မှတ်ပေးပါမယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void goToThePole() {
+    while (frontIsClear()) {
+        move();
+    }
+}
+\end{minted}
+%
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void moveUpThePole() {
+    while (rightIsBlocked()) {
+        move();
+    }
+}
+\end{minted}
+%
+ဒီနှစ်ခုကို အခြေခံပြီး \fCode{goToTheTop} ကို သတ်မှတ်မယ်ဆိုလျှင်
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void goToTheTop() {
+    goToThePole();
+    turnLeft();
+    moveUpThePole();
+    turnRight();
+}
+\end{minted}
+%
+\fCode{goToThePole} အပြီးမှာ ကားရဲလ်ဟာ တိုင်ခြေမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမှာပါ။ \fCode{moveUpThePole} က တိုင်ခြေမှာ ကားရဲလ် အပေါ်ဘက်ကို မျက်နှာမူတဲ့ အနေအထားကနေ စရပါမယ်။ \fCode{goToThePole} ပြီးရင် \fCode{moveUpThePole} အတွက် အသင့်အနေအထားဖြစ်အောင် \fCode{turnLeft} လုပ်ပေးရပါမယ်။
+
+မက်သဒ်တစ်ခု စတင်မလုပ်ဆောင်မီ ကြိုတင်ဖြစ်နေသင့်တဲ့ အခြေအနေကို ပရီကွန်ဒီးရှင်းလို့ ပြောခဲ့ပါတယ်။ မက်သဒ် သတ်မှတ်တဲ့အခါ ပရီကွန်ဒီးရှင်းကို တိတိကျကျ စဉ်းစားဖို့လိုပါတယ်။ မက်သဒ်အသုံးပြုတဲ့အခါမှာလည်း သတ်မှတ်ထားတဲ့ ပရီကွန်ဒီးရှင်း အတိုင်းကိုက်ညီဖို့ လိုတယ်။ \fCode{moveUpThePole} ပရီကွန်ဒီးရှင်းဟာ တိုင်ခြေမှာ ကားရဲလ် အပေါ်ဘက်ကို မျက်နှာမူတဲ့ အနေအထား ဖြစ်ပါတယ်။ ပုံ \fRefNo{\ref{fig:mutp_pre_and_post}} (\fRefNo{\subref{fig:mutp_pre1}}) ကို ကြည့်ပါ။ အကယ်၍ အဲဒီအတိုင်းမဟုတ်ရင် မက်သဒ်ကလည်း မှန်ကန်ကောင် လုပ်ဆောင်ပေးနိုင်ဖို့ မသေချာနိုင်ပါဘူး။
+
+မက်သဒ်တစ်ခု လုပ်ဆောင်အပြီးမှာ ရှိနေရမဲ့ အခြေအနေကို ပို့စ်ကွန်ဒီးရှင်းလို့ ဖော်ပြခဲ့တယ်။ မက်သဒ်တစ်ခုဟာ ပရီကွန်ဒီးရှင်းနဲ့ ကိုက်ညီတဲ့အနေအထားကနေ စတင်ရင် ပို့စ်ကွန်ဒီးရှင်းနဲ့ ကိုက်ညီအောင်လုပ်ဆောင်ပေးပြီး ပြီးဆုံးသင့်ပါတယ်။ ပုံ \fRefNo{\ref{fig:mutp_pre_and_post}} (\fRefNo{\subref{fig:mutp_pre1}}) မှာ \fCode{moveUpThePole} ပို့စ်ကွန်ဒီရှင်ကို တွေ့နိုင်ပါတယ်။
+%
+\begin{figure}[htb!]
+    \hfuzz=100pt
+    \newcommand{\figpctw}{0.52}
+    \newcommand{\figscale}{0.165}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch03/to_the_top/move_up_the_pole_pre1.jpg}
+        \caption{}   
+        \label{fig:mutp_pre1}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch03/to_the_top/move_up_the_pole_post1.jpg}
+        \caption{} 
+        \label{fig:mutp_post}   
+    \end{subfigure}
+    \caption{\fCptCodeBf{moveUpThePole} ပရီကွန်ဒီးရှင်းနှင့် ပို့စ်ကွန်ဒီးရှင်း}
+    \label{fig:mutp_pre_and_post}
+\end{figure}
+%
+
+မက်သဒ်တစ်ခုအတွက် ပရီကွန်ဒီးရှင်း ပို့စ်ကွန်ဒီးရှင်းကို သင့်တော်သလို သတ်မှတ်နိုင်ပါတယ်။ ပုံ (\fRefNo{\ref{fig:mutp_pre_and_post_v2}}) တွင် \fCode{moveUpThePole} အတွက် အခြား ဖြစ်နိုင်တဲ့ ပရီကွန်ဒီးရှင်းနှင့် ပို့စ်ကွန်ဒီးရှင်းတို့ကို  ကြည့်ပါ။
+%
+\begin{figure}[tbh!]
+    \hfuzz=100pt
+    \newcommand{\figpctw}{0.52}
+    \newcommand{\figscale}{0.165}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch03/to_the_top/move_up_the_pole_pre_v2.jpg}
+        \caption{}   
+        \label{fig:mutp_pre_v2}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \includegraphics[scale=\figscale]{images/ch03/to_the_top/move_up_the_pole_post_v2.jpg}
+        \caption{} 
+        \label{fig:mutp_post_v2}   
+    \end{subfigure}
+    \caption{\fCptCodeBf{moveUpThePole} အတွက် အခြားရွေးချယ်နိုင်တဲ့}
+    \label{fig:mutp_pre_and_post_v2}
+\end{figure}
+%
+အဲဒီပရီ နဲ့ ပို့စ် ကွန်ဒီရှင်တွေအတွက်ဆိုရင် \fCode{moveUpThePole} ကို အခုလို သတ်မှတ်ပေးရမှာပါ။ 
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void moveUpThePole() {
+    turnLeft();
+    while (rightIsBlocked()) {
+        move();
+    }
+    turnRight();
+}
+\end{minted}
+%
+\fCode{goToTheTop} ကိုလည်း အခုလို အလိုက်သင့်ပြောင်း သတ်မှတ်ပေးရပါမယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void goToTheTop() {
+    goToThePole();
+    moveUpThePole();
+}
+\end{minted}
+%
+
+\section{မက်သဒ်များဖြင့် abstraction များ တည်ဆောက်ခြင်း}
+အခန်း (\fRefNo{\ref{ch:ch02}}) စာမျက်နှာ (\fRefNo{\pageref{mnt:repair_street}}) မှ \fCode{RepairStreet} ပရိုဂရမ်မှာ ကွန်နာတစ်ခုဟာ ဘိပါလည်းမရှိ၊ အောက်ဘက်ကပ်လျက် နံရံလည်းမရှိရင်  ဘိပါတစ်ခု ချထားပေးရပါတယ်။ ဒီကိစ္စ ဆောင်ရွက်ပေးဖို့အတွက် မက်သဒ်တစ်ခု သတ်မှတ်နိုင်ပါတယ်။ 
+%
+\begin{figure}[htb!]
+    {\includegraphics[width=0.5\linewidth]{images/ch02/st_repair/init.jpg}}
+    \caption{}
+    \label{fig:}
+\end{figure}
+%
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void repairCorner() {
+    if (rightIsClear()) {
+        if (noBeepersPresent()) {
+            putBeeper();
+        }
+    }
+}
+\end{minted}
+%
+အခြေအနေနှစ်ခုစလုံး မှန်တော့မှ ဘိပါချပေးရမှာ ဖြစ်တဲ့အတွက် \fCode{if} နှစ်ခုကို \fEn{nesting} လုပ်ပြီး ရေးထားတာဟာ နားလည်ရ အတန်အသင့် ခက်ခဲနိုင်ပါတယ်။  ဒါပေမဲ့ \fCode{repairCorner} ကို အသုံးပြုတဲ့အခါ ဒီလိုရေးထားတာတွေကို နားလည်ဖို့ မလိုပါဘူး။ ဘိပါလည်းမရှိ၊ အောက်ဘက် ကပ်လျက် နံရံလည်းမရှိတဲ့ ကွန်နာမှာ ဘိပါချချင်ရင် \fCode{repairCorner} နဲ့ လုပ်လို့ရတယ်ဆိုတာ သိထားရင် အသုံးပြုလို့ရပါတယ်။
+
+မက်သဒ် သတ်မှတ်တဲ့အခါ ဆောင်ရွက်ပေးစေချင်တဲ့ ကိစ္စကို ‘ဘယ်လို လုပ်ရမှာလဲ’ အသေးစိတ် စဉ်းစား ရေးရတာဖြစ်ပေမဲ့ အသုံးပြုတဲ့အခါမှာတော့ ဒီလိုအသေးစိတ်တွေကို ထပ်ပြီး စဉ်းစားနေစရာမလိုတော့ပါဘူး။ မက်သဒ် ‘ဘာလုပ်ပေးတာလဲ’ သိဖို့ပဲ အရေးကြီးတယ်။ ‘ဘယ်လို’ တည်ဆောက်ထားလဲ သိစရာမလိုဘဲ ‘ဘာ’ လုပ်ပေးလဲ သိရုံနဲ့ အသုံးပြုလို့ရစေတာကို \fEn{abstraction} လုပ်တယ်လို့ခေါ်ပါတယ်။ မက်သဒ်တွေနဲ့ \fEn{abstraction} တွေ တည်ဆောက်နိုင်ပါတယ်။
+
+
+\fEn{Abstraction} လုပ်ထားလိုက်ခြင်းအားဖြင့် ရှုပ်ရှုပ်ထွေးထွေးတွေ ထပ်ခါထပ်ခါ ခေါင်းရှုပ်ခံ စဉ်းစားနေဖို့ မလိုအပ်တော့ဘဲ ကိစ္စတစ်ခုကို အလွယ်တကူ လုပ်ဆောင်လို့ရသွားတယ်။ ကုဒ်တွေဖတ်ရတာလည်း ပိုရှင်းပြီး နားလည်ရ လွယ်ကူသွားတယ်။ ဒါကြောင့် ပရိုဂရမ်တွေ တည်ဆောက်ရာမှာ \fEn{abstraction} လုပ်နိုင်တာဟာ အရေးပါပါတယ်။ အရေးကြီးဆုံးပဲလို့ ဆိုရင်တောင် မမှားဘူး။  ရှိပြီးသား \fEn{abstraction} တွေကို အခြေခံပြီး ပိုပြီးရှုပ်ထွေးခက်ခဲတဲ့ ကိစ္စတွေအတွက် \fEn{abstraction} တွေ တစ်လွှာပြီးတစ်လွှာ တည်ဆောက်ယူနိုင်ပါတယ်။ 
+
+\fCode{repairCorner} ဟာ အနိမ့်ဆုံးအလွှာ \fEn{abstraction} ဖြစ်တယ် ဆိုပါစို့။ ဒါကို အခြေခံပြီး တစ်ဆင့်ပိုမြင့်တဲ့ အလွှာအတွက် \fEn{abstraction} တွေကို တည်ဆောက်ယူနိုင်ပါတယ်။ ဥပမာ
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void repairStreet() {
+    while (frontIsClear()) {
+        repairCorner();
+        move();
+    }
+    repairCorner();
+}
+\end{minted}
+%
+ဒီအလွှာထက် တစ်ဆင့်ပိုမြင့်တဲ့ အလွာက \fEn{abstraction} တွေကို ဆက်လက် တည်ဆောက်ယူနိုင်ပါတယ်။ ဥပမာ \fCode{repairWorld} ကို တည်ဆောက်ရာမှာ \fCode{repairStreet} ကို အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုနိုင်ပါတယ်။ ဒီလို \fEn{abstraction} အလွှာတွေနဲ့ ပရိုဂရမ်တည်းဆောက်တဲ့ နည်းတွေကို ဆက်လက်လေ့လာကြရပါမယ်။
+
+\section{Bottom-up programming style}
+
+ကြီးကျယ်ခမ်းနားတဲ့ အဆောက်အအုံကြီးတွေ၊ လျှို့ဝှက်ဆန်းကြယ်တဲ့ သဘာဝဖြစ်စဉ်တွေ၊ အံ့ဖွယ်သိပ္ပံနှင့် နည်းပညာ ဆန်းသစ်တီထွင်မှုတွေ စတဲ့အရာတွေအားလုံးဟာ ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေနဲ့ ဖွဲ့စည်းထားတာပါပဲ။ ဒါကြောင့် အရွယ်အစား ကြီးမား ရှုပ်ထွေးတဲ့ ပရိုဂရမ်တွေကိုလည်း ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေနဲ့ ဖွဲ့စည်းတည်ဆောက်သင့်တယ်လို့ ယူဆရမှာပါ။ ဒါဟာ ကျိုးကြောင်းဆီလျော်တဲ့ ယူဆချက်မို့လို့  မှားစရာအကြောင်း သိပ်မရှိပါဘူး။ 
+
+ခက်ခဲရှုပ်ထွေးတဲ့ ကိစ္စတစ်ခုကို ဖြေရှင်းတဲ့အခါ အပိုင်းတွေခွဲပြီး တစ်ပိုင်းချင်းကို သီးခြားဖြေရှင်းလေ့ရှိတယ်။ အပိုင်းတွေခွဲလိုက်ခြင်းအားဖြင့် တစ်ပိုင်းစီဟာ မူလဖြေရှင်းရမဲ့ ကိစ္စ‌လောက် မခက်ခဲတော့ပါဘူး။ အရွယ်အစားအားဖြင့်လည်း နဂိုထက် ငယ်သွားမယ်။ အပိုင်း တစ်ပိုင်းချင်းစီကို ဖြေရှင်းတဲ့အခါမှာလည်း အလားတူပဲ လုပ်ဆောင်နိုင်တယ်။ အပိုင်းတစ်ပိုင်းကို သူ့ထက်သေးငယ်တဲ့ အပိုင်းတွေအဖြစ် ထပ်မံခွဲထုတ်နိုင်ပါတယ်။ ဒီတိုင်း တစ်ဆင့်ပြီးတစ်ဆင့် လုပ်သွားမယ်ဆိုရင် နောက်ဆုံးမှာ အလွယ်တကူဖြေရှင်းလို့ရတဲ့ အစိတ်အပိုင်းလေးတွေ ဖြစ်သွားရမှာပါပဲ။ \fEn{Bottom-up Programming} ဆိုတာကတော့ ပရိုဂရမ်ရေးပြီး ကိစ္စတစ်ခုကို ဖြေရှင်းရာမှာ ရိုးရှင်းသထက်ရိုးရှင်း၊ သေးငယ်သထက်သေးငယ်တဲ့ အပိုင်းလေးတွေဖြစ်လာအောင် အဆင့်ဆင့်ပိုင်းခွဲပြီး အောက်ခြေအရိုးရှင်းဆုံးအလွှာကနေ အပေါ်ကိုတစ်ဆင့်ချင်းတက် ဖြေရှင်းတဲ့နည်း ဖြစ်တယ်။ လေ့လာကြည့်ကြရအောင်။
+
+ပုံ (\fRefNo{\ref{fig:hurdle_jumping_init}}) ကမ္ဘာမှာ ကားရဲလ် တန်းကျော်ပြေးပြိုင်ရပါမယ်။ ထောင်လိုက်နံရံတွေကို တန်းတွေလို့ယူဆပါ။ တန်းတွေဟာ အနိမ့်အမြင့် အမျိုးမျိုးဖြစ်နိုင်ပါတယ်။ ကမ္ဘာရဲ့ အပေါ်ဘက် နံရံကို ထိတဲ့အထိတော့ မြင့်လို့မရပါဘူး။ ဒါမှ တန်းကိုကျော်ပြီး အခြားဘက်ကို သွားလို့ရမှာပါ။ \((1, 1)\) ကွန်နာကနေ တာစထွက်မှာဖြစ်ပြီး \((14, 1)\) မှာ ပန်းဝင်ရမှာပါ။
+%
+\begin{figure}[htb!]
+    \includegraphics[width=4.5in]{images/ch03/hurdle_jumping/init_w1.jpg}
+    \caption{}
+    \label{fig:hurdle_jumping_init}
+\end{figure}
+%
+
+တန်းကျော်ပြေးတဲ့ ကိစ္စမှာ ပါဝင်တဲ့ အပိုင်းတစ်ခုက တန်းတစ်ခုကျော်တာ။ တန်းတစ်ခု ကျော်တာကို ထပ်ခွဲကြည့်ရင် အပေါ်တက်တာနဲ့ အောက်ဆင်းတာ နှစ်ပိုင်းရှိမယ်။ အခုလို နဂိုမူလကိစ္စတစ်ခုကနေ တစ်ဆင့်ထက်တစ်ဆင့် ပိုသေးငယ်တဲ့ အပိုင်းလေးတွေဖြစ်လာအောင် ခွဲထုတ်တာကို \fEn{Problem Decomposition} လုပ်တယ်လို ခေါ်ပါတယ်။ 
+
+\fEn{Bottom-up Programming} နည်းနဲ့ ပရိုဂရမ်ရေးတဲ့အခါ အရင်ဦးဆုံး \fEn{Problem Decomposition} လုပ်ရတယ်။ ပြီးရင် အောက်ဆုံးအလွှာမှ အသေးဆုံးအပိုင်းလေးတွေကနေ စတင်ဖြေရှင်းတယ်။ ပြီးတဲ့အခါ အဲဒီ အသေးဆုံး အပိုင်းလေးတွေကို အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုပြီး  အောက်ဆုံးအလွှာထက် တစ်ဆင့်မြင့်တဲ့ အပေါ်အလွှာက အပိုင်းတွေကို ဆက်လက်ဖြေရှင်းတယ်။ ဒီအလွှာက အပိုင်းတွေကို  အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုပြီး နောက်ထပ်တစ်ဆင့် ပိုမြင့်တဲ့အလွှာက အပိုင်းတွေကို ဆက်လက်ဖြေရှင်းမှာဖြစ်တယ်။ ဒီလိုမျိုး အောက်ကနေ အပေါ်ကို တစ်လွှာပြီးတစ်လွှာ တက်သွားပြီး ဖြေရှင်းတဲ့ နည်းစနစ်ဟာ \fEn{Bottom-up Programming} ပါပဲ။ 
+
+တန်းကျော်ပြေးပွဲမှာ \fEn{Problem Decomposition} လုပ်ထားတာကို တစ်လွှာချင်း ခွဲကြည့်မယ်ဆိုရင် အခုလိုတွေ့ရမှာ ဖြစ်ပါတယ်။
+%
+\begin{itemize}
+  \item တန်းကျော်ပြေးပြိုင်ပွဲဝင်ခြင်း
+  \begin{itemize}
+    \item တန်းတစ်ခုကျော်ခြင်း
+    \begin{itemize}
+      \item အပေါ်တက်ခြင်း
+      \item အောက်ဆင်းခြင်း
+    \end{itemize}
+  \end{itemize} 
+\end{itemize}
+%
+အောက်ဆုံးအလွှာက အပေါ်တက်တာနဲ့ အောက်ဆင်းတာကို စဖြေရှင်းပါမယ်။ ကားရဲလ်ပရိုဂရမ်တွေမှာ အပိုင်းတစ်ခုချင်းကို ဆောင်ရွက်ပေးဖို့ မက်သဒ်တစ်ခုသတ်မှတ်ရပါမယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{တန်းဘယ်ဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{တန်းထိပ် ဘယ်ဘက်ကွန်နာမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+ */
+void ascend() {
+    turnLeft();
+    while (rightIsBlocked()) {
+        move();
+    }
+    turnRight();
+}
+
+/*
+ * ß\fEnEmp{Precondition:} \fMM{တန်းထိပ် ညာဘက်ကွန်နာမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{တန်းညာဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+ */
+void descend() {
+    turnRight();
+    while (frontIsClear()) {
+        move();
+    }
+    turnLeft();
+
+}
+\end{minted}
+%
+
+ဒီမက်သဒ်နှစ်ခုကို အသုံးပြုပြီး အပေါ်အလွှာက တစ်ဆင့်ပိုမြင့်တဲ့ တန်းတစ်ခုကျော်တာကို ဆက်လက်ဖြေရှင်းရပါမယ်။ \fCode{ascend} နဲ့ \fCode{descend} ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေအရ \fCode{move} လုပ်ပေးဖို့လိုပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{တန်းဘယ်ဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{တန်းညာဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+ */
+void jumpOverHurdle(){
+    ascend();
+    move(); 
+    descend();
+}
+\end{minted}
+%
+\fCode{}
+%
+
+ဒါကို အသုံးပြုပြီး နောက်တစ်ဆင့်ကို ဆက်လက်တည်ဆောက်ရပါမယ်။ ရှေ့မှာရှင်းနေလျှင် ရှေ့တိုးမယ်၊ မရှင်းလျှင် တန်းကိုကျော်ရမယ်။ ပန်းဝင်ဖို့အတွက်ဆိုလျှင် ဒီအလုပ်ကို ဆယ့်သုံးခါလုပ်ပေးရုံပါပဲ။
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void competeHurdlingRace() {
+    for (int i = 0; i < 13; i++) {
+        if (frontIsClear()) {
+            move();
+        } else {
+            jumpOverHurdle();
+        }
+    }
+}
+\end{minted}
+%
+
+ပရိုဂရမ် အစအဆုံးကို လေ့လာကြည့်ပါ။ မက်သဒ်တစ်ခုချင်းစီရဲ့ ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေကို တိတိကျကျ မြင်အောင် ဂရုစိုက်ကြည့်ဖို့လည်း အရေးကြီးပါတယ်။ 
+%
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+import stanford.karel.Karel;
+
+public class HurdleJumping extends Karel {
+
+    public void run() {
+        competeHurdlingRace();
+    }
+
+    void competeHurdlingRace() {
+        for (int i = 0; i < 13; i++) {
+            if (frontIsClear()) {
+                move();
+            } else {
+                jumpOverHurdle();
+            }
+        }
+    }
+    /*
+     * ß\fEnEmp{Precondition:} \fMM{တန်းဘယ်ဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+     * ß\fEnEmp{Postcondition:} \fMM{တန်းညာဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+     */
+    void jumpOverHurdle() {
+        ascend();
+        move();
+        descend();
+    }
+
+    /*
+     * ß\fEnEmp{Precondition:} \fMM{တန်းဘယ်ဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+     * ß\fEnEmp{Postcondition:} \fMM{တန်းထိပ် ဘယ်ဘက်ကွန်နာမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+     */
+    void ascend() {
+        turnLeft();
+        while (rightIsBlocked()) {
+            move();
+        }
+        turnRight();
+    }
+
+    /*
+     * ß\fEnEmp{Precondition:} \fMM{တန်းထိပ် ညာဘက်ကွန်နာမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+     * ß\fEnEmp{Postcondition:} \fMM{တန်းညာဘက် ခြေရင်းမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+     */
+    void descend() {
+        turnRight();
+        while (frontIsClear()) {
+            move();
+        }
+        turnLeft();
+    }
+
+    void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
+\end{minted}
+%
+
+\subsection*{အမှိုက်လှည်းပေးတဲ့ ကားရဲလ်}
+အခုတစ်ခါမှာ ကားရဲလ်က အမှိုက်တွေရှင်းပေးရပါမယ်။ ပုံ (\fRefNo{\ref{fig:stw}}) မှ နမူနာ ကမ္ဘာကို ကြည့်ပါ။ ဘိပါတွေကို အမှိုက်လို့ ယူဆပါ။ ကြုံရာကျပန်း \fEn{(random)} ကွန်နာတွေမှာ ရှိနေမယ်။ ကမ္ဘာအရွယ်အစား အမျိုးမျိုးအတွက် အမှိုက်ရှင်းပေးတဲ့ ပရိုဂရမ်တစ်ခု ရေးပေးရမှာ။
+\begin{figure}[htb!]
+    {\includegraphics[width=.5\linewidth]{images/ch03/SweepTheWorld/init_w1.jpg}}
+\caption{}
+\label{fig:stw}
+\end{figure}
+
+ဒီကိစ္စကို ဖြေရှင်းလို့ရတဲ့နည်းက တစ်ခုတည်းရှိတာ မဟုတ်ပါဘူး။ ဖြစ်နိုင်တဲ့ နည်းတွေထဲက တစ်ခုကို ပုံ (\fRefNo{\ref{fig:stw_alg1}}) မှာ တွေ့ရပါမယ်။ (၁) လမ်းကို အရင်ဦးဆုံး ရှင်းပါတယ်။ ပြီးရင် အပေါ်ဘက်ကို မျက်နှာမူ၊ ရှင်းနေသေးတယ်ဆိုရင် ဒုတိယလမ်းကို တက်မယ်။ ဒုတိယလမ်းကို ဆက်ရှင်းပြီးတော့လည်း အပေါ်ကိုပဲ မျက်နှာမူထားပါမယ်။ ရှင်းနေသေးရင် တတိယလမ်းကို ကူးသွားမယ်။ ဒီအတိုင်း တစ်လမ်းပြီးတစ်လမ်း ရှင်းသွားမှာဖြစ်တယ်။ လမ်းတစ်လမ်းရှင်းပြီးလို့ အပေါ်မျက်နှာမူတဲ့အခါ ပိတ်နေပြီဆိုရင် နောက်ဆုံးလမ်း ရှင်းပြီးသွားတာ ဖြစ်တယ်။ ပုံ (\fRefNo{\ref{fig:stw_alg1}}) မှာ ဒုတိယလမ်းအပြီး အပေါ်မျက်နှာမူထားတဲ့ အနေအထားထိ တစ်ပုံချင်းပြထားတယ်။ ပုံ (\fRefNo{\ref{fig:stw_alg1_last_st}}) မှာ နောက်ဆုံးလမ်းမရှင်းမီ၊ ရှင်းပြီး၊ အပေါ်မျက်နှာမူ၍ နံရံပိတ်နေတဲ့ အခြေအနေတစ်ခုစီကို ပြထားပါတယ်။ အခုနည်းကို အခြေခံပြီး \fEn{Problem Decomposition} လုပ်ကြည့်တဲ့အခါ အောက်ပါအတိုင်း တစ်လွှာချင်းစီမှာ ပါတဲ့ အပိုင်းတွေကို တွေ့နိုင်ပါတယ်။
+
+%
+\begin{figure}[htb!]
+    \hfuzz=100pt
+    \newcommand{\figpctw}{0.52}
+    \newcommand{\figscale}{0.165}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        %\adjincludegraphics[width=2.5in,trim={0 0 0 {.55\height}}, clip, left]{ch03/SweepTheStreets/init_w1.jpg}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp1a.jpg}
+        \caption{}
+        \label{fig:xyz1}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp1b.jpg}
+        \caption{}
+        \label{fig:xyz2}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp2.jpg}
+        \caption{}
+        \label{fig:xyz3}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp3a.jpg}
+        \caption{}
+        \label{fig:xyz4}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp3b.jpg}
+        \caption{}
+        \label{fig:xyz5}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp4.jpg}
+        \caption{}
+        \label{fig:xyz6}
+    \end{subfigure}
+    \caption{}
+    \label{fig:stw_alg1}
+\end{figure}
+%
+
+%
+\begin{figure}[htb!]
+    %\adjincludegraphics[width=2.5in,trim={0 0 0 {.55\height}}, clip, left]{images/}
+    \hfuzz=100pt
+    \newcommand{\figpctw}{0.52}
+    \newcommand{\figscale}{0.165}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp6a.jpg}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp6b.jpg}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}[t]{{\figpctw}\textwidth}
+        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp7.jpg}
+        \caption{}
+    \end{subfigure}
+    \caption{}
+    \label{fig:stw_alg1_last_st}
+\end{figure}
+%
+
+%
+\begin{itemize}
+    \item ကမ္ဘာတစ်ခုလုံး အမှိုက်တွေရှင်း \fEn{(Clean the World)}
+    %
+    \begin{itemize}
+        \item လမ်းတစ်လမ်း အမှိုက်ရှင်း  \fEn{(Clean Street)}     
+        %
+        \begin{itemize}
+            \item ကွန်နာတစ်ခု အမှိုက်ရှင်း \fEn{(Clean Corner)}
+        \end{itemize}
+        %
+        \item မြောက်ဘက်လှည့် \fEn{(Turn North)}
+        \item နောက်တစ်လမ်းအတွက် အသင့်ပြင် \fEn{(Get Ready for Next Street)}
+    \end{itemize}
+    %
+\end{itemize}
+%
+
+\fEn{Bottom-up Design} အရ အောက်ဆုံးအလွှာ ကွန်နာတစ်ခု အမှိုက်ရှင်းတဲ့ ကိစ္စအတွက် မက်သဒ်ကို ပထမဆုံး သတ်မှတ်ရပါမယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void sweepCorner() {
+    if (beepersPresent()) {
+        pickBeeper();
+    }
+}
+\end{minted}
+%
+လမ်းတစ်လမ်းရှင်းတာအတွက်
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{လမ်းရဲ့ ပထမဆုံး ကွန်နာမှာ အရှေ့ဘက် မျက်နှာမူနေမယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{လမ်းပေါ်အမှိုက်အားလုံးရှင်းပြီး နောက်ဆုံး ကွန်နာမှာ အရှေ့ဘက် မျက်နှာမူနေမယ်}ß
+ */
+void sweepStreet() {
+    while (frontIsClear()) {
+        sweepCorner();
+        move();
+    }
+    sweepCorner();
+} 
+\end{minted}
+%
+မြောက်ဘက်လှည့်ဖို့ အတွက်
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{မည်သည့် အရပ်ကိုမဆို မျက်နှာမူနေနိုင်တယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{မြောက်ဘက် မျက်နှာမူနေရမယ်}ß
+ */
+void turnNorth() {
+    while (notFacingNorth()) {
+        turnLeft();
+    }
+}
+\end{minted}
+%
+နောက်တစ်လမ်းတက် အသင့်ပြင်တာကို
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{မည်သည့် အရပ်ကိုမဆို မျက်နှာမူနေနိုင်တယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{မြောက်ဘက် မျက်နှာမူနေရမယ်}ß
+ */
+void getReadyForNextStreet() {
+    if (rightIsBlocked()) {
+        move();
+        turnLeft();
+    } else {
+        move();
+        turnRight();
+    }
+}
+\end{minted}
+%
+အပေါ်ဆုံးအလွှာ တစ်ကမ္ဘာလုံး ရှင်းတာကို အခုလို ဖြေရှင်းနိုင်ပါတယ်။   
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{ပထမဆုံးလမ်း ပထမဆုံးကွန်နာမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{လမ်းအားလုံးရှင်းပြီးဖြစ်ရမယ်။ မြောက်ဘက် မျက်နှာမူနေမယ်။}ß
+ * ß\fMM{(နောက်ဆုံးလမ်း စုံဂဏန်းဖြစ်ရင် လမ်းအစ၊ မဂဏန်း ဖြစ်ရင် လမ်းအဆုံး မှာရှိမယ်)}ß
+ */
+void sweepTheWorld() {
+    sweepStreet();
+    turnNorth();
+    while (frontIsClear()) {
+        getReadyForNextStreet();
+        sweepStreet();
+        turnNorth();
+    }
+}
+\end{minted}
+%
+
+ပရိုဂရမ်တစ်ခုလုံး အပြည့်အစုံကို ဆက်စပ်ကြည့်လို့ရအောင် အောက်မှာ ဖော်ပြပေးထားပါတယ်။ နားလည်အောင် ဂရုစိုက် လေ့လာပါ။ ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေကိုတော့ ရှေ့မှာ ဖော်ပြထားပြီးဖြစ်တာမို့လို့ ချန်ထားပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+import stanford.karel.Karel;
+
+public class SweepTheWorld extends Karel {
+
+    public void run() {
+        sweepTheWorld();
+    }
+
+    void sweepTheWorld() {
+        sweepStreet();
+        turnNorth();
+        while (frontIsClear()) {
+            getReadyForNextStreet();
+            sweepStreet();
+            turnNorth();
+        }
+    }
+
+    void sweepCorner() {
+        if (beepersPresent()) {
+            pickBeeper();
+        }
+    }
+
+    void sweepStreet() {
+        while (frontIsClear()) {
+            sweepCorner();
+            move();
+        }
+        sweepCorner();
+    }
+
+    void turnNorth() {
+        while (notFacingNorth()) {
+            turnLeft();
+        }
+    }
+
+    void getReadyForNextStreet() {
+        if (rightIsBlocked()) {
+            move();
+            turnLeft();
+        } else {
+            move();
+            turnRight();
+        }
+    }
+
+    void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+}
+\end{minted}
+%
+
+\section{Top-down programming style}
+\fEn{Top-down programming} ဟာ အပေါ်ဆုံးအလွှာမှစ၍ တည်ဆောက်တဲ့နည်း ဖြစ်ပါတယ်။ \fEn{Bottom-up} နဲ့ ပြောင်းပြန်ပါ။ \fEn{Top-down} က အထက်မှအောက် တစ်လွှာပြီးတစ်လွှာ အဆင့်ဆင့် တည်ဆောက်သွားတာ။  နည်းလမ်းနှစ်ခုလုံးမှာ \fEn{Problem Decomposition} လုပ်ရမှာဖြစ်ပေမဲ့ လုပ်ငန်းစဉ်မှာ ကွာခြားချက် တချို့ရှိတယ်။ \fEn{Top-down} နည်းအတွက် \fEn{Problem Decomposition} လုပ်တဲ့အခါ  \fEn{bottom-up} မှာလို အသေးဆုံး အစိတ်အပိုင်းတွေပါဝင်တဲ့ အောက်ဆုံးအလွှာထိ တခါတည်း  ခွဲခြမ်းစိတ်ဖြာစရာမလိုဘူး။ အပေါ်တစ်လွှာတည်ဆောက်တဲ့အခါ သူ့အောက်တစ်ဆင့်အလွှာထိပဲ \fEn{decompose} လုပ်တယ်။ အောက်အလွှာတွေအတွက် ဘယ်လို လုပ်မလဲ မစဉ်းစားသေးဘူး။ ဥပမာ အမှိုက်သိမ်း ကားရဲလ်ပရိုဂရမ်ကို အပေါ်ဆုံးအဆင့်ကို \fEn{decompose} လုပ်ရင် အခုလိုဖြစ်မယ်။
+
+%
+\begin{itemize}
+    \item ကမ္ဘာတစ်ခုလုံး အမှိုက်တွေရှင်း \fEn{(Clean the World)}
+    %
+    \begin{itemize}
+        \item လမ်းတစ်လမ်း အမှိုက်ရှင်း  \fEn{(Clean Street)}     
+        \item မြောက်ဘက်လှည့် \fEn{(Turn North)}
+        \item နောက်တစ်လမ်းအတွက် အသင့်ပြင် \fEn{(Get Ready for Next Street)}
+    \end{itemize}
+    %
+\end{itemize}
+%
+နှစ်ဆင့်ထိပဲ ခွဲထားတာတွေ့ရမှာပါ။ \fEn{Bottom-up} မှာလို နောက်ထပ် အောက်တစ်ဆင့်ဖြစ်တဲ့ ‘ကွန်နာတစ်ခု အမှိုက်ရှင်း’ အထိ ဆက်မခွဲထားတာ သတိပြုပါ။ အပေါ်ဆုံး \fCode{sweepTheWorld} မက်သဒ်ကို အရင်ဆုံးသတ်မှတ်ရမယ်။ 
+
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+void sweepTheWorld() {
+    sweepStreet();
+    turnNorth();
+    while (frontIsClear()) {
+        getReadyForNextStreet();
+        sweepStreet();
+        turnNorth();
+    }
+}
+
+
+\end{minted}
+%
+ဒီနေရာမှာ အဓိကထူးခြားချက်က \fCode{sweepStreet}\fEn{,} \fCode{turnNorth}\fEn{,} \fCode{getReadyForNextStreet} တွေ ရှိထားပြီးဖြစ်တယ်လို့ ယူဆပြီး \fCode{sweepTheWorld} ကို သတ်မှတ်ရတာပါ။ ဒီမက်သဒ်တွေကို အမှန်တကယ် သတ်မှတ်ထားပြီးတာ မဟုတ်ပါဘူး။ ဘယ်လိုသတ်မှတ်ရမှာလဲ ကိုလည်း  မစဉ်းစားသေးပါဘူး။ ဒါပေမဲ့ လမ်းတစ်လမ်းရှင်းတာ၊ မြောက်ဘက်လှည့်တာ၊ နောက်တစ်လမ်းအတွက် အသင့်ပြင်ထားတာ စတာတွေကို ဒီမက်သဒ်တွေက လုပ်ဆောင်ပေးနိုင်တယ်လို့ ယူဆပြီး \fCode{sweepTheWorld} သတ်မှတ်ရတာပါ။ 
+
+အထက်ပါအတိုင်း သတ်မှတ်တဲ့အခါ မသတ်မှတ်ရသေးတဲ့ မက်သဒ်တွေကို သုံးထားတာမို့လို့ \fEn{IntelliJ} က အမှားတွေ ပြနေမှာပါ။ အဲဒီလိုမဖြစ်အောင် မက်သဒ်အခွံတွေကို အခုလို ရေးထားနိုင်ပါတယ်။ ဒါဆိုရင် အမှားတွေ မပြတော့ပါဘူး။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void sweepStreet() { }
+
+void turnNorth() { }
+
+void getReadyForNextStreet() { }
+\end{minted}
+%
+တကယ်မသတ်မှတ်ရသေးတဲ့ မက်သဒ်တွေကို ရှိထားပြီးသားလို့ မှတ်ယူပြီး အသုံးပြုတာဟာ \fEn{Top-down} နည်းရဲ့ အဓိကသော့ချက် ဆိုနိုင်တယ်။ အပေါ်အလွှာတည်ဆောက်တဲ့အခါ သူ့အောက်တစ်လွှာက မက်သဒ်တွေ အဆင်သင့် ရှိပြီးသားလို့ ယူဆထားရတာ။
+
+
+အမြင့်ဆုံးအလွှာပြီးတဲ့အခါ  အသင့်ရှိထားပြီး ယူဆထားတဲ့ သူ့အောက်အလွှာ မက်သဒ်တွေကို အမှန်တကယ် သတ်မှတ်ပေးရပါမယ်။ လိုအပ်သလို \fEn{decompose} လုပ်နိုင်ပါတယ်။ 
+%
+\begin{itemize}
+    \item လမ်းတစ်လမ်း အမှိုက်ရှင်း  \fEn{(Clean Street)} 
+    %
+    \begin{itemize}
+        \item ကွန်နာတစ်ခု အမှိုက်ရှင်း \fEn{(Clean Corner)} 
+    \end{itemize}
+    %    
+    \item မြောက်ဘက်လှည့် \fEn{(Turn North)}
+    \item နောက်တစ်လမ်းအတွက် အသင့်ပြင် \fEn{(Get Ready for Next Street)}
+\end{itemize}
+%  
+\fEn{Decompose} လုပ်တဲ့အခါ ရှေ့မှာပြောခဲ့သလို အောက်တစ်ဆင့်ထိပဲ လုပ်ပါတယ်။ အခုကိစ္စမှာ အလွှာသုံးခုပဲ ရှိမှာဖြစ်တဲ့အတွက် ‘ကွန်နာတစ်ခု အမှိုက်ရှင်း’ ဟာ အောက်ဆုံးအလွှာမှာပါဝင်ပြီး ဆက်ခွဲဖို့ မလိုတော့ဘူး။ အကယ်၍ ဆက်ခွဲရမယ်ဆိုရင်လည်း ဒီအဆင့်မှာ မခွဲသေးပါဘူး။ နောက်တစ်ဆင့်မှာမှ ခွဲရပါမယ်။ ဒီအဆင့်မှာ ဒီကိစ္စအတွက် အသေးစိတ်မစဉ်းစားသေးဘဲ အသင့်ရှိထားပြီးလိုပဲ ယူဆရမှာပါ။ (တစ်ခါထပ်ပြောရမယ်ဆိုရင် ဒီလိုယူဆတာဟာ \fEn{top-down} ရဲ့ အဓိက သော့ချက်ပါပဲ)။ 
+
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void sweepCorner() { }
+
+void sweepStreet() {
+    while (frontIsClear()) {
+        sweepCorner();
+        move();
+    }
+    sweepCorner();
+}
+\end{minted}
+% 
+ဒီသတ်မှတ်ချက်မှာ အောက်ဆုံးအလွှာက \fCode{sweepCorner} သတ်မှတ်ပြီး ဖြစ်တယ်လို့ ယူဆပြီး အသုံးပြုထားတာကို သတိပြုပါ။ အမှား မပြအောင် မက်သဒ်အခွံတော့ ရေးပေးထားတယ်။ မြောက်ဘက်လှည့်ဖို့အတွက်
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void turnNorth() {
+    while (notFacingNorth()) {
+        turnLeft();
+    }
+}
+\end{minted}
+%
+နောက်တစ်လမ်းအတွက် အဆင့်သင့်ပြင်ထားဖို့
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void getReadyForNextStreet() {
+    if (rightIsBlocked()) {
+        move();
+        turnLeft();
+    } else {
+        move();
+        turnRight();
+    }
+}
+
+void turnRight() { }
+\end{minted}
+%
+
+နောက်ဆုံးမှာ အောက်ဆုံးအလွှာမှ \fCode{sweepCorner} နဲ့ \fCode{turnRight} ကို သတ်မှတ်ပေးရုံပါပဲ။ အားလုံးပြီးသွားတဲ့အခါ ပရိုဂရမ်က \fEn{bottom-up} နည်းသုံး ရေးခဲ့တဲ့ \fCode{SweepTheWorld} နဲ့ တူတူပဲ ဖြစ်နေမှာပါ။ အဓိက ကွာခြားတာက ပရိုဂရမ်ရေးတဲ့ လုပ်ငန်းစဉ် \fEn{(process)} ပဲ။ 
+
+\fEn{Top-down} နည်းမှာ မက်သဒ်တစ်ခု သတ်မှတ်တဲ့အခါ အောက်အလွှာက မက်သဒ်တွေက ရှိထားပြီးဖြစ်တယ်လို့ ယူဆပြီး ရေးရတာဟာ စလေ့လာသူတွေအတွက် နားလည်ရခက်လေ့ရှိတယ်။ မသတ်မှတ်ရသေးတဲ့ မက်သဒ်တွေ  ‘ဘာလုပ်ပေးလဲ’ ဆိုတာကိုပဲ ပရီကွန်ဒီရှင်နဲ့ ပို့စ်ကွန်ဒီရှင်တွေကို အခြေခံပြီး အဓိကထား စဉ်းစားပါ။ ဒီအချက်ကို သဘောပေါက်အောင်  ဥပမာ အသစ်တစ်ခုနဲ့ ရှင်းပြပါမယ်။
+
+\subsection*{ဘိပါနှစ်ဆပွားခြင်း}
+အခုတစ်ခါ ကွန်နာတစ်ခုက ဘိပါတွေကို နှစ်ဆဖြစ်အောင် လုပ်ပေးရပါမယ်။ ကားရဲလ်က ကိန်းဂဏန်းတွေအကြောင်း နားမလည်သလို ရေတွက်တာလည်း မလုပ်တတ်ပါဘူး။ ဒါကြောင့် ဘိပါအရေအတွက် နှစ်ဆတိုးသွားဖို့ အခြားနည်းလမ်းရှာရပါမယ်။ 
+
+မူလနေရာမှ ဘိပါတစ်ခုကောက်ပြီးတိုင်း ရှေ့ကွန်နာမှာ နှစ်ခုပြန်ချထားမယ်။ နဂိုနေရာမှာ ဘိပါတွေကုန်သွားတဲ့အခါ ရှေ့ကွန်နာမှာ မူလအရေအတွက်ရဲ့ နှစ်ဆ ရှိနေမှာပါ။ တစ်ခုကောက်လိုက် ရှေ့ကွန်နာမှာ နှစ်ခုပြန်ချထားလိုက်လုပ်ရပါမယ်။ အားလုံးတစ်ခါတည်း ကောက်ပြီးမှ  ကားရဲလ်မှာ အရေအတွက်ကို မှတ်ထားနိုင်စွမ်း မရှိတဲ့အတွက် ပြဿနာရှိတယ်။
+
+နဂိုဘိပါတွေကို ရှေ့ကွန်နာမှာ နှစ်ဆဖြစ်အောင် လုပ်လို့ရတဲ့နည်းတော့ သိပြီ။ နဂိုနေရာမှာလည်း နှစ်ဆဖြစ်အောင် လုပ်လို့လည်းရမှာပါပဲ။ ဒါပေမဲ့ \fEn{top-down} နည်းအရ အဲဒီလောက်အသေးစိတ် စဉ်းစားစရာမလိုသေးဘူး။ လုပ်နိုင်ပြီးဖြစ်တယ်လို့ ယူဆရပါမယ်။ 
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+public void run() {
+    goToBeeperPile();
+    doubleBeepers();
+}
+
+void goToBeeperPile() { }
+
+void doubleBeepers() { }
+\end{minted}
+%
+\fCode{goToBeeperPile} က ဘိပါတွေရှိတဲ့နေရာကို သွားတာ (ဘယ်လိုသွားရမှာလဲ မစဉ်းစားသေးဘဲ သွားနိုင်တယ်လို့ပဲ ယူဆထားတယ်)။ 
+
+\fCode{goToBeeperPile} ကို ဘယ်လိုလုပ်ရမှာလဲ စဉ်းစားရမယ်။ လိုအပ်ရင် ထပ်မံခွဲစိတ်နိုင်ပါတယ်။ ဒါပေမဲ့ အတန်အသင့် ရိုးရှင်းတဲ့ ကိစ္စဖြစ်တဲ့အတွက် အခုလိုပဲ သတ်မှတ်မယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{(၁) လမ်း \((1, 1)\) ကွန်နာမှာ အရှေ့ဘက် မျက်နှာမူထားတယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{ဘိပါတွေရှိတဲ့ ကွန်နာမှာ အရှေ့ဘက်မျက်နှာမူနေမယ်}ß
+ */
+void goToBeeperPile() {
+    while (noBeepersPresent()) {
+        move();
+    }
+}
+\end{minted}
+%
+
+ဘိပါတွေကို မူလနေရာမှာ နှစ်ဆဖြစ်အောင်လုပ်တဲ့ ကိစ္စကို ဆက်ဖြေရှင်းပါမယ်။ အရမ်းရိုးရှင်းတဲ့ ကိစ္စမျိုး မဟုတ်တဲ့အတွက် \fEn{problem decomposition} လုပ်သင့်ပါတယ်။
+%
+%
+\begin{itemize}
+    \item ဘိပါအရေအတွက် နှစ်ဆတိုး
+    \begin{itemize}
+        \item ရှေ့ကွန်နာမှာ ဘိပါအရေအတွက်နှစ်ဆတိုး
+        \item နောက်ပြန်လှည့်
+        \item ရှေ့ကွန်နာကို ဘိပေါတွေရွှေ့
+    \end{itemize}
+\end{itemize}
+%
+%
+နဂိုကွန်နာမှာ ‘ဘိပါအရေအတွက် နှစ်ဆတိုး’ တဲ့အလုပ်ကို အစိတ်အပိုင်း သုံးခု ခွဲထုတ်ထားတယ်။ ဒီသုံးခုကိုတော့ ထပ်မခွဲသေးဘဲ ပရီကွန်ဒီရှင် ပို့စ်ကွန်ဒီရှင်တွေနဲ့ တိတိကျကျသတ်မှတ်ပြီး ဘာလုပ်ပေးလဲပဲ အဓိကသတ်မှတ်တယ်။ 
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{ဘိပါပုံပေါ်မှာရှိမယ်။ ရှေ့မှာ ရှင်းနေရမယ်။}ß
+ * ß\fEnEmp{Postcondition:} \fMM{ဘိပါတွေကို ရှေ့တည့်တည့်ကွန်နာမှာ နှစ်ဆဖြစ်သွားအောင် ရွှေ့ပေးတယ်။}ß
+ * ß\fMM{အဲဒီကွန်နာမှာ မူလမျက်နှာမူရာအရပ်ကိုပဲ လှည့်နေမယ်။}ß
+ */
+ void doubleBeepersAtNextCorner() { }
+
+/*
+ * ß\fEnEmp{Precondition:} \fMM{ဘိပါပုံပေါ်မှာရှိမယ်။ ရှေ့မှာ ရှင်းနေရမယ်။}ß
+ * ß\fEnEmp{Postcondition:} \fMM{ဘိပါတွေကို ရှေ့တည့်တည့်ကွန်နာဆီ ရွှေ့ပေးပြီး မျက်နှာမူရာ}ß
+ * ß\fMM{မပြောင်းလဲဘဲ အဲဒီကွန်နာရှိနေမယ်။}ß
+ */
+void moveBeepersToNextCorner() { }
+
+/*
+ * ß\fEnEmp{Precondition:} \fMM{အရပ်မျက်နှာတစ်ဖက်ကို မျက်နှာမူထားတယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{၁၈၀ ဒီဂရီ လှည့်ပေးပါတယ်။ နဂိုမျက်နှာရာအရပ်နဲ့ ပြောင်းပြန်ဖြစ်သွားမယ်။}ß
+ */
+void turnAround() { }
+\end{minted}
+%
+မက်သဒ်သုံးခုစလုံး အခွံတွေဖြစ်ပြီး ပရီကွန်ဒီရှင် ပို့စ်ကွန်ဒီရှင်တွေကိုတော့ အတိအကျသတ်မှတ်ထားတယ်။ သတ်မှတ်ထားတဲ့အတိုင်းသာ လုပ်ပေးနိုင်တယ်ဆိုလျှင် နဂိုနေရာမှာပဲ ဘိပါတွေနှစ်ဆတိုးတဲ့ကိစ္စကို အခုလိုရေးနိုင်ပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{နှစ်ဆပွားပေးရမဲ့ ဘိပါပုံပေါ်မှာရှိမယ်}ß
+ * ß\fEnEmp{Postcondition:} \fMM{နဂိုကွန်နာမှာပဲ ဘိပါတွေ နှစ်ဆဖြစ်သွားမယ်}ß
+ */
+void doubleBeepers() {
+    doubleBeepersAtNextCorner();
+    turnAround();
+    moveBeepersToNextCorner();
+    turnAround();
+}
+\end{minted}
+%
+
+ဒါပြီးတဲ့အခါ အခွံအနေနဲ့ ထားခဲ့တာတွေကို အမှန်တကယ် ဖြည့်ရေးရမယ်။ ရှေ့မှာလုပ်ခဲ့သလိုပဲ လိုအပ်သလို ထပ်မံ ခွဲခြမ်းစိတ်ဖြာနိုင်တယ်။ 
+%
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{ဘိပါပုံပေါ်မှာရှိမယ်။ ရှေ့မှာ ရှင်းနေရမယ်။}ß
+ * ß\fEnEmp{Postcondition:} \fMM{ဘိပါတွေကို ရှေ့တည့်တည့်ကွန်နာမှာ နှစ်ဆဖြစ်သွားအောင် ရွှေ့ပေးတယ်။}ß
+ * ß\fMM{အဲဒီကွန်နာမှာ မူလမျက်နှာမူရာအရပ်ကိုပဲ လှည့်နေမယ်။}ß
+ */
+ void doubleBeepersAtNextCorner() { 
+    while (beepersPresent()) {
+        pickBeeper();
+        move();
+        putBeeper();
+        putBeeper();
+        turnAround();
+        move();
+        turnAround();
+    }
+    move();
+ }
+\end{minted}
+%
+
+%
+\begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
+/*
+ * ß\fEnEmp{Precondition:} \fMM{ဘိပါပုံပေါ်မှာရှိမယ်။ ရှေ့မှာ ရှင်းနေရမယ်။}ß
+ * ß\fEnEmp{Postcondition:} \fMM{ဘိပါတွေကို ရှေ့တည့်တည့်ကွန်နာဆီ ရွှေ့ပေးပြီး မျက်နှာမူရာ}ß
+ * ß\fMM{မပြောင်းလဲဘဲ အဲဒီကွန်နာရှိနေမယ်။}ß
+ */
+ void moveBeepersToNextCorner() { 
+    while (beepersPresent()) {
+        pickBeeper();
+        move();
+        putBeeper();
+        turnAround();
+        move();
+        turnAround();
+    }
+    move();
+ }
+\end{minted}
+%
+
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void turnAround() {
+    turnLeft();
+    turnLeft();
+}
+\end{minted}
+%
+
+\fEn{Problem decomposition} အဆင့်အားလုံး ပြန်လည်စုစည်းကြည့်မယ်ဆိုလျှင် အောက်ပါအတိုင်း တွေ့ရမှာပါ။ အပိုင်းတစ်ခုချင်းနဲ့ ဆိုင်တဲ့ မက်သဒ်တွေကို ဘေးမှာဖော်ပြပေးထားတယ်။
+%
+\begin{itemize}
+    \item ဘိပါပုံရှိတဲ့ ကွန်နာကိုသွား (\fCode{goToBeeperPile})
+    \item ဘိပါ အရေအတွက် နှစ်ဆတိုး (\fCode{doubleBeepers})
+        %
+        \begin{itemize}
+            \item ဘိပါပုံကို ရှေ့ကွန်နာရွှေ့ရင်း အရေအတွက်နှစ်ဆတိုး (\fCode{doubleBeepersAtNextCorner})
+                %
+                \begin{itemize}
+                    \item မျက်နှာမူရာ ပြောင်းပြန်လှည့် (\fCode{turnAround})
+                \end{itemize}
+                %
+            \item ဘိပါပုံ ရှေ့ကွန်နာကို ရွှေ့ (\fCode{moveBeepersToNextCorner})
+                %
+                \begin{itemize}
+                    \item မျက်နှာမူရာ ပြောင်းပြန်လှည့် (\fCode{turnAround})
+                \end{itemize}
+                %
+            \item မျက်နှာမူရာ ပြောင်းပြန်လှည့် (\fCode{turnAround})
+        \end{itemize}
+        %
+\end{itemize}
+%
+\fCode{turnAround} ဟာ ဒုတိယအလွှာရော အောက်ဆုံးအလွှာမှာပါ ပါဝင်နေတာ သတိပြုပါ။ ဒီလိုအခြေအနေမျိုးမှာ \fCode{turnAround} က အောက်ဆုံးအလွှာမှာ ပါဝင်တယ်လို့ပဲ ယူဆရမှာဖြစ်တယ်။ အထက်အလွှာကနေ အောက်အလွှာတစ်ခုက မက်သဒ်တွေကို အသုံးပြုတဲ့အခါ အဆင့်ကျော်လို့ရပါတယ်။ ကပ်လျှက်အလွှာပဲ ဖြစ်ရမယ် မဆိုလိုဘူး။
+
+\section{Problem decomposition ဘယ်ချိန်မှာ ရပ်သင့်လဲ}
+\fEn{Problem decomposition} တစ်ဆင့်ပြီးတစ်ဆင့် လုပ်တဲ့အခါ ဘယ်အဆင့်မှာ ရပ်သင့်လဲ မေးစရာရှိပါတယ်။ အစိတ်အပိုင်းတစ်ခုကို ဖြေရှင်းရတာ အတန်အသင့် ရိုးရှင်းလွယ်ကူလောက်တဲ့ အခြေအနေမှာ ရပ်သင့်တယ်လို့ အကြမ်းဖျဉ်းပြောလို့ရပါတယ်။ 
+
+\fEn{Decompose} လုပ်တာ အလွန်အကျွံ အသေးစိတ်လွန်းရင်လည်း လိုတာထက်ပိုပြီး ရှုပ်ထွေးကုန်တယ်။ လက်ရှိကွန်နာက ဘိပါတွေကို ရှေ့မှာ နှစ်ဆဖြစ်သွားအောင် တိုးတဲ့အလုပ်ကို အခုလို \fEn{decompose} လုပ်မယ်ဆိုပါစို့။
+%
+\begin{itemize}
+    \item ဘိပါပုံကို ရှေ့ကွန်နာမှာ နှစ်ဆဖြစ်အောင်လုပ်
+        %
+        \begin{itemize}
+            \item ဘိပါတစ်ခုကို ‌ရှေ့ကွန်နာမှာ နှစ်ခုဖြစ်အောင်လုပ်
+            %
+            \begin{itemize}
+                \item ရှေ့တိုး
+                \item ဘိပါနှစ်ခုချ
+                \item နောက်တစ်လှမ်းပြန်ဆုတ် \fEn{(step back)}
+                %
+                \begin{itemize}
+                    \item နောက်ပြန်လှည့်
+                    \item ရှေ့တိုး
+                    \item နောက်ပြန်လှည့်
+                \end{itemize}
+                %
+            \end{itemize}
+            % 
+        \end{itemize}
+        %
+\end{itemize}
+%
+ဘိပါအားလုံး နှစ်ဆဖြစ်အောင်လုပ်တဲ့ကိစ္စကို \fEn{decompose} လုပ်ကြည့်တဲ့အခါ ဘိပါတစ်ခုကို နှစ်ခုဖြစ်အောင်လုပ်တဲ့ကိစ္စ ပါဝင်တာတွေ့ရတယ်။ ဒါက ကျိုးကြောင်းဆီလျော်တယ်လို့ ယူဆရမှာပါ။ ရှေ့မှာလည်း အလားတူ လုပ်ခဲ့ကြတာပါပဲ။ ကွန်နာတစ်ခု ရှင်းတာဟာ လမ်းတစ်လမ်းရှင်းတာရဲ့ အစိတ်အပိုင်း၊ လမ်းတစ်လမ်းရှင်းတာဟာ လမ်းအားလုံးရှင်းတာရဲ့ အစိတ်အပိုင်း စသည်ဖြင့် ခွဲခြမ်းစိတ်ဖြာခဲ့တယ်။ အပေါ်မှာက ဒီလောက်နဲ့မရပ်သေးဘဲ နောက်နှစ်ဆင့် ထပ်ခွဲထားတယ်။ အဲဒီလို အသေးစိတ်ခွဲထားတာကို ကုဒ်ရေးကြည့်တဲ့အခါ စဉ်းစားရတာ ပိုခက်ခဲရှုပ်ထွေးနေတာ သတိထားမိပါလိမ့်မယ်။ ထပ်မခွဲတော့ဘဲ ရေးရင် ပိုပြီးရိုးရှင်းနေတာ တွေ့ရမှာပါ။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void doubleBeepersAtNextCorner() {
+    while (beepersPresent()) {
+        doubleOneBeeperAtNextCorner();
+    }
+    move();
+}
+
+void doubleOneBeeperAtNextCorner() {
+    pickBeeper();
+    move();
+    putBeeper();
+    putBeeper();
+    turnAround();
+    move();
+    turnAround();
+}
+\end{minted}
+%
+ထိုနည်းတူစွာ ဘိပါတစ်ခုချင်းရွှေ့တာဟာ ဘိပါပုံတစ်ခုလုံး ရှေ့ကိုရွှေ့တာရဲ့ အစိတ်အပိုင်းဖြစ်တယ်လို့ ယူဆနိုင်တယ်။ ဒီထက် ပိုအသေးစိတ်ပြီး အသွားအပြန်တွေပါ ဆက်ခွဲရင်တော့ ပိုရှုပ်ကုန်ပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void moveBeepersToNextCorner() {
+    while (beepersPresent()) {
+        moveOneBeeperToNextCorner();
+    }
+    move();
+}
+
+void moveOneBeeperToNextCorner() {
+    pickBeeper();
+    move();
+    putBeeper();
+    turnAround();
+    move();
+    turnAround();
+}
+\end{minted}
+%
+
+
+\section{မက်သဒ်ဖြင့် nesting }
+\fEn{Nesting} တွေ အထပ်ထပ်နဲ့ရေးထားတဲ့ ကုဒ်တွေဟာ နားလည်ရ ပိုပြီးခက်ခဲလေ့ရှိတယ်။ ဖြစ်နိုင်ရင် \fEn{nesting} ကို သုံးဆင့်လောက်ထက်ပိုပြီး မလုပ်သင့်ပါဘူး။ မက်သဒ်တွေ သုံးခြင်းအားဖြင့် \fEn{nesting} လုပ်တာကို ရှောင်လို့ရနိုင်ပါတယ်။ အခန်း (၂) က \fCode{ToggleBeepers} ပရိုဂရမ်ကို မက်သဒ်နဲ့ရေးထားတာ ဥပမာကြည့်ပါ။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+import stanford.karel.Karel;
+
+public class ToggleBeepersV2 extends Karel {
+    public void run() {
+        while (frontIsClear()) {
+            toggleBeeper();
+            move();
+        }
+        toggleBeeper();
+    }
+
+    void toggleBeeper() {
+        if (beepersPresent()) {
+            pickBeeper();
+        } else {
+            putBeeper();
+        }
+    }
+}
+\end{minted}
+%
+\fCode{toggleBeeper} မက်သဒ်က ကွန်နာတစ်ခုရဲ့ ဘိပါအခြေအနေကို ပြောင်းပြန်ပြောင်းပေးတယ်။ ဒီမက်သဒ် သုံးခြင်းအားဖြင့် \fCode{while} ထဲမှာ \fCode{if...else} မပါတော့ဘဲ \fEn{loop} ကို ဖတ်ရတာ နားလည်ရ နည်းနည်းပိုလွယ်သွားပါတယ်။ နှိုင်းယှဉ်ကြည့်လို့ရအောင် နဂို \fEn{nesting} နဲ့ ရေးထားတာကို ပြန်ပြပေးထားပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+import stanford.karel.Karel;
+
+public class ToggleBeepers extends Karel {
+    public void run() {
+        while (frontIsClear()) {
+            if (beepersPresent()) {
+                pickBeeper();
+            } else {
+                putBeeper();
+            }
+            move();
+        }
+        if (beepersPresent()) {
+            pickBeeper();
+        } else {
+            putBeeper();
+        }
+    }
+}
+\end{minted}
+%
+
+အလားတူပဲ အခန်း (၂) မှ \fCode{RepairStreet} ပရိုဂရမ်ကို မက်သဒ်နဲ့ ရေးလိုက်တဲ့အခါ ကုဒ်ရဲ့ ရည်ရွယ်ချက်ကို ပိုပြီးရှင်းရှင်းလင်းလင်း မြင်နိုင်ပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+import stanford.karel.Karel;
+
+public class RepairStreetV2 extends Karel {
+    public void run() {
+        while (frontIsClear()) {
+            repairCorner();
+            move();
+        }
+        repairCorner();
+    }
+
+    /*
+    This method drop a beeper at the current corner if there is no
+    existing beeper and also no wall below.
+    */
+    void repairCorner() {
+        if (rightIsClear()) {
+            if (noBeepersPresent()) {
+                putBeeper();
+            }
+        }
+    }
+}
+\end{minted}
+%
+ 
+

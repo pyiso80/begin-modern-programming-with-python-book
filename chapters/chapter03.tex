@@ -1,0 +1,172 @@
+\chapter{ဖန်ရှင်များ (Functions)}\label{ch:ch03}
+
+ဖန်ရှင် \fEn{(\textit{function})} တွေဟာ ပရိုဂရမ်းမင်းမှာ အရေးကြီးဆုံး အခြေခံသဘောတရားတစ်ခု ဖြစ်တယ်။ ဖန်ရှင်ဆိုတာ ဘာလဲ၊ ဘာကြောင့် အရေးပါရတာလဲ၊ ဖန်ရှင်တွေကို ပရိုဂရမ် ဒီဇိုင်းပြုလုပ် ရေးသားတဲ့အခါ ဘယ်လိုအသုံးချတာလဲ စတာတွေကို ဒီအခန်းမှာ လေ့လာကြပါမယ်။
+
+\section{ဖန်ရှင် သတ်မှတ်ခြင်း}
+ညာဘက် လှည့်ခိုင်းချင်တိုင်း \fCode{turn\_left} သုံးခါရေးနေရတာ ရေရှည်အဆင်မပြေပါဘူး။ \fCode{turn\_right} လို့ပဲ တိုက်ရိုက် ရေးလို့ရရင် ပိုပြီးတော့ အဆင်ပြေမှာပါ။ ဒီလို လိုအပ်ချက်မျိုးကို ဖြည့်ဆည်း ပေးဖို့အတွက်ဟာ ဖန်ရှင်တွေရဲ့ အဓိက ရည်ရွယ်ချက်တွေထဲက တစ်ခုဖြစ်တယ်။ \fCode{turn\_right} ဖန်ရှင်ကို အခုလို သတ်မှတ်နိုင်ပါတယ်။
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+\end{minted}
+%
+ဒီလို သတ်မှတ်ထားပြီးရင် ညာဘက်လှည့်ချင်တဲ့အခါ 
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+turn_right()
+\end{minted}
+%
+လို့ တိုက်ရိုက်ပြောလို့ ရသွားမှာ ဖြစ်ပါတယ်။ \fCode{turn\_left} သုံးခါ ရေးဖို့ မလိုတော့ပါဘူး။
+
+ဖန်ရှင်တစ်ခု သတ်မှတ်တယ် \fEn{(\textit{defining a function})} ဆိုတာ စတိတ်မန့်တွေကို ယူနစ်တစ်ခုအဖြစ် ဖွဲ့စည်းထားလိုက်တာပါပဲ။ ၎င်းယူနစ်အတွက် အမည်တစ်ခုကိုလည်း သတ်မှတ်ပေးတယ်။  ဖန်ရှင် သတ်မှတ်ချင်ရင် \fCodeBf{def} စကားလုံးကို သုံးရပါတယ်။ 
+
+အထက်ပါ \fCode{turn\_right} ဖန်ရှင် သတ်မှတ်ချက် \fEn{(\textit{function definition})} မှာ 
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def turn_right():
+\end{minted}
+%
+ကို ဖန်ရှင် ဟက်ဒ်ဒါ \fEn{(\textit{function header})} လို့ ခေါ်တယ် (မြန်မာလို ဆိုရင်တော့ ဖန်ရှင် ခေါင်းစည်းပေါ့)။ \fCode{turn\_right} က ဖန်ရှင် အမည်။ ပါရာမီတာပါတဲ့ ဖန်ရှင်ဆိုရင် ဝိုက်ကွင်းထဲမှာ ပါရာမီတာတွေ သတ်မှတ်ရတယ်။ ဥပမာ \fEn{\fCode{(x, y)}}။ ပါရာမီတာ မပါရင်တော့ \fEn{\fCode{()}} ပဲဖြစ်မယ်။ ကားရဲလ်မှာ ဖန်ရှင်အားလုံးဟာ ပါရာမီတာ မပါတဲ့အတွက် \fEn{\fCode{()}} ပဲ ဖြစ်မှာပါ။ ဖန်ရှင်ဟက်ဒ်ဒါ လိုင်းအဆုံးမှာ ကော်လံ \fEn{‘\fCode{:}’} ထည့်ပေးဖို့ လိုပါတယ်။ \todo{ပါရာမီတာတွေကို ဘယ်အခန်းမှာ လေ့လာမလဲပြောရန်}
+
+ဖန်ရှင် ဟက်ဒ်ဒါအောက် အင်ဒန့်ထ်လုပ်ထားတဲ့ လိုင်းအားလုံးဟာ ၎င်းဖန်ရှင်နဲ့ သက်ဆိုင်တဲ့ ကုဒ်ဘလောက် ဖြစ်တယ်။ အခု \fCode{turn\_right} ဖန်ရှင် ဘလောက်မှာ \fCode{turn\_left} သုံးကြိမ်ပါတယ်။ 
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+turn_right()
+\end{minted}
+%
+လုပ်ခိုင်းတာက (သတ်မှတ်ထားတဲ့) ဖန်ရှင်ကို အသုံးပြုတာ ဖြစ်တယ်။ ဒီအခါမှာ ၎င်းဖန်ရှင်နဲ့ သက်ဆိုင်တဲ့ ဘလောက်ကို လုပ်ဆောင်ပေးမှာပါ။ ဖန်ရှင်ကို အသုံးပြုတာကို ဖန်ရှင်ကောလ် \fEn{(\textit{function call})} လုပ်တယ်လို့ ပြောပါတယ်။
+
+ဖန်ရှင်သတ်မှတ်တာနဲ့ ဖန်ရှင်ကောလ် လုပ်တဲ့ပုံစံကို အောက်ပါအတိုင်း ယေဘုယျအားဖြင့် တွေ့ရပါမယ်။ \fEn{Python} ထုံးစံအရ ဖန်ရှင်နံမည်မှာ စာလုံးအသေးကိုပဲ သုံးလေ့ရှိတယ်။ စကားလုံး နှစ်ခုနဲ့ အထက်ဆိုရင် ကြားမှာ \fEn{underscore (\textunderscore)} ခြားပေးလေ့ ရှိတယ်။ 
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def ß$name\fEn{\textunderscore}of\fEn{\textunderscore}function$ß():
+    ß$statement_1$ß
+    ß$statement_2$ß
+    ß$statement_3$ \fEn{etc.}ß
+\end{minted}
+%
+\betweenminted{\medskipamount}
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+ß$name\fEn{\textunderscore}of\fEn{\textunderscore}function$ß()
+\end{minted}
+%
+
+\begin{mytcboxflt}
+\noindent \fSec{\textbf{ဖန်ရှင်နံမည် အဓိပ္ပါယ် အရေးကြီးပါတယ်}}
+\vspace{0.75em}
+
+\noindent စာရေးတာပဲဖြစ်ဖြစ်၊ ပရိုဂရမ်ကုဒ် ရေးတာပဲဖြစ်ဖြစ် စိတ်ထဲ တွေးတဲ့အတိုင်း၊ စဉ်းစားတဲ့အတိုင်း ပေါ်လွင်အောင် ဖော်ပြနိုင်တာဟာ အားသာချက်တစ်ခုပါပဲ။ ဖန်ရှင် သတ်မှတ်ထားခြင်း အားဖြင့် ညာဘက်လှည့်ခိုင်းရင် \fCode{turn\_right} ဘိပါ နှစ်ဆယ့်ငါးခု ချရင် \fCode{put\_25\_beepers}  တိုက်ရိုက် ဖော်ပြလို့ ရတာဟာ အရေးပါတဲ့ ကိစ္စဖြစ်ပါတယ်။ ဘာသာစကားတစ်ခုရဲ့ ဖော်ပြနိုင်စွမ်း ‘အား’ \fEn{(expressive power)} ကို ထပ်လောင်းအားဖြည့်ပေးတာလို့ ဆိုရမှာပါ။
+\vspace{0.75em}
+
+ဖန်ရှင်လုပ်ဆောင်ပေးတဲ့ ကိစ္စကို သိသာစေမဲ့၊ နားလည်ရလွယ်မဲ့ နံမည်မျိုး ဂရုစိုက်ရွေးချယ်တာကလည်း အရေးပါပါတယ်။ ကားရဲလ်ပရိုဂရမ်တွေမှာ အမိန့်ပေးခိုင်းစေတဲ့ ပုံစံနဲ့ ဖန်ရှင်နံမည်ပေးလေ့ရှိတယ်။ ဥပမာ \fCode{turn\_north}\fEn{,} \fCode{pick\_all\_beepers} ။    
+\end{mytcboxflt}
+
+ဖန်ရှင်သတ်မှတ်ချက်နဲ့ ဖန်ရှင်ကောလ် ဥပမာ တချို့ကို လေ့လာကြည့်ပါ။ ဘိပါ နှစ်ဆယ့်ငါးခု ချပေးတဲ့ \fCode{put\_25\_beepers} ဖန်ရှင်ပါ 
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def put_25_beepers():
+    for i in range(25):
+        put_beeper()
+\end{minted}
+%
+\betweenminted{\medskipamount}
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+put_25_beepers()
+\end{minted}
+%
+ဒါကတော့ ကွန်နာတစ်ခုမှာ ရှိတဲ့ ဘိပါအားလုံးကောက်ပေးတဲ့ ဖန်ရှင်ဖြစ်ပါတယ်
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def pick_all_beepers():
+    while beepers_present():
+        pick_beeper()
+\end{minted}
+%
+\betweenminted{\medskipamount}
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+pick_all_beepers()
+\end{minted}
+%
+\betweenminted{3.75pt}
+\section{ဖန်ရှင် Composing ဖန်ရှင်}
+\fCode{pickAllBeepers} မက်သဒ်ဟာ ကွန်နာတစ်ခုမှာရှိတဲ့ ဘိပါအားလုံးကိုကောက်ပေးပါတယ်။ ဘိပါမရှိတဲ့ ကွန်နာမှာလည်း သုံးလို့ရတယ်။ တစ်ခုနဲ့အထက်ရှိရင်တော့ အားလုံးကုန်တဲ့ထိ ကောက်ပေးမှာပါ။ 
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void pickAllBeepers() {
+    while (beepersPresent()) {
+        pickBeeper();
+    }
+}
+\end{minted}
+%
+
+\fCode{pickAllBeepers} ကို အခြေခံအစိတ်အပိုင်းတစ်ခုအနေနဲ့ အသုံးပြုပြီး လမ်းတစ်လျှောက် ကွန်နာတွေအားလုံးက ဘိပါတွေကို ရှင်းပေးမဲ့ \fCode{cleanTheStreet} မက်သဒ်ကို သတ်မှတ်နိုင်ပါတယ်။
+%
+\begin{minted}[frame=lines, framerule=0pt]{java}
+void cleanTheStreet() {
+    while (frontIsClear()) {
+        pickAllBeepers();
+    }
+    pickAllBeepers();
+}
+\end{minted}
+%
+
+အခြေခံကျပြီး ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေကနေ ပိုပြီးရှုပ်ထွေးခက်ခဲတဲ့ ကိစ္စတွေကို ဖြေရှင်းဆောင်ရွက်ပေးနိုင်တဲ့ မက်သဒ်တွေဖြစ်လာအောင် ဖွဲစည်းတည်ဆောက်လို့ရတာကို တွေ့ရပါတယ်။ ဒီလိုနည်းနဲ့ မက်သဒ်တွေ ဖွဲ့စည်းတည်ဆောက်တာကို \fEn{Method Composition} လို့ခေါ်ပါတယ်။  \fEn{Composition} ကို တစ်ဆင့်ပြီးတစ်ဆင့် လုပ်လို့ရတယ်။ ကားရဲကမ္ဘာထဲရှိ ကွန်နာအားလုံးက ဘိပါတွေကို ရှင်းပေးမဲ့ \fCode{cleanTheWorld} မက်သဒ် သတ်မှတ်တဲ့အခါ \fCode{cleanTheStreet} ကို အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုနိုင်မှာ ဖြစ်တယ်။ (လမ်းတွေအားလုံး ရှင်းတာဟာ ကားရဲကမ္ဘာထဲရှိ ကွန်နာအားလုံးကို ရှင်းတာပါပဲ)။
+
+\fCode{pickAllBeepers} က အရိုးရှင်းဆုံး အခြေခံအကျဆုံး ဖြစ်တယ်။ ဒါကိုအသုံးပြုပြီး အတန်အသင့်ပိုရှုပ်ထွေးတဲ့ \fCode{cleanTheStreet} ကို တည်ဆောက်တယ်။ တစ်ခါ \fCode{cleanTheStreet} ကို အခြေခံပြီး \fCode{cleanTheWorld} ကို ဆက်လက်တည်ဆောက်တယ်။ ဒီလိုနည်းလမ်းနဲ့ ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေကနေ ပို၍ပို၍ ကြီးမားရှုပ်ထွေးတဲ့ အစိတ်အပိုင်းတွေကို တစ်ဆင့်ပြီးတစ်ဆင့် တည်ဆောက်ယူလို့ရနိုင်တာ \fCode{pick pick} ကို တွေ့ရပါတယ်။
+
+
+\section{ဖန်ရှင်တွေ ဘာကြောင့် အရေးပါရတာလဲ}
+
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def pick_all_beepers():
+    while beepers_present():
+        pick_beeper()
+\end{minted}
+%
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+pick_all_beepers()
+\end{minted}
