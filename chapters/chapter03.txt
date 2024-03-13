@@ -244,39 +244,24 @@ void repairStreet() {
 %
 ဒီအလွှာထက် တစ်ဆင့်ပိုမြင့်တဲ့ အလွာက \fEn{abstraction} တွေကို ဆက်လက် တည်ဆောက်ယူနိုင်ပါတယ်။ ဥပမာ \fCode{repairWorld} ကို တည်ဆောက်ရာမှာ \fCode{repairStreet} ကို အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုနိုင်ပါတယ်။ ဒီလို \fEn{abstraction} အလွှာတွေနဲ့ ပရိုဂရမ်တည်းဆောက်တဲ့ နည်းတွေကို ဆက်လက်လေ့လာကြရပါမယ်။
 
-\section{Bottom-up programming style}
 
-ကြီးကျယ်ခမ်းနားတဲ့ အဆောက်အအုံကြီးတွေ၊ လျှို့ဝှက်ဆန်းကြယ်တဲ့ သဘာဝဖြစ်စဉ်တွေ၊ အံ့ဖွယ်သိပ္ပံနှင့် နည်းပညာ ဆန်းသစ်တီထွင်မှုတွေ စတဲ့အရာတွေအားလုံးဟာ ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေနဲ့ ဖွဲ့စည်းထားတာပါပဲ။ ဒါကြောင့် အရွယ်အစား ကြီးမား ရှုပ်ထွေးတဲ့ ပရိုဂရမ်တွေကိုလည်း ရိုးရှင်းတဲ့ အစိတ်အပိုင်းလေးတွေနဲ့ ဖွဲ့စည်းတည်ဆောက်သင့်တယ်လို့ ယူဆရမှာပါ။ ဒါဟာ ကျိုးကြောင်းဆီလျော်တဲ့ ယူဆချက်မို့လို့  မှားစရာအကြောင်း သိပ်မရှိပါဘူး။ 
 
-ခက်ခဲရှုပ်ထွေးတဲ့ ကိစ္စတစ်ခုကို ဖြေရှင်းတဲ့အခါ အပိုင်းတွေခွဲပြီး တစ်ပိုင်းချင်းကို သီးခြားဖြေရှင်းလေ့ရှိတယ်။ အပိုင်းတွေခွဲလိုက်ခြင်းအားဖြင့် တစ်ပိုင်းစီဟာ မူလဖြေရှင်းရမဲ့ ကိစ္စ‌လောက် မခက်ခဲတော့ပါဘူး။ အရွယ်အစားအားဖြင့်လည်း နဂိုထက် ငယ်သွားမယ်။ အပိုင်း တစ်ပိုင်းချင်းစီကို ဖြေရှင်းတဲ့အခါမှာလည်း အလားတူပဲ လုပ်ဆောင်နိုင်တယ်။ အပိုင်းတစ်ပိုင်းကို သူ့ထက်သေးငယ်တဲ့ အပိုင်းတွေအဖြစ် ထပ်မံခွဲထုတ်နိုင်ပါတယ်။ ဒီတိုင်း တစ်ဆင့်ပြီးတစ်ဆင့် လုပ်သွားမယ်ဆိုရင် နောက်ဆုံးမှာ အလွယ်တကူဖြေရှင်းလို့ရတဲ့ အစိတ်အပိုင်းလေးတွေ ဖြစ်သွားရမှာပါပဲ။ \fEn{Bottom-up Programming} ဆိုတာကတော့ ပရိုဂရမ်ရေးပြီး ကိစ္စတစ်ခုကို ဖြေရှင်းရာမှာ ရိုးရှင်းသထက်ရိုးရှင်း၊ သေးငယ်သထက်သေးငယ်တဲ့ အပိုင်းလေးတွေဖြစ်လာအောင် အဆင့်ဆင့်ပိုင်းခွဲပြီး အောက်ခြေအရိုးရှင်းဆုံးအလွှာကနေ အပေါ်ကိုတစ်ဆင့်ချင်းတက် ဖြေရှင်းတဲ့နည်း ဖြစ်တယ်။ လေ့လာကြည့်ကြရအောင်။
 
-ပုံ (\fRefNo{\ref{fig:hurdle_jumping_init}}) ကမ္ဘာမှာ ကားရဲလ် တန်းကျော်ပြေးပြိုင်ရပါမယ်။ ထောင်လိုက်နံရံတွေကို တန်းတွေလို့ယူဆပါ။ တန်းတွေဟာ အနိမ့်အမြင့် အမျိုးမျိုးဖြစ်နိုင်ပါတယ်။ ကမ္ဘာရဲ့ အပေါ်ဘက် နံရံကို ထိတဲ့အထိတော့ မြင့်လို့မရပါဘူး။ ဒါမှ တန်းကိုကျော်ပြီး အခြားဘက်ကို သွားလို့ရမှာပါ။ \((1, 1)\) ကွန်နာကနေ တာစထွက်မှာဖြစ်ပြီး \((14, 1)\) မှာ ပန်းဝင်ရမှာပါ။
-%
-\begin{figure}[htb!]
-    \includegraphics[width=4.5in]{images/ch03/hurdle_jumping/init_w1.jpg}
-    \caption{}
-    \label{fig:hurdle_jumping_init}
-\end{figure}
-%
 
-တန်းကျော်ပြေးတဲ့ ကိစ္စမှာ ပါဝင်တဲ့ အပိုင်းတစ်ခုက တန်းတစ်ခုကျော်တာ။ တန်းတစ်ခု ကျော်တာကို ထပ်ခွဲကြည့်ရင် အပေါ်တက်တာနဲ့ အောက်ဆင်းတာ နှစ်ပိုင်းရှိမယ်။ အခုလို နဂိုမူလကိစ္စတစ်ခုကနေ တစ်ဆင့်ထက်တစ်ဆင့် ပိုသေးငယ်တဲ့ အပိုင်းလေးတွေဖြစ်လာအောင် ခွဲထုတ်တာကို \fEn{Problem Decomposition} လုပ်တယ်လို ခေါ်ပါတယ်။ 
 
-\fEn{Bottom-up Programming} နည်းနဲ့ ပရိုဂရမ်ရေးတဲ့အခါ အရင်ဦးဆုံး \fEn{Problem Decomposition} လုပ်ရတယ်။ ပြီးရင် အောက်ဆုံးအလွှာမှ အသေးဆုံးအပိုင်းလေးတွေကနေ စတင်ဖြေရှင်းတယ်။ ပြီးတဲ့အခါ အဲဒီ အသေးဆုံး အပိုင်းလေးတွေကို အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုပြီး  အောက်ဆုံးအလွှာထက် တစ်ဆင့်မြင့်တဲ့ အပေါ်အလွှာက အပိုင်းတွေကို ဆက်လက်ဖြေရှင်းတယ်။ ဒီအလွှာက အပိုင်းတွေကို  အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုပြီး နောက်ထပ်တစ်ဆင့် ပိုမြင့်တဲ့အလွှာက အပိုင်းတွေကို ဆက်လက်ဖြေရှင်းမှာဖြစ်တယ်။ ဒီလိုမျိုး အောက်ကနေ အပေါ်ကို တစ်လွှာပြီးတစ်လွှာ တက်သွားပြီး ဖြေရှင်းတဲ့ နည်းစနစ်ဟာ \fEn{Bottom-up Programming} ပါပဲ။ 
 
-တန်းကျော်ပြေးပွဲမှာ \fEn{Problem Decomposition} လုပ်ထားတာကို တစ်လွှာချင်း ခွဲကြည့်မယ်ဆိုရင် အခုလိုတွေ့ရမှာ ဖြစ်ပါတယ်။
-%
-\begin{itemize}
-  \item တန်းကျော်ပြေးပြိုင်ပွဲဝင်ခြင်း
-  \begin{itemize}
-    \item တန်းတစ်ခုကျော်ခြင်း
-    \begin{itemize}
-      \item အပေါ်တက်ခြင်း
-      \item အောက်ဆင်းခြင်း
-    \end{itemize}
-  \end{itemize} 
-\end{itemize}
-%
-အောက်ဆုံးအလွှာက အပေါ်တက်တာနဲ့ အောက်ဆင်းတာကို စဖြေရှင်းပါမယ်။ ကားရဲလ်ပရိုဂရမ်တွေမှာ အပိုင်းတစ်ခုချင်းကို ဆောင်ရွက်ပေးဖို့ မက်သဒ်တစ်ခုသတ်မှတ်ရပါမယ်။
+
+
+
+
+
+
+
+
+
+
+
+
 %
 \begin{minted}[frame=lines, framerule=0pt, escapeinside=ßß]{java}
 /*
@@ -400,236 +385,15 @@ public class HurdleJumping extends Karel {
 \end{minted}
 %
 
-\subsection*{အမှိုက်လှည်းပေးတဲ့ ကားရဲလ်}
-အခုတစ်ခါမှာ ကားရဲလ်က အမှိုက်တွေရှင်းပေးရပါမယ်။ ပုံ (\fRefNo{\ref{fig:stw}}) မှ နမူနာ ကမ္ဘာကို ကြည့်ပါ။ ဘိပါတွေကို အမှိုက်လို့ ယူဆပါ။ ကြုံရာကျပန်း \fEn{(random)} ကွန်နာတွေမှာ ရှိနေမယ်။ ကမ္ဘာအရွယ်အစား အမျိုးမျိုးအတွက် အမှိုက်ရှင်းပေးတဲ့ ပရိုဂရမ်တစ်ခု ရေးပေးရမှာ။
-\begin{figure}[htb!]
-    {\includegraphics[width=.5\linewidth]{images/ch03/SweepTheWorld/init_w1.jpg}}
-\caption{}
-\label{fig:stw}
-\end{figure}
 
-ဒီကိစ္စကို ဖြေရှင်းလို့ရတဲ့နည်းက တစ်ခုတည်းရှိတာ မဟုတ်ပါဘူး။ ဖြစ်နိုင်တဲ့ နည်းတွေထဲက တစ်ခုကို ပုံ (\fRefNo{\ref{fig:stw_alg1}}) မှာ တွေ့ရပါမယ်။ (၁) လမ်းကို အရင်ဦးဆုံး ရှင်းပါတယ်။ ပြီးရင် အပေါ်ဘက်ကို မျက်နှာမူ၊ ရှင်းနေသေးတယ်ဆိုရင် ဒုတိယလမ်းကို တက်မယ်။ ဒုတိယလမ်းကို ဆက်ရှင်းပြီးတော့လည်း အပေါ်ကိုပဲ မျက်နှာမူထားပါမယ်။ ရှင်းနေသေးရင် တတိယလမ်းကို ကူးသွားမယ်။ ဒီအတိုင်း တစ်လမ်းပြီးတစ်လမ်း ရှင်းသွားမှာဖြစ်တယ်။ လမ်းတစ်လမ်းရှင်းပြီးလို့ အပေါ်မျက်နှာမူတဲ့အခါ ပိတ်နေပြီဆိုရင် နောက်ဆုံးလမ်း ရှင်းပြီးသွားတာ ဖြစ်တယ်။ ပုံ (\fRefNo{\ref{fig:stw_alg1}}) မှာ ဒုတိယလမ်းအပြီး အပေါ်မျက်နှာမူထားတဲ့ အနေအထားထိ တစ်ပုံချင်းပြထားတယ်။ ပုံ (\fRefNo{\ref{fig:stw_alg1_last_st}}) မှာ နောက်ဆုံးလမ်းမရှင်းမီ၊ ရှင်းပြီး၊ အပေါ်မျက်နှာမူ၍ နံရံပိတ်နေတဲ့ အခြေအနေတစ်ခုစီကို ပြထားပါတယ်။ အခုနည်းကို အခြေခံပြီး \fEn{Problem Decomposition} လုပ်ကြည့်တဲ့အခါ အောက်ပါအတိုင်း တစ်လွှာချင်းစီမှာ ပါတဲ့ အပိုင်းတွေကို တွေ့နိုင်ပါတယ်။
 
-%
-\begin{figure}[htb!]
-    \hfuzz=100pt
-    \newcommand{\figpctw}{0.52}
-    \newcommand{\figscale}{0.165}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        %\adjincludegraphics[width=2.5in,trim={0 0 0 {.55\height}}, clip, left]{ch03/SweepTheStreets/init_w1.jpg}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp1a.jpg}
-        \caption{}
-        \label{fig:xyz1}
-    \end{subfigure}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp1b.jpg}
-        \caption{}
-        \label{fig:xyz2}
-    \end{subfigure}
 
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp2.jpg}
-        \caption{}
-        \label{fig:xyz3}
-    \end{subfigure}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp3a.jpg}
-        \caption{}
-        \label{fig:xyz4}
-    \end{subfigure}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp3b.jpg}
-        \caption{}
-        \label{fig:xyz5}
-    \end{subfigure}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp4.jpg}
-        \caption{}
-        \label{fig:xyz6}
-    \end{subfigure}
-    \caption{}
-    \label{fig:stw_alg1}
-\end{figure}
-%
 
-%
-\begin{figure}[htb!]
-    %\adjincludegraphics[width=2.5in,trim={0 0 0 {.55\height}}, clip, left]{images/}
-    \hfuzz=100pt
-    \newcommand{\figpctw}{0.52}
-    \newcommand{\figscale}{0.165}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp6a.jpg}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp6b.jpg}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}[t]{{\figpctw}\textwidth}
-        \adjincludegraphics[scale=\figscale, trim={0 3pt 0 0}, clip, left]{images/ch03/SweepTheWorld/alg1/stp7.jpg}
-        \caption{}
-    \end{subfigure}
-    \caption{}
-    \label{fig:stw_alg1_last_st}
-\end{figure}
-%
 
-%
-\begin{itemize}
-    \item ကမ္ဘာတစ်ခုလုံး အမှိုက်တွေရှင်း \fEn{(Clean the World)}
-    %
-    \begin{itemize}
-        \item လမ်းတစ်လမ်း အမှိုက်ရှင်း  \fEn{(Clean Street)}     
-        %
-        \begin{itemize}
-            \item ကွန်နာတစ်ခု အမှိုက်ရှင်း \fEn{(Clean Corner)}
-        \end{itemize}
-        %
-        \item မြောက်ဘက်လှည့် \fEn{(Turn North)}
-        \item နောက်တစ်လမ်းအတွက် အသင့်ပြင် \fEn{(Get Ready for Next Street)}
-    \end{itemize}
-    %
-\end{itemize}
-%
 
-\fEn{Bottom-up Design} အရ အောက်ဆုံးအလွှာ ကွန်နာတစ်ခု အမှိုက်ရှင်းတဲ့ ကိစ္စအတွက် မက်သဒ်ကို ပထမဆုံး သတ်မှတ်ရပါမယ်။
-%
-\begin{minted}[frame=lines, framerule=0pt]{java}
-void sweepCorner() {
-    if (beepersPresent()) {
-        pickBeeper();
-    }
-}
-\end{minted}
-%
-လမ်းတစ်လမ်းရှင်းတာအတွက်
-%
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
-/*
- * ß\fEnEmp{Precondition:} \fMM{လမ်းရဲ့ ပထမဆုံး ကွန်နာမှာ အရှေ့ဘက် မျက်နှာမူနေမယ်}ß
- * ß\fEnEmp{Postcondition:} \fMM{လမ်းပေါ်အမှိုက်အားလုံးရှင်းပြီး နောက်ဆုံး ကွန်နာမှာ အရှေ့ဘက် မျက်နှာမူနေမယ်}ß
- */
-void sweepStreet() {
-    while (frontIsClear()) {
-        sweepCorner();
-        move();
-    }
-    sweepCorner();
-} 
-\end{minted}
-%
-မြောက်ဘက်လှည့်ဖို့ အတွက်
-%
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
-/*
- * ß\fEnEmp{Precondition:} \fMM{မည်သည့် အရပ်ကိုမဆို မျက်နှာမူနေနိုင်တယ်}ß
- * ß\fEnEmp{Postcondition:} \fMM{မြောက်ဘက် မျက်နှာမူနေရမယ်}ß
- */
-void turnNorth() {
-    while (notFacingNorth()) {
-        turnLeft();
-    }
-}
-\end{minted}
-%
-နောက်တစ်လမ်းတက် အသင့်ပြင်တာကို
-%
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
-/*
- * ß\fEnEmp{Precondition:} \fMM{မည်သည့် အရပ်ကိုမဆို မျက်နှာမူနေနိုင်တယ်}ß
- * ß\fEnEmp{Postcondition:} \fMM{မြောက်ဘက် မျက်နှာမူနေရမယ်}ß
- */
-void getReadyForNextStreet() {
-    if (rightIsBlocked()) {
-        move();
-        turnLeft();
-    } else {
-        move();
-        turnRight();
-    }
-}
-\end{minted}
-%
-အပေါ်ဆုံးအလွှာ တစ်ကမ္ဘာလုံး ရှင်းတာကို အခုလို ဖြေရှင်းနိုင်ပါတယ်။   
-%
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
-/*
- * ß\fEnEmp{Precondition:} \fMM{ပထမဆုံးလမ်း ပထမဆုံးကွန်နာမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမယ်}ß
- * ß\fEnEmp{Postcondition:} \fMM{လမ်းအားလုံးရှင်းပြီးဖြစ်ရမယ်။ မြောက်ဘက် မျက်နှာမူနေမယ်။}ß
- * ß\fMM{(နောက်ဆုံးလမ်း စုံဂဏန်းဖြစ်ရင် လမ်းအစ၊ မဂဏန်း ဖြစ်ရင် လမ်းအဆုံး မှာရှိမယ်)}ß
- */
-void sweepTheWorld() {
-    sweepStreet();
-    turnNorth();
-    while (frontIsClear()) {
-        getReadyForNextStreet();
-        sweepStreet();
-        turnNorth();
-    }
-}
-\end{minted}
-%
 
-ပရိုဂရမ်တစ်ခုလုံး အပြည့်အစုံကို ဆက်စပ်ကြည့်လို့ရအောင် အောက်မှာ ဖော်ပြပေးထားပါတယ်။ နားလည်အောင် ဂရုစိုက် လေ့လာပါ။ ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေကိုတော့ ရှေ့မှာ ဖော်ပြထားပြီးဖြစ်တာမို့လို့ ချန်ထားပါတယ်။
-%
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{java}
-import stanford.karel.Karel;
 
-public class SweepTheWorld extends Karel {
 
-    public void run() {
-        sweepTheWorld();
-    }
-
-    void sweepTheWorld() {
-        sweepStreet();
-        turnNorth();
-        while (frontIsClear()) {
-            getReadyForNextStreet();
-            sweepStreet();
-            turnNorth();
-        }
-    }
-
-    void sweepCorner() {
-        if (beepersPresent()) {
-            pickBeeper();
-        }
-    }
-
-    void sweepStreet() {
-        while (frontIsClear()) {
-            sweepCorner();
-            move();
-        }
-        sweepCorner();
-    }
-
-    void turnNorth() {
-        while (notFacingNorth()) {
-            turnLeft();
-        }
-    }
-
-    void getReadyForNextStreet() {
-        if (rightIsBlocked()) {
-            move();
-            turnLeft();
-        } else {
-            move();
-            turnRight();
-        }
-    }
-
-    void turnRight() {
-        turnLeft();
-        turnLeft();
-        turnLeft();
-    }
-}
-\end{minted}
-%
 
 \section{Top-down programming style}
 \fEn{Top-down programming} ဟာ အပေါ်ဆုံးအလွှာမှစ၍ တည်ဆောက်တဲ့နည်း ဖြစ်ပါတယ်။ \fEn{Bottom-up} နဲ့ ပြောင်းပြန်ပါ။ \fEn{Top-down} က အထက်မှအောက် တစ်လွှာပြီးတစ်လွှာ အဆင့်ဆင့် တည်ဆောက်သွားတာ။  နည်းလမ်းနှစ်ခုလုံးမှာ \fEn{Problem Decomposition} လုပ်ရမှာဖြစ်ပေမဲ့ လုပ်ငန်းစဉ်မှာ ကွာခြားချက် တချို့ရှိတယ်။ \fEn{Top-down} နည်းအတွက် \fEn{Problem Decomposition} လုပ်တဲ့အခါ  \fEn{bottom-up} မှာလို အသေးဆုံး အစိတ်အပိုင်းတွေပါဝင်တဲ့ အောက်ဆုံးအလွှာထိ တခါတည်း  ခွဲခြမ်းစိတ်ဖြာစရာမလိုဘူး။ အပေါ်တစ်လွှာတည်ဆောက်တဲ့အခါ သူ့အောက်တစ်ဆင့်အလွှာထိပဲ \fEn{decompose} လုပ်တယ်။ အောက်အလွှာတွေအတွက် ဘယ်လို လုပ်မလဲ မစဉ်းစားသေးဘူး။ ဥပမာ အမှိုက်သိမ်း ကားရဲလ်ပရိုဂရမ်ကို အပေါ်ဆုံးအဆင့်ကို \fEn{decompose} လုပ်ရင် အခုလိုဖြစ်မယ်။

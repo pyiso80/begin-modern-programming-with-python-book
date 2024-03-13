@@ -1,0 +1,120 @@
+
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def make_beeper_row():
+    if front_is_clear():ß\tikzmark{a3}ß
+        put_beeper()
+        move()
+        make_beeper_row()ß\tikzmark{b3}ß
+    else:
+        put_beeper()  
+\end{minted}
+\begin{tikzpicture}[
+    remember picture,
+    overlay,
+    annotation/.style={
+      inner sep=0pt,
+      outer sep=0pt,
+      outer xsep=1mm,
+      fill=yellow!80!black,
+      text width=5cm
+    },
+    >={Stealth[inset=0pt, angle=30:7pt]}
+  ]
+  \draw[->, thin, black] (pic cs:b3)  ++(0,.5ex) -- ++(1,0) |- ([yshift=0.5ex]pic cs:a3);
+  %\draw[->] (pic cs:aa)  ++(0,1ex) -- ++(2.5,0) |- ([shift={(0,-0.5ex)}] pic cs:b) ;
+\end{tikzpicture}
+%
+\clearpage
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def make_beeper_row():
+    if front_is_clear():ß\tikzmark{a4}ß
+        put_beeper()
+        move()
+        make_beeper_row()ß\tikzmark{b4}ß
+    else:
+        put_beeper()  
+\end{minted}
+\begin{tikzpicture}[
+    remember picture,
+    overlay,
+    annotation/.style={
+      inner sep=0pt,
+      outer sep=0pt,
+      outer xsep=1mm,
+      fill=yellow!80!black,
+      text width=5cm
+    },
+    >={Stealth[inset=0pt, angle=30:7pt]}
+  ]
+  \draw[->, thin, black] (pic cs:b4)  ++(0,.5ex) -- ++(1,0) |- ([yshift=0.5ex]pic cs:a4);
+  %\draw[->] (pic cs:aa)  ++(0,1ex) -- ++(2.5,0) |- ([shift={(0,-0.5ex)}] pic cs:b) ;
+\end{tikzpicture}
+%
+
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def make_beeper_row():
+    if front_is_clear():ß\tikzmark{a5}ß
+        put_beeper()
+        move()
+        make_beeper_row()ß\tikzmark{b5}ß
+    else:
+        put_beeper()  
+\end{minted}
+\begin{tikzpicture}[
+    remember picture,
+    overlay,
+    annotation/.style={
+      inner sep=0pt,
+      outer sep=0pt,
+      outer xsep=1mm,
+      fill=yellow!80!black,
+      text width=5cm
+    },
+    >={Stealth[inset=0pt, angle=30:7pt]}
+  ]
+  \draw[->, thin, black] ([yshift=1.2ex]pic cs:b5)  ++(0,.5ex) -- ++(1,0) |- ([yshift=0ex]pic cs:a5);
+  %\draw[->] (pic cs:aa)  ++(0,1ex) -- ++(2.5,0) |- ([shift={(0,-0.5ex)}] pic cs:b) ;
+\end{tikzpicture}
+%
+
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+def make_beeper_row():
+    if front_is_clear():
+        put_beeper()
+        move()
+        make_beeper_row()
+    else:
+        put_beeper()ß\tikzmark{b6}ß  
+\end{minted}
+\begin{tikzpicture}[
+    remember picture,
+    overlay,
+    annotation/.style={
+      inner sep=0pt,
+      outer sep=0pt,
+      outer xsep=1mm,
+      fill=yellow!80!black,
+      text width=5cm
+    },
+    >={Stealth[inset=0pt, angle=30:7pt]}
+  ]
+  \draw[->, thin, red] (pic cs:b6)  ++(0,.5ex) -- ++(3,0) |- ([yshift=0ex]pic cs:b5);
+  %\draw[->] (pic cs:aa)  ++(0,1ex) -- ++(2.5,0) |- ([shift={(0,-0.5ex)}] pic cs:b) ;
+\end{tikzpicture}
+%

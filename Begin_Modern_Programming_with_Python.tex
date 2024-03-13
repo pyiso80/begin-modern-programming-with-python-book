@@ -20,7 +20,9 @@
 
 \usepackage{fontspec}
 
-\usepackage{bm}
+\usepackage{stmaryrd}
+
+%\SetSymbolFont{largesymbols}{bold}{OMX}{txex}{b}{n}
 
 \usepackage{titlesec}
 \usepackage{fancyhdr}
@@ -50,10 +52,13 @@
 \AtBeginEnvironment{minted}{\dontdofcolorbox}
 \def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
 \makeatother
+\setminted{baselinestretch=1.12}
+
 
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{tikz}
+\usetikzlibrary{tikzmark}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usepackage{onimage}
 \usetikzlibrary{arrows.meta}
@@ -84,8 +89,17 @@
 % control vspace between two minted env
 %\AfterEndEnvironment{minted}{\par\vspace{-\baselineskip}}
 \newcommand{\betweenminted}[1]{%
-  \par\vspace{-\medskipamount}\vspace{-0.5\baselineskip}%
-  \vspace{#1}%
+\par\vspace{-\medskipamount}\vspace{-0.5\baselineskip}%
+\vspace{#1}%
+}
+
+\newcommand{\btwntikzannoandpar}{%
+\vspace{-1.33518\baselineskip}%
+}%
+
+
+\newcommand{\betweentcboxpar}{%
+\par\vspace{0.75em}%
 }
 
 \usepackage[most]{tcolorbox}
@@ -141,16 +155,17 @@
 \pagestyle{fancy}
 \pagenumbering{arabic}
 
-\include{chapters/chapter01.tex}
-\include{chapters/chapter02.tex}
-\include{chapters/chapter03.tex}
+%\include{chapters/chapter01.tex}
+%\include{chapters/chapter02.tex}
+%\include{chapters/chapter03.tex}
+\include{chapters/chapter04.tex}
 
 
-\renewcommand\thefigure{A/\arabic{figure}}    
-\appendix
-\include{chapters/appendix01.tex}
-\renewcommand\thefigure{B/\arabic{figure}} 
-\include{chapters/appendix02.tex}
-
-\include{chapters/appendix00.tex}
+%\renewcommand\thefigure{A/\arabic{figure}}    
+%\appendix
+%\include{chapters/appendix01.tex}
+%\renewcommand\thefigure{B/\arabic{figure}} 
+%\include{chapters/appendix02.tex}
+%
+%\include{chapters/appendix00.tex}
 \end{document}

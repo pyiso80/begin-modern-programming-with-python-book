@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{def} \PYG{n+nf}{make\PYGZus{}beeper\PYGZus{}row}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n}{front\PYGZus{}is\PYGZus{}clear}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{put\PYGZus{}beeper}\PYG{p}{(}\PYG{p}{)}
+        \PYG{n}{move}\PYG{p}{(}\PYG{p}{)}
+        \PYG{n}{make\PYGZus{}beeper\PYGZus{}row}\PYG{p}{(}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{put\PYGZus{}beeper}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{make\PYGZus{}beeper\PYGZus{}row}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
