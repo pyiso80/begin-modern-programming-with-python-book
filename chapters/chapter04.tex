@@ -600,7 +600,7 @@ pick_all_beepers()ß\tikzmarknode{i1}ß
 \draw[->, thin, red] (pic cs:i2)  ++(0,1ex) .. controls ([xshift=1.7cm,yshift=.4cm]pic cs:i2) and ([xshift=1cm,yshift=.2cm]pic cs:i1) ..  ([yshift=.7ex] pic cs:i1);
 %([yshift=0.1em]a.north) to[bend left] ([yshift=0.1em]b.north);}
 \end{tikzpicture}%
-
+\btwntikzannoandpar
 
 
 မျှော်လင့်ထားသလို အလုပ်လုပ်နေပါတယ်။ အထက်ပါအတိုင်း စစ်ကြည့်သွားရင် ဘိပါ သုံး၊ လေး၊ ငါး၊ $...$ ခု တွေအတွက်လည်း တောက်လျှောက်မှန်နေမှာပါ။ ဘာကြောင့် ပြောနိုင်ရတာလဲ။ အခုလို စဉ်းစားကြည့်နိုင်ပါတယ်။ ရှေ့မှာ စစ်ကြည့်တာ $n = 0, n = 1$ အတွက် မှန်တာ သေချာပြီ။  $n = 2$ အတွက် စစ်မယ်ဆိုပါစို့
@@ -664,7 +664,7 @@ if beepers_present():
 \fCode{clean\_street} ဖန်ရှင်ဟာ လက်ရှိဖြေရှင်းမဲ့ အရွယ်အစားထက် တစ်ဆင့်ငယ်တဲ့ ကိစ္စကို ဖြေရှင်းနိုင်ပြီးသားလို့ မှတ်ယူရပါမယ်။ 
 \end{mytcbox}%
 
-အခုကိစ္စအတွက် ကွန်နာငါးခု ရှင်းမယ်ဆိုရင် \fCode{clean\_street} ဖန်ရှင်ဟာ ကွန်နာလေးခုနဲ့ လမ်းကို ရှင်းနိုင်တယ်လို့ ယူဆရမယ်။  $n$ ကွန်နာပါတဲ့လမ်းအတွက် $n - 1$ ကွန်နာကို ရှင်းနိုင်ပြီးသားလို့ ယူဆရမှာ ဖြစ်ပါတယ်။
+အခုကိစ္စအတွက် ကွန်နာငါးခု ရှင်းမယ်ဆိုရင် \fCode{clean\_street} ဖန်ရှင်ဟာ ကွန်နာလေးခုနဲ့ လမ်းကို ရှင်းနိုင်တယ်လို့ ယူဆရမယ်။  $n$ ကွန်နာရှိတဲ့လမ်းအတွက် $n - 1$ ကွန်နာကို ရှင်းနိုင်ပြီးသားလို့ ယူဆရမှာ ဖြစ်ပါတယ်။
 
 
 \begin{mytcbox}
@@ -736,8 +736,9 @@ def clean_world():
     clean_world()
     ...
 \end{minted}
+    တစ်လမ်းရှင်းပြီး နောက်တစ်လမ်းကို ကူးလိုက်ရင် ဆက်ရှင်းဖို့ လမ်း အရေအတွက် $n - 1$ ကျန်မယ် (ငါးလမ်းရှိတာကို တစ်လမ်းရှင်းပြီး အပေါ်လမ်းကူးလိုက်ရင် ရှင်းစရာ လမ်း လေးခုပဲ ကျန်မယ်) ။ ကျန်တဲ့ $n - 1$  လမ်းကို ရှင်းဖို့ လက်ရှိ \fCode{clean\_world} ဖန်ရှင်ကိုပဲ ပြန်ခေါ်တယ်။
 %
-    \item အသေးငယ်ဆုံး ကိစ္စကို ချွင်းချက်အနေနဲ့ စဉ်းစားရမယ်။   လမ်းတစ်လမ်းပဲရှိတာက အသေးငယ်ဆုံး။ လမ်းတစ်လမ်းရှင်းပြီး မြောက်ဘက်လှည့်အပြီး ပိတ်နေပြီဆိုရင်တော့ နောက်ထပ် ဆက်ပြီးရှင်းစရာ လမ်းမရှိတော့ဘူး။ အပေါ်အဆင့်က လမ်းကူးတာနဲ့ ကျန်တဲ့လမ်းတွေကို ရှင်းတဲ့ကိစ္စကို မြောက်ဘက်လှည့်ပြီးတဲ့အခါ ရှေ့မှာရှင်းနေမှလုပ်ရမှာပါ။
+    \item အသေးငယ်ဆုံး ကိစ္စကို ချွင်းချက်အနေနဲ့ စဉ်းစားရမယ်။   လမ်းတစ်လမ်းပဲရှိတာက အသေးငယ်ဆုံး။ လမ်းတစ်လမ်းရှင်းပြီး မြောက်ဘက်လှည့်အပြီး ပိတ်နေပြီဆိုရင်တော့ နောက်ထပ် ဆက်ပြီးရှင်းစရာ လမ်းမရှိတော့ဘူး။ အပေါ်အဆင့်က လမ်းကူးတာနဲ့ ကျန်တဲ့လမ်းတွေကို ရှင်းတဲ့ကိစ္စကို မြောက်ဘက်လှည့်ပြီးတဲ့အခါ ရှေ့မှာရှင်းနေမှ လုပ်ရမှာပါ။ ဒီတော့ အခုလို 
     %
 \setlength{\fboxsep}{0pt}
 \begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
@@ -750,10 +751,11 @@ def clean_world():
         change_street()
         clean_world()
 \end{minted}
+    ဖြစ်ရမယ်။ 
 %
 \end{itemize}
 %
-တစ်လမ်း၊ နှစ်လမ်း၊ သုံးလမ်း အသေးဆုံး ကိစ္စတွေ မှန်/မမှန် စစ်ကြည့်ပါ။ ပရိုဂရမ် အစအဆုံး ဖော်ပြပေးထားပါတယ်။ လေ့လာကြည့်ပါ။
+တစ်လမ်း၊ နှစ်လမ်း၊ သုံးလမ်း အသေးဆုံး ကိစ္စတွေ မှန်/မမှန် စိစစ်ကြည့်ပါ။ ပရိုဂရမ် အစအဆုံး ဖော်ပြပေးထားပါတယ်။ လေ့လာကြည့်ပါ။
 %
 \setlength{\fboxsep}{0pt}
 \begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
@@ -800,5 +802,68 @@ def turn_north():
 
 if __name__ == "__main__":
     run_karel_program("clean_world")
+\end{minted}
+%
+
+%
+\setlength{\fboxsep}{0pt}
+\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
+    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
+    , python3=true,escapeinside=ßß]{python}
+# File: checkerboard_recur.py
+from stanfordkarel import *
+
+def main():
+    mk_checkerboard()
+
+def mk_checkerboard():
+    mk_checker_row()
+    turn_north()
+    if front_is_clear():
+        if beepers_present():
+            switch_row()
+            mk_checker_row2()
+        else:
+            switch_row()
+            mk_checker_row()
+        turn_north()
+        if front_is_clear():
+            switch_row()
+            mk_checkerboard()
+
+def mk_checker_row():
+    put_beeper()
+    if front_is_clear():
+        move()
+        if front_is_clear():
+            move()
+            mk_checker_row()
+
+def mk_checker_row2():
+    if front_is_clear():
+        move()
+        put_beeper()
+        if front_is_clear():
+            move()
+            mk_checker_row2()
+
+def switch_row():
+    move()
+    if right_is_blocked():
+        turn_left()
+    else:
+        turn_right()
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+def turn_north():
+    while not_facing_north():
+        turn_left()
+
+if __name__ == "__main__":
+    run_karel_program("4x5")
 \end{minted}
 %
