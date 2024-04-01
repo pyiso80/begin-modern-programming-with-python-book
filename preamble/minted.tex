@@ -1,0 +1,36 @@
+\setminted[java]{fontfamily=IBMPlexMonoFamily}
+\setminted[text]{fontfamily=IBMPlexMonoFamily}
+\setminted[python]{fontfamily=IBMPlexMonoFamily}
+
+\AtBeginEnvironment{minted}{\let\special\mintedspecial} 
+\def\mintedspecial{\kern0pt\primitive\special}
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\makeatother
+\setminted{baselinestretch=1.12}
+\usepackage{environ}
+\newenvironment{pythoncode}
+{\VerbatimEnvironment
+\begin{minted}[
+    frame=\mintframe, 
+    framerule=\mintrule,
+    framesep= \mintsep, 
+    xleftmargin=\xlftmargin, 
+    bgcolor=mintbgcolor,
+    rulecolor=mintrulecolor,
+    python3=true
+    ,escapeinside=ßß]{python}}
+ {\end{minted}}
+
+\newenvironment{codetxt}
+{\VerbatimEnvironment
+\begin{minted}[
+    frame=\mintframe, 
+    framerule=\mintrule,
+    framesep= \mintsep, 
+    xleftmargin=\xlftmargin, 
+    bgcolor=mintbgcolor,
+    rulecolor=mintrulecolor
+    ,escapeinside=ßß]{text}}
+ {\end{minted}}
