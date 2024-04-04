@@ -1,0 +1,248 @@
+\chapter{ဖန်ရှင်များ}
+အခန်း (၃) မှာ ကိုယ်ပိုင် ကားရဲလ်ဖန်ရှင်တွေကို စတင် မိတ်ဆက်ခဲ့ပြီး အခန်း (၅) မှာတော့ ပါရာမီ \fCode{return} အကြောင်းကို မိတ်ဆက်ပေးခဲ့တယ်။ ဒီအခန်းမှာတော့ ဖန်ရှင်
+
+\todo{အခန်း (\fRefNo{\ref{ch:ch03}}) \fRefNo{\ref{ch:ch05}}}
+
+ခြုံငုံနားလည်အောင် ပြောရရင် မက်သဒ်ဆိုတာ ကိစ္စတစ်ခုခု လုပ်ဆောင်ပေးဖို့အတွက် နံမည်ပေးထားတဲ့ စတိတ်မန့်တွေပါပဲ။ နံမည်တစ်ခု (အဓိပ္ပါယ်ပေါ်လွင်တဲ့) ဟာ အရေးကြီးပါတယ်။ မှန်မှန်ကန်ကန် ရွေးချယ်ထားတဲ့ နံမည်တစ်ခုဟာ မက်သဒ်ရဲ့ လုပ်ဆောင်ချက်ကို ပေါ်လွင်စေပြီး နားလည်ရလွယ်ကူစေတယ်။ \fCode{cleanStreet}\fEn{,} \fCode{cleanCorner}\fEn{,} \fCode{turnNorth} စတဲ့ ပရိုဂရမ်ရဲ့ ဇာတ်လမ်းနဲ့ ကိုက်ညီမှုရှိတဲ့ နံမည်တွေဟာ ပရိုဂရမ်ကုဒ်ကို ဖတ်ရင် နားလည်ရလွယ်ကူစေတယ်။ တကယ့်လက်တွေ့အသုံးချ ပရိုဂရမ်တွေမှာ ဒီအချက်ဟာ ပိုလို့တောင် အရေးပါတယ်။ ကုမ္ပဏီတစ်ခုအသုံးပြုတဲ့ ပရိုဂရမ်တစ်ခုမှာ အခုလိုမက်သဒ်တွေ ပါကောင်းပါနိုင်ပါတယ်။
+
+\section{တန်ဖိုးပြန်ပေးတဲ့ ဖန်ရှင်များ}
+အခန်း (၅) မှာ ဖော်ပြခဲ့တဲ့ နှစ်ထပ်ကိန်းရှာတဲ့ \fCode{square} ဖန်ရှင်ကိုပဲ အသေးစိတ် တစ်ခါထပ်ကြည့်ရအောင်။ ဒီလောက် ရှင်းရှင်းလေးကို အကျယ်ချဲ့နေတယ်လို့ ထင်ကောင်း ထင်ပါလိမ့်မယ်။ နည်းနည်းတော့  စိတ်ရှည်သည်းခံ ပေးရပါမယ်။ အခြေခံကျတဲ့ သဘောတရားတွေ ကျေညက်ထားမှ ရှေ့ဆက်တဲ့အခါ လွယ်\allowbreak ကူမှာ မို့လို့ပါ။  % \todo{\fRefNo{\ref{ch:ch05}}}
+%
+\begin{codetxt}
+>>> def square(x):
+...     return x ** 2
+...
+>>> 
+\end{codetxt}
+%
+ဝိုက်ကွင်းထဲက ဗေရီရေဘဲလ်  \fCode{x} က ဖန်ရှင် ပါရာမီတာ \fEn{(\textit{parameter})} ဖြစ်ပြီး ဖန်ရှင်ခေါ်တဲ့အခါ ထည့်ပေးမဲ့ အာ့ဂုမန့်  \fEn{(\textit{argument})} တန်ဖိုးကို ကိုယ်စားပြုတယ်။ \fCode{return} စတိတ်မန့်က ဖန်ရှင်ခေါ်တဲ့နေရာကို တန်ဖိုးပြန်ပေးတဲ့ စတိတ်မန့်ပါ။ 
+
+ဖန်ရှင်အသုံးပြုတာကို \fEnEmp{function call} လုပ်တယ်လို့ သိထားပြီးပါပြီ။ မြန်မာလိုတော့ ‘ဖန်ရှင်ခေါ်တယ်’ သို့မဟုတ် ‘ဖန်ရှင်ကောလ်တယ်’ လို့ အပြောများတယ်။ ဖန်ရှင်ခေါ်တဲ့ ပုံစံက ဒီလိုပါ
+%
+\begin{codetxt}
+>>> square(2.5)
+6.25
+\end{codetxt}
+%
+အခု ဖန်ရှင်ကောလ် အတွက် ပါရာမီတာ \fCode{x} ရဲ့ တန်ဖိုးက \fCode{2.5} ဖြစ်မှာပါ။ (ဖန်ရှင်ခေါ်တဲ့အခါ ပါရာမီတာ ဗေရီရေဘဲလ် \fCode{x} ကို အာ့ဂုမန့်နဲ့ အဆိုင်းမန့်လုပ်ပေးတယ်လို့ ယူဆနိုင်တယ်။ ဒီကိစ္စအတွက် အာ့ဂုမန့်က  \fCode{2.5} ဖြစ်တယ်)။ အားလုံးသိပြီး ဖြစ်တဲ့အတိုင်း ဖန်ရှင်ခေါ်ရင် ဖန်ရှင်ဘလောက်ကို လုပ်ဆောင်ပေးမှာပါ။ ဖန်ရှင်ဘလောက်ထဲက \fCode{return} စတိတ်မန့် လုပ်ဆောင်တဲ့အခါ အိပ်စ်ပရက်ရှင် \fCode{x ** 2} ကို တန်ဖိုးအရင်ရှာတယ်။ \fCode{6.25} ရတယ်။ ဒီတန်ဖိုးကို ဖန်ရှင်ခေါ်ထားတဲ့ နေရာကို \fCode{return} က ပြန်ပို့ပေးလိုက်တာပါ။ အောက်ပါ ဖန်ရှင်ကောလ်မှာလည်း ဒီဖြစ်စဉ် သဘောအတိုင်း တစ်ခါထပ်ဖြစ်မှာ ဖြစ်တယ်။
+%
+\begin{codetxt}
+>>> a = 1024
+>>> result = square(a)
+>>> result
+1048576
+\end{codetxt}
+%
+အခုတစ်ခါ ပါရာမီတာ \fCode{x} ဟာ အာ့ဂုမန့် \fCode{a} ရဲ့ တန်ဖိုး ဖြစ်တယ် (\fCode{x = a} အဆိုင်းမန့် လုပ်တဲ့သဘောပဲ)။ \fCode{x ** 2} က ရလာတဲ့ \fCode{1048576} ကို  ဖန်ရှင်ခေါ်တဲ့ နေရာက ပြန်ရတယ်။ နောက်ဆုံးတော့ ဒီတန်ဖိုးကို \fCode{result} မှာ အဆိုင်းမန့်လုပ်တယ်။ ဖြစ်စဉ်အရ ရိုးရှင်းပါတယ်။
+\begin{codetxt}
+>>> x = 10
+>>> square(x)
+\end{codetxt}
+ဒီလိုဆိုရင်ရော ဘယ်လို ဖြစ်မလဲ။ နည်းနည်းထူးခြားတာက အာ့ဂုမန့်နဲ့ ပါရာမီတာ နံမည်တူနေတာ။ ပါရာမီတာရဲ့ စကုပ်ဟာ ဖန်ရှင်သတ်မှတ်ချက် အတွင်းမှာပဲ ရှိတယ်လို ယူဆရမှာပါ။ ဒါကြောင့် အာ့ဂုမန့် \fCode{x} နဲ့ ပါရာမီတာ \fCode{x} နဲ့က သီးခြား  ဗေရီရေဘဲလ်တွေ။ 
+\begin{codetxt}
+>>> u = 15
+>>> t = 5
+>>> square(u + 2*t)
+\end{codetxt} 
+အာ့ဂုမန့်က အိပ်စ်ပရက်ရှင် ဖြစ်နေရင် တန်ဖိုးအရင်ရှာပြီး ရလဒ်ကို ပါရာမီတာနဲ့ အဆိုင်းမန့် လုပ်ပါတယ် (\fCode{x = u + 2*t})။
+\begin{codetxt}
+>>> z = square(2.0) + 5
+>>> square(z)
+81.0
+>>> square(square(2.0) + 5)
+81.0
+\end{codetxt}
+ဒုတိယ ဖန်ရှင်ခေါ်တဲ့နေရာမှာ အိပ်စ်ပရက်ရှင်ကို \fCode{z} နဲ့ အဆိုင်းမန့် မလုပ်တော့ဘဲ တစ်ခါတည်း အာ့ဂုမန့်အနေနဲ့ ထည့်လိုက်တာပါ။ သဘောတရား တူတူပါပဲ။
+
+ဖန်ရှင် \fCode{return} လုပ်တဲ့ သဘောကို နားလည်ထားဖို့လည်း အရေးကြီးတယ်။ \fCode{return} စတိတ်မန့်ဟာ ဖန်ရှင်ကနေ တန်ဖိုးတစ်ခုကို  ဖန်ရှင်ခေါ်တဲ့ဆီကို ပြန်ပေးတယ်လို့ သိထားပြီးပါပြီ။ ဖန်ရှင်ထဲကနေ \fCode{return}  လုပ်လိုက်တာနဲ့ ခေါ်ထားတဲ့နေရာကို ချက်ချင်း ပြန်ရောက်သွားတာ။
+\begin{codetxt}
+>>> def get_sign(r):
+...     if r > 0:
+...         return 'positive'
+...     elif r < 0:
+...         return 'negative'
+...     else:
+...         return 'zero/nosign'
+... 
+>>>
+\end{codetxt}
+\betweenminted{\medskipamount}
+\begin{codetxt}
+>>> '10 is ' + get_sign(10)
+'10 is positive'
+\end{codetxt}
+အခုအိပ်စ်ပရက်ရှင်ရဲ့ တန်ဖိုးရှာဖို့ \mintinline{text}|get_sign(10)| ခေါ်လိုက်တဲ့အခါ  လက်ရှိနေရာကနေ လုပ်ဆောင်မှုက ဖန်ရှင်ဘလောက်ဆီ ပြောင်းရွှေ့ ရောက်ရှိသွားပါမယ်။ ဖန်ရှင်ထဲက စတိတ်မန့်တွေ အစဉ်အတိုင်း စတင်လုပ်ဆောင်တယ်။ ဖန်ရှင်က \fCode{return}  လုပ်တဲ့အခါ လုပ်ဆောင်မှုက ဖန်ရှင်ဘလောက်ထဲကနေ ခေါ်ခဲ့တဲ့နေရာကို တဖန်ပြန်၍ ပြောင်းရွှေ့သွားတယ်။ \fCode{return} ပြန်လိုက်တဲ့ တန်ဖိုးကို ဖန်ရှင်ခေါ်တဲ့နေရာမှာ ရရှိပြီး လုပ်လက်စ အိပ်စ်ပရက်ရှင်ကို ဆက်လုပ်ပါတယ်။ ဒီလိုမြင်ကြည့်ပါ  $\ldots$
+%
+\begin{py}
+def get_sign(r):ß\tikzmark{fna2}ß
+    if r > 0:
+        return 'positive'ß\tikzmark{fna3}ß
+    elif r < 0:
+        return 'negative'
+    else:
+        return 'zero/nosign'
+
+'10 is ' + get_sign(10)ß\tikzmark{fna1}ß
+\end{py}
+%
+\begin{tikzpicture}[
+    remember picture,
+    overlay,
+    annotation/.style={
+      inner sep=0pt,
+      outer sep=0pt,
+      outer xsep=1mm,
+      fill=yellow!80!black,
+      text width=5cm
+    },
+    >={Stealth[inset=0pt, angle=30:7pt]}
+  ]
+  \draw[->, thin] (pic cs:fna1)  ++(0,0ex) .. controls ([xshift=3cm,yshift=1cm]pic cs:fna1) and ([xshift=2.5cm,yshift=-0.5cm]pic cs:fna2) ..  ([yshift=0.5ex] pic cs:fna2);
+  \draw[->, thin, red] (pic cs:fna3)  ++(0,0.5ex) .. controls ([xshift=1cm,yshift=-.5cm]pic cs:fna3) and ([xshift=2cm,yshift=1cm]pic cs:fna1) ..  ([yshift=.75ex] pic cs:fna1);
+  %([yshift=0.1em]a.north) to[bend left] ([yshift=0.1em]b.north);}
+\end{tikzpicture}%
+မြှားအနက်က ဖန်ရှင်ခေါ်လိုက်တဲ့အခါ လုပ်ဆောင်မှု ပြောင်းရွှေ့သွားတာကို ပြတယ်။ မြှားအနီက \fCode{return} ပြန်တဲ့အခါ ခေါ်ခဲ့တဲ့နေရာ ပြန်ရောက်သွားတာကို ပြတာပါ။
+
+ဆက်လက်ပြီး ပါရာမီတာ တစ်ခုထက်ပိုတဲ့ ဖန်ရှင်တချို့ကို ကြည့်ပါမယ်။ ပါရာမီတာဆိုတာ ဖန်ရှင်အတွက် လိုအပ်တဲ့ \fCode{input} ကို လက်ခံတဲ့ ဗေရီရေဘဲလ်ပါပဲ။ ထောင့်မှန်စတုဂံရဲ့ အလျားနဲ့ အနံကနေ ဧရိယာရှာပေးတဲ့ ဖန်ရှင်က ဒီလိုပါ
+\begin{codetxt}
+def rect_area(wid, len):
+    return wid * len
+\end{codetxt}
+
+ဖန်ရှင်တစ်ခုကို အခြေခံ အုပ်ချပ်သဖွယ် အသုံးပြု၍ အခြားဖန်ရှင်တွေ တည်ဆောက်ယူနိုင်တယ်။ \mintinline{text}|rect_area| ကို \mintinline{text}|box_vol| မှာ သုံးထားတာပါ
+\begin{codetxt}
+def box_vol(w, l, h):
+    return rect_area(w, l) * h
+\end{codetxt}
+ဒီဖန်ရှင်ကို ခေါ်ရင် ဘယ်လိုဖြစ်မလဲ ကြည့်တတ်သင့်တယ်။ အခုလို ခေါ်မယ် ဆိုပါစို့
+\begin{codetxt}
+>>> box_vol(10, 5, 3)
+\end{codetxt}
+\fCode{w=10}\fEn{,} \fCode{l=5}\fEn{,} \fCode{h=3} ဖြစ်တယ်။ ဖန်ရှင် ဘလောက်ထဲကို ရောက်သွားမယ်။ \fCode{return} ပြန်ပေးဖို့ အိပ်စ်ပရက်ရှင်ကို တန်ဖိုးရှာပါတယ်
+\begin{codetxt}
+rect_area(w, l) * h
+\end{codetxt}
+\mintinline{text}|rect_area| ဖန်ရှင်ခေါ်တယ်။ \fCode{wid=w}\fEn{,} \fCode{len=l} ဖြစ်မယ်။ အခုကိစ္စအတွက် ပါရာမီတာနှစ်ခုရဲ့ တန်ဖိုးက \fCode{10} နဲ့ \fCode{5} အသီးသီး ဖြစ်မှာပါ။  \fCode{50}  ရပါမယ်။ \fCode{50 * h} ကို တန်ဖိုးဆက်ရှာပြီး ရလာတဲ့ \fCode{150} ကို \mintinline{text}|box_vol| ခေါ်ထားတဲ့နေရာကို \fCode{return} ပြန်ပေးမှာ ဖြစ်တယ်။ အခြေခံသဘောတရားတွေ သိပြီးတဲ့အခါ အတန်အသင့်ရှုပ်ထွေးတဲ့ ဖန်ရှင်တချို့ကို ကြည့်ပါမယ်။
+
+\subsection*{ဖန်ရှင်များနှင့် အက်ဘ်စရက်ရှင်းလုပ်ခြင်း}
+မွေးသက္ကရာဇ် \fEn{(date of birth)}  ကနေ အသက် တွက်ပေးတဲ့ ဖန်ရှင်ကို လေ့လာကြည့်ပါ။ အသက်တွက်တဲ့ လော့ဂျစ်ကို မရှင်းပြတော့ဘူး။ လေ့ကျင့်ခန်းအနေနဲ့ မိမိဖာသာ နားလည်အောင်ကြည့်ပါ။
+%
+\begin{py}
+# File: age_today.py
+from datetime import *
+
+def age_today(dob):
+    today = date.today()
+    this_bd = dob.replace(year=today.year)
+    if today - dob >= this_bd - dob:
+        return today.year - dob.year
+    else:
+        return today.year - dob.year - 1
+
+print(age_today(date(1990, 4, 2)))
+\end{py}
+%
+ဖန်ရှင်အတွင်းပိုင်း လော့ဂျစ်တွေ ဘယ်လိုပဲ ရှုပ်ထွေးပါစေ၊ အသုံးပြုရတာကတော့ မခက်ပါဘူး။ ဖန်ရှင်ခေါ်တဲ့အခါ ဘယ်လို တည်ဆောက်ထားလဲ အတွင်းပိုင်း အယ်လ်ဂိုရစ်သမ်တွေ၊ လော့ဂျစ်တွေ သိစရာမလိုဘဲ သုံးရတာပါ။ ဖန်ရှင်က ၎င်းရဲ့ အတွင်းပိုင်း ကုဒ်တွေကို အက်ဘ်စရက်ရှင်း \fEn{(\textit{abstraction})} လုပ်ပေးလိုက်တာ ဖြစ်တယ်။ ဒါဟာ ဖန်ရှင်ရဲ့ အရေးပါဆုံး ဂုဏ်သတ္တိလို့ ဆိုရင်လည်း မမှားဘူး။
+
+
+\fCode{age\_today} ဖန်ရှင်ဟာ ပိုကြီးတဲ့ ပရိုဂရမ်တစ်ခုရဲ့ တစ်စိတ်တစ်ပိုင်း ဖြစ်လာနိုင်ပါတယ်။  ပရိုဂရမ် အသေးစားလေးတစ်ခုမှာ အသုံးပြုထားတာကို လေ့လာကြည့်ပါ။  နိုင်ငံအများစုမှာ (၁၈) နှစ် မပြည့်သေးတဲ့သူကို ဆေးလိပ်ရောင်းခွင့် မရှိဘူး။ ဥပဒေရှိပါတယ်။  စားသုံးသူရဲ့ မွေးသက္ကရာဇ် ထည့်ပေးလိုက်တာနဲ့ ရောင်းလို့ ရ/မရ ပြပေးတဲ့ ပရိုဂရမ်လေးပါ။ 
+%
+\begin{py}
+# File: sell_cigarette.py
+from datetime import *
+
+def age_today(dob):
+    today = date.today()
+    this_bd = dob.replace(year=today.year)
+    if today - dob >= this_bd - dob:
+        return today.year - dob.year
+    else:
+        return today.year - dob.year - 1
+
+def can_by_cig(dob):
+    age = age_today(dob)
+    return True if age >= 18 else False
+
+def main():
+    """
+    Given date of birth, this program tells whether the customer
+    is eligible to buy cigarette or not.
+
+    Enter 'exit' to quit the program.
+    """
+    print("Please enter 'quit' to exit this program.")
+    while True:
+        dobstr = input('Enter date of birth (yyyy-mm-dd): ')
+        if dobstr == 'quit': break
+        dob = date.fromisoformat(dobstr)
+        print(dob)
+        if can_by_cig(dob):
+            print("Okay!")
+        else:
+            print('Too young to sell cigarette!')
+    print('Program exited...')
+
+
+if __name__ == "__main__":
+    main()
+\end{py}
+%
+
+
+\section{တန်ဖိုးပြန်မပေးတဲ့ ဖန်ရှင်များ}
+ဖန်ရှင်အားလုံးတော့ တန်ဖိုးပြန်ပေးတဲ့ ဖန်ရှင်တွေ မဟုတ်ကြပါဘူး။ တန်ဖိုးပြန်မပေးတဲ့ ဖန်ရှင်တွေလည်း ရှိတယ်။ ဥပမာ \fEn{output} ထုတ်တဲ့ \fCode{print}  ဖန်ရှင်ဟာ တန်ဖိုးပြန်မပေးတဲ့ ဖန်ရှင်မျိုးပါ။ အောက်ပါ \fCode{print\_sign} ဖန်ရှင်ဟာ \fCode{get\_sign} နဲ့ ဆင်တူပေမဲ့ တန်ဖိုး \fCode{return} ပြန်မပေးပါဘူး။ 
+%
+\begin{py}
+def print_sign(r):
+    if r > 0:
+        print('positive')
+    elif r < 0:
+        print('negative')
+    else:
+        print('zero/nosign')
+\end{py}
+%
+ဒီဖန်ရှင်မှာ \fCode{return} မပါတာ တွေ့ရပါမယ်။ ကားရဲလ်ဖန်ရှင်တွေမှာလည်း \fCode{return} မသုံးခဲ့တာ ပြန်အမှတ်ရမှာပါ။ \mintinline{text}|append_n_times| ကို လေ့လာကြည့်ပါ
+%
+\begin{py}
+def append_n_times(lst, itm, n):
+    for i in range(n):
+        lst.append(itm)
+
+lst = []
+append_n_times(lst, 'hello', 10)
+print(lst)
+\end{py}
+%
+အိုက်တမ်တစ်ခုကို သတ်မှတ်ထားတဲ့ အရေအတွက်ပြည့်အောင် \fEn{list} တစ်ခုနောက်ကနေ ဆက်ပေးတယ်။ နဂို \fCode{list} မှာ အိုက်တမ်တွေ တိုးသွားပြီး စတိတ်အပြောင်းအလဲ ဖြစ်စေတယ်။
+
+\fEn{Output} ထုတ်တဲ့ ဖန်ရှင်တွေဟာ တန်ဖိုးပြန်ပေးလေ့မရှိဘူး။ စခရင်မှာ စာသား (သို့) ရုပ်ပုံ ပြပေးတာဟာ \fEn{output} ဖြစ်တယ်။ ဖိုင်တစ်ခုမှာ ရေးတာလည်း \fEn{output} ပဲ (ဥပမာ \fEn{Python} ကုဒ်ဖိုင်ကို ပြင်ပြီး \fEn{save} လုပ်တာ) ။ အော့ဘ်ဂျက် စတိတ်ကို ပြောင်းလဲစေတဲ့ ဖန်ရှင်တွေဟာလည်း တန်ဖိုးပြန်မပေးတဲ့ ဖန်ရှင်တွေ ဖြစ်လေ့ရှိတယ် (ဥပမာ \fCode{list} ရဲ့ \fCode{append} နဲ့ \fCode{insert} ဖန်ရှင်)။ စတိတ်အပြောင်းအလဲ ဖြစ်စေတဲ့ ဖန်ရှင်အားလုံး တန်ဖိုးပြန်မပေးတာတော့ မဟုတ်ဘူး။ ဥပမာ \fCode{pop} ဟာ တန်ဖိုးပြန်ပေးပါတယ်။ စတိတ်အပြောင်းအလဲလည်း ဖြစ်စေတယ်။
+
+တန်ဖိုးပြန်တဲ့ ဖန်ရှင်ပဲ \fCode{return} ပြန်လို့ရတာ မဟုတ်ပါဘူး။ တန်ဖိုးပြန်မပေးတဲ့ ဖန်ရှင်တွေမှာလည်း \fCode{return} ပါနိုင်ပါတယ်။ \fCode{print\_sign} ကို ဒီလိုရေးလို့လည်း ရပါတယ်
+%
+\begin{py}
+def print_sign2(r):
+    if r > 0:
+        print('positive')
+        return
+    elif r < 0:
+        print('negative')
+        return
+    else:
+        print('zero/nosign')
+        return
+\end{py}
+%
+တန်ဖိုးပြန်မပေးတဲ့အတွက် \fCode{return} ပဲဖြစ်ရပါမယ်။ တန်ဖိုး/အိပ်စ်ပရက်ရှင် တွဲပြီး ပါလို့မရပါဘူး။ ဖန်ရှင်ဘလောက် ပြီးတဲ့အခါ ခေါ်တဲ့နေရာကို ပြန်ရောက်သွားရမှာ ဖြစ်တဲ့အတွက် \fCode{return} မပါတဲ့ ဖန်ရှင်တွေရဲ့ ဘလောက်အဆုံးမှာ \fCode{return} ရှိတယ်လို့ ယူဆနိုင်တယ်။ ဥပမာ \fCode{return} မပါတဲ့ \fCode{print\_sign} ကို အခုလို ယူဆနိုင်တယ်
+%
+\begin{py}
+def print_sign(r):
+    if r > 0:
+        print('positive')
+    elif r < 0:
+        print('negative')
+    else:
+        print('zero/nosign')
+    return 
+\end{py}
+%

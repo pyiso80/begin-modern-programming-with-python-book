@@ -131,10 +131,10 @@
 
 
 
-\AtBeginEnvironment{pythoncode}{\let\special\pythoncodespecial} 
-\def\pythoncodespecial{\kern0pt\primitive\special}
+\AtBeginEnvironment{py}{\let\special\pyspecial} 
+\def\pyspecial{\kern0pt\primitive\special}
 \makeatletter
-\AtBeginEnvironment{pythoncode}{\dontdofcolorbox}
+\AtBeginEnvironment{py}{\dontdofcolorbox}
 \def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
 \makeatother
 
@@ -169,6 +169,8 @@
 %\include{chapters/chapter04.tex}
 \include{chapters/chapter05.tex}
 \include{chapters/chapter06.tex}
+\include{chapters/chapter07.tex}
+\include{chapters/chapter08.tex}
 
 
 %\renewcommand\thefigure{A/\arabic{figure}}    
