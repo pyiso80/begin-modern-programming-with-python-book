@@ -96,7 +96,7 @@
 \usepackage[most]{tcolorbox}
 \newtcolorbox{mytcbox}{
     left=3pt,right=3pt,top=3pt,bottom=3pt,
-    colframe=gray,
+    colframe=lightgray,
     boxrule=0.4pt,
     colback=boxfillcolor,
     before upper={\parindent0em}
@@ -138,12 +138,20 @@
 \def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
 \makeatother
 
+\AtBeginEnvironment{pytc}{\let\special\pytcspecial} 
+\def\pytcspecial{\kern0pt\primitive\special}
+\makeatletter
+\AtBeginEnvironment{pytc}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\makeatother
+
 \AtBeginEnvironment{codetxt}{\let\special\codetxtspecial} 
 \def\codetxtspecial{\kern0pt\primitive\special}
 \makeatletter
 \AtBeginEnvironment{codetxt}{\dontdofcolorbox}
 \def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
 \makeatother
+
 
 \newcommand{\bropn}{\{}
 
