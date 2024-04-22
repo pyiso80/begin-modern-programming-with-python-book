@@ -247,6 +247,126 @@ def print_sign(r):
 \end{py}
 %
 
+\section{Exceptions}
+ပုံမှန်အားဖြင့်တော့ ဖန်ရှင်တစ်ခုဟာ သူလုပ်ဆောင်ပေးရမဲ့ ကိစ္စကို ပြီးမြောက် အောင်မြင်အောင် ဆောင်\allowbreak ရွက်ပေးရမှာပါ။ ဒါပေမဲ့ ပုံမှန်မဟုတ်တဲ့ (သို့) မမျှော်လင့်ထားတဲ့ အခြေအနေ တစ်စုံတစ်ရာကြောင့် ဖန်ရှင်တစ်ခုဟာ သူလုပ်ဆောင်ပေးရမဲ့ကိစ္စကို ပြီးအောင်ဆက်လုပ်ပေးလို့ မရနိုင်တော့တာ ဖြစ်နိုင်ပါတယ်။ ‘ပုံမှန်မဟုတ်တဲ့ (သို့) မမျှော်လင့်ထားတဲ့ အခြေအနေ’ ဆိုတာ ဘယ်လိုမျိုးပါလဲ။ အီးမေးလ်ပို့ဖို့ \fCode{send\_email} ဖန်ရှင် ခေါ်တယ်ဆိုပါစို့။ အင်တာနက် ကွန်နက်ရှင် ရှိရပါမယ်။ မရှိရင် \fCode{send\_email} က အီးမေးလ်ပို့လို့ မရနိုင်ပါဘူး။ \fCode{date} အော့ဘ်ဂျက်တစ်ခု ဖန်တီးမယ်ဆိုပါစို့။ လနဲ့ ရက် မဖြစ်နိုင်တဲ့ ဂဏန်းတွေ ထည့်ပေးရင် အော့ဘ်ဂျက် ဖန်တီးလို့မရနိုင်ပါဘူး (သို့) ဖန်တီးမပေးသင့်ဘူး။
+\begin{codetxt}
+>>> date(2024, 13, 32)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: month must be in 1..12
+>>> date(2024, 12, 32)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: day is out of range for month
+\end{codetxt}
+ဖိုင်တစ်ခုကို ဖွင့်တဲ့အခါ ဖိုင်နံမည် (သို့) \fEn{path} လမ်းကြောင်းမှားနေရင် ဖွင့်လို့မရပါဘူး။ ဖိုင်သိမ်းတဲ့အခါမှာလည်း ခွင့်မပြုထားတဲ့ နေရာမှာ သိမ်းလို့မရပါဘူး။ ဖျက်ပစ်မယ်ဆိုလည်း ခွင့်မပြုတဲ့ဖိုင်ကို ဖျက်လို့မရဘူး။ ဖိုင်စနစ်နဲ့ သက်ဆိုင်တဲ့ ဖန်ရှင်တွေကို အခန်း (၁၀) မှာ လေ့လာကြတဲ့အခါ ဒီလိုမျိုး ပြဿနာတွေ ကြုံတွေ့ရမှာပါ။ \todo{အခန်း နံပါတ်ပြင်ရန်} 
+\begin{codetxt}
+>>> open('abc.txt')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'abc.txt'
+\end{codetxt}
+
+အခုဖော်ပြခဲ့တာတွေဟာ ‘ပုံမှန်မဟုတ်တဲ့ (သို့) မမျှော်လင့်ထားတဲ့ အခြေအနေ’ ဥပမာတချို့သာ ဖြစ်ပါတယ်။ နောက်ပိုင်းမှာ အခြားဟာတွေ ထပ်တွေ့ရမှာပါ။ ပရိုဂရမ်တစ်ခု \fEn{run} နေတဲ့အချိန် ဒီလိုအခြေအနေတွေ ဖြစ်လာခဲ့ရင် ပရိုဂရမ်က ရပ်သွားပြီး ဆက်လက် အလုပ် မလုပ်ပေးနိုင်တော့တာမျိုး မဖြစ်သင့်ပါဘူး။ ဒီလိုမဖြစ်အောင် ကိုင်တွယ်ထိန်းကြောင်း ပေးဖို့အတွက် ခေတ်မီ \fEn{programming language} တွေ အားလုံးလိုလိုမှာ ရိုးရှင်းတဲ့ နည်းစနစ်တစ်ခု ထည့်သွင်းပေးထားပါတယ်။ အဲဒီ နည်းစနစ်ကတော့ \fEnEmp{exception-handling} ပဲ ဖြစ်ပါတယ်။
+
+\subsection*{\fSubSecCodeBf{\textit{raise}} -ing Exceptions}
+\fEn{Exception-handling} မှာ အပိုင်း နှစ်ပိုင်းပါဝင်တယ်။ ပထမတစ်ခုက တစ်ခုခု ပြဿနာဖြစ်နေပြီ ဆိုတာ အသိပေးတဲ့ အပိုင်း။ ဖန်ရှင်တစ်ခုဟာ ပုံမှန်မဟုတ်တဲ့ ပြဿနာကြောင့် သူ့တာဝန်ကို ပြီးမြောက် မှန်ကန်အောင် မလုပ်ပေးနိုင်တော့တဲ့အခါ ဖန်ရှင်ခေါ်တဲ့သူကို အသိပေးနိုင်ဖို့ လိုပါတယ်။
+
+%
+\begin{py}
+# File: print_n_times.py
+def print_n_times(txt, n):
+    if not (isinstance(n, int) and n > 0):
+        raise ValueError('Positive integer expected')
+    for i in range(n):
+        print(txt)
+\end{py}
+%
+ဒီဖန်ရှင်က စာသားတစ်ခုကို သတ်မှတ်ထားတဲ့ အကြိမ်အရေအတွက် ပြည့်အောင် ပရင့်ထုတ်ပေးမှာပါ။ အကြိမ်အရေအတွက်က အပေါင်း ကိန်းပြည့်ဂဏန်း ဖြစ်သင့်ပါတယ်။ မဟုတ်ဘူးဆိုရင် ဖန်ရှင်ခေါ်တဲ့အခါ ထည့်ပေးတဲ့ အကြိမ်အရေအတွက် အကြောင်းတစ်ခုခုကြောင့် မှားနေတာပဲ ဖြစ်ရမယ်။ ဒီလိုဖြစ်လာခဲ့ရင် တစ်ခုခု မှားနေပြီဆိုတာ အသိပေးဖို့အတွက် \fCode{raise} စတိတ်မန့်ကို အသုံးပြုနိုင်တယ်။ \fCode{isinstance} ဖန်ရှင်က ဗေရီရေဘဲလ်ရဲ့ တိုက်ပ်ကို စစ်ပေးတာပါ။ \fCode{n} ဟာ \fCode{int} ဖြစ်ရင် \fCode{isinstance(n, int)} က \fCode{True} ရမှာပါ။ အပေါင်းကိန်းပြည့် မဟုတ်ခဲ့ရင်
+%
+\begin{py}
+raise ValueError('Positive integer expected')
+\end{py}
+%
+နဲ့ ပြဿနာကို အသိပေးပါတယ်။ ဒါကို \fEn{exception} ကို \fEnEmp{raise} လုပ်တယ်လို့ ခေါ်တယ်။ \fCode{ValueError} ကတော့ \fEn{exception} (ပုံမှန်မဟုတ်တဲ့/မမျှော်လင့်ထားတဲ့ အခြေအနေ/ပြဿနာကို ဆိုလို) ကို ဖော်ပြတဲ့ အော့ဘ်ဂျက်ပါ။ \fCode{ValueError} အပြင် \fCode{ArithmeticError}\fEn{,} \fCode{FileNotFoundError} စသည်ဖြင့် ဖြစ်တဲ့ \fEn{exception} ပေါ်မူတည်ပြီး သင့်တော်တဲ့ အော့ဘ်ဂျက်ကို \fCode{raise} လုပ်နိုင်ပါတယ်။ 
+
+\fEnSnd{print\_n\_times.py} ကို \fEn{run} ကြည့်ပါ။ ဖိုင်အောက်ပိုင်းက ဒုတိယ ဖန်ရှင်ကောလ်မှာ \fEn{exception} တက်မှာပါ။
+%
+\begin{py}
+print_n_times('Hello', 10)
+print_n_times('Hi', 0)
+print_n_times('Hola', 3)
+\end{py}
+%
+အခုလို \fOpn{မက်ဆေ့ချ်} တွေပြပြီး ပရိုဂရမ် ဆက်အလုပ် မလုပ်တော့ဘဲ ရပ်သွားမှာပါ။ 
+\begin{codetxt}
+...
+Hello
+Hello
+Traceback (most recent call last):
+  File ".../ch08/print_n_times.py", line 10, in <module>
+    print_n_times('Hi', 0)
+  File ".../ch08/print_n_times.py", line 4, in print_n_times
+    raise ValueError('Positive integer expected')
+ValueError: Positive integer expected
+\end{codetxt}
+တတိယဖန်ရှင် ဆက်မလုပ်တဲ့အတွက် \fCode{Hola} သုံးခါ မပါတာ သတိပြုပါ။ 
+
+\subsection*{Handling Exceptions}
+\fEn{Exception-handling} ရဲ့ ဒုတိယပိုင်းကတော့ \fEn{handle} (ကိုင်တွယ် ထိန်းကျောင်းတာကို ဆိုလို) လုပ်တဲ့ ကိစ္စဖြစ်ပါတယ်။
+\fCode{raise} လုပ်လိုက်တဲ့ \fEn{exception} ကို \fEn{handle} မလုပ်ရင် ပရိုဂရမ်ဟာ ဆက်အလုပ် မလုပ်နိုင်တော့ဘဲ ရပ်သွားမှာပါ။ \fEn{Handle} လုပ်ဖို့ \fCode{try} နဲ့ \fCode{except} ကို သုံးရပါတယ်။
+
+
+ဖန်ရှင်တစ်ခုက \fCode{raise} လုပ်လိုက်တဲ့ \fEn{exception} ကို \fEn{handle} လုပ်ဖို့ရည်ရွယ်ချက်ရှိရင် အဲဒီဖန်ရှင်ကို  \fCode{try} ဘလောက်ထဲမှာ ခေါ်ရပါမယ်။ \fEn{Exception} ဖြစ်ခဲ့ရင် ဘယ်လို \fEn{handle} လုပ်ချင်လဲ။ ဒီအပိုင်းကိုတော့ \fCode{except} ဘလောက်ထဲမှာ ရေးရပါမယ်။
+%
+\begin{py}
+try:
+    print_n_times('Hi', 0)
+except ValueError as err:
+    print(f'Error: {err}')
+\end{py}
+%
+\fCode{ValueError} ကတော့ \fEn{handle} လုပ်မဲ့ \fEn{exception} ရဲ့ တိုက်ပ်ပါ။ \fCode{ValueError}  \fEn{exception} ကိုပဲ \fEn{handle} လုပ်မယ်လို့ ဆိုလိုတာ။ အခြားဟာတွေဆိုရင် \fEn{handle} မလုပ်ဘူးပေါ့။ \fCode{FileNotFoundError} အတွက်ဆိုရင် \fCode{except FileNotFoundError as err:} ဖြစ်ပါမယ်။  \fCode{err} က \fEn{exception} ကို ကိုယ်စားပြုတဲ့  ဗေရီရေဘဲလ် (အခြား နံမည်ဖြစ်လို့ရတယ်)။ \fEn{Exception} ဖြစ်ခဲ့ရင် (သို့) \fEn{raise} လုပ်ခဲ့ရင် အဲ့ဒီ \fEn{exception}  နဲ့ သက်ဆိုင်တဲ့ အချက်အလက်တွေကို  \fCode{err} ကနေတစ်ဆင့် ရယူနိုင်ပါတယ်။ 
+
+\fCode{try} ဘလောက်ထဲမှာ \fEn{exception} ဖြစ်ခဲ့ရင် ဖြစ်တဲ့နေရာကနေ သက်ဆိုင်တဲ့ \fCode{except} ဘလောက်ဆီကို ‘ချက်ချင်း’ ရောက်သွားမှာပါ။ မဖြစ်ခဲ့ရင်တော့ \fCode{try} ဘလောက် ပြီးတဲ့အထိ လုပ်ဆောင်ပြီး \fCode{except} ဘလောက်ကို လစ်လျူရှု့ သွားမှာပါ။ အခုလို စမ်းသပ်ကြည့်ပါ
+%
+\begin{py}
+try:
+    print_n_times('Hi', 0)
+    print('Done printing') #ß \fEn{exception} \fMM{ဖြစ်ရင် ဒီလိုင်းကို ရောက်မလာဘူး}ß
+except ValueError as err:
+    print(f'Error: {err}')
+
+print('Program exits')
+\end{py}
+%\bigstar 
+\fEn{Output:}
+\begin{codetxt}
+Error: Positive integer expected
+Finish program
+\end{codetxt}
+\fEn{Exception raise} လုပ်ရင် ကွန်းမန့်ရေးထားတဲ့ လိုင်းကို မလုပ်ပါဘူး။ \fCode{except} ဘလောက်နဲ့ အောက်ဆုံး \fCode{print} လုပ်တဲ့အထိ ဆက်အလုပ်လုပ်သွားတယ်။ \fCode{2} ထည့်ပြီး စမ်းကြည့်ရင် \fEn{exception} မဖြစ်ဘူး။ \fCode{try} ဘလောက် ပြီးတဲ့ထိ ပုံမှန်အတိုင်း လုပ်ဆောင်တယ်။ \fEn{Exception} မဖြစ်တော့ \fCode{except} ဘလောက် အလုပ် မလုပ်ဘဲ ကျော်သွားပါတယ်။
+
+\fEn{Exception-handling} ကို အသုံးပြုပြီး အင်တီဂျာ တစ်ခု \fEn{input} ထည့်ခိုင်းတဲ့ ဖန်ရှင်ကို အခုလို ရေးနိုင်ပါတယ်။
+%
+\begin{py}
+# File: read_int.py
+def read_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError as err:
+            print('Error: Non-integer data!')
+
+# test 
+num = read_int('Enter number: ')
+print(num)
+\end{py}
+%
+အင်တီဂျာမဟုတ်တဲ့ တန်ဖိုး ထည့်ပေးရင် \fCode{int(input(prompt))} မှာ \fCode{ValueError} \fEn{exception} ဖြစ်ပြီး \fEn{handle} လုပ်တဲ့ ဘလောက်ကို ရောက်သွားမှာပါ။ ဒီတော့ ဖန်ရှင်က \fEn{return} မဖြစ်ဘူး။ \fCode{while} \fEn{loop} နောက်တစ်ကြိမ် ထပ်ကျော့ပါတယ်။ အင်တီဂျာ ပြောင်းလို့ရမဲ့ တန်ဖိုး ထည့်ပေးမှပဲ \fEn{exception} မဖြစ်ဘဲ  \fEn{return} လုပ်ပါလိမ့်မယ်။ (\fCode{return} လုပ်ရင် ဖန်ရှင်ခေါ်တဲ့ဆီကို ချက်ချင်း ပြန်ရောက်သွားတဲ့အတွက် \fEn{loop} ကနေလည်း ထွက်သွားစေတယ်)။ 
+
+လိုက်ဘရီ ဖန်ရှင်တွေ အသုံးပြုတာပဲဖြစ်ဖြစ်၊ ကိုယ်ပိုင် ဖန်ရှင် သတ်မှတ်တာပဲ ဖြစ်ဖြစ် \fEn{exception} တွေနဲ့  \fEn{exception-handling} အခြေခံအဆင့် နားလည်ထားဖို့ လိုအပ်တယ်။ \fEn{Exception-handling} နဲ့ ပါတ်သက်ပြီး အခန်း (၁၀) \todo{အခန်း နံပါတ်ထည့်ရန်} မှာ ဒီ့ထက် ကျယ်ကျယ်ပြန့်ပြန့် ဆက်လက် လေ့လာရအုံးမှာပါ။  အခုတော့ ဒီလောက်နဲ့ ခဏရပ်ထားပြီး လက်တွေ့နဲ့ ပိုနီးစပ်တဲ့  အသုံးချဥပမာတချို့ကို ဆက်ကြည့်ရအောင်။
+
 \section{ခွဲခြမ်းစိတ်ဖြာခြင်းနှင့် ပရိုဂရမ် ဒီဇိုင်း}
 
 \subsection*{Insurance Premium}
@@ -287,9 +407,90 @@ def print_sign(r):
 \captionof{table}{နှစ်နှစ်ဆယ် အသက်အာမခံကြေး (ကျား)}
 \end{flushleft}
 
-မွေးသက္ကရာဇ်၊ အကျိုးခံစားလိုသည့် ပမာဏ \fEn{(coverage amount)}၊ ကျား/မ အလိုက် တစ်နှစ် ပျမ်းမျှ ပရီမီယံကြေး ကုန်ကျငွေ ပြပေးတဲ့ ပရိုဂရမ်အတွက် အာမခံ ကုမ္ပဏီတစ်ခုက သင့်ထံ ပရောဂျက် လာအပ်တယ် ဆိုပါစို့။ ဒီအတွက် ပရိုဂရမ် တစ်ခုကို ဒီဇိုင်းလုပ် ရေးသားပုံအဆင့်ဆင့်ကို ဆက်လက်ဖော်ပြပါမယ်။
+အာမခံသက်တမ်း နှစ်ဆယ်နှစ်အတွက်ပဲ စဉ်းစားပါမယ်။ အသက် ၃၀ အတွက် \fEn{premium} လို့ပြောပေမဲ့ တကယ်တမ်းက အသက် ၁၈ နှစ် ကနေ ၃၀ (အပါအဝင်) အတွက် \fEn{premium} ကို ဆိုလိုတာပါ။ ထိုနည်းတူစွာ အသက် ၄၀၊ ၅၀၊ ၆၀ \fEn{premium} ဟာ ၃၁ နှစ် ကနေ ၄၀၊ ၄၁ နှစ် ကနေ ၅၀၊ ၅၁ နှစ် ကနေ ၆၀ ကြား (အပါအဝင်) ကို ဆိုလိုတာဖြစ်တယ်။ ၁၈ နှစ်အောက်နဲ့ ၆၀ အထက်ဆိုရင်တော့ အကျုံးမဝင်ပါဘူး (အာမခံ ထားလို့ မရဘူး ယူဆပါ)။
+ 
 
-အာမခံသက်တမ်း နှစ်ဆယ်နှစ်အတွက်ပဲ စဉ်းစားပါမယ်။ အသက် ၃၀ အောက် အနီးစပ်ဆုံး ယူပါမယ်။ ၃၁ မှ ၄၀၊ ၄၁ မှ ၅၀၊ ၅၁ မှ ၆၀ တို့ကို ၄၀၊ ၅၀၊ ၆၀ စသည်ဖြင့် အနီးစပ်ဆုံးယူပါမယ်။ အခြေခံအဆင့် လေ့လာသူအတွက် အလွန်အမင်း မရှုပ်ထွေးစေဘဲ သဘောတရားပိုင်းဆိုင်ရာကို အဓိက မြင်သာအောင် ပရိုဂရမ်ရဲ့ လိုအပ်ချက် \fEn{(requirements)} ကို ရိုးရှင်းအောင် လုပ်ထားတာပါ။ 
+မွေးသက္ကရာဇ်၊ အကျိုးခံစားလိုသည့် ပမာဏ \fEn{(coverage amount)}၊ ကျား/မ အလိုက် တစ်နှစ် ပျမ်းမျှ ပရီမီယံကြေး ကုန်ကျငွေ ပြပေးတဲ့ ပရိုဂရမ်အတွက် အာမခံ ကုမ္ပဏီတစ်ခုက သင့်ထံ ပရောဂျက် လာအပ်တယ် ဆိုပါစို့။ ဒီအတွက် ပရိုဂရမ် တစ်ခုကို ဒီဇိုင်းလုပ် ရေးသားပုံအဆင့်ဆင့်ကို ဆက်လက်ဖော်ပြပါမယ်။ ဇယားနှစ်ခုပါ အချက်အလက်တွေကို သိမ်းထားဖို့အတွက် စထရက်ချာတစ်မျိုး သုံးရပါမယ်။ \fEn{Nested list} သုံးလို့ရပါတယ်။
+
+%
+\begin{py}
+# File: insurance_prem.py
+from decimal import *
+
+# Premium for male
+MALE_PREM = [[Decimal('162.00'), Decimal('224.00'),  # 1st row, $250,000
+              Decimal('499.00'), Decimal('1375.00')],
+             [Decimal('251.00'), Decimal('360.00'),  # 2nd row, $500,000
+              Decimal('891.00'), Decimal('2567.00')],
+             [Decimal('408.00'), Decimal('628.00'), 
+              Decimal('1681.00'), Decimal('4952.00')],
+             [Decimal('749.00'), Decimal('1190.00'), 
+              Decimal('3267.00'), Decimal('9660.00')]]
+# Premium for female
+FEMALE_PREM = [[Decimal('142.00'), Decimal('193.00'), 
+                Decimal('392.00'), Decimal('989.00')],
+               [Decimal('205.00'), Decimal('307.00'), 
+                Decimal('685.00'), Decimal('1781.00')],
+               [Decimal('325.00'), Decimal('526.00'), 
+                Decimal('1227.00'), Decimal('3375.00')],
+               [Decimal('593.00'), Decimal('984.00'), 
+                Decimal('2388.00'), Decimal('6758.00')]]
+\end{py}
+%
+ဒီထဲကနေ လိုအပ်တဲ့ \fEn{premium}  ကြေးကို ကျား/မ၊ အသက်နဲ့ \fEn{coverage} ပေါ်မူတည်ပြီး ထုတ်ယူရမှာပါ။ ကျား (၄၅) နှစ်၊ \fEn{coverage} (၅၀၀,၀၀၀) အတွက် \fEn{premium}  ကြေးကို \fCode{MALE\_PREM[1][2]} နဲ့ ယူရမှာပါ။ 
+
+\fEn{Premium}  ကြေးကို ဖန်ရှင်တစ်ခုနဲ့  အခုလိုမျိုး ယူလို့ရသင့်တယ်။ အသက် အရွယ်၊ ကျား/မ၊ \fEn{coverage} ပမာဏ ထည့်ပေးရမယ်။
+%
+\begin{py}
+retrieve_prem(45, 'M', Decimal('500_000.00'))    # should get 891.00 
+retrieve_prem(35, 'F', Decimal('1_000_000.00'))  # should get 526.00
+\end{py}
+%
+
+ဒီကိစ္စအတွက် ဖန်ရှင် ဘယ်လိုရေးထားလဲ ကြည့်ရအောင်
+%
+\begin{py}
+# File: insurance_prem.py
+COVERAGES = [Decimal("250_000.00"), Decimal("500_000.00"),
+             Decimal("1_000_000.00"), Decimal("2_000_000.00")]
+
+FEMALE = 'F'
+MALE = 'M'
+
+def retrieve_prem(age, gender, coverage):
+    try:
+        age_band = age_to_age_band(age)
+    except ValueError as age_err:
+        raise age_err
+    try:
+        coverage_idx = COVERAGES.index(coverage)
+    except ValueError:
+        raise ValueError(f'No such coverage amount, {str(coverage)}!')
+    if gender == FEMALE:
+        return FEMALE_PREM[coverage_idx][age_band]
+    elif gender == MALE:
+        return MALE_PREM[coverage_idx][age_band]
+\end{py}
+%
+လိုအပ်တဲ့ \fEn{constant} တချို့ ကြေငြာထားတယ်။ \fCode{COVERAGES} က \fEn{coverage} ပမာဏတွေ ပါတဲ့ \fEn{list} ဖြစ်တယ်။ ဘာအတွက်လဲ ခဏနေ တွေ့ရပါမယ်။  \fCode{age}\fEn{,} \fCode{gender} နဲ့ \fCode{coverage} က လိုအပ်တဲ့ ဖန်ရှင်ပါရာမီတာတွေပါ။ ဖန်ရှင် တစ်ခုဟာ လက်မခံနိုင်တဲ့ သို့မဟုတ် မဖြစ်သင့်တဲ့ ပါရာမီတာ တန်ဖိုးတွေအတွက် အဖြေထုတ်ပေးဖို့ မဖြစ်နိုင်ပါဘူး။ 
+
+%
+\begin{py}
+def age_to_age_band(age):
+    if not (18 <= age <= 60):
+        raise ValueError(f"Sorry. Age of {age} yrs not applicable!")
+    if age <= 30:
+        return 0
+    elif age <= 40:
+        return 1
+    elif age <= 50:
+        return 2
+    elif age < 60:
+        return 3
+\end{py}
+%
+
+
 
 \fEn{Input} သုံးခုထည့်ပေးရမယ်။ မွေးသက္ကရာဇ် \fEn{(date of birth)} \fEn{,} \fEn{coverage amount} နဲ့ ကျား/မ \fEn{(gender)} တို့ဖြစ်တယ်။ အသုံးပြုသူအနေနဲ့ အဆင်ပြေဆုံး၊ အလွယ်ကူဆုံးဖြစ်အောင်၊ အမှားအယွင်းနည်းနိုင်သမျှနည်းအောင် စဉ်းစားသင့်တယ်။ 
 
@@ -349,7 +550,47 @@ datetime.date(2024, 1, 1)
 datetime.date(2024, 12, 26)
 \end{codetxt}
 
-အခုဖော်ပြခဲ့တဲ့ နည်းအပြင် အခြားနည်းလမ်းတွေလည်း ရှိပါတယ်။ \fCode{datetime} ကလပ်စ်မှာ နေ့ရက်ကို စာသားကနေ \fCode{datetime} ပြောင်းပေးတဲ့ \fCode{strptime} ဖန်ရှင် ရှိပါတယ်။
+နေ့ရက်ကို ဖော့မတ် သုံးမျိုးနဲ့ လက်ခံနိုင်တဲ့ ဖန်ရှင်ကို ရိုးရိုးရှင်းရှင်းလေးပဲ အခုလို
+%
+\begin{py}
+# File: insurance_prem2.py
+def parse_date_str(dtstr):
+    parts = dtstr.replace('/', '-').split('-')
+    if parts[0].isdigit():
+        return date(int(parts[2]), int(parts[1]), int(parts[0]))
+    else:
+        return date(int(parts[2]), mths[parts[0]], int(parts[1]))
+\end{py}
+%
+သတ်မှတ်ပါမယ်။ \fCode{replace} ဖန်ရှင်သုံးပြီး \fCode{/} ကို \fCode{-} နဲ့ အစားထိုးလိုက်တယ်။ ဒါဆိုရင် ဖော့မတ် နှစ်ခုပဲ စဉ်းစားဖို့လိုတော့မယ် (\fCode{10/01/2024} ကနေ \fCode{10-01-2024} ဖြစ်သွားမှာပါ)။ ပြီးတော့မှ \fCode{split} လုပ်တယ်။ ရှေ့ဆုံးအပိုင်း \fCode{parts[0]} ဂဏန်း ဟုတ်လား \fCode{isdigit} နဲ့ စစ်ထားတယ်။ ဖော့မတ် အမှန်နဲ့ စမ်းကြည့်ရင် \fCode{date} အော့ဘ်ဂျက် \fEn{return} ပြန်ပေးပါတယ်
+%
+\begin{py}
+print(parse_date_str('12-03-1995'))
+print(parse_date_str('12/03/1995'))
+print(parse_date_str('Mar-12-1995'))
+\end{py}
+%
+ဖော့မတ် မမှန်ရင်၊ ဒါမှမဟုတ် အခြားအကြောင်းတစ်ခုခုကြောင့် \fCode{date} ပြောင်းလို့မရရင် \fEn{exception} ဖြစ်တယ်။ \fEn{Fab} စာလုံးပေါင်း မှားရင် \fCode{KeyError} ဖြစ်တယ်
+%
+\begin{py}
+# Spelling error: Fab instead of Feb
+print(parse_date_str('Fab-12-1995'))
+\end{py}
+%
+\fEn{Error Output:}
+\begin{codetxt}
+Traceback (most recent call last):
+  File ".../ch08/insurance_prem2.py", line 20, in <module>
+    print(parse_date_str('Fab-12-1995'))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ".../ch08/insurance_prem2.py", line 13, in parse_date_str
+    return date(int(parts[2]), mths[parts[0]], int(parts[1]))
+                               ~~~~^^^^^^^^^^
+ß\textbf{KeyError: 'Fab'}ß
+\end{codetxt}
+\fEn{Dictionary} ထဲမှာ \fCode{Fab} ကီး မရှိတဲ့အတွက် ဒီပြဿနာဖြစ်တာပါ။ မဖြစ်နိုင်တဲ့ ခုနှစ်၊ လ၊ ရက် တန်ဖိုးတွေဆိုရင် \fCode{ValueError} ဖြစ်တယ် (ဥပမာ \fCode{parse\_date\_str('30-02-1995')})။
+
+အခုဖော်ပြခဲ့တဲ့ နည်းအပြင် အခြားနည်းလမ်းတွေလည်း ရှိရမှာပါ။ \fCode{datetime} ကလပ်စ်မှာ နေ့ရက်ကို စာသားကနေ \fCode{datetime} ပြောင်းပေးတဲ့ \fCode{strptime} ဖန်ရှင်ရှိတယ်။ သူ့ကို အသုံးပြုပြီး \fCode{parse\_date\allowbreak\_str} ကို ဘယ်လိုရေးလို့ ရမလဲ။ စဉ်းစားကြည့်ရအောင် $\ldots$
 
 \begin{codetxt}
 >>> dtstr1 = 'Jan-01-2024'
@@ -362,8 +603,34 @@ datetime.datetime(2024, 12, 30, 0, 0)
 >>> datetime.strptime(dtstr3, "%d/%b/%Y")
 datetime.datetime(2024, 12, 30, 0, 0)
 \end{codetxt}
-ဒီဖန်ရှင်က စာသားနဲ့ ဖော်ပြထားတဲ့ အချိန်နေ့ရက်ကို \fCode{datetime} အော့ဘ်ဂျက် ပြောင်းပေးဖို့ ဖော့မတ်ကုဒ် \fEn{(format code)} လို့ခေါ်တဲ့ \fCode{\%} နဲ့ စတဲ့ ကာရက်တာတွေကို လက်ခံတယ်။ \fCodeBf{\%d} က ရက်၊ \fCodeBf{\%m} က   လကို ဂဏန်း တစ်လုံး (သို့) နှစ်လုံးနဲ့ ဆိုတဲ့ အဓိပ္ပါယ် (ဥပမာ ကိုးရက်နေ့ကို \fCode{09} သို့မဟုတ် \fCode{9}၊ ငါးလပိုင်းကို \fCode{05} သို့မဟုတ် \fCode{5})။ \fCodeBf{\%Y} က ခုနှစ်ကို ဂဏန်းလေးလုံးနဲ့ ရေးတယ်လို့ ဆိုလိုတာပါ။ \fCodeBf{\%b} ကတော့ လရဲ့ နံမည်ကို \fEn{Jan, Feb, Mar} စသည်ဖြင့် အတိုကောက်ရေးတယ်လို့ ဆိုလိုတယ်။ \fCode{'Jan-01-2024'} ရဲ့ ဖော့မတ်က \fCode{'\%b-\%d-\%Y'} 
+ဒီဖန်ရှင်က စာသားနဲ့ ဖော်ပြထားတဲ့ အချိန်နေ့ရက်ကို \fCode{datetime} အော့ဘ်ဂျက် ပြောင်းပေးဖို့ ဖော့မတ်ကုဒ် \fEn{(format code)} လို့ခေါ်တဲ့ \fCode{\%} နဲ့ စတဲ့ ကာရက်တာတွေကို လက်ခံတယ်။ \fCodeBf{\%d} က ရက်၊ \fCodeBf{\%m} က   လကို ဂဏန်း တစ်လုံး (သို့) နှစ်လုံးနဲ့ ဆိုတဲ့ အဓိပ္ပါယ် (ဥပမာ ကိုးရက်နေ့ကို \fCode{09} သို့မဟုတ် \fCode{9}၊ ငါးလပိုင်းကို \fCode{05} သို့မဟုတ် \fCode{5})။ \fCodeBf{\%Y} က ခုနှစ်ကို ဂဏန်းလေးလုံးနဲ့ ရေးတယ်လို့ ဆိုလိုတာပါ။ \fCodeBf{\%b} ကတော့ လရဲ့ နံမည်ကို \fEn{Jan, Feb, Mar} စသည်ဖြင့် အတိုကောက်ရေးတယ်လို့ ဆိုလိုတယ်။ \fCode{'Jan-01-2024'} ကို ပြောင်းမယ်ဆိုရင် သူ့ရဲ့ဖော့မတ်နဲ့ ကိုက်ညီတဲ့ \fCode{'\%b-\%d-\%Y'} ကို ဖန်ရှင်ခေါ်တဲ့အခါ ထည့်ပေးရပါမယ်။ \fCode{'30/Dec/2024'} ဆိုရင် \fCode{'\%d/\%b/\%Y'}၊ \fCode{'30-12-2024'} အတွက် \fCode{'\%d-\%m-\%Y'} ဖြစ်မှာပါ။ ဖော့မတ်ကုဒ် သုံးထားတဲ့ \fCode{parse\_date\_str2} ကို အခုလို သတ်မှတ်လို့ရပါမယ်
+%
+\begin{py}
+formats = ['%d-%m-%Y', '%d/%m/%Y', '%b-%d-%Y']
+def parse_date_str2(dtstr):
+    for fmt in formats:
+        try:
+            return datetime.strptime(dtstr, fmt).date()
+        except ValueError:
+            pass
+    # ß\fMM{ဖော့မတ် သုံးမျိုးလုံးနဲ့ မကိုက်ညီလို့ ပြောင်းလို့မရရင် ဒီကိုရောက်လာမယ်}ß
+    raise ValueError(f"{dtstr} doesn't match any of acceptable formats")
+\end{py}
+%
+\fCode{dtstr} ကို ဖော့မတ်တစ်ခုချင်း ပြောင်းကြည့်တယ်။ ပြောင်းလို့ရရင် \fCode{return} ဖြစ်သွားမယ်။ ပြောင်းလို့မရရင် \fCode{strptime} က \fCode{ValueError} \fEn{raise} လုပ်တယ်။  ဖော့မတ်တစ်ခုနဲ့ ပြောင်းလို့မရရင် နောက်တစ်ခုနဲ့ရနိုင်ပါတယ်။ ဒါကြောင့် \fCode{ValueError} ဖြစ်ခဲ့ရင်  \fCode{pass} ပဲ လုပ်ပေးလိုက်တယ် (ဘာမှလုပ်စရာမလိုရင် \fCode{pass} စတိတ်မန့် သုံးတာပါ)။ ဖော့မတ် သုံးမျိုးလုံးနဲ့ အဆင်မပြေရင်တော့ တစ်ခုခု မှားနေလို့ပဲ။ ဒါကြောင့် \fCode{return} မဖြစ်ဘဲ \fCode{for} \fEn{loop} ပြီးတဲ့ထိ ရောက်လာခဲ့ရင် \fCode{ValueError} \fEn{exception} ဖြစ်အောင် \fCode{raise} လုပ်ထားတာ။
 
+ပရိုဂရမ်တည်ဆောက်တဲ့အခါ ကိစ္စတစ်ခုကို ဖြေရှင်းလို့ရတဲ့ နည်းလမ်းက တစ်ခုတည်းပဲ ဖြစ်လေ့မရှိတာကတော့ ထုံးစံပါပဲ။ ဖြစ်နိုင်တဲ့ ဖြေရှင်းနည်းတွေထဲက အသင့်တော်ဆုံးတစ်ခုကို ရွေးချယ် အသုံးပြုရတာပါ။ နည်းလမ်းတစ်ခုက လက်ရှိမှာ အသင့်တော်ဆုံး ဖြစ်ပေမဲ့ နောင်တစ်ချိန်မှာ သူ့ထက် ပိုကောင်းတာ၊ ပိုသင့်တော်တာလည်း ရှိလာနိုင်ပါတယ်။
 
+%
+\begin{py}
+def read_date():
+    while True:
+        try:
+            return parse_date_str(input('dob? '))
+        except Exception as err:
+            print("Incorrect date. Please enter the date again.")
+            print('Error is probably: ' + str(err))
+\end{py}
+%
 
 %။  ဒီနေရာမှာ စဉ်းစားစရာရှိလာတာက \fCode{calc\_age} က အထက်ဖော်ပြပါ ဖော့မတ်အမျိုးမျိုးကို လက်ခံပြီး အသက်ကို တွက်ပေးသင့်သလား၊ ဒါမှမဟုတ် ဖော့မတ်အမျိုးမျိုးကနေ \fCode{date} ပြောင်းဖို့အတွက် အခြားဖန်ရှင်တစ်ခု ထားသင့်သလား (ဥပမာ \fCode{parse\_date\_str})။ မက်သဒ်ဆိုင်ရာ ဂိုက်ဒ်လိုင်းတစ်ခုက ‘မက်သဒ်တစ်ခုဟာ အလုပ်တစ်ခုကိုပဲ မှန်ကန်အောင် ပီပီပြင်ပြင် ဆောင်ရွက်သင့်တယ်’ လို့ ဆိုပါတယ်။ မက်သဒ်တစ်ခုဟာ တာဝန်တွေ အများကြီးကို မဆောက်ရွက်သင့်ဘူး။ ဒီအချက်အရ \fCode{calcAge} နဲ့ \fCode{parseDateStr} နှစ်ခုသတ်မှတ်သင့်ပါတယ်။
