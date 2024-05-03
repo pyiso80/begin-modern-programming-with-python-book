@@ -1,0 +1,25 @@
+\renewcommand{\contentsname}{မာတိကာ} 
+\contentsmargin[1cm]{0cm}
+
+%\newbool{numbered}
+%\titlecontents{part}[0em]{\large\sffamily\protect\addvspace{15pt}}%
+%{\global\booltrue{numbered}\contentslabel[{\partname\enspace\thecontentslabel}]{0em}\brlap[1.25\baselineskip]}%{\global\boolfalse{numbered}}%
+%{\ifbool{numbered}{\hphantom{\partname\ \thecontentslabel\enspace}}{}\titlerule\contentspage}%
+
+\titlecontents{chapter}[5pt]
+{\addvspace{4pt}\bfseries\large}
+% can only use font family
+{\let\fSecCodeBf\fCodeBf\notoserifmmfamilytoc\addfontfeatures{Color=darkgray}\contentslabel[\notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping,Color=darkgray}{\thecontentslabel}]{20pt}}
+{-0em}%
+{\hfill\notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping, Color=darkgray}{\contentspage}}[\vskip 6pt]
+
+\titlecontents{section}[25pt]
+{}
+% can only use font family
+{\let\fSecCodeBf\fCodeBf\notoserifmmfamilytoc\addfontfeatures{Scale=MatchLowercase, Color=darkgray}\contentslabel[\notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping,Scale=MatchLowercase, Color=darkgray}{\thecontentslabel}]{20pt}}
+{-20pt}%
+{{\titlerule*[.5pc]{\color{gray}{.}}} \notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping,Scale=MatchLowercase,Color=darkgray}{\contentspage}}[\vskip 4pt]
+
+
+
+

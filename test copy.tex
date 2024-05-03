@@ -1,0 +1,165 @@
+\documentclass[10pt]{book}
+
+\usepackage{xcolor}
+\usepackage{fontspec}
+\defaultfontfeatures[Padauk Book]{}
+\setmainfont[
+    Path = fonts/,
+    UprightFont = PadaukBook-Regular.ttf,
+    BoldFont = PadaukBook-Bold.ttf,
+    ItalicFont = PadaukBook-Regular.ttf,    
+]{Padauk Book}
+[Renderer = Graphite, RawFeature = {Tear drop style washwe=True}]
+\newfontfamily{\notoserifmmfamilytoc}{Noto Serif Myanmar SemiCondensed}[
+    Path=fonts/noto_serif_mm/,
+    UprightFont=NotoSerifMyanmar-Regular.ttf,
+    ItalicFont = NotoSerifMyanmar-Regular.ttf,
+    BoldItalicFont = NotoSerifMyanmar-SemiCondensedMedium.ttf,
+    BoldFont=NotoSerifMyanmar-SemiCondensedMedium.ttf, Script=Myanmar]
+\DeclareTextFontCommand{\textnotoserifmmtoc}{\notoserifmmfamilytoc}
+\usepackage{titletoc}
+\usepackage{titlesec}
+
+\usepackage[hyperfootnotes=false,bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+% I may be able to transform the numbers to Burmese here
+\makeatletter
+\renewcommand\Hy@numberline[1]{(#1)} 
+
+\ExplSyntaxOn
+\renewcommand\thechapter{\codepoint_generate:nn {\the\value{chapter}+4160}{12}}
+\renewcommand\thesection{\thechapter.\codepoint_generate:nn {\the\value{section}+4160}{12}}
+
+\ExplSyntaxOff
+\makeatother
+% I'd like to do some font mapping so that (1) to (၁), (2.1) to (၂.၁), etc.
+\renewcommand{\contentsname}{မာတိကာ} 
+\contentsmargin[1cm]{0cm}
+
+%\newbool{numbered}
+%\titlecontents{part}[0em]{\large\sffamily\protect\addvspace{15pt}}%
+%{\global\booltrue{numbered}\contentslabel[{\partname\enspace\thecontentslabel}]{0em}\brlap[1.25\baselineskip]}%{\global\boolfalse{numbered}}%
+%{\ifbool{numbered}{\hphantom{\partname\ \thecontentslabel\enspace}}{}\titlerule\contentspage}%
+
+\titlecontents{chapter}[5pt]
+{\addvspace{4pt}\bfseries\large}
+% can only use font family
+{\let\fSecCodeBf\fCodeBf\notoserifmmfamilytoc\addfontfeatures{Color=darkgray}\contentslabel[\notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping,Color=darkgray}{\thecontentslabel}]{20pt}}
+{-0em}%
+{\hfill\notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping, Color=darkgray}{\contentspage}}[\vskip 6pt]
+
+\titlecontents{section}[25pt]
+{}
+% can only use font family
+{\let\fSecCodeBf\fCodeBf\notoserifmmfamilytoc\addfontfeatures{Scale=MatchLowercase, Color=darkgray}\contentslabel[\notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping,Scale=MatchLowercase, Color=darkgray}{\thecontentslabel}]{20pt}}
+{-20pt}%
+{{\titlerule*[.5pc]{\color{gray}{.}}} \notoserifmmfamilytoc\addfontfeatures{Mapping=mmletter_digit_mapping,Scale=MatchLowercase,Color=darkgray}{\contentspage}}[\vskip 4pt]
+
+\begin{document}
+\tableofcontents
+\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }
+
+\section{world }
+
+\section{world }
+
+\section{world }
+
+\section{world }
+
+\section{world }
+
+\section{world }
+
+\section{world }
+
+\section{world }
+
+\section{world }
+\section{world }
+\section{world }
+\section{world }
+\section{world }
+
+\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }\chapter{Hello 1}
+Helo
+\section{world }
+\section{two}
+
+\chapter{Hello 2}
+Helo
+\section{world }
+\section{world }
+\end{document}

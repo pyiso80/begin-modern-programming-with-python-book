@@ -34,3 +34,17 @@
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
+
+\fancypagestyle{fancyfront}{%
+    \fancyhf{} % clear all header and footer fields
+    \fancyhead[LO,RE]{\bfseries\fEn{\thepage}}
+    %\fancyhead[RE]{\leftmark}
+    %\fancyhead[LO]{\rightmark}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{plainfront}{% plain style is used by pages where new chapter begins
+    \fancyhf{}% clear all header and footer fields
+    \fancyfoot[C]{\bfseries\fEn{\thepage}}% have page no at the btm for chapter start
+}

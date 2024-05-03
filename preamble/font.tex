@@ -76,23 +76,35 @@
     BoldFont = *-bold,
     ItalicFont = *-italic,
     BoldItalicFont = *-bolditalic,
-    SmallCapsFont = lmromancaps10-regular
+    SmallCapsFont = lmromancaps10-regular,
+    Ligatures=TeX
 ]
 \DeclareTextFontCommand{\textlatinmodern}{\latinmodernfamily}
 
 % downloaded from https://notofonts.github.io/myanmar/ 
 \newfontfamily{\notoserifmmfamily}{Noto Serif Myanmar SemiCondensed}[
     Path=fonts/noto_serif_mm/,
-    UprightFont=NotoSerifMyanmar-SemiCondensedLight.ttf,
-    ItalicFont = NotoSerifMyanmar-SemiCondensedLight.ttf,
+    UprightFont=NotoSerifMyanmar-Regular.ttf,
+    ItalicFont = NotoSerifMyanmar-Regular.ttf,
     BoldItalicFont = NotoSerifMyanmar-SemiCondensedMedium.ttf,
     BoldFont=NotoSerifMyanmar-SemiCondensedMedium.ttf, Script=Myanmar]
 \DeclareTextFontCommand{\textnotoserifmm}{\notoserifmmfamily}
 
+\newfontfamily{\notoserifmmfamilytoc}{Noto Serif Myanmar SemiCondensed}[
+    Path=fonts/noto_serif_mm/,
+    UprightFont=NotoSerifMyanmar-Regular.ttf,
+    ItalicFont = NotoSerifMyanmar-Regular.ttf,
+    BoldItalicFont = NotoSerifMyanmar-SemiCondensedMedium.ttf,
+    BoldFont=NotoSerifMyanmar-SemiCondensedMedium.ttf, Script=Myanmar]
+\DeclareTextFontCommand{\textnotoserifmmtoc}{\notoserifmmfamilytoc}
+
+\NewDocumentCommand{\fNotoSrf}{m}{%
+    \textnotoserifmm{\addfontfeatures{Scale=MatchLowercase}#1}%
+}
 
 % for normal paragraphs
 \NewDocumentCommand{\fEn}{m}{%
-    \textlatinmodern{\addfontfeatures{Scale=MatchLowercase}#1}%
+    \textlatinmodern{\addfontfeatures{Scale=MatchLowercase,Ligatures=TeX}#1}%
 }
 \NewDocumentCommand{\fEnBf}{m}{%
     \textlatinmodern{\bfseries\addfontfeatures{Scale=MatchLowercase}{#1}}%

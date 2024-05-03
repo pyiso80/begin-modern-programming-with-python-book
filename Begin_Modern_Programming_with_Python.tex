@@ -22,9 +22,15 @@
 \usepackage{stmaryrd}
 
 %\SetSymbolFont{largesymbols}{bold}{OMX}{txex}{b}{n}
-
+\usepackage{titletoc}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
+\usepackage[bookmarksnumbered,hidelinks]{hyperref}
+\usepackage{bookmark}
+\makeatletter
+\renewcommand\Hy@numberline[1]{(#1) } 
+\makeatother
+
 
 \usepackage[dvipsnames,table]{xcolor}
 \usepackage{booktabs}
@@ -126,6 +132,7 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
+
 \usepackage{appendix}
 \renewcommand\appendixname{နောက်ဆက်တွဲ}
 \renewcommand\appendixpagename{နောက်ဆက်တွဲ}
@@ -162,31 +169,48 @@
 \input{preamble/image_shadow.tex}
 \input{preamble/caption_style.tex}
 \input{preamble/bullets.tex}
+\input{preamble/toc.tex}
 
 
 
 \begin{document}
 \include{cover}
+\pagestyle{fancyfront}
+\pagenumbering{roman}
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{plainfront}}
+
+
 %\include{fbpage}
 %\include{fbpage2}
-\pagestyle{fancy}
+\pdfstringdefDisableCommands{%fSecCodeKw
+  \def\\{}%
+  \def\fSecCodeBf#1{#1}%
+  \def\fSubSecCodeBf#1{#1}%
+  
+
+}
+
+
+\mainmatter
 \pagenumbering{arabic}
-
-%\include{chapters/chapter01.tex}
-%\include{chapters/chapter02.tex}
-%\include{chapters/chapter03.tex}
-%\include{chapters/chapter04.tex}
-%\include{chapters/chapter05.tex}
-%\include{chapters/chapter06.tex}
-%\include{chapters/chapter07.tex}
+\pagestyle{fancy}
+\include{chapters/chapter01.tex}
+\include{chapters/chapter02.tex}
+\include{chapters/chapter03.tex}
+\include{chapters/chapter04.tex}
+\include{chapters/chapter05.tex}
+\include{chapters/chapter06.tex}
+\include{chapters/chapter07.tex}
 \include{chapters/chapter08.tex}
+\include{chapters/chapter09.tex}
+   
+    
+\renewcommand\thefigure{A/\arabic{figure}}    
+\appendix
+\include{chapters/appendix01.tex}
+\renewcommand\thefigure{B/\arabic{figure}} 
+\include{chapters/appendix02.tex}
 
-
-%\renewcommand\thefigure{A/\arabic{figure}}    
-%\appendix
-%\include{chapters/appendix01.tex}
-%\renewcommand\thefigure{B/\arabic{figure}} 
-%\include{chapters/appendix02.tex}
-%
-%\include{chapters/appendix00.tex}
+\include{chapters/appendix00.tex}
 \end{document}

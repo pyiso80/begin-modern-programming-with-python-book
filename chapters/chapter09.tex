@@ -1,0 +1,232 @@
+\chapter{ From Classes to Objects (ကလပ်စ်များမှ အော့ဘ်ဂျက်များသို့)}
+
+အခန်း (\fRefNo{\ref{ch:ch06objs}}) မှာ အော့ဘ်ဂျက်တချို့နဲ့ မိတ်ဆက်ပေးခဲ့တယ်။ \fCode{date}\fEn{,} \fCode{list}\fEn{,} \fCode{dict} စသည်ဖြင့်။ အော့ဘ်ဂျက်တွေကို ကလပ်စ်တစ်ခုကနေ တည်ဆောက်ယူရတာပါ။ \fCode{date} အော့ဘ်ဂျက်တွေကို \fCode{date} ကလပ်စ်၊ \fCode{Fraction} အော့ဘ်ဂျက်တွေကို \fCode{Fraction} ကလပ်စ်ကနေ ဖန်တီးယူတယ်။  အော့ဘ်ဂျက်တွေကို \fEn{class} တစ်ခုရဲ့ \fEnEmp{instance} လို့လည်းခေါ်တယ်။ \fCode{Fraction} အော့ဘ်ဂျက်ကို \fCode{Fraction} ကလပ်စ် \fEn{instance} လို့လည်း ပြောလေ့ရှိတယ်။ အော့ဘ်ဂျက်တွေဟာ \fEn{class instance} တွေဖြစ်တယ်။ (အကြမ်းဖျဉ်းအားဖြင့် အော့ဘ်ဂျက်နဲ့ \fEn{instance}  တူတယ်ပြောလို့ရပေမဲ့ အနက်အဓိပ္ပါယ်အရ အနုစိတ် ကွာဟချက်တွေ ရှိတာကိုလည်း \fEn{inheritance} အကြောင်း လေ့လာတဲ့အခါ တွေ့ရပါမယ်)။
+
+ဒီအခန်းမှာ ကလပ်စ်အကြောင်းကို လေ့လာကြမှာပါ။ ကိုယ်ပိုင် ကလပ်စ်သတ်မှတ်ပြီး အဲ့ဒီကလပ်စ်ကနေ အော့ဘ်ဂျက်တွေ တည်ဆောက် ယူနိုင်တော့မှာဖြစ်တယ်။ အခြားသူတွေရေးထားပေးတဲ့ လိုက်ဘရီဖန်ရှင်တွေကို အသုံးပြုရာကနေ နောက်ပိုင်းမှာ ကိုယ်ပိုင် ဖန်ရှင်တွေ သတ်မှတ်လာနိုင်တာဟာ အဆင့်တစ်ဆင့် ပိုမြင့်လာသလိုပါပဲ။ ကိုယ်ပိုင်ကလပ်စ် ဒီဇိုင်းပြုလုပ် ဖန်တီးနိုင်လာတာဟာလည်း နောက်တစ်ဆင့် ထပ်မြင့်လာတယ်လို့ ဆိုရမှာပါ။ ပရိုဂရမ်တွေကို အမှားနည်းအောင်၊ ပြင်ဆင်ရလွယ်ကူအောင် စနစ်တကျ ဒီဇိုင်းလုပ် တည်ဆောက်လို့ရလာမှာ ဖြစ်ပါတယ်။
+
+ကလပ်စ်ကို \fEn{abstraction mechanism} တစ်မျိုးလို့လည်း ရှုမြင်နိုင်တယ်။ \fEn{Abstraction} လုပ်တယ်ဆိုတာ ဘယ်လိုတည်ဆောက်ထားလဲ သိစရာမလိုဘဲ အသုံးပြုလို့ရစေတာကို ဆိုလိုတာ။ ဖန်ရှင်တွေနဲ့ \fEn{abstraction} လုပ်တာကို တွေ့ခဲ့ကြပြီးပါပြီ။ ကလပ်စ်တွေဟာလည်း \fEn{abstraction} အတွက် အထောက်\allowbreak အကူပြုတဲ့ နည်းလမ်းတစ်မျိုး \fEn{(mechanism)} ပါပဲ။ အများကြီး ပိုအစွမ်းထက်တဲ့ နည်းလမ်းလို့ ဆိုရမှာပါ။ အစွမ်းထက်လာတာနဲ့အမျှ သဘောတရားအရရော အသုံးချတဲ့အပိုင်းမှာပါ ပိုပြီးရှုပ်ထွေးခက်ခဲနိုင်ပါတယ်။ ဒီဇိုင်းပိုင်းအတွက် ကျယ်ကျယ်ပြန့်ပြန့် ဆက်လက်လေ့လာဖို့ လိုအပ်မှာဖြစ်ပြီး အတွေ့အကြုံနဲ့ပါ ပေါင်းစပ်ယူရမှာပါ။ စာချည်းဖတ်ရုံနဲ့ မရနိုင်ဘူး (စာရေးသူ ကိုယ်တွေ့ အတွေ့အကြုံအရ ကိုယ်ပိုင်အမြင်ကို ပြောခြင်းသာ)။  ဒါတွေက နောက်ပိုင်း ဆက်လက်လေ့လာဖို့အတွက်ပေါ့။ အခုတော့ အများကြီးမပြောတော့ဘဲ ကလပ်စ်တွေအကြောင်း စလိုက်ကြရအောင် $\ldots$
+
+
+\section{\fSecCodeBf{Account} Class (အကောင့် ကလပ်စ်)}
+ဘဏ်အကောင့်တွေကို \fCode{Account} အော့ဘ်ဂျက်နဲ့ ဖော်ပြမယ်ဆိုပါစို့။  အကောင့်နံပါတ်၊ ပိုင်ရှင်၊ လက်ကျန်\allowbreak ငွေ \fEn{(balance)} စတဲ့ အချက်အလက်တွေဟာ အပြင်က တကယ့် ဘဏ်အကောင့်တစ်ခုအတွက် အရေးပါပါတယ်။ မှတ်သား သိမ်းဆည်းထားရတယ်။  ဒါကြောင့် အပြင်က တကယ့် ဘဏ်အကောင့်ကို ထင်ဟပ်ဖော်ပြတဲ့ ဆော့ဖ်ဝဲ အော့ဘ်ဂျက်တွေမှာလည်း ဖော်ပြပါ အချက်\allowbreak အလက်တွေ ပါဝင်သင့်တယ်ဆိုရင် ကျိုးကြောင်းဆီလျော်တယ်ပဲ ယူဆရမှာပါ။ အကောင့်နဲ့ ပါတ်သက်ပြီး အခြား အရေးပါတဲ့ အချက်\allowbreak အလက်တွေ ဒီ့ထက်မက ရှိပါတယ်။ ဥပမာ အကောင့် အမျိုးအစား \fEn{(saving, current)} ၊ ဖွင့်ရက် \fEn{(open date)}၊ ဘဏ်ခွဲအမည်၊ ငွေသွင်း/ငွေထုတ်/ငွေလွှဲမှတ်တမ်း စတဲ့အချက်တွေ ရှိပါတယ်။ တကယ့်လက်တွေ့မှာ လိုအပ်မှာဖြစ်ပေမဲ့ အခုဥပမာမှာ ရိုးရိုးရှင်းရှင်းဖြစ်ဖို့ အဲဒါတွေ ထည့်မစဉ်းစားဘဲ ချန်ခဲ့ရအောင်။ ကလပ်စ်ရဲ့ သဘောတရားကို ရှင်းပြဖို့အတွက် ပထမသုံးချက်နဲ့ လုံလောက်ပါတယ်။
+
+ကေသီ့မှာ  အကောင့်နံပါတ် \fEn{0086-6002-1111} နဲ့  လက်ကျန်ငွေ တစ်သိန်းရှိတဲ့ အကောင့်တစ်ခု ရှိတယ် ဆိုပါစို့။ \fCode{Account} ကလပ်စ်သာ ရှိမယ်ဆိုရင် အဲဒီ ကေသီ့အကောင့်ကို ကိုယ်စားပြုတဲ့ အော့ဘ်ဂျက်ကို အခုလို 
+%
+\begin{py}
+acc1 = Account('Kathy',
+               '0086-6002-1111',
+               Decimal("100000.00"))
+\end{py}
+%
+ဖန်တီးယူလို့ ရမှာပါ။ ထိုနည်းတူစွာ ငွေလက်ကျန် လေးသိန်းခွဲ၊ နံပါတ် \fEn{0086-6002-2211} နဲ့  စန္ဒီ့အကောင့် အော့ဘ်ဂျက်ကို ဒီလို
+%
+\begin{py}
+acc2 = Account('Sandy',
+               '0086-6002-2211',
+               Decimal("450000.00"))
+\end{py}
+% 
+ဖန်တီးယူနိုင်မယ်။ ဒါက \fCode{Account} ကလပ်စ်သာ ရှိခဲ့ရင် အော့ဘ်ဂျက် ဘယ်လို ဖန်တီးယူရမလဲ စဉ်းစားကြည့်တာပေါ့။  ကလပ်စ်မရှိတဲ့အတွက် အမှန်တကယ်တော့ မရသေး။ 
+
+
+\fCode{date}\fEn{,} \fCode{list}\fEn{,} စတဲ့ အော့ဘ်ဂျက်တွေ အပေါ်မှာ အော်ပရေးရှင်းတွေ လုပ်ဆောင်လို့ရတာ တွေ့ခဲ့ရတယ်။ \fCode{Account} အော့ဘ်ဂျက်တွေမှာရော ဘယ်လို အော်ပရေးရှင်းတွေ လုပ်ဆောင်လို့ရသင့်လဲ။ အပြင်မှာ အကောင့်တစ်ခုကနေ ငွေထုတ်လို့ရတယ်၊ အကောင့်ထဲကို ငွေသွင်းလို့ရပါတယ်။ \fCode{Account} အော့ဘ်ဂျက်တွေမှာလည်း ဒါတွေလုပ်လို့ရသင့်တာပေါ့
+%
+\begin{py}
+acc1.deposit(Decimal("50000.00"));
+acc2.withdraw(Decimal("70000.00"));
+\end{py}
+%
+ဒီအော်ပရေးရှင်းတွေက အော့ဘ်ဂျက်တွေအပေါ် ဘယ်လိုသက်ရောက်မှုရှိမလဲ။ ကေသီ့အကောင့် လက်\allowbreak ကျန်ငွေက တစ်သိန်းခွဲ ဖြစ်သွားသင့်တယ်။ စန္ဒီ့အကောင့်က သုံးသိန်းရှစ်သောင်း ဖြစ်သင့်တယ်။ ဒီလို အော်ပရေးရှင်းတွေဟာလည်း ကလပ်စ်ပေါ်မှာ မူတည်တယ်။ ကလပ်စ်က ထောက်ပံ့ပေးထားမှပဲ ရမယ်။ ကလပ်စ်သည်သာ အခရာလို့ ပြောရမှာပါ။
+
+ကလပ်စ်တစ်ခုဟာ အော့ဘ်ဂျက်တွေမှာ ပါရှိရမဲ့ အချက်အလက်တွေနဲ့ ၎င်းအော့ဘ်ဂျက်တွေအပေါ်မှာ လုပ်\allowbreak ဆောင်နိုင်တဲ့ အော်ပရေးရှင်းတွေကို သတ်မှတ်ပေးပါတယ်။ ဒါ့အပြင် ကွန်စရက်တာ \fEn{(\textit{constructor})} လို့ခေါ်တဲ့ အော့ဘ်ဂျက်တည်ဆောက်တဲ့ သီးသန့်ဖန်ရှင်တစ်ခု ပါရှိရတယ်။ \fCode{Account} အော့ဘ်ဂျက်တွေအတွက် ကလပ်စ်ကို ကြည့်ရအောင် $\ldots$ 
+
+
+%
+\begin{py}
+# File: account.py
+from decimal import *
+
+
+class Account:
+    def __init__(self, holder, acc_number, balance):
+        self.holder = holder
+        self.acc_number = acc_number
+        self.balance = balance
+
+    def deposit(self, amt):
+        if amt <= Decimal(0.00):
+            raise ValueError('Invalid amount for deposit!')
+        self.balance += amt
+
+    def withdraw(self, amt):
+        if amt > self.balance:
+            raise ValueError('Not enough balance!')
+        self.balance -= amt
+\end{py}
+%
+
+‘\fCode{Account} ကလပ်စ် သတ်မှတ်ပါမယ်’ လို့ ပြောဖို့အတွက် \fCode{class Account:} နဲ့ စရပါတယ်။ သူ့အောက်မှာရှိတာက \fCode{Account} ကလပ်စ်ရဲ့ ဘော်ဒီ \fEn{(body)} ပါ။ \fEn{Body} ဆိုတာ \fEn{block} ကို ပြောတာပါပဲ။ ကလပ်စ်ဘော်ဒီထဲမှာ ဖန်ရှင် သုံးခု သတ်မှတ်ထားတာ တွေ့ရမယ်။ သုံးခုလုံးမှာ ပထမ ပါရာမီတာက \fCode{self} ဖြစ်နေတာကို သတိပြုမိမှာပါ။ သူ (\fCode{self}) က လက်ရှိအော့ဘ်ဂျက် \fEn{(current object)} လို့ ဆိုလိုတာဖြစ်ပြီး သိပ်မကြာခင် သူ့အဓိပ္ပါယ်ကို ရှင်းပြပါမယ်။
+
+\mintinline{text}|__init__|  က ကွန်စရက်တာ \fEn{(constructor)} ဖန်ရှင်ဖြစ်တယ်။ အော့ဘ်ဂျက် တည်ဆောက်ပေးတဲ့ ဖန်ရှင်ပေါ့။ ကွန်စရက်တာနံမည်က အခြားဟာဖြစ်လို့မရဘူး။ \mintinline{text}|__init__| ပဲ ဖြစ်ရပါမယ်။ အော့ဘ်ဂျက်မှာ ပါရှိရမဲ့ ဗေရီရေဘဲလ်တွေကို \mintinline{text}|self.holder|\fEn{,} \mintinline{text}|self.acc_number|\fEn{,} \mintinline{text}|self.balance| လို့ ကွန်စရက်တာထဲမှာ ကြေငြာပေးရပါတယ်။ ဒီနေရာမှာ \fEn{dot} အမှတ်အသား အဓိပ္ပါယ်ကို ‘၏/ရဲ့’ လို့ ယူဆရင် ဖတ်ရတာ အဆင်ပြေတယ်။ \fCode{self.holder} ကို ‘လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{holder}’၊ \fCode{self.balance} ကို ‘လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{balance}’ လို့ ဖတ်နိုင်တယ်။
+
+\fCode{Account} \fEn{instance} တစ်ခုကို ဖန်တီးယူမယ်ဆိုရင် ကွန်စရက်တာကို တိုက်ရိုက်မခေါ်ရပါဘူး။ ကလပ်စ်နံမည်နဲ့ အခုလို ခေါ်ရမှာပါ
+%
+\begin{py}
+Account('Amy', '0086-6002-2233', Decimal('350_000.00'))
+\end{py}
+%
+ဒီအခါမှာ \mintinline{text}|__init__| က အလုပ်လုပ်မှာပါ။  ခေါ်တဲ့အခါ \fCode{self} အတွက် တန်ဖိုးထည့်မပေးရပါဘူး (\fCode{self} ဟာ ကလပ်စ်ရေးတဲ့သူအတွက် သီးသန့်ဖြစ်ပြီး ကလပ်စ်ဘော်ဒီထဲမှာပဲ အသုံးပြုရတာပါ)။ \fCode{holder}\fEn{,} \fCode{acc\_\allowbreak number}\fEn{,} \fCode{balance} အတွက် တန်ဖိုးတွေကို ထည့်ပေးရတယ်။ ဒီတန်ဖိုးတွေက  လက်ရှိအော့ဘ်ဂျက်  ဗေရီရေဘဲလ်တွေရဲ့ ကနဦး တန်ဖိုးတွေဖြစ်သွားမှာပါ
+%
+\begin{py}
+self.holder = holder
+self.acc_number = acc_number
+self.balance = balance
+\end{py}
+%
+ဒီသုံးကြောင်းအရ လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{holder} က \fCode{'Amy'} ဖြစ်ပါမယ်။ လက်ရှိအော့ဘ်ဂျက် \fCode{balance} နဲ့ \fCode{acc\_number} က \fCode{Decimal('350\_000.00')} နဲ့ \fCode{'0086-6002-2233'} အသီးသီး ဖြစ်ပါမယ်။ အခုလို ပုံဖော်ကြည့်နိုင်ပါတယ်
+
+\begin{figure}[tbh!]
+\definecolor{myFieldFill}{HTML}{F0F6FD}
+\definecolor{myFieldBorder}{HTML}{212121}
+\tikzset{myFieldStyle/.style={draw=myFieldBorder,fill=myFieldFill,semithick}}
+\def\fObjFigAttrValWidth{3}
+\def\fObjFigAttrValHeight{1}
+\newcommand{\figpctw}{0.48}
+\begin{tikzpicture}
+    %\draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
+    %\filldraw[color=red!20] (0,0) circle (1ex);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*2cm] (0,0)rectangle node{\fEn{Amy}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*1cm] (0,0)rectangle node{\fEn{0086-6002-2233}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*0cm] (0,0)rectangle node{\fEn{350,000.00}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+   
+    \draw (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*2cm]{\fEn{holder}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*1cm]{\fEn{accountNumber}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*0cm]{\fEn{balance}};
+    \draw (0.5*\fObjFigAttrValWidth, -0.5*\fObjFigAttrValHeight) node{\fEnBf{(Account)}};   
+\end{tikzpicture}
+\caption{အေမီ့ Account အော့ဘ်ဂျက် (\fCptCodeBf{acc3})}
+\end{figure}
+
+ဒီအော့ဘ်ဂျက်ကို ရည်ညွှန်းအသုံးပြုနိုင်ဖို့ဆိုရင် ထုံးစံအတိုင်း ဗေရီရေဘဲလ်နဲ့ အဆိုင်းမန့် လုပ်ထားဖို့ လိုပါတယ်။ 
+%
+\begin{py}
+acc3 = Account('Amy', '0086-6002-2233', Decimal('350_000.00'))
+\end{py}
+%
+\betweenminted{\medskipamount}
+%
+\begin{py}
+print(acc3.holder)      # Amy 
+print(acc3.acc_number)  # 0086-6002-2233
+print(acc3.balance)     # 350000.00
+\end{py}
+%
+ဒီနေရာမှာ \fCode{self} အကြောင်းကို ရှင်းပြဖို့ လိုလာပြီ။ လက်ရှိအသုံးပြုနေတဲ့ အေမီ့ \fCode{Account} အော့ဘ်ဂျက်ဟာ ‘လက်ရှိအော့ဘ်ဂျက်’ \fCode{self} ပဲ ဖြစ်တယ်။ ဒါကြောင့် အခုကိစ္စမှာ \fCode{acc3} နဲ့ \fCode{self} နှစ်ခုလုံးဟာ ‘လက်ရှိအော့ဘ်ဂျက်’ (တစ်ခုတည်း) ပဲ။ \fCode{acc3.holder} နဲ့ \fCode{self.holder} နှစ်ခုလုံးက လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{holder} ကို ဆိုလိုတာ ဖြစ်တယ်။ \fCode{holder} က \fCode{'Amy'} ပါ။ ဒီသဘောအတိုင်း \fCode{acc3.balance} ရော \fCode{self.balance} ပါ လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{balance} ကို ဆိုလိုတာ။ \fCode{Decimal("350\_000.00")} ဖြစ်ပါမယ်။ လက်ရှိအော့ဘ်ဂျက်က ပြောင်းသွားရင်ရော ဘယ်လိုဖြစ်မလဲ။
+%
+\begin{py}
+acc1 = Account('Kathy', '0086-6002-1111', Decimal("100000.00"))
+\end{py}
+%
+အခုလက်ရှိ အော့ဘ်ဂျက်က ကေသီ့ \fCode{Account} အော့ဘ်ဂျက် ဖြစ်သွားပြီ။ ဒီအချိန်မှာ \fCode{self.holder} က \fCode{'Kathy'}။ \fCode{acc1.holder} လည်း ဒါပဲဖြစ်မယ်။ \fCode{acc\_number} နဲ့ \fCode{balance} တို့ကိုလည်း အလားတူ စဉ်းစားရမှာ ဖြစ်တယ်။ \fCode{'0086-6002-1111'} နဲ့ \fCode{Decimal("100000.00")} ဖြစ်ပါမယ်။ အခုလက်ရှိ အော့ဘ်ဂျက်ဟာ သီးခြားတည်ရှိနေတဲ့ အော့ဘ်ဂျက်တစ်ခုဖြစ်ပြီး အခုလို မြင်ကြည့်ရမှာပါ
+
+\begin{figure}[tbh!]
+\definecolor{myFieldFill}{HTML}{F0F6FD}
+\definecolor{myFieldBorder}{HTML}{212121}
+\tikzset{myFieldStyle/.style={draw=myFieldBorder,fill=myFieldFill,semithick}}
+\def\fObjFigAttrValWidth{3}
+\def\fObjFigAttrValHeight{1}
+\newcommand{\figpctw}{0.48}
+\begin{tikzpicture}
+    %\draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
+    %\filldraw[color=red!20] (0,0) circle (1ex);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*2cm] (0,0)rectangle node{\fEn{Kathy}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*1cm] (0,0)rectangle node{\fEn{0086-6002-1111}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*0cm] (0,0)rectangle node{\fEn{100,000.00}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+   
+    \draw (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*2cm]{\fEn{holder}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*1cm]{\fEn{accountNumber}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*0cm]{\fEn{balance}};
+    \draw (0.5*\fObjFigAttrValWidth, -0.5*\fObjFigAttrValHeight) node{\fEnBf{(Account)}};   
+\end{tikzpicture}
+\caption{ကေသီ့ Account အော့ဘ်ဂျက် (\fCptCodeBf{acc1})}
+\end{figure}
+ဆိုလိုတာက အေမီ့ \fCode{Account} အော့ဘ်ဂျက်မှာ အကောင့်ပိုင်ရှင်၊ နံပါတ်နဲ့ လက်ကျန်ငွေအတွက် သူ့ကိုယ်ပိုင် ဗေရီရေဘဲလ်သုံးခု ရှိနေမှာဖြစ်ပြီး ကေသီ့ \fCode{Account} အော့ဘ်ဂျက်ကလည်း သူ့ဟာနဲ့သူ သီးခြား သုံးခု ရှိနေမှာပါ။
+
+အခုလောက်ဆိုရင် \fCode{self} ရဲ့ သဘောကို နားလည်လောက်ပါပြီ။ ကလပ်စ်သတ်မှတ်တဲ့အခါ အော့ဘ်ဂျက်တစ်ခုစီမှာ သီးခြားကိုယ်ပိုင် ပါရှိမဲ့ ဗေရီရေဘဲလ်တွေကို \fEn{dot} အမှတ်အသားအသုံးပြုပြီး \fCode{self} နဲ့ ရည်ညွှန်းရပါတယ်။ \fCode{deposit} နဲ့ \fCode{withdraw} ကို ဆက်ကြည့်ရအောင်။
+
+%
+\begin{py}
+# File: account.py
+class Account:
+    ß$\ldots$ß # ß\fMM{ဒီမှာ ကွန်စရက်တာ ရှိမယ်၊ ထပ်မပြဘဲ ချန်ထားခဲ့တယ်}ß
+    def deposit(self, amt):
+        if amt <= Decimal(0.00):
+            raise ValueError('Invalid amount for deposit!')
+        self.balance += amt
+
+    def withdraw(self, amt):
+        if amt > self.balance:
+            raise ValueError('Not enough balance!')
+        self.balance -= amt
+\end{py}
+%
+ဒီဖန်ရှင်တွေမှာလည်း ပထမ ပါရာမီတာက \fCode{self} ဖြစ်နေတာ တွေ့ရမှာပါ။ လက်ရှိအော့ဘ်ဂျက်ရဲ့ အခြေအ\allowbreak နေအောက်မှာ အလုပ်လုပ်ပေးမဲ့ ဖန်ရှင်ရဲ့ ပထမ ပါရာမီတာက \fCode{self} ဖြစ်ရပါမယ်။ ဒီဖန်ရှင်တွေက အော့ဘ်ဂျက်အပေါ်မှာ လုပ်ဆောင်လို့ရတဲ့ အော်ပရေးရှင်းတွေပါပဲ။ \fCode{Account} \fEn{instance} တွေအပေါ်မှာ \fCode{deposit} နဲ့ \fCode{withdraw} လုပ်ဆောင်လို့ ရမှာဖြစ်တယ်
+%
+\begin{py}
+acc3.withdraw(Decimal('50_000.00'))
+acc1.deposit(Decimal('25_000.00'))
+\end{py}
+%
+ပထမတစ်ခုက အေမီ့ အကောင့်ကနေ  ငွေထုတ် \fEn{(withdraw)} လုပ်တာပါ။ သိပြီးဖြစ်တဲ့အတိုင်း \fCode{acc3} နဲ့ \fCode{self} ဟာ လက်ရှိအော့ဘ်ဂျက် ဖြစ်တယ်။ \fCode{withdraw} ကို ကြည့်ရင် \fCode{amt} က လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{balance} ထက် များနေရင် \fEn{exception} \fCode{raise} လုပ်ထားတယ်။ ရှိတဲ့လက်ကျန်ငွေထက် ပိုထုတ်လို့ မရသင့်ဘူး။ 
+%
+\begin{py}
+self.balance -= amt
+\end{py}
+%
+ကတော့ လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{balance} ကနေ \fCode{amt} နှုတ်လိုက်တာပါ။ အေမီ့ အကောင့်မှာ လက်ကျန်ငွေ $300,000.00$ ဖြစ်သွားမယ်။ ဒုတိယတစ်ကြောင်းက ကေသီ့ အကောင့်ကို ငွေသွင်း \fEn{(deposit)} လုပ်တာ။ ဒီတစ်ခါကျတော့ လက်ရှိအော့ဘ်ဂျက်က  ကေသီ့အကောင့်ပေါ့။ \fCode{self.balance += amt} က ကေသီ့အကောင့်နဲ့ သက်ဆိုင်တဲ့ အော့ဘ်ဂျက်ရဲ့ \fCode{balance} ကို \fCode{amt} ပမာဏ ပေါင်းပေးတာ။ ဒါကြောင့် ကေသီ့ အကောင့်လက်ကျန်ငွေ $125,000.00$ ဖြစ်သွားပါမယ်။ 
+%
+\begin{py}
+print(acc3.balance)  # 300000.00 
+print(acc1.balance)  # 125000.00
+\end{py}
+%
+
+\begin{figure}[tbh!]
+\definecolor{myFieldFill}{HTML}{F0F6FD}
+\definecolor{myFieldBorder}{HTML}{212121}
+\tikzset{myFieldStyle/.style={draw=myFieldBorder,fill=myFieldFill,semithick}}
+\def\fObjFigAttrValWidth{3}
+\def\fObjFigAttrValHeight{1}
+\newcommand{\figpctw}{0.48}
+\begin{subfigure}{{\figpctw}\textwidth} 
+\begin{tikzpicture}
+    %\draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
+    %\filldraw[color=red!20] (0,0) circle (1ex);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*2cm] (0,0)rectangle node{\fEn{Amy}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*1cm] (0,0)rectangle node{\fEn{0086-6002-2233}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*0cm] (0,0)rectangle node{\fEnBf{300,000.00}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+   
+    \draw (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*2cm]{\fEn{holder}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*1cm]{\fEn{accountNumber}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*0cm]{\fEn{balance}};
+    \draw (0.5*\fObjFigAttrValWidth, -0.5*\fObjFigAttrValHeight) node{\fEnBf{(Account)}};   
+\end{tikzpicture}
+\caption{အေမီ့ Account အော့ဘ်ဂျက် (\fCptCodeBf{acc3})}
+\end{subfigure}
+\begin{subfigure}{{\figpctw}\textwidth} 
+\begin{tikzpicture}
+    %\draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
+    %\filldraw[color=red!20] (0,0) circle (1ex);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*2cm] (0,0)rectangle node{\fEn{Kathy}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*1cm] (0,0)rectangle node{\fEn{0086-6002-1111}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+    \draw[myFieldStyle,yshift=\fObjFigAttrValHeight*0cm] (0,0)rectangle node{\fEnBf{125,000.00}} (\fObjFigAttrValWidth,\fObjFigAttrValHeight);
+   
+    \draw (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*2cm]{\fEn{holder}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*1cm]{\fEn{accountNumber}}
+          (0,0.5*\fObjFigAttrValHeight) node[anchor=east, yshift=\fObjFigAttrValHeight*0cm]{\fEn{balance}};
+    \draw (0.5*\fObjFigAttrValWidth, -0.5*\fObjFigAttrValHeight) node{\fEnBf{(Account)}};   
+\end{tikzpicture}
+\caption{ကေသီ့ Account အော့ဘ်ဂျက် (\fCptCodeBf{acc1})}    
+\end{subfigure}
+\caption{After \fCptCodeBf{withdraw} and \fCptCodeBf{deposit} on \fCptCodeBf{acc3} and \fCptCodeBf{acc1} respectively}
+\end{figure}
