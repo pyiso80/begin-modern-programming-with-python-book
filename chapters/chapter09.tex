@@ -38,7 +38,7 @@ acc2.withdraw(Decimal("70000.00"));
 %
 ဒီအော်ပရေးရှင်းတွေက အော့ဘ်ဂျက်တွေအပေါ် ဘယ်လိုသက်ရောက်မှုရှိမလဲ။ ကေသီ့အကောင့် လက်\allowbreak ကျန်ငွေက တစ်သိန်းခွဲ ဖြစ်သွားသင့်တယ်။ စန္ဒီ့အကောင့်က သုံးသိန်းရှစ်သောင်း ဖြစ်သင့်တယ်။ ဒီလို အော်ပရေးရှင်းတွေဟာလည်း ကလပ်စ်ပေါ်မှာ မူတည်တယ်။ ကလပ်စ်က ထောက်ပံ့ပေးထားမှပဲ ရမယ်။ ကလပ်စ်သည်သာ အခရာလို့ ပြောရမှာပါ။
 
-ကလပ်စ်တစ်ခုဟာ အော့ဘ်ဂျက်တွေမှာ ပါရှိရမဲ့ အချက်အလက်တွေနဲ့ ၎င်းအော့ဘ်ဂျက်တွေအပေါ်မှာ လုပ်\allowbreak ဆောင်နိုင်တဲ့ အော်ပရေးရှင်းတွေကို သတ်မှတ်ပေးပါတယ်။ ဒါ့အပြင် ကွန်စရက်တာ \fEn{(\textit{constructor})} လို့ခေါ်တဲ့ အော့ဘ်ဂျက်တည်ဆောက်တဲ့ သီးသန့်ဖန်ရှင်တစ်ခု ပါရှိရတယ်။ \fCode{Account} အော့ဘ်ဂျက်တွေအတွက် ကလပ်စ်ကို ကြည့်ရအောင် $\ldots$ 
+ကလပ်စ်တစ်ခုဟာ အော့ဘ်ဂျက်တွေမှာ ပါရှိရမဲ့ အချက်အလက်တွေနဲ့ ၎င်းအော့ဘ်ဂျက်တွေအပေါ်မှာ လုပ်\allowbreak ဆောင်နိုင်တဲ့ အော်ပရေးရှင်းတွေကို သတ်မှတ်ပေးပါတယ်။ ဥပမာ အနေနဲ့ \fCode{Account} ကလပ်စ် ဘယ်လိုသတ်မှတ်ရမလဲ ကြည့်ရအောင် $\ldots$ 
 
 
 %
@@ -67,15 +67,18 @@ class Account:
 
 ‘\fCode{Account} ကလပ်စ် သတ်မှတ်ပါမယ်’ လို့ ပြောဖို့အတွက် \fCode{class Account:} နဲ့ စရပါတယ်။ သူ့အောက်မှာရှိတာက \fCode{Account} ကလပ်စ်ရဲ့ ဘော်ဒီ \fEn{(body)} ပါ။ \fEn{Body} ဆိုတာ \fEn{block} ကို ပြောတာပါပဲ။ ကလပ်စ်ဘော်ဒီထဲမှာ ဖန်ရှင် သုံးခု သတ်မှတ်ထားတာ တွေ့ရမယ်။ သုံးခုလုံးမှာ ပထမ ပါရာမီတာက \fCode{self} ဖြစ်နေတာကို သတိပြုမိမှာပါ။ သူ (\fCode{self}) က လက်ရှိအော့ဘ်ဂျက် \fEn{(current object)} လို့ ဆိုလိုတာဖြစ်ပြီး သိပ်မကြာခင် သူ့အဓိပ္ပါယ်ကို ရှင်းပြပါမယ်။
 
-\mintinline{text}|__init__|  က ကွန်စရက်တာ \fEn{(constructor)} ဖန်ရှင်ဖြစ်တယ်။ အော့ဘ်ဂျက် တည်ဆောက်ပေးတဲ့ ဖန်ရှင်ပေါ့။ ကွန်စရက်တာနံမည်က အခြားဟာဖြစ်လို့မရဘူး။ \mintinline{text}|__init__| ပဲ ဖြစ်ရပါမယ်။ အော့ဘ်ဂျက်မှာ ပါရှိရမဲ့ ဗေရီရေဘဲလ်တွေကို \mintinline{text}|self.holder|\fEn{,} \mintinline{text}|self.acc_number|\fEn{,} \mintinline{text}|self.balance| လို့ ကွန်စရက်တာထဲမှာ ကြေငြာပေးရပါတယ်။ ဒီနေရာမှာ \fEn{dot} အမှတ်အသား အဓိပ္ပါယ်ကို ‘၏/ရဲ့’ လို့ ယူဆရင် ဖတ်ရတာ အဆင်ပြေတယ်။ \fCode{self.holder} ကို ‘လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{holder}’၊ \fCode{self.balance} ကို ‘လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{balance}’ လို့ ဖတ်နိုင်တယ်။
+ 
 
-\fCode{Account} \fEn{instance} တစ်ခုကို ဖန်တီးယူမယ်ဆိုရင် ကွန်စရက်တာကို တိုက်ရိုက်မခေါ်ရပါဘူး။ ကလပ်စ်နံမည်နဲ့ အခုလို ခေါ်ရမှာပါ
+\mintinline{text}|__init__| ဖန်ရှင်က အော့ဘ်ဂျက်မှာ ပါဝင်တဲ့ ဗေရီရေဘဲလ်တွေ သတ်မှတ်ပေးတယ်။ ၎င်းတို့ရဲ့ ကနဦး တန်ဖိုးကိုလည်း ဒီဖန်ရှင်က  \fEn{initialize} (စထည့်) လုပ်ပေးရတာပါ။ အော့ဘ်ဂျက်ရဲ့ ကနဦး အခြေအနေ \fEn{(initial state)} ကို စတင်ပေးတဲ့ ဖန်ရှင်ဖြစ်တာကြောင့် \fEn{initializer} လို့ ခေါ်လေ့ရှိတယ်။ \fCode{Account} ကလပ်စ်ကို ကြည့်ရင် ဒီဖန်ရှင်မှာ \mintinline{text}|self.holder|\fEn{,} \mintinline{text}|self.acc_number|\fEn{,} \mintinline{text}|self.balance| စတဲ့ အော့ဘ်ဂျက်ရဲ့ အချက်အလက်တွေနဲ့ သက်ဆိုင်တဲ့ ဗေရီရေဘဲလ်တွေ ကြေငြာထားတာ တွေ့ရမှာပါ။ ဒီနေရာမှာ \fEn{dot} အမှတ်အသား အဓိပ္ပါယ်ကို ‘၏/ရဲ့’ လို့ ယူဆရင် ဖတ်ရတာ အဆင်ပြေတယ်။ \fCode{self.holder} ကို ‘လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{holder}’၊ \fCode{self.balance} ကို ‘လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{bal\allowbreak ance}’ လို့ ဖတ်နိုင်တယ်။ \mintinline{text}|__init__| ရဲ့ ထူးခြားချက်က သူ့ကို တိုက်ရိုက် ခေါ်သုံးရလေ့မရှိဘူး။ အော့ဘ်ဂျက် တည်ဆောက်တဲ့ ဖြစ်စဉ်ရဲ့ နောက်ဆုံးအဆင့်မှာ \fEn{Python} က အလိုအလျှောက် ခေါ်ပေးတဲ့ ဖန်ရှင်ဖြစ်တယ်။
+
+
+\fCode{Account} \fEn{instance} တစ်ခုကို ဖန်တီးယူမယ်ဆိုရင်  အခုလို ရေးရမှာပါ
 %
 \begin{py}
 Account('Amy', '0086-6002-2233', Decimal('350_000.00'))
 \end{py}
 %
-ဒီအခါမှာ \mintinline{text}|__init__| က အလုပ်လုပ်မှာပါ။  ခေါ်တဲ့အခါ \fCode{self} အတွက် တန်ဖိုးထည့်မပေးရပါဘူး (\fCode{self} ဟာ ကလပ်စ်ရေးတဲ့သူအတွက် သီးသန့်ဖြစ်ပြီး ကလပ်စ်ဘော်ဒီထဲမှာပဲ အသုံးပြုရတာပါ)။ \fCode{holder}\fEn{,} \fCode{acc\_\allowbreak number}\fEn{,} \fCode{balance} အတွက် တန်ဖိုးတွေကို ထည့်ပေးရတယ်။ ဒီတန်ဖိုးတွေက  လက်ရှိအော့ဘ်ဂျက်  ဗေရီရေဘဲလ်တွေရဲ့ ကနဦး တန်ဖိုးတွေဖြစ်သွားမှာပါ
+ဒီအခါမှာ အော့ဘ်ဂျက် တည်ဆောက်တဲ့ ဖြစ်စဉ်ကို စတင်လုပ်ဆောင်ပေးမှာ ဖြစ်တယ်။ ထည့်ပေးထားတဲ့ တန်ဖိုးတွေက \mintinline{text}|__init__| ဖန်ရှင်အတွက် ဖြစ်တယ်။ \fCode{self} နောက်က ပါရာမီတာတွေအတွက်ပဲ ထည့်ပေးရပြီး \fCode{self} အတွက် တန်ဖိုးထည့်မပေးရပါဘူး (\fCode{self} ဟာ ကလပ်စ်ရေးတဲ့သူအတွက် သီးသန့်ဖြစ်ပြီး ကလပ်စ်ဘော်ဒီထဲမှာပဲ အသုံးပြုရတာပါ)။ ဒီတန်ဖိုးတွေက  လက်ရှိအော့ဘ်ဂျက်  ဗေရီရေဘဲလ်တွေရဲ့ ကနဦး တန်ဖိုးတွေဖြစ်သွားမှာပါ
 %
 \begin{py}
 self.holder = holder
@@ -83,7 +86,7 @@ self.acc_number = acc_number
 self.balance = balance
 \end{py}
 %
-ဒီသုံးကြောင်းအရ လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{holder} က \fCode{'Amy'} ဖြစ်ပါမယ်။ လက်ရှိအော့ဘ်ဂျက် \fCode{balance} နဲ့ \fCode{acc\_number} က \fCode{Decimal('350\_000.00')} နဲ့ \fCode{'0086-6002-2233'} အသီးသီး ဖြစ်ပါမယ်။ အခုလို ပုံဖော်ကြည့်နိုင်ပါတယ်
+ဒီသုံးကြောင်းအရ လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{holder} က \fCode{'Amy'} ဖြစ်ပါမယ်။ လက်ရှိအော့ဘ်ဂျက် \fCode{balance} နဲ့ \fCode{acc\_number} က \fCode{Decimal('350\_000.00')} နဲ့ \fCode{'0086-6002-2233'} အသီးသီး ဖြစ်ပါမယ်။ ပုံ (\fRefNo{\ref{fig:AmyAccObj1}}) မှာလို မြင်ကြည့်နိုင်ပါတယ်
 
 \begin{figure}[tbh!]
 \definecolor{myFieldFill}{HTML}{F0F6FD}
@@ -105,6 +108,7 @@ self.balance = balance
     \draw (0.5*\fObjFigAttrValWidth, -0.5*\fObjFigAttrValHeight) node{\fEnBf{(Account)}};   
 \end{tikzpicture}
 \caption{အေမီ့ Account အော့ဘ်ဂျက် (\fCptCodeBf{acc3})}
+\label{fig:AmyAccObj1}
 \end{figure}
 
 ဒီအော့ဘ်ဂျက်ကို ရည်ညွှန်းအသုံးပြုနိုင်ဖို့ဆိုရင် ထုံးစံအတိုင်း ဗေရီရေဘဲလ်နဲ့ အဆိုင်းမန့် လုပ်ထားဖို့ လိုပါတယ်။ 
@@ -149,6 +153,7 @@ acc1 = Account('Kathy', '0086-6002-1111', Decimal("100000.00"))
     \draw (0.5*\fObjFigAttrValWidth, -0.5*\fObjFigAttrValHeight) node{\fEnBf{(Account)}};   
 \end{tikzpicture}
 \caption{ကေသီ့ Account အော့ဘ်ဂျက် (\fCptCodeBf{acc1})}
+\label{fig:KathyAccObj1}
 \end{figure}
 ဆိုလိုတာက အေမီ့ \fCode{Account} အော့ဘ်ဂျက်မှာ အကောင့်ပိုင်ရှင်၊ နံပါတ်နဲ့ လက်ကျန်ငွေအတွက် သူ့ကိုယ်ပိုင် ဗေရီရေဘဲလ်သုံးခု ရှိနေမှာဖြစ်ပြီး ကေသီ့ \fCode{Account} အော့ဘ်ဂျက်ကလည်း သူ့ဟာနဲ့သူ သီးခြား သုံးခု ရှိနေမှာပါ။
 
@@ -158,7 +163,7 @@ acc1 = Account('Kathy', '0086-6002-1111', Decimal("100000.00"))
 \begin{py}
 # File: account.py
 class Account:
-    ß$\ldots$ß # ß\fMM{ဒီမှာ ကွန်စရက်တာ ရှိမယ်၊ ထပ်မပြဘဲ ချန်ထားခဲ့တယ်}ß
+    ß$\ldots$ß # __init__ ß\fMM{ကို ထပ်မပြဘဲ ချန်ထားခဲ့တယ်}ß
     def deposit(self, amt):
         if amt <= Decimal(0.00):
             raise ValueError('Invalid amount for deposit!')
@@ -177,7 +182,7 @@ acc3.withdraw(Decimal('50_000.00'))
 acc1.deposit(Decimal('25_000.00'))
 \end{py}
 %
-ပထမတစ်ခုက အေမီ့ အကောင့်ကနေ  ငွေထုတ် \fEn{(withdraw)} လုပ်တာပါ။ သိပြီးဖြစ်တဲ့အတိုင်း \fCode{acc3} နဲ့ \fCode{self} ဟာ လက်ရှိအော့ဘ်ဂျက် ဖြစ်တယ်။ \fCode{withdraw} ကို ကြည့်ရင် \fCode{amt} က လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{balance} ထက် များနေရင် \fEn{exception} \fCode{raise} လုပ်ထားတယ်။ ရှိတဲ့လက်ကျန်ငွေထက် ပိုထုတ်လို့ မရသင့်ဘူး။ 
+ပထမတစ်ခုက အေမီ့ အကောင့်ကနေ  ငွေထုတ် \fEn{(withdraw)} လုပ်တာပါ။ သိပြီးဖြစ်တဲ့အတိုင်း \fCode{acc3} နဲ့ \fCode{self} ဟာ လက်ရှိအော့ဘ်ဂျက် ဖြစ်တယ်။ \fCode{withdraw} ကို ကြည့်ရင် \fCode{amt} က လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{balance} ထက် များနေရင် \fEn{exception raise} လုပ်ထားတယ်။ ရှိတဲ့လက်ကျန်ငွေထက် ပိုထုတ်လို့ မရသင့်ဘူး။ 
 %
 \begin{py}
 self.balance -= amt
@@ -230,3 +235,1096 @@ print(acc1.balance)  # 125000.00
 \end{subfigure}
 \caption{After \fCptCodeBf{withdraw} and \fCptCodeBf{deposit} on \fCptCodeBf{acc3} and \fCptCodeBf{acc1} respectively}
 \end{figure}
+
+\begin{mytcbox}
+\fEnBf{Attributes, Methods and Members} 
+\betweentcboxpar
+\noindent အော့ဘ်ဂျက်မှာပါဝင်တဲ့ အချက်အလက်ကို \fEnEmp{attribute} လို့ခေါ်ပြီး အော့ဘ်ဂျက်ပေါ်မှာ လုပ်ဆောင်နိုင်တဲ့ အော်ပရေးရှင်းကို \fEnEmp{method} (မက်သဒ်) လို့ခေါ်တယ်။ အော့ဘ်ဂျက်တစ်ခုမှာ ပါဝင်တဲ့ \fEn{attribute} တွေနဲ့ \fEn{method} တွေ နှစ်မျိုးလုံးကိုခြုံငုံပြီး \fEnEmp{members} တွေလို့ ခေါ်ပါတယ်။ 
+\end{mytcbox}
+
+
+%%% Python way of access control
+% https://stackoverflow.com/questions/1301346/what-is-the-meaning-of-single-and-double-underscore-before-an-object-name#:~:text=Single%20leading%20underscores%20is%20a,%2C%20__bool__%20%2C%20etc.
+
+% Fluent Python
+
+% https://realpython.com/python-getter-setter/
+\section{Access Control}
+အိမ်ရှင်တစ်ယောက်ဟာ သူ့အိမ်မှာရှိသမျှ ပစ္စည်းတွေ (သို့) အခန်းတွေ အားလုံးကိုတော့ အိမ်လာတဲ့ ဧည့်သည်ကို အသုံးပြုခွင့် မပေးချင်ပါဘူး။ အိမ်ရှင်ကိုယ်တိုင်က အားလုံးကို အသုံးပြုနိုင်ပေမဲ့ ဧည့်သည်ဖြစ်သူကတော့ အိမ်ရှင်ခွင့်ပြုတာကိုပဲ အသုံးပြုသင့်ပါတယ်။ ထိုနည်းတူစွာ ကလပ်စ်ပိုင်ရှင် (ကလပ်စ်သတ်မှတ်သူ) ဟာ သူ့ကလပ်စ် \fEn{instance} တွေမှာ ပါဝင်တဲ့ \fEn{members} တွေကို အသုံးပြုသူတွေ ‘အကန့်အသတ်မရှိ ဆန္ဒရှိသလိုသာသုံး’ ခွင့်ပြုလို့မရပါဘူး။ ကလပ်စ်ပိုင်ရှင်ဟာ ကလပ်စ် \fEn{instance} တွေ မှန်ကန်တဲ့ \fEn{state} မှာ အမြဲရှိနေအောင် ကန့်သတ် ထိန်းချုပ်ထားရပါတယ်။ အသုံးပြုသူတွေ မသိသင့်တဲ့၊ အသုံးမပြုသင့်တဲ့ အတွင်းပိုင်းတည်ဆောက်ပုံ အသေးစိတ်နဲ့သက်ဆိုင်တဲ့ \fEnEmp{implementation details} တွေကိုလည်း ဖုံးကွယ်ထားနိုင်ဖို့ နည်းလမ်းတွေ လိုအပ်ပါတယ်။ ဒီအခန်းကဏ္ဍကို \fEnEmp{access control} လို့ ခေါ်ပါတယ်။ ပရိုဂရမ်းမင်း စလေ့လာသူတွေအတွက် အခုပြောတာတွေကို မြင်နိုင်ဖို့ အခက်အခဲ ရှိနေမှာပါ။ ဥပမာတချို့နဲ့ ရှင်းပြပါမယ်။
+
+\fCode{Account} \fEn{instance} တွေမှာ ပြဿနာတချို့ ရှိနေပါတယ်။ \fCode{withdraw} နဲ့ \fCode{deposit} မက်သဒ်တွေက ငွေရှိတာထက် ပိုထုတ်လို့မရအောင်၊ ငွေသွင်းရင်လည်း ဖြစ်သင့်တဲ့ပမာဏပဲ သွင်းအောင် ကာကွယ်ထားတာ တွေ့ရမှာပါ။ ဒါပေမဲ့ ခက်တာက အသုံးပြုသူတွေက ဒီအကာအကွယ်တွေကို ကျော်ပြီး အခုလို လုပ်လို့ရနေပါလိမ့်မယ်
+%
+\begin{py}
+acc1.balance = Decimal('-50_000.00')    # 
+acc1.acc_number = None                  #
+\end{py}
+%
+လက်ကျန်ငွေဟာ အနှုတ်တန်ဖိုး ဖြစ်လို့မရသင့်ဘူး။ ဘဏ်အကောင့်တစ်ခုမှာ အကောင့်နံပါတ်ကလည်း ရှိကိုရှိရပါမယ်။  ဒီလိုသာ ထင်သလို တန်ဖိုး ထည့်လို့ရနေရင် ပြဿနာပဲ။ အခုလိုဆိုရင် \fCode{acc1} အော့ဘ်ဂျက်ဟာ \fEn{invalid state} (မမှန်ကန်တဲ့ အနေအထား) ဖြစ်သွားမှာပါ။ အသုံးပြုသူက သေချာစဉ်းစားပြီး မဖြစ်သင့်တာ မလုပ်နဲ့ပေါ့လို့ စောဒကတက်စရာတော့ ရှိပါတယ်။ လျှပ်စစ်မီး ပလပ်ပေါက်ထဲ သတ္တုချောင်းထိုးထည့်လို့ ဓါတ်လိုက်ရင် \fEn{user fault} လို့ပြောတာက မှားတော့မမှားပါဘူး။ ဒါပေမဲ့လည်း မီးပလပ်ပေါက် ထုတ်လုပ်သူအနေနဲ့ အတတ်နိုင်ဆုံး အဲဒီလိုလုပ်လို့မရအောင်၊ အန္တရာယ်နည်းနိုင်သမျှ နည်းအောင် ဒီဇိုင်းပြုလုပ်ထားသင့်ပါတယ်။
+
+အော့ဘ်ဂျက် \fEn{attribute} တွေကို တိုက်ရိုက် အသုံးမပြုစေချင်တဲ့အခါ \fEn{Python} ဓလေ့ထုံးစံက \fEn{attribute} နံမည်ရှေ့မှာ \fCode{\_} \fEn{(underscore)} ထည့်ပေးပါတယ်။
+%
+\begin{py}
+class Account:
+    def __init__(self, holder, acc_number, balance):
+        self._holder = holder
+        self._acc_number = acc_number
+        self._balance = balance
+\end{py}
+%
+\fEn{Attribute} နံမည်တွေကို \fCode{\_holder}\fEn{,} \fCode{\_acc\_number} စသည်ဖြင့်  \fCode{\_} နဲ့စထားတာ သတိပြုပါ။ ဒီလိုနံမည်တွေဆိုရင် ကလပ်စ်အသုံးပြုသူ (အတိကျပြောရင် ကလပ်စ်ကနေ ဖန်တီးယူတဲ့ \fEn{instance} အသုံးပြုသူ) အနေနဲ့ ‘တိုက်ရိုက် အသုံးမပြုရ’ လို့ အဓိပ္ပါယ်ရတယ်။ ဒါက \fEn{Python} ပရိုဂရမ်မာ အများစု လက်ခံထားတဲ့ ဓလေ့ထုံးစံတစ်ခုသာ ဖြစ်တယ်။ အားလုံးက \fCode{\_} နဲ့စတဲ့ \fEn{attribute} (မက်သဒ်တွေလည်းပါတယ်) တွေဆိုရင် တိုက်ရိုက်ယူမသုံးသင့်ဘူးလို့ နားလည် လက်ခံထားတယ်။ ဒါပေမဲ့ အခြား \fEn{programming language} တွေလို လုံးဝသုံးလို့မရအောင် ကန့်သတ်လို့တော့ \fEn{Python} မှာ မရနိုင်ဘူး။ သုံးချင်သပဆိုရင်လည်း သုံးလို့တော့ရတယ်။ ဒါပေမဲ့ ဖြစ်လာမဲ့အကျိုးဆက်ဟာ အသုံးပြုသူရဲ့ တာဝန်သာဖြစ်တယ်။ ဒါကြောင့် ဒီလိုလုပ်လို့ ရတယ်
+%
+\begin{py}
+acc1._balance = Decimal('-50_000.00')    # ß\fMM{မလုပ်သင့်ပါ}ß
+\end{py}
+%
+ဒါပေမဲ့ ထုံးစံကိုဖေါက်ဖျက်တာ ဖြစ်တယ်။ မလုပ်သင့်တဲ့ အရာပေါ့။ 
+
+ဒီလို ဘာကြောင့် မသုံးသင့်လဲ အခြားအကြောင်းအရင်း တစ်ခုလည်း ရှိပါသေးတယ်။ ကလပ်စ်ပိုင်ရှင်က သူ့ကလပ်စ် \fEn{implementation details} တွေကို အကြောင်းအမျိုးမျိုးကြောင့် ပြင်ဆင် ပြောင်းလဲရလေ့ရှိတယ်။ ဥပမာ ပိုမြန်တဲ့၊ ဒါမှမဟုတ် မမ်မိုရီ အစားသက်သာစေမဲ့ နည်းလမ်းတွေကို ပြောင်းလဲ အသုံးပြုရနိုင်တယ်။ ဘဏ်အကောင့်တွေမှာ ငွေသွင်းငွေထုတ် စာရင်းကို အစဉ်အတိုင်း သိမ်းထားဖို့ လိုတယ်ဆိုပါစို့။ \fEn{List} တစ်ခုထဲမှာ သွင်းငွေပမာဏကို အပေါင်းတန်ဖိုး၊ ထုတ်ငွေပမာဏကို အနှုတ်တန်ဖိုးနဲ့ သိမ်းထားနိုင်တယ်။ တစ်သိန်းသွင်းပြီး နှစ်သောင်းခွဲ ထပ်သွင်းတယ်။ နောက်တော့ သုံးသောင်းခွဲ ပြန်ထုတ်တယ် ဆိုပါစို့။ \fEn{List} ထဲမှာ အခုလို ရှိနေရပါမယ်
+%
+\begin{py}
+[100000.00, 25000.00, -35000.00]
+\end{py}
+%
+ဒီတန်ဖိုးတွေကို ပေါင်းလိုက်ရင် လက်ရှိလက်ကျန်ငွေ \fEn{balance} ကိုရမှာပါ။ ဒီလိုဆိုရင် သီးသန့်  \fEn{attribute} တစ်ခုနဲ့ \fEn{balance} ကို သိမ်းထားဖို့ မလိုအပ်တော့ဘူး။ ငွေသွင်းငွေထုတ် စာရင်းကနေ  တွက်ယူနိုင်တယ်။ အဖက်ဖက်ကနေ စဉ်းစားသုံးသပ်ပြီး ပိုင်ရှင်က သူ့ကလပ်စ်ကို အခုလို \fEn{update} လုပ်ဖို့ ဆုံးဖြတ်ချက် ချနိုင်ပါတယ်
+
+
+%
+\begin{py} 
+from decimal import * ß\label{ch09:txntobal}ß
+
+class Account:
+    def __init__(self, holder, acc_number, balance):
+        self._holder = holder
+        self._acc_number = acc_number
+        self._transactions = [balance]
+
+    def deposit(self, amt):
+        if amt <= Decimal(0.00):
+            raise ValueError('Invalid amount for deposit!')
+        self._transactions.append(amt)
+
+    def withdraw(self, amt):
+        if amt > self.balance:
+            raise ValueError('Not enough balance!')
+        self._transactions.append(-amt)
+
+    @property
+    def balance(self):
+        return sum(self._transactions)
+\end{py}
+လောလောဆယ် အသေးစိတ်တွေက သိပ်အရေးမကြီးဘူး။ \fCode{\_balance} ဖြုတ်လိုက်တာကိုသာ အဓိက အာ\allowbreak ရုံထားပါ။ ဒီအခါ သူ့ကို တိုက်ရိုက် သုံးထားတဲ့ ကုဒ်အားလုံး (ဥပမာ \fCode{acc1.\_balance}) ကလပ်စ် ဗားရှင်းအသစ်ကို \fEn{update} ယူပြီးသုံးရင်  ပြဿနာတက်သွားမှာပါ။ ပိုကောင်းတဲ့ ဗားရှင်းအသစ်ကို သုံးချင်တယ်ဆိုရင် တိုက်ရိုက်သုံးထားတဲ့နေရာတွေ အားလုံးကို လိုက်ပြင်ရပါလိမ့်မယ်။ ကလပ်စ်ပိုင်ရှင်က တမင်တကာ ဖုံးကွယ်ထားတဲ့ \fEn{implementation details} တွေကို တိုက်ရိုက်မသုံးရင် ဒီလိုပြဿနာမျိုးတွေ မဖြစ်နိုင်ဘူးပေါ့။
+
+ဒီလောက်ဆိုရင် \fEn{access control} ဘာကြောင့် အရေးကြီးသလဲ နားလည် သဘောပေါက်လောက်ပါပြီ။ ကလပ်စ် ပိုင်ရှင်ရော အသုံးပြုသူတွေ အတွက်ပါ ဂရုစိုက်စဉ်းစားရမဲ့ ကိစ္စဖြစ်ပါတယ်။ ဘယ်သူမဆို တရားဝင် အသုံးပြုခွင့် ပေးထားတဲ့ \fEn{members} ကို  ကလပ်စ်ရဲ့ \fEnEmp{interface} သို့ \fEn{API (\textit{Application Programming Interface})} လို့ခေါ်ပါတယ်။ ကလပ်စ်ပိုင်ရှင်က စဉ်းစားဆင်ခြင် သုံးသပ်ပြီး ကလပ်စ် \fEn{API} က ဘယ်လိုဖြစ်သင့်လဲ တိတိကျကျ သတ်မှတ်ပေးရတာပါ။ ဖုံးကွယ်ထားသင့်တဲ့ \fEn{implementation details} တွေကို ပေးသိ/သုံး မိတာဟာ နောင်တစ်ချိန် ကလပ်စ်ကို ပြင်ဆင်မွမ်းမံဖို့ အဟန့်အတားဖြစ်စေပါတယ်။ အသုံးပြုသူတွေကလည်း မသိ/မသုံးစေချင်တဲ့ \fEn{internal} တွေကို အသုံးပြုခြင်းဖြင့် စည်းမဖေါက်ဖို့ လိုပါတယ်။ 
+
+\section{Composition or Has-a Relationship}
+အခုတွေ့ခဲ့တဲ့ \fCode{Account} \fEn{instance} တွေက ပိုင်ရှင် နံမည်ကိုပဲ \fEn{attribute} အနေနဲ့ သိမ်းတယ်။ နံမည်အပြင် အကောင့် ပိုင်ရှင် မှတ်ပုံတင်နံပါတ် \fEn{(NRIC)}၊ မွေးသက္ကရာဇ်၊ နေရပ်လိပ်စာတို့ကိုလည်း ဘဏ်တွေက မှတ်သား သိမ်းဆည်းရပါတယ်။ ပရိုဂရမ်ထဲမှာလည်း ဒီအချက်အလက်တွေကို ထင်ဟပ်ဖော်ပြဖို့ လိုပါမယ်။ \fCode{Account} ကလပ်စ်မှာ ဒီအချက်အလက်တွေအတွက် \fEn{attribute} အသစ်တွေ ထပ်ထည့်ရမလား၊ ဒါမှမဟုတ် ပိုင်ရှင်တစ်ယောက်ချင်းကို အော့ဘ်ဂျက်အနေနဲ့ ဖော်ပြရမလား စဉ်းစားစရာ ဖြစ်လာပါတယ်။ အပြင်မှာရှိတဲ့ ဘဏ်အကောင့်ကို \fCode{Account} \fEn{instance} နဲ့ ကိုယ်စားပြုတယ်ဆိုရင် အပြင်က အကောင့်ပိုင်ရှင်ကို \fCode{Holder} \fEn{instance} နဲ့ ဖော်ပြတာဟာလည်း ကျိုးကြောင်းဆီလျော်တယ်လို့ပဲ ယူဆရမှာပါ။ အော့ဘ်ဂျက် ဖြစ်သင့်/မသင့် စဉ်းစားဆုံးဖြတ်တဲ့အခါ အခြေခံအကျဆုံး မေးခွန်းတစ်ခုကတော့ မိမိ ဖော်ပြလိုတဲ့ အရာဟာ \fEn{attributes} တွေအပြင် ဘယ်လို \fEn{methods} တွေ ပါဝင်သင့်လဲ ဆိုတာပါ။ \fEn{Attribute} တွေပဲ ရှိပြီး \fEn{method} တစ်ခုမှ မရှိရင် အော့ဘ်ဂျက်အနေနဲ့ မရှုမြင်သင့်ဘူး။ \fCode{Holder} \fEn{instance} တွေ အပေါ်မှာ လုပ်ဆောင်လို့ ရသင့်တဲ့ \fEn{method} တချို့ ခေါင်းထဲပေါ်လာဖို့ သိပ်မခက်သင့်ဘူး။ အခြားလည်း ရှိအုံးမှာပါ။
+%
+\begin{py}
+holder1.change_address(new_address)
+\end{py}
+%
+အပြင်မှာလည်း လိပ်စာပြောင်းတာ မကြာခဏဖြစ်လေ့ရှိပါတယ်။ \fEn{Attributes} ရော \fEn{methods} တွေပါ ရှိမယ်ဆိုရင် အော့ဘ်ဂျက်အနေနဲ့ စဉ်းစားနိုင်ပါတယ်။ ဒါဆိုရင် ကလပ်စ်သတ်မှတ် ရပါမယ်
+%
+\begin{py}
+class Holder:
+    def __init__(self, name, dob, nric, gender):
+        self._name = name
+        self._dob = dob
+        self._nric = nric
+        self._gender = gender
+
+    # ß$\ldots$ß
+\end{py}
+%
+ဒီလောက်နဲ့ အော့ဘ်ဂျက် ဖန်တီးယူလို့ ရပါပြီ (ကျန်တဲ့ ပါသင့်တာတွေ ခဏနေရင် ထပ်ဖြည့်ပါမယ်)။ ဒီစက်ရှင်ရဲ့ အဓိက အကြောင်းအရာကို အရင်ကြည့်ရအောင်။ ဘဏ်အကောင့်နဲ့ အကောင့်ပိုင်ရှင် ဆက်စပ်နေတာကို ဖော်ပြချင်ရင် ဒီလိုပါ
+%
+\begin{py}
+holder1 = Holder('Kathy',
+                 date(1990, 3, 10),
+                 'MaRaNa (N) 1343232',
+                 'F')
+acc1 = Account(holder1, '0086-6002-1111', Decimal('100_000.00'))
+\end{py}
+%
+အကောင့်ပိုင်ရှင် ကေသီ့ကို ကိုယ်စားပြုတဲ့ အော့ဘ်ဂျက် ဖန်တီးယူမယ်။ ပြီးတော့ ကေသီ့အကောင့်မှာ အဲ့ဒီအော့ဘ်ဂျက်ကို ထည့်ပေးလိုက်ရုံပဲ။ \fCode{Account} မှာ \fCode{Holder} က \fEn{attribute} တစ်ခုအနေနဲ့ ရှိနေမှာပါ။ အော့ဘ်ဂျက်နှစ်ခု အခုလို ဖွဲ့စည်းထားတာကို \fEn{composition} လို့ ခေါ်ပါတယ်။ \fEn{Composition} ဟာ ပိုင်ဆိုင်ခြင်း (သို့) ရှိခြင်း ကိုလည်း ဖော်ပြတယ်။  ‘ဘဏ်အကောင့်တစ်ခုမှာ အကောင့်ပိုင်ရှင်တစ်ယောက် ရှိတယ်’၊ ‘ကားတစ်စီးမှာ အင်ဂျင်တစ်လုံး ပါရှိတယ်’။  ဒီလိုဆက်စပ်မှုမျိုးကို ဖော်ပြတဲ့ အော့ဘ်ဂျက်နှစ်ခုဟာ \fEn{has-a relationship} ရှိတယ်လို့ ပြောလေ့ရှိတယ်။
+
+အော့ဘ်ဂျက်တစ်ခုဟာ တစ်ခုထက်ပိုတဲ့ အခြား အော့ဘ်ဂျက်တွေနဲ့ \fEn{has-a relation} ရှိနိုင်တာပေါ့။ ဥပမာ အကောင့်ဖွင့်တဲ့ ဘဏ်ခွဲကို အော့ဘ်ဂျက်အနေနဲ့ ယူဆမယ်ဆိုရင် 
+%
+\begin{py}
+class Branch:
+    def __init__(self, name, address):
+        self._name = name
+        self._address = address
+    # ß$\ldots$ß
+
+class Account:
+    def __init__(self, holder, acc_number, balance, branch):
+        # ß$\ldots$ \fMM{အခြား \fEn{attributes} တွေရှိမယ်၊ မပြထားတော့တာ}ß
+        self._branch = branch
+\end{py}
+%
+\fCode{Account} နဲ့ သူ့ရဲ့ \fCode{Branch} ကို ချိတ်ဆက်မယ်ဆိုရင်
+%
+\begin{py}
+# ß$\ldots$ holder1 \fMM{ရှိမယ်၊ မပြထားတော့တာ}ß
+branch1 = Branch('Mandalay', '232A, 62 St, Chanayetharsi')
+acc1 = Account(holder1, 
+               '0086-6002-1111', 
+               Decimal('100_000.00'), 
+               branch1)
+\end{py}
+%
+
+\subsection*{Types of Composition and Sharing}
+ဘဏ်ခွဲတစ်ခုတည်းမှာ ဖွင့်ထားတဲ့ ဘဏ် အကောင့်တွေဟာ \fCode{Branch} အော့ဘ်ဂျက်တစ်ခုတည်းကိုပဲ \fEn{sharing} လုပ်ထားပြီး အသုံးပြုနိုင်ပါတယ်။
+%
+\begin{py}
+branch1 = Branch('Mandalay', '232A, 62 St, Chanayetharsi')
+acc1 = Account(holder1, 
+               '0086-6002-1111', 
+               Decimal('100_000.00'), 
+               ß\textbf{branch1}ß)
+acc2 = Account(holder2, 
+               '0086-6002-1111', 
+               Decimal('100_000.00'), 
+               ß\textbf{branch1}ß)
+\end{py}
+%
+\fCode{acc1} နဲ့ \fCode{acc2} နှစ်ခုလုံးက \fEn{branch1} ‌အော့ဘ်ဂျက်တစ်ခုတည်းကိုပဲ မျှသုံးထားတာပါ။ လူတစ်ယောက်\allowbreak တည်းက အကောင့် နှစ်ခု ဖွင့်ထားရင် \fCode{Holder} အော့ဘ်ဂျက်တစ်ခုတည်းကို မျှသုံးပါမယ်။
+
+%
+\begin{py}
+holder1 = Holder('Kathy',
+    date(1990, 3, 10),
+    'MaRaNa (N) 1343232',
+    'F')
+acc1 = Account(ß\textbf{holder1}ß, '0086-6002-1111', Decimal('100_000.00'))
+acc5 = Account(ß\textbf{holder1}ß, '0086-6002-5522', Decimal('500_000.00'))
+\end{py}
+%
+
+\fEn{Has-a relationship} ကို အမျိုးအစားတွေခွဲကြည့်ရင် \fEn{one-to-one, one-to-many, many-to-many} စသည့်ဖြင့်တွေ့ရပါတယ်။ \fCode{Car} နဲ့ \fCode{Engine} ဟာ \fEn{one-to-one} ဖြစ်ပါမယ်။ \fCode{Student} နဲ့ \fCode{Course} (သို့) \fCode{Actor} နဲ့ \fCode{Film} ဆိုရင်တော့ \fEn{many-to-many relationship} ပေါ့။ \fEn{One-to-many} ကို \fCode{Bank} နဲ့ \fCode{Branch}\fEn{,} \fCode{House} နဲ့ \fCode{Resident} တို့အကြား တွေ့ရမှာပါ။ 
+
+\fCode{Bank} နဲ့ \fCode{Account} တို့ အကြား \fEn{one-to-many relationship} ကို ဒီအခန်းနောက်ဆုံးမှာ တွေ့ရပါမယ်။ \fEn{One-to-one} အတွက် \fCode{Car} နဲ့ \fCode{Engine}\fEn{,} \fEn{many-to-many} အတွက် \fCode{Student} နဲ့ \fCode{Course} ကို ဖော်ပြထားတာ လေ့လာကြည့်ပါ။ 
+
+%
+\begin{py}
+class Engine:
+    def __init__(self, horsepower):
+        self._horsepower = horsepower
+
+
+class Car:
+    def __init__(self, model, engine):
+        self._model = model
+        self._engine = engine
+
+
+# Creating an engine object
+my_engine = Engine(horsepower=200)
+
+# Creating a car object with the engine
+my_car = Car(model="Toyota Camry", engine=my_engine)
+\end{py}
+%
+\begin{py}
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.courses = []
+
+    def enroll(self, course):
+        self.courses.append(course)
+
+
+class Course:
+    def __init__(self, name):
+        self.name = name
+        self.students = []
+
+    def add_student(self, student):
+        self.students.append(student)
+
+
+# Creating student objects
+sandar = Student("Sandar")
+waiyan = Student("Waiyan")
+
+# Creating course objects
+math_course = Course("Mathematics")
+science_course = Course("Science")
+
+# Enrolling students in courses
+sandar.enroll(math_course)
+sandar.enroll(science_course)
+waiyan.enroll(math_course)
+
+# Adding students to courses
+math_course.add_student(sandar)
+math_course.add_student(waiyan)
+science_course.add_student(sandar)
+
+\end{py}
+%
+
+ကျောင်းသူ/သား တစ်ယောက် တက်ရောက်ဖို့ စာရင်းပေးထားတဲ့ \fEn{course} တွေအတွက်၊  \fCode{course} တစ်ခုကို တက်ရောက်မဲ့ ကျောင်းသူ/သား တွေအတွက် \fEn{list} ကို သုံးထားတာ ဂရုပြုကြည့်ပါ။ \fEn{Has-a relationship} မှာ \fEn{many} ဘက်ခြမ်းကို ဖော်ပြဖို့အတွက်  အော့ဘ်ဂျက်တွေ တစ်စုတစ်စည်းတည်း ထားနိုင်တဲ့ \fEn{list, set, dictionary} စတာတွေ သုံးရပါတယ်။
+
+
+\section{Properties}
+\fEn{Access control} စည်းကမ်းအတိုင်း လိုက်နာရမယ်ဆိုရင် \fCode{Holder} ရဲ့ \fEn{attributes} တွေကို တိုက်ရိုက်မသုံးသင့်ဘူး။ ဒါဆို \fEn{attributes} တွေကို သုံးဖို့လိုအပ်ရင် ဘယ်လိုလုပ်ရမလဲ မေးစရာ ရှိပါတယ်။ ကလပ်စ်ပိုင်ရှင် အနေနဲ့ \fEn{attribute} ကို မက်သဒ်ကနေတစ်ဆင့် အသုံးပြုလို့ရအောင် လမ်းဖွင့်ပေးထားနိုင်ပါတယ်။ မဖြစ်သင့်တာ မဖြစ်အောင် မက်သဒ်မှာ စိစစ်လို့ရတယ်။ 
+%
+\begin{py}
+class Holder:
+    def __init__(self, name, dob, nric, gender):
+        self._name = name
+        self._dob = dob
+        self._nric = nric
+        self._gender = gender
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, name):
+        if name.strip() == '':
+            raise ValueError('Name cannot be empty!')
+        self._name = name.strip()
+\end{py}
+%
+\fCode{set\_name} မှာ နံမည်ကို \fEn{empty string} မဖြစ်အောင် စစ်ထားတယ်။ အသုံးပြုသူအနေနဲ့ နံမည်ကို ယူကြည့်တာ၊ ပြောင်းတာ လုပ်မယ်ဆိုရင် မက်သဒ်ကိုပဲ သုံးရမှာပါ။ ဥပမာ
+%
+\begin{py}
+print(holder1.get_name())
+holder1.set_name('Amy Lynn')
+holder1.set_name('    ')        # ValueError ß\fMM{ဖြစ်မယ်}ß
+\end{py}
+%
+(\fCode{\_} နဲ့ မစရင် \fEn{API,} သုံးလို့ရတယ်)။
+
+အခြား \fEn{attribute} တွေလည်း လိုအပ်ရင် အလားတူ မက်သဒ်တွေနဲ့  \fEn{API} ထုတ်ပေးထားလို့ရပါတယ်။ ဒီနည်းလမ်းအပြင် \fEn{Python} မှာ  \fEnEmp{managed attributes} ဆိုတာလည်း ရှိပါသေးတယ်။ \fEn{Managed attributes} တွေကို \fEnEmp{properties} လို့လည်း ခေါ်တယ်။ \fEn{Managed attribute} သုံးထားတဲ့ ဥပမာကို လေ့လာကြည့်ပါ
+
+%
+\begin{py}
+class Holder:
+    def __init__(self, name, dob, nric, gender):
+        self._name = name
+        self._dob = dob
+        self._nric = nric
+        self._gender = gender
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        if name.strip() == '':
+            raise ValueError('Name cannot be empty!')
+        self._name = name
+
+    @property
+    def dob(self):
+        return self._dob
+
+    @dob.setter
+    def dob(self, value):
+        self._dob = value
+
+    # ß$\ldots$ß
+\end{py}
+%
+\fCode{@} သင်္ကေတနဲ့ စထားတဲ့ \fCode{@property}\fEn{,} \fCode{@name.setter} စသည်ဖြင့် တွေ့ရပါတယ်။ \fEn{Property decorator} လို့ခေါ်ပါတယ်။ ဒါလေးတွေက နောက်ကွယ်မှာတော့ ဖန်ရှင်တစ်ခုပါပဲ။ \fCode{property()} ဖန်ရှင်က သူတို့ရဲ့ နောက်ကွယ်ကနေ အလုပ်လုပ်ပေးမှာပါ။  လောလောဆယ် အသေးစိတ်တွေ ခဏထားလိုက်ပြီး အသုံးပြုနည်းကို အဓိကထား ကြည့်ရအောင်။ \fEn{Decorator} ရဲ့ အောက်မှာ ရှိနေတာက ပုံမှန်မက်သဒ်တွေ ပါပဲ။ \fEn{Property} \fEn{decorator} က အဓိကဘာလုပ်ပေးလဲ။ မက်သဒ်တစ်ခုကို ပုံမှန် \fEn{attribute}  ဗေရီရေဘဲလ်လို သုံးလို့ရအောင် လုပ်ပေးတာပါ။ ဥပမာ \fCode{name} မက်သဒ်ကို ခေါ်ရင်  \fCode{holder1.name()} လို့ ရေးနေစရာ မလိုဘူး။ \fCode{holder1.name} လို့ ရေးရုံပဲ။ တကယ်တမ်း နောက်ကွယ်မှာ အလုပ် လုပ်တာကတော့ မက်သဒ်ကပဲ လုပ်သွားမှာပါ။ \fCode{name} အတွက် \fCode{@name.setter}\fEn{,}  \fCode{dob} အတွက်ဆိုရင် \fCode{@dob.setter} စသည်ဖြင့် ဖြစ်ရပါမယ်။
+ 
+အဆိုင်းမန့် လုပ်ရင်လဲ ဒီသဘောပဲ။ \fCode{holder1.name = 'Amy Lynn'} လို့ ရေးရင် \fCode{@name.setter} \fEn{decorator} နဲ့ မက်သဒ်က အလုပ်လုပ်သွားမှာ ဖြစ်တယ်။ \fCode{holder1.name('Amy Lynn')} မက်သဒ်ခေါ်တာနဲ့ သဘောတရား တူမယ်။ ဒါကြောင့် အခုလို စမ်းကြည့်ရင်
+%
+\begin{py}
+holder1.name = '    '     
+\end{py}
+%
+\fCode{ValueError} \fEn{exception} ဖြစ်ပါလိမ့်မယ်။ \fEn{Property decorator} သုံးထားတဲ့အတွက် \fCode{dob} ကိုလည်း \fEn{attribute} အနေနဲ့ သုံးလို့ရပါတယ်။
+%
+\begin{py}
+println(holder1.dob)
+holder1.dob = date(1990, 3, 11)
+\end{py}
+%
+
+\fEn{Python} ပရိုဂရမ်မာတွေက \fEn{managed attribute} အသုံးပြုတာကို \fEn{Pythonic} ပိုဖြစ်တဲ့ နည်းလမ်းလို့ ယူဆကြပါတယ်။ ဒါ့ကြောင့် ရိုးရိုး \fCode{get\_name}\fEn{,} \fCode{set\_name} မက်သဒ်တွေနဲ့ \fEn{attribute} သုံးလေ့မရှိဘူး။ ဘီဂင်နာအနေနဲ့  မက်သဒ်ဖြစ်သင့်တာတွေကို \fEn{attribute} အနေနဲ့ မရှုမြင်ကြည့်မိဖို့ သတိပြုသင့်ပါတယ်။ \fCode{withdraw} နဲ့ \fCode{deposit} က \fEn{attribute} မဖြစ်သင့်ဘူး။ ဒါတွေက အော့ဘ်ဂျက်အပေါ်မှာ လုပ်ဆောင်လို့ရတဲ့ အော်ပရေးရှင်းတွေ အနေနဲ့ပဲ ရှုမြင်ရမှာပါ။ \fEn{Attribute} ဆိုတာက အော့ဘ်ဂျက် ပိုင်ဆိုင်ထားတဲ့ အချက်အလက်သာ ဖြစ်တယ်။ ဒီအချက်အလက်တွေကိုမှ လိုအပ်ရင် \fEn{managed} \fEn{attribute} အနေနဲ့ အသုံးပြုခွင့် ပေးရတာဖြစ်တယ်။ 
+
+\subsection*{Derived Attributes/Properties}
+\fCode{Holder} ရဲ့ အသက်ကို ဗေရီရေဘဲလ်အနေနဲ့ ထားစရာမလိုဘဲ မွေးသက္ကရာဇ်ကနေ တွက်ယူလို့ရတယ်။ ဒီလိုမျိုး \fEn{attribute} တွေကို \fEn{derived attributes} လို့ ခေါ်လေ့ရှိတယ်။ ၎င်းတို့အတွက် ဗေရီရေဘဲလ် ရှိဖို့ မလိုအပ်တာကြောင့်  နေရာကုန် သက်သာမယ်။ အသုံးပြုတဲ့အခါမှ လိုတဲ့တန်ဖိုးကို တွက်ယူတာမို့လို့ အချိန် အကုန်အကျရှိမယ်။ တချို့ တကယ့်လက်တွေ့ အခြေအနေတွေမှာ နေရာနဲ့ အချိန် အကုန်အကျကို ဆန်းစစ်သုံးသပ်ပြီး တန်ဖိုးအနေနဲ့ သိမ်းထားမလား၊ ဒါမှမဟုတ် တွက်ချက်ယူမလား ဆုံးဖြတ်ရတတ်ပါတယ်။  \fEn{Derived attributes} တွေက နေရာသက်သာပေမဲ့ အချိန်အကုန်အကျ ရှိတယ်လို့ အ\allowbreak ခြေခံအဆင့်မှာ သိထားသင့်ပါတယ်။
+%
+\begin{py}
+class Holder:
+    def __init__(self, name, dob, nric, gender: str):
+        # ...
+        self._dob = dob
+        # ...
+
+    @property
+    def age(self):
+        return age_today(self._dob)
+\end{py}
+%
+စာမျက်နှာ (\fRefNo{\pageref{ch09:txntobal}}) က \fCode{Account} ကလပ်စ်မှာ \fEn{balance} ကို \fEn{derived attribute} အနေနဲ့ တွေ့ရမှာပါ။ \fEn{Transaction} (ငွေအဝင်အထွက်ကို ဆိုလို) အကြိမ်အရေအတွက် များရင်များသလို \fEn{balance} တွက်ထုတ်တဲ့အခါ အချိန်အကုန်အကျလည်း များမှာဖြစ်တယ်။
+%
+\begin{py}
+class Account:
+    def __init__(self, holder, acc_number, balance):
+        # ...
+        self._transactions = [balance]
+    # ...
+    @property
+    def balance(self):
+        return sum(self._transactions)
+\end{py}
+%
+
+\subsection*{\fSubSecCodeBf{self} အကြောင်း သိကောင်းစရာ}
+\fCode{self} နဲ့ ပါတ်သက်ပြီး ထိုက်သင့်သလောက် ဖော်ပြခဲ့ပြီးပါပြီ။ ဒီလောက်သိထားရင်ကို ဘီဂင်နာအဆင့် အတွက် လုံလောက်ပါတယ်။ ဒါပေမဲ့ စိတ်ဝင်စားလို့ ပိုသိချင်တဲ့သူတွေအတွက်ရော သိထားသင့်တဲ့အတွက်ပါ တချို့ဟာလေးတွေ ထပ်ကြည့်ကြပါမယ်။  
+
+အော့ဘ်ဂျက်တစ်ခု စဖန်တီးတဲ့အခါ \fEn{heap} လို့ခေါ်တဲ့ မမ်မိုရီ ဧရိယာထဲမှာ သူ့အတွက် လိုအပ်တဲ့နေရာ အရင်ပေးရတယ် (\mintinline{text}|__init__| အလုပ်မလုပ်ခင် ဒီကိစ္စကို အရင်လုပ်ရတာ)။ နေရာပေးပြီးသွားရင် အဲ့ဒီအော့ဘ်ဂျက်ကို ရည်ညွှန်းလို့ရမဲ့ \fEn{reference} ကို ရရှိပါတယ် (\fEn{reference} ဆိုတာ အော့ဘ်ဂျက်ကို ရည်ညွှန်းတဲ့ ဗေရီရေဘဲလ်ကို ပြောတာပါပဲ)။ ဒီအဆင့်ပြီးရင် အကြမ်းထည်အဆင့် အော့ဘ်ဂျက်တစ်ခု  ရနေပါပြီ။ ဒီအော့ဘ်ဂျက်ကို \fEn{initialization} ဆက်လုပ်ရပါမယ်။ \mintinline{text}|__init__|  ဖန်ရှင်က \fEn{initialize} လုပ်ပေးရမဲ့ အော့ဘ်ဂျက်ကို သိရပါမယ်။ ဒါ့ကြောင့် \mintinline{text}|__init__| ခေါ်တဲ့အခါ ခုနက \fEn{referene} ကို \fCode{self} နေရာမှာ \fEn{Python} က အလိုအလျှောက် ထည့်ပေးသွားမှာပါ။ 
+
+အော့ဘ်ဂျက် အချောထည် (\fEn{properly initialized object}) တည်ဆောက်ပြီးသွားတဲ့အခါ သူ့အတွက် \fEn{reference} ကို ပြန်လည်ရရှိမှာပါ။ ဒီ \fEn{reference} နဲ့ အော့ဘ်ဂျက်ကို ဆက်လက် အသုံးပြုလို့ ရတာဖြစ်တယ်။ ဥပမာ  
+%
+\begin{py}
+acc4 = Account('Waiyan', ...)
+\end{py}
+%
+ဒါဟာ ပြန်ရတဲ့ \fEn{reference} ကို \fCode{acc4} နဲ့ ဖမ်းယူထားလိုက်တဲ့ သဘောပဲ။ 
+
+
+%https://www.reddit.com/r/learnpython/comments/12no20f/what_is_self_attribute_exactly/
+\fCode{withdraw}\fEn{,} \fCode{deposit}  မက်သဒ်တွေ ခေါ်တဲ့အခါမှာလည်း   \fCode{self} နေရာမှာ လက်ရှိအော့ဘ်ဂျက်ကို \fEn{Python} က ထည့်ပေးတာ ဖြစ်တယ်။ 
+%
+\begin{py}
+acc4.deposit(Decimal('50_000.00'))
+\end{py}
+%
+အခုလို ခေါ်တဲ့အခါ \fCode{acc4} ကို \fCode{deposit} မက်သဒ် \fCode{self} နေရာမှာ ထည့်ပေးမှာပါ။ ဒီလို \fEn{transformation} လုပ်ပေးတယ်လို့ ယူဆနိုင်တယ်
+%
+\begin{py}
+acc4.deposit(ß‌\textbf{acc4}ß, Decimal('50_000.00'))
+\end{py}
+%
+မှတ်ချက်။\qquad ။ အတိအကျ ဒီလိုဖြစ်တယ်လို့ မဆိုလို။ တကယ့်တကယ်က \fCode{Account.deposit(ac4, Decimal('50\_000.00'))} အဖြစ် ပြောင်းပေးတာပါ။ ဒါပေမဲ့ ဘီဂင်နာအတွက် လက်ရှိ \fEn{knowledge} နဲ့ ဒါကိုနားလည်နိုင်ဖို့က စောလွန်းသေးတယ်။
+
+
+\begin{mytcbox}
+\fEnBf{Instance Variables and Instance Methods} 
+\betweentcboxpar
+အော့ဘ်ဂျက်တစ်ခုစီက သီးခြားပိုင်ဆိုင်တဲ့ ဗေရီရေဘဲလ်တွေကို \fEnEmp{instance variable} တွေလို့လည်း ခေါ်ပါတယ်။ \fEnEmp{Instance attribute} ပြောရင်လည်း အဓိပ္ပါယ်တူတူပါပဲ။ အော့ဘ်ဂျက်တစ်ခုစီက သီးခြားပိုင်ဆိုင်တဲ့ \fEn{attribute} တွေပေါ့။ 
+\betweentcboxpar
+\fEnEmp{Instance method} တွေကတော့ လက်ရှိအော့ဘ်ဂျက်ရဲ့ အခြေအနေအောက်မှာ အလုပ်လုပ်တဲ့ မက်သဒ်တွေဖြစ်ပြီး  \fEn{instance variable} တွေကို အသုံးပြုလေ့ရှိတယ် (\fCode{acc1.withdraw(amt)} မှာ \fCode{withdraw} ဟာ လက်ရှိအော့ဘ်ဂျက် \fCode{acc1}  အခြေအနေအောက်မှာ အလုပ်လုပ်တယ်)။ \fEn{Instance method} ဟာ လက်ရှိအော့ဘ်ဂျက်နဲ့ တွဲဖက်လုပ်ဆောင်ရတာ ဖြစ်တာကြောင့် \fCode{self} ပါရမီတာ မပါလို့ မရဘူး။ 
+\end{mytcbox}
+
+
+\section{Class Attributes and Methods}
+\fEnEmp{Class attribute} ဆိုတာ ကလပ်စ်တစ်ခုရဲ့ \fEn{instance} တွေအားလုံးနဲ့ ဆိုင်တဲ့ ဘုံသုံး \fEn{attribute} တွေကို ဆိုလိုတာပါ။ \fEnEmp{Class attribute} တွေကို ကလပ်စ်ဘော်ဒီ \fEn{top level} မှာ ကြေငြာရပါမယ် (မက်သဒ်တွေရဲ့ အပြင်ဘက်၊ ကလပ်စ်အောက်မှာ တိုက်ရိုက်ရှိရမှာ၊ မက်သဒ်ထဲမှာ မဖြစ်ရဘူး)။ ဘုံသုံးဆိုတဲ့အတိုင်း လက်ရှိအော့ဘ်ဂျက်နဲ့ပဲ ဆိုင်တာမဟုတ်တော့ဘူး။ ဒါကြောင့်မို့လို့ \fEn{attribute} ကြေငြာတဲ့အခါ \fCode{self.\fEnEmp{attribute\_name}} ပုံစံ မကြေငြာရဘူး။
+%
+\begin{py}
+# File: class_attr_eg.py
+class SomeClass:
+    # class attributes
+    MAX_ID = 9999
+    cur_id = 0
+
+    def __init__(self):
+        self._id = SomeClass.cur_id + 1
+        SomeClass.cur_id += 1
+
+    @property
+    def id(self):
+        return self._id
+
+\end{py}
+%
+\betweenminted{\medskipamount}
+%
+\begin{py}
+# create 3 instance for testing
+smc1 = SomeClass()
+smc2 = SomeClass()
+smc3 = SomeClass()
+
+# ß\fMM{အားလုံး} 3 \fMM{ထွက်တယ်}ß
+print(SomeClass.cur_id)      # ß\fMM{ကလပ်စ် နံမည်နဲ့ သုံးတာ}ß
+print(smc1.cur_id)           # ß\fMM{ကလပ်စ် \fEn{instance} သုံးတာ}ß
+print(smc2.cur_id)
+print(smc3.cur_id)
+
+print(smc3.MAX_ID)
+print(SomeClass.MAX_ID)
+\end{py}
+%
+\fCode{MAX\_ID} နဲ့ \fCode{cur\_id} က \fEn{class attribute} တွေပါ။ အသုံးပြုတဲ့အခါ \fCode{\fEnEmp{ClassName}.\fEnEmp{attribute\_name}} ပုံစံနဲ့ သုံးရမှာပါ။ ဒါပေမဲ့ ကလပ်စ် \fEn{instance} ကနေ သုံးလို့လည်း ရပါတယ်။ \fEn{Instance} တွေကို ကိုယ်စားပြုတဲ့ \fCode{smc1}\fEn{,} \fCode{smc2} စတာတွေနဲ့ အသုံးပြုလို့ရတာ တွေ့ရပါမယ်။
+
+\mintinline{text}|__init__| ထဲမှာ လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fCode{\_id} ကို  \fCode{cur\_id} အပေါင်း တစ် ထည့်ထားတာ တွေ့ရပါမယ်။ ပြီးတော့ \fCode{cur\_id} တန်ဖိုးကိုလည်း တစ်တိုးလိုက်တယ်။ ပထမဆုံး \fCode{SomeClass} \fEn{instance} ရဲ့ \fCode{id} က တစ် ဖြစ်ပါမယ်။   အော့ဘ်ဂျက်တစ်ခု ဆောက်လိုက်တိုင်း \fCode{cur\_id} တန်ဖိုးက တစ်တိုးသွားမှာပါ။ အခုဥပမာမှာ အော့ဘ်ဂျက် သုံးခုယူထားတဲ့အတွက် သုံး ဖြစ်သွားပါမယ်။ 
+ 
+ \fEn{Attribute} တစ်ခုတည်းကိုပဲ အော့ဘ်ဂျက်အားလုံးက မျှသုံးထားတာ ဖြစ်တဲ့အတွက် \fCode{print} ထုတ်ကြည့်တဲ့အခါ ဘယ်အော့ဂျက်နဲ့ပဲဖြစ်ဖြစ် \fCode{3} ပဲထွက်တာ တွေ့ရမှာပါ။ ဒါဟာ အော့ဘ်ဂျက်တစ်ခုစီက သီး\allowbreak သန့်ပိုင်ဆိုင်တဲ့ \fEn{attribute} နဲ့ အဓိကကွာခြားချက်ပါပဲ။ ဒီအချက်ကို ကွဲကွဲပြားပြား နားလည်ဖို့ အရေးကြီးပါတယ်။ \fCode{id} ကို ထုတ်ကြည့်ပါ
+
+%
+\begin{py}
+print(smc1.id)    # 1 ß\fMM{ထွက်မှာပါ}ß    
+print(smc2.id)    # 2
+print(smc3.id)    # 3
+\end{py}
+%
+
+\begin{mytcbox}
+\fEn{Class attribute} တွေကို အော့ဘ်ဂျက် (ပိုတိကျအောင်ပြောရင် အော့ဘ်ဂျက်ကို ကိုယ်စားပြုတဲ့ ဗေရီရေဘဲလ်) နဲ့ ရော ကလပ်စ်နံမည်နဲ့ပါ အသုံးပြုလို့ ရပေမဲ့  \fEn{instance attribute} တွေကိုတော့ ကလပ်စ်နံမည်နဲ့ အသုံးပြုလို့ မရနိုင်ပါဘူး။ \fCode{SomeClass} ဥပမာမှာ အခုလို စမ်းကြည့်ရင်
+%
+\begin{pytc}
+print(SomeClass.id)
+print(SomeClass._id)
+\end{pytc}
+% 
+ပထမ တစ်ခုက \mintinline{text}|<property object at 0x10dbf4bd0>| ထွက်နေပါတယ် (နောက်ဆုံးနံပါတ်က တစ်ခါနဲ့ တစ်ခါ တူမှာမဟုတ်ပါ)။ ဒုတိယတစ်ခုက \fEn{attribute} မရှိဘူးဆိုတဲ့ အယ်ရာပြတယ်။
+\end{mytcbox}
+
+
+ \fCode{\fEnEmp{var\_name}.\fEnEmp{attribute\_name}} ပုံစံနဲ့ \fEn{class attribute}  အသုံးပြုတဲ့အခါ လက်ရှိအော့ဘ်ဂျက်ရဲ့ \fEn{attribute} လား၊ \fEn{class attribute} လား မကွဲပြားတော့ဘူး။ ဥပမာ
+%
+\begin{codetxt}
+>>> dt1 = date(1990, 11, 30)
+>>> print(dt1.min)
+0001-01-01
+\end{codetxt}
+%
+ဒါကို ဖတ်တဲ့သူအနေနဲ့ \fCode{min} က \fEn{class attribute} လားဆိုတာ ရုတ်တရက် မသိနိုင်ပါဘူး။ \fCode{date} ရဲ့ \fEn{documentation} မှာ ကြည့်မှ \fCode{min} ဟာ \fEn{class attribute} လို့ ဖော်ပြထားတာ တွေ့ရမှာပါ။   ကလပ်စ်နံမည်နဲ့ \fCode{date.min} ဆိုရင်တော့ \fEn{class attribute} ပဲ ဖြစ်ရပါမယ်။ 
+
+\begin{mytcboxflt}
+\noindent \fSubSec{Class attribute နှင့် \fSubSecCodeBf{self}}
+\betweentcboxpar
+ကလပ်စ် ဘော်ဒီထဲမှာ ၎င်းကလပ်စ် ကိုယ်တိုင်ရဲ့ \fEn{class attribute} တွေကို \fEn{self.\fEnEmp{attribute\_name}} နဲ့ ရည်ညွှန်း အသုံးပြုနိုင်ပါတယ်။ ဒါပေမဲ့ \fEn{attribute} တန်ဖိုးကို သုံးလို့ပဲ ရမှာဖြစ်ပြီး အဆိုင်းမန့်လုပ်လို့ မရပါဘူး။ တကယ်လို့ အဆိုင်းမန့် လုပ်ရင် လက်ရှိအော့ဘ်ဂျက်မှာ (\fEn{class attribute} နဲ့ နံမည်တူ) ဗေရီရေဘဲလ် အသစ်တစ်ခု ရှိသွားမှာဖြစ်တယ်။ 
+%
+\begin{pytc}
+class SomeClass:
+    # class attributes
+    MAX_ID = 9999
+    cur_id = 0
+
+    def __init__(self):
+        # ß\fEn{class attribute}ß
+        self._id = ß\textbf{self}ß.cur_id + 1
+        # ß\fMM{လက်ရှိအော့ဘ်ဂျက်မှာ} \fCode{cur\_id} \fMM{ကြေငြာသလို ဖြစ်သွားမှာ၊} \fEn{class attribute}ß 
+        # ß\fMM{ကို အဆိုင်းမန့် လုပ်တာမဟုတ်ဘူး}ß    
+        ß\textbf{self}ß.cur_id = self._id         
+\end{pytc}
+%
+\end{mytcboxflt}
+
+\subsection*{Class Methods}
+\fEn{Class attribute} နဲ့ ဆက်စပ်နေတဲ့ \fEn{class method} တွေကတော့ မက်သဒ်ကို ခေါ်ဖို့အတွက် အော့ဘ်ဂျက်ရှိစရာ မလိုဘူး။ တစ်နည်းအားဖြင့် \fEn{class method} တွေက ကလပ်စ်တစ်ခုရဲ့ အခြေအနေအောက်မှာ လုပ်ဆောင်တာ။ အဲဒီ \fEn{class instance} ရဲ့ အခြေအနေအောက်မှာ လုပ်ဆောင်တာ မဟုတ်ဘူး။ မက်သဒ်ခေါ်တဲ့အခါ \fCode{\fEnEmp{ClassName}.\fEnEmp{method\_name}()} ပုံစံနဲ့ ခေါ်လို့ရတယ်။
+
+%
+\begin{py}
+class Joker:
+    # class attributes
+    CLASS_NICK_NAME = 'NaiveIdiot'
+    joker_ids = []
+    last_id = 0
+
+    # class method 
+    @classmethod
+    def get_info(cls):
+        return {'CLS_NICK_NAME': cls.CLASS_NICK_NAME,
+                'NXT_JOKER_ID': cls.last_id + 1,
+                'CUR_JOKERS_IDs': cls.joker_ids}
+
+    def __init__(self, name):
+        self._id = Joker.last_id + 1
+        Joker.joker_ids.append(self._id)
+        Joker.last_id = self._id
+        self._name = name
+\end{py}
+%
+\betweenminted{\medskipamount}
+%
+\begin{py}
+jk1 = Joker('Deadly Bee')
+jk2 = Joker('Happy Hi')
+
+print(Joker.get_info())
+\end{py}
+%
+\fEn{Output:}
+\begin{codetxt}
+{'CLS_NICK_NAME': 'NaiveIdiot', 'NXT_JOKER_ID': 3, 'CUR_JOKERS_IDs': [1, 2]}
+\end{codetxt}
+\fCode{get\_info} က ကလပ်စ် မက်သဒ် ဖြစ်ပါတယ်။ \fCode{@classmethod} \fEn{decorator} က မက်သဒ် တစ်ခုကို ‘ကလပ်စ် မက်သဒ် ဖြစ်ပါတယ်လို့’ ကြေငြာတဲ့ အဓိပ္ပါယ်ပါ။ ပုံမှန် မက်သဒ်ဆိုရင် ပထမဆုံး ပါရာမီတာက လက်ရှိအော့ဘ်ဂျက်ကို ရည်ညွှန်းတဲ့ \fCode{self} ဖြစ်တယ်။ ကလပ်စ် မက်သဒ် ဆိုရင်တော့ အဲ့ဒီအစား ပထမဆုံး ပါရာမီတာက ‘လက်ရှိကလပ်စ်’ ကို ရည်ညွှန်းတဲ့ \fCode{cls} ဖြစ်ရမှာပါ။ \fCode{cls} ပါရာမီတာနဲ့ \fEn{class attribute} တွေကို အသုံးပြုလို့ ရတယ်။ \fCode{Joker} ကလပ်စ် \fCode{get\_info} မှာ \fEn{class attribute} တွေသုံးထားတာကို တွေ့ရမှာပါ။ \fEn{Class method} ခေါ်တဲ့အခါ \fCode{cls} နေရမှာ လက်ရှိအသုံးပြုနေတဲ့ ကလပ်စ် ဝင်လာမှာပါ။ \fEn{Python} က အလိုအလျှောက် ထည့်ပေးတာဖြစ်တယ်။
+
+\begin{mytcboxflt}
+\fSubSec{Built-in Decorators}    
+\betweentcboxpar
+\fEn{Python} မှာ \fCode{@property}\fEn{,} \fCode{@staticmethod}\fEn{,} \fCode{@classmethod} စတဲ့  \fEn{built-in} ပါပြီးသား \fEn{decorator} တွေပါရှိတယ်။ \fEn{Decorator} အမျိုးအစားအလိုက် လိုအပ်တဲ့ အသွင်ပြောင်းလဲမှု \fEn{(transformation)} တွေ \fEn{Python} က လုပ်ပေးသွားမှာ ဖြစ်တယ်။ ဥပမာ \fCode{@property} \fEn{decorator} က မက်သဒ်တွေကို  \fEn{attribute} လို သုံးလို့ရအောင် လုပ်ပေးတယ်။ \fCode{@staticmethod} နဲ့ \fCode{@classmethod}  ကလည်း မက်သဒ်တစ်ခုကို \fEn{class method} နဲ့ \fEn{static method} အနေနဲ့ အသုံးပြုလို့ရအောင် လိုအပ်တဲ့ ပြောင်းလဲမှုတွေ လုပ်ပေးမှာဖြစ်တယ်။
+ \betweentcboxpar
+\fEn{Decorator} တွေရဲ့  နောက်ကွယ်မှာ အလုပ်လုပ်ပေးတာက ဖန်ရှင်တွေပါပဲ။ ကိုယ်ပိုင် \fEn{decorator} သတ်မှတ်လို့လည်း ရပါတယ်။ အတွေ့အကြုံရှိ ပရိုဂရမ်မာ ဖြစ်လာတော့မှ လေ့လာကြလေ့ရှိပြီး ဒီစာအုပ်မှာတော့ ၎င်းတို့ကို သီးသန့်ဖော်ပြမှာ မဟုတ်ပါဘူး။ 
+\end{mytcboxflt}
+
+\section{Static Methods}
+\fEn{Static method} တွေကတော့ ကလပ်စ်ထဲမှာ သတ်မှတ်ထားပေမဲ့ လက်ရှိအော့ဘ်ဂျက် \fCode{self} ကိုရော လက်ရှိကလပ်စ် \fCode{cls} ကိုပါ အသုံးပြုဖို့ မလိုအပ်တဲ့ မက်သဒ်တွေပါ။ \fCode{@staticmethod} \fEn{decorator} နဲ့ ကြေငြာရတယ်။ ရိုးရိုး \fEn{top level} ဖန်ရှင်လိုပဲ \fCode{cls} (သို့) \fCode{self} ပါရာမီတာ မလိုဘူး။  ငွေလွှဲ ကိစ္စအတွက် \fCode{transfer} မက်သဒ်ကို \fEn{static method} အနေနဲ့ ဥပမာ ပြထားတာကြည့်ပါ။ 
+%
+\begin{py}
+class Account:
+    def __init__(self, holder, acc_number, balance, branch):
+        # ...
+        self._balance = balance
+        # ...
+    # ...        
+    @staticmethod
+    def transfer(from_acc, to_acc, amt):
+        if amt > from_acc._balance:
+            raise ValueError('Not enough balance!')
+        from_acc._balance -= amt
+        to_acc._balance += amt
+\end{py}
+%
+ဒီ မက်သဒ် ခေါ်တဲ့အခါ \fEn{class method} လိုပဲ ကလပ်စ်နံမည်နဲ့ ခေါ်လို့ရသလို \fEn{instance} နဲ့ ခေါ်ချင်လည်း ရတယ်။
+%
+\begin{py}
+Account.transfer(acc1, acc2, Decimal('50_000.00'))
+acc1.transfer(acc1, acc2, Decimal('50_000.00'))
+\end{py}
+%
+ကလပ်စ်နံမည်နဲ့ ‌ခေါ်တာ ပိုရှင်းပါတယ်။
+
+မှတ်ချက်။\qquad ။ \fCode{transfer} မက်သဒ်ကို \fEn{instance method} အနေနဲ့ပဲ ရေးထားတာကို လာမဲ့ အသုံးချဥပမာမှာ တွေ့ရပါမယ်။ \fEn{Instance method} ဆိုရင် ခေါ်တဲ့အခါ
+%
+\begin{py}
+acc1.transfer(acc2, Decimal('50_000.00'))
+\end{py}
+%
+ဖြစ်ပါမယ်။
+
+\fEn{Static method} ဟာ ဖိုင်တစ်ခုရဲ့ \fEn{top level} မှာ ကြေငြာတဲ့ ပုံမှန်ဖန်ရှင်တွေလိုပဲ \fCode{cls} (သို့) \fCode{self} မပါတဲ့အတွက် ကလပ်စ်ထဲအပြင်ကို ထုတ်လိုက်ရင် ရိုးရိုးဖန်ရှင် ဖြစ်သွားမှာပါ။ 
+%
+\begin{py}
+# @staticmethod ß\fEn{decorator} \fMM{လည်း မလိုတော့ဘူး}ß
+def transfer(from_acc, to_acc, amt):
+    if amt > from_acc._balance:
+        raise ValueError('Not enough balance!')
+    from_acc._balance -= amt
+    to_acc._balance += amt
+
+class Account:
+    def __init__(self, holder, acc_number, balance, branch):
+        # ...
+        self._balance = balance
+        # ...
+    # transfer ß\fMM{ကို ကလပ်စ်ထဲက ထုတ်လိုက်တယ်}ß
+\end{py}
+%
+ဒါပေမဲ့ ငွေလွှဲတယ်ဆိုတာ ဘဏ်အကောင့်နဲ့ သက်ဆိုင်တဲ့ ကိစ္စဖြစ်တဲ့အတွက် \fCode{Account} ကလပ်စ်ထဲမှာ \fEn{static method} အနေနဲ့ ရှိတာက ပိုပြီး သဘာဝကျပါတယ်။  
+
+\subsection*{မက်သဒ်နှင့် attribute အမျိုးအစားများ အကြား အပြန်အလှန် အသုံးပြုနိုင်မှု}
+% https://stackoverflow.com/questions/23508248/why-do-we-use-staticmethod
+% 
+\fEn{Instance method} က \fEn{instance/class attribute} နဲ့ \fEn{instance/class/static method} တွေကို အသုံးပြုလို့ရတယ်။ \fEn{Class method} နဲ့ \fEn{static method} ကတော့ \fEn{instance attribute/method} တွေကို သုံးလို့ရမှာ မဟုတ်ပါဘူး။ အောက်ပါ ဇယားနှစ်ခုမှာ အမျိုးအစားအလိုက် အသုံးပြုလို့ ရ/မရ ခွဲခြားပြထားတာကို ကြည့်ပါ။
+
+%
+\begin{flushleft}
+\vspace{1em}
+\setlength{\extrarowheight}{3pt}
+\begin{tabular}[h]{*{3}l l l}
+    \toprule[1.5pt]
+        \fTblHead{Method Type} & \fTblHead{Class Attribute}         & \fTblHead{Instance Attribute} \\       
+    \midrule
+    \fEn{Static}               & \fEn{Yes (class name)}             & \fEn{No}                      \\
+    \fEn{Class}                & \fEn{Yes (\fCode{cls}/class name)} & \fEn{No}                       \\
+    \fEn{Instance}             & \fEn{Yes (\fCode{self}/class name)}& \fEn{Yes (\fCode{self})}      \\   
+    \bottomrule[1.5pt]
+\end{tabular}
+\label{tbl:ch09accessBetweenMethodAndAttributeType}
+\captionof{table}{မက်သဒ်အမျိုးအစားနှင့်  ‌attribute အမျိးအစား အကြား အသုံးပြုနိုင်မှု}
+\end{flushleft}
+%
+
+%
+\begin{flushleft}
+\vspace{1em}
+\setlength{\extrarowheight}{3pt}
+\begin{tabular}[h]{*{3}l l l}
+    \toprule[1.5pt]
+        \fTblHead{Method Type} & \fTblHead{Static Method} & \fTblHead{Class Method} & \fTblHead{Instance Method} \\       
+    \midrule
+    \fEn{Static} & \fEn{Yes (class name)} & \fEn{Yes (class name)} & \fEn{No} \\
+    \fEn{Class} &\fEn{Yes (\fCode{cls}/class name)}  & \fEn{Yes (\fCode{cls}/class name)} & \fEn{No} \\
+    \fEn{Instance} & \fEn{Yes (\fCode{self}/class name)} & \fEn{Yes (\fCode{self}/class name)} & \fEn{Yes (\fCode{self})} \\   
+    \bottomrule[1.5pt]
+\end{tabular}
+\label{tbl:ch09accessBetweenMethodTypes}
+\captionof{table}{မက်သဒ်အမျိုးအစားများ အကြား အသုံးပြုနိုင်မှု}
+\end{flushleft}
+%
+ဇယားနှစ်ခုလုံးမှာ \fEn{class name/\fCode{cls}/\fCode{self}} ဘာနဲ့ အသုံးပြုလို့ရလဲ ကိုလည်း ပြထားတယ်။ ဥပမာ \fEn{instance method} ဆိုရင် \fEn{class attribute} ကို \fEn{class name} (သို့) \fCode{self} နဲ့ သုံးလို့ရမှာပါ (ပထမ ဇယား အောက်ဆုံး \fEn{row} ပထမ \fEn{column})။ \fEn{Class method} က \fEn{static method} ကို \fCode{cls} (သို့) \fEn{class name} နဲ့ သုံးလို့ရပါမယ် (ဒုတိယ ဇယား ဒုတိယ \fEn{row} ပထမ \fEn{column})။ အခုလို ကုဒ်ရေးပြီး စမ်းသပ်စစ်ဆေး ထားတာကိုလည်း လေ့လာကြည့်ပါ။
+
+%
+\begin{py}
+# File: accessibility_test.py
+# can be used inside the class
+top_level_var = 'top level var'
+
+
+# can be called inside the class
+def top_level_fun():
+    pass
+
+
+class AccessibilityTest:
+
+    class_attr = 'class attr'
+
+    def __init__(self):
+        self.instance_attr = 'instance  attr'
+        self.instance_attr2 = 'instance  attr2'
+
+    @staticmethod
+    def static_method():
+        # print(self.instance_attr)   # cannot use
+        print(AccessibilityTest.class_attr)
+        # can only call static and class method types
+        AccessibilityTest.static_method2()
+        AccessibilityTest.class_method2()
+        # self.instance_method()      # cannot use
+
+    @staticmethod
+    def static_method2():
+        pass
+
+    @classmethod
+    def class_method(cls):
+        # print(self.instance_attr)  # cannot use
+        print(cls.class_attr)
+        print(AccessibilityTest.class_attr)
+        # can only call static and class method types
+        AccessibilityTest.static_method()
+        cls.class_method2()
+        AccessibilityTest.class_method2()
+        # self.instance_method()      # cannot use
+
+    @classmethod
+    def class_method2(cls):
+        pass
+
+    def instance_method(self):
+        print(self.instance_attr)
+        print(AccessibilityTest.class_attr)
+        # can call all type of methods
+        AccessibilityTest.static_method()
+        AccessibilityTest.class_method()
+        self.instance_method2()
+
+    def instance_method2(self):
+        print(self.instance_attr2)
+
+
+# just test
+avar1 = AccessibilityTest()
+AccessibilityTest.static_method()
+print()
+AccessibilityTest.class_method()
+print()
+avar1.instance_method()
+\end{py}
+%
+
+\section{Object-Oriented Programming}
+ကလပ်စ်နဲ့ အော့ဘ်ဂျက်တွေ အကြောင်း အထိုက်အလျှောက် လေ့လာပြီးနောက် ၎င်းတို့ကို ပရိုဂရမ် တည်\allowbreak ဆောက်ရာမှာ အသုံးချတတ်အောင် ဆက်လက် လေ့လာကြရပါမယ်။ လက်တွေ့ရေး လေ့ကျင့်ဖို့ လိုပါတယ်။ အော့ဘ်ဂျက်သဘောတရား အခြေပြု ပရိုဂရမ်ရေးသား တည်ဆောက်တာကို \fEn{\textit{Object-oriented Programming} (OOP)} လို့ခေါ်ပါတယ်။ ဒီနည်းနဲ့ တည်ဆောက်ထားတဲ့ ပရိုဂရမ်တွေကို \fEn{object-oriented program/software} လို့ ဆိုနိုင်ပါတယ်။ စလေ့လာသူတွေ အတွက် အထောက်အကူဖြစ်စေမဲ့ နမူနာ \fEn{object-oriented program} လေးတစ်ခုကို လေ့လာကြည့်ပါမယ်။ 
+
+\subsection*{A Simple Banking Application}
+\fEn{S Bank} ဆိုတဲ့ ဘဏ်တစ်ခုအတွက် ပရိုဂရမ်တစ်ခု ရေးပေးရမယ်လို့ စိတ်ကူးကြည့်ပါ။ ဘဏ်အကောင့် အသစ်ဖွင့်တဲ့အခါ အောက်ပါ အချက်အလက်တွေ လိုအပ်တယ်။ \fEn{S Bank} က လောလောဆယ် ရန်ကုန်၊ မန္တလေးနဲ့ နေပြည်တော် ဘဏ်ခွဲ သုံးခုပဲ ရှိတယ်။ 
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{text}
+ß\fEnBf{Open Account}ß
+ß\fEn{Name: Kathy}ß
+ß\fEn{NRIC: 12/ThaGaKa (N) 283772}ß
+ß\fEn{Gender (F/M): F}ß
+ß\fEn{Date of Birth: 12/12/1990}ß
+ß\fEn{Address Line 1: 45A, Marlar St., 16 Ward}ß
+ß\fEn{Address Line 2: South Okkalapa}ß
+ß\fEn{City: Yangon}ß
+ß\fEn{State/Division: Yanon}ß
+ß\fEn{Initial deposit: 350000.00}ß
+ß\fEn{Branch: Yangon}ß
+ß\fEn{Are you sure to proceed?(Y/N): Y}ß
+
+ß\fEn{Account No: 100000000012}ß
+ß\fEn{Successfully created}ß
+\end{minted}
+%
+အကောင့်နံပါတ်က ဂဏန်း (၁၂) လုံး ဖြစ်ရမယ်။ \fEn{100000000001} က ပထမဆုံးဖွင့်တဲ့ အကောင့်နံပါတ်  ဖြစ်ပြီး အကောင့်သစ် တစ်ခုတိုင်းအတွက် နံပါတ်စဉ် တိုး သွားရမှာပါ။
+
+အကောင့် တစ်ခုထဲကို ငွေသွင်းမယ်ဆိုရင် အကောင့်နံပါတ်နဲ့ သွင်းမဲ့ ငွေပမာဏ ထည့်ပေးရပါမယ်။ အကောင့်နံပါတ် ထည့်ပေးတာ မှားခဲ့ရင် အခြားအကောင့်တစ်ခုထဲကို ငွေသွင်းမိနိုင်တယ်။ ဒါကြောင့် အကောင့်ပိုင်ရှင် နံမည်ကို ပြပေးပြီး ကွန်ဖန်းလုပ်ရင် မှားနိုင်ခြေ နည်းသွားမှာပါ။ ငွေထုတ်ရင်လည်း ဒီလိုပဲ ကွန်ဖန်းလုပ်ရင် ပိုအဆင်ပြေပါတယ်။
+
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{text}
+ß\fEnBf{Deposit}ß
+ß\fEn{Account No: 100000000012}ß
+ß\fEn{Amount: 250000}ß
+ß\fEn{Please check and confirm the following details:}ß
+    ß\fEn{Holder: Kathy}ß
+    ß\fEn{Account No: 100000000012}ß
+    ß\fEn{Amount to deposit: 250000}ß
+ß\fEn{(Y/N): Y}ß 
+ß$\ldots$ß
+ß\fEn{Account transaction successfully completed.}ß
+\end{minted}
+%
+
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{text}
+ß\fEnBf{Withdrawal}ß
+ß\fEn{Account No: 100000000012}ß
+ß\fEn{Amount: 50000}ß
+ß\fEn{Please check and confirm the following details:}ß
+    ß\fEn{Holder: Kathy}ß
+    ß\fEn{Account No: 100000000012}ß
+    ß\fEn{Amount to withdraw: 50000}ß
+ß\fEn{(Y/N): Y}ß 
+ß$\ldots$ß
+ß\fEn{Account transaction successfully completed.}ß
+\end{minted}
+%
+
+ငွေလွှဲတာကတော့ လွှဲမဲ့အကောင့်၊ လက်ခံမဲ့အကောင့် နှစ်ခုလိုပါမယ်။ လွှဲမဲ့ဟာနဲ့ လက်ခံမဲ့ဟာက အကောင့်တစ်ခုတည်း ဖြစ်မနေသင့်ပါဘူး။ 
+%
+\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{text}
+ß\fEnBf{Transfer}ß
+ß\fEn{From Account No: 100000000012}ß
+ß\fEn{To Account No: 100000000015}ß
+ß\fEn{Amount: 50000}ß
+ß\fEn{Please check and confirm the following details:}ß
+ß\fEn{From}ß
+    ß\fEn{Holder: Kathy}ß
+    ß\fEn{Account No: 100000000012}ß
+ß\fEn{To}ß
+    ß\fEn{Holder: Sandar}ß
+    ß\fEn{Account No: 100000000015}ß
+ß\fEn{Amount: 50000}ß
+ß\fEn{(Y/N): Y}ß 
+ß$\ldots$ß
+ß\fEn{Account transaction successfully completed.}ß
+\end{minted}
+%
+
+%
+\begin{py}
+from decimal import *
+from datetime import *
+
+
+class Branch:
+    def __init__(self, name, address):
+        self._name = name
+        self._address = address
+
+    @property
+    def name(self):
+        return self._name
+
+
+class Address:
+    def __init__(self, line_1, line_2, city, division):
+        self._address_line_1 = line_1
+        self._address_line_2 = line_2
+        self._city = city
+        self._division = division
+
+    @property
+    def address_line_1(self):
+        return self._address_line_1
+
+    @property
+    def address_line_2(self):
+        return self._address_line_2
+
+    @property
+    def city(self):
+        return self._city
+
+    @property
+    def division(self):
+        return self._division
+
+
+class Account:
+    _next_acc_no = 100_000_000_001
+
+    def __init__(self, holder, balance, branch):
+        self._holder = holder
+        self._acc_number = Account._next_acc_no
+        Account._next_acc_no += 1
+        self._balance = balance
+        self._branch = branch
+        
+    def deposit(self, amt):
+        if amt <= Decimal(0.00):
+            raise ValueError('Invalid amount!')
+        self._balance += amt
+
+    def withdraw(self, amt):
+        if amt <= Decimal(0.00):
+            raise ValueError('Invalid amount!')
+        if amt > self._balance:
+            raise ValueError('Not enough balance!')
+        self._balance -= amt
+
+    def transfer(self, to_acc, amt):
+        if amt <= Decimal(0.00):
+            raise ValueError('Invalid amount!')
+        if amt > self._balance:
+            raise ValueError('Not enough balance!')
+        self._balance -= amt
+        to_acc._balance += amt
+
+    @property
+    def holder(self):
+        return self._holder
+
+    @property
+    def acc_number(self):
+        return self._acc_number
+
+    @property
+    def balance(self):
+        return self._balance
+
+    @property
+    def branch(self):
+        return self._branch
+
+
+class Holder:
+    def __init__(self, name, dob, nric, gender, address):
+        if name.strip() == '':
+            raise ValueError('Name cannot be empty!')
+        if age_today(dob) < 18:
+            raise ValueError('Too young to open a bank account!')
+        if nric.strip() == '':
+            raise ValueError('Name cannot be empty!')
+        if not (gender.upper() == 'F'
+                or gender.upper() == 'M'):
+            raise ValueError('Unknown gender!')
+        self._name = name
+        self._dob = dob
+        self._nric = nric
+        self._gender = gender.upper()
+        self._address = address
+
+    @property
+    def age(self):
+        return age_today(self._dob)
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        if name.strip() == '':
+            raise ValueError('Name cannot be empty!')
+        self._name = name
+
+    @property
+    def dob(self):
+        return self._dob
+
+    @dob.setter
+    def dob(self, value):
+        self._dob = value
+
+    @property
+    def gender(self):
+        return 'FEMALE' if self._gender == 'F' else 'MALE'
+
+
+class Bank:
+    def __init__(self, name):
+        self._name = name
+        self._accounts = []
+        self._acc_holders = []
+        self._branches = [Branch('Yangon', Address('50A, Theinphyu St.',
+                                                   'Botataung Township',
+                                                   'Yangon', 'Yangon')),
+                          Branch('Mandalay', Address('65B, 63 St.',
+                                                     'Chanayetharsi',
+                                                     'Mandalay',
+                                                     'Mandalay')),
+                          Branch('Naypyidaw', Address('332C, Main Rd.',
+                                                      'Ottarathiri Township',
+                                                      'Naypyidaw',
+                                                      'Naypyidaw Union'))]
+
+    def open_acc(self, holder, init_bal, branch_name):
+        branch = self.retrieve_branch(branch_name)
+        account = Account(holder, init_bal, branch)
+        self._accounts.append(account)
+        self._acc_holders.append(holder)
+
+    def retrieve_branch(self, name):
+        for branch in self._branches:
+            if branch.name == name:
+                return branch
+        raise ValueError(f'{name} branch not found!')
+
+
+class BankApp:
+
+    _bank = Bank('S Bank')
+    _branches = ['Yangon', 'Mandalay', 'Naypyidaw']
+
+    @classmethod
+    def open_account(cls):
+        name = read_nonempty_text('Name: ')      
+        nric = read_nonempty_text('NRIC: ')
+        gender = read_gender('Gender (F/M): ')
+        dob = read_date('Date of Birth: ')
+
+        address_line1 = read_nonempty_text('Address Line 1: ')
+        address_line2 = read_nonempty_text('Address Line 2: ')
+        city = read_nonempty_text('City: ')
+        division = read_nonempty_text('State/Division: ')
+
+        init_deposit = read_decimal('Initial deposit: ')
+
+        address = Address(address_line1, address_line2, city, division)
+        holder = Holder(name, dob, nric, gender, address)
+        cls._bank.open_acc(holder, init_deposit, cls.read_branch())
+
+    @classmethod
+    def read_branch(cls):
+        while True:
+            branch_name = read_nonempty_text('Branch: ')
+            if branch_name in cls._branches:
+                return branch_name
+            print(f'{branch_name} not found!')
+
+
+FEMALE = 'F'
+MALE = 'M'
+
+MONTHS = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4,
+          'May': 5, 'Jun': 6, 'Jul': 7, 'Aug': 8,
+          'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12}
+
+
+def age_today(dob):
+    today = date.today()
+    this_bd = dob.replace(year=today.year)
+    if today - dob >= this_bd - dob:
+        return today.year - dob.year
+    else:
+        return today.year - dob.year - 1
+
+
+def parse_date_str(dt_str):
+    parts = dt_str.replace('/', '-').split('-')
+    if parts[0].isdigit():
+        return date(int(parts[2]), int(parts[1]), int(parts[0]))
+    else:
+        return date(int(parts[2]), MONTHS[parts[0]], int(parts[1]))
+
+
+def read_date(prompt):
+    while True:
+        try:
+            return parse_date_str(input(prompt))
+        except Exception as err:
+            print("Incorrect date format. Please enter the date again.")
+            print('Error is probably: ' + str(err))
+
+
+def read_gender(prompt):
+    while True:
+        gender = input(prompt)
+        if gender in ['F', 'M']:
+            return gender
+        else:
+            print('Invalid gender! Accept only F or M!')
+
+
+def read_decimal(prompt):
+    while True:
+        value = input(prompt)
+        try:
+            return Decimal(value)
+        except InvalidOperation:
+            print('Invalid number!')
+
+
+def read_nonempty_text(prompt):
+    while True:
+        txt = input(prompt)
+        if txt.strip() != '':
+            return txt
+        print(f'{prompt} cannot be empty!')
+
+
+# BankApp.open_account()
+
+
+def test_open_acc():
+    address = Address('46/2A, Kyauk Myaung St.',
+                      'Tamwe Township',
+                      'Yangon',
+                      'Yangon')
+    holder = Holder('Amy',
+                    date(1990, 10, 20),
+                    '5/MaRaNa (N) 11111111',
+                    'F',
+                    address)
+    bank = Bank('S Bank')
+    bank.open_acc(holder, Decimal('100_000.00'), 'Yangon')
+    if len(bank._accounts) != 1:
+        print('Error: if new account opened, number of accounts must '
+              'increased by one!')
+    if len(bank._acc_holders) != 1:
+        print('Error: if new account opened by non-existing holder, '
+              'number of holders must increased!')
+
+
+def test_open_acc_fails_if_no_branch():
+    address = Address('46/2A, Kyauk Myaung St.',
+                      'Tamwe Township',
+                      'Yangon',
+                      'Yangon')
+    holder = Holder('Amy',
+                    date(1990, 10, 20),
+                    '5/MaRaNa (N) 11111111',
+                    'F',
+                    address)
+    bank = Bank('S Bank')
+    try:
+        bank.open_acc(holder, Decimal('100_000.00'), 'Wrong Branch Name')
+        print('Error: account should not be opened with wrong branch '
+              'name!')
+    except ValueError as err:
+        if 'branch not found' not in str(err):
+            print('Error: branch not found error must occurs with wrong '
+                  'branch name!')
+
+
+test_open_acc()
+test_open_acc_fails_if_no_branch()
+
+\end{py}
+%
+
+%ဒီအော့ဘ်ဂျက်နှစ်ခုဟာ ‘ရှိတယ်’ ဆိုတဲ့ အဓိပ္ပါယ်နဲ့ ဆက်စပ်နေတာပါ။ ‘အကောင့်တစ်ခုမှာ အကောင့်ပိုင်ရှင် တစ်ယောက် ရှိတယ်’ 
+
+%\fCode{Account} နဲ့ \fCode{Holder}  \fEn{instance} ဘယ်လို ချိတ်ဆက်မလဲက နားလည်ဖို့ 
+
+
+%\pagebreak
+%
+%\betweenminted{\medskipamount}
+%\begin{py}
+%acc1_new = Account('Kathy', '0086-6002-1111', Decimal('100_000.00'))
+%acc1_new.deposit(Decimal('25_000.00'))
+%
+%print(acc1_new.balance)
+%acc1_new.withdraw(Decimal('35_000.00'))
+%print(acc1_new.balance)
+%\end{py}
+%%
+

@@ -1,0 +1,40 @@
+\begin{codetxt}
+# deposit
+    Account number:
+    Amount:
+    Success or failure msg
+# withdraw
+    Account number:
+    Amount:
+    Success or failure msg
+# Transfer
+    From which account number:
+    success/fail
+    To which account number:
+    success/fail
+    Amount:
+    Confirmation:
+    success/failure
+
+# Check balance
+    Account number:
+    success or fail
+# Open
+    Holder info
+        Name
+        NRIC
+        gender
+        dob
+        address
+            apt 
+            address line 1
+
+        
+    >>> id generation
+
+    >>> min amount 
+
+    >>> branch 
+
+
+\end{codetxt}
