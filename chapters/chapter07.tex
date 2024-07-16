@@ -594,7 +594,6 @@ pip install arcade
 import arcade
 
 arcade.open_window(300, 200, "Arcade Starter")
-arcade.set_viewport(left=0, right=300, top=0, bottom=200)
 
 # Set the background color
 arcade.set_background_color(arcade.color.PINK_PEARL)
@@ -607,6 +606,7 @@ arcade.finish_render()
 
 # Keep the window up until someone closes it.
 arcade.run()
+
 \end{py}
 %
 
@@ -624,21 +624,34 @@ arcade.run()
 \begin{codetxt}
 arcade.open_window(ß\fEnEmp{arguments}ß)
 \end{codetxt} 
-လိုက်ဘရီ နံမည်နောက်မှာ \fEn{(}\fCodeBf{.}\fEn{)} အမှတ်အသား ခံပြီး ခေါ်ရမှာပါ။ ဒီဖန်ရှင်မှာ လိုချင်တဲ့ဝင်းဒိုး အကျယ်၊ အမြင့်၊ တိုက်တယ်လ်စာသား ထည့်ပေးထားတယ်။ 
+လိုက်ဘရီ နံမည်နောက်မှာ \fEn{(}\fCodeBf{.}\fEn{)} အမှတ်အသား ခံပြီး ခေါ်ရမှာပါ။ ဒီဖန်ရှင်မှာ လိုချင်တဲ့ဝင်းဒိုး အကျယ်၊ အမြင့်၊ ခေါင်းစည်းစာသား ထည့်ပေးထားတယ်။ 
 
-\fCode{set\_viewport} ဖန်ရှင်က ဝင်းဒိုးနေရာယူထားတဲ့ စခရင်ဧရီယာမှာ ကိုဩဒိနိတ်စစ်စတမ် သတ်မှတ်ပေးတာပါ။ \fEn{Origin} အမှတ်နဲ့  $x, y$ ဒါရိုက်ရှင် သတ်မှတ်ပေးတာပါ။
-%
-\begin{py}
-arcade.set_viewport(left=0, right=300, top=0, bottom=200)
-\end{py}
-%
-ဝင်းဒိုး ဘယ်ဘက်စွန်းကို $x = 0,$ ညာဘက်စွန်းကို $x = 300$ သတ်မှတ်ထားတယ်။ အပေါ်ဘက်စွန်း (တိုက်တယ်လ်ဘားမပါ) ကို $y = 0,$ အောက်ဘက်စွန်းကို $y = 200$ သတ်မှတ်ထားပါတယ်။ ဝင်းဒိုးရဲ့ ဘယ်ဘက်အပေါ်ထောင့်စွန်းက \fEn{origin} အမှတ် $(0,0)$ ဖြစ်တယ်။ ဘယ်ဘက်ကို သွားရင် $x$ တန်ဖိုး တိုးသွားပြီး အောက်ဘက်ကို ဆင်းရင် $y$ တန်ဖိုး တိုးသွားမှာဖြစ်တယ်။ အခုလို ကိုယ်တိုင်  မသတ်မှတ်ပေးဘဲ  သူ့နဂိုအရှိအတိုင်းဆိုရင် ‘အောက်ခြေ’ ဘယ်ဘက်စွန်းက \fEn{origin} ဖြစ်နေမှာပါ။ အောက်ခြေကနေ အပေါ်ကိုတက်သွားရင် $y$ တန်ဖိုး များလာမှာပါ။ သူ့နဂိုအတိုင်းက \fCode{set\_viewport} ကို အခုလိုခေါ်ထားတာဖြစ်မယ်။ \fCode{top=200}\fEn{,} \fCode{bottom=0} ပါ။
-%
-\begin{py}
-arcade.set_viewport(left=0, right=300, top=200, bottom=0)
-\end{py}
-%
-အသုံးများတဲ့ ဂိမ်းလိုက်ဘရီတွေမှာ ဒီစနစ်ကို သုံးကြတာ မတွေ့ရဘူး။ ဒီစနစ်နဲ့ အကျင့်ဖြစ်သွားရင် အခြားလိုက်ဘရီတွေ လေ့လာတဲ့အခါ အခက်အခဲရှိနိုင်တယ်။ အခုလေ့လာကြမဲ့ ဥပမာတွေ အတွက်လည်း အပေါ်မှာပြောတဲ့နည်းက ပိုအဆင်ပြေတယ်။ (\fEn{Arcade} ကိုပဲ တစိုက်မတ်မတ်သုံးမယ်၊ လေ့လာမယ်ဆိုရင်တော့ သူ့နဂိုအတိုင်းသုံးတာ အကောင်းဆုံးဖြစ်မှာပါ)။
+\subsection*{ကိုဩဒိနိတ်စနစ်နှင့် ဝင်းဒိုးပေါ်တွင် တည်နေရာ သတ်မှတ်ခြင်း}
+ဝင်းဒိုး အောက် ဘယ်ဘက်ထောင့်စွန်းကို \fEn{origin} အမှတ် $(x=0, y=0)$ အဖြစ် သတ်မှတ်ပါတယ်။  ညာဘက်သွားရင် $x$ တန်ဖိုး များလာမယ်။ အပေါ်ဘက်တက်ရင် $y$ တန်ဖိုး တိုးလာမှာပါ။ အခြား ကွန်ပျူတာ ဂရပ်ဖစ်စနစ်တွေမှာလိုပဲ $x, y$ တန်ဖိုးကို ယူနစ်အားဖြင့် \fEn{pixel} နဲ့ ဖော်ပြတယ်။ ပုံ (\fRefNo{\ref{fig:arcadeCoord}}) မှာ \fEn{rectangle} ဘယ်ဘက်အောက် ထောင့်စွန်း $(x,y)$ တန်ဖိုး $(50,150)$\fEn{,} ညာဘက် အပေါ်ထောင့်ဟာ $(250,250)$ ဖြစ်တယ်။
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+\draw[very thick] (0,0) -- (0,6.25);
+\draw[very thick] (0,0) -- (6.26,0);
+\foreach [evaluate=\x as \l using int(\x*50)] \x in {1,...,6}
+{
+    \draw (\x,0.15) -- (\x,0);
+    \node at (\x,0) [below] {$\l$};
+}
+
+\foreach [evaluate=\y as \l using int(\y*50)] \y in {1,...,6}
+{
+    \draw (0,\y) -- (0.15,\y);
+    \node at (0,\y) [left] {$\l$};
+}
+\node at (0,0) [below] {$(0,0)$};
+\filldraw[gray] (1,3) -- (5,3) -- (5,5) -- (1,5) -- cycle;
+\end{tikzpicture}
+\caption{} 
+\label{fig:arcadeCoord}
+\end{figure}
+
+
 
 အောက်ပါ ဖန်ရှင်ကတော့ ဝင်းဒိုးရဲ့ နောက်ခံရောင် သတ်မှတ်တာပါ။ လိုက်ဘရီရဲ့ \fCode{color} မော်ဒျူး \fEn{(\textit{module})} မှာ အရောင်တန်ဖိုးတွေ အဆင်သင့် သတ်မှတ်ပေးထားတယ်။ (မော်ဒျူးဆိုတာ လိုက်ဘရီရဲ့ အစိတ်အပိုင်းတစ်ခုလို့ အကြမ်းဖျဉ်း ယူဆနိုင်တယ်)။ 
 %
@@ -675,43 +688,56 @@ arcade.run()
 %
 ဝင်းဒိုးကို မပိတ်မချင်း ပေါ်နေအောင် \fCode{run} ဖန်ရှင် ခေါ်ပေးရတာပါ။ မခေါ်ထားဘဲ ပရိုဂရမ်ကို \fEn{run} ရင် ဝင်းဒိုးပွင့်လာပြီး ဖျတ်ခနဲ ပြန်ပိတ်သွားမှာပါ။ မကျန်ခဲ့ဖို့ သတိပြုရပါမယ်။
 
-\fEn{Arcade} မှာ ပါတဲ့ အခြေခံ ပုံဆွဲဖန်ရှင် တချို့ကို ဆက်ကြည့်ရအောင်။ ထောင့်မှန်စတုဂံဆွဲတဲ့ ဖန်ရှင်တွေထဲက နှစ်ခု သုံးပြထားတယ်။ နှစ်ခုလုံးက  ထောင့်မှန်စတုဂံရဲ့ ဘယ်ဘက်အပေါ်ထောင့်စွန်းနဲ့ တည်နေရာကို သတ်မှတ်ပြီး အရွယ်အစားကို အကျယ်၊ အမြင့်နဲ့ သတ်မှတ်ပေးရတာပါ။  \fCode{draw\_xywh\_rec\allowbreak tangle\_filled} က အတွင်းပိုင်း အရောင်နဲ့ ဆွဲပေးတယ်။ အနားတွေကိုပဲ ဆွဲချင်ရင် \fCode{draw\_xywh\_rec\allowbreak tangle\_outline} ဖန်ရှင်သုံးရပါမယ်။
+\fEn{Arcade} မှာ ပါတဲ့ အခြေခံ ပုံဆွဲဖန်ရှင် တချို့ကို ဆက်ကြည့်ရအောင်။ ထောင့်မှန်စတုဂံဆွဲတဲ့ ဖန်ရှင်တွေထဲက နှစ်ခု သုံးပြထားတယ်။ နှစ်ခုလုံးက  ထောင့်မှန်စတုဂံရဲ့ ဘယ်ဘက်အောက် ထောင့်စွန်းနဲ့ တည်နေရာကို သတ်မှတ်ပြီး အရွယ်အစားကို အကျယ်၊ အမြင့်နဲ့ သတ်မှတ်ပေးရတာပါ။  \fCode{draw\_xywh\_rec\allowbreak tangle\_filled} က အတွင်းပိုင်း အရောင်နဲ့ ဆွဲပေးတယ်။ အနားတွေကိုပဲ ဆွဲချင်ရင် \fCode{draw\_xywh\_rec\allowbreak tangle\_outline} ဖန်ရှင်သုံးရပါမယ်။
 %
 \begin{py}
+# File: arcade_drawing.py
 import arcade
 from arcade.color import *
 
 arcade.open_window(300, 200, "Drawing Example")
-arcade.set_viewport(0,300, 200, 0)
 
+# Set the background color
 arcade.set_background_color(PINK_PEARL)
-arcade.start_render()
-# start drawing
-arcade.draw_xywh_rectangle_filled(5,5,200, 50,BABY_BLUE)
-arcade.draw_xywh_rectangle_outline(5,5,200, 50,BLACK)
 
-arcade.draw_xywh_rectangle_filled(5,55,200, 50,PALE_VIOLET_RED)
-arcade.draw_xywh_rectangle_outline(5,55,200, 50,BLACK)
-#finish drawing
+# Get ready to draw
+arcade.start_render()
+
+# ß\fEn{Lower rectangle (blue)}ß
+# ß\fEn{Lower left corner} $(x,y) = (10, 80)$ß
+# ß$width=200, height=50$ß
+arcade.draw_xywh_rectangle_filled(10, 80, 200, 50, BABY_BLUE)
+arcade.draw_xywh_rectangle_outline(10, 80, 200, 50, BLACK)
+
+# ß\fEn{Upper rectangle (pink)}ß
+# ß\fEn{Lower left corner} $(x,y) = (10, 130)$ß
+arcade.draw_xywh_rectangle_filled(10, 130, 200, 50, PALE_VIOLET_RED)
+arcade.draw_xywh_rectangle_outline(10, 130, 200, 50, BLACK)
+
+# Finish drawing
 arcade.finish_render()
+
+# Keep the window up until someone closes it.
 arcade.run()
+
 \end{py}
 %
 အပေါ် ထောင့်မှန်စတုဂံပုံကို ဒီနှစ်ခုနဲ့ 
 %
 \begin{py}
-arcade.draw_xywh_rectangle_filled(5,5,200, 50,BABY_BLUE)
-arcade.draw_xywh_rectangle_outline(5,5,200, 50,BLACK)
+arcade.draw_xywh_rectangle_filled(10, 130, 200, 50, PALE_VIOLET_RED)
+arcade.draw_xywh_rectangle_outline(10, 130, 200, 50, BLACK)
 \end{py}
 %
-ဆွဲထားတာပါ $\big\llbracket$ပုံ (\fRefNo{\ref{fig:ch07rects}})$\big\rrbracket$။ ပါရာမီတာတွေက $x, y, width, height, color$ အစဉ်အတိုင်းပဲ။ ဘယ်ဘက်ဘောင်ကနေ $x = 5$ ယူနစ် ခွာထားတယ်။  အပေါ်ဘောင်ကနေလည်း $y = 5$ ယူနစ်ခွာထားတယ်။ သုညထားပြီး စမ်းကြည့်ပါ။ အခြားတန်ဖိုးတွေ ထည့်ပြီး စမ်းကြည့်ပါ။ ပိုပြီးသဘောပေါက် လာပါလိမ့်မယ်။ ဒုတိယ ထောင့်မှန်စတုဂံက ဒီနှစ်ခုနဲ့
+ဆွဲထားတာပါ $\big\llbracket$ပုံ (\fRefNo{\ref{fig:ch07rects}})$\big\rrbracket$။ ပါရာမီတာတွေက $x, y, width, height, color$ အစဉ်အတိုင်းပဲ။ အောက်က ထောင့်မှန်စတုဂံကို အခုလို
 %
 \begin{py}
-arcade.draw_xywh_rectangle_filled(5,55,200, 50,PALE_VIOLET_RED)
-arcade.draw_xywh_rectangle_outline(5,55,200, 50,BLACK)
+arcade.draw_xywh_rectangle_filled(10, 80, 200, 50, BABY_BLUE)
+arcade.draw_xywh_rectangle_outline(10, 80, 200, 50, BLACK)
 \end{py}
 %
-ဆွဲထားတာပါ။ ဘယ်ဘက်ကို ခွာထားတာက အပေါ်ပုံနဲ့ တူတူပဲ $(x = 5)$။ အပေါ်ပုံရဲ့ အောက်ခြေအနားနဲ့ ကပ်နေအောင် $y = 5 + 50 (height) = 55$ ထားရပါမယ်။
+ဆွဲထားတာပါ။ ထောင့်မှန်စတုဂံ နှစ်ခုလုံး အကျယ် (၂၀၀)၊ အမြင့် (၅၀) \fEn{pixels} ရှိတယ်။
+%
 \begin{figure}[tb!]
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0)
@@ -721,77 +747,97 @@ arcade.draw_xywh_rectangle_outline(5,55,200, 50,BLACK)
 \caption{}
 \label{fig:ch07rects}
 \end{figure}
-
-\begin{mytcbox}
-\qquad သူ့နဂိုအတိုင်းဆိုရင် \fEn{Arcade} ကိုဩဒိနိတ်စနစ်မှာ \fEn{origin} က  အောက်ခြေဘယ်ဘက်စွန်းလို့ ပြောခဲ့ပါတယ်။  \fCode{set\_viewport} နဲ့ အပေါ်ဘယ်ဘက်စွန်းကို \fEn{origin} အဖြစ်ပြောင်းလဲ သတ်မှတ်ထားတယ်။ ဒီ့အတွက်ကြောင့် အထက်အောက် ပြောင်းပြန်ဖြစ်သွားပါတယ်။ ဖန်ရှင် \fEn{documentation} မှာကြည့်ရင် အခုလိုတွေ့ရမှာပါ (\fEn{VS Code/PyCharm} မှာ  မောက်စ်ပွိုင်တာကို ဖန်ရှင်နံမည်ပေါ်မှာထားရင် \fEn{documentation} ပြပေးပါလိမ့်မယ်)
 %
-\begin{pytc}
-def draw_xywh_rectangle_filled(bottom_left_x: float,
-                               bottom_left_y: float,
-                               width: float,
-                               height: float,
-                               color: tuple[int, int, int] 
-                                   | list[int] 
-                                   | tuple[int, int, int, int]) -> None
-\end{pytc}
 %
-\fEn{Documentation} မှာ \fEn{bottom} ဆိုရင် ကိုယ့်အတွက် \fEn{top} လို့ ပြောင်းပြန် စဉ်းစားရမယ်။ သူ့နဂိုစနစ်ကို ပြောင်းလိုက်လို့ ဒီအခက်အခဲ ကြုံရတာပါ။ ဒါကြောင့် \fEn{Arcade} ကိုပဲ အဓိကသုံးမယ်ဆိုရင် သူ့အရှိအတိုင်းသုံးတာ အကောင်းဆုံးပဲ။ အထက်အောက် ပြောင်းပြန် စဉ်းစားစရာ မလိုတော့ဘူး။
-\end{mytcbox}
 
 
-
-
-
-
+\subsection*{ကျားကွက်ခုံ (သို့) စစ်တုရင်ခုံ ဆွဲခြင်း} \label{subsec:ch07chkbrd}
+ကျားကွက် (သို့) စစ်တုရင်ခုံ ပုံဖော်တဲ့ \fEn{checkerboard} ဥပမာကို အောက်မှာလေ့လာကြည့်ပါ။ ပုံ (\fRefNo{\ref{fig:ch07chkbrd}}) က ဒီပရိုဂရမ်နဲ့ ဆွဲထားတာပါ။
+%
+%
 \label{lst:checkerboard}
-%
 \begin{py}
+# File: arcade_checkerboard.py
 import arcade
 from arcade.color import *
 
 WIN_WIDTH = 600
-BOARD_SIZE = 400
 WIN_HEIGHT = 420
 arcade.open_window(WIN_WIDTH, WIN_HEIGHT, "Arcade Checkerboard")
-arcade.set_viewport(left=0,
-                    right=WIN_WIDTH,
-                    top=0,
-                    bottom=WIN_HEIGHT)
+
 arcade.set_background_color(WHITE_SMOKE)
+
 arcade.start_render()
 
+# width/height of the whole board
+BOARD_SIZE = 400
 COLS = 8
 ROWS = 8
-SQ_SIZE = BOARD_SIZE / ROWS
-X_LFT = (WIN_WIDTH - BOARD_SIZE) / 2
-Y_TOP = (WIN_HEIGHT - BOARD_SIZE) / 2 + 1
+# size of each square of the board
+SQ_SIZE = BOARD_SIZE // ROWS
+# x of left side of the board
+X_LFT = (WIN_WIDTH - BOARD_SIZE) // 2
+# y of the bottom side of the bord
+Y_BTM = (WIN_HEIGHT - BOARD_SIZE) // 2
 
+y = Y_BTM
 for i in range(ROWS):
+    # start x from the left again
+    x = X_LFT
     for j in range(COLS):
-        x = X_LFT + SQ_SIZE * i
-        y = Y_TOP + SQ_SIZE * j
+        # if sum of row and col numbers is even
         if (i + j) % 2 == 0:
-            arcade.draw_xywh_rectangle_filled(x,
-                                              y,
-                                              SQ_SIZE,
-                                              SQ_SIZE,
+            arcade.draw_xywh_rectangle_filled(x, y, SQ_SIZE, SQ_SIZE, 
                                               WOOD_BROWN)
         else:
-            arcade.draw_xywh_rectangle_filled(x,
-                                              y,
-                                              SQ_SIZE,
-                                              SQ_SIZE,
+            arcade.draw_xywh_rectangle_filled(x, y, SQ_SIZE, SQ_SIZE, 
                                               BLACK)
-        arcade.draw_xywh_rectangle_outline(x,
-                                           y,
-                                           SQ_SIZE,
-                                           SQ_SIZE,
-                                           BLACK)
+        # move to right
+        x += SQ_SIZE
+
+    # update y after each row
+    y += SQ_SIZE
 
 arcade.finish_render()
+
 arcade.run()
 \end{py}
 %
+
+ပထမပိုင်းမှာ လိုအပ်တဲ့ \fEn{constants} တွေ သတ်မှတ်ထားတယ်။ ကျားကွက်တစ်ခုလုံး အရွယ်အစားကို (၄၀၀) \fEn{pixels} ထားတယ်။ စတုရန်းပုံဆိုတော့ အကျယ်/အမြင့် နှစ်ခုလုံး (၄၀၀)။ \fCode{X\_LFT} က \fEn{row} တစ်ခုချင်းရဲ့ စမှတ် $x$ တန်ဖိုး၊ \fCode{Y\_BTM} ကတော့ အောက်ဆုံး \fEn{row} $y$ စမှတ် တန်ဖိုး ဖြစ်ပါတယ်။ 
+
+အတွင်း \fCode{for} \fEn{loop} က တစ်တန်းမှာပါတဲ့ ကျားကွက် (၈) ခုကို   ဘယ်ကနေညာ တစ်ကွက်ချင်း  ဆွဲသွားမှာဖြစ်ပြီး အပြင် \fCode{for} \fEn{loop} ကတော့   \fEn{row} တစ်ခုပြီး တစ်ခု အောက်ဆုံးကစပြီး ပုံဖော်ပေးမှာပါ။ \fEn{Row} တစ်တန်းမှာ ပါဝင်တဲ့ အကွက်တွေအားလုံး \fCode{y} တန်ဖိုး တူတယ်။ \fEn{Row} တစ်ခုပြီး နောက်တစ်ခု ကူးတဲ့အခါ လက်ရှိ \fEn{row} ရဲ့ \fCode{y} တန်ဖိုးကို ကျားကွက်တစ်ကွက်စာ ပေါင်းပေးရပါမယ်
+%
+\begin{py}
+y += SQ_SIZE
+\end{py}
+%
+\fEn{Row} တစ်ခုပြီးမှ \fCode{y} တန်ဖိုးကို ပေါင်းပေးရမှာပါ။။ ဒါကြောင့် ဒီစတိတ်မန့်က အတွင်း \fCode{for} \fEn{loop} အပြီးမှာ ဖြစ်ရပါမယ် (\fEn{Indentation} ဂရုစိုက်ကြည့်ပါ)။ \fEn{Row} တစ်ခုအတွက် ကျားကွက်တစ်ကွက်ချင်းကို ဘယ်ဘက်ကနေစပြီး ဆွဲမှာပါ။ တစ်ကွက်ပြီး နောက်တစ်ကွက် ကူးတဲ့အခါ လက်ရှိ \fCode{x} တန်ဖိုးကို ကျားကွက်တစ်ကွက်စာ ပေါင်းပေးရပါမယ်။ ဒီအတွက်
+%
+\begin{py}
+x += SQ_SIZE
+\end{py}
+%
+ကို အတွင်း \fCode{for} \fEn{loop} တစ်ကျော့ပြီးတိုင်း လုပ်ဖို့လိုတယ်။ \fEn{Row} တစ်ခု ပြီးသွားပြီဆိုရင် နောက် \fEn{row} တစ်ခုက ဘယ်ဘက်ကနေ ပြန်စရမှာပါ။ ဒီတော့ အတွင်း \fCode{for} \fEn{loop} မစခင်မှာ
+%
+\begin{py}
+x = X_LFT
+\end{py}
+%
+ပြန် လုပ်ပေးရပါမယ်။
+
+ကျားကွက်ပတ်တန် တစ်လှည့်စီ အရောင်ခြယ်ဖို့ ဘယ်လိုလုပ်ရမလဲ။ တစ်ကွက်ချင်းရဲ့ \fEn{row} နံပါတ်နဲ့ \fEn{column} နံပါတ်ကို ပေါင်းကြည့်ပါ။ ပေါင်းလဒ် စုံဂဏန်း ဖြစ်တဲ့ အကွက်တွေ အရောင်တူတယ်။ မဂဏန်းဖြစ်တဲ့ အကွက်အားလုံး အရောင်တူတယ်။ အခုလို 
+%
+\begin{py}
+if (i + j) % 2 == 0:
+    arcade.draw_xywh_rectangle_filled(x, y, SQ_SIZE, SQ_SIZE, 
+                                      WOOD_BROWN)
+else:
+    arcade.draw_xywh_rectangle_filled(x, y, SQ_SIZE, SQ_SIZE, 
+                                      BLACK)
+\end{py}
+%
+အရောင် တလှည့်စီခြယ်တယ်။ ဒီလောက်ဆိုရင် ကျားကွက်ပရိုဂရမ်ကို နားလည်မယ် ထင်ပါတယ်။
 
 \begin{figure}[tb!]
 \begin{tikzpicture}

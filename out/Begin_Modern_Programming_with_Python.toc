@@ -5,12 +5,18 @@
 \contentsline {section}{\numberline {1.3}ကားရဲလ် ပရိုဂရမ် run ခြင်း}{8}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Python အင်စတောလ်လုပ်တဲ့အခါ ဘာတွေပါလဲ}{9}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Move Beeper to Other Side}{11}{section.1.5}%
-\contentsline {chapter}{\numberline {2} From Classes to Objects (ကလပ်စ်များမှ အော့ဘ်ဂျက်များသို့)}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}\fSecCodeBf {Account} Class (အကောင့် ကလပ်စ်)}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Access Control}{18}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Composition or Has-a Relationship}{20}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Properties}{24}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Class Attributes and Methods}{27}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Static Methods}{30}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Object-Oriented Programming}{34}{section.2.7}%
+\contentsline {chapter}{\numberline {2}ကွန်ထရိုးလ် စတိတ်မန့်များ}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}\fSecCodeBf {if} စတိတ်မန့်}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}\fSecCodeBf {for} Loop}{18}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Python Arcade Library}{25}{section.2.3}%
+\contentsline {section}{\numberline {2.4}\fSecCodeBf {while} loop}{30}{section.2.4}%
+\contentsline {section}{\numberline {2.5}လေ့ကျင့်ရန် ဥပမာများ}{34}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Inheritance and Polymorphism}{41}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Inheritance ဥပမာ ‘\fSecCodeBf {Account} Class Hierarchy’}{41}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Overriding}{45}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Multilevel Inheritance}{46}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Class Hierarchy and UML}{47}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Is-A Relationship and Inheritance}{47}{section.3.5}%
+\contentsline {section}{\numberline {3.6}အသုံးချ ဥပမာ (၁) Breakout Game}{47}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Breakout တည်ဆောက်ခြင်း}{57}{section.3.7}%
 \contentsfinish 
