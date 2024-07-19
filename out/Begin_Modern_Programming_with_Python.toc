@@ -5,18 +5,63 @@
 \contentsline {section}{\numberline {1.3}ကားရဲလ် ပရိုဂရမ် run ခြင်း}{8}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Python အင်စတောလ်လုပ်တဲ့အခါ ဘာတွေပါလဲ}{9}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Move Beeper to Other Side}{11}{section.1.5}%
-\contentsline {chapter}{\numberline {2}ကွန်ထရိုးလ် စတိတ်မန့်များ}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}\fSecCodeBf {if} စတိတ်မန့်}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}\fSecCodeBf {for} Loop}{18}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Python Arcade Library}{25}{section.2.3}%
-\contentsline {section}{\numberline {2.4}\fSecCodeBf {while} loop}{30}{section.2.4}%
-\contentsline {section}{\numberline {2.5}လေ့ကျင့်ရန် ဥပမာများ}{34}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Inheritance and Polymorphism}{41}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Inheritance ဥပမာ ‘\fSecCodeBf {Account} Class Hierarchy’}{41}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Overriding}{45}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Multilevel Inheritance}{46}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Class Hierarchy and UML}{47}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Is-A Relationship and Inheritance}{47}{section.3.5}%
-\contentsline {section}{\numberline {3.6}အသုံးချ ဥပမာ (၁) Breakout Game}{47}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Breakout တည်ဆောက်ခြင်း}{57}{section.3.7}%
+\contentsline {chapter}{\numberline {2}ကားရဲလ်နှင့် ကွန်ထရိုးလ် စတိတ်မန့်များ}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}\fSecCodeBf {for} loop}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}အင်ဒန့်ထ်လုပ်ခြင်းနှင့် ကုဒ်စထရက်ချာ}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}\fSecCodeBf {while} loop}{16}{section.2.3}%
+\contentsline {section}{\numberline {2.4}\fSecCodeBf {if} စတိတ်မန့်}{19}{section.2.4}%
+\contentsline {section}{\numberline {2.5}\fSecCodeBf {if...else} စတိတ်မန့်}{21}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Nested ကွန်ထရိုးလ် စတိတ်မန့်များ}{22}{section.2.6}%
+\contentsline {chapter}{\numberline {3}ဖန်ရှင်များ (Functions)}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}ဖန်ရှင် သတ်မှတ်ခြင်း}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}ပရီကွန်ဒီရှင်နှင့် ပို့စ်ကွန်ဒီရှင်}{32}{section.3.2}%
+\contentsline {section}{\numberline {3.3}ဖန်ရှင်များဖြင့် abstraction များ တည်ဆောက်ခြင်း}{34}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Bottom-up Programming}{35}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Top-down Programming}{43}{section.3.5}%
+\contentsline {chapter}{\numberline {4}ကားရဲလ်နှင့် ရီကားဆစ်ဖ် ဖန်ရှင်များ}{51}{chapter.4}%
+\contentsline {section}{\numberline {4.1}ရီကားဆစ်ဖ် ဖန်ရှင် ဘယ်လို အလုပ်လုပ်လဲ}{51}{section.4.1}%
+\contentsline {section}{\numberline {4.2}ရီကားဆစ်ဖ်နည်းဖြင့် ပုစ္ဆာဖြေရှင်းခြင်း}{57}{section.4.2}%
+\contentsline {chapter}{\numberline {5}ဒေတာများနှင့် ဖန်ရှင်များ}{65}{chapter.5}%
+\contentsline {section}{\numberline {5.1}ကိန်းဂဏန်းများ}{65}{section.5.1}%
+\contentsline {section}{\numberline {5.2}‘တိုက်ပ်’ ဆိုတာ ဘာလဲ}{72}{section.5.2}%
+\contentsline {section}{\numberline {5.3}ဗေရီရေဘဲလ်များ}{73}{section.5.3}%
+\contentsline {section}{\numberline {5.4}စာသားများ}{74}{section.5.4}%
+\contentsline {section}{\numberline {5.5}အိပ်စ်ပရက်ရှင်များ}{78}{section.5.5}%
+\contentsline {section}{\numberline {5.6}ဘူလီယန် တိုက်ပ်နှင့် ဘူလီယန် အိပ်စ်ပရက်ရှင်}{79}{section.5.6}%
+\contentsline {chapter}{\numberline {6}အော့ဘ်ဂျက်များ}{85}{chapter.6}%
+\contentsline {section}{\numberline {6.1}\fSecCodeBf {date}, \fSecCodeBf {time} and \fSecCodeBf {datetime}}{86}{section.6.1}%
+\contentsline {section}{\numberline {6.2}\fSecCodeBf {list}}{90}{section.6.2}%
+\contentsline {chapter}{\numberline {7}ကွန်ထရိုးလ် စတိတ်မန့်များ}{93}{chapter.7}%
+\contentsline {section}{\numberline {7.1}\fSecCodeBf {if} စတိတ်မန့်}{93}{section.7.1}%
+\contentsline {section}{\numberline {7.2}\fSecCodeBf {for} Loop}{98}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Python Arcade Library}{105}{section.7.3}%
+\contentsline {section}{\numberline {7.4}\fSecCodeBf {while} loop}{110}{section.7.4}%
+\contentsline {section}{\numberline {7.5}လေ့ကျင့်ရန် ဥပမာများ}{114}{section.7.5}%
+\contentsline {chapter}{\numberline {8}ဖန်ရှင်များ}{121}{chapter.8}%
+\contentsline {section}{\numberline {8.1}တန်ဖိုးပြန်ပေးတဲ့ ဖန်ရှင်များ}{121}{section.8.1}%
+\contentsline {section}{\numberline {8.2}တန်ဖိုးပြန်မပေးတဲ့ ဖန်ရှင်များ}{125}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Exceptions}{127}{section.8.3}%
+\contentsline {section}{\numberline {8.4}ဖန်ရှင်နှင့် ပရိုဂရမ်ဒီဇိုင်း ဥပမာ (၁) “Insurance Premium”}{130}{section.8.4}%
+\contentsline {section}{\numberline {8.5}ဖန်ရှင်နှင့် ပရိုဂရမ်ဒီဇိုင်း ဥပမာ (၂) “Colorful House”}{143}{section.8.5}%
+\contentsline {section}{\numberline {8.6}ပါရာမီတာ ရွေးချယ်သတ်မှတ်ခြင်း}{152}{section.8.6}%
+\contentsline {section}{\numberline {8.7}တန်ဖိုး ပြန်ပေးခြင်း၊ မပေးခြင်း}{154}{section.8.7}%
+\contentsline {section}{\numberline {8.8}\fSecCodeBf {return}}{156}{section.8.8}%
+\contentsline {chapter}{\numberline {9} From Classes to Objects (ကလပ်စ်များမှ အော့ဘ်ဂျက်များသို့)}{159}{chapter.9}%
+\contentsline {section}{\numberline {9.1}\fSecCodeBf {Account} Class (အကောင့် ကလပ်စ်)}{159}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Access Control}{164}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Composition or Has-a Relationship}{166}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Properties}{170}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Class Attributes and Methods}{173}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Static Methods}{176}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Object-Oriented Programming}{180}{section.9.7}%
+\contentsline {chapter}{\numberline {10}Inheritance and Polymorphism}{195}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Inheritance ဥပမာ ‘\fSecCodeBf {Account} Class Hierarchy’}{195}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Overriding}{199}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Multilevel Inheritance}{200}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Class Hierarchy and UML}{201}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Is-A Relationship and Inheritance}{201}{section.10.5}%
+\contentsline {section}{\numberline {10.6}အသုံးချ ဥပမာ (၁) Breakout Game}{201}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Breakout တည်ဆောက်ခြင်း}{212}{section.10.7}%
+\contentsline {chapter}{\numberline {A}လိုအပ်သည့် ဆော့ဖ်ဝဲများ ထည့်သွင်းခြင်း}{225}{appendix.A}%
+\contentsline {chapter}{\numberline {B}ကားရဲလ်ပရိုဂရမ် ဖီချာများ}{251}{appendix.B}%
 \contentsfinish 
