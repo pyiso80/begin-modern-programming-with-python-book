@@ -38,14 +38,10 @@
 \section{Meet Karel ပရိုဂရမ်}
 ပရိုဂရမ် ရေးတယ်ဆိုတာ ကွန်ပျူတာကို ကိစ္စတစ်ခုခု ဆောက်ရွက်ပေးဖို့ ခိုင်းစေတဲ့  ညွှန်ကြားချက်တွေ ရေးတာပါပဲ။ ဒီလို ညွှန်ကြားချက်တွေကို ပရိုဂရမ်ကုဒ် \fEn{(\textit{program code})} လို့ ခေါ်တယ်။ ပရိုဂရမ်ကုဒ်တွေကို ကွန်ပျူတာနားလည်တဲ့ \fEn{programming language} တစ်ခုခုနဲ့ ရေးရတယ်။ ဒီစာအုပ်မှာ အသုံးပြုမဲ့ \fEn{programming language} ကတော့ \fEn{Python} ပါ။ \fEn{Programming language} တစ်မျိုးပဲ ရှိတာမဟုတ်ပါဘူး။ ရာနဲ့ချီပြီး ရှိတာပါ။ လူ့ဘာသာစကားတွေ အမျိုးမျိုးရှိသလိုပဲပေါ့။ \fEn{Python} ဟာ ဒီလို ရာနဲ့ချီတဲ့ထဲက လက်ရှိအသုံးအများဆုံး ထိပ်ဆုံးဆယ်ခု ထဲမှာ ပါဝင်တယ်။ \fEn{Python} နဲ့ ဘိပါရွှေ့ခိုင်းတဲ့ ပရိုဂရမ်ကို လေ့လာကြည့်ရအောင်။ ကားရဲလ်နဲ့ ပထမဆုံး မိတ်ဆက်ပေးတဲ့ ပရိုဂရမ်မို့လို့ ဒီပရိုဂရမ် နံမည်ကို \fEn{‘Meet Karel’} လို့ ခေါ်ပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: meet_karel.py
 # About: This is
 from stanfordkarel import *
-
 
 def main():
     """Karel code goes here!"""
@@ -67,8 +63,7 @@ def main():
 
 if __name__ == "__main__":
     run_karel_program("meet_karel")
-
-\end{minted}
+\end{py}
 %
 
 ဒါဟာ \fEn{‘Meet Karel’} ပရိုဂရမ်အတွက် \fEn{Python} နဲ့ရေးထားတဲ့ ပရိုဂရမ်ကုဒ် တွေဖြစ်ပါတယ်။ ‘\fEn{Python} ကုဒ်’ လို့ အတိုချုံးပဲ ပြောတာများတယ်။ \fEn{Python} ‘စာ/စကား’ မတတ်ရင် ဒီ ‘\fEn{Python} ကုဒ်’ တွေကိုလည်း နားလည်မှာ မဟုတ်ဘူး။ ဒီတော့ \fEn{Python} ‘စာ/စကား’ အခြေခံက စပြီး လေ့လာဖို့ လိုပါမယ်။
@@ -79,22 +74,16 @@ if __name__ == "__main__":
 
 \subsection*{\fSubSecCodeBf{import} စတိတ်မန့်}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 from stanfordkarel import *
-\end{minted}
+\end{py}
 %
 ကတော့ အင်ပို့စတိတ်မန့် ဖြစ်ပါတယ်။ “\fCode{stanfordkarel} လိုက်ဘရီမှ အာလုံးကို ထည့်သွင်းပေးပါ” လို့ တောင်းဆိုတဲ့ အဓိပ္ပါယ်။ \fCode{*} သင်္ကေတကို ‘အားလုံး’ လို့ ယူဆပါ။  \fCode{stanfordkarel} လိုက်ဘရီမှာ ကားရဲလ်ပရိုဂရမ်အတွက် လိုအပ်တာအားလုံး   ပါဝင်တယ်။  ဒီလိုက်ဘရီကို အင်ပို့လုပ်ထားမှ ကားရဲလ်ကွန်မန်းတွေ သုံးလို့ရမှာပါ။ သီးခြား ကားရဲလ်ပရိုဂရမ် တစ်ခုစီတိုင်းအတွက် အင်ပို့လုပ်ရမှာ ဖြစ်တယ်။
 
 \subsection*{လိုက်ဘရီ}
 လိုက်ဘရီ \fEn{(\textit{library})} ဆိုတာ ပညာရပ်နယ်ပယ် တစ်ခုအတွက် ရည်ရွယ်ရေးထားတဲ့ ပရိုဂရမ်ကုဒ်တွေပါပဲ။ သင်္ချာအတွက်အချက် လိုက်ဘရီ၊ ဂိမ်းရေးဖို့ လိုက်ဘရီ၊ \fEn{2D/3D} ဂရပ်ဖစ်ဆွဲဖို့ လိုက်ဘရီ၊ အေအိုင်အတွက် လိုက်ဘရီ စသည်ဖြင့် နယ်ပယ်အသီးသီး၊ ကိစ္စရပ်အဖုံဖုံအတွက် သက်ဆိုင်ရာ ကျွမ်းကျင်ပညာရှင်တွေ ထုတ်လုပ်ဖြန့်ချီပေးထားတဲ့ လိုက်ဘရီတွေရှိတယ်။ \fEn{Matrix} အော်ပရေးရှင်းတွေအတွက် \fCode{numpy} ၊ ဂရပ်ဖ်ဆွဲမယ်ဆိုရင် \fCode{matplotlib} စတဲ့ လိုက်ဘရီတွေကို အင်ပို့လုပ် အသုံးပြုနိုင်ပါတယ်။ မေ့ထရစ် $A$ ကို $B$ နဲ့ မြှောက်ရင် ဒီလိုပါ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 from numpy import *
 
 A = array([[1, 1, 2, 2],
@@ -109,22 +98,19 @@ result = matmul(A, B)
 
 print(result)
 
-\end{minted}
+\end{py}
 %
 ရလဒ် အခုလိုထွက်ပါမယ်။ 
 %
-\begin{minted}[frame=lines, framerule=0pt]{text}
+\begin{codetxt}
 [[10 10]
  [11 11]
  [11 11]]
-\end{minted}
+\end{codetxt}
 %
 ဒါကတော့ ဘားချတ် အတွက် \fCode{numpy} နဲ့ \fCode{matplotlib} လိုက်ဘရီ သုံးထားတာပါ။  
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 from matplotlib.pyplot import *
 from numpy import *
 
@@ -140,7 +126,7 @@ ax.set(xlim=(0, 8), xticks=arange(1, 8),
        ylim=(0, 8), yticks=arange(1, 8))
 
 show()
-\end{minted}
+\end{py}
 ဘားချတ်ကို ဒီလို ထုတ်ပေးပါတယ်။
 %
 \begin{figure}[tbh!]
@@ -169,10 +155,7 @@ show()
 \subsection*{\fSubSecCodeBf{main} ဖန်ရှင်}
 \fEn{‘Meet Karel’} ပရိုဂရမ် အင်ပို့စတိတ်မန့် အပြီးမှာ တွေ့ရတာကတော့ \fCode{main} ဖန်ရှင်သတ်မှတ်ချက်ပါ။ ကြည့်ရအဆင်ပြေအောင် သူ့ချည်းသီးသန့် တစ်ဖြတ် ပြန်ပြပေးထားပါတယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
     """Karel code goes here!"""
     move()
@@ -190,77 +173,60 @@ def main():
     move()
     put_beeper()
 # End of main
-\end{minted}
+\end{py}
 
-\begin{mytcbox}
+\begin{mytcboxflt}
 ဖန်ရှင် \fEn{(\textit{function})} ဆိုတာ ကိစ္စတစ်ခု လုပ်ဆောင်ပေးဖို့အတွက် ယူနစ်တစ်ခုအနေနဲ့ ဖွဲ့စည်းထားတဲ့ ပရိုဂရမ်ကုဒ် အစုအဝေးတစ်ခုပါပဲ။ ဖန်ရှင်ကို အသုံးပြုတဲ့အခါ ၎င်းရဲ့ လုပ်ငန်းတာဝန်အတိုင်း ဖန်ရှင်က လုပ်ဆောင်ပေးမှာ ဖြစ်တယ်။ ဖန်ရှင်အသုံးပြုတာကို ‘ဖန်ရှင်ကောလ်’  \fEn{(\textit{function call})} လုပ်တာလို့ ပြောတယ်။
-\end{mytcbox}
+\end{mytcboxflt}
 %
 \fCode{main} ဖန်ရှင်သတ်မှတ်ချက်ကို အပိုင်းနှစ်ပိုင်းခွဲ ကြည့်နိုင်တယ်။ ပထမတစ်ပိုင်း
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
-\end{minted}
+\end{py}
 %
 ကို ဖန်ရှင်ခေါင်းစီး \fEn{(function header)} လို့ခေါ်တယ်။ ဖန်ရှင်ခေါင်းစီးမှာ ဖန်ရှင်နံမည်နဲ့ ဖန်ရှင်ပါရာမီတာတွေကို ဝိုက်ကွင်းထဲမှာ သတ်မှတ်ပေးရပြီး \fEn{colon} \fEn{‘\fCode{:}’}  နဲ့ အဆုံးသတ်တယ်။ ဥပမာ \fCode{x}\fEn{,} \fCode{y} ပါရာမီတာ နဲ့  \fCode{myfun} ဖန်ရှင် အတွက် 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def myfun(x, y):
-\end{minted}
+\end{py}
 ပါရာမီတာမပါရင်လည်း ဝိုက်ကွင်းအလွတ် တစ်စုံ \fEn{‘\fCode{()}’} တော့ပါရမယ်။ \fCode{main} ဖန်ရှင်မှာ ပါရာမီတာ မပါဘူး။ ပါရာမီတာတွေအကြောင်း နောက်ပိုင်းအခန်းတွေမှာ အသေးစိတ် လေ့လာရမှာပါ။ ကားရဲလ်ပရိုဂရမ်တွေမှာ ပါရာမီတာအကြောင်း သိဖို့မလိုသေးပါဘူး။ ပါရာမီတာ မလိုတဲ့ ဖန်ရှင်တွေပဲ တွေ့ရမှာပါ။ 
 
 ဖန်ရှင်ခေါင်းစည်းအောက် ဒုတိယပိုင်းကတော့ \fCode{main} ဖန်ရှင် ကုဒ်ဘလောက် \fEn{(\textit{code block})} ပါ။ ကုဒ်ဘလောက် ဆိုတာ ကုဒ်တွေကို အုပ်စုတစ်စု အဖြစ် ဖွဲ့စည်းထားတာကို ဆိုလိုတာပါ။ ဘလောက်လို့လည်း ခေါ်တယ်။ ဘလောက်တစ်ခုမှာ ပါဝင်တဲ့ ကုဒ်လိုင်းတွေကို ညာဘက် ခွာရေးရပါမယ်။ အင်ဒန့်ထ် \fEn{(indent)} လုပ်တာလို့ ခေါ်တယ်။  တက်ဘ်ကီးတစ်ချက် (သို့) စပေ့စ်လေးခုစာ ခွာလေ့ရှိတယ်။  ဘော်ဒီ ပထမတစ်ကြောင်း
-%ချိန်ညှိရေးထားတဲ့
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+%
+\begin{py}
 """Karel code goes here!"""
-\end{minted}
+\end{py}
+%
 ကို \fEnEmp{docstring} လို့ ခေါ်တယ်။ \fEn{quote} သုံးခုတွဲ \fEn{‘\fCode{"""}’} တစ်စုံကြား ညှပ်ရေးတဲ့ ကွန်းမန့်တစ်မျိုးလို့ ယူဆနိုင်တယ်။ ဖန်ရှင်နဲ့ ပါတ်သက်တဲ့ ရှင်းလင်းဖော်ပြချက်တွေ ရေးဖို့အတွက် သုံးတာပါ။
 
 \fEn{Docstring} အောက်မှာ တွေ့ရတာကတော့ ကားရဲလ်ကွန်မန်းတွေဆိုတာ သိပါလိမ့်မယ်။ ကားရဲလ်ကွန်းမန်းတွေဟာ \fCode{stanfordkarel} လိုက်ဘရီ ဖန်ရှင်တွေပါ။ တနည်းအားဖြင့် \fCode{stanfordkarel} လိုက်ဘရီမှာ ကားရဲလ်ကွန်းမန်းတွေအတွက် ဖန်ရှင်သတ်မှတ်ချက်တွေ ပါဝင်တယ်။ ဖန်ရှင်တစ်ခုကို အသုံးပြုဖို့အတွက် အဲဒီဖန်ရှင်ကို ခေါ်ရပါတယ်။ ဒါကို   ဖန်ရှင်ကောလ် \fEn{(\textit{function call})} လုပ်တယ်လို့ ပြောတယ်။ ကားရဲလ်ကို ဘယ်ဘက်လှည့်စေချင်ရင် \fCode{turn\_left} ဖန်ရှင်ကောလ် လုပ်ရပါမယ်။ ဘိပါကောက်ခိုင်းချင်ရင် \fCode{pick\_beeper} ဖန်ရှင်ကောလ် လုပ်ရပါမယ်။ ဖန်ရှင်ကောလ် လုပ်တဲ့ ပုံစံက
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 turn_left()
 pick_beeper()
-\end{minted}
+\end{py}
 စသည်ဖြင့် ဖြစ်တယ်။
 
-\begin{mytcbox}
+\begin{mytcboxflt}
 \fEn{Python} မှာ အင်ဒန့်ထ်ကို ဖြစ်ကတတ်ဆန်း လုပ်လို့မရဘူး။ ဘေးမျဉ်းကနေ ခွာတဲ့ အကွာအဝေး မညီတာနဲ့ ဆင်းတက်စ်အမှား ဖြစ်တယ်။ မလိုတဲ့နေရာမှာလည်း ခွာရေးလို့ မရဘူး။ ခေါင်းစီးကို ဘေးမျဉ်းနဲ့ ခွာထားကြည့်ပါ။ အယ်ရာဖြစ်တာကို တွေ့ရမယ်။ အင်ပို့စတိတ်မန့်လည်း ဘေးမျဉ်းနဲ့ ကွာနေလို့မရဘူး။ အခြား \fEn{language} တွေမှားလည်း အင်ဒန့်ထ်လုပ် ရေးကြပေမဲ့ \fEn{Python} မှာလောက် မတင်းကျပ်ဘူး။ အင်ဒန့်ထ်မလုပ်လည်း ဆင်းတက်စ်မှားတာ မဖြစ်ဘူး။
-\end{mytcbox}
+\end{mytcboxflt}
 
 ကားရဲလ်ပရိုဂရမ်တစ်ခုမှာ \fCode{main} ဟာ  အထူးတာဝန်တစ်ခု လုပ်ဆောင်ပေးရတယ်။ အဲဒါကတော့ ပရိုဂရမ်ဝင်းဒိုးမှာ \mytcboxinl{\fEnSnd{Run Program}}  ခလုတ် (ပုံ \fRefNo{\ref{fig:mtkrlprgm1}} မှာကြည့်ပါ) နှိပ်လိုက်ရင် တုံ့ပြန် လုပ်ဆောင်ပေးရတာပါ။ ဒါကြောင့် ကွန်မန်းတွေဟာ အဲဒီခလုတ် နှိပ်တော့မှပဲ စအလုပ်လုပ်တာ ဖြစ်တယ်။
 
 \subsection*{Entry Point}
 \fEn{‘Meet Karel’} ပရိုဂရမ်မှာ \fCode{main} ဖန်ရှင်နောက် အောက်ဆုံးအပိုင်းဟာ ပရိုဂရမ် \fEn{run} တဲ့အခါ ပထမဆုံး စတင်လုပ်ဆောင်ပေးရမဲ့ ဖန်ရှင်ကို ဖော်ပြပေးတာပါ။ အန်ထရီပွိုင့် \fEn{(\textit{entry point})} လို့ခေါ်တယ်။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 if __name__ == "__main__":
     run_karel_program("meet_karel")
-\end{minted}
+\end{py}
 %
 \fCode{run\_karel\_program} ဖန်ရှင်ဟာ ကားရဲပရိုဂရမ် တစ်ခုအတွက် အန်ထရီပွိုင့် ဖြစ်တယ်။  ပရိုဂရမ် တက်လာတာနဲ့ တစ်ပါတည်း ခေါ်တင်ချင်တဲ့ ကမ္ဘာကို ဒီဖန်ရှင်မှာ ထည့်ပေးတယ်။ \fEnSnd{meet\_karel.w} ကမ္ဘာကို စစချင်းခေါ်တင်ထားချင်ရင် \fCode{"meet\_karel"} ထည့်ပေးရမယ်။  ကမ္ဘာဖိုင်မရှိရင် အယ်ရာတက်ပြီး ပရိုဂရမ်ပွင့်လာမှာ မဟုတ်ဘူး။ ကမ္ဘာမထည့်ပေးထားဘဲ ဒီလို
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 run_karel_program()
-\end{minted}
+\end{py}
 %
 ဆိုရင် $8 \times 8$ အရွယ် \fEn{default} ကမ္ဘာကို တင်ပေးပါတယ်။
 
@@ -276,23 +242,23 @@ run_karel_program()
 
 \fEn{Python} ထည့်ပြီးရင် \fCode{stanfordkarel} လိုက်ဘရီကို အောက်ပါကွန်မန်းနဲ့ အင်စတောလ် လုပ်ရပါမယ်။ အင်တာနက်ပေါ်ကနေ ဒေါင်းလုဒ် လုပ်ရတာမို့လို့ ကွန်နက်ရှင်ရှိရမယ်။
 %
-\begin{minted}[frame=lines, framerule=0pt]{text}
+\begin{codetxt}
 pip install stanfordkarel
-\end{minted}
+\end{codetxt}
 %
 
 ကားရဲလ်ပရိုဂရမ်မှာ ခေါ်တင်ချင်တဲ့ ကမ္ဘာဖိုင်တွေလည်း ရှိရပါမယ်။  \fEnSnd{meet\_karel.w} ကမ္ဘာဖိုင်က \fEnSnd{meet\_karel.zip} ဖိုင် \fEnSnd{worlds} ဖိုဒါထဲမှာ ရှိပါတယ်။  \fCode{http://tinyurl.com/3mmm9c7j} လင့်ကနေ \fEnSnd{meet\_karel.zip}  ဖိုင်ကို ဒေါင်းလုဒ်လုပ်ပါ။ ဒီ \fEnSnd{zip} ဖိုင်ထဲက \fEnSnd{worlds} ဖိုဒါကို \fEnSnd{meet\_karel.py} ဖိုင်ရှိတဲ့နေရာမှာ ကော်ပီကူးထည့်ပါ။ ဝင်းဒိုးမှာ \fEn{Command Prompt} ၊ မက်ခ်အိုအက်စ်မှာ  \fEn{Terminal} ဖွင့်ပြီး \fEnSnd{cd} ကွန်မန်းနဲ့ ကုဒ်ဖိုင်ထားတဲ့ ဖိုဒါထဲကို သွားပြီး အောက်ပါအတိုင်း \fEnSnd{python} ကွန်မန်းနဲ့ ကုဒ်ဖိုင်ကို \fEn{run} ပေးရပါမယ် (လာမဲ့စာမျက်နှာမှာ နမူနာပြထားတာ ကြည့်ပါ)။ 
 %
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{text}
+\begin{codetxt}
 python meet_karel.py
-\end{minted}
+\end{codetxt}
 ကုဒ်ရေးထားတာ ဆင်းတက်စ်အမှား မရှိဘူးဆိုရင် ကားရဲပရိုဂရမ် ပွင့်လာမှာပါ။
 
 အခုဖော်ပြခဲ့တာက ကားရဲလ်ပရိုဂရမ်တစ်ခု \fEn{run} ဖို့ မဖြစ်မနေလုပ်ရမဲ့ အနည်းဆုံးလိုအပ်ချက်ပါ။ \fEn{Python} ဆော့ဖ်ဝဲ ရှိရမယ်။ \fCode{stanfordkarel} လိုက်ဘရီ အင်စတောလ် လုပ်ရမယ်။ ကမ္ဘာဖိုင်ပါတဲ့ \fEnSnd{worlds} ဖိုဒါရှိရမယ်။ \fEnSnd{.py} ဖိုင် တစ်ခုနဲ့ ပရိုဂရမ်ကုဒ်ကို သိမ်းရမယ်။ \fEnSnd{worlds} ဖိုဒါနဲ့ ကုဒ်ဖိုင်ကို တစ်နေရာတည်းမှာ ထားရမယ်။ ပြီးရင် ကွန်မန်းလိုင်းမှာ 
 %
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{text}
+\begin{codetxt}
 python your_karel_program.py
-\end{minted}
+\end{codetxt}
 \fEn{run} ရုံပါပဲ။
 \fEnSnd{C:{\textbackslash}Users{\textbackslash}pyiso{\textbackslash}FirstKarelProgram} ဖိုဒါထဲမှာ ကုဒ်ဖိုင်နဲ့ \fEnSnd{worlds} ဖိုဒါကို ထားပြီး ဘယ်လို \fEn{run} ရလဲ နမူနာပြထားတာကို ကြည့်ပါ။
 
@@ -334,9 +300,9 @@ python your_karel_program.py
 \subsection*{Python Interpreter}
 အင်တာပရက်တာ ဆိုတာ ပရိုဂရမ်ကုဒ်တွေကို ဖတ်ပြီး ပရိုဂရမ်ကုဒ်ထဲက ညွှန်ကြားချက်တွေအတိုင်း လုပ်ဆောင်ပေးတဲ့ ပရိုဂရမ်ပါ။ \fEn{Python} အင်တာပရက်တာကတော့ \fEn{Python} နဲ့ရေးထားတဲ့ ကုဒ်တွေကို ဖတ်နိုင်တဲ့အပြင် ညွှန်ကြားထားတဲ့အတိုင်းလည်း လုပ်ဆောင်ပေးနိုင်ပါတယ်။ \fEn{Python} ကုဒ်တွေကို ကွန်ပျူတာက တိုက်ရိုက် နားလည်တာ မဟုတ်ပါဘူး။ အင်တာပရက်တာကသာ တိုက်ရိုက်နားလည်တာပါ။ ၎င်းက တစ်ဆင့်ခံ၍ \fEn{Python} ကုဒ်တွေကို ကွန်ပျူတာပေါ်မှာ \fEn{run} ပေးရတာဖြစ်တယ်။ အင်တာပရက်တာကို \fEnSnd{python} ကွန်မန်းနဲ့ အသုံးပြု \fEn{run} ရပါတယ်။
 %
-\begin{minted}[frame=lines, framerule=0pt,escapeinside=ßß]{text}
+\begin{codetxt}
 python meet_karel.py
-\end{minted}
+\end{codetxt}
 %
 ဒီလို \fEn{run} တဲ့အခါ  အင်တာပရက်တာက \fEnSnd{meet\_karel.py} ဖိုင်ထဲက ကုဒ်တွေကို ဖတ်ပြီး ပရိုဂရမ်ညွှန်ကြား\allowbreak ချက်တွေအတိုင်း လုပ်ဆောင်ပေးတာဖြစ်ပါတယ်။
 
@@ -351,14 +317,11 @@ python meet_karel.py
 ပရိုဂရမ်းမင်း လေ့လာတဲ့အခါ စာချည်းပဲ ဖတ်နေပြီး အမှန်တကယ် နားလည်သွားဖို့ဆိုတာ မဖြစ်နိုင်ပါဘူး။ လက်တွေ့ စမ်းသပ်ကြည့်၊ ရေးကြည့်မှပဲ တကယ် နားလည်လာမယ်။ တကယ်လည်း ကျွမ်းကျွမ်းကျင်ကျင် ရေးတတ်လာမှာပါ။ ဒါကြောင့် လက်တွေ့ရေးကြည့်ပါ။ များများ လေ့ကျင့်ပါ။ ဥပမာတွေကိုလည်း နားလည်အောင် ဖတ်ပြီးရင် မိမိဘာသာ အလွတ် ပြန်ရေးကြည့်ပါ။ 
 
 ပုံ (\fRefNo{\ref{fig:mbtos}}) မှ ဘိပါကို နံရံအခြားတစ်ဘက် အောက်ခြေကို ရွှေ့ပေးတဲ့ ပရိုဂရမ် ရေးကြည့်ပါ။ \fEn{Python} ထုံးစံအရ \fEnSnd{move\_beeper\_to\_other\_side.py} ဖိုင်နဲ့ သိမ်းသင့်ပါတယ်။\fEnSnd{meet\_karel.zip} ဖိုင်ထဲမှာပါတဲ့ \fEnSnd{worlds} ဖိုဒါမှာပဲ အခု ကမ္ဘာဖိုင် ထည့်ပေးထားပါတယ်။ \fEnSnd{move\_beeper\_to\_other\_side.w} နံမည်နဲ့ပါ။ အန်ထရီပွိုင့်အတွက် အခုလိုရေးရပါမယ်။
-
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+%
+\begin{py}
 if __name__ == "__main__":
     run_karel_program("move_beeper_to_other_side")
-\end{minted}
+\end{py}
 
 \begin{figure}[tbh!]
 \begin{tikzpicture}

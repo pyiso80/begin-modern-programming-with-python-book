@@ -52,11 +52,17 @@
 %\usemintedstyle{bw}
 
 
+\usepackage{multicol}
 
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{tikz}
 \usetikzlibrary{tikzmark}
+\usetikzlibrary {shapes.symbols} 
+\usepackage{forest}
+\usetikzlibrary{shadows}
+
+
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usepackage{onimage}
 \usetikzlibrary{arrows.meta}
@@ -70,6 +76,7 @@
 
 \definecolor{boxfillcolor}{RGB}{242,242,242}
 \definecolor{boxfillcolor2}{RGB}{232,232,232}
+
 
 %\newcommand{\mintrule}{0.0pt}
 %\newcommand{\mintsep}{5pt}
@@ -91,6 +98,10 @@
 \vspace{#1}%
 }
 
+\BeforeBeginEnvironment{minted}{\vspace{0.5\baselineskip}}
+\AfterEndEnvironment{minted}{\vspace{0.5\baselineskip}}
+
+
 \newcommand{\btwntikzannoandpar}{%
 \vspace{-1.33518\baselineskip}%
 }%
@@ -109,6 +120,7 @@
     before upper={\parindent0em}
 }
 
+
 \newtcolorbox{mytcboxflt}{
     left=3pt,right=3pt,top=3pt,bottom=3pt,
     float=htb,
@@ -125,6 +137,7 @@
     boxrule=0pt,
     boxsep=0pt,left=1pt,right=1pt,top=1.25pt,bottom=.7pt
 }
+
     
 \usepackage{afterpage}
 \newcommand\blankpage{%
@@ -187,31 +200,36 @@
   \def\\{}%
   \def\fSecCodeBf#1{#1}%
   \def\fSubSecCodeBf#1{#1}%
-  
-
 }
-
 
 \mainmatter
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \include{chapters/chapter01.tex}
-\include{chapters/chapter02.tex}
-\include{chapters/chapter03.tex}
-\include{chapters/chapter04.tex}
-\include{chapters/chapter05.tex}
-\include{chapters/chapter06.tex}
-\include{chapters/chapter07.tex}
-\include{chapters/chapter08.tex}
-\include{chapters/chapter09.tex}
-\include{chapters/chapter10.tex}
+%\include{chapters/chapter02.tex}
+%\include{chapters/chapter03.tex}
+%\include{chapters/chapter04.tex}
+%\include{chapters/chapter05.tex}
+%\include{chapters/chapter06.tex}
+%\include{chapters/chapter07.tex}
+%\include{chapters/chapter08.tex}
+%\include{chapters/chapter09.tex}
+%\include{chapters/chapter10.tex}
+\include{chapters/chapter11.tex}
+\include{chapters/chapter12.tex}
+\include{chapters/chapter13.tex}
+\include{chapters/chapter14.tex}
+\include{chapters/chapter15.tex}
+\include{chapters/chapter16.tex}
+
+
    
     
-\renewcommand\thefigure{A/\arabic{figure}}    
-\appendix
-\include{chapters/appendix01.tex}
-\renewcommand\thefigure{B/\arabic{figure}} 
-\include{chapters/appendix02.tex}
+%\renewcommand\thefigure{A/\arabic{figure}}    
+%\appendix
+%\include{chapters/appendix01.tex}
+%\renewcommand\thefigure{B/\arabic{figure}} 
+%\include{chapters/appendix02.tex}
 
 %\include{chapters/appendix00.tex}
 \end{document}

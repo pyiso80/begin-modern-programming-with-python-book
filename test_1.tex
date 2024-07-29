@@ -1,55 +1,17 @@
-
-%!TeX program = XeLaTex
-%!TEX encoding = UTF-8 Unicode
-
-\documentclass[10pt,twoside]{book}
-\usepackage[
-    paperheight = 10.2in,
-    paperwidth = 7.4in,
-    right = 0.8in,
-    left = 1.45in,
-    top = 0.75in,
-    bottom = 0.9in,
-    heightrounded,
-    asymmetric,
-    %showframe
-]{geometry}
-\usepackage{xcolor}
+\documentclass[10pt,twoside]{article}
 \usepackage{tikz}
-\usetikzlibrary{tikzmark}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=PythonYellow,
-    filecolor=magenta,      
-    urlcolor=white,
-    pdftitle={Overleaf Example},
-    pdfpagemode=FullScreen,
-    }
-\usepackage{fontawesome5}
+\usetikzlibrary{shapes,arrows.meta}
 \begin{document}
-\pagestyle{empty}
-\definecolor{PythonBlue}{RGB}{67, 110, 155}
-\definecolor{PythonYellow}{RGB}{250, 224, 117}
+\begin{tikzpicture}
+    \tikzset{my arrow/.style={blue, very thick},> = {Stealth[color=orange, fill=red,width=8pt, length=10pt]}}
+    \node[draw,color=red,fill=yellow,text=blue, very thick] at (4,2)  {\Huge{TiKZ}};
+    \node (r) at (-4,-2) [draw,rectangle] {\Huge{Rectangle}};
+    \node (e) at (4,-2) [draw, ellipse] {\Huge{Ellipse}};
+    \node (c) at (0,-5) [draw,circle] {\Huge{Circle}};
 
-\begin{tikzpicture}[remember picture,overlay] 
-
-
-\node[rectangle,
-    draw=PythonBlue,
-    text = white,
-    fill = PythonBlue, 
-    minimum width = 7.4in, 
-    minimum height = 10.2in, anchor=west]
-    at (current page.west) 
-    {};  
+    \draw[my arrow, ->] (r.east) -- (c.north);
+    \draw[my arrow, ->] (c.north) -- (e.west);
+    \draw[my arrow, ->] (r.east) -- (e.west);
 \end{tikzpicture}
-
-\begin{center}
-\color{PythonYellow}\Huge{This book is proudly typset in}\\
-\vspace{1em}
-\color{PythonYellow}\Huge{\LaTeX}\\
-\vspace{.25em}
-\color{black}{\faGithub}\hspace{.5em}\raisebox{7pt}{\large\url{https://tinyurl.com/3s6fwu3p}}
-\end{center}
 \end{document}
+

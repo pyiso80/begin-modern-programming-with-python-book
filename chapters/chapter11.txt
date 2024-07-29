@@ -1,0 +1,795 @@
+\chapter{Exceptions and Exception Handling}
+% syntax error or compile time error, 
+% programmer error or logic error
+% runtime error of external condition
+    % can recover
+    % cannot recover
+
+ဖန်ရှင်တစ်ခုဟာ ကြိုတင်မျှော်မှန်းမရတဲ့ (သို့) ပုံမှန်မဟုတ်တဲ့ အခြေအနေ တစ်ရပ်ရပ်ကြောင့် သူ့တာဝန် ပြီးမြောက်အောင်မြင်အောင် ဆက်လက်လုပ်ဆောင်ဖို့ မဖြစ်နိုင်တဲ့အခါ \fEn{exception} တစ်ခုကို  \fEn{raise} လုပ်နိုင်ပါတယ်။ (မြန်မာလိုတော့ \fEn{exception} တက်အောင် လုပ်တာလို့ ပြောလေ့ရှိတယ်)။ ဒီလိုဖန်ရှင်တစ်ခုကို ခေါ်တဲ့အခါ အမြဲတမ်း အဆင်ပြေပြေ ချောချောမွေ့မွေ့နဲ့ ပုံမှန်အတိုင်း ပြီးသွားမယ် ပုံသေတွက်လို့မရတော့ဘူး။ ပြဿနာဖြစ်ခဲ့ရင် ဘာဆက်လုပ်မလဲ ထည့်သွင်းစဉ်းစားဖို့ လိုလာတယ်။
+\section{Mechanism}
+
+
+အောက်ပါ \fCode{fun\_c} ဟာ အကြိမ်တစ်ရာ ခေါ်ရင် (၅၀) လောက် မအောင်မြင်မဲ့ ဖန်ရှင်တစ်ခုကို \fEn{simulate} လုပ်ထားတာပါ။ လိုင်းပေါ်ကနေ ဒေတာတချို့ ဖတ်ပေးတဲ့ ဖန်ရှင်လို့ ယူဆနိုင်ပါတယ်။  အင်တာနက်လိုင်း မကောင်းတဲ့ ဒေသမှာဆိုတော့ ဒီဖန်ရှင်က မကြာခဏ ပြဿနာပေးတယ်။
+
+%
+\begin{py}
+import random
+
+def fun_c():
+    print('Starting fun_c...')
+    # simulate IOError, will fail 50% of the time
+    if random.uniform(0.0, 1.0) <= 0.5:
+        raise IOError("Failed to read!")
+    print('fun_c ends!')
+\end{py}
+%
+\fCode{fun\_c} ကို \fCode{main} ကနေ ခေါ်ပြီး အကြိမ်အနည်းငယ် \fEn{run} ကြည့်ပါ။
+%
+\begin{py}
+def main():
+    fun_c()
+    print('main ends')
+
+if __name__ == "__main__":
+    main()
+\end{py}
+%
+
+အဆင်ပြေတဲ့ အခါမှာ အခုလို
+\begin{codetxt}
+Starting main...
+Starting fun_c...
+fun_c ends!
+main ends!
+\end{codetxt}
+ထွက်တယ်။ \fEn{Exception} တက်ရင်တော့ ဒီလိုမျိုး  \fEn{error} \fOpn{မက်ဆေ့ချ်}တွေ
+\begin{codetxt}
+Traceback (most recent call last):
+  File ".../ch11/how_exceptions_works1.py", line 19, in <module>
+    main()
+  File ".../ch11/how_exceptions_works1.py", line 14, in main
+    fun_c()
+  File ".../ch11/how_exceptions_works1.py", line 8, in fun_c
+    raise IOError("Failed to read!")
+OSError: Failed to read!
+Starting main...
+Starting fun_c...
+\end{codetxt}
+ကျလာမှာပါ။ \fCode{main()} ကနေ \fCode{fun\_c()} ခေါ်ပြီး အဲဒီမှာ \fCode{IOError} ဖြစ်သွားတယ်လို့ ဖော်ပြထားတာ တွေ့ရတယ်။ \fCode{(most recent call last)} လို့လည်း တွေ့ရတယ်။ အောက်ဆုံးမှာ နောက်ဆုံးခေါ်ခဲ့တဲ့ ဖန်ရှင်လို့ ဆိုလိုတာ (နောက်ဆုံး ခေါ်ခဲ့တာ \fCode{fun\_c})။ ဖန်ရှင်တစ်ခုမှာ \fEn{exception} တက်တဲ့အခါ (သို့) ဖန်ရှင်တစ်ခုက \fEn{exception} ကို \fEn{raise} လိုက်တဲ့အခါ ၎င်းဖန်ရှင်ကို ခေါ်တဲ့ ဖန်ရှင်တွေအားလုံး ‘တောက်လျှောက် \fEn{fail} ဖြစ်မယ်’။ အခုဥပမာမှာ \fCode{main} ကနေ \fCode{fun\_c} ကို ခေါ်တယ်။ \fCode{fun\_c} မှာ \fEn{exception} ဖြစ်တော့ \fCode{main} လည်း ပြီးအောင်ဆက် အလုပ်မလုပ်ပေးနိုင်ဘူး။ \fEn{fail} ဖြစ်သွားတယ်။ ဆိုလိုတာက \fCode{fun\_c} မှာဆိုရင် \fEn{exception} ဖြစ်စေတဲ့နေရာ အောက်ပိုင်းက စတိတ်မန့်တွေ၊ \fCode{main} မှာဆိုရင် \fCode{fun\_c} ကိုခေါ်ထားတဲ့နေရာရဲ့ အောက်က စတိတ်မန့်တွေ ဆက်လက်အလုပ်မလုပ်တော့ဘူး (\fCode{main} အတွက် \fCode{fun\_c} ခေါ်တဲ့လိုင်းက \fEn{exception} ဖြစ်စေတဲ့နေရာ)။  အခုကိစ္စမှာ ဖန်ရှင်နှစ်ခုလုံးရဲ့ \fEn{exception} ဖြစ်တဲ့နေရာ အောက်ပိုင်းမှာ \fCode{print} စတိတ်မန့် တစ်ကြောင်းစီပဲ ရှိပါတယ်။ အခြားစတိတ်မန့်တွေ ရှိခဲ့ရင်လည်း အလုပ်လုပ်မှာ မဟုတ်ဘူး။
+
+အကယ်၍ \fCode{main} က \fCode{fun\_a} \fCode{fun\_a} က \fCode{fun\_b} ကိုခေါ်၊ \fCode{fun\_b} ကနေမှ \fCode{fun\_c} ကို နောက်ဆုံး ခေါ်ထားရင် \fCode{fun\_c} မှာ \fEn{exception} ဖြစ်တဲ့အခါ \fCode{fun\_b} က စပြီး \fEn{fail} ဖြစ်မယ်။ ပြီးရင် သူ့ကိုခေါ်တဲ့ \fCode{fun\_a} ဆက် \fEn{fail} မယ်။ နောက်ဆုံးမှာ \fCode{fun\_a} ကိုခေါ်ထားတဲ့ \fCode{main} ဖန်ရှင် \fEn{fail} ဖြစ်ပြီး ပရိုဂရမ်တစ်ခုလုံး \fEn{crash} ဖြစ်မှာ ဖြစ်တယ်။ ရှေ့စာပိုဒ်မှာ ပြောခဲ့တဲ့ ‘တောက်လျှောက် \fEn{fail} ဖြစ်မယ်’ ဆိုတာ အခုလို ဖြစ်စဉ်ကို ဆိုလိုတာပါ။
+
+%
+\begin{py}
+def main():
+    print('Starting main...')
+    fun_a()
+    print('main ends!')
+
+def fun_a():
+    print('Starting fun_a...')
+    fun_b()
+    print('fun_a ends!')
+
+def fun_b():
+    print('Starting fun_b...')
+    fun_c()
+    print('fun_b ends!')
+
+if __name__ == "__main__":
+    main()
+\end{py}
+%
+
+ဖန်ရှင်တစ်ခုက အစပြု \fEn{exception} ဖြစ်တဲ့အခါ သူ့ကိုခေါ်တဲ့ ဖန်ရှင်ကောလ် ကွင်းဆက် \fEn{(call chain)} တစ်လျှောက် ပါဝင်တဲ့ဖန်ရှင် တစ်ခုပြီးတစ်ခု \fEn{exception} ဖြစ်စေပြီး နောက်ဆုံးမှာ ပရိုဂရမ်တစ်ခုလုံး အလုပ်ဆက်မလုပ်တော့ဘဲ ရပ်သွားမှာပါ။ \fEn{Exception} ဖြစ်လို့ ပရိုဂရမ်က ရပ်သွားမယ်ဆိုရင် တကယ်ကို အဆင်မပြေဘူး။ \fEn{Exception} ဖြစ်ပေါ်စေနိုင်တဲ့ အခြေအနေတွေက ရာနဲ့ချီ ရှိနိုင်တယ်။ \fEn{Exception} ဖြစ်ခဲ့ရင်  ပရိုဂရမ်တစ်ခုလုံးကို ပြန့်မသွားဘဲ၊ မသက်ရောက်စေဘဲ ထိန်းကွပ်ပေးလို့ရတဲ့ နည်းလမ်းရှိရပါမယ်။ အဲဒါကတော့ \fEnEmp{exception handling} ပါပဲ။ 
+
+\subsection*{Exception Handling}
+စောစောက ဥပမာမှာ \fCode{fun\_c} ကိုခေါ်တဲ့အခါ ဖြစ်နိုင်တဲ့ \fEn{exception} ကို \fCode{fun\_b} မှာ အခုလို \fEn{handle} လုပ်နိုင်ပါတယ်။ 
+
+%
+\begin{py}
+def fun_b():
+    print('Starting fun_b...')
+    try:
+        fun_c()
+        print("fun_c was successful!")
+    except IOError as e:
+        print(e)
+        print("Poor connection!")
+    print('fun_b ends!')
+\end{py}
+%
+\fEn{Python} မှာ \fCode{try...except} က \fEn{exception handling} အတွက်ပါ။ \fEn{Exception} ဖြစ်နိုင်တဲ့ ဖန်ရှင်ကို ခေါ်တဲ့အခါ \fCode{try} ဘလောက်ထဲမှာ ခေါ်ရပါမယ် (ဖြစ်ခဲ့ရင် \fEn{handle} လုပ်မယ်ဆိုတဲ့ ရည်ရွယ်ချက်ရှိရင်ပေါ့)။ \fCode{except} ဘလောက်က \fEn{exception} ဖြစ်ခဲ့ရင် ဘယ်လို \fEn{handle} လုပ်မဲ့ ကိစ္စအတွက်။
+
+%
+\begin{py}
+except IOError as e:
+\end{py}
+%
+\fCode{IOError} က \fEn{handle} လုပ်မဲ့ \fEn{exception} အမျိုးအစားကို သတ်မှတ်တာ။ ဆိုလိုတာက \fCode{IOError} သီးသန့်ကိုပဲ \fEn{handle} လုပ်မယ်။ \fCode{IOError} မဟုတ်တဲ့ အခြား \fEn{exception} တွေကို \fEn{handle} မလုပ်ဘူး။ (ဒါနဲ့ ပါတ်သက်ပြီး နောက်ပိုင်းမှာ ထပ်ရှင်းပြမှာပါ)။ \fCode{e} က ဖြစ်ပေါ်တဲ့ \fCode{IOError} \fEn{exception} အတွက် ဗေရီရေဘဲလ်ပါ။ \fEn{Exception} ဖြစ်ရင် \fCode{fun\_c} က \fCode{raise} လုပ်လိုက်တဲ့ \fCode{IOError} အော့ဘ်ဂျက်ကို ဒီဗေရီရေဘဲလ်မှာ ထည့်ပေးမှာ ဖြစ်တယ်။ (\fEn{Python} မှာ \fCode{IOError}\fEn{,} \fCode{ValueError}\fEn{,} \fCode{NameError} စတဲ့ ကလပ်စ်တွေ ပါရှိပြီး ဖြစ်ပေါ်တဲ့ \fEn{exception} အမျိုးအစားအလိုက် သက်ဆိုင်ရာ အော့ဘ်ဂျက်ကို \fCode{raise} လုပ်ရတာပါ)။
+
+စောစောက ဥပမာမှာ \fCode{fun\_b} ကို အထက်ပါအတိုင်း  \fEn{exception handling} ထည့်ပြီး စမ်းသပ်ကြည့်တဲ့အခါ \fEn{exception} ဖြစ်တဲ့အခါ အခုလို
+\begin{codetxt}
+Starting main...
+Starting fun_a...
+Starting fun_b...
+Starting fun_c...
+Failed to read!
+Poor connection!
+fun_b ends!
+fun_a ends!
+main ends!
+\end{codetxt}
+တွေ့ရမှာပါ။ \fCode{fun\_b} မှာ \fEn{exception handling} လုပ်ထားတဲ့အတွက်  \fCode{fun\_c} က \fEn{exception} ဖြစ်ခဲ့ရင် အဲ့ဒီ \fEn{exception} ဟာ \fCode{fun\_a} နဲ့ \fCode{main} ဆီကို ထပ်ဆင့် မကူးစက်သွားတော့ဘူး။ \fEn{Exception handling} ဆိုတာ ပရိုဂရမ် အခြားအစိတ်အပိုင်းတွေကို \fEn{exception} မကူးစက်သွားအောင် ကွာရန်တင်းလုပ် ထိန်းချုပ်တာလို့ ယူဆနိုင်ပါတယ်။ 
+
+နောက်ထပ် သိထားဖို့ အရေးကြီးတာ တစ်ခုက \fEn{exception} ဖြစ်တဲ့အခါ \fCode{try} ဘလောက်ထဲမှာပါတဲ့ အောက်က စတိတ်မန့်တွေကို ကျော်ပြီး \fCode{except} ဘလောက်ထဲ ချက်ချင်း ရောက်သွားမှာပါ။ \fCode{try} ဘလောက်ဟာ ပုံမှန်အတိုင်းဆိုရင် လုပ်ဆောင်မဲ့ လမ်းကြောင်း \fEn{(normal execution flow)} အတွက်ပါ။ \fEn{Exception} ဖြစ်ခဲ့ရင်တော့ ဒီလမ်းကြောင်းအတိုင်း ဆက်အလုပ်လုပ်လို့ မရတော့ဘူး။ ပုံမှန်မဟုတ်တဲ့ အခြေအနေမှာ လုပ်ဆောင်ရမဲ့ \fCode{except} ဘလောက်ကို လွှဲပြောင်း လုပ်ဆောင်ပေးရပါမယ်။ အခု ပြထားတာက ပုံမှန်အတိုင်း သွားမဲ့လမ်းကြောင်းပါ။
+%
+\begin{tikzpicture}[
+  remember picture,
+  overlay,
+  annotation/.style={
+    inner sep=0pt,
+    outer sep=0pt,
+    outer xsep=1mm,
+    fill=yellow!80!black,
+    text width=5cm
+  },
+  >={Stealth[inset=0pt, angle=30:7pt]}
+]
+\filldraw[lightgray!60,opacity=0.5] ([xshift=-1ex,yshift=1em] pic cs:ch11a1) rectangle ([xshift=.25ex,yshift=-.5em] pic cs:ch11a2);
+\draw[->, thin] (pic cs:ch11a2)  ++(.25ex,.5ex) -- ++(0.5,0) |- ([yshift=0.5ex] pic cs:ch11a3);
+\end{tikzpicture}
+%
+%
+\begin{py}
+def fun_b():
+    print('Starting fun_b...')
+    try:
+        ß\tikzmark{ch11a1}ßfun_c()
+        print("fun_c was successful!")ß\tikzmark{ch11a2}ß
+    except IOError as e:
+        print(e)
+        print("Poor connection!")
+    print('fun_b ends!')ß\tikzmark{ch11a3}ß
+\end{py}
+%
+ဒါက \fCode{IOError} ဖြစ်ခဲ့ရင် လုပ်ဆောင်မဲ့ပုံ (\fCode{fun\_c} ခေါ်ထားတဲ့လိုင်းကနေ \fCode{except} ကို ခုန်ပြီးရောက်သွားတာ သတိပြုပါ)။
+%
+\begin{tikzpicture}[
+    remember picture,
+    overlay,
+    annotation/.style={
+      inner sep=0pt,
+      outer sep=0pt,
+      outer xsep=1mm,
+      fill=yellow!80!black,
+      text width=5cm
+    },
+    >={Stealth[inset=0pt, angle=30:7pt]}
+  ]
+  
+  \draw[->, thin] (pic cs:ch11b1)  ++(.25ex,.5ex) -- ++(12em,0) |- ([xshift=-.5ex,yshift=1ex] pic cs:ch11b3);
+  \filldraw[lightgray!90,opacity=0.5] ([xshift=-1ex,yshift=1em] pic cs:ch11b2) rectangle ([xshift=.25ex,yshift=-.5em] pic cs:ch11b4);
+  \draw[->, thin] (pic cs:ch11b4)  ++(.25ex,.5ex) -- ++(.5em,0) |- ([yshift=0.5ex]  pic cs:ch11b5);
+  
+\end{tikzpicture}
+%
+%
+\begin{py}
+def fun_b():
+    print('Starting fun_b...')
+    try:
+        fun_c()ß\tikzmark{ch11b1}ß
+        print("fun_c was successful!")
+    except IOError as e:
+        ß\tikzmark{ch11b2}ßprint(e)                  ß\tikzmark{ch11b3}ß
+        print("Poor connection!")ß\tikzmark{ch11b4}ß
+    print('fun_b ends!')ß\tikzmark{ch11b5}ß
+\end{py}
+%
+
+ရှေ့က ဥပမာမှာ \fCode{fun\_b}  \fEn{handle} မလုပ်ဘဲ \fCode{fun\_a} က \fEn{handle} လုပ်လို့လဲရတယ်။ ဒါမှမဟုတ် \fCode{fun\_b} နဲ့ \fCode{fun\_a} မှာ \fEn{handle} မလုပ်ဘဲ \fCode{main} က လုပ်နိုင်ပါတယ်။ အောက်ပါအတိုင်း \fCode{fun\_a} မှာ \fEn{handle} လုပ်မယ်ဆိုပါစို့ 
+
+%
+\begin{py}
+def fun_a():
+    print('Starting fun_a...')
+    try:
+        fun_b()
+        print("fun_b was successful!")
+    except IOError as e:
+        print(e)
+        print("Poor connection!")
+    print('fun_a ends!')
+
+
+def fun_b():
+    print('Starting fun_b...')
+    fun_c()
+    print('fun_b ends!')
+\end{py}
+%
+\fCode{fun\_c} \fEn{exception} တက်ရင် \fEn{handle} မလုပ်ထားတဲ့ \fCode{fun\_b} လည်း  \fEn{exception} ဆက်ဖြစ်ပါမယ်။ အဲဒီ \fEn{exception} ကို \fCode{fun\_a} က \fEn{handle} လုပ်လိုက်တဲ့ အတွက် \fCode{main} ဆီကို ဆက်လက်မကူးစက် သွားတော့ပါဘူး။ \fEn{Output} အခုလို ထွက်တာ တွေ့ရမှာပါ။
+%
+\begin{codetxt}
+Starting main...
+Starting fun_a...
+Starting fun_b...
+Starting fun_c...
+Failed to read!
+Poor connection!
+fun_a ends!
+main ends!
+\end{codetxt}
+%
+\fEn{Exception}  ဖြစ်တဲ့အခါ \fCode{"fun\_b ends!"} နဲ့ \fCode{"fun\_b was successful!"} အတွက် \fCode{print} စတိတ်မန့်တွေကို ကျော်သွားတာ သတိပြုကြည့်ပါ။
+
+\subsection*{Illustration of Exception Handling}
+
+\section{Recovery}
+ဖန်ရှင်တွေ တစ်ခုပြီးတစ်ခုဆင့် ခေါ်ထားတဲ့အခါ \fEn{exception} ဖြစ်ခဲ့ရင် ဘယ်ဖန်ရှင်က \fEn{handle} လုပ်သင့်လဲ စဉ်းစားဆုံးဖြတ်ဖို့ လိုလာတယ်။ ဒီကိစ္စက ဘယ်မှာ \fEn{handle} လုပ်ရမယ် ပုံသေပြောလို့တော့ မရဘူး။ အခြေအနေနဲ့ လိုအပ်ချက်ပေါ် မူတည် ဆုံးဖြတ်ရတာမျိုး။ 
+%
+%
+\begin{py}
+def read_sensor():
+    if random.uniform(0.0, 1.0) <= 0.2:
+        raise IOError("Failed to read!")
+    return random.randrange(1, 11)
+\end{py}
+%
+ဒီဖန်ရှင်က \fEn{sensor device} တစ်ခုဆီကနေ ဒေတာဖတ်တာကို \fEn{simulate} လုပ်ထားတဲ့ ဖန်ရှင်ပါ။ \fEn{Sensor} ကြောင်လို့သော်လည်းကောင်း၊ \fEn{network} ကြောင့်သော်လည်းကောင်း (၂၀) ရာနှုန်း \fEn{fail} ဖြစ်တယ် ဆိုပါတော့။ 
+
+\fEn{Sensor} တန်ဖိုး သုံးခုတစ်တွဲ ဖတ်ပြီး စောင့်ကြည့်လေ့လာရမယ် ဆိုပါစို့။ တန်ဖိုးသုံးခု အတွဲလိုက်ရအောင် ဖတ်ရမှာပါ။ \fEn{Exception} ဖြစ်လို့ သုံးခုမပြည့်သေးရင် ပြည့်တဲ့ထိ ထပ်ကြိုးစားရပါမယ်။  ဖတ်တဲ့အခါ တစ်ခါနဲ့တစ်ခါ စက္ကန့်တစ်ဝက်ခြား ဖတ်ပါတယ်။ တစ်ကယ့် လက်တွေ့မှာလည်း \fEn{sensor} ကနေ ဒေတာဖတ်တဲ့အခါ တရစပ် ဖတ်လေ့မရှိဘူး။ အချိန်အနည်းငယ် ခြားပြီးဖတ်တယ်။
+%
+\begin{py}
+def read_3vals():
+    vals = []
+    while len(vals) != 3:
+        try:
+            vals.append(read_sensor())
+        except IOError as err:
+            pass
+        time.sleep(0.5)
+    return vals
+\end{py}
+%
+
+အခုတစ်ခါ \fEn{sensor} တန်ဖိုး သုံးခုဆက်တိုက် ပြဿနာတစ်စုံတစ်ရာ မရှိဘဲ ဖတ်နိုင်တဲ့ အကြိမ်အရေအတွက်ကို စောင့်ကြည့်လေ့လာဖို့လည်း လိုအပ်လာတယ် ဆိုပါစို့။ 
+
+%
+\begin{py}
+def read_3_times():
+    vals = []
+    for i in range(3):
+        vals.append(read_sensor())
+        time.sleep(0.5)
+    return vals
+\end{py}
+%
+ဒီဖန်ရှင်က ပုံမှန်ဆိုရင်တော့  \fEn{sensor} ကို သုံးကြိမ်ဖတ်မှာပါ။ ဒါပေမဲ့ \fCode{read\_sensor} မှာ \fCode{IOError} \fEn{exception} ဖြစ်ခဲ့ရင် \fEn{handle} မလုပ်ထားတဲ့အတွက်  အခု \fCode{read\_3\_times} လည်း ဆက် \fEn{fail} ဖြစ်မယ်။ ကံကောင်းလို့ သုံးခါလုံး အဆင်ပြေခဲ့ရင်တော့ ဖတ်ထားတဲ့ တန်ဖိုးသုံးခုပါတဲ့ \fCode{vals} ကို ပြန်ပေးမှာပါ။  စောစောကဖန်ရှင်နဲ့ အဓိက ကွာခြားချက်ကို သတိပြုပါ။ \fCode{read\_3vals} တန်ဖိုး သုံးခုပြည့်တဲ့ထိ ဖတ်ပေးရမှာပါ။ ဒါကြောင့် \fEn{exception handle} လုပ်ဖို့ လိုကို လိုတယ်။ ခုဖန်ရှင်က တန်ဖိုးသုံးခုကို ကြားထဲမှာ \fEn{fail} မဖြစ်ဘဲ ဆက်တိုက်  ဖတ်လို့ရပဲ ပြန်ပေးရမယ်။ ဒါကြောင့် {handle} လုပ်ဖို့ မလိုအပ်ဘူး။
+
+\fCode{read\_3\_times} ဟာ ဖြစ်ပေါ်နိုင်တဲ့ \fEn{exception} ကို \fEn{handle} မလုပ်တဲ့ ဖန်ရှင်တစ်ခုရဲ့ သာဓကဖြစ်တယ်။ သူ့အနေနဲ့ တန်ဖိုးသုံးခု ဆက်တိုက် ဖတ်လို့ရင် ပြန်ပေးတယ်။ အကယ်၍ မရခဲ့ရင်တော့  ၎င်းကိုယ်တိုင် \fEn{fail} ဖြစ်သွားမှာပါ။ ဒီတော့ ဖန်ရှင်ကောလ် ကွင်းဆက်တစ်လျှောက်မှာ ဘယ်နေရာမှာ \fEn{exception} ကို \fEn{handle} လုပ်မလဲ။ တစ်နေရာရာမှာ လုပ်တာတော့ လုပ်ရပါမယ်။ မလုပ်ရင် ပရိုဂရမ်တစ်ခုလုံး \fEn{fail} ဖြစ်သွားမှာ။
+
+\fCode{read\_3\_times} ကို ခေါ်တဲ့ ဖန်ရှင်က \fCode{read\_3\_times} \fEn{exception} ဖြစ်ရင် \fEn{handle} လုပ်နိုင်ပါတယ်။ ဒါမှမဟုတ် လိုအပ်ချက်အရ မလုပ်ဘဲ သူကိုယ်တိုင် \fEn{fail} အဖြစ်ခံတာလည်း ဖြစ်နိုင်တယ်။ \fEn{handle} မလုပ်ဘူး (\fEn{fail} ဆက်ဖြစ်မယ်) ဆိုရင်တော့ သူ့ကို ခေါ်ထားတဲ့ ဖန်ရှင်က \fEn{handle/fail} ဆက်လက် ဆုံးဖြတ်ရပါမယ်။ ဒီသဘောအတိုင်း တစ်ဆင့်ပြီးတစ်ဆင့် \fEn{handle} မလုပ်ဘဲ ဆက်သွားရင် နောက်ဆုံးမှာ \fEn{entry point} ဖြစ်တဲ့ \fCode{main} ဆီကို ရောက်သွားမှာပါ။ \fEn{main} ကလည်း \fEn{handle} မလုပ်ရင် \fCode{read\_sensor} က အစပြုခဲ့တဲ့ \fCode{IOError} \fEn{exception} ဟာ  ပရိုဂရမ်တစ်ခုလုံးကို ရပ်ဆိုင်းသွားစေမှာပါ။ (တကယ့်လက်တွေ့မှာတော့ ဒီလို အဖြစ်ခံလေ့ မရှိပါဘူး။ \fEn{Global exception handler} လို့ခေါ်တဲ့ ဘယ်ဖန်ရှင်ကမှ \fEn{handle} မလုပ်လို့ အပြင်ကို ပြန့်ထွက်လာတဲ့ \fEn{exception} တွေကို \fEn{handle} လုပ်တဲ့ အဆင့်တစ်ဆင့် ထည့်ထားလေ့ရှိတယ်)။
+
+\fCode{read\_3\_times} က (၁၀) ကြိမ်မှာ ဘယ်နှစ်ကြိမ် \fEn{fail} ဖြစ်လဲ ဆန်းစစ်ပေးမဲ့ ဖန်ရှင်ကို အခုလို သတ်မှတ်နိုင်ပါတယ်။ 
+%
+\begin{py}
+def failure_rate():
+    fail = 0
+    for i in range(10):
+        try:
+            read_3_times()
+        except IOError as e:
+            fail += 1
+    print(fail)
+    return Fraction(fail, 10)
+\end{py}
+%
+
+အခု လေ့လာတွေ့ရှိချက်တွေကို အနှစ်ချုပ်ပြန်ကြည့်ရင် ဖန်ရှင်တစ်ခု \fEn{exception} ဖြစ်တဲ့အခါ ၎င်းဖန်ရှင်ကို ခေါ်ထားတဲ့ ကွင်းဆက်တစ်လျှောက်လုံးက ဖန်ရှင်တွေ \fEn{fail} ဖြစ်နိုင်ပါတယ်။ \fEn{Fail} မဖြစ်အောင် ဖန်ရှင်တစ်ခုက \fEn{exception} ကို \fEn{handle} လုပ်ရပါမယ်။ ဘယ်ဖန်ရှင်က \fEn{handle} လုပ်ရမလဲကတော့ ပုံသေမရှိဘူး။ လိုအပ်ချက်ပေါ် မူတည်ပြီး ဆုံးဖြတ်ရလေ့ရှိတယ်။
+
+% reading dates string from a file
+    % all values must okay
+    % fail if any not okay
+    % all values okay and also log not okay values
+
+% you are trying to get values from network every second
+    % you want 
+
+% m -> a -> b -> c and b try to return a special value if exception 
+% m -> a -> b -> c and only the main handle exception and display appropriate message
+% to the user 
+
+%
+%
+\begin{figure}[tbh!]
+\begin{tikzpicture}[>={Stealth[inset=0pt, angle=30:7pt]}]
+\foreach \i in {0,1,2,3}
+{
+  \pgfmathsetmacro\x{\i * (1.5 + 2)}
+  \pgfmathsetmacro\y{7 - (\i * 1.25)}
+  \def\myarr{{"a", "b", "c", "d"}}
+  
+  % How to draw rounded corners selectively
+  %\filldraw[lightgray] {[rounded corners=5](\x,\y) -- ++(1.5,0)} -- ++(0,-1)  -- ++(-1.5,0){[rounded corners=5] --   cycle};
+  %\begin{scope}[yshift=-1.5cm]
+  %\filldraw[lightgray] (\x,\y) -- ++(1.5,0) {[rounded corners=5] -- ++(0,-1) -- ++(-1.5,0)} -- cycle;
+  %\end{scope}
+  
+  \draw[thick, rounded corners=5, fill=lightgray!60] (\x,\y) rectangle ++(1.5,-2.5);
+  % fun_a, fun_b, ..., etc
+  \begin{scope}[xshift=0.75cm]
+    \node at (\x,\y) [above] {$fun\_\pgfmathparse{\myarr[\i]}\pgfmathresult$};
+  \end{scope}
+
+  % fun_b(), fun_c(), etc and Bang! sign to indicate failure
+  \def\myarrB{{"b", "c", "d"}}
+  \begin{scope}[xshift=0.75cm,yshift=-1.25cm]
+    \ifthenelse{\i < 3 }{\node at (\x,\y) {$fun\_\pgfmathparse{\myarrB[\i]}\pgfmathresult()$};
+    }{}
+    \ifthenelse{\i = 3 }{\node at (\x,\y) [starburst, draw=red, fill=yellow,
+       starburst point height=0.4cm, font=\scriptsize, line width=1pt, inner sep=1.5pt] {\fEnBf{Bang!}};
+    }{}
+    \ifthenelse{\i = 2 }{\node at (\x,\y-0.8) [starburst, draw=red, fill=yellow,
+       starburst point height=0.4cm, font=\scriptsize, line width=1pt, inner sep=1.5pt] {\fEnBf{Bang!}};
+    }{}
+  \end{scope}
+  \ifthenelse{\i = 1 }{\draw[fill,color=gray] (\x+0.1,\y-1.5) rectangle (\x+1.4,\y-2.1);}{}  
+  
+
+  % draw arrows
+  \ifthenelse{\i < 3 }{
+    \draw[->,thin] [xshift=1.5cm,yshift=-1.25cm](\x,\y) to[out=45] ++(2,0);
+  }{}
+}
+\draw[->,thin] (11,1.75) .. controls (9,1) and (6,1.5) .. (4.2,4);
+\draw[->,thin] (3.4,3.5) .. controls (2.5,3.5) and (1.5, 4.5) .. (1.25,5.5);
+\end{tikzpicture}
+\caption{Exception Handling} 
+\label{fig:Exception Handling}
+\end{figure}
+
+
+\section{\fSecCodeBf{else} နှင့် \fSecCodeBf{finally}}
+\fCode{try...except} အောက်မှာ \fCode{else} ဘလောက် နဲ့ \fCode{finally}  ဘလောက် ရှိနိုင်ပါတယ်။ \fEn{Exception} မဖြစ်တဲ့အခါမှပဲ လုပ်ဆောင်ချင်တဲ့ စတိတ်မန့်တွေကို \fCode{else} ဘလောက်ထဲမှာ ထည့်နိုင်ပါတယ်။ တစ်နည်း\allowbreak အားဖြင့် \fCode{try} ဘလောက် ပြဿနာမရှိဘဲ အောင်မြင်ပြီးစီးမှသာလျှင် \fCode{else} ဘလောက်ကို လုပ်ဆောင်မှာပါ။ \fEn{Exception} ဖြစ်ခဲ့ရင်တော့ လုပ်ဆောင်ပေးမှာ မဟုတ်ပါဘူး။
+%
+%
+\begin{py}
+def process_sensor_data():
+    while True:
+        try:
+            val = read_sensor()
+        except IOError as e:
+            print(e)
+        else:
+            use_data(val)
+            notify_if_necessary()
+            print("Sensor data read successfully...")
+
+        time.sleep(1)
+        print("One iteration completed...")
+\end{py}
+%
+% ---
+%
+\begin{codetxt}
+Sensor data read successfully...
+One iteration completed...
+Sensor data read successfully...
+One iteration completed...
+Failed to read!
+One iteration completed...
+Failed to read!
+\end{codetxt}
+ဒီ \fEn{output} ကို လေ့လာကြည့်ရင် \fCode{else} ဘလောက်ကို \fEn{exception} မတက်မှပဲ လုပ်ဆောင်ပေးတယ်ဆိုတာ မြင်နိုင်မှာပါ။  \fCode{try...except...else} အပြင် အောက်ဆုံးက နှစ်ကြောင်းနဲ့ သဘောတရား မတူတာကိုလည်း သတိပြု ကြည့်ပါ။
+%
+%
+\begin{py}
+time.sleep(1)
+print("One iteration completed...")
+\end{py}
+%
+% 
+\fEn{Exception} ဖြစ်ဖြစ်၊ မဖြစ်ဖြစ် ဒီ စတိတ်မန့် နှစ်ခုကိုက လုပ်ဆောင်ပေးတယ်။ \fCode{else} အပိုင်းကိုတော့ \fEn{exception} မတက်မှပဲ လုပ်ဆောင်တယ်။ 
+
+စောစောက ဖန်ရှင်ကို \fCode{else} မပါဘဲ အောက်ပါကဲ့သို့ ရေးမယ်ဆိုရင်လည်း ရလဒ်အားဖြင့် တူတူပါပဲ။ \fCode{else} ကို အသုံးပြုရတဲ့ အဓိက အကြောင်းအရင်းက \fEn{exception} ဖြစ်စေနိုင်တဲ့ အပိုင်းနဲ့ မဖြစ်စေနိုင်တဲ့ အပိုင်း သီးသန့်ခွဲထားဖို့အတွက်ပါ။ 
+%
+%
+\begin{py}
+def process_sensor_data():
+    while True:
+        try:
+            val = read_sensor()
+            use_data(val)
+            notify_if_necessary()
+            print("Sensor data read successfully...")
+        except IOError as e:
+            print(e)
+        time.sleep(1)
+        print("processed single sensor data successfully...")
+\end{py}
+%
+အခုပုံစံမှာက \fCode{try} ထဲက ဖန်ရှင်တွေထဲက ဘယ်ဟာက \fEn{exception} ဖြစ်စေတဲ့ အရင်းအမြစ်လဲ အလွယ်\allowbreak တကူ မသိနိုင်တော့ဘူး။ စောစောက \fCode{else} နဲ့ ပုံစံမှာက \fCode{read\_sensor} က \fEn{exception} ဖြစ်နိုင်တဲ့ ဖန်ရှင်ဖြစ်ရမယ်၊ အဲဒီ \fEn{exception} ကို \fEn{handle} လုပ်ထားတယ်ဆိုတာ သိသာ မြင်သာပါတယ်။%
+%
+\vspace{-1\baselineskip}
+\begin{multicols}{2}%
+\noindent
+\begin{tikzpicture}[
+  remember picture,
+  overlay,
+  annotation/.style={
+    inner sep=0pt,
+    outer sep=0pt,
+    outer xsep=1mm,
+    fill=yellow!80!black,
+    text width=5cm
+  },
+  >={Stealth[inset=0pt, angle=30:7pt]}
+]
+\node at ([xshift=1.3cm]pic cs:ch11c0) [circle, aspect=2, draw=black, fill=green!50, font=\scriptsize, line width=1pt, inner sep=1.5pt] {\huge\ding{51}};
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11c1) rectangle ([xshift=2cm]pic cs:ch11c2);
+\draw[thin,rounded corners=5,fill=darkgray] ([yshift=1.5ex]pic cs:ch11c3) rectangle ([xshift=2cm]pic cs:ch11c4);
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11c5) rectangle ([xshift=2cm]pic cs:ch11c6);
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11c7) rectangle ([xshift=2cm]pic cs:ch11c8);
+%\draw[->, thin] ([yshift=1.5cm,xshift=2.2cm]pic cs:ch11c2)  -- ([yshift=0.5ex,xshift=2.2cm] pic cs:ch11c2);
+\end{tikzpicture}
+%
+%
+\begin{py}
+try:
+    ß$\ldots$ß
+    ß\bfseries\fEnEmp{some\_fun()}\tikzmark{ch11c0}ß
+    ß\tikzmark{ch11c1} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11c2}ß
+except:
+    ß\tikzmark{ch11c3} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11c4}ß
+else:
+    ß\tikzmark{ch11c5} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11c6}ß
+
+ß\tikzmark{ch11c7} ß
+ ß$\ldots$ß
+ß\tikzmark{ch11c8}ß
+\end{py}
+\columnbreak%
+%
+%
+%
+% ---
+% 
+%
+%
+\begin{tikzpicture}[
+  remember picture,
+  overlay,
+  annotation/.style={
+    inner sep=0pt,
+    outer sep=0pt,
+    outer xsep=1mm,
+    fill=yellow!80!black,
+    text width=5cm
+  },
+  >={Stealth[inset=0pt, angle=30:7pt]}
+]
+\node at ([xshift=1.3cm]pic cs:ch11d0) [starburst, draw=red, fill=yellow,
+       starburst point height=0.4cm, font=\scriptsize, line width=1pt, inner sep=1.5pt] {\fEnBf{Bang!}};
+\draw[thin,rounded corners=5,fill=darkgray] ([yshift=1.5ex]pic cs:ch11d1) rectangle ([xshift=2cm]pic cs:ch11d2);
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11d3) rectangle ([xshift=2cm]pic cs:ch11d4);
+\draw[thin,rounded corners=5,fill=darkgray] ([yshift=1.5ex]pic cs:ch11d5) rectangle ([xshift=2cm]pic cs:ch11d6);
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11d7) rectangle ([xshift=2cm]pic cs:ch11d8);
+%\draw[->, thin] ([yshift=1.5cm,xshift=2.2cm]pic cs:ch11d2)  -- ([yshift=0.5ex,xshift=2.2cm] pic cs:ch11d2);
+\end{tikzpicture}
+%
+%
+\begin{py}
+try:
+    ß$\ldots$ß
+    ß\bfseries\fEnEmp{some\_fun()}\tikzmark{ch11d0}ß
+    ß\tikzmark{ch11d1} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11d2}ß
+except:
+    ß\tikzmark{ch11d3} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11d4}ß
+else:
+    ß\tikzmark{ch11d5} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11d6}ß
+
+ß\tikzmark{ch11d7} ß
+ ß$\ldots$ß
+ß\tikzmark{ch11d8}ß
+\end{py}
+\end{multicols}%
+\noindent \fEn{Exception} မဖြစ်တဲ့ အခါနဲ့ ဖြစ်တဲ့အခါ \fCode{try...except...else} အလုပ်လုပ်ပုံ နှိုင်းယှဉ်ပြထားတာပါ။ မီးခိုးရောင် အဖျော့ ဘလောက်တွေက လုပ်ဆောင်မဲ့ ဘလောက်တွေပါ။ မီးခိုးရင့်ရောင် ဘလောက်တွေကိုတော့ လုပ်ဆောင်မှာ မဟုတ်ပါဘူး။
+
+
+\subsection*{\fSubSecCodeBf{finally}}
+
+\fCode{except} အပြီးမှာ \fCode{finally} ဘလောက် ရှိနိုင်ပါတယ်။ \fEn{Exception} ဖြစ်သည်ဖြစ်စေ၊ မဖြစ်သည်ဖြစ်စေ \fCode{finally} အပိုင်းကို လုပ်ဆောင်ပေးမှာ ဖြစ်တယ်။ \fCode{return} လုပ်ရင်တောင်မှ \fCode{finally} လုပ်ဆောင်ပြီးမှပဲ လုပ်မှာပါ။
+%
+%
+\begin{py}
+def test_read():
+    try:
+        val = read_sensor()
+        print("Value: " + str(val))
+        return
+    except IOError as e:
+        print("Error while reading!")
+        return
+    finally:
+        print("Don't skip this!!!")
+\end{py}
+%
+ဒီဖန်ရှင်ကို ထပ်ခါထပ်ခါ \fEn{run} ပြီး စမ်းကြည့်ပါ။ \fEn{Exception} မဖြစ်တဲ့ အခါ
+\begin{codetxt}
+Value: 5
+Don't skip this!!!
+\end{codetxt}
+ဖြစ်တဲ့အခါ
+\begin{codetxt}
+Error while reading!
+Don't skip this!!!
+\end{codetxt}
+ကို တွေ့ရမှာပါ။ 
+
+ဖန်ရှင် \fCode{return} မဖြစ်မီ \fCode{finally} ဘလောက်ကို လုပ်ဆောင်တာကို တွေ့ရတယ်။  \fCode{return} လုပ်ရင် ခေါ်ခဲ့တဲ့နေရာ ချက်ချင်းပြန်ရောက်တယ် ဆိုပေမဲ့ \fCode{finally} ပါရင်တော့ ချွင်းချက်အနေနဲ့ မှတ်ရပါမယ်။  \fCode{try...except} ဘလောက်တွေဟာ တကယ့်လက်တွေ့မှာ အခုဥပမာတွေလို ရိုးရှင်းမှာ မဟုတ်ဘူး။ ဒီ့ထက် အများကြီး ပိုပြီးရှုပ်ထွေး နိုင်ပါတယ်။ ကွန်ဒီရှင်နယ်လ်တွေ၊ \fEn{loop} တွေ၊ \fCode{break}\fEn{,} \fEn{early} \fCode{return} စတဲ့ဟာတွေ ရောယှက်နေတဲ့အခါ နောက်ဆုံးပိတ် လုပ်ဆောင်ပေးရမဲ့ \fEn{final steps} တချို့ ကျန်ခဲ့တာ ဖြစ်ဖို့ အလားအလာများတယ်။ ဥပမာ \fCode{test\_read} မှာ  အခြေအနေပေါ်မူတည်ပြီး \fEn{early} \fCode{return} လုပ်မယ် ဆိုပါစို့။ \fCode{finally} မသုံးဘူးဆိုရင် \fCode{return} မတိုင်ခင် \fCode{print} တွေ အခုလို ထည့်ပေးရပါမယ်။ 
+
+%
+\begin{py}
+def test_read():
+    try:
+        val = read_sensor()
+        print("Value: " + str(val))
+        if val < 3:
+            # ß\fEn{Do not forget here}ß
+            print("Don't skip this!!!")
+            return
+        elif val < 5:
+            use(val)
+        elif val < 8:
+            # ...    
+        ß\fEnEmp{etc.,}ß  
+        # ß\fEn{Do not forget here}ß 
+        print("Don't skip this!!!")
+    except IOError as e:
+        print("Error while reading!")
+        # ß\fEn{Do not forget here}ß 
+        print("Don't skip this!!!")
+        return
+\end{py}
+%
+တစ်နေရာရာမှာ ကျန်ခဲ့ပြီး မှားနိုင်ခြေ များတယ်။ ဒီအားနည်းချက်အပြင် ပိုကြီးတဲ့ ပြဿနာက ဘယ်ဟာက မဖြစ်မနေ လုပ်ဆောင်ရမဲ့ကိစ္စ လဲဆိုတာ  ကြည့်ရုံနဲ့ ကွဲကွဲပြားပြား မမြင်နိုင်တော့ဘူး။ နေရာအတော်များများမှာ ဖြန့်ပြီးရှိနေတယ်။  \fCode{finally} သုံးခြင်းအားဖြင့် ဒီပြဿနာကို ဖြေရှင်းနိုင်ပါတယ်။ 
+
+
+
+
+
+\begin{mytcbox}
+ဒေတာဘေ့စ်နဲ့ ဆက်သွယ် ဆောင်ရွက်ခြင်း၊ ဖိုင်ဖတ်ခြင်း/ရေးခြင်း၊ နက်ဝပ်ချိတ်ဆက်ခြင်း စတဲ့ကိစ္စတွေ လုပ်ဆောင်တဲ့အခါ အသုံးပြုထားတဲ့ ဖိုင်၊ ကွန်နက်ရှင် စတဲ့ \fEn{resource} တွေကို \fEn{release} လုပ်ပေးဖို့ အရေးကြီးပါတယ်။ ဒီလို မလုပ်ရင် ကွန်ပျူတာ စနစ်ရဲ့ \fEn{CPU cycles, memory} အစရှိတဲ့ \fEn{resource} တွေ အလဟဿ ပြုန်းတီးစေတဲ့အတွက် ပြဿနာရှိပါတယ်။
+\end{mytcbox}
+\vspace{-1\baselineskip}
+%
+\begin{multicols}{2}
+  \begin{tikzpicture}[
+    remember picture,
+    overlay,
+    annotation/.style={
+      inner sep=0pt,
+      outer sep=0pt,
+      outer xsep=1mm,
+      fill=yellow!80!black,
+      text width=5cm
+    },
+    >={Stealth[inset=0pt, angle=30:7pt]}
+  ]
+  \node at ([xshift=1.3cm]pic cs:ch11f0) [circle, aspect=2, draw=black, fill=green!50, font=\scriptsize, line width=1pt, inner sep=1.5pt] {\huge\ding{51}};
+  \draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11f1) rectangle ([xshift=2cm]pic cs:ch11f2);
+  \draw[thin,rounded corners=5,fill=darkgray] ([yshift=1.5ex]pic cs:ch11f3) rectangle ([xshift=2cm]pic cs:ch11f4);
+  \draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11f5) rectangle ([xshift=2cm]pic cs:ch11f6);
+  \draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11f7) rectangle ([xshift=2cm]pic cs:ch11f8);
+  %\draw[->, thin] ([yshift=1.5cm,xshift=2.2cm]pic cs:ch11f2)  -- ([yshift=0.5ex,xshift=2.2cm] pic cs:ch11f2);
+  \end{tikzpicture}
+  %
+  %
+  \begin{py}
+  try:
+      ß$\ldots$ß
+      ß\bfseries\fEnEmp{some\_fun()}\tikzmark{ch11f0}ß
+      ß\tikzmark{ch11f1} ß
+       ß$\ldots$ß
+      ß\tikzmark{ch11f2}ß
+  except:
+      ß\tikzmark{ch11f3} ß
+       ß$\ldots$ß
+      ß\tikzmark{ch11f4}ß
+  finally:
+      ß\tikzmark{ch11f5} ß
+       ß$\ldots$ß
+      ß\tikzmark{ch11f6}ß
+  
+  ß\tikzmark{ch11f7} ß
+   ß$\ldots$ß
+  ß\tikzmark{ch11f8}ß
+  \end{py}
+  \columnbreak
+%
+% ---
+%
+%
+\begin{tikzpicture}[
+  remember picture,
+  overlay,
+  annotation/.style={
+    inner sep=0pt,
+    outer sep=0pt,
+    outer xsep=1mm,
+    fill=yellow!80!black,
+    text width=5cm
+  },
+  >={Stealth[inset=0pt, angle=30:7pt]}
+]
+\node at ([xshift=1.3cm]pic cs:ch11e0) [starburst, draw=red, fill=yellow,
+       starburst point height=0.4cm, font=\scriptsize, line width=1pt, inner sep=1.5pt] {\fEnBf{Bang!}};
+\draw[thin,rounded corners=5,fill=darkgray] ([yshift=1.5ex]pic cs:ch11e1) rectangle ([xshift=2cm]pic cs:ch11e2);
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11e3) rectangle ([xshift=2cm]pic cs:ch11e4);
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11e5) rectangle ([xshift=2cm]pic cs:ch11e6);
+\draw[thin,rounded corners=5,fill=lightgray] ([yshift=1.5ex]pic cs:ch11e7) rectangle ([xshift=2cm]pic cs:ch11e8);
+%\draw[->, thin] ([yshift=1.5cm,xshift=2.2cm]pic cs:ch11e2)  -- ([yshift=0.5ex,xshift=2.2cm] pic cs:ch11e2);
+\end{tikzpicture}
+%
+%
+\begin{py}
+try:
+    ß$\ldots$ß
+    ß\bfseries\fEnEmp{some\_fun()}\tikzmark{ch11e0}ß
+    ß\tikzmark{ch11e1} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11e2}ß
+except:
+    ß\tikzmark{ch11e3} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11e4}ß
+finally:
+    ß\tikzmark{ch11e5} ß
+     ß$\ldots$ß
+    ß\tikzmark{ch11e6}ß
+
+ß\tikzmark{ch11e7} ß
+ ß$\ldots$ß
+ß\tikzmark{ch11e8}ß
+\end{py}
+%
+\end{multicols}
+\noindent \fEn{Exception} မဖြစ်တဲ့ အခါနဲ့ ဖြစ်တဲ့အခါ \fCode{try...except...finally} အလုပ်လုပ်ပုံ နှိုင်းယှဉ်ပြထားတာပါ။ မီးခိုးရောင် အဖျော့ ဘလောက်တွေက လုပ်ဆောင်မဲ့ ဘလောက်တွေပါ။ မီးခိုးရင့်ရောင် ဘလောက်တွေကိုတော့ လုပ်ဆောင်မှာ မဟုတ်ပါဘူး။ စောစောကဖော်ပြခဲ့သလို \fEn{early} \fCode{return} ဖြစ်မယ်ဆိုလည်း \fCode{finally} အပိုင်း လုပ်ဆောင်ပြီးမှပဲ \fCode{return} ဖြစ်မယ်။ \fCode{finally} မဟုတ်တဲ့ အခြား ဘလောက်တွေကတော့  ၎င်းဘလောက် မတိုင်မီ \fEn{early} \fCode{return} ဖြစ်သွားရင်တော့ လုပ်ဆောင်မှာ မဟုတ်ပါဘူး။
+
+
+%
+\begin{py}
+try:
+
+except SomeException as err:
+
+except SomeOtherException as err:
+
+else:
+
+finally:
+\end{py}
+%
+
+\section{Exception Classes and Handling Multiple Exception}
+ပုံမှန်မဟုတ်တဲ့ အခြေအနေလို့ ပြောတဲ့အခါ တစ်မျိုးတည်း မဟုတ်နိုင်ဘူးဆိုတာ သေချာပါတယ်။ ဖိုင်တစ်ခုကို ဖွင့်ဖို့ ကြိုးစားတဲ့အခါ အဲ့ဒီဖိုင်က မရှိတာဖြစ်နိုင်သလို၊ ဖိုင်ကရှိပေမဲ့ ခွင့်ပြုချက် \fEn{(permission)} မပေးထားလို့ ဖွင့်မရတာလည်း ဖြစ်နိုင်တယ်။ ဒီလို အကြောင်း အမျိုးမျိုးကြောင့် ဖြစ်ပေါ်နိုင်တဲ့ \fEn{exception} အမျိုးမျိုးကို ဖော်ပြဖို့အတွက် \fEn{Python} မှာ \fEn{built-in} \fEn{exception} ကလပ်စ်တွေရှိပါတယ်။ 
+
+ဒီ \fEn{exception} ကလပ်စ်အားလုံးဟာ \fCode{BaseException} ရဲ့ \fEn{subclass} တွေပါ။  \fEn{Built-in} \fEn{exception} တွေ အပြင် လိုအပ်ရင် ကိုယ်တိုင် သတ်မှတ်ချင်လည်း ရတယ်။ ကိုယ်တိုင် သတ်မှတ်တာဆိုတော့ \fEn{user-defined exception} ပေါ့။ ကိုယ်ပိုင် သတ်မှတ်မယ်ဆိုရင် \fCode{BaseException} ကနေ  တိုက်ရိုက် \fEn{inherit} မလုပ်ရဘူး။ \fCode{Exception} ကလပ်စ်ကို \fEn{inherit} လုပ်ရမှာပါ။ 
+
+%
+\begin{py}
+class InvalidAgeException(Exception):
+    """Raised when age is not valid"""
+    pass
+\end{py}
+\begin{py}
+class BalanceNotEnoughException(Exception):
+    """Raised when account balance is not enough"""
+    pass
+\end{py}
+%
+
+\subsection*{Handling Multiple Exception}
+ဖြစ်ပေါ်တဲ့ \fEn{exception} ပေါ်မူတည်ပြီး သင့်တော်တဲ့ နည်းလမ်းနဲ့ \fEn{handle} လုပ်ရလေ့ ရှိတယ်။ အောက်ပါ \fCode{fun\_c} က \fCode{FileNotFoundError} (သို့) \fCode{PermissionError} တက်နိုင်ပါတယ်။
+%
+\begin{py}
+def fun_c():
+    print('Starting fun_c...')
+    if random.uniform(0.0, 1.0) <= 0.25:
+        raise FileNotFoundError("File not found!")
+    if random.uniform(0.0, 1.0) > 0.75:
+        raise PermissionError("No permission!")
+    print('fun_c ends!')
+\end{py}
+%
+\fCode{try} ထဲမှာ ခေါ်ထားတဲ့ ဖန်ရှင်တွေက 
+
+%
+\begin{py}
+def fun_b():
+    try:
+        fun_c()
+    except FileNotFoundError as e:
+        print("Handle FileNotFoundError")
+    except PermissionError as e:
+        print("Handle PermissionError")
+\end{py}
+%
+%
+\begin{py}
+def fun_b1():
+    try:
+        fun_c()
+    except (FileNotFoundError, PermissionError) as e:
+        print("Handle both FileNotFoundError and PermissionError")
+\end{py}
+%
+
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}[>={Stealth[inset=0pt, angle=30:7pt]}]
+  
+\node at (6,9)   [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm] {\fEn{BaseException}};
+\node at (1,7)  {$\ldots$};
+\node at (3,7)   [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=2cm, text width=2cm, align=center] {\fEn{\hspace{0pt}SystemExit}};
+\node at (6,7) [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=2cm, text width=2cm, align=center] {\fEn{\hspace{0pt}Exception}};
+\node at (9,7)   [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=2cm, text width=2cm, align=center] {\fEn{\hspace{0pt}Generator\\ Exit}};
+\node at (11,7)  {$\ldots$};
+
+
+\node at (1,5)  {$\ldots$};
+\node at (9, 5) [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm,  text width=2cm,align=center] {\fEn{\hspace{0pt}Arithmetic\\ Error}};
+\node at (6, 5) [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm,  text width=1.3cm,align=center] {\fEn{\hspace{0pt}OS\\ Error}};
+\node at (3, 5) [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm,  text width=2cm,align=center] {\fEn{\hspace{0pt}Attrubute\\ Error}};
+\node at (11,5)  {$\ldots$};
+
+\node at (1,3)  {$\ldots$};
+\node at (9, 3) [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm,  text width=2cm,align=center] {\fEn{\hspace{0pt}Interrupted\\ Error}};
+\node at (6, 3) [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm,  text width=2.5cm,align=center] {\fEn{\hspace{0pt}FileNotFound\\ Error}};
+\node at (3, 3) [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm,  text width=2cm,align=center] {\fEn{\hspace{0pt}Permission\\ Error}};
+\node at (11,3)  {$\ldots$};
+
+
+\end{tikzpicture}
+\caption{Exception Hierarchy} 
+\label{fig:exceptionhier}
+\end{figure} 
+
+
+\begin{tikzpicture}[
+    every node/.style = {rectangle, draw, align=center},
+    level 1/.style = {sibling distance=60mm},
+    level 2/.style = {sibling distance=30mm},
+    edge from parent/.style = {draw, -{Latex}}
+  ]
+  
+  \node {Superclass}
+    child {node {Subclass 1}}
+    child {node {Subclass 2}
+      child {node {Subclass 2.1}}
+      child {node {Subclass 2.2}}
+    };
+  
+  \end{tikzpicture}
+  
+
+
+
+
+
+
+
