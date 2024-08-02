@@ -5,11 +5,27 @@
     % can recover
     % cannot recover
 
-ဖန်ရှင်တစ်ခုဟာ ကြိုတင်မျှော်မှန်းမရတဲ့ (သို့) ပုံမှန်မဟုတ်တဲ့ အခြေအနေ တစ်ရပ်ရပ်ကြောင့် သူ့တာဝန် ပြီးမြောက်အောင်မြင်အောင် ဆက်လက်လုပ်ဆောင်ဖို့ မဖြစ်နိုင်တဲ့အခါ \fEn{exception} တစ်ခုကို  \fEn{raise} လုပ်နိုင်ပါတယ်။ (မြန်မာလိုတော့ \fEn{exception} တက်အောင် လုပ်တာလို့ ပြောလေ့ရှိတယ်)။ ဒီလိုဖန်ရှင်တစ်ခုကို ခေါ်တဲ့အခါ အမြဲတမ်း အဆင်ပြေပြေ ချောချောမွေ့မွေ့နဲ့ ပုံမှန်အတိုင်း ပြီးသွားမယ် ပုံသေတွက်လို့မရတော့ဘူး။ ပြဿနာဖြစ်ခဲ့ရင် ဘာဆက်လုပ်မလဲ ထည့်သွင်းစဉ်းစားဖို့ လိုလာတယ်။
-\section{Mechanism}
+တကယ့်လက်တွေ့ အသုံးချ ပရိုဂရမ်တွေမှာ ရာနှုန်းပြည့် အမှားကင်းစင်ဖို့ဆိုတာ မဖြစ်နိုင်ပါဘူး။ ဒီလိုလုပ်ပေးနိုင်တဲ့ နည်းပညာလည်း ခုချိန်ထိ မရှိသေးဘူး။ ဒါကြောင့် ပရိုဂရမ်တွေဟာ \fEn{bug} အနည်းနဲ့အများတော့ ပါကြတာပါပဲ။ ပရိုဂရမ်မာ အမှားကြောင့် ဖြစ်တဲ့ \fEn{bug} တွေ လုံးဝမရှိအောင် တစ်နည်းတစ်လမ်းနဲ့ လုပ်နိုင်တယ် ဆိုအုံးတော့၊ တစ်ဖက်မှာ ပရိုဂရမ်တစ်ခုကို အသုံးပြုနေစဉ်  ကြုံတွေ့ရတဲ့ ချွင်းချက် အခြေအနေတွေက ရှိနေပါသေးတယ်။ အီးမေးလ်ပို့တဲ့အချိန် နက်ဝပ်က ဒေါင်းနေတာ၊ ဖွင့်တဲ့ ဖိုင်က ပျက်နေတာ၊ သုညနဲ့ စားတာ \fEn{(division by zero)}၊ မမ်မိုရီမလုံလောက်တာ စတဲ့ကိစ္စတွေ ပရိုဂရမ် အလုပ်လုပ်နေစဉ် ကြုံတွေ့ရတတ်ပါတယ်။ ဒီလို ပြဿနာတွေက အမြဲတမ်း ဖြစ်နေတာတော့ မဟုတ်ဘူး၊ ရံဖန်ရံခါပဲ ဖြစ်တာဆိုပေမဲ့ ရှောင်လွှဲလို့ (သို့) လုံးဝမဖြစ်အောင် ကာကွယ်လို့လည်း မရပြန်ဘူး။ ဒီလို အဖြစ်အပျက်တစ်ခု ဖြစ်လာခဲ့ရင် ပရိုဂရမ်က လိုအပ်သလို စီမံထိန်းကွပ်လို့ရအောင် ရိုးရှင်းတဲ့ နည်းစနစ်တစ်မျိုး ရှိသင့်ပါတယ်။ ပရိုဂရမ်ရဲ့ ပုံမှန်စီးဆင်းမှု (ပြဿနာ မဖြစ်ခဲ့ရင် ပုံမှန်အတိုင်း လုပ်ဆောင်သွားမဲ့ ကုဒ်တွေကို ဆိုလိုတာ) လမ်းကြောင်းကိုလည်း ဒီနည်းစနစ်ကြောင့် အများကြီးပိုပြီး မရှုပ်ထွေးစေသင့်ဘူး။ တစ်နည်းအားဖြင့် ပြဿနာ မဖြစ်ရင် လုပ်ဆောင်မဲ့ အပိုင်းနဲ့ ဖြစ်ခဲ့ရင် လုပ်ဆောင်ရမဲ့ အပိုင်း ရောထွေးမနေသင့်ဘူး။ ခွဲခြားထားရပါမယ်။
+
+ဒီလို လိုအပ်ချက်တွေကို ဖြည့်ဆည်းပေးနိုင်တဲ့ နည်းလမ်းတွေထဲက အသုံးအများဆုံး တစ်ခုကတော့ \fEnEmp{exception-handling} \fEn{mechanism} ပါပဲ။ ခေတ်ပေါ် \fEn{programming language} အားလုံးလိုလိုမှာ  ထောက်ပံပေးထားပါတယ်။ တချို့ \fEn{language} တွေမှာ အခြားနည်းလမ်းတွေ အသုံးပြုတာ တွေ့ရပေမဲ့ လက်တွေ့မှာ အခုပြောတဲ့ \fEn{exception-handling} လောက် မတွင်ကျယ်သေးဘူး။ 
+
+\fEnEmp{Exception-handling} သဘောတရားကို ဒီအခန်းမှာ အသေးစိတ် လေ့လာကြမှာပါ။ အောက်ပါအတိုင်း အပိုင်းတွေခွဲ လေ့လာကြမှာပါ။
+%
+\begin{itemize}
+    \item \fEn{Raising exception}
+    \item \fEn{Handling exception}
+    \item \fEn{Control flow} 
+    \item \fEn{Built-in exception class hierarchy}
+    \item \fEn{User-defined exceptions}
+    \item \fEn{Handling multiple exceptions}
+\end{itemize}
+%
 
 
-အောက်ပါ \fCode{fun\_c} ဟာ အကြိမ်တစ်ရာ ခေါ်ရင် (၅၀) လောက် မအောင်မြင်မဲ့ ဖန်ရှင်တစ်ခုကို \fEn{simulate} လုပ်ထားတာပါ။ လိုင်းပေါ်ကနေ ဒေတာတချို့ ဖတ်ပေးတဲ့ ဖန်ရှင်လို့ ယူဆနိုင်ပါတယ်။  အင်တာနက်လိုင်း မကောင်းတဲ့ ဒေသမှာဆိုတော့ ဒီဖန်ရှင်က မကြာခဏ ပြဿနာပေးတယ်။
+
+
+\section{Raising Exception}
+ဖန်ရှင်တစ်ခုဟာ ပြဿနာတစ်ခုခုကြောင့် သူ့တာဝန် ပြီးမြောက်အောင်မြင်အောင် ဆက်လက်လုပ်ဆောင်ဖို့ မဖြစ်နိုင်တဲ့အခါ \fEn{exception} တစ်ခုကို  \fEn{raise} လုပ်နိုင်ပါတယ်။ (မြန်မာလိုတော့ \fEn{exception} တက်အောင် လုပ်တာလို့ ပြောလေ့ရှိတယ်)။ အောက်ပါ \fCode{fun\_c} ဟာ အကြိမ်တစ်ရာမှာ (၅၀) လောက် \fCode{IOError} \fEn{exception} တက်အောင်  တမင်ရည်ရွယ် လုပ်ထားတယ်။ (ဥပမာပြဖို့ အတွက်ပါ။ လက်တွေ့မှာ ဒီလိုလုပ်ဖို့ အကြောင်းမရှိပါဘူး)။ \fEn{Random number} ထုတ်ပြီး \fEn{simulate} လုပ်ထားတယ်။ အင်တာနက်ကနေ ဒေတာတချို့ ဖတ်ပေးတဲ့ ဖန်ရှင်လို့ ယူဆချင် ယူဆပါ။  လိုင်း မကောင်းတဲ့ ဒေသမှာဆိုတော့ ဒီဖန်ရှင်က မကြာခဏ ပြဿနာပေးတယ်ပေါ့။  
 
 %
 \begin{py}
@@ -55,12 +71,15 @@ OSError: Failed to read!
 Starting main...
 Starting fun_c...
 \end{codetxt}
-ကျလာမှာပါ။ \fCode{main()} ကနေ \fCode{fun\_c()} ခေါ်ပြီး အဲဒီမှာ \fCode{IOError} ဖြစ်သွားတယ်လို့ ဖော်ပြထားတာ တွေ့ရတယ်။ \fCode{(most recent call last)} လို့လည်း တွေ့ရတယ်။ အောက်ဆုံးမှာ နောက်ဆုံးခေါ်ခဲ့တဲ့ ဖန်ရှင်လို့ ဆိုလိုတာ (နောက်ဆုံး ခေါ်ခဲ့တာ \fCode{fun\_c})။ ဖန်ရှင်တစ်ခုမှာ \fEn{exception} တက်တဲ့အခါ (သို့) ဖန်ရှင်တစ်ခုက \fEn{exception} ကို \fEn{raise} လိုက်တဲ့အခါ ၎င်းဖန်ရှင်ကို ခေါ်တဲ့ ဖန်ရှင်တွေအားလုံး ‘တောက်လျှောက် \fEn{fail} ဖြစ်မယ်’။ အခုဥပမာမှာ \fCode{main} ကနေ \fCode{fun\_c} ကို ခေါ်တယ်။ \fCode{fun\_c} မှာ \fEn{exception} ဖြစ်တော့ \fCode{main} လည်း ပြီးအောင်ဆက် အလုပ်မလုပ်ပေးနိုင်ဘူး။ \fEn{fail} ဖြစ်သွားတယ်။ ဆိုလိုတာက \fCode{fun\_c} မှာဆိုရင် \fEn{exception} ဖြစ်စေတဲ့နေရာ အောက်ပိုင်းက စတိတ်မန့်တွေ၊ \fCode{main} မှာဆိုရင် \fCode{fun\_c} ကိုခေါ်ထားတဲ့နေရာရဲ့ အောက်က စတိတ်မန့်တွေ ဆက်လက်အလုပ်မလုပ်တော့ဘူး (\fCode{main} အတွက် \fCode{fun\_c} ခေါ်တဲ့လိုင်းက \fEn{exception} ဖြစ်စေတဲ့နေရာ)။  အခုကိစ္စမှာ ဖန်ရှင်နှစ်ခုလုံးရဲ့ \fEn{exception} ဖြစ်တဲ့နေရာ အောက်ပိုင်းမှာ \fCode{print} စတိတ်မန့် တစ်ကြောင်းစီပဲ ရှိပါတယ်။ အခြားစတိတ်မန့်တွေ ရှိခဲ့ရင်လည်း အလုပ်လုပ်မှာ မဟုတ်ဘူး။
+ကျလာမှာပါ။ \fCode{main()} ကနေ \fCode{fun\_c()} ခေါ်ပြီး အဲဒီမှာ \fCode{IOError} ဖြစ်သွားတယ်လို့ ဖော်ပြထားတာ တွေ့ရတယ်။ \fCode{(most recent call last)} လို့လည်း တွေ့ရတယ်။ အောက်ဆုံးမှာ နောက်ဆုံးခေါ်ခဲ့တဲ့ ဖန်ရှင်လို့ ဆိုလိုတာ (နောက်ဆုံး ခေါ်ခဲ့တာ \fCode{fun\_c})။ ဖန်ရှင်တစ်ခုမှာ \fEn{exception} တက်တဲ့အခါ (သို့) ဖန်ရှင်တစ်ခုက \fEn{exception} ကို \fEn{raise} လိုက်တဲ့အခါ ၎င်းဖန်ရှင်ကို ခေါ်တဲ့ ဖန်ရှင်တွေအားလုံး ‘တောက်လျှောက် \fEn{fail} ဖြစ်မယ်’။ အခုဥပမာမှာ \fCode{main} ကနေ \fCode{fun\_c} ကို ခေါ်တယ်။ \fCode{fun\_c} မှာ \fEn{exception} ဖြစ်တော့ \fCode{main} လည်း ပြီးအောင်ဆက် အလုပ်မလုပ်ပေးနိုင်ဘူး။ \fEn{fail} ဖြစ်သွားတယ်။
 
-အကယ်၍ \fCode{main} က \fCode{fun\_a} \fCode{fun\_a} က \fCode{fun\_b} ကိုခေါ်၊ \fCode{fun\_b} ကနေမှ \fCode{fun\_c} ကို နောက်ဆုံး ခေါ်ထားရင် \fCode{fun\_c} မှာ \fEn{exception} ဖြစ်တဲ့အခါ \fCode{fun\_b} က စပြီး \fEn{fail} ဖြစ်မယ်။ ပြီးရင် သူ့ကိုခေါ်တဲ့ \fCode{fun\_a} ဆက် \fEn{fail} မယ်။ နောက်ဆုံးမှာ \fCode{fun\_a} ကိုခေါ်ထားတဲ့ \fCode{main} ဖန်ရှင် \fEn{fail} ဖြစ်ပြီး ပရိုဂရမ်တစ်ခုလုံး \fEn{crash} ဖြစ်မှာ ဖြစ်တယ်။ ရှေ့စာပိုဒ်မှာ ပြောခဲ့တဲ့ ‘တောက်လျှောက် \fEn{fail} ဖြစ်မယ်’ ဆိုတာ အခုလို ဖြစ်စဉ်ကို ဆိုလိုတာပါ။
+စောစောက \fOpn{မက်ဆေ့ချ်}တွေကို သေချာဂရုစိုက်ကြည့်ပါ။ \fCode{fun\_c} မှာဆိုရင် \fEn{exception} ဖြစ်စေတဲ့နေရာ အောက်ပိုင်းက စတိတ်မန့်တွေ၊ \fCode{main} မှာဆိုရင် \fCode{fun\_c} ကို ခေါ်ထားတဲ့နေရာရဲ့ အောက်က စတိတ်မန့်တွေ အလုပ်မလုပ်သွားဘူး (\fCode{main} အတွက် \fCode{fun\_c} ခေါ်တဲ့လိုင်းက \fEn{exception} ဖြစ်စေတဲ့နေရာ)။  အခုကိစ္စမှာ ဖန်ရှင်နှစ်ခုလုံးရဲ့ \fEn{exception} ဖြစ်တဲ့နေရာ အောက်ပိုင်းမှာ \fCode{print} စတိတ်မန့် တစ်ကြောင်းစီပဲ ရှိပါတယ်။ အခြားစတိတ်မန့်တွေ ရှိခဲ့ရင်လည်း အလုပ်လုပ်မှာ မဟုတ်ဘူး။
+
+အကယ်၍ \fCode{main} က \fCode{fun\_a} ကိုခေါ်၊ \fCode{fun\_a} က တစ်ဆင့် \fCode{fun\_b} ကိုခေါ်၊ \fCode{fun\_b} ကနေမှ \fCode{fun\_c} ကို နောက်ဆုံး ခေါ်ထားရင် \fCode{fun\_c} မှာ \fEn{exception} ဖြစ်တဲ့အခါ \fCode{fun\_b} က စပြီး \fEn{fail} ဖြစ်မယ်။ ပြီးရင် သူ့ကိုခေါ်တဲ့ \fCode{fun\_a} ဆက် \fEn{fail} မယ်။ နောက်ဆုံးမှာ \fCode{fun\_a} ကိုခေါ်ထားတဲ့ \fCode{main} ဖန်ရှင် \fEn{fail} ဖြစ်ပြီး ပရိုဂရမ်တစ်ခုလုံး ရပ်ဆိုင်းသွားမှာ ဖြစ်တယ်။ ရှေ့စာပိုဒ်မှာ ပြောခဲ့တဲ့ ‘တောက်လျှောက် \fEn{fail} ဖြစ်မယ်’ ဆိုတာ အဲဒီလိုဖြစ်စဉ်ကို ဆိုလိုတာ။
 
 %
 \begin{py}
+# fun_c ß\fEn{exception} \fMM{ဖြစ်ရင် သူ့ကို ခေါ်ထားတဲ့ ဖန်ရှင်အားလုံး} \fEn{fail} \fMM{ဖြစ်ပါမယ်}ß  
 def main():
     print('Starting main...')
     fun_a()
@@ -81,10 +100,14 @@ if __name__ == "__main__":
 \end{py}
 %
 
-ဖန်ရှင်တစ်ခုက အစပြု \fEn{exception} ဖြစ်တဲ့အခါ သူ့ကိုခေါ်တဲ့ ဖန်ရှင်ကောလ် ကွင်းဆက် \fEn{(call chain)} တစ်လျှောက် ပါဝင်တဲ့ဖန်ရှင် တစ်ခုပြီးတစ်ခု \fEn{exception} ဖြစ်စေပြီး နောက်ဆုံးမှာ ပရိုဂရမ်တစ်ခုလုံး အလုပ်ဆက်မလုပ်တော့ဘဲ ရပ်သွားမှာပါ။ \fEn{Exception} ဖြစ်လို့ ပရိုဂရမ်က ရပ်သွားမယ်ဆိုရင် တကယ်ကို အဆင်မပြေဘူး။ \fEn{Exception} ဖြစ်ပေါ်စေနိုင်တဲ့ အခြေအနေတွေက ရာနဲ့ချီ ရှိနိုင်တယ်။ \fEn{Exception} ဖြစ်ခဲ့ရင်  ပရိုဂရမ်တစ်ခုလုံးကို ပြန့်မသွားဘဲ၊ မသက်ရောက်စေဘဲ ထိန်းကွပ်ပေးလို့ရတဲ့ နည်းလမ်းရှိရပါမယ်။ အဲဒါကတော့ \fEnEmp{exception handling} ပါပဲ။ 
+\fEn{Exception raise} လုပ်တာဟာ ဖန်ရှင်တစ်ခုက ၎င်းလုပ်ဆောင်ရမဲ့ တာဝန်ကို ပြဿနာ တစ်ခုခုကြောင့် ပြီးမြောက် အောင်မြင်အောင် မလုပ်ဆောင်နိုင်တော့ဘူးဆိုတာ ဖန်ရှင်ခေါ်တဲ့သူကို အသိပေးတဲ့ နည်းလမ်းတစ်မျိုးလို့ ယူဆနိုင်ပါတယ်။ ဖန်ရှင်တစ်ခုကနေ အစပြု ဖြစ်ပေါ်တဲ့ \fEn{exception} ဟာ အဲဒီဖန်ရှင်ကို ခေါ်ထားတဲ့ ကွင်းဆက် \fEn{(call chain)} တစ်လျှောက် ပါဝင်တဲ့ဖန်ရှင် တစ်ခုပြီးတစ်ခု \fEn{exception} ဖြစ်စေပြီး နောက်ဆုံးမှာ ပရိုဂရမ်တစ်ခုလုံးကို ရပ်တန့်သွားစေမှာပါ။ \fEn{Exception} ဖြစ်ခဲ့ရင်  ပရိုဂရမ်တစ်ခုလုံးကို ပြန့်မသွားဘဲ၊ မသက်ရောက်စေဘဲ ထိန်းကွပ်ပေးလို့ရတဲ့ နည်းလမ်းရှိရပါမယ်။ အဲဒါကတော့ \fEn{exception} ကို \fEnEmp{handle} လုပ်ပေးခြင်းပါပဲ။ 
 
-\subsection*{Exception Handling}
-စောစောက ဥပမာမှာ \fCode{fun\_c} ကိုခေါ်တဲ့အခါ ဖြစ်နိုင်တဲ့ \fEn{exception} ကို \fCode{fun\_b} မှာ အခုလို \fEn{handle} လုပ်နိုင်ပါတယ်။ 
+
+
+ 
+
+\section{Handling Exception}
+စောစောက ဥပမာမှာ \fCode{fun\_c} ကိုခေါ်တဲ့အခါ ဖြစ်နိုင်တဲ့ \fEn{exception} ကို \fCode{fun\_b} က အခုလို \fEn{handle} လုပ်နိုင်ပါတယ်။ 
 
 %
 \begin{py}
@@ -99,14 +122,14 @@ def fun_b():
     print('fun_b ends!')
 \end{py}
 %
-\fEn{Python} မှာ \fCode{try...except} က \fEn{exception handling} အတွက်ပါ။ \fEn{Exception} ဖြစ်နိုင်တဲ့ ဖန်ရှင်ကို ခေါ်တဲ့အခါ \fCode{try} ဘလောက်ထဲမှာ ခေါ်ရပါမယ် (ဖြစ်ခဲ့ရင် \fEn{handle} လုပ်မယ်ဆိုတဲ့ ရည်ရွယ်ချက်ရှိရင်ပေါ့)။ \fCode{except} ဘလောက်က \fEn{exception} ဖြစ်ခဲ့ရင် ဘယ်လို \fEn{handle} လုပ်မဲ့ ကိစ္စအတွက်။
+\fEn{Python} မှာ \fCode{try...except} က \fEn{exception handling} အတွက်ပါ။ \fEn{Exception} ဖြစ်နိုင်တဲ့ ဖန်ရှင်ကို ခေါ်တဲ့အခါ \fCode{try} ဘလောက်ထဲမှာ ခေါ်ရပါမယ် (ဖြစ်ခဲ့ရင် \fEn{handle} လုပ်မယ်ဆိုတဲ့ ရည်ရွယ်ချက်ရှိရင်ပေါ့)။ \fCode{except} ဘလောက်က \fEn{exception} ဖြစ်ခဲ့ရင် \fEn{handle} လုပ်မဲ့ ကိစ္စအတွက်။
 
 %
 \begin{py}
 except IOError as e:
 \end{py}
 %
-\fCode{IOError} က \fEn{handle} လုပ်မဲ့ \fEn{exception} အမျိုးအစားကို သတ်မှတ်တာ။ ဆိုလိုတာက \fCode{IOError} သီးသန့်ကိုပဲ \fEn{handle} လုပ်မယ်။ \fCode{IOError} မဟုတ်တဲ့ အခြား \fEn{exception} တွေကို \fEn{handle} မလုပ်ဘူး။ (ဒါနဲ့ ပါတ်သက်ပြီး နောက်ပိုင်းမှာ ထပ်ရှင်းပြမှာပါ)။ \fCode{e} က ဖြစ်ပေါ်တဲ့ \fCode{IOError} \fEn{exception} အတွက် ဗေရီရေဘဲလ်ပါ။ \fEn{Exception} ဖြစ်ရင် \fCode{fun\_c} က \fCode{raise} လုပ်လိုက်တဲ့ \fCode{IOError} အော့ဘ်ဂျက်ကို ဒီဗေရီရေဘဲလ်မှာ ထည့်ပေးမှာ ဖြစ်တယ်။ (\fEn{Python} မှာ \fCode{IOError}\fEn{,} \fCode{ValueError}\fEn{,} \fCode{NameError} စတဲ့ ကလပ်စ်တွေ ပါရှိပြီး ဖြစ်ပေါ်တဲ့ \fEn{exception} အမျိုးအစားအလိုက် သက်ဆိုင်ရာ အော့ဘ်ဂျက်ကို \fCode{raise} လုပ်ရတာပါ)။
+\fCode{IOError} က \fEn{handle} လုပ်မဲ့ \fEn{exception} အမျိုးအစားကို သတ်မှတ်တာ။ ဆိုလိုတာက \fCode{IOError} သီးသန့်ကိုပဲ \fEn{handle} လုပ်မယ်။ \fCode{IOError} မဟုတ်တဲ့ အခြား \fEn{exception} တွေကို \fEn{handle} မလုပ်ဘူး။ (ဒါနဲ့ ပါတ်သက်ပြီး နောက်ပိုင်းမှာ ထပ်ရှင်းပြမှာပါ)။ \fCode{e} က ဖြစ်ပေါ်တဲ့ \fCode{IOError} \fEn{exception} အတွက် ဗေရီရေဘဲလ်ပါ။ \fEn{Exception} ဖြစ်ရင် \fCode{fun\_c} က \fCode{raise} လုပ်လိုက်တဲ့ \fCode{IOError} အော့ဘ်ဂျက်ကို ဒီဗေရီရေဘဲလ်မှာ ထည့်ပေးမှာ ဖြစ်တယ်။ (\fEn{Python} မှာ \fCode{IOError}\fEn{,} \fCode{ValueError}\fEn{,} \fCode{NameError} စတဲ့ ကလပ်စ်တွေ ပါရှိပြီး ဖြစ်ပေါ်တဲ့ \fEn{exception} အမျိုးအစားအလိုက် သက်ဆိုင်ရာ \fEn{exception} အော့ဘ်ဂျက်ကို \fCode{raise} လုပ်ရတာပါ)။
 
 စောစောက ဥပမာမှာ \fCode{fun\_b} ကို အထက်ပါအတိုင်း  \fEn{exception handling} ထည့်ပြီး စမ်းသပ်ကြည့်တဲ့အခါ \fEn{exception} ဖြစ်တဲ့အခါ အခုလို
 \begin{codetxt}
@@ -122,7 +145,14 @@ main ends!
 \end{codetxt}
 တွေ့ရမှာပါ။ \fCode{fun\_b} မှာ \fEn{exception handling} လုပ်ထားတဲ့အတွက်  \fCode{fun\_c} က \fEn{exception} ဖြစ်ခဲ့ရင် အဲ့ဒီ \fEn{exception} ဟာ \fCode{fun\_a} နဲ့ \fCode{main} ဆီကို ထပ်ဆင့် မကူးစက်သွားတော့ဘူး။ \fEn{Exception handling} ဆိုတာ ပရိုဂရမ် အခြားအစိတ်အပိုင်းတွေကို \fEn{exception} မကူးစက်သွားအောင် ကွာရန်တင်းလုပ် ထိန်းချုပ်တာလို့ ယူဆနိုင်ပါတယ်။ 
 
-နောက်ထပ် သိထားဖို့ အရေးကြီးတာ တစ်ခုက \fEn{exception} ဖြစ်တဲ့အခါ \fCode{try} ဘလောက်ထဲမှာပါတဲ့ အောက်က စတိတ်မန့်တွေကို ကျော်ပြီး \fCode{except} ဘလောက်ထဲ ချက်ချင်း ရောက်သွားမှာပါ။ \fCode{try} ဘလောက်ဟာ ပုံမှန်အတိုင်းဆိုရင် လုပ်ဆောင်မဲ့ လမ်းကြောင်း \fEn{(normal execution flow)} အတွက်ပါ။ \fEn{Exception} ဖြစ်ခဲ့ရင်တော့ ဒီလမ်းကြောင်းအတိုင်း ဆက်အလုပ်လုပ်လို့ မရတော့ဘူး။ ပုံမှန်မဟုတ်တဲ့ အခြေအနေမှာ လုပ်ဆောင်ရမဲ့ \fCode{except} ဘလောက်ကို လွှဲပြောင်း လုပ်ဆောင်ပေးရပါမယ်။ အခု ပြထားတာက ပုံမှန်အတိုင်း သွားမဲ့လမ်းကြောင်းပါ။
+\subsection*{Failure နဲ့ Exception ဘာကွာခြားလဲ}
+အခုရှင်းပြပြီးခဲ့သလောက်မှာ \fEn{fail} ဖြစ်တာနဲ့ \fEn{exception} ဖြစ်တာ၊ ဒီသဘောတရားနှစ်ခု မရောထွေးသင့်ပါဘူး။ ဖန်ရှင်တစ်ခု \fEn{fail} ဖြစ်တယ်ဆိုတာ ပြဿနာတစ်ခုခုကြောင့် သူ့တာဝန်ကို အောင်မြင်အောင် မလုပ်နိုင်၊ အဲဒီ ပြဿနာကိုလည်း ကိုင်တွယ်ထိန်းကွပ်မထားတဲ့ အခြေအနေလို့ အကြမ်းဖျဉ်းယူဆပါ။ ဖန်ရှင်တစ်ခုက ပုံမှန်လမ်းကြောင်းအတိုင်း ပြီးမြောက်အောင် လုပ်ဆောင်သွားရင်၊ သို့မဟုတ် ပြဿနာ တစ်ခုခု ဖြစ်ခဲ့ရင်လည်း ဆက်မပြန့်သွားအောင် ကိုင်တွယ် ထိန်းကွပ်ပေးလိုက်ရင်  \fEn{successful} ဖြစ်တယ်လို့ ယူဆရပါမယ်။ \fEn{Exception} က \fEn{failure} ဖြစ်စေ ‘နိုင်’ တဲ့ အကြောင်းအရင်း။ ဒါပေမဲ့ \fEn{exception} ဖြစ်ရင် \fEn{fail} ဖြစ်မယ် ပုံသေမှတ်လို့မရဘူး။  \fEn{Exception} ကို \fEn{handle} လုပ်လိုက်ရင် \fEn{fail} မဖြစ်တော့ဘူး။
+
+\fCode{fun\_c} \fEn{exception} ဖြစ်တော့ ခေါ်တဲ့ဖန်ရှင်အားလုံး တစ်ခုပြီးတစ်ခု ဆက်တိုက် \fEn{fail} ဖြစ်တယ်လို့ ရှေ့ပိုင်းမှာ ပြောခဲ့တယ်။ ဒါကို ပိုပြီးတိကျအောင် ပြောရမယ်ဆိုရင်  \fCode{fun\_c} \fEn{exception} ဖြစ်တဲ့အခါ သူ့ကိုခေါ်တဲ့ \fCode{fun\_b} ကိုလည်း \fEn{exception} ဖြစ်စေတယ်။ \fCode{fun\_b} က အဲဒီ \fEn{exception} ကို \fEn{handle} လုပ်ထားရင် \fEn{fail} မဖြစ်ဘူး။ မလုပ်ထားရင်တော့ သူကိုယ်တိုင်လည်း \fEn{fail} ဖြစ်ပြီး သူ့ကိုခေါ်တဲ့ \fCode{fun\_a} ကို \fEn{exception} ဆက်ဖြစ်စေပါတယ်။ \fCode{fun\_a} မှာလည်း ဒီသဘောအတိုင်း ဆက်ဖြစ်မှာပါ။ \fEn{Exception} \fEn{handle} လုပ်လိုက်ရင် \fEn{fail} မဖြစ်တော့ဘူး။ မလုပ်ထားရင်တော့ သူ့ကိုခေါ်တဲ့ \fEn{main} ဖန်ရှင်ကို \fEn{exception} ဆက်ဖြစ်စေပါလိမ့်မယ်။ 
+
+% အကယ်၍ \fCode{fun\_b} က အဲ့ဒီ \fEn{exception} ကို \fEn{handle} လုပ်ထားရင် သူကိုယ်တိုင် \fEn{fail} မဖြစ်တော့ဘူး။ ၎င်းကိုခေါ်တဲ့ \fCode{fun\_a} 
+
+နောက်ထပ် သိထားဖို့ အရေးကြီးတာ တစ်ခုက \fEn{exception} ဖြစ်တဲ့အခါ \fCode{try} ဘလောက်ထဲမှာပါတဲ့ အောက်က စတိတ်မန့်တွေကို ကျော်ပြီး \fCode{except} ဘလောက်ထဲ ချက်ချင်း ရောက်သွားမှာပါ။ \fCode{try} ဘလောက်ဟာ ပုံမှန် လုပ်ဆောင်မဲ့ လမ်းကြောင်း \fEn{(normal execution flow)} အတွက်ပါ။ \fEn{Exception} ဖြစ်ခဲ့ရင်တော့ ဒီလမ်းကြောင်းအတိုင်း ဆက်အလုပ်လုပ်လို့ မရတော့ဘူး။ ပုံမှန်မဟုတ်တဲ့ အခြေအနေမှာ လုပ်ဆောင်ရမဲ့ \fCode{except} ဘလောက်ကို လွှဲပြောင်း လုပ်ဆောင်ပေးရပါမယ်။ အခု ပြထားတာက ပုံမှန်အတိုင်း သွားမဲ့လမ်းကြောင်းပါ။
 %
 \begin{tikzpicture}[
   remember picture,
@@ -153,7 +183,7 @@ def fun_b():
     print('fun_b ends!')ß\tikzmark{ch11a3}ß
 \end{py}
 %
-ဒါက \fCode{IOError} ဖြစ်ခဲ့ရင် လုပ်ဆောင်မဲ့ပုံ (\fCode{fun\_c} ခေါ်ထားတဲ့လိုင်းကနေ \fCode{except} ကို ခုန်ပြီးရောက်သွားတာ သတိပြုပါ)။
+အောက်မှာပြထားတာက \fCode{IOError} ဖြစ်ခဲ့ရင် လုပ်ဆောင်မဲ့ပုံ (\fCode{fun\_c} ခေါ်ထားတဲ့လိုင်းကနေ \fCode{except} ကို ခုန်ပြီးရောက်သွားတာ သတိပြုပါ)။
 %
 \begin{tikzpicture}[
     remember picture,
@@ -224,9 +254,9 @@ main ends!
 %
 \fEn{Exception}  ဖြစ်တဲ့အခါ \fCode{"fun\_b ends!"} နဲ့ \fCode{"fun\_b was successful!"} အတွက် \fCode{print} စတိတ်မန့်တွေကို ကျော်သွားတာ သတိပြုကြည့်ပါ။
 
-\subsection*{Illustration of Exception Handling}
 
-\section{Recovery}
+
+\section{ဘယ်နေရာမှာ handle လုပ်သင့်လဲ}
 ဖန်ရှင်တွေ တစ်ခုပြီးတစ်ခုဆင့် ခေါ်ထားတဲ့အခါ \fEn{exception} ဖြစ်ခဲ့ရင် ဘယ်ဖန်ရှင်က \fEn{handle} လုပ်သင့်လဲ စဉ်းစားဆုံးဖြတ်ဖို့ လိုလာတယ်။ ဒီကိစ္စက ဘယ်မှာ \fEn{handle} လုပ်ရမယ် ပုံသေပြောလို့တော့ မရဘူး။ အခြေအနေနဲ့ လိုအပ်ချက်ပေါ် မူတည် ဆုံးဖြတ်ရတာမျိုး။ 
 %
 %
@@ -239,22 +269,24 @@ def read_sensor():
 %
 ဒီဖန်ရှင်က \fEn{sensor device} တစ်ခုဆီကနေ ဒေတာဖတ်တာကို \fEn{simulate} လုပ်ထားတဲ့ ဖန်ရှင်ပါ။ \fEn{Sensor} ကြောင်လို့သော်လည်းကောင်း၊ \fEn{network} ကြောင့်သော်လည်းကောင်း (၂၀) ရာနှုန်း \fEn{fail} ဖြစ်တယ် ဆိုပါတော့။ 
 
-\fEn{Sensor} တန်ဖိုး သုံးခုတစ်တွဲ ဖတ်ပြီး စောင့်ကြည့်လေ့လာရမယ် ဆိုပါစို့။ တန်ဖိုးသုံးခု အတွဲလိုက်ရအောင် ဖတ်ရမှာပါ။ \fEn{Exception} ဖြစ်လို့ သုံးခုမပြည့်သေးရင် ပြည့်တဲ့ထိ ထပ်ကြိုးစားရပါမယ်။  ဖတ်တဲ့အခါ တစ်ခါနဲ့တစ်ခါ စက္ကန့်တစ်ဝက်ခြား ဖတ်ပါတယ်။ တစ်ကယ့် လက်တွေ့မှာလည်း \fEn{sensor} ကနေ ဒေတာဖတ်တဲ့အခါ တရစပ် ဖတ်လေ့မရှိဘူး။ အချိန်အနည်းငယ် ခြားပြီးဖတ်တယ်။
+\fEn{Sensor} တန်ဖိုး သုံးခုတစ်တွဲ ဖတ်ပြီး စောင့်ကြည့်လေ့လာရမယ်လို့ စိတ်ကူးကြည့်ပါ။ တန်ဖိုးသုံးခု အတွဲလိုက်ရအောင် ဖတ်ရမှာပါ။ \fEn{Exception} ဖြစ်လို့ သုံးခုမပြည့်သေးရင် ပြည့်တဲ့ထိ ထပ်ကြိုးစားရပါမယ်။  ဖတ်တဲ့အခါ တစ်ခါနဲ့တစ်ခါ စက္ကန့်တစ်ဝက်ခြား ဖတ်ပါတယ်။ တစ်ကယ့် လက်တွေ့မှာလည်း \fEn{sensor} ကနေ ဒေတာဖတ်တဲ့အခါ တရစပ် ဖတ်လေ့မရှိဘူး။ အချိန်အနည်းငယ် ခြားပြီးဖတ်တယ်။
 %
 \begin{py}
 def read_3vals():
     vals = []
-    while len(vals) != 3:
+    while True:
         try:
             vals.append(read_sensor())
+            if len(vals) == 3:
+                return vals
         except IOError as err:
             pass
         time.sleep(0.5)
-    return vals
 \end{py}
 %
+အခုကိစ္စအတွက် \fCode{read\_3vals} ဖန်ရှင်မှာ \fEn{handle} လုပ်ပေးရပါမယ်။ မလုပ်ဘဲထားရင် \fEn{fail} ဖြစ်ပြီး တန်ဖိုးသုံးခု ပြည့်အောင်ဖတ်လို့ မရနိုင်ဘူး။
 
-အခုတစ်ခါ \fEn{sensor} တန်ဖိုး သုံးခုဆက်တိုက် ပြဿနာတစ်စုံတစ်ရာ မရှိဘဲ ဖတ်နိုင်တဲ့ အကြိမ်အရေအတွက်ကို စောင့်ကြည့်လေ့လာဖို့လည်း လိုအပ်လာတယ် ဆိုပါစို့။ 
+အခုတစ်ခါ ကြားထဲမှာ ပြဿနာတစ်စုံတစ်ရာ မရှိဘဲ ဆက်တိုက် ဖတ်လို့ရတဲ့ တန်ဖိုးသုံးခု လိုချင်တယ် ယူဆပါ။ ဒီကိစ္စအတွက် \fEn{exception handle} မလုပ်ဘဲ ဖန်ရှင်တစ်ခု အခုလို ရေးနိုင်တယ်။ 
 
 %
 \begin{py}
@@ -266,13 +298,9 @@ def read_3_times():
     return vals
 \end{py}
 %
-ဒီဖန်ရှင်က ပုံမှန်ဆိုရင်တော့  \fEn{sensor} ကို သုံးကြိမ်ဖတ်မှာပါ။ ဒါပေမဲ့ \fCode{read\_sensor} မှာ \fCode{IOError} \fEn{exception} ဖြစ်ခဲ့ရင် \fEn{handle} မလုပ်ထားတဲ့အတွက်  အခု \fCode{read\_3\_times} လည်း ဆက် \fEn{fail} ဖြစ်မယ်။ ကံကောင်းလို့ သုံးခါလုံး အဆင်ပြေခဲ့ရင်တော့ ဖတ်ထားတဲ့ တန်ဖိုးသုံးခုပါတဲ့ \fCode{vals} ကို ပြန်ပေးမှာပါ။  စောစောကဖန်ရှင်နဲ့ အဓိက ကွာခြားချက်ကို သတိပြုပါ။ \fCode{read\_3vals} တန်ဖိုး သုံးခုပြည့်တဲ့ထိ ဖတ်ပေးရမှာပါ။ ဒါကြောင့် \fEn{exception handle} လုပ်ဖို့ လိုကို လိုတယ်။ ခုဖန်ရှင်က တန်ဖိုးသုံးခုကို ကြားထဲမှာ \fEn{fail} မဖြစ်ဘဲ ဆက်တိုက်  ဖတ်လို့ရပဲ ပြန်ပေးရမယ်။ ဒါကြောင့် {handle} လုပ်ဖို့ မလိုအပ်ဘူး။
+ဒီဖန်ရှင်က ပုံမှန်ဆိုရင်တော့  \fEn{sensor} ကို သုံးကြိမ်ဖတ်မှာပါ။ ဒါပေမဲ့ \fCode{read\_sensor} မှာ \fCode{IOError} \fEn{exception} ဖြစ်ခဲ့ရင် \fEn{handle} မလုပ်ထားတဲ့အတွက်  အခု \fCode{read\_3\_times} လည်း ဆက် \fEn{fail} ဖြစ်မယ်။ ကံကောင်းလို့ သုံးခါလုံး အဆင်ပြေခဲ့ရင်တော့ ဖတ်ထားတဲ့ တန်ဖိုးသုံးခုပါတဲ့ \fCode{vals} ကို ပြန်ပေးမှာပါ။  စောစောကဖန်ရှင်နဲ့ အဓိက ကွာခြားချက်ကို သတိပြုပါ။ \fCode{read\_3vals} က တန်ဖိုး သုံးခုပြည့်တဲ့ထိ ဖတ်ပေးရမှာပါ။ ဒါကြောင့် \fEn{exception handle} လုပ်ဖို့ လိုကို လိုတယ်။ ခုဖန်ရှင်က တန်ဖိုးသုံးခုကို ကြားထဲမှာ \fEn{fail} မဖြစ်ဘဲ ဆက်တိုက်  ဖတ်လို့ရမှပဲ ပြန်ပေးရမယ်။ ဒါကြောင့် \fEn{handle} မလုပ်ဘဲ ထားလို့ရတယ်။ \fCode{read\_3\_times} ကို ခေါ်တဲ့သူက \fEn{handle} လုပ်/မလုပ် ဆက်လက်ဆုံးဖြတ်နိုင်ပါတယ်။
 
-\fCode{read\_3\_times} ဟာ ဖြစ်ပေါ်နိုင်တဲ့ \fEn{exception} ကို \fEn{handle} မလုပ်တဲ့ ဖန်ရှင်တစ်ခုရဲ့ သာဓကဖြစ်တယ်။ သူ့အနေနဲ့ တန်ဖိုးသုံးခု ဆက်တိုက် ဖတ်လို့ရင် ပြန်ပေးတယ်။ အကယ်၍ မရခဲ့ရင်တော့  ၎င်းကိုယ်တိုင် \fEn{fail} ဖြစ်သွားမှာပါ။ ဒီတော့ ဖန်ရှင်ကောလ် ကွင်းဆက်တစ်လျှောက်မှာ ဘယ်နေရာမှာ \fEn{exception} ကို \fEn{handle} လုပ်မလဲ။ တစ်နေရာရာမှာ လုပ်တာတော့ လုပ်ရပါမယ်။ မလုပ်ရင် ပရိုဂရမ်တစ်ခုလုံး \fEn{fail} ဖြစ်သွားမှာ။
-
-\fCode{read\_3\_times} ကို ခေါ်တဲ့ ဖန်ရှင်က \fCode{read\_3\_times} \fEn{exception} ဖြစ်ရင် \fEn{handle} လုပ်နိုင်ပါတယ်။ ဒါမှမဟုတ် လိုအပ်ချက်အရ မလုပ်ဘဲ သူကိုယ်တိုင် \fEn{fail} အဖြစ်ခံတာလည်း ဖြစ်နိုင်တယ်။ \fEn{handle} မလုပ်ဘူး (\fEn{fail} ဆက်ဖြစ်မယ်) ဆိုရင်တော့ သူ့ကို ခေါ်ထားတဲ့ ဖန်ရှင်က \fEn{handle/fail} ဆက်လက် ဆုံးဖြတ်ရပါမယ်။ ဒီသဘောအတိုင်း တစ်ဆင့်ပြီးတစ်ဆင့် \fEn{handle} မလုပ်ဘဲ ဆက်သွားရင် နောက်ဆုံးမှာ \fEn{entry point} ဖြစ်တဲ့ \fCode{main} ဆီကို ရောက်သွားမှာပါ။ \fEn{main} ကလည်း \fEn{handle} မလုပ်ရင် \fCode{read\_sensor} က အစပြုခဲ့တဲ့ \fCode{IOError} \fEn{exception} ဟာ  ပရိုဂရမ်တစ်ခုလုံးကို ရပ်ဆိုင်းသွားစေမှာပါ။ (တကယ့်လက်တွေ့မှာတော့ ဒီလို အဖြစ်ခံလေ့ မရှိပါဘူး။ \fEn{Global exception handler} လို့ခေါ်တဲ့ ဘယ်ဖန်ရှင်ကမှ \fEn{handle} မလုပ်လို့ အပြင်ကို ပြန့်ထွက်လာတဲ့ \fEn{exception} တွေကို \fEn{handle} လုပ်တဲ့ အဆင့်တစ်ဆင့် ထည့်ထားလေ့ရှိတယ်)။
-
-\fCode{read\_3\_times} က (၁၀) ကြိမ်မှာ ဘယ်နှစ်ကြိမ် \fEn{fail} ဖြစ်လဲ ဆန်းစစ်ပေးမဲ့ ဖန်ရှင်ကို အခုလို သတ်မှတ်နိုင်ပါတယ်။ 
+ခုဏက ဖန်ရှင် အသုံးတည့်လာမဲ့ အခြေအနေတစ်ခု စဉ်းစားကြည့်ရအောင်။ သုံးခုတစ်တွဲ (၁၀) ခါဖတ်ရင် ဘယ်နှစ်ခါ \fEn{fail} ဖြစ်လဲ ဆန်းစစ်ကြည့်ချင်တယ် စိတ်ကူးကြည့်ပါ။ \fCode{read\_3\_times} ကို အခြေခံပြီး  \fCode{failure\_rate} ဖန်ရှင်ကို အခုလို သတ်မှတ်နိုင်ပါတယ်။ 
 %
 \begin{py}
 def failure_rate():
@@ -286,6 +314,13 @@ def failure_rate():
     return Fraction(fail, 10)
 \end{py}
 %
+\fCode{read\_3\_times} က ဖြစ်ပေါ်တဲ့ \fEn{exception} ကို ဘယ်နှစ်ကြိမ် \fEn{fail} ဖြစ်လဲ ရေတွက်ဖို့ အသုံးချထားတာကို တွေ့ရပါတယ်။
+
+%\fCode{read\_3\_times} ဟာ ဖြစ်ပေါ်နိုင်တဲ့ \fEn{exception} ကို \fEn{handle} မလုပ်တဲ့ ဖန်ရှင်တစ်ခုရဲ့ သာဓကဖြစ်တယ်။ သူ့အနေနဲ့ တန်ဖိုးသုံးခု ဆက်တိုက် ဖတ်လို့ရင် ပြန်ပေးတယ်။ အကယ်၍ မရခဲ့ရင်တော့  ၎င်းကိုယ်တိုင် \fEn{fail} ဖြစ်သွားမှာပါ။ ဒီတော့ ဖန်ရှင်ကောလ် ကွင်းဆက်တစ်လျှောက်မှာ ဘယ်နေရာမှာ \fEn{exception} ကို \fEn{handle} လုပ်မလဲ။ တစ်နေရာရာမှာ လုပ်တာတော့ လုပ်ရပါမယ်။ မလုပ်ရင် ပရိုဂရမ်တစ်ခုလုံး \fEn{fail} ဖြစ်သွားမှာ။
+
+%\fCode{read\_3\_times} ကို ခေါ်တဲ့ ဖန်ရှင်က \fCode{read\_3\_times} \fEn{exception} ဖြစ်ရင် \fEn{handle} လုပ်နိုင်ပါတယ်။ ဒါမှမဟုတ် လိုအပ်ချက်အရ မလုပ်ဘဲ သူကိုယ်တိုင် \fEn{fail} အဖြစ်ခံတာလည်း ဖြစ်နိုင်တယ်။ \fEn{handle} မလုပ်ဘူး (\fEn{fail} ဆက်ဖြစ်မယ်) ဆိုရင်တော့ သူ့ကို ခေါ်ထားတဲ့ ဖန်ရှင်က \fEn{handle/fail} ဆက်လက် ဆုံးဖြတ်ရပါမယ်။ ဒီသဘောအတိုင်း တစ်ဆင့်ပြီးတစ်ဆင့် \fEn{handle} မလုပ်ဘဲ ဆက်သွားရင် နောက်ဆုံးမှာ \fEn{entry point} ဖြစ်တဲ့ \fCode{main} ဆီကို ရောက်သွားမှာပါ။ \fEn{main} ကလည်း \fEn{handle} မလုပ်ရင် \fCode{read\_sensor} က အစပြုခဲ့တဲ့ \fCode{IOError} \fEn{exception} ဟာ  ပရိုဂရမ်တစ်ခုလုံးကို ရပ်ဆိုင်းသွားစေမှာပါ။ (တကယ့်လက်တွေ့မှာတော့ ဒီလို အဖြစ်ခံလေ့ မရှိပါဘူး။ \fEn{Global exception handler} လို့ခေါ်တဲ့ ဘယ်ဖန်ရှင်ကမှ \fEn{handle} မလုပ်လို့ အပြင်ကို ပြန့်ထွက်လာတဲ့ \fEn{exception} တွေကို \fEn{handle} လုပ်တဲ့ အဆင့်တစ်ဆင့် ထည့်ထားလေ့ရှိတယ်)။
+
+
 
 အခု လေ့လာတွေ့ရှိချက်တွေကို အနှစ်ချုပ်ပြန်ကြည့်ရင် ဖန်ရှင်တစ်ခု \fEn{exception} ဖြစ်တဲ့အခါ ၎င်းဖန်ရှင်ကို ခေါ်ထားတဲ့ ကွင်းဆက်တစ်လျှောက်လုံးက ဖန်ရှင်တွေ \fEn{fail} ဖြစ်နိုင်ပါတယ်။ \fEn{Fail} မဖြစ်အောင် ဖန်ရှင်တစ်ခုက \fEn{exception} ကို \fEn{handle} လုပ်ရပါမယ်။ ဘယ်ဖန်ရှင်က \fEn{handle} လုပ်ရမလဲကတော့ ပုံသေမရှိဘူး။ လိုအပ်ချက်ပေါ် မူတည်ပြီး ဆုံးဖြတ်ရလေ့ရှိတယ်။
 
@@ -300,6 +335,11 @@ def failure_rate():
 % m -> a -> b -> c and b try to return a special value if exception 
 % m -> a -> b -> c and only the main handle exception and display appropriate message
 % to the user 
+
+
+
+\section{Exception Handling  နှင့် Control Flow}
+\fEn{Exception handling} ကို ပရိုဂရမ်တစ်ခု ပုံမှန်စီးဆင်းရာ လမ်းကြောင်းနဲ့ ပုံမှန်အခြေအနေ မဟုတ်တဲ့အခါ စီးဆင်းရာလမ်းကြောင်း ခွဲခြားသတ်မှတ်ပေးတဲ့ နည်းစနစ်အဖြစ် ရှုမြင်နိုင်ပါတယ်။ \fEn{Exception} ဖြစ်တဲ့အခါ စီးဆင်းပုံကို အကြမ်းဖျဉ်းအားဖြင့် ပုံ (\fRefNo{\ref{fig:exphandling}}) မှာတွေ့ရသလို မြင်ကြည့်နိုင်ပါတယ်။
 
 %
 %
@@ -347,11 +387,18 @@ def failure_rate():
 \draw[->,thin] (3.4,3.5) .. controls (2.5,3.5) and (1.5, 4.5) .. (1.25,5.5);
 \end{tikzpicture}
 \caption{Exception Handling} 
-\label{fig:Exception Handling}
+\label{fig:exphandling}
 \end{figure}
+%
+%
 
+\fEnEmp{fun\_a}\fEn{,} \fEnEmp{fun\_b}\fEn{,} \fEnEmp{fun\_c}\fEn{,} \fEnEmp{fun\_d} တစ်ခုပြီးတစ်ခု ဆင့်ပြီး ခေါ်ထားတယ်။ မီးခိုးဖျော့ ထောင့်စွန်းဝိုင်း ထောင့်မှန်စတုဂံတွေက ဖန်ရှင်တစ်ခုစီကို ကိုယ်စားပြုတယ်။ အထဲမှာ ဖန်ရှင်ခေါ်ထားတာ တွေ့ရမယ်။ \fEn{Handle} လုပ်တာက \fEnEmp{fun\_b} မှာ (မီးခိုးရင့် ထောင့်မှန်စတုဂံအသေးလေးက \fEn{handle} လုပ်တဲ့ အပိုင်းလို့ ယူဆပါ)။
 
-\section{\fSecCodeBf{else} နှင့် \fSecCodeBf{finally}}
+\fEnEmp{fun\_d} မှာ \fEn{exception} ဖြစ်တယ်။ \fEnEmp{fun\_c} လည်း \fEn{exception} ဆက်ဖြစ်ပြီး \fEn{fail} ဖြစ်မယ်။ သူ့ကို ခေါ်တဲ့ \fEnEmp{fun\_b} ကိုလည်း \fEn{exception} ဆက်ဖြစ်စေတယ်။ \fEnEmp{fun\_b} \fEn{handle} လုပ်လိုက်တဲ့ အတွက် \fEn{fail} မဖြစ်ဘူး။ \fEn{handle} လုပ်ပြီးသွားတော့  ၎င်းကို ခေါ်ခဲ့တဲ့ \fEnEmp{fun\_a} ထဲကို ပြန်ရောက်သွားပြီး \fEnEmp{fun\_a} ဆက်အလုပ်လုပ်မှာပါ။ 
+
+ပုံအရ \fEn{exception} ဖြစ်တဲ့အခါ မူလစဖြစ်တဲ့နေရာကနေ \fEn{handle} လုပ်ထားတဲ့ အနီးဆုံး နေရာကို ခုန်ပြီးရောက်သွားတာကို တွေ့ရမှာပါ။ ဒီလို ခုန်သွားနိုင်တာဟာ \fEn{exception handling} မှာ အဓိကကျတဲ့ လုပ်ဆောင်ချက်ဖြစ်တယ်။ 
+
+\subsection*{\fSecCodeBf{else} နှင့် \fSecCodeBf{finally}}
 \fCode{try...except} အောက်မှာ \fCode{else} ဘလောက် နဲ့ \fCode{finally}  ဘလောက် ရှိနိုင်ပါတယ်။ \fEn{Exception} မဖြစ်တဲ့အခါမှပဲ လုပ်ဆောင်ချင်တဲ့ စတိတ်မန့်တွေကို \fCode{else} ဘလောက်ထဲမှာ ထည့်နိုင်ပါတယ်။ တစ်နည်း\allowbreak အားဖြင့် \fCode{try} ဘလောက် ပြဿနာမရှိဘဲ အောင်မြင်ပြီးစီးမှသာလျှင် \fCode{else} ဘလောက်ကို လုပ်ဆောင်မှာပါ။ \fEn{Exception} ဖြစ်ခဲ့ရင်တော့ လုပ်ဆောင်ပေးမှာ မဟုတ်ပါဘူး။
 %
 %
@@ -411,6 +458,8 @@ def process_sensor_data():
 \end{py}
 %
 အခုပုံစံမှာက \fCode{try} ထဲက ဖန်ရှင်တွေထဲက ဘယ်ဟာက \fEn{exception} ဖြစ်စေတဲ့ အရင်းအမြစ်လဲ အလွယ်\allowbreak တကူ မသိနိုင်တော့ဘူး။ စောစောက \fCode{else} နဲ့ ပုံစံမှာက \fCode{read\_sensor} က \fEn{exception} ဖြစ်နိုင်တဲ့ ဖန်ရှင်ဖြစ်ရမယ်၊ အဲဒီ \fEn{exception} ကို \fEn{handle} လုပ်ထားတယ်ဆိုတာ သိသာ မြင်သာပါတယ်။%
+
+
 %
 \vspace{-1\baselineskip}
 \begin{multicols}{2}%
@@ -573,8 +622,9 @@ def test_read():
 
 
 \begin{mytcbox}
-ဒေတာဘေ့စ်နဲ့ ဆက်သွယ် ဆောင်ရွက်ခြင်း၊ ဖိုင်ဖတ်ခြင်း/ရေးခြင်း၊ နက်ဝပ်ချိတ်ဆက်ခြင်း စတဲ့ကိစ္စတွေ လုပ်ဆောင်တဲ့အခါ အသုံးပြုထားတဲ့ ဖိုင်၊ ကွန်နက်ရှင် စတဲ့ \fEn{resource} တွေကို \fEn{release} လုပ်ပေးဖို့ အရေးကြီးပါတယ်။ ဒီလို မလုပ်ရင် ကွန်ပျူတာ စနစ်ရဲ့ \fEn{CPU cycles, memory} အစရှိတဲ့ \fEn{resource} တွေ အလဟဿ ပြုန်းတီးစေတဲ့အတွက် ပြဿနာရှိပါတယ်။
+ဒေတာဘေ့စ် ချိတ်ဆက်ခြင်း၊ ဖိုင်ဖတ်ခြင်း/ရေးခြင်း၊ နက်ဝပ်ချိတ်ဆက်ခြင်း စတဲ့ကိစ္စတွေ လုပ်ဆောင်တဲ့အခါ အသုံးပြုထားတဲ့ ဖိုင်၊ ကွန်နက်ရှင် စတဲ့ \fEn{resource} တွေကို \fEn{release} လုပ်ပေးဖို့ အရေးကြီးပါတယ်။ ဒီလို မလုပ်ရင် ကွန်ပျူတာ စနစ်ရဲ့ \fEn{CPU cycles, memory} အစရှိတဲ့ \fEn{resource} တွေ အလဟဿ ပြုန်းတီးစေတဲ့အတွက် ပြဿနာရှိပါတယ်။ အလုပ်ပြီးတဲ့အခါ လက်စသတ်တာ \fEn{(clean up code)}၊ \fEn{resource release} လုပ်တာ စတဲ့ကိစ္စတွေအတွက် \fCode{finally} ကို သုံးလေ့ရှိတယ်။
 \end{mytcbox}
+
 \vspace{-1\baselineskip}
 %
 \begin{multicols}{2}
@@ -671,25 +721,13 @@ finally:
 \noindent \fEn{Exception} မဖြစ်တဲ့ အခါနဲ့ ဖြစ်တဲ့အခါ \fCode{try...except...finally} အလုပ်လုပ်ပုံ နှိုင်းယှဉ်ပြထားတာပါ။ မီးခိုးရောင် အဖျော့ ဘလောက်တွေက လုပ်ဆောင်မဲ့ ဘလောက်တွေပါ။ မီးခိုးရင့်ရောင် ဘလောက်တွေကိုတော့ လုပ်ဆောင်မှာ မဟုတ်ပါဘူး။ စောစောကဖော်ပြခဲ့သလို \fEn{early} \fCode{return} ဖြစ်မယ်ဆိုလည်း \fCode{finally} အပိုင်း လုပ်ဆောင်ပြီးမှပဲ \fCode{return} ဖြစ်မယ်။ \fCode{finally} မဟုတ်တဲ့ အခြား ဘလောက်တွေကတော့  ၎င်းဘလောက် မတိုင်မီ \fEn{early} \fCode{return} ဖြစ်သွားရင်တော့ လုပ်ဆောင်မှာ မဟုတ်ပါဘူး။
 
 
-%
-\begin{py}
-try:
 
-except SomeException as err:
 
-except SomeOtherException as err:
+\section{Built-in and User-defined Exceptions}
+\fEn{Exception} ဆိုတာ ပရိုဂရမ်တစ်ခု ဖြစ်ရိုးဖြစ်စဉ် စီးဆင်းရာ လမ်းကြောင်းကို အနှောက်အယှက် အဟန့်\allowbreak အတား ဖြစ်စေတဲ့ ‘ပုံမှန်မဟုတ်တဲ့ အဖြစ်အပျက်’ လို့ အကြမ်းဖျဉ်း ပြောနိုင်ပါတယ်။ ဒီလို အဖြစ်ပျက်မျိုးတွေက တစ်မျိုးတည်း မဟုတ်တာ သေချာပါတယ်။ ဖိုင်တစ်ခု ဖွင့်တဲ့အခါ အဲ့ဒီဖိုင်က မရှိတာဖြစ်နိုင်သလို၊ ဖိုင်ကရှိပေမဲ့ ခွင့်ပြုချက် \fEn{(permission)} မပေးထားလို့ ဖွင့် မရတာလည်း ဖြစ်နိုင်တယ်။ ကွန်ပျူတာ မမ်မိုရီ မလုံလောက်တာ၊ နက်ဝပ်ချိတ်မရတာ၊ ဆာဗာပြဿနာဖြစ်ပြီး ဒေါင်းနေတာ၊ \fEn{array index} ဘောင်ကျော်သွားတာ၊ သုညနဲ့ စားမိတာ \fEn{(division by zero)}၊ ပုံမှန်မဟုတ်တဲ့ \fEn{operating system signal} စတဲ့ ပြဿနာ တစ်ခုမဟုတ် တစ်ခု ပရိုဂရမ်အလုပ်လုပ်နေစဉ် ရံဖန်ရံခါ ကြုံတွေ့ရတတ်ပါတယ်။
+% https://medium.com/@4990/signals-in-operating-systems-7c7b90523b61
 
-else:
-
-finally:
-\end{py}
-%
-
-\section{Exception Classes and Handling Multiple Exception}
-ပုံမှန်မဟုတ်တဲ့ အခြေအနေလို့ ပြောတဲ့အခါ တစ်မျိုးတည်း မဟုတ်နိုင်ဘူးဆိုတာ သေချာပါတယ်။ ဖိုင်တစ်ခုကို ဖွင့်ဖို့ ကြိုးစားတဲ့အခါ အဲ့ဒီဖိုင်က မရှိတာဖြစ်နိုင်သလို၊ ဖိုင်ကရှိပေမဲ့ ခွင့်ပြုချက် \fEn{(permission)} မပေးထားလို့ ဖွင့်မရတာလည်း ဖြစ်နိုင်တယ်။ ဒီလို အကြောင်း အမျိုးမျိုးကြောင့် ဖြစ်ပေါ်နိုင်တဲ့ \fEn{exception} အမျိုးမျိုးကို ဖော်ပြဖို့အတွက် \fEn{Python} မှာ \fEn{built-in} \fEn{exception} ကလပ်စ်တွေရှိပါတယ်။ 
-
-ဒီ \fEn{exception} ကလပ်စ်အားလုံးဟာ \fCode{BaseException} ရဲ့ \fEn{subclass} တွေပါ။  \fEn{Built-in} \fEn{exception} တွေ အပြင် လိုအပ်ရင် ကိုယ်တိုင် သတ်မှတ်ချင်လည်း ရတယ်။ ကိုယ်တိုင် သတ်မှတ်တာဆိုတော့ \fEn{user-defined exception} ပေါ့။ ကိုယ်ပိုင် သတ်မှတ်မယ်ဆိုရင် \fCode{BaseException} ကနေ  တိုက်ရိုက် \fEn{inherit} မလုပ်ရဘူး။ \fCode{Exception} ကလပ်စ်ကို \fEn{inherit} လုပ်ရမှာပါ။ 
-
+ဒီလို အကြောင်း အမျိုးမျိုးကြောင့် ဖြစ်ပေါ်နိုင်တဲ့ \fEn{exception} အမျိုးမျိုးအတွက် \fEn{Python} မှာ သက်ဆိုင်ရာ \fEn{built-in} \fEn{exception} ကလပ်စ် အသီးသီး ပါရှိပါတယ် $\big\llbracket$ပုံ (\fRefNo{\ref{fig:exceptionhier}}) $\big\rrbracket$။ \fEn{Exception} အားလုံးဟာ \fCode{BaseException} ရဲ့ \fEn{subclass} တွေပါ။  \fEn{Built-in} \fEn{exception} တွေ အပြင် လိုအပ်ရင် ကိုယ်တိုင် သတ်မှတ်ချင်လည်း ရတယ်။ \fEn{User-defined exception} တွေက \fCode{BaseException} ကနေ  တိုက်ရိုက် \fEn{inherit} မလုပ်ရဘူး။ \fCode{Exception} ကလပ်စ်ကို \fEn{inherit} လုပ်ရပါမယ်။ ဥပမာ
 %
 \begin{py}
 class InvalidAgeException(Exception):
@@ -703,80 +741,8 @@ class BalanceNotEnoughException(Exception):
 \end{py}
 %
 
-\subsection*{Handling Multiple Exception}
-ဖြစ်ပေါ်တဲ့ \fEn{exception} ပေါ်မူတည်ပြီး သင့်တော်တဲ့ နည်းလမ်းနဲ့ \fEn{handle} လုပ်ရလေ့ ရှိတယ်။ အောက်ပါ \fCode{fun\_c} က \fCode{FileNotFoundError} (သို့) \fCode{PermissionError} တက်နိုင်ပါတယ်။
-%
-\begin{py}
-def fun_c():
-    print('Starting fun_c...')
-    if random.uniform(0.0, 1.0) <= 0.25:
-        raise FileNotFoundError("File not found!")
-    if random.uniform(0.0, 1.0) > 0.75:
-        raise PermissionError("No permission!")
-    print('fun_c ends!')
-\end{py}
-%
-\fCode{try} ထဲမှာ ခေါ်ထားတဲ့ ဖန်ရှင်တွေက 
-
-%
-\begin{py}
-def fun_b():
-    try:
-        fun_c()
-    except FileNotFoundError as e:
-        print("Handle FileNotFoundError")
-    except PermissionError as e:
-        print("Handle PermissionError")
-\end{py}
-%
-%
-\begin{py}
-def fun_b1():
-    try:
-        fun_c()
-    except (FileNotFoundError, PermissionError) as e:
-        print("Handle both FileNotFoundError and PermissionError")
-\end{py}
-%
-
 
 \begin{figure}[tbh!]
-\begin{tikzpicture}[
-    font=\small,
-    level 1/.style = { level distance = 2cm,
-                     sibling distance = 2.8cm },
-    level 2/.style = { level distance = 2cm,
-                     sibling distance = 2.9cm },
-    >={Stealth[inset=0pt, angle=30:7pt]}]
-  
-
-\node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm] {\fEn{BaseException}}
-    [thick, <-]
-    child {node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm, text width=2cm,align=center] {\fEn{\hspace{0pt}SystemExit}}}
-    child {node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, minimum width=1.5cm, text width=2cm,align=center] {\fEn{\hspace{0pt}Exception}}
-        child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=1.8cm,align=center] {\fEn{\hspace{0pt}Lookup\\ Error}}}
-        child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=1.8cm,align=center] {\fEn{\hspace{0pt}Arithmetic\\ Error}}
-            [sibling distance=2.5cm, level distance = 2cm]
-            child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=2.2cm,align=center] {\fEn{\hspace{0pt}ZeroDivision\\ Error}}}
-            child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=1.5cm,align=center] {\fEn{\hspace{0pt}Overflow\\ Error}}}
-            child{node {$\ldots$}}       
-        }
-        child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=1.2cm,align=center] {\fEn{\hspace{0pt}Value\\ Error}}}
-        child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=1.2cm,align=center] {\fEn{\hspace{0pt}OS\\ Error}}
-            [sibling distance=2.8cm,level distance=3cm]
-            child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=2.3cm,align=center] {\fEn{\hspace{0pt}FileNot\\ FoundError}}}
-            child{node [draw, rectangle, thick, rounded corners=3, minimum height = 1cm, text width=2.2cm,align=center] {\fEn{\hspace{0pt}Permission\\ Error}}}
-            child{node {$\ldots$}}
-        }
-        child{node {$\ldots$}}
-    }
-    child {node {$\ldots$}};
-\end{tikzpicture}
-\caption{Exception Hierarchy} 
-\label{fig:exceptionhier}
-\end{figure}
-
-
 % https://tex.stackexchange.com/questions/35526/tikz-tree-sibling-distance
 \tikzset{
   my node style/.style={
@@ -811,8 +777,8 @@ def fun_b1():
     }
   }
 }
-\centering
 
+\begin{center}
 \begin{forest}
   my tree style
   [\fEn{BaseException}
@@ -827,12 +793,12 @@ def fun_b1():
         ]
         [\fEn{EOF}\\ \fEn{Error}]
         [\fEn{Name}\\ \fEn{Error}]
-        [\fEn{OS}\\ \fEn{Error}
+        [\fEn{IO}\\ \fEn{Error}
             [[
             [\fEn{FileNotFound}\\ \fEn{Error}]
             [\fEn{Interrupted}\\ \fEn{Error}]
             [\fEn{Permission}\\ \fEn{Error}]
-            [\fEn{TimeOut}\\ \fEn{Error}]
+            [\fEn{Timeout}\\ \fEn{Error}]
             ]]
         ]
         [\fEn{Lookup}\\ \fEn{Error}
@@ -845,6 +811,179 @@ def fun_b1():
     [\fEn{GeneratorExit}]
   ]
 \end{forest}
+\end{center}
+\caption{Exception Class Hierarchy (အပြည့်အစုံ မဟုတ်ပါ၊ ချန်ခဲ့တာတွေရှိသေးတယ်)} 
+\label{fig:exceptionhier}
+\end{figure}
+
+
+
+
+\section{Handling Multiple Exception}
+ရှေ့ပိုင်း \fEn{exception handling} ဥပမာတွေမှာ \fEn{exception} တစ်မျိုးတည်းကိုပဲ \fEn{handle} လုပ်တာတွေ့ရမှာပါ။ \fCode{except} အပိုင်းမှာ သတ်မှတ်ထားတဲ့ \fEn{exception} ကလပ်စ် အမျိုးအစားကိုပဲ အဲ့ဒီဘလောက်က \fEn{handle} လုပ်ပေးမှာ ဖြစ်တယ်။  
+%
+\begin{py}
+try:
+    ...
+except IOError as e:
+    ...
+\end{py}
+% 
+ဒီတိုင်းဆိုရင် \fCode{IOError} ကိုပဲ \fEn{handle} လုပ်မှာ ဖြစ်ပြီး \fCode{ValueError} (သို့) အခြား \fCode{IOError} \fEn{instance} မဟုတ်တဲ့ \fEn{exception} တွေကို \fEn{handle} မလုပ်ပါဘူး။ \fCode{ValueError} ကိုလည်း \fEn{handle} လုပ်မယ်ဆိုရင် အခုလို \fCode{except} ဘလောက်တစ်ခု ထပ်ဖြည့်နိုင်ပါတယ်။
+%
+\begin{py}
+try:
+    ...
+except IOError as e:
+    # handle IOError here
+except ValueError as e:
+    # handle ValueError here
+\end{py}
+% 
+ဒီနေရာမှာ \fCode{IOError} နဲ့ \fCode{ValueError} တို့ဟာ \fEn{is-a relationship} မရှိတဲ့အတွက် \fCode{except} ဘလောက် နှစ်ခု အထက်အောက် ဖလှယ်လို့ရတယ်။ (\fCode{IOError} နဲ့ \fCode{ValueError} ကြားမှာ \fEn{superclass/subclass} အပြန်အလှန် ဆက်စပ်မှု မရှိတာကို သတိပြုပါ)။
+%
+\begin{py}
+try:
+    ...
+except ValueError as e:
+    # handle ValueError here
+except IOError as e:
+    # handle IOError here
+\end{py}
+% 
+စောစောကနဲ့ အစီအစဉ်က ပြောင်းပြန်ဆိုပေမဲ့ ဖြစ်ပေါ်တဲ့ \fEn{exception} နဲ့ ကိုက်ညီတဲ့ \fCode{except} အပိုင်းက အလုပ်လုပ်မှာပါ။ ဘယ်ဟာ အရင်လာလာ အရေးမကြီးဘူး။ 
+
+
+အောက်ပါ \fCode{fun\_c} က \fCode{FileNotFoundError} (သို့) \fCode{PermissionError} တက်နိုင်ပါတယ်။ ဒီ \fEn{exception} နှစ်ခုလုံးက \fCode{IOError} ရဲ့ \fEn{subclass} ဖြစ်တာကိုလည်း သတိပြုပါ $\big\llbracket$ပုံ (\fRefNo{\ref{fig:exceptionhier}})$\big\rrbracket$။
+%
+\begin{py}
+def fun_c():
+    print('Starting fun_c...')
+    if random.uniform(0.0, 1.0) <= 0.25:
+        raise FileNotFoundError("File not found!")
+    if random.uniform(0.0, 1.0) > 0.75:
+        raise PermissionError("No permission!")
+    print('fun_c ends!')
+\end{py}
+%
+ပုံစံတစ်မျိုးစီနဲ့ သီးခြား \fEn{handle} လုပ်မယ်ဆိုရင် အခုလို 
+%
+\begin{py}
+def fun_b():
+    try:
+        fun_c()
+    except FileNotFoundError as e:
+        print("Handle FileNotFoundError")
+    except PermissionError as e:
+        print("Handle PermissionError")
+\end{py}
+%
+အကယ်၍ \fEn{exception} နှစ်ခုလုံးကို ပုံစံတစ်မျိုးတည်း \fEn{handle} လုပ်မယ်ဆိုရင်တော့ အခုလို
+%
+\begin{py}
+def fun_b1():
+    try:
+        fun_c()
+    except (FileNotFoundError, PermissionError) as e:
+        print("Handle both FileNotFoundError and PermissionError")
+\end{py}
+%
+ရေးရပါမယ်။ ဝိုက်ကွင်းထဲမှာ \fEn{handle} လုပ်မဲ့ \fEn{exception} တွေကို ထည့်ပေးပါတယ်။ နောက်ထပ်နည်း လမ်းတစ်ခုက ဒီ \fEn{exception} နှစ်ခုရဲ့ \fEn{superclass} ဖြစ်တဲ့ \fCode{IOError} ကို \fEn{handle} လုပ်လို့လည်း ရပါတယ်။
+%
+\begin{py}
+def fun_b1():
+    try:
+        fun_c()
+    except IOError as e:
+        print("Handle both FileNotFoundError and PermissionError")
+\end{py}
+%
+ဒီလိုဆိုရင်တော့ \fCode{IOError} အပါအဝင် သူ့ \fEn{subclass} \fEn{exception} အားလုံး \fEn{handle} လုပ်မှာဖြစ်တယ်။ ပုံ (\fRefNo{\ref{fig:exceptionhier}}) \fEn{class hierarchy} အရ \fCode{InterruptedError} နဲ့ \fCode{TimeoutError} တို့ကိုပါ \fEn{handle} လုပ်မှာပါ။ ဖော်ပြခဲ့တဲ့ \fEn{handling} နည်းတွေကို ပေါင်းစပ်ပြီး လိုအပ်သလို အသုံးပြုနိုင်ပါတယ်။ ဆက်စပ်မှု ရှိတဲ့ \fEn{exception} တွေကို တစ်ပေါင်းတည်း \fEn{handle} လုပ်တာ၊ အမျိုးအစား တစ်ခုချင်းအလိုက် သီးခြား \fEn{handle} လုပ်တာ၊ ဒါမှမဟုတ် တချို့ကိုတော့ ရွေးထုတ်ပြီး ကျန်တာတွေကို ယေဘုယျပုံစံတစ်မျိုးနဲ့ \fEn{handle} လုပ်တာ စသည့်ဖြင့် လိုချင်တဲ့အတိုင်း ရအောင် အသေးစိတ် ချိန်ညှိပေးလို့ ရပါတယ်။ စမ်းကြည့်ရုံသက်သက် တမင်ဖန်တီးထားတဲ့ အောက်ပါ ဥပမာကို လေ့လာကြည့်ပါ။
+%
+%
+\begin{py}
+try:
+    fun_d()
+except InterruptedError as e:
+    print(e)
+except TimeoutError as e:
+    print(e)
+except (FileNotFoundError, PermissionError) as e:
+    print(e)
+except IOError as e:
+    print(e)
+except ArithmeticError as e:
+    print(e)
+\end{py}
+%
+\fCode{InterruptedError} နဲ့ \fCode{TimeoutError} ကို သီးခြား \fEn{handle} လုပ်ထားတယ်။ \fCode{FileNotFoundError} နဲ့ \fCode{PermissionError} က ပေါင်းထားတယ်။ ဒီ လေးခု မဟုတ်တဲ့ ကျန်တဲ့ အခြား \fCode{IOError} အားလုံးအတွက် အောက်ဆုံး မတိုင်ခင် \fCode{except} က တာဝန်ယူမယ်။ နောက်ဆုံးမှာ \fCode{ZeroDivisionError}\fEn{,} \fCode{OverflowError} စတဲ့ \fCode{ArithmeticError} အားလုံးကို ခြုံပြီး \fEn{handle} လုပ်တယ်။ \fCode{fun\_d} ကို အောက်မှာ ကြည့်ပါ။ စမ်းကြည့်ချင်တဲ့ \fEn{exception} တက်အောင် သက်ဆိုင်ရာ ဂဏန်းရိုက်ထည့်ရုံပဲ။
+%
+\begin{py}
+def fun_d():
+    val = int(input("Enter an int: "))
+    if val == 1:
+        raise TimeoutError("Timeout")
+    if val == 2:
+        raise InterruptedError("Interrupted")
+    if val == 3:
+        raise FileNotFoundError("File not found")
+    if val == 4:
+        raise PermissionError("Not permitted")
+    if val == 5:
+        raise FileExistsError("File already exists")
+    if val == 6:
+        raise FloatingPointError("Floating point error")
+    if val == 7:
+        x = 10/0         # will cause ZeroDivisionError
+    if val == 8:
+        x = 2.0 ** 5000  # will cause OverflowError
+\end{py}
+
+\subsection*{\fSubSecCodeBf{except} ဘလောက် အစီအစဉ်}
+\fEn{Subclass} တွေထဲက တချို့ကိုပဲ ရွေး \fEn{handle} လုပ်ပြီး ကျန်တာတွေကို  \fEn{superclass instance} အနေနဲ့ ခြုံပြီး \fEn{handle} လုပ်တဲ့အခါ \fCode{except} ဘလောက်တွေ အထက်အောက် စီစဉ်ထားတာကို သတိထားရပါမယ်။ \fEn{Subclass} ကို အရင် \fEn{handle} လုပ်ပြီး \fEn{superclass} ကို \fEn{subclass} အောက်မှာ လုပ်ရပါမယ်။ အခုလို \fEn{handle} နည်းလမ်းမမှန်ပါဘူး။
+%
+\begin{py}
+try:
+    fun_c()
+    fun_c1()
+except IOError as e:
+    print("Handle IOError")
+except (FileNotFoundError) as e:
+    print("Handle FileNotFoundError")
+\end{py}
+%
+\fCode{FileNotFoundError} က \fCode{IOError} ရဲ့ \fEn{subclass} ။ ဒါကြောင့် \fCode{FileNotFoundError} တက်ခဲ့ရင် အပေါ် \fCode{IOError} အတွက် \fCode{except} ဘလောက်က အရင် \fEn{handle} လုပ်ပါလိမ့်မယ်။ သူ့ကို သီးခြား \fEn{handle} လုပ်ဖို့ ရည်ရွယ်တဲ့ အောက်က \fCode{except} ကို ဘယ်တော့မှ လုပ်ဆောင်မှာ မဟုတ်တော့ဘူး။ ဒီလိုမှပဲ လိုချင်တဲ့အတိုင်း အမှန်ဖြစ်မှာပါ။
+%
+\begin{py}
+try:
+    fun_d()
+except (FileNotFoundError) as e:
+    print("Handle FileNotFoundError")
+print("Handle IOError and all its subclasses "
+      "except FileNotFoundError")
+\end{py}
+%
+
+%
+\begin{py}
+try:
+    fun_d()
+except Exception as e:
+    print("Handle all Exception")
+except (FileNotFoundError) as e:
+    print("Handle FileNotFoundError")
+except IOError as e:
+    print("Handle all IOError")
+\end{py}
+%
+ဒါလည်း သိပ်တော့ မဟုတ်သေးဘူး။ \fCode{Exception} က \fCode{IOError} ရဲ့ \fEn{superclass} ဆိုတော့ အောက်ဆုံးမှာ ထားသင့်တယ်။
+
+
+\subsection*{နိဂုံး}
+ဒီအခန်းမှာ \fEn{exception handling} နဲ့ ပါတ်သက်ပြီး အခြေခံအဆင့် သိသင့်သိထိုက်တဲ့ သဘောတရားတွေကို ထည့်\allowbreak သွင်းဖော်ပြပေးထားပါတယ်။ အတွေ့အကြုံ သိပ်မရှိသေးတဲ့ သူတွေအတွက် အပြည့်အဝ နားလည်ဖို့ အခက်အခဲ ရှိနိုင်ပါတယ်။ သဘောတရား နားလည်ရုံနဲ့လည်း မရသေးဘူး။ လက်တွေ့ အခြေအ\allowbreak နေတွေမှာ အသုံးချတတ်ဖို့လည်း အရေးကြီးတယ်။ လုပ်သက်အတွေ့အကြုံ ရင့်လာတာနဲ့အမျှ ပိုပြီးနား\allowbreak လည်လာမှာပါ။ အခြေအနေ၊ အချိန်အခါ၊ လိုအပ်ချက်ပေါ် မူတည်ပြီးတော့လည်း သင့်တော်တဲ့ နည်းလမ်း ရွေးချယ် အသုံးချတတ်လာမှာပါ။ ပြီးစ\allowbreak လွယ် ဖြစ်ကတတ်ဆန်း မလုပ်ဘဲ တတ်နိုင်သမျှ အကောင်းဆုံးဖြစ်အောင် စဉ်ဆက်မပြတ် ဆင်ခြင်စဉ်းစား သုံးသပ်ဖို့၊ ပိုကောင်းသည်ထက် ကောင်းမဲ့ နည်းလမ်းကို အမြဲရှာဖွေနေဖို့တော့ လိုပါလိမ့်မယ်။
+
+\clearpage
+
 
 
 

@@ -555,15 +555,7 @@ for r in range(TRUNK_ROWS):
 \end{py}
 %
 
-%
-\begin{minted}[frame=\mintframe, 
-    framerule=\mintrule,
-    framesep= \mintsep, 
-    xleftmargin=\xlftmargin, 
-    bgcolor=mintbgcolor,
-    rulecolor=mintrulecolor,
-    escapeinside=ßß,
-    ]{text}
+\begin{codetxt}
 ß\fCode{\color{lightgray}{␣␣␣␣␣␣␣}}ß*
 ß\fCode{\color{lightgray}{␣␣␣␣␣␣}}ß***
 ß\fCode{\color{lightgray}{␣␣␣␣␣}}ß*****
@@ -575,7 +567,7 @@ for r in range(TRUNK_ROWS):
 ß\fCode{\color{lightgray}{␣␣␣␣␣␣}}ß***
 ß\fCode{\color{lightgray}{␣␣␣␣␣␣}}ß***
 ß\fCode{\color{lightgray}{␣␣␣␣␣␣}}ß***
-\end{minted}
+\end{codetxt}
 %
 
 အပေါ်ပိုင်း တြိဂံမှာ အတန်း ရှစ်ခု (\fCode{LEAF\_ROWS})၊ ပင်စည်မှာ သုံးခု (\fCode{TRUNK\_ROWS}) သတ်မှတ်ထားတယ်။ ပင်စည် အကျယ် (\fCode{TRUNK\_SZ}) ကိုလည်း \fCode{*} သုံးခု ထားတယ်။ အပေါ်ဆုံးကို \fEn{row} နံပါတ် သုည၊ ဒုတိယကို တစ် စသည်ဖြင့် ယူဆပါမယ်။ \fEn{row} နံပါတ်စဉ်ကို \fCode{r} ဗေရီရေဘဲလ်က ဖော်ပြတယ်။ တြိဂံပုံမှာ  စပေ့စ်အရေအတွက်နဲ့  \fEn{row} နံပါတ်စဉ်ဟာ \fCode{(LEAF\_ROWS - 1 - r)} ဖော်မြူလာနဲ့ ဆက်စပ်နေတယ်။ \fCode{*} အရေအတွက်ကတော့ နှစ်ခုစီတိုးသွားပြီး \fCode{(r * 2 + 1)} ဖြစ်တယ်။ ပင်စည်ပိုင်း စပေ့စ်အရေအတွက်ကတော့ တစ်တန်း ခြောက်ခုပါ \fCode{(LEAF\_ROWS - 2)} ။

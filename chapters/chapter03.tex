@@ -5,24 +5,18 @@
 \section{ဖန်ရှင် သတ်မှတ်ခြင်း}
 ညာဘက် လှည့်ခိုင်းချင်တိုင်း \fCode{turn\_left} သုံးခါရေးနေရတာ ရေရှည်အဆင်မပြေပါဘူး။ \fCode{turn\_right} လို့ပဲ တိုက်ရိုက် ရေးလို့ရရင် ပိုပြီးတော့ အဆင်ပြေမှာပါ။ ဒီလို လိုအပ်ချက်မျိုးကို ဖြည့်ဆည်း ပေးဖို့အတွက်ဟာ ဖန်ရှင်တွေရဲ့ အဓိက ရည်ရွယ်ချက်တွေထဲက တစ်ခုဖြစ်တယ်။ \fCode{turn\_right} ဖန်ရှင်ကို အခုလို သတ်မှတ်နိုင်ပါတယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def turn_right():
     turn_left()
     turn_left()
     turn_left()
-\end{minted}
+\end{py}
 %
 ဒီလို သတ်မှတ်ထားပြီးရင် ညာဘက်လှည့်ချင်တဲ့အခါ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 turn_right()
-\end{minted}
+\end{py}
 %
 လို့ တိုက်ရိုက်ပြောလို့ ရသွားမှာ ဖြစ်ပါတယ်။ \fCode{turn\_left} သုံးခါ ရေးဖို့ မလိုတော့ပါဘူး။
 
@@ -30,46 +24,34 @@ turn_right()
 
 ဖန်ရှင် သတ်မှတ်မယ် ဆိုရင် \fCodeBf{def} \fEn{keyword} သုံးရပါတယ်။ အထက်ပါ \fCode{turn\_right} ဖန်ရှင် သတ်မှတ်ချက် \fEn{(\textit{function definition})} မှာ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def turn_right():
-\end{minted}
+\end{py}
 %
 ကို ဖန်ရှင် ဟက်ဒ်ဒါ \fEn{(\textit{function header})} လို့ ခေါ်တယ် (မြန်မာလို ဆိုရင်တော့ ဖန်ရှင် ခေါင်းစည်းပေါ့)။ \fCode{turn\_right} က ဖန်ရှင် အမည်။ ပါရာမီတာပါတဲ့ ဖန်ရှင်ဆိုရင် ဝိုက်ကွင်းထဲမှာ ပါရာမီတာတွေ သတ်မှတ်ရတယ်။ ဥပမာ \fEn{\fCode{(x, y)}}။ ပါရာမီတာ မပါရင်တော့ \fEn{\fCode{()}} ပဲဖြစ်မယ်။ ကားရဲလ်မှာ ဖန်ရှင်အားလုံးဟာ ပါရာမီတာ မပါတဲ့အတွက် \fEn{\fCode{()}} ပဲ ဖြစ်မှာပါ။ ဖန်ရှင်ဟက်ဒ်ဒါ လိုင်းအဆုံးမှာ ကော်လံ \fEn{‘\fCode{:}’} ထည့်ပေးဖို့ လိုပါတယ်။ \todo{ပါရာမီတာတွေကို ဘယ်အခန်းမှာ လေ့လာမလဲပြောရန်}
 
 ဖန်ရှင် ဟက်ဒ်ဒါအောက် အင်ဒန့်ထ်လုပ်ထားတဲ့ လိုင်းအားလုံးဟာ ၎င်းဖန်ရှင်နဲ့ သက်ဆိုင်တဲ့ ကုဒ်ဘလောက် ဖြစ်တယ်။ အခု \fCode{turn\_right} ဖန်ရှင် ဘလောက်မှာ \fCode{turn\_left} သုံးကြိမ်ပါတယ်။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 turn_right()
-\end{minted}
+\end{py}
 %
 လုပ်ခိုင်းတာက (သတ်မှတ်ထားတဲ့) ဖန်ရှင်ကို အသုံးပြုတာ ဖြစ်တယ်။ ဒီအခါမှာ ၎င်းဖန်ရှင်နဲ့ သက်ဆိုင်တဲ့ ဘလောက်ကို လုပ်ဆောင်ပေးမှာပါ။ ဖန်ရှင်ကို အသုံးပြုတာကို ဖန်ရှင်ကောလ် \fEn{(\textit{function call})} လုပ်တယ်လို့ ပြောပါတယ်။ (မြန်မာလိုတော့ ‘ဖန်ရှင်ခေါ်’ တယ်လို့ ပြောတာပေါ့)။
 
 ဖန်ရှင်သတ်မှတ်တာနဲ့ ဖန်ရှင်ကောလ် လုပ်တဲ့ပုံစံကို အောက်ပါအတိုင်း ယေဘုယျအားဖြင့် တွေ့ရပါမယ်။ \fEn{Python} ထုံးစံအရ ဖန်ရှင်နံမည်မှာ စာလုံးအသေးကိုပဲ သုံးလေ့ရှိတယ်။ စကားလုံး နှစ်ခုနဲ့ အထက်ဆိုရင် ကြားမှာ \fEn{underscore (\textunderscore)} ခြားပေးလေ့ ရှိတယ်။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def ß$name\fEn{\textunderscore}of\fEn{\textunderscore}function$ß():
     ß$statement_1$ß
     ß$statement_2$ß
     ß$statement_3$ \fEn{etc.}ß
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+%
+\begin{py}
 ß$name\fEn{\textunderscore}of\fEn{\textunderscore}function$ß()
-\end{minted}
+\end{py}
 %
 
 \begin{mytcboxflt}
@@ -83,55 +65,38 @@ def ß$name\fEn{\textunderscore}of\fEn{\textunderscore}function$ß():
 
 ဖန်ရှင်သတ်မှတ်ချက်နဲ့ ဖန်ရှင်ကောလ် ဥပမာ တချို့ကို လေ့လာကြည့်ပါ။ ဘိပါ နှစ်ဆယ့်ငါးခု ချပေးတဲ့ \fCode{put\_25\_beepers} ဖန်ရှင်ပါ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def put_25_beepers():
     for i in range(25):
         put_beeper()
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 put_25_beepers()
-\end{minted}
+\end{py}
 %
 ဒါကတော့ ကွန်နာတစ်ခုမှာ ရှိတဲ့ ဘိပါအားလုံးကောက်ပေးတဲ့ ဖန်ရှင်ဖြစ်ပါတယ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def pick_all_beepers():
     while beepers_present():
         pick_beeper()
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 pick_all_beepers()
-\end{minted}
+\end{py}
 %
 
 ဖန်ရှင် အသုံးပြုတဲ့အခါ  ကိစ္စတစ်ခုကို ပိုပြီး အလွယ်တကူ လုပ်လို့ရသွားတယ်။ ဘိပါအားလုံး ကောက်မယ်ဆိုရင် \fCode{pick\_all\_beepers} ဖန်ရှင်ခေါ်လိုက်ရုံပဲ။ ဘိပါ နှစ်ဆယ့်ငါးခု ချချင်ရင် \fCode{put\_25\_beepers} ဖန်ရှင်ခေါ်လိုက်ရင်ရပြီ။ ဖန်ရှင်တစ်ခုကို အသုံးပြုတဲ့အခါ အဲဒီဖန်ရှင်ကို ဘယ်လိုသတ်မှတ်ထားလဲ ပြန်စဉ်းစားနေဖို့ မလိုပါဘူး။ ဥပမာ $...$ 
 
 အခန်း (၁) မှာ လိုက်ဘရီဆိုတာ ဘာလဲ အကျဉ်း ဖော်ပြခဲ့တယ်။    မေ့ထရစ် $A$ နဲ့ $B$ မြှောက်လဒ် $A \times B$ ကို \fCode{numpy} လိုက်ဘရီ ဖန်ရှင် \fCode{matmul} နဲ့ အဖြေရှာခဲ့ပါတယ်။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 result = matmul(A, B)
-\end{minted}
+\end{py}
 %
 \fCode{matmul} ဖန်ရှင်ကို လိုက်ဘရီ ထုတ်လုပ်တဲ့ ပညာရှင်တွေက ရေးပေးထားတာ။ အဲဒီဖန်ရှင်ကို ဘယ်ပုံဘယ်နည်း သတ်မှတ်ထားတယ်ဆိုတာ အသုံးပြုသူအတွက် အရေးမကြီးဘူး။ မေ့ထရစ်တွေကို ဒီဖန်ရှင်နဲ့ မြှောက်လို့ရတယ်ဆိုတာ သိရင် သုံးလို့ရနေတာပါပဲ။ အခြား မေ့ထရစ် လုပ်ထုံးလုပ်နည်း ဖန်ရှင်တွေလည်း  \fCode{numpy} လိုက်ဘရီမှာ ပါဝင်ပါတယ်။ မိမိ လုပ်ချင်တဲ့ မေ့ထရစ် လုပ်ထုံးလုပ်နည်းအတွက် ဖန်ရှင်ကို သိရင် (လိုက်ဘရီ \fEn{documentation} ဖတ်ပြီး ရှာလို့ရတယ်) လိုအပ်တဲ့အခါ ခေါ်သုံးလိုက်ရုံပါပဲ။  ပရိုဂရမ်တွေ တည်ဆောက်ရာမှာ လိုက်ဘရီတွေ မရှိမဖြစ်လိုအပ်တယ်။ ဖန်ရှင်တွေဟာ လိုက်ဘရီတွေရဲ့ အဓိက အစိတ်အပိုင်းတွေ ပဲဖြစ်ပါတယ်။
 
@@ -139,17 +104,14 @@ result = matmul(A, B)
 \subsection*{ဖန်ရှင် အခြေခံအုတ်ချပ်များ}
 \fCode{pick\_all\_beepers} ဖန်ရှင်ကို အခြေခံအုတ်ချပ်သဖွယ် အသုံးပြုပြီး အခြားဖန်ရှင်တွေကို သတ်မှတ်နိုင်ပါတယ်။ လမ်းတစ်လျှောက် ဘိပါ အားလုံး ရှင်းပေးမဲ့ \fCode{clean\_the\_street} ဖန်ရှင်ကို လေ့လာကြည့်ပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_the_street():
     while front_is_clear():
         pick_all_beepers()
         move()
 
     pick_all_beepers()
-\end{minted}
+\end{py}
 %
 လမ်းတစ်လမ်းလုံး ရှင်းဖို့အတွက် ကွန်နာတစ်ခုက ဘိပါအားလုံး ကောက်ပေးတဲ့ \fCode{pick\_all\_beepers} ကို အခြေခံ အုတ်ချပ်သဖွယ် အသုံးပြုထားတာပါ။ 
 
@@ -180,38 +142,28 @@ def clean_the_street():
 %
 တိုင်အောက်ခြေကိုသွားတာနဲ့ တိုင်ထိပ်တက်တာ အလုပ်နှစ်ခု ပါဝင်တယ်လို့ မြင်နိုင်တယ်။ ဒီအတွက် ဖန်ရှင်နှစ်ခု သတ်မှတ်ပေးပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def go_to_pole():
     while front_is_clear():
         move()
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def ascend_pole():
     while right_is_blocked():
         move()
-\end{minted}
+\end{py}
 %
 အထက်ပါ ဖန်ရှင်နှစ်ခုနဲ့ \fCode{go\_to\_top} ကို ဆက်လက် သတ်မှတ်ပါမယ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def go_to_top():
     go_to_pole()
     turn_left()
     ascend_pole()
     turn_right()
-\end{minted}
+\end{py}
 %
 \fCode{go\_to\_pole} အပြီးမှာ ကားရဲလ်ဟာ တိုင်ခြေမှာ အရှေ့ဘက်မျက်နှာမူပြီး ရှိနေမှာပါ။ \fCode{ascend\_pole} က တိုင်ခြေမှာ ကားရဲလ် အပေါ်ဘက်ကို မျက်နှာမူတဲ့ အနေအထားကနေ စရပါမယ်။ \fCode{go\_to\_pole} ပြီးရင် \fCode{ascend\_pole} အတွက် အသင့်အနေအထားဖြစ်အောင် \fCode{turn\_left} လုပ်ပေးရပါမယ်။
 
@@ -260,27 +212,21 @@ def go_to_top():
 
 အထက်ပါ ပရီ နဲ့ ပို့စ် ကွန်ဒီရှင်အရ \fCode{ascend\_pole} ကို အခုလို 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def ascend_pole():
     turn_left()
     while right_is_blocked():
         move()
     turn_right()
-\end{minted}
+\end{py}
 %
 သတ်မှတ်ရမှာပါ။ \fCode{go\_to\_top} ကလည်း ဒီလို ဖြစ်သွားမယ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def go_to_top():
     go_to_pole()
     ascend_pole()
-\end{minted}
+\end{py}
 %
 
 \section{ဖန်ရှင်များဖြင့် abstraction များ တည်ဆောက်ခြင်း}
@@ -292,15 +238,12 @@ def go_to_top():
 \end{figure}
 %
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def repair_corner():
     if right_is_clear():
         if no_beepers_present():
             put_beeper()
-\end{minted}
+\end{py}
 %
 အခြေအနေနှစ်ခုစလုံး မှန်တော့မှ ဘိပါချပေးဖို့ \fEn{nested} \fCode{if}  သုံးထားတာက နားလည်ရ အတန်အသင့် ခက်ခဲနိုင်ပါတယ်။  ဒါပေမဲ့ \fCode{repair\_corner} ကို အသုံးပြုတဲ့အခါ ဘယ်လိုရေးထားလဲ စဉ်းစားစရာ မလိုပါဘူး။ ဘိပါလည်းမရှိ၊ ညာဘက် နံရံလည်းမရှိတဲ့ ကွန်နာမှာ ဘိပါချချင်ရင် \fCode{repair\_corner} ဖန်ရှင်နဲ့ လုပ်လို့ရတယ်ဆိုတာ သိထားရင် သုံးလို့ရပြီ။
 
@@ -311,15 +254,12 @@ def repair_corner():
 
 \fCode{repair\_corner} ဟာ အနိမ့်ဆုံးအလွှာက အခြေခံ \fEn{abstraction} တစ်ခု ဖြစ်တယ် ဆိုပါစို့။ ၎င်းကို အခြေခံပြီး တစ်ဆင့်ပိုမြင့်တဲ့ အလွှာအတွက် \fEn{abstraction} တွေကို တည်ဆောက်ယူနိုင်ပါတယ်။ ဥပမာ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def repair_street():
     while front_is_clear():
         repair_corner()
     repair_corner()
-\end{minted}
+\end{py}
 %
 ဒီအလွှာထက် နောက်ထပ် တစ်ဆင့်ပိုမြင့်တဲ့ \fEn{abstraction} တွေကိုလည်း ဆက်လက် တည်ဆောက်ယူနိုင်ပါတယ်။ ဥပမာ \fCode{repair\_world} ကို တည်ဆောက်ရာမှာ \fCode{repair\_street} ကို အခြေခံအစိတ်အပိုင်းအဖြစ် အသုံးပြုနိုင်ပါတယ်။ ဒီလို \fEn{abstraction} အလွှာတွေ အဆင့်ဆင့်နဲ့ ပရိုဂရမ် တည်ဆောက်နည်း တွေကို ဆက်လက်လေ့လာကြရပါမယ်။
 
@@ -359,10 +299,7 @@ def repair_street():
 \fEn{Bottom-up} နည်းအရ အောက်ဆုံးအလွှာ အပေါ်တက်၊ အောက်ဆင်း ကိစ္စကို ပထမဆုံး ဖြေရှင်းပါမယ်။ အပိုင်းတစ်ခုအတွက် ဖန်ရှင်တစ်ခု သတ်မှတ်ရပါမယ်။
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def ascend():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{တန်းနဲ့လွတ်တဲ့အထိ အပေါ်သို့ တက်သည်}}ß
@@ -373,14 +310,10 @@ def ascend():
     while right_is_blocked():
         move()
     turn_right()
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def descend():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{တန်းအောက်သို့ ပြန်ဆင်းသည်}}ß
@@ -391,15 +324,12 @@ def descend():
     while front_is_clear():
         move()
     turn_left()
-\end{minted}
+\end{py}
 %
 
 အထက်ပါ ဖန်ရှင်နှစ်ခုကို အသုံးပြုပြီး အပေါ်တစ်ဆင့် ပိုမြင့်တဲ့ အလွှာက တန်းတစ်ခုကျော်တာကို ဆက်လက်ဖြေရှင်းရပါမယ်။ \fCode{ascend} နဲ့ \fCode{descend} ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေအရ \fCode{move} လုပ်ပေးဖို့လိုပါတယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def jump_over_hurdle():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{တန်းတစ်ခုကို ကျော်သည်}}ß
@@ -409,15 +339,12 @@ def jump_over_hurdle():
     ascend()
     move()
     descend()
-\end{minted}
+\end{py}
 %
 
 ဒီဖန်ရှင်နဲ့ နောက်တစ်ဆင့်ကို ဆက်လက်တည်ဆောက်ရပါမယ်။ ရှေ့မှာရှင်းနေလျှင် ရှေ့တိုးမယ်၊ မရှင်းလျှင် တန်းကိုကျော်ရမယ်။ ပန်းဝင်ဖို့အတွက်ဆိုလျှင် ဒီအလုပ်ကို ဆယ့်သုံးခါလုပ်ပေးရုံပါပဲ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def compete_hurdle_race():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{တန်းကျော်ပြေးပြိုင်ပွဲ ပန်းဝင်သည်ထိ ယှဉ်ပြိုင်သည်}}ß
@@ -429,16 +356,13 @@ def compete_hurdle_race():
             move()
         else:
             jump_over_hurdle()
-\end{minted}
+\end{py}
 %
 
 ပရိုဂရမ် အစအဆုံးကို လေ့လာကြည့်ပါ။ ဖန်ရှင်တစ်ခုချင်း ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေကို တိတိကျကျ မြင်အောင် ဂရုစိုက်ကြည့်ဖို့လည်း အရေးကြီးတယ်။ ဖန်ရှင် \fEn{docstring} မှာ ၎င်းဖန်ရှင် ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်ကို တိတိကျကျ ဖော်ပြထားတာဟာ အလေ့အထကောင်း တစ်ခုပါ။ ဖန်ရှင်တိုင်းမှာ ပါသင့်တယ်။
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: hurdle_jumping.py
 from stanfordkarel import *
 
@@ -504,7 +428,7 @@ def turn_right():
 if __name__ == "__main__":
     run_karel_program("hurdle_jumping")
 
-\end{minted}
+\end{py}
 %
 
 
@@ -613,10 +537,7 @@ if __name__ == "__main__":
 
 လမ်းတစ်လမ်း ရှင်းတဲ့ ကိစ္စကို ထပ်ခွဲကြည့်ရင် ကွန်နာတစ်ခုရှင်းတာကို တွေ့ရမှာပါ။ \fEn{Bottom-up} နည်းအရ အောက်ဆုံးအလွှာက ကွန်နာတစ်ခု အမှိုက်ရှင်းတဲ့ ကိစ္စအတွက် ဖန်ရှင်ကို ပထမဆုံး သတ်မှတ်ရပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_corner():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{ကွန်နာတစ်ခုမှာ ဘိပါရှင်းပေးသည်}}ß
@@ -625,14 +546,11 @@ def clean_corner():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     if beepers_present():
         pick_beeper()
-\end{minted}
+\end{py}
 %
 \fCode{clean\_corner} နဲ့ လမ်းတစ်လမ်းရှင်းတဲ့ ဖန်ရှင် သတ်မှတ်ပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_street():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{လမ်းတလျှောက် ဘိပါအားလုံးရှင်းပေးသည်}}ß
@@ -643,27 +561,21 @@ def clean_street():
         clean_corner()
         move()
     clean_corner()
-\end{minted}
+\end{py}
 %
 မြောက်ဘက်လှည့်တဲ့ ဖန်ရှင်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def turn_north():
     while not_facing_north():
         turn_left()
-\end{minted}
+\end{py}
 %
 \fCode{while} \fEn{loop} နဲ့ မြောက်ဘက်ကို မျက်နှာမူ မနေသ၍ ဘယ်ဘက်လှည့်ခိုင်းထားတာ သတိထားကြည့်ပါ။ မြောက်ဘက် မျက်နှာမူနေတဲ့ အနေအထားမှာ ရပ်သွားမှာ ဖြစ်တယ်။
 
 လမ်းတစ်လမ်းရှင်းပြီး နောက်တစ်လမ်းကူးတဲ့ ဖန်ရှင်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def change_street():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{လမ်းတစ်လမ်း၏ အစွန်းတစ်ဖက်မှာ အပေါ်လမ်းသို့ ကူးသည်}}ß
@@ -675,14 +587,11 @@ def change_street():
         turn_left()
     else:
         turn_right()
-\end{minted}
+\end{py}
 %
 တစ်လမ်းချင်း အမှိုက်အကုန် ရှင်းတဲ့ ဖန်ရှင်ကို သတ်မှတ်လို့ ရပါပြီ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_world():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{လမ်းအားလုံးမှ ဘိပါတွေ ရှင်းပေး}}ß
@@ -695,14 +604,11 @@ def clean_world():
         change_street()
         clean_street()
         turn_north()
-\end{minted}
+\end{py}
 %
 ပရိုဂရမ် အစအဆုံး ဆက်လက်လေ့လာကြည့်ပါ။ (ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေကို ချန်ထားတယ်။ နေရာသက်သာအောင်ပါ။ အပြည့်အစုံ ရေးတဲ့အခါ မလိုတော့တာ မဟုတ်ဘူး။)
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: clean_world.py
 from stanfordkarel import *
 
@@ -753,7 +659,7 @@ def turn_right():
 
 if __name__ == "__main__":
     run_karel_program("clean_world")
-\end{minted}
+\end{py}
 %
 \section{Top-down Programming}
 \fEnEmp{Top-down programming} ဟာ အပေါ်ဆုံးအလွှာမှ စ၍ တည်ဆောက်တဲ့နည်း ဖြစ်ပါတယ်။ \fEn{Bottom-up} မှာလို အောက်မှ အထက် မတက်ဘဲ အထက်မှအောက် တစ်လွှာပြီးတစ်လွှာ အဆင့်ဆင့် တည်ဆောက်သွားမှာပါ။  နည်းလမ်းနှစ်ခုလုံးမှာ \fEn{problem decomposition} လုပ်ရမှာဖြစ်ပေမဲ့ လုပ်ငန်းစဉ် ကွာခြားချက်ရှိတယ်။ \fEn{Top-down} နည်းအတွက် \fEn{problem decomposition} လုပ်တဲ့အခါ  \fEn{bottom-up} မှာလို အောက်ဆုံးအလွှာထိ တစ်ခါတည်း  ခွဲခြမ်းစိတ်ဖြာစရာမလိုဘူး။ တစ်ဆင့်ချင်းပဲ ခွဲရပါတယ်။ ပြီးခဲ့တဲ့ ဥပမာ အမှိုက်သိမ်းတဲ့ ကိစ္စကို ခွဲခြမ်းစိတ်ဖြာမယ်ဆိုရင် အခုလို
@@ -774,10 +680,7 @@ if __name__ == "__main__":
 
 ပြီးတဲ့အခါ အပေါ်ဆုံး အဆင့်ကို စပြီးဖြေရှင်းတယ်။ \fEn{Top-down} နည်းရဲ့ အဓိက ထူးခြားချက်က လက်ရှိဖြေရှင်းမဲ့ ကိစ္စရဲ့ အောက်အလွှာကို ‘ဖြေရှင်းနိုင်ပြီး’ ဖြစ်တယ်လို့ မှတ်ယူရတာပါ။ တစ်နည်းအားဖြင့် \fCode{clean\_world} ဖန်ရှင် သတ်မှတ်တဲ့အခါ \fCode{clean\_street}\fEn{,} \fCode{turn\_north}\fEn{,} \fCode{change\_\allowbreak street} ဖန်ရှင်တွေ ရှိထားပြီးဖြစ်တယ်လို့ ယူဆရမှာပါ။  ဖန်ရှင်တွေ အမှန်တကယ် မရှိသေးဘဲ ရှိပြီးဖြစ်တယ်လို့ ယူဆရတာဖြစ်တယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_world():
     clean_street()
     turn_north()
@@ -785,20 +688,17 @@ def clean_world():
         change_street()
         clean_street()
         turn_north()
-\end{minted}
+\end{py}
 %
 ဒီနေရာမှာ ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေ တိတိကျကျ သတ်မှတ်ထားဖို့ အလွန်အရေးကြီးပါတယ်။ \fCode{clean\_str\allowbreak eet}\fEn{,} \fCode{turn\_north}\fEn{,} \fCode{change\_street} ဖန်ရှင်တစ်ခုချင်းရဲ့ ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေ တိတိကျကျ ရှိထားမှပဲ \fCode{clean\_world} ကို မှန်ကန်အောင် ရေးဖို့ ဖြစ်နိုင်မှာပါ။ ဥပမာအားဖြင့် \fCode{clean\_street} ပို့စ်ကွန်ဒီရှင်ကသာ မြောက်ဘက်လှည့် အနေအထားနဲ့ အဆုံးသတ်မယ်ဆိုရင် \fCode{clean\_world} ကို အခုလို ရေးရပါလိမ့်မယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_world():
     clean_street()
     while front_is_clear():
         change_street()
         clean_street()
-\end{minted}
+\end{py}
 %
 
 အပေါ်ဆုံးအလွှာ ဖြေရှင်းပြီးသွားရင် အောက်အလွှာကို တစ်ဆင့် ဆင်းပြီး ဖြေရှင်းပါတယ်။ အောက်ပါ ကိစ္စရပ် 
@@ -822,41 +722,31 @@ def clean_world():
 %
 ဒီကွန်ပို့စ် \fEn{(decompose)} လုပ်နိုင်တယ်။ ကွန်နာတစ်ခု ရှင်းတာက လွယ်တဲ့အတွက် ထပ်ခွဲစရာတော့ မလိုဘူး။ အကယ်၍ ထပ်ခွဲဖို့ လိုတဲ့ ကိစ္စဖြစ်ခဲ့ရင်လည်း \fEn{top-down} နည်းအရ လောလောဆယ် အနေနဲ့ ဒီအဆင့်မှာပဲ မခွဲသေးဘဲ ရပ်ထားရပါမယ်။ \fCode{clean\_street} ဖန်ရှင်အတွက် \fCode{clean\_corner} ရှိထားပြီးဖြစ်တယ်လို့ မှတ်ယူရမှာပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_street():
     while front_is_clear():
         clean_corner()
     clean_corner()
-\end{minted}
+\end{py}
 %
 
 ဒုတိယအလွှာမှာ ပါဝင်တဲ့ မြောက်ဘက်လှည့်တာနဲ့ လမ်းကူးတာကို ဆက်လက်ဖြေရှင်းပါမယ်။ နှစ်ခုလုံး အတန်အသင့် ရိုးရှင်းတဲ့အတွက် ထပ်မခွဲတော့ဘူး။ (လိုအပ်ရင်တော့ အောက်တစ်ဆင့် ထပ်ပြီး ဒီကွန်ပို့စ် လုပ်ရမှာပါ)။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def turn_north():
     while not_facing_north():
         turn_left()
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def change_street():
     move()
     if right_is_blocked():
         turn_left()
     else:
         turn_right()
-\end{minted}
+\end{py}
 %
 ဒုတိယတစ်ဆင့် ဖြေရှင်းပြီးသွားပါပြီ။
 \begin{mytcbox}
@@ -866,28 +756,22 @@ def change_street():
 \end{mytcbox}
 အောက်တစ်လွှာ ဆက်ဆင်းရပါမယ်။ ဒုတိယ အဆင့်ကို ဒီကွန်ပို့စ် လုပ်လိုက်တာတွေဟာ တတိယ အလွှာမှာ ပါဝင်တယ်။  ကွန်နာတစ်ခု ရှင်းတဲ့ကိစ္စပဲ ရှိပါတယ်။ ရိုးရှင်းတဲ့အတွက် နောက်တစ်ဆင့် ထပ်မခွဲတော့ဘဲ တစ်ခါတည်း ဖန်ရှင်သတ်မှတ်ပါမယ်။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_corner():
     if beepers_present():
         pick_beeper()
-\end{minted}
+\end{py}
 %
 အပေါ်ဆုံးကနေ တစ်ဆင့်ပြီးတစ်ဆင့် ဖြေရှင်းလာတာ တတိယအလွှာမှာ ထပ်မခွဲတော့တဲ့အတွက် ဒီမှာပဲ ပြီးသွားပြီဖြစ်တယ်။ အကယ်၍ ထပ်ခွဲထားတာ ရှိတယ်ဆိုရင် အောက်တစ်ဆင့် ထပ်ဆင်းပြီး ပြီးခဲ့တဲ့ တစ်ဆင့်ချင်းမှာ လုပ်ခဲ့သလိုပဲ ဆက်သွားရမှာပါ။ ပရိုဂရမ် \fEn{run} မယ်ဆိုရင် ကျန်နေသေးတဲ့ \fCode{turn\_right} ၊ \fCode{main} နဲ့ အန်ထရီပွိုင့် ဖြည့်ရုံပါပဲ
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
     clean_world()
 
 if __name__ == "__main__":
     run_karel_program("clean_world")
-\end{minted}
+\end{py}
 %
 (\fCode{turn\_right} ဖန်ရှင်ကို ထပ်မဖော်ပြတော့ပါ)
 
@@ -932,23 +816,17 @@ if __name__ == "__main__":
 %
 ဘိပါပုံဆီကို သွားတာက လွယ်တယ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def go_to_beeper_pile():
     while no_beepers_present():
         move()
-\end{minted}
+\end{py}
 %
 
  နဂိုနေရာမှာ ဘိပါပုံ နှစ်ဆလုပ်တဲ့ ကိစ္စကို နောက်တစ်ဆင့် ထပ်ခွဲထားတယ်။ ရှေ့ကွန်နာမှာ နှစ်ဆပုံတာနဲ့ နဂိုနေရာ ပြန်ရွှေ့တာ ကိစ္စနှစ်ခု ပါဝင်တယ်။ ဒီအတွက် ဖန်ရှင်နှစ်ခု ရှိတယ်လို့ မှတ်ယူရပါမယ်။ ၎င်းတို့ လုပ်ဆောင်ချက်က ဘာလဲ၊ ၎င်းတို့ရဲ့ ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေ ဘယ်လိုဖြစ်သင့်လဲ တိတိကျကျ စဉ်းစားထားရမှာပါ။ ဒီအတွက်ကို စိတ်ထဲမှာပဲ လုပ်လို့ရသလို အောက်ပါအတိုင်း ဗလာဖန်ရှင် \fEn{(\textit{empty function})} သတ်မှတ်ပြီး \fEn{docstring} နဲ့ တိတိကျကျ ချရေးထားတာဟာလည်း ပရိုဂရမ်မာ အများစု လုပ်လေ့လုပ်ထရှိတဲ့ အလေ့အထတစ်ခုပါ။
  
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def double_beeper_pile_next():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{ဘိပါပုံကို ရှေ့ကွန်နာတွင် နှစ်ဆဖြစ်အောင် ရွှေ့ပေးသည်}}ß
@@ -956,14 +834,10 @@ def double_beeper_pile_next():
     ß\PYG{l+s+sd}{\fEnEmp{Postcondition:} \fMM{နှစ်ဆဘိပါပုံပေါ်တွင် အရှေ့ဘက် မျက်နှာမူ၍ }}ß
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     pass
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def move_beeper_pile_next():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{ဘိပါပုံကို ရှေ့ကွန်နာသို့ ရွှေ့ပေးသည်}}ß
@@ -971,16 +845,13 @@ def move_beeper_pile_next():
     ß\PYG{l+s+sd}{\fEnEmp{Postcondition:} \fMM{ရှေ့ကို ရွှေ့ပြီးဘိပါပုံပေါ်တွင် အနောက်ဘက်မျက်နှာမူ ရှိနေမယ်}}ß
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     pass
-\end{minted}
+\end{py}
 %
 \fEn{Python} မှာ ဗလာဖန်ရှင်ဆိုပေမဲ့ စတိတ်မန့်တစ်ခုတော့ ပါရမယ်။ မဟုတ်ရင် ဆင်းတက်စ် အမှားဖြစ်မှာပါ။ ဒါကြောင့် \fCode{pass} စတိတ်မန့်ကို ယာယီအနေနဲ့ သုံးလေ့ရှိတယ်။ ဒမ်မီစတိတ်မန့်  \fEnEmp{(dummy statement)} လို့ ခေါ်ပါတယ်။ ဖန်ရှင်နှစ်ခုရဲ့ ပရီနဲ့ ပို့စ် ကွန်ဒီရှင်တွေကို ပုံ (\fRefNo{\ref{fig:dbpnxt12}}) နဲ့ (\fRefNo{\ref{fig:mbpnxt12}}) မှာ တွေ့နိုင်ပါတယ်။ နှစ်ခုလုံး မျက်နှာမူတဲ့ဘက် မပြောင်းတာကို ဂရုပြုပါ။ ဘိပါပုံက မူလနေရာမဟုတ်ဘဲ ရှေ့ကိုရောက်သွားတာကိုလည်း ဂရုပြုပါ။
 
 မူလနေရာမှာပဲ ဘိပါနှစ်ဆဖြစ်အောင် လုပ်တဲ့ ဖန်ရှင်က ဒီလိုဖြစ်ပါမယ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def double_beeper_pile():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{ဘိပါပုံကို မူလနေရာတွင်ပင် နှစ်ဆတိုးပေးသည်}}ß
@@ -993,7 +864,7 @@ def double_beeper_pile():
     move_beeper_pile_next()
     turn_left()
     turn_left()
-\end{minted}
+\end{py}
 %
 ပထမဖန်ရှင်ပြီး ဒုတိယဖန်ရှင်အတွက် အဆင်သင့်ဖြစ်အောင် ဘယ်ဘက်နှစ်ခါ လှည့်ရပါမယ်။ နောက်ဆုံးမှာလည်း အရှေ့ဘက် ပြန်လှည့်ပေးရမယ်။ မဟုတ်ရင် အခုဖန်ရှင်ရဲ့ သတ်မှတ်ထားတဲ့ ပို့စ်ကွန်ဒီရှင်နဲ့ မကိုက်ညီဘဲ  အနောက်ဘက်လှည့် အနေအထားဖြစ်နေမှာ။
 
@@ -1036,10 +907,7 @@ def double_beeper_pile():
 
 အထက်ပါဖန်ရှင်မှာ ဘယ် နှစ်ခါလှည့်ကို နှစ်ကြိမ်လုပ်ထားပါတယ်။ ဆန့်ကျင်ဘက် အရပ်ကို လှည့်ဖို့အတွက် ရည်ရွယ်တာပါ။  ဒီအတွက် \fCode{turn\_around} ဖန်ရှင် ရှိသင့်ပါတယ်။ ရှိမယ်ဆိုရင် 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def double_beeper_pile():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{ဘိပါပုံကို မူလနေရာတွင်ပင် နှစ်ဆတိုးပေးသည်}}ß
@@ -1050,7 +918,7 @@ def double_beeper_pile():
     turn_around()
     move_beeper_pile_next()
     turn_around()
-\end{minted}
+\end{py}
 %
 \begin{mytcbox}
 ဒီနေရာမှာ မှတ်သားသင့်တာတစ်ခုက ဒီကွန်ပို့စ် လုပ်တဲ့အခါ တစ်ခါတည်းနဲ့ ပြီးပြည့်စုံတဲ့ ရလဒ် ဖြစ်ချင်မှ ဖြစ်မှာပါ။ တစ်ခါတစ်ရံ ပရိုဂရမ် ရေးနေရင်း စိတ်ကူးသစ် သို့မဟုတ် ပိုကောင်းတဲ့နည်းလမ်း ခေါင်းထဲ ပေါ်လာတတ်ပါတယ်၊ တဖြည်းဖြည်း သဘောပေါက်လာတတ်တယ်။ ဒီအခါမှာ ဒီကွန်ပို့စ် လုပ်တာကို လိုအပ်သလို အလိုက်သင့် ပြောင်းပေးနိုင်ပါတယ်။ အထက်က ဥပမာမှာ \fCode{turn\_around} လိုအပ်မယ်ဆိုတာ ကြိုမသိခဲ့ပါဘူး။
@@ -1058,10 +926,7 @@ def double_beeper_pile():
 
 \fCode{double\_beeper\_pile\_next} နဲ့ \fCode{move\_beeper\_pile\_next}  အတွက် ဆက်လက်စဉ်းစားပါမယ်။ အတန်အသင့် လွယ်ကူမယ် ယူဆတဲ့အတွက် နောက်တစ်ဆင့် ထပ်မခွဲတော့ဘူး။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def double_beeper_pile_next():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{ဘိပါပုံကို ရှေ့ကွန်နာတွင် နှစ်ဆဖြစ်အောင် ရွှေ့ပေးသည်}}ß
@@ -1078,14 +943,10 @@ def double_beeper_pile_next():
         turn_around()
 
     move()
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def move_beeper_pile_next():
     ß\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}ß
     ß\PYG{l+s+sd}{\fMM{ဘိပါပုံကို ရှေ့ကွန်နာသို့ ရွှေ့ပေးသည်}}ß
@@ -1101,14 +962,11 @@ def move_beeper_pile_next():
         turn_around()
 
     move()
-\end{minted}
+\end{py}
 %
 အခုနောက်ဆုံး \fCode{turn\_around}\fEn{,} \fCode{main} နဲ့ အန်ထရီပွိုင့် ဖြည့်ဖို့ပဲ ကျန်ပါတယ်။ ပရိုဂရမ် အစအဆုံး လေ့လာကြည့်ပါ။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: double_beeper_pile.py
 from stanfordkarel import *
 
@@ -1163,6 +1021,6 @@ def turn_around():
 
 if __name__ == "__main__":
     run_karel_program("double_beeper_pile")
-\end{minted}
+\end{py}
 %
 \clearpage

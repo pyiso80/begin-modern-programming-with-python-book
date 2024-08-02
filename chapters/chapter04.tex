@@ -11,10 +11,8 @@
 \section{ရီကားဆစ်ဖ် ဖန်ရှင် ဘယ်လို အလုပ်လုပ်လဲ}
  ရီကားဆစ်ဖ် ဖန်ရှင် ဥပမာတစ်ခုကို လေ့လာကြည့်ပါမယ်။ အောက်ဖော်ပြပါ ဖန်ရှင်ဟာ  ၎င်းကိုယ်တိုင်ကို ၎င်း ပြန်ခေါ်ထားတာ ဂရုပြုကြည့်ပါ။ \fEnEmp{recursive call} လို့ ကွန်းမန့်ရေးထားတဲ့ လိုင်းမှာပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
+
 def make_beeper_row():
     if front_is_clear():
         put_beeper()
@@ -22,18 +20,15 @@ def make_beeper_row():
         make_beeper_row() # ß\fEn{recursive call}ß
     else:
         put_beeper()
-\end{minted}
+\end{py}
 %
 
 ဒီဖန်ရှင်ကို ခေါ်လိုက်ရင် ဘာဆက်ဖြစ်မလဲဆိုတာ စိတ်ဝင်စားစရာပါ။  ဖန်ရှင်မစတင်မီ အနေအထားကို ပုံ  (\fRefNo{\ref{fig:mrofb_recur1}}) မှာ ကြည့်ပါ။ ဖန်ရှင်ကို ကနဦး  စခေါ်လိုက်တာမို့လို့ \fEnEmp{initial call} လို့ ရည်ညွှန်းပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{initial call}ß
 make_beeper_row()
-\end{minted}
+\end{py}
 %
 \begin{figure}[htb!]
     {\includegraphics[scale=0.15]{images/ch04/mrofb/before.jpg}}
@@ -43,56 +38,41 @@ make_beeper_row()
 
 ဖန်ရှင် စတင် လုပ်ဆောင်ပါမယ်။  ရှေ့မှာရှင်းနေတဲ့ အတွက် \fCode{if} ဘလောက်ကို လုပ်မှာပါ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 put_beeper()
 move()
 make_beeper_row() # ß\fEn{recursive call}ß
-\end{minted}
+\end{py}
 %
 ဘိပါချ၊ ရှေ့တိုး $\big\llbracket$ပုံ (\fRefNo{\ref{fig:mrofb_recur}}) (\fRefNo{\subref{fig:mrofb_recur2}})  ကြည့်ပါ$\big\rrbracket$ ပြီးရင် သူ့ကိုယ်သူ  ပြန်ခေါ်ထားတယ်။ ဒါဟာ ပထမဆုံး တစ်ကြိမ်ပါ။ ဖန်ရှင်ခေါ်ရင် ဖြစ်မြဲအတိုင်းပဲ ဖန်ရှင်နဲ့ သက်ဆိုင်တဲ့ ဘလောက်ကို ဆောက်ရွက်တာပေါ့။ ဒီတော့ \fCode{make\_beeper\_row} ဖန်ရှင်ဘလောက်ကိုပဲ တစ်ခါထပ်လုပ်မှာပါ။ ရှေ့မှာ ရှင်းနေတဲ့အတွက် \fCode{if} အပိုင်းကို လုပ်တယ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 put_beeper()
 move()
 make_beeper_row() # ß\fEn{recursive call}ß
-\end{minted}
+\end{py}
 %
 ဘိပါချ၊ ရှေ့တိုး $\big\llbracket$ပုံ (\fRefNo{\ref{fig:mrofb_recur}}) (\fRefNo{\subref{fig:mrofb_recur3}})$\big\rrbracket$ ပြီး သူ့ကိုယ်သူ ပြန်ခေါ်ထားတဲ့ကိစ္စ တစ်ခါထပ်ဖြစ်ပြန်တယ်။ ဒါနဲ့ဆို နှစ်ကြိမ်။ ဖန်ရှင်ဘလောက် အလုပ် ပြန်လုပ်မယ်။ ရှေ့မှာရှင်းတယ်၊ \fCode{if} ကိုပဲ ထပ်လုပ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 put_beeper()
 move()
 make_beeper_row() # ß\fEn{recursive call}ß
-\end{minted}
+\end{py}
 %
 ပုံ (\fRefNo{\ref{fig:mrofb_recur}}) (\fRefNo{\subref{fig:mrofb_recur4}}) နေရာရောက်ပြီး သူ့ကိုယ်သူ ထပ်ခေါ်ထားပြန်တယ်။ သုံးကြိမ်ရှိပြီ။ ဒီတစ်ခါလည်း \fCode{if} အပိုင်းပဲ ထပ်လုပ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 put_beeper()
 move()
 make_beeper_row() # ß\fEn{recursive call}ß
-\end{minted}
+\end{py}
 %
 ရှေ့တိုးပြီးရင် နံရံပိတ်နေပြီ $\big\llbracket$ပုံ (\fRefNo{\ref{fig:mrofb_recur}}) (\fRefNo{\subref{fig:mrofb_recur5}})$\big\rrbracket$။ သူ့ကိုယ်သူ ခေါ်တယ်။ ရှေ့မှာ ပိတ်နေတဲ့အတွက် \fCode{else} အပိုင်းကို လုပ်မှာပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 put_beeper()
-\end{minted}
+\end{py}
 %
 သူ့ကိုယ်သူ ပြန်ခေါ်တဲ့ကစ္စ ထပ်မဖြစ်တော့ဘူး။ ဒီမှာပဲ ပြီးဆုံးသွားတယ်။ ရီကားဆစ်ဖ် ဖန်ရှင် အလုပ်လုပ်ပုံ အခြေခံသဘောတရားက ဒါပါပဲ။ \fEn{loop} တွေ မသုံးဘဲ ပြန်ကျော့နေတဲ့ သဘောကို ရီကားဆစ်ဖ်ဖန်ရှင်မှာ တွေ့ရပါတယ်။ ဖန်ရှင်က သူ့ကိုယ်သူ (သို့ ကိုယ့်ကိုကိုယ်) ပြန်ခေါ်တာကို \fEnEmp{recursive call} လို့ခေါ်ပါတယ်။ ဒက်ဖ်နေးရှင်းအရ \fEn{recursive function} တွေမှာ \fEn{recursive call} အနည်းဆုံး တစ်ခု ပါရမှာ ဖြစ်ပါတယ်။
 
@@ -132,10 +112,7 @@ put_beeper()
 
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def make_beeper_row():
     if front_is_clear():ß\tikzmark{a2}ß
         put_beeper()
@@ -145,7 +122,7 @@ def make_beeper_row():
         put_beeper()ß\tikzmark{a4}ß
 
 make_beeper_row()ß\tikzmark{a1}ß
-\end{minted}
+\end{py}
 %
 \begin{tikzpicture}[
   remember picture,
@@ -170,11 +147,9 @@ make_beeper_row()ß\tikzmark{a1}ß
 
 \subsection*{နောက်ဆုံး ရီကားဆစ်ဖ်ကောလ်မှ ပြန်လာခြင်း}
 နောက်ဆုံး ရီကားဆစ်ဖ်ကောလ်ကနေ မူလ ဖန်ရှင်ခေါ်ခဲ့တဲ့ နေရာကို ဘယ်လိုပြန်ရောက်သွားတာလဲ။ ဒီကိစ္စနားလည်ဖို့ ဖန်ရှင် \fEnEmp{return} ပြန်ခြင်းအကြောင်း အရင်ကြည့်ရပါမယ်။ ဖန်ရှင်ကောလ် လုပ်ဆောင်တဲ့အခါ အဲဒီဖန်ရှင်နဲ့ သက်ဆိုင်တဲ့ ဘလောက်ဆီကို ခုန်ကျော် ရောက်ရှိသွားမှာပါ။ ဖန်ရှင်ဘလောက်ကို လုပ်ဆောင်ပြီး ခေါ်ခဲ့တဲ့ နေရာကို ပြန်လည်ရောက်ရှိသွားမှာ ဖြစ်တယ်။ ဒီဖြစ်စဉ်ကို ဖန်ရှင် \fEn{return} ပြန်တယ်လို့ ပြောပါတယ်။
+\clearpage
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
     turn_right()ß\tikzmark{b1}ß
     move()
@@ -185,7 +160,7 @@ def turn_right():
     turn_left()ß\tikzmark{b2}ß
     turn_left()
     turn_left()ß\tikzmark{b3}ß
-\end{minted}
+\end{py}
 \begin{tikzpicture}[
   remember picture,
   overlay,
@@ -205,10 +180,7 @@ def turn_right():
 
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
     turn_right()
     move()
@@ -219,7 +191,7 @@ def turn_right():
     turn_left()ß\tikzmark{c2}ß
     turn_left()
     turn_left()ß\tikzmark{c3}ß
-\end{minted}
+\end{py}
 \begin{tikzpicture}[
   remember picture,
   overlay,
@@ -239,10 +211,7 @@ def turn_right():
 
 နှစ်ဆင့်၊ သုံးဆင့် ဖန်ရှင်ကောလ်တွေမှာလည်း ဒီသဘောတရား အတိုင်းပါပဲ။ အောက်ဖော်ပြပါ ပရိုဂရမ်ကုဒ်ကို ကြည့်ပါ။ \fCode{main} ဖန်ရှင်ထဲကနေ \fCode{do\_tricks} ဆီကို ရောက်သွားမယ်။ \fCode{do\_tricks} ထဲကနေ \fCode{put\_two} ထဲကို ရောက်သွားမယ်။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
     do_tricks()ß\tikzmark{d1}ß
     move()
@@ -256,7 +225,7 @@ def do_tricks():
 def put_two():
     put_beeper()ß\tikzmark{d5}ß
     put_beeper()ß\tikzmark{d6}ß
-\end{minted}
+\end{py}
 \begin{tikzpicture}[
   remember picture,
   overlay,
@@ -283,10 +252,7 @@ def put_two():
 
 ရီကားဆစ်ဖ် ဖန်ရှင်ကောလ်တွေ ဘယ်လို \fEn{return} ပြန်လဲ။ ရှေ့ကလို မြှားတွေနဲ့ ဆွဲပြလို့ ရပေမဲ့ ကြည့်ရတာ ရှုပ်ရှက်ခတ်နေမှာပါ။ အခုလို မြင်ကြည့်ရင် ပိုရှင်းပါတယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{initial call}ß
 make_beeper_row()ß\tikzmarknode{e1}ß
     # ß\fEn{1\textsuperscript{\fEn{st}} recur}ß
@@ -297,7 +263,7 @@ make_beeper_row()ß\tikzmarknode{e1}ß
             make_beeper_row()ß\tikzmarknode{e4}ß
                 # ß\fEn{4\textsuperscript{\fEn{th}} recur}ß
                 make_beeper_row()ß\tikzmarknode{e5}ß
-\end{minted}
+\end{py}
 \begin{tikzpicture}[
   remember picture,
   overlay,
@@ -325,19 +291,12 @@ make_beeper_row()ß\tikzmarknode{e1}ß
 မြှားအနက်တွေက ဖန်ရှင်ကောလ်  တစ်ဆင့်ပြီးတစ်ဆင့် ဖြစ်တာကို ပြတာပါ။ အထက်မှအောက် အစီ\allowbreak အစဉ်အတိုင်း ဖြစ်ပါတယ်။ လေးကြိမ်မြောက်မှာ နောက်ထပ် ရီကားဆစ်ဖ်ကောလ် ထပ်မဖြစ်တော့ဘဲ နောက်ဆုံး ရီကားဆစ်ဖ်ကောလ်က အရင်ဆုံး \fEn{return} စပြန်ပါတယ် (အောက်ဆုံး မြှားအနီနဲ့ ပြထား)။ ဒီအခါ တတိယ ရီကားဆစ်ဖ်ကောလ်ကို ပြန်ရောက်သွားမှာပါ။ ဒီအတိုင်း တစ်ဆင့်ပြီးတစ်ဆင့် အထက်ကို \fEn{return} ပြန်ပြီး နောက်ဆုံးမှာ ပထမဆုံး ခေါ်ခဲ့တဲ့နေရာ ပြန်ရောက်သွားမှာပါ။ (အခုပြထားတာကို တကယ့် \fEn{Python} ကုဒ် အနေနဲ့ မယူဆရပါ၊ ဖြစ်စဉ် နားလည်အောင် ပြခြင်းသာဖြစ်ပါတယ်)။ နဲနဲပြင်ထားတဲ့ \fCode{make\_beeper\_\allowbreak row}  ဗားရှင်းမှာ \fEn{return} ပြန်တဲ့ ဖြစ်စဉ်ကို ကြည့်ရအောင်။ 
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 make_beeper_row()
-\end{minted}
+\end{py}
 %
-\betweenminted{\medskipamount}
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def make_beeper_row():
     if front_is_clear():
         put_beeper()
@@ -347,17 +306,13 @@ def make_beeper_row():
         move()
     else:
         put_beeper()
-\end{minted}
+\end{py}
 %
-\btwntikzannoandpar
 
 \fCode{if}  အပိုင်း ရီကားဆစ်ဖ်ကောလ်ပြီး  \fCode{turn\_\allowbreak left} နဲ့ \fCode{move} ထပ်ဖြည့်ထားတာ။  ရီကားဆစ်ဖ်ကောလ် \fEn{return} ပြန်လာပြီးမှ ဒီနှစ်ခု ဆက်လုပ်မှာပါ။  နောက်ဆုံး ရီကားဆစ်ဖ်ကောလ်က \fEn{return} စဖြစ်တယ်။ ဒီတော့မှ တတိယအောက် \fCode{turn\_\allowbreak left} နဲ့ \fCode{move} ကို လုပ်ဆောင်မှာပါ။ ပြီးမှ တတိယကောလ် \fEn{return} ပြန်တယ်။ ဒီအတိုင်း အထက်ကို တက်သွားပြီး ကျန်နေသေးတဲ့ စတိတ်မန့်တွေကို လုပ်ဆောင်ပါတယ်။ ပထမဆုံးကောလ်အောက် ကျန်နေတာတွေ နောက်ဆုံးကျမှ ပြီးမှာပါ။
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{initial call}ß
 make_beeper_row()ß\tikzmarknode{f1}ß
     # ß\fEn{1\textsuperscript{\fEn{st}} recur}ß
@@ -374,7 +329,7 @@ make_beeper_row()ß\tikzmarknode{f1}ß
             move()ß\tikzmarknode{f4a}ß
                 # ß\fEn{4\textsuperscript{\fEn{th}} recur}ß
                 make_beeper_row()ß\tikzmarknode{f5}ß
-\end{minted}
+\end{py}
 \begin{tikzpicture}[
   remember picture,
   overlay,
@@ -401,10 +356,7 @@ make_beeper_row()ß\tikzmarknode{f1}ß
 
 ရီကားဆစ်ဖ်ကောလ် နှစ်ခါပဲ ဖြစ်မယ်ဆိုရင် အောက်ပါအတိုင်း မြင်ကြည့်လို့ ရပါတယ်။ မြှားအပြာနှစ်ခုက ရီကားဆစ်ဖ်ကောလ်ဖြစ်တာ။ ဒုတိယကောလ်က ဘိပါချပြီး (\fCode{else} အပိုင်း) အရင် \fEn{return} မယ်။ အထက်ကို ညွှန်တဲ့ မြှားအနီကို ကြည့်ပါ။ ဘယ်လှည့်၊ ရှေ့တိုးပြီး ပထမ ကောလ်က နောက်မှ \fEn{initial call} လုပ်ခဲ့တဲ့ဆီ ပြန်ရောက်တာ။ အောက်ကိုညွှန်တဲ့ မြှားအနီကို ကြည့်ပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def make_beeper_row():
     if front_is_clear():ß\tikzmark{g2}ß
         put_beeper()
@@ -417,7 +369,7 @@ def make_beeper_row():
 
 # ß\fEn{initial call}ß
 make_beeper_row()ß\tikzmark{g1}ß
-\end{minted}
+\end{py}
 %
 \begin{tikzpicture}[
   remember picture,
@@ -441,10 +393,7 @@ make_beeper_row()ß\tikzmark{g1}ß
 
 ရီကားဆစ်ဖ် ဖန်ရှင်အကြောင်း လေ့လာတဲ့အခါ ဘီဂင်နာအများစု ကြေကြေညက်ညက် နားလည်ဖို့အတွက် အခက်အခဲဆုံးတစ်ခုက \fEn{return} ပြန်တဲ့ သဘောတရားပါပဲ။  များများစဉ်းစား၊ များများလေ့ကျင့်ရင် ဒီအခက်အခဲ ကျော်ဖြတ်နိုင်မှာပါ။ \fCode{if...else} အပြီးမှာ \fCode{put\_beeper} လေးတစ်ခုပဲ ထပ်ဖြည့်လိုက်ရင် ဘယ်လိုဖြစ်မလဲ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: make_beeper_row2.py
 def make_beeper_row():
     if front_is_clear():
@@ -459,7 +408,7 @@ def make_beeper_row():
 
 # ß\fEn{initial call}ß
 make_beeper_row()
-\end{minted}
+\end{py}
 ပုံ (\fRefNo{\ref{fig:mrofb2}}) (\fRefNo{\subref{fig:mrofb2_1}}) နဲ့ (\fRefNo{\subref{fig:mrofb2_2}}) က မတိုင်မီနဲ့ ပြီးနောက် အခြေအနေပါ။ နောက်ဆုံးမှာ ဘိပါလေးခုကို ပါတ်လည် ဘယ်လိုချသွားလဲ စဉ်းစားကြည့်ပါ။ ရှေ့မှာဖော်ပြခဲ့သလို ဖန်ရှင်ကောလ်တွေ တစ်ဆင့်ပြီးတစ်ဆင့် ဖြစ်ပုံနဲ့ \fEn{return} ဖြစ်ပုံကို မြှားဆွဲကြည့်ပါ။
 \begin{figure}[thb!]
     \newcommand{\figpctw}{0.49}
@@ -482,13 +431,10 @@ make_beeper_row()
 \subsection*{ရီကားဆစ်ဖ် စဉ်းစားခြင်း ဥပမာ (၁)}
 ကွန်နာမှာရှိတဲ့ ဘိပါတွေအားလုံး ကောက်မယ်ဆိုပါစို့။ ဘိပါတစ်ခုနဲ့ အထက်ရှိနိုင်တယ်။ ဘိပါမရှိတာလည်း ဖြစ်နိုင်တယ် ယူဆပါ။ ဒီအတွက် ရီကားဆစ်ဖ်ဖန်ရှင် သတ်မှတ်ပါမယ်။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def pick_all_beepers():
     ... # ß\fEn{to do soon}ß
-\end{minted}
+\end{py}
 %
 
 ဖြေရှင်းမဲ့ကိစ္စတစ်ခုကို ၎င်းကိုယ်တိုင်နဲ့ ပုံပန်းသဏ္ဌာန်တူပြီး အရွယ်အစားအားဖြင့် တစ်ဆင့်ထက်တစ်ဆင့် သေးငယ်တဲ့ ကိစ္စတွေအဖြစ် ခွဲခြမ်းကြည့်ပါတယ်။ ဥပမာ ဘိပါငါးခုရှိတဲ့ ကိစ္စကို ဘိပါလေးခု၊ သုံးခု၊ နှစ်ခု နဲ့ တစ်ခု ရှိတဲ့ ကိစ္စတွေအဖြစ် ခွဲပြီး မြင်ကြည့်ရမှာပါ။ ဒီကိစ္စမှာ ဘိပါအရေအတွက်ဟာ အရွယ်အစားပဲ။ လေးခုရှိတဲ့ ကိစ္စဟာ ငါးခုရှိတဲ့ကိစ္စထက် အရွယ်အားဖြင့် တစ်ဆင့်ငယ်တာပေါ့။ ဘိပါမရှိတာလည်း ဖြစ်နိုင်တော့ သုညဘိပါဟာ အငယ်ဆုံးဖြစ်တယ်လို့ ယူဆနိုင်တယ်။
@@ -499,10 +445,7 @@ def pick_all_beepers():
 
 လက်ရှိဖန်ရှင်ဟာ $n - 1$ ဘိပါကို ကောက်နိုင်ပြီးသားလို့ ယူဆထားတယ်။  $n$ ဘိပါရှိရင် ဘိပါတစ်ခု ကောက်လိုက်ရင် $n - 1$ ဘိပါဖြစ်သွားမယ်။  ကျန်နေတဲ့  $n - 1$ ဘိပါကောက်ဖို့ လက်ရှိဖန်ရှင်ကိုပဲ ပြန်ခေါ်လိုက်မှာပေါ့။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{only partially done}ß
 def pick_all_beepers():
     ...
@@ -510,23 +453,20 @@ def pick_all_beepers():
     pick_beeper()
     pick_all_beepers() # ß\fEn{assuming it can pick $(n - 1)$ beepers}ß
     ...
-\end{minted}
+\end{py}
 %
 ရီကားဆစ်ဖ် စဉ်းစားတတ်ဖို့ ဒီအဆင့်က အခရာအကျဆုံးပဲ။ တစ်ဆင့်ငယ်တဲ့ ကိစ္စ $n - 1$ ကို ဖြေရှင်းနိုင်ပြီးသားလို့ မှတ်ယူပြီး လက်ရှိကစ္စ $n$ ကို ဘယ်လို ဖြေရှင်းမလဲ စဉ်းစားသွားတာ။
 
 ဖန်ရှင်သတ်မှတ်ချက်က မပြီးသေးပါဘူး။ အသေးငယ်ဆုံး ကိစ္စကို ချွင်းချက်အနေနဲ့ စဉ်းစားရမယ်။  အသေးငယ်ဆုံးကိစ္စက ဘိပါမရှိတာ (သုည) ဖြစ်တယ်။ ဘိပါမရှိရင် ဘာမှလုပ်စရာမလိုဘူး။ $n$ နဲ့ $n - 1$ ဘိပါအတွက် အထက်ပါအတိုင်း စဉ်းစားတဲ့အခါ $n \neq 0$ လို့ ယူဆရမှာပါ။ ဒါကြောင့် ဘိပါရှိမှပဲ လုပ်အောင် အခုလိုဖြစ်ရပါမယ်
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{finished}ß
 def pick_all_beepers():
     if beepers_present():
         pick_beeper()
         pick_all_beepers()
-\end{minted}
+\end{py}
 %
 
 
@@ -534,25 +474,19 @@ def pick_all_beepers():
 ရီကားဆစ်ဖန်ရှင် တက်စ် \fEn{(test)} လုပ်ရင် အသေးဆုံးကိစ္စကနေ စရတယ်။ ပြီးခဲတဲ့ ဖန်ရှင်အတွက် အသေးဆုံးက သုညပါ။ ဘိပါမရှိရင် ဖန်ရှင်က မှန်ရဲ့လား အရင်ဆုံး စစ်ကြည့်ပါမယ်။
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{assume no beeper}ß
 pick_all_beepers()
-\end{minted}
+\end{py}
 %
 \fCode{if} ဘလောက် မလုပ်ဆောင်ဘဲ \fEn{return} ဖြစ်သွားမှာပါ (ရီကားဆစ်ဖ်ကောလ် မဖြစ်လိုက်ဘူး)။ သုညဘိပါအတွက် ဖြစ်သင့်တဲ့အတိုင်း ဖြစ်ပါတယ်။ ဘိပါတစ်ခုပဲ ရှိရင်ရော ဘယ်လိုဖြစ်မလဲ။ ဘိပါကောက်တယ် သုညဘိပါဖြစ်သွားပြီး ရီကားဆစ်ဖ်ကောလ် ဖြစ်မယ်။ တစ်ကြိမ်ပဲ ဖြစ်မယ်။ \fCode{if} ဘလောက် အလုပ်မလုပ်ဘဲ \fEn{return} ပြန်မယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{initial call}ß
 pick_all_beepers()ß\tikzmarknode{h1}ß
     # ß\fEn{1\textsuperscript{\fEn{st}} recur}ß
     pick_all_beepers()ß\tikzmarknode{h2}ß
-\end{minted}
+\end{py}
 \begin{tikzpicture}[
   remember picture,
   overlay,
@@ -571,17 +505,14 @@ pick_all_beepers()ß\tikzmarknode{h1}ß
 \end{tikzpicture}%
 သုံးခုရှိရင် ရီကားဆစ်ဖ်ကောလ် နှစ်ခါဖြစ်ပြီးမှ \fEn{return} ပြန်မှာပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{initial call}ß
 pick_all_beepers()ß\tikzmarknode{i1}ß
     # ß\fEn{1\textsuperscript{\fEn{st}} recur}ß
     pick_all_beepers()ß\tikzmarknode{i2}ß
         # ß\fEn{2\textsuperscript{\fEn{nd}} recur}ß
         pick_all_beepers()ß\tikzmarknode{i3}ß
-\end{minted}
+\end{py}
 \begin{tikzpicture}[
   remember picture,
   overlay,
@@ -605,39 +536,30 @@ pick_all_beepers()ß\tikzmarknode{i1}ß
 
 မျှော်လင့်ထားသလို အလုပ်လုပ်နေပါတယ်။ အထက်ပါအတိုင်း စစ်ကြည့်သွားရင် ဘိပါ သုံး၊ လေး၊ ငါး၊ $...$ ခု တွေအတွက်လည်း တောက်လျှောက်မှန်နေမှာပါ။ ဘာကြောင့် ပြောနိုင်ရတာလဲ။ အခုလို စဉ်းစားကြည့်နိုင်ပါတယ်။ ရှေ့မှာ စစ်ကြည့်တာ $n = 0, n = 1$ အတွက် မှန်တာ သေချာပြီ။  $n = 2$ အတွက် စစ်မယ်ဆိုပါစို့
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{start with }$n = 2$ß
 if beepers_present():
     pick_beeper() # ß\fEn{after this }$n = 1$ß
     pick_all_beepers() # ß\fEn{works correctly for} $n = 1$ß
-\end{minted}
+\end{py}
 %
 $n = 2$ အတွက်မှန်ရင် $n = 3$ အတွက်လည်း ဆက်ပြီး မှန်နေမှာပါ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{start with }$n = 3$ß
 if beepers_present():
     pick_beeper() # ß\fEn{after this }$n = 2$ß
     pick_all_beepers() # ß\fEn{already works for} $n = 2$ß
-\end{minted}
+\end{py}
 %
 $n = 3$ အတွက်မှန်ရင် $n = 4$ အတွက်လည်း မှန်ပြီပေါ့
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # ß\fEn{start with }$n = 4$ß
 if beepers_present():
     pick_beeper() # ß\fEn{after this }$n = 3$ß
     pick_all_beepers() # ß\fEn{already works for} $n = 3$ß
-\end{minted}
+\end{py}
 %
 ဒီတိုင်းဆက်သွားရင် သုညအပါအဝင် မည်သည့် အပေါင်းကိန်းပြည့် $n$ အတွက်မဆို \fEn{(non-negative integer)}  မှန်တယ်ဆိုတာ မြင်နိုင်ပါတယ်။
 
@@ -679,10 +601,7 @@ if beepers_present():
 
 ကွန်နာငါးခုရှင်းမယ်ဆိုရင် လေးခုကို ရှင်းနိုင်ပြီးသား မှတ်ယူထားရမယ်။ ဘိပါရှိရင်ကောက်၊ ရှေ့တစ်ကွန်နာ ရွှေ့ထားလိုက်ရင် ရှင်းစရာ လေးခုပဲကျန်မယ်။ ဒီလေးခုကို လက်ရှိသတ်မှတ်နေတဲ့ ဖန်ရှင်နဲ့ ရှင်းလိုက်ရုံပဲပေါ့။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_street():
     ...
     if beepers_present():
@@ -690,7 +609,7 @@ def clean_street():
     move()
     clean_street() # ß\fEn{assuming already works for $n - 1$}ß
     ...
-\end{minted}
+\end{py}
 %
 \begin{mytcbox}
     အသေးငယ်ဆုံး ကိစ္စကို ချွင်းချက်အနေနဲ့ စဉ်းစားရမယ်။   ကွန်နာတစ်ခုဟာ အသေးငယ်ဆုံးကိစ္စ ဖြစ်တယ်။ ဒီကိစ္စကို ဘယ်လိုဖြေရှင်းမလဲ။
@@ -698,10 +617,7 @@ def clean_street():
 
 ကွန်နာတစ်ခုပဲ ရှိတယ်ဆိုရင် ဘိပါရှိရင် ကောက်လိုက်ရုံပါပဲ။ $n$ နဲ့ $n - 1$ ကွန်နာ အတွက် အထက်ပါအတိုင်း စဉ်းစားတဲ့အခါ $n > 1$ လို့ ယူဆရမှာပါ။ ရှေ့မှာရှင်းနေရင် $n > 1$ မို့လို့၊ မရှင်းတော့ဘူးဆိုရင် $n = 1$ ဖြစ်နေပြီ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_street():
     if front_is_clear():       # ß\fMM{ရှေ့မှာ ကွန်နာတွေ ရှိနေသေးရင်}ß
         if beepers_present():
@@ -711,7 +627,8 @@ def clean_street():
     else:                      # ß\fMM{နောက်ဆုံးကွန်နာဆိုရင်}ß
         if beepers_present():
             pick_beeper() 
-\end{minted}
+\end{py}
+%
 အသေးဆုံးကနေစပြီး ဖန်ရှင် အလုပ်လုပ်တာ မှန်/မမှန် စိစစ်ပါ။ ကွန်နာတစ်ခုပဲ ရှိတဲ့လမ်းဆိုရင် စစချင်းပဲ ရှေ့မှာ ပိတ်နေမှာပါ။ \fCode{else} အပိုင်း အလုပ်လုပ်မယ်။ ဘိပါရှိရင် ကောက်တယ်။ ကွန်နာနှစ်ခု ရှိတယ်ဆိုရင် စစချင်း ရှေ့မှာ နံရံမရှိဘူး။ \fCode{if} အပိုင်း အလုပ်လုပ်မယ်။ ဘိပါရှိရင် ကောက်တယ်၊ ရှေ့တိုးတယ် (နံရံပိတ်သွားပြီ)။  ရီကားဆစ်ဖ်ကောလ် ဖြစ်တယ်။ \fCode{else} အပိုင်းလုပ်ပြီးတာနဲ့ \fEn{return} စဖြစ်တယ်။
 
 ဒီအတိုင်းဆက်စစ်သွားရင် တစ်ခုထက်ပိုတဲ့ ကွန်နာတွေအတွက်လည်း မှန်အောင် အလုပ်လုပ်နေမယ်ဆိုတာ သက်သေပြနိုင်ပါတယ်။ စာရေးသူ အတွေ့အကြုံအရ အသေးဆုံးနဲ့ သူ့ထက်ကြီးတာ နှစ်ခုသုံးခုလောက်ထိ မှန်တယ်ဆိုရင် နောက်ဟာတွေအတွက် မှားစရာ အကြောင်းမရှိတော့ဘူး။
@@ -724,10 +641,7 @@ def clean_street():
     \item (၁) လမ်းရှင်းပြီး အဆုံးမှာ အပေါ်လမ်း ကူးလိုက်ရင် လေးလမ်းပဲကျန်မယ် (လမ်းအရေအတွက် $n$ ရှိရာကနေ   $n - 1$ ဖြစ်အောင် ဘာလုပ်မလဲ စဉ်းစားတာ)။
     \item တစ်ဆင့်ငယ်တဲ့ ကိစ္စ $n - 1$ ကို ဖြေရှင်းနိုင်ပြီးသားလို့ မှတ်ယူပြီး လက်ရှိကစ္စ $n$ ကို ဘယ်လို ဖြေရှင်းမလဲ စဉ်းစားရပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def clean_world():
     ...
     clean_street()
@@ -735,32 +649,27 @@ def clean_world():
     change_street()
     clean_world()
     ...
-\end{minted}
+\end{py}
     တစ်လမ်းရှင်းပြီး နောက်တစ်လမ်းကို ကူးလိုက်ရင် ဆက်ရှင်းဖို့ လမ်း အရေအတွက် $n - 1$ ကျန်မယ် (ငါးလမ်းရှိတာကို တစ်လမ်းရှင်းပြီး အပေါ်လမ်းကူးလိုက်ရင် ရှင်းစရာ လမ်း လေးခုပဲ ကျန်မယ်) ။ ကျန်တဲ့ $n - 1$  လမ်းကို ရှင်းဖို့ လက်ရှိ \fCode{clean\_world} ဖန်ရှင်ကိုပဲ ပြန်ခေါ်တယ်။
 %
     \item အသေးငယ်ဆုံး ကိစ္စကို ချွင်းချက်အနေနဲ့ စဉ်းစားရမယ်။   လမ်းတစ်လမ်းပဲရှိတာက အသေးငယ်ဆုံး။ လမ်းတစ်လမ်းရှင်းပြီး မြောက်ဘက်လှည့်အပြီး ပိတ်နေပြီဆိုရင်တော့ နောက်ထပ် ဆက်ပြီးရှင်းစရာ လမ်းမရှိတော့ဘူး။ အပေါ်အဆင့်က လမ်းကူးတာနဲ့ ကျန်တဲ့လမ်းတွေကို ရှင်းတဲ့ကိစ္စကို မြောက်ဘက်လှည့်ပြီးတဲ့အခါ ရှေ့မှာရှင်းနေမှ လုပ်ရမှာပါ။ ဒီတော့ အခုလို 
     %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+%
+\begin{py}
 def clean_world():
     clean_street()
     turn_north()
     if front_is_clear():
         change_street()
         clean_world()
-\end{minted}
+\end{py}
     ဖြစ်ရမယ်။ 
 %
 \end{itemize}
 %
 တစ်လမ်း၊ နှစ်လမ်း၊ သုံးလမ်း အသေးဆုံး ကိစ္စတွေ မှန်/မမှန် စိစစ်ကြည့်ပါ။ ပရိုဂရမ် အစအဆုံး ဖော်ပြပေးထားပါတယ်။ လေ့လာကြည့်ပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: clean_world_recur1.py
 from stanfordkarel import *
 
@@ -802,14 +711,11 @@ def turn_north():
 
 if __name__ == "__main__":
     run_karel_program("clean_world")
-\end{minted}
+\end{py}
 %
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: checkerboard_recur.py
 from stanfordkarel import *
 
@@ -865,5 +771,5 @@ def turn_north():
 
 if __name__ == "__main__":
     run_karel_program("4x5")
-\end{minted}
+\end{py}
 %

@@ -10,6 +10,7 @@ program_code/lib
 program_code/out
 program_code/CodeExamples.iml
 *.pyttex
+*.pygtex
 out/_minted-Begin_Modern_Programming_with_Python/
 test.tex
 out/_minted-test_1/A7C5309EE027F9F8B3CB2795AE7FDEDDBF745357926405C14E8497D560198DDA.pygtex

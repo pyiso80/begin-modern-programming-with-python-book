@@ -8,38 +8,29 @@
 
 ကွန်ထရိုးလ်စတိတ်မန့် တစ်မျိုးဖြစ်တဲ့ \fCodeBf{for} \fEn{loop} ဟာ စတိတ်မန့် တစ်ခု (သို့) စတိတ်မန့် တစ်စုကို သတ်မှတ်ထားတဲ့ အကြိမ်အရေအတွက် ပြည့်အောင် ထပ်ခါထပ်ခါ ပြန်ကျော့ပေးပါတယ်။  \fCode{move} ကို နှစ်ဆယ့်ငါးကြိမ် ကျော့ပေးဖို့ \fCode{for} \fEn{loop} နဲ့ အခုလို 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 for i in range(25):
     move()
-\end{minted}
+\end{py}
 %
 ရေးရပါတယ်။ \fCode{put\_beeper}\fEn{,} \fCode{move}\fEn{,} \fCode{turn\_left} စတိတ်မန့် သုံးကြောင်းတစ်စုကို အကြိမ်တစ်ရာ ကျော့ချင်ရင် ဒီလိုပါ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 for i in range(100):
     put_beeper()
     move()
     turn_left()
-\end{minted}
+\end{py}
 %
 
 နှစ်ဆယ့်ငါးကြိမ်ကို \fCode{range(25)}\fEn{,} အကြိမ်တစ်ရာကို \fCode{range(100)} စသည်ဖြင့် တွေ့ရတယ်။ ယေဘု\allowbreak ယျအားဖြင့် အကြိမ်အရေအတွက် \fEnEmp{N} ကြိမ် ကျော့ချင်ရင်  
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 for ß$x$ß in range(ß$N$ß):
     ß$statement_1$ß
     ß$statement_2$ß
     ß$statement_3$ \fEn{etc.}ß
-\end{minted}
+\end{py}
 %
 ပုံစံနဲ့ သတ်မှတ်ရတာ။ \fEnEmp{N} က  အကြိမ်အရေအတွက်ကို ဖော်ပြတဲ့ ကိန်းပြည့်ဂဏန်းဖြစ်တယ်။ \fCode{for} \fEn{loop} ရေးတဲ့အခါ ကော်လံ \fCode{:} မကျန်ခဲ့ဖို့ သတိပြုရပါမယ်။ $x$ ဟာ ဗေရီရေဘဲလ်တစ်ခုဖြစ်ပြီး \fCode{i}\fEn{,} \fCode{j}\fEn{,} \fCode{k} စတဲ့ အက္ခရာတစ်ခုနဲ့ ကိုယ်စားပြုလေ့ရှိတယ်။
 
@@ -68,10 +59,7 @@ turn_left()
 %
 ပုံ (\fRefNo{\ref{fig:mrofb-bef}}) ကားရဲလ်ကမ္ဘာမှာ ကွန်နာအားလုံးမှာ ဘိပါတစ်ခုစီ ချထားပေးရမယ်။ ကွန်နာငါးခုရှိတာမို့လို့ စုစုပေါင်း ဘိပါငါးခု ချထားရမှာပါ။ \fCode{move} ကတော့ လေးကြိမ်ပဲ လုပ်ရမယ် (ကားရဲလ်ရှေ့မှာ ကွန်နာလေးခုပဲ ရှိတယ်)။ ဒီအတွက်ကို အခုလိုရေးနိုင်ပါတယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: make_row_of_5_beepers.py
 from stanfordkarel import *
 
@@ -87,7 +75,7 @@ def main():
 if __name__ == "__main__":
     run_karel_program("make_row_of_5_beepers")
 
-\end{minted}
+\end{py}
 %
 
 \fCode{for} \fEn{loop} ဟာ \fCode{put\_beeper} နဲ့ \fCode{move} ကို လေးကြိမ်ကျော့ပေးမှာပါ။ တစ်ကြိမ်ပြီးတိုင်း ရှိနေမဲ့ အနေအထား တစ်ခုချင်းစီကို ပုံ (\fRefNo{\ref{fig:mrofb_iters}})  မှာ တွေ့နိုင်ပါတယ်။ လေးကြိမ်မြောက် နောက်ဆုံးတစ်ကျော့အပြီး ပုံ (\fRefNo{\ref{fig:mrofb_iters}}) (င) မှာ ဘိပါတစ်ခုလိုနေသေးတာ တွေ့ရမယ်။ \fCode{for} \fEn{loop} ပြီးတဲ့အခါ \fCode{put\_beeper} တစ်ခါထပ်လုပ်ပေးတော့မှ တစ်တန်းလုံးအပြည့်ဖြစ်သွားမှာပါ။
@@ -132,16 +120,13 @@ if __name__ == "__main__":
 \subsection*{‘Make Row of Five Beepers’ ဒုတိယ ဗားရှင်း}
 ပရိုဂရမ်ရေးတဲ့အခါ ပရိုဂရမ်မာတွေ တစ်ယောက်နဲ့တစ်ယောက် စဉ်းစားပုံ စဉ်းစားနည်း၊ ဖြေရှင်းနည်း ထပ်တူကျလေ့မရှိပါဘူး။ ဘိပါငါးခု အတန်းလိုက် ချပေးတဲ့ ပရိုဂရမ်ကိုပဲ နောက်ဗားရှင်းတစ်မျိုးနဲ့ ရေးနိုင်ပါတယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
     put_beeper()
     for i in range(4):
         move()
         put_beeper()
-\end{minted}
+\end{py}
 %
 \fCode{for} \fEn{loop} မစခင် \fCode{put\_beeper} လုပ်ထားတာ၊ \fCode{move} နဲ့ \fCode{put\_beeper} အစဉ်ပြောင်းသွားတာ (ပထမ ဗားရှင်းနဲ့ ပြောင်းပြန်ဖြစ်နေတာ) သတိထားကြည့်ပါ။
 
@@ -149,10 +134,7 @@ def main():
 
 \fEn{Python} ဟာ အင်ဒန့်ထ်လုပ်ခြင်းဖြင့် ပရိုဂရမ်ကုဒ် ဖွဲ့စည်းပုံ စထရက်ချာကို ဖော်ပြတဲ့ \fEn{programming language} ဖြစ်ပါတယ်။ \fEn{Python} ကုဒ်တွေကို ဘလောက် \fEn{(\textit{block})} တွေနဲ့ ဖွဲစည်းထားတယ်လို့ ရှုမြင်နိုင်တယ်။ ဘလောက်ဆိုတာ ကုဒ်တွေကို အုပ်စုတစ်စု အဖြစ် ဖွဲ့စည်းထားတာကို ဆိုလိုတာပါ။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 def main():
     put_beeper()
     for i in range(4):
@@ -160,7 +142,7 @@ def main():
         put_beeper()
     pick_beeper()
 turn_left()
-\end{minted}
+\end{py}
 %
 အခု \fEn{Python} ကုဒ်မှာ အင်ဒန့်ထ်မလုပ်ထားဘဲ  ဘယ်ဘက်စွန်း ကပ်ရေးထားတဲ့ \fCode{\textbf{def} main():} (ဖန်ရှင်ခေါင်းစည်း) ဟာ အပေါ်ဆုံးအဆင့် \fEn{(top level)} ဖြစ်တယ်လို့ ယူဆတယ်။ ဖန်ရှင်ခေါင်းစည်းအောက် အင်ဒန့်ထ်လုပ်ထားတဲ့ ကုဒ်လိုင်းအားလုံးဟာ \fCode{main} ဖန်ရှင် ဘလောက်ထဲမှာ အကျုံးဝင်တယ်။ \fCode{pick\_bee\allowbreak per} အထိပါတယ်။ \fCode{put\_beeper} (ပထမတစ်ခု)၊ \fCode{for} \fEn{loop} နဲ့ \fCode{pick\_beeper} တို့ဟာ ပထမအဆင့် အင်ဒန့်ထ်ဖြစ်တယ်။ 
 
@@ -190,13 +172,10 @@ turn_left()
 
 ဘိပါမရှိသ၍ တစ်ကြိမ်ပြီးတစ်ကြိမ် \fCode{move} လုပ်ခိုင်းမယ်ဆိုရင် နောက်ဆုံးမှာ ဘိပါရှိတဲ့ကွန်နာကို ရောက်သွားမှာ သေချာပါတယ်။ အဲဒီလို လုပ်ခိုင်းဖို့ရာအတွက် \fCode{while} \fEn{loop} နဲ့ ရေးထားတာကို အခုလိုတွေ့ရပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 while no_beepers_present():
     move()
-\end{minted}
+\end{py}
 %
 
 ကားရဲလ်ဟာ အခြေခံကွန်မန်း လေးခုအပြင် လက်ရှိ ကွန်နာမှာ ဘိပါရှိ/မရှိ၊ ရှေ့မှာ နံရံပိတ်နေ/မနေ၊ အရှေ့ဘက်ကို မျက်နှာမူထား/မထား စတဲ့ သူနဲ့ (သို့) သူ့ရဲ့ကမ္ဘာနဲ့ သက်ဆိုင်တဲ့ အခြေအနေတစ်ရပ်ရပ် မှန်/မမှန် စစ်နိုင်ပါတယ်။ \fCode{no\_beepers\_present} က လက်ရှိ သူရှိနေတဲ့ ကွန်နာမှာ ‘ဘိပါ မရှိဘူးလား’ ဆိုတဲ့ အခြေအနေ စစ်ခိုင်းတာပါ။ လက်ရှိကွန်နာမှာ ဘိပါ ‘မရှိ’ ရင် ဒီအခြေအနေက မှန်တယ်လို့ ယူဆရမှာပေါ့။ အကယ်၍ ‘ရှိ’ နေရင်တော့ မှားတယ်လို့ ယူဆရမယ်။ အမှန် (သို့) အမှား ရလဒ်ထွက်မဲ့ ဒီလိုမျိုး အခြေအနေစစ် ကွန်မန်းတွေကို  ကွန်ဒီရှင် \fEn{(condition)} လို့ခေါ်ပါတယ်။
@@ -235,10 +214,7 @@ while no_beepers_present():
 အပြည့်အစုံ ဖော်ပြပေးထားတဲ့ ပရိုဂရမ်ကို လေ့လာကြည့်ပါ။
 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: go_pick_beeper.py
 from stanfordkarel import *
 
@@ -253,7 +229,7 @@ def main():
 if __name__ == "__main__":
     run_karel_program("go_pick_beeper")
 
-\end{minted}
+\end{py}
 %
 
 \subsection*{ကားရဲလ် ကွန်ဒီရှင်များ}
@@ -285,35 +261,26 @@ if __name__ == "__main__":
 \subsection*{\fSubSecCodeBf{while} loop ဆင်းတက်စ်}
 \fCode{while} \fEn{loop} ရေးတဲ့ ပုံစံက ယေဘုယျအားဖြင့် ဒီလိုပါ။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 while ß$condition$ß :
     ß$statement_1$ß
     ß$statement_2$ß
     ß$statement_3$ \fEn{etc.}ß
-\end{minted}
+\end{py}
 %
 \fEnEmp{condition} က ကားရဲလ်ကွန်ဒီရှင် တစ်ခုဖြစ်တယ်။ ကော်လံ \fCode{:} မကျန်ခဲ့အောင် ဂရုစိုက်ပါ။ \fEnEmp{condition} မှန်နေသေးသ၍ ပြန်ကျော့စေချင်တဲ့ စတိတ်မန့်တွေကို \fCode{while} အောက်မှာ အင်ဒန့်ထ်လုပ်ထား ရပါမယ်။ ရှေ့မှာရှင်းနေသ၍ \fCode{move} လုပ်တဲ့ \fCode{while} \fEn{loop} ကို အခုလို
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 while front_is_clear():
     move()
-\end{minted}
+\end{py}
 %
 ရေးပါတယ်။
 
 \subsection*{‘Make Beeper Row’ ဥပမာ}
 \fEn{‘Make Row of Five Beepers’} ဥပမာမှာ လမ်းရဲ့အလျားဟာ မပြောင်းလဲဘူး ယူဆတာမို့လို့  \fCode{for} \fEn{loop} ကို အသုံးပြုတာ ဆီလျော်ပါတယ်။ လမ်းရဲ့အရှည်ကို ကြိုမသိထားဘူး၊ တစ်လမ်းလုံး ဘိပါတွေ ဖြန့်ထားပေးရမယ်ဆိုရင် \fCode{while} နဲ့ ရေးရမှာပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: make_beeper_row.py
 from stanfordkarel import *
 
@@ -329,7 +296,7 @@ def main():
 if __name__ == "__main__":
     run_karel_program()
 
-\end{minted}
+\end{py}
 %
 
 တစ်ကြိမ်ကျော့ပြီးတိုင်း  ရှိနေမဲ့ အနေအထားကို ပုံ (\fRefNo{\ref{fig:mbr_iters}}) မှာ ကြည့်ပါ။ လေးကြိမ်မြောက်အပြီး \fCode{front\_is\_clear} စစ်တဲ့အခါ မှားနေပြီဖြစ်လို့ ထပ်မကျော့တော့ဘဲ \fEn{loop} ကနေ ထွက်သွားမယ်။ ဒီအခါမှာ ဘိပါတစ်ခု လိုနေသေးတယ်။ \fCode{put\_beeper} ထပ်လုပ်ရမယ်။ တစ်ခါပဲ လုပ်ရမှာပါ။ ဒါကြောင့် \fCode{while} \fEn{loop} ထဲမပါအောင် ပထမအဆင့် အင်ဒန့်ထ်ပဲ ဖြစ်ရမယ်။ 
@@ -365,13 +332,10 @@ if __name__ == "__main__":
 \section{\fSecCodeBf{if} စတိတ်မန့်}
 တစ်ခု (သို့) တစ်ခုထက်ပိုတဲ့ စတိတ်မန့်တွေကို အခြေအနေတစ်ရပ် မှန်တော့မှပဲ လုပ်ဆောင်စေချင်တဲ့အခါ \fCodeBf{if} ကို အသုံးပြုနိုင်တယ်။ ဥပမာ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 if beepers_present():
     pick_beeper()
-\end{minted}
+\end{py}
 %
 \fCode{if} စတိတ်မန့်ဟာ \fCode{beepers\_present} ကွန်ဒီရှင် မှန်တော့မှပဲ \fCode{pick\_beeper} လုပ်မှာပါ။ မှားရင် မလုပ်ပါဘူး။
 
@@ -394,10 +358,7 @@ if beepers_present():
 %
 ဘိပါရှိတဲ့ ကမ္ဘာဆိုရင် ဘိပါကို နံရံအခြားဘက် အောက်ခြေကို ရွှေ့ပေးရမယ်။ မရှိတဲ့ကမ္ဘာဆိုရင် နံရံ ဒီဘက် အောက်ခြေမှာပဲ ရပ်နေရမယ်။ ပရိုဂရမ်က ကမ္ဘာနှစ်ခုလုံးမှာ မှန်အောင် အလုပ် လုပ်နိုင်ရပါမယ်။ ဒီအတွက် \fCode{if} စတိတ်မန့် သုံးထားတာ လေ့လာကြည့်ပါ။ 
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: move_beeper_to_other_side_if_any.py
 from stanfordkarel import *
 
@@ -426,21 +387,18 @@ def main():
 if __name__ == "__main__":
     run_karel_program("mbtos1")
 
-\end{minted}
+\end{py}
 %
 \fCode{if} အောက်က စတိတ်မန့်တွေကို အင်ဒန့်ထ်လုပ်ထားတာ သတိပြုပါ။ အဲဒီ စတိတ်မန့်အားလုံး \fCode{beepers\_\allowbreak present} ဖြစ်မှ လုပ်ဆောင်မှာ ဖြစ်တယ်။ ဘိပါမရှိတဲ့ ကမ္ဘာမှာ စမ်းကြည့်ဖို့အတွက် \mytcboxinl{\fEnSnd{Load World}} ခလုတ်နှိပ်ပြီး ခေါ်တင်ပါ။  ဒါမှမဟုတ် ပရိုဂရမ်ကုဒ်မှာ \fCode{"mbtos2"} လို့ပြင်ပြီး ပြန် \fEn{run} ပါ။  
 
 \fCode{if} စတိတ်မန့် ယေဘုယျစထရက်ချာကို အခုလိုတွေ့ရတယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 if ß$condition$ß :
     ß$statement_1$ß
     ß$statement_2$ß
     ß$statement_3$ \fEn{etc.}ß
-\end{minted}
+\end{py}
 %
 \fEnEmp{condition} က \fCode{front\_is\_clear}\fEn{,} \fCode{beepers\_present} စတဲ့ ကားရဲလ် ကွန်ဒီရှင် တစ်ခုခုဖြစ်မယ်။ တေဘဲလ် (\fRefNo{\ref{tbl:karel_conditions}}) မှာ ကားရဲလ်ကို စစ်ခိုင်းလို့ရတဲ့ ကွန်ဒီရှင်အားလုံး ပြထားပါတယ်။
 
@@ -448,10 +406,7 @@ if ß$condition$ß :
 \section{\fSecCodeBf{if...else} စတိတ်မန့်}
 အခြေအနေတစ်ရပ် မှန်တဲ့အခါ လုပ်ဆောင်ရမှာနဲ့ မှားတဲ့အခါ လုပ်ဆောင်ရမှာ မတူကွဲပြားနေတဲ့အခါ \fCodeBf{if}\fCode{...}\fCodeBf{else} ကို သုံးပါတယ်။ ရှေ့က \fCode{if} စတိတ်မန့် ဥပမာ ပုံ (\fRefNo{\ref{fig:mbtos_if_any}})  မှာ ဘိပါမရှိရင် နဂိုမူလနေရာကို ပြန်လာခိုင်းချင်တယ်ဆိုပါစို့။ \fCode{if...else} နဲ့ အခုလို ရေးရပါမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 from stanfordkarel import *
 
 
@@ -485,15 +440,12 @@ def main():
 
 if __name__ == "__main__":
     run_karel_program("mbtos2")
-\end{minted}
+\end{py}
 %
 
 \fCode{if...else} စတိတ်မန့်က ကွန်ဒီရှင်မှန်ရင်  \fCode{if} ဘလောက်ကိုလုပ်ဆောင်ပေးပြီး ကွန်ဒီရှင်မှားရင်တော့ \fCode{else} ဘလောက်ကို လုပ်ဆောင်ပေးတာပါ။ ယေဘုယျပုံစံက ဒီလိုပါ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 if ß$condition$ß :
     ß$statement_{1a}$ß
     ß$statement_{2a}$ß
@@ -502,7 +454,7 @@ else:
     ß$statement_{1b}$ß
     ß$statement_{2b}$ß
     ß$statement_{3b}$ \fEn{etc.}ß
-\end{minted}
+\end{py}
 %
 
 \section{Nested ကွန်ထရိုးလ် စတိတ်မန့်များ}
@@ -511,39 +463,31 @@ else:
 
 \subsection*{Nested \fSubSecCodeBf{for} loop}
 %
-\setlength{\fboxsep}{0pt}
 ဘိပါသုံးခုချလိုက်၊ ရှေ့တိုးလိုက် လုပ်တာကို လေးကြိမ်ကျော့ချင်ရင် \fCode{for} \fEn{loop} နဲ့ အခုလို ရေးရမယ်ဆိုတာ သိခဲ့ပြီးပါပြီ။
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+%
+\begin{py}
 for i in range(4):
     put_beeper()
     put_beeper()
     put_beeper()
     move()
-\end{minted}
+\end{py}
 %
 ဒီ \fCode{for} \fEn{loop} ထဲက \fCode{put\_beeper} သုံးကြောင်းကိုလည်း နောက်ထပ် \fCode{for} တစ်ခုနဲ့ ရေးလို့ ရရမှာပေါ့။ ဒီလို ဖြစ်သွားမှာပါ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 for i in range(4):
     for j in range(3):
         put_beeper()
     move()
-\end{minted}
+\end{py}
 %
 \fCode{for} \fEn{loop} နှစ်ခု ဆင့်ရေးထားလို့ \fEn{nested} \fCode{for} \fEn{loop} လို့ခေါ်ပါတယ်။  \fEn{Loop} တစ်ခုချင်းကို သီးခြား ရည်ညွှန်းချင်တဲ့အခါ အပြင် \fCode{for} \fEn{loop} နဲ့ အတွင်း \fCode{for} \fEn{loop} လို့ ပြောလေ့ရှိတယ်။ အင်ဒန့်ထ် လုပ်ထားပုံအရ အပြင် \fCode{for} \fEn{loop} ဘလောက်ထဲမှာ အတွင်း \fCode{for} \fEn{loop} နဲ့ \fCode{move} ပါဝင်တယ်။ အတွင်း \fCode{for} \fEn{loop} ဘလောက်ထဲမှာတော့ \fCode{put\_beeper} ပဲပါတယ်၊ \fCode{move} မပါ ပါဘူး။ အပြင် \fCode{for} \fEn{loop} မှာ ဗေရီရေဘဲလ် \fCode{i} ဆိုရင် အတွင်းမှာ \fCode{i} မဖြစ်ရပါဘူး။ \fCode{j}\fEn{,} ဒါမှမဟုတ် \fCode{k} မတူတာ  တစ်ခုခုဖြစ်ရပါမယ်။ 
 
 
 အတန်းလိုက် ကွန်နာ ငါးခုမှာ တစ်ကွန်နာ ဘိပါ (၂၅) ခုစီ ချထားပေးဖို့  \fEn{nested loop} နဲ့ ရေးထားတာကို လေ့လာကြည့်ပါ။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: row_of_beeper_piles.py
 from stanfordkarel import *
 
@@ -560,7 +504,7 @@ def main():
 
 if __name__ == "__main__":
     run_karel_program("5x1")
-\end{minted}
+\end{py}
 %
 
 \subsection*{Nested \fSubSecCodeBf{for} and \fSubSecCodeBf{while}}
@@ -570,29 +514,23 @@ if __name__ == "__main__":
 
 နံရံတစ်ဘက် အတွက် ဆိုရင် အခုလို
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 while front_is_clear():
     put_beeper()
     move()
 turn_left()
-\end{minted}
+\end{py}
 %
 ဖြစ်မယ်။ (\fCode{while} ဘလောက်မှာ  \fCode{turn\_left} မပါတာ ဂရုပြုပါ)။ နံရံလေးဘက်အတွက် လေးကြိမ် လုပ်ရမှာဆိုတော့ \fCode{for} နဲ့ အခုလို
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: beeper_fence.py
 for i in range(4):
     while front_is_clear():
         put_beeper()
         move()
     turn_left()
-\end{minted}
+\end{py}
 %
 ရေးရပါမယ်။
 
@@ -625,10 +563,7 @@ for i in range(4):
 
 ပရိုဂရမ် တစ်ခုလုံး အတွက်ဆိုရင် အခုလိုပါ
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: beeper_fence.py
 from stanfordkarel import *
 
@@ -644,16 +579,13 @@ def main():
 if __name__ == "__main__":
     run_karel_program("4x3")
 
-\end{minted}
+\end{py}
 %
 
 \subsection*{Nested \fSubSecCodeBf{while} and \fSubSecCodeBf{if}}
 \fCode{while} နဲ့ \fCode{if} \fEn{nest} လုပ်လို့လည်း ရတာပေါ့။ လမ်းပေါ်မှာ ဘိပါတွေက ကြုံရာကျပန်း  ရှိနေမယ်။ ဘိပါတွေကို အမှိုက်တွေလို့ ယူဆပြီး ရှင်းပေးရပါမယ်။ လမ်းအလျားကို ကြိုမသိဘူး၊ ကွန်နာတစ်ခုမှာ ဘိပါတစ်ခုထက် ပိုမရှိနိုင်ဘူးလို့ ယူဆပါ။  လမ်းအဆုံးထိ \fCode{while} \fEn{loop} နဲ့ ရွှေ့ခိုင်းလို့ ရမယ်။ ရောက်တဲ့ ကွန်နာတိုင်းမှာ ဘိပါရှိရင် ကောက်ခိုင်းရပါမယ်။ \fCode{if} သုံးရမယ်။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 from stanfordkarel import *
 
 
@@ -670,16 +602,13 @@ def main():
 if __name__ == "__main__":
     run_karel_program("clean_the_street")
 
-\end{minted}
+\end{py}
 %
 \fCode{if} စတိတ်မန့် နဲ့ \fCode{move} ကို \fCode{while} \fEn{loop} ရဲ့ ဘလောက်ထဲမှာ ထည့်ပြီး ရှေ့မှာရှင်းနေသ၍ ပြန်ကျော့ခိုင်းထားတာပါ။ \fCode{if} စတိတ်မန့်က ဘိပါရှိတော့မှပဲ ကောက်ပေးဖို့အတွက်။
 
 ပြီးခဲ့တဲ့ဟာနဲ့ အလားတူတဲ့ နောက်ထပ် ဥပမာ တစ်ခုကတော့ လမ်းတစ်လျှောက် ကွန်နာတွေမှာ ဘိပါရှိရင် ကောက်ခိုင်းပြီး မရှိရင် တစ်ခုချပေးရပါမယ်။ တနည်းအားဖြင့် ကွန်နာတစ်ခုချင်းရဲ့ ဘိပါရှိ/မရှိ အခြေအနေကို ဆန့်ကျင်ဘက် ပြောင်းတာပေါ့။
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 # File: toggle_beepers.py
 from stanfordkarel import *
 
@@ -698,7 +627,7 @@ def main():
 
 if __name__ == "__main__":
     run_karel_program("toggle_beepers")
-\end{minted}
+\end{py}
 %
 \fCode{if...else} သုံးထားတယ်။ ကျန်တာအားလုံး လမ်းရှင်းတဲ့ ပရိုဂရမ်နဲ့ တူတူပဲ။
 
@@ -707,24 +636,18 @@ if __name__ == "__main__":
 အခြေအနေ တစ်ရပ် မှန်တော့မှပဲ လုပ်ချင်ရင် \fCode{if} ကို သုံးတယ်။  
 အခြေအနေ ‘နှစ်ရပ်’ လုံးနဲ့ ကိုက်ညီမှ လုပ်ဆောင်စေချင်တဲ့အခါ \fEn{nested} \fCode{if} သုံးနိုင်ပါတယ်။ ညာဘက်လည်းရှင်း လက်ရှိကွန်နာမှာလည်း ဘိပါမရှိမှ ဘိပါတစ်ခု ချထားခိုင်းမယ်ဆိုပါစို့။ အခုလိုရေးနိုင်ပါတယ်
 %
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\begin{py}
 if right_is_clear():
     if no_beepers_present():
         put_beeper()
-\end{minted}
+\end{py}
 %
 ညာဘက်မှာ ရှင်းနေမှ အပြင် \fCode{if} က အတွင်း \fCode{if} ကို လုပ်ဆောင်စေမှာပါ။ အတွင်း \fCode{if} ကလည်း ဘိပါမရှိမှပဲ \fCode{put\_beeper} လုပ်မှာပါ။ ညာဘက်မှာ ပိတ်နေရင်သော်လည်းကောင်း ဘိပါရှိနေရင်သော်လည်းကောင်း \fCode{pick\_beeper} လုပ်မှာ မဟုတ်ပါဘူး။ \fCode{right\_is\_clear} နဲ့ \fCode{no\_beepers\_present} အခြေအနေ နှစ်ခုလုံး မှန်မှပဲ လုပ်မှာပါ။
 
 ပုံ (\fRefNo{\ref{fig:st_repair}}) (က) မှာ ဒုတိယ လမ်းတစ်လျှောက် လမ်းပြင်တဲ့အလုပ်ကို ကားရဲလ်ကို တာဝန်ပေးတယ်လို့ ယူဆပါ။ ဘိပါရော ညာဘက်နံရံပါ မရှိတဲ့ ကွန်နာတွေက  လမ်းအခြေအနေ တော်တော်ဆိုးနေတဲ့ နေရာတွေ။ ဒီလိုနေရာတွေမှာ ဘိပါတစ်ခု ဖြည့်ပြီး လမ်းပြင်ပေးရမှာပါ။ 
 %
-\label{lst:repair_street}
-\setlength{\fboxsep}{0pt}
-\begin{minted}[frame=\mintframe, framerule=\mintrule,framesep= \mintsep, xleftmargin=\xlftmargin
-    , bgcolor=mintbgcolor,rulecolor=mintrulecolor
-    , python3=true,escapeinside=ßß]{python}
+\label{lst:repair_street}%
+\begin{py}
 # File: repair_street.py
 from stanfordkarel import *
 
@@ -743,7 +666,7 @@ def main():
 
 if __name__ == "__main__":
     run_karel_program("repair_street")
-\end{minted}
+\end{py}
 %
 \fCode{while} ဘလောက်ထဲမှာ \fEn{nested} \fCode{if} နဲ့ \fCode{move} ပါဝင်တယ်။ \fEn{nested} \fCode{if} က ညာဘက်လည်းရှင်း ဘိပါလည်းမရှိမှ လက်ရှိကွန်နာမှာ ဘိပါတစ်ခု ချခိုင်းထားတာပါ။  \fCode{while} ထဲမှာ \fCode{if}၊ အဲဒီ \fCode{if} ထဲမှာမှ နောက်ထပ် \fCode{if} တစ်ခု ဆင့်ထားတဲ့အတွက် သုံးဆင့် \fEn{nest} လုပ်ထားတာပါ။ အင်ဒန့်ထ် လုပ်ထားတာတွေ ဂရုစိုက်ကြည့်ဖို့ လိုတယ်။ ဘယ်ဘလောက်ထဲမှာ ဘာရှိနေလဲဆိုတာ မြင်အောင် လုပ်ရမှာပါ။ ကိုယ်တိုင်ရေးရင်လည်း အင်ဒန့်ထ် ဂရုစိုက်ပြီး လုပ်ရပါမယ်။ လမ်းပြင်ပြီး အခြေအနေကို ညာဘက် ပုံ (\fRefNo{\ref{fig:st_repair}}) (ခ) တွင် ကြည့်ပါ။
 
