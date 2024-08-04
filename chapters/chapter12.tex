@@ -1,2 +1,70 @@
 \chapter{ဒေတာဘေ့စ်များနှင့် ဆက်သွယ်ဆောင်ရွက်ခြင်း}
-$\big\llbracket \fEn{Not completed yet!} \big\rrbracket$
+
+ဒေတာဘေ့စ်တွေဟာ ကနေ့ခေတ် \fEn{information system} အားလုံးရဲ့ အဓိကကျောရိုးလို့ ဆိုနိုင်ပါတယ်။ ၎င်းတို့ဟာ \fEn{web application} တွေမှာ သုံးစွဲသူ ကိုယ်ရေးအချက်အလက်ကနေ ဘဏ္ဍာရေးဆိုင်ရာ အဖွဲ့အစည်းကြီးတွေရဲ့ ငွေဝင်ငွေထွက် စာရင်းအထိ အရာအားလုံး သိမ်းဆည်းပေးတဲ့ စနစ်တွေ ဖြစ်တယ်။ ကျန်းမာရေး၊ စီးပွားရေး၊ ပညာရေး၊ ဘဏ္ဍာရေး စတဲ့ ကဏ္ဍ အားလုံးမှာ အချက်အလက်တွေ ထိထိရောက်ရောက် သိမ်းဆည်း စီမံနိုင်ဖို့အတွက် ဒေတာဘေ့စ်တွေက မရှိမဖြစ်ပါပဲ။ အရေးပါတဲ့ ဒီလို ကဏ္ဍတွေမှာ လုပ်\allowbreak ငန်းအသီးသီး မှန်ကန်တိကျ၊ နောက်ဆုံးရ အချက်အလက်တွေနဲ့  \fEn{informed decision} ချနိုင်ဖို့ အဓိကဆောင်ရွက်ပေးတဲ့ စနစ်တွေလည်း ဖြစ်တယ်။
+
+% \fEn{Databases are the backbone of modern information systems. They store everything from user data in web applications to transaction records in financial systems. They are used in virtually every industry, including finance, healthcare, e-commerce, and education, to store and manage data efficiently, enabling businesses to make informed decisions based on accurate and up-to-date information.}
+
+\section{Database Management Systems}
+‘ဒေတာဘေ့စ်’ ဆိုတာ အချက်အလက် အမြောက်အများ ရေရှည်သိမ်းဆည်းပေးတဲ့ စနစ်လို့ အကြမ်းဖျဉ်း ပြောနိုင်ပါတယ်။ သာမန်အားဖြင့် ရေရှည်သိမ်းထားချင်ရင် ဖိုင်စနစ် သုံးလို့ရပေမဲ့ ဒေတာ များလာတဲ့အခါ အဆင်မပြေနိုင်တော့ဘူး။ ပြန်လည်ရှာဖွေရတာ၊ ထုတ်ယူရတာ၊ အမြဲတမ်း မှန်ကန်ကိုက်ညီနေအောင် ထိန်းသိမ်းရတဲ့ ကိစ္စတွေအတွက် ပြဿနာရှိလာတယ်။ \fEn{Database Management Systems (DBMS)} တွေကို ဒီအခက်အခဲတွေ ဖြေရှင်းပေးဖို့  တီထွင်ခဲ့ကြတာပါ။ အချက်အလက် မှန်ကန်တိကျခြင်း၊ လုံခြုံမှုရှိခြင်းနှင့် အလွယ်တကူ \fEn{access} လုပ်နိုင်ခြင်းအတွက် \fEn{DBMS} တွေမှာ ဦးစားပေး ထည့်သွင်း စဉ်းစားထားတယ်။ ဒေတာပမာဏ အများအပြား စနစ်တကျ ထိထိရောက်ရောက် စုဆောင်း၊ သိမ်းဆည်း၊ စီမံဖို့အတွက် အားကိုးအားထားပြုရတဲ့ စနစ်တွေလို့ ဆိုရမယ်။  
+
+\subsection*{သမိုင်းအကျဉ်း}
+ဒေတာဘေ့စ်တွေရဲ့ မူလအစ \fEn{concept} ဟာ \fEn{IBM} ကုမ္ပဏီက \fEn{IMS (Information Management System)} လို စနစ်တွေ တည်ဆောက်ခဲ့တဲ့ (၁၉၆၀) ခုနှစ်တွေလောက်ကို ပြန်သွားနိုင်တယ်။ အဲ့ဒီစနစ်တွေက \fEn{hierarchical} ဖြစ်တယ်။ ဆိုလိုတာက ဒေတာသိမ်းတဲ့ စထရက်ချာက သစ်ပစ်လိုပဲ၊ အပင်ရဲ့ အမြစ်၊ အရွက်၊ အကိုင်းအခက်တွေ ဆက်စပ်နေသလိုပုံစံနဲ့ အချက်အလက်တွေကို သိမ်းတယ်။ \fEn{Parent-child relationship} နဲ့ သိမ်းတာလို့လည်း ဆိုနိုင်တယ်။ (၁၉၇၀) ခုနှစ်တွေမှာတော့ \fEn{Edgar F. Codd} က ယနေ့ခေတ် \fEn{Relational Database Management System (RDBMS)} ရဲ့ အခြေခံအုတ်မြစ် ဖြစ်လာတဲ့ \fEn{relational data model} ကို စတင်မိတ်ဆက်ခဲ့တယ်။ 
+
+
+%
+\begin{py}
+import psycopg2
+from psycopg2 import sql
+
+# Connect to the default PostgreSQL database to create 
+# the new "students" database
+conn = psycopg2.connect(
+    dbname="postgres",
+    user="postgres",
+    password="asdfgh",
+    host="localhost",
+    port="5432"
+)
+conn.autocommit = True
+cur = conn.cursor()
+
+# Create the "students" database
+cur.execute(sql.SQL("CREATE DATABASE students"))
+
+# Close the initial connection
+cur.close()
+conn.close()
+\end{py}
+%
+
+%
+\begin{py}
+# Now, connect to the "students" database to create the "student" table
+conn = psycopg2.connect(
+    dbname="students",
+    user="postgres",
+    password="asdfgh",
+    host="localhost",
+    port="5432"
+)
+cur = conn.cursor()
+
+# Create the "student" table
+cur.execute("""
+    CREATE TABLE student (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(100),
+        age INT,
+        grade VARCHAR(2)
+    )
+""")
+
+# Commit changes and close the connection
+conn.commit()
+cur.close()
+conn.close()
+\end{py}
+%
+
+
+
