@@ -1,6 +1,8 @@
 \setminted[java]{fontfamily=IBMPlexMonoFamily}
 \setminted[text]{fontfamily=IBMPlexMonoFamily}
 \setminted[python]{fontfamily=IBMPlexMonoFamily}
+\setminted[sql]{fontfamily=IBMPlexMonoFamily}
+
 
 \AtBeginEnvironment{minted}{\let\special\mintedspecial} 
 \def\mintedspecial{\kern0pt\primitive\special}
@@ -46,6 +48,19 @@
     %bgcolor=mintbgcolor,
     rulecolor=mintrulecolor
     ,escapeinside=ßß]{text}}
+ {\end{minted}}
+
+ \newenvironment{sql}
+{\VerbatimEnvironment
+\begin{minted}[
+    frame=\mintframe, 
+    framerule=\mintrule,
+    framesep= \mintsep, 
+    xleftmargin=\xlftmargin, 
+    %bgcolor=mintbgcolor,
+    rulecolor=mintrulecolor,
+    python3=true
+    ,escapeinside=ßß]{sql}}
  {\end{minted}}
 
  
