@@ -9,6 +9,8 @@
 \contentsline {chapter}{\numberline {2}ဒေတာဘေ့စ်များနှင့် ဆက်သွယ်ဆောင်ရွက်ခြင်း}{19}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Database Management Systems}{19}{section.2.1}%
 \contentsline {section}{\numberline {2.2}PostgreSQL}{20}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Database API}{24}{section.2.3}%
-\contentsline {chapter}{\numberline {A}PostgreSQL ဒေတာဘေ့စ် ဆာဗာဆော့ဖ်ဝဲ ထည့်သွင်းခြင်း}{29}{appendix.A}%
+\contentsline {section}{\numberline {2.3}Table Relationships}{28}{section.2.3}%
+\contentsline {section}{\numberline {2.4}SQL ဖန်ရှင်များ}{33}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Database API}{34}{section.2.5}%
+\contentsline {chapter}{\numberline {A}PostgreSQL ဒေတာဘေ့စ် ဆာဗာဆော့ဖ်ဝဲ ထည့်သွင်းခြင်း}{39}{appendix.A}%
 \contentsfinish 

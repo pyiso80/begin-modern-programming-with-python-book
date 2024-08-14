@@ -47,7 +47,7 @@ CREATE DATABASE students;
 \begin{figure}[tb!]
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0)
-    {\includegraphics[width=.98\linewidth]{images/ch12/createdb.jpg}};
+    {\includegraphics[width=.98\linewidth, trim={0mm, 0.5mm, 0.5mm, 0.5mm}, clip]{images/ch12/createdb.jpg}};
     \drawshadow{image}
 \end{tikzpicture}
 \caption{}
@@ -59,7 +59,7 @@ CREATE DATABASE students;
 \begin{figure}[tb!]
 \begin{tikzpicture}
     \node[anchor=south west,inner sep=0] (image) at (0,0)
-    {\includegraphics[width=.98\textwidth, trim={0cm 2cm 38cm 0cm},clip]{images/ch12/listdb.jpg}};
+    {\includegraphics[width=.98\textwidth, trim={0mm 20mm 380mm 0.5mm},clip]{images/ch12/listdb.jpg}};
     \drawshadow{image}
 \end{tikzpicture}
 \caption{}
@@ -135,7 +135,7 @@ SELECT * FROM student;
 \begin{figure}[tbh!]
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] (image) at (0,0)
-  {\includegraphics[width=.98\textwidth]{images/ch12/select.jpg}};
+  {\includegraphics[width=.98\textwidth, trim={0mm 0.5mm 0.5mm 0.2mm}]{images/ch12/select.jpg}};
   \drawshadow{image}
 \end{tikzpicture}
 \caption{} 
@@ -156,7 +156,7 @@ SELECT name, age, id FROM student;
 SELECT * FROM student WHERE grade = 'A';
 \end{sql}
 %
-\fCode{WHERE} မှာ ဘူလီယန် အိပ်စ်ပရက်ရှင် ပါရပါမယ်။ ရေးပုံရေးနည်း နည်းနည်းကွာပေမဲ့ \fEn{SQL} ဘူလီယန် အိပ်စ်ပရက်ရှင်က \fEn{Python} နဲ့ သဘောတရားအားဖြင့် တူပါတယ်။ \fCode{grade = 'A'} က \fCode{grade} \fEn{column} တန်ဖိုး \fCode{'A'} နဲ့ ညီလား စစ်တာ။ ညီတဲ့ \fEn{record} တွေကိုပဲ \fCode{WHERE} က စစ်ထုတ်ပေးမှာပါ။ ဒါ့ကြောင့် အပေါ်က \fCode{select} က \fEn{record} တစ်ကြောင်းပဲ ထွက်မှာပါ။ အေမီတစ်ယောက်ပဲ \fEn{A} ရပါတယ်။ အခြား ဘူလီယန် အိပ်စ်ပရက်ရှင်တွေ လက်တွေ့စမ်းကြည့်ဖို့အတွက် အောက်ပါအတိုင်း ကျောင်းသား \fEn{record} သုံးခု ထပ်ထည့်ထားပါ။  
+\fCode{WHERE} နောက်မှာ ဘူလီယန် အိပ်စ်ပရက်ရှင်တစ်ခု ပါရပါမယ်။ \fCode{WHERE} ကွန်ဒီရှင် \fEn{(Condition)} လို့ခေါ်တယ်။ ရေးပုံရေးနည်း နည်းနည်းကွာပေမဲ့ \fEn{SQL} \fCode{WHERE} ကွန်ဒီရှင် က \fEn{Python} ဘူလီယန် အိပ်စ်ပရက်ရှင်နဲ့ သဘောတရားအားဖြင့် တူပါတယ်။ \fCode{grade = 'A'} က \fCode{grade} \fEn{column} တန်ဖိုး \fCode{'A'} နဲ့ ညီလား စစ်တာ။ ညီတဲ့ \fEn{record} တွေကိုပဲ \fCode{WHERE} က စစ်ထုတ်ပေးမှာပါ။ ဒါ့ကြောင့် အပေါ်က \fCode{select} က \fEn{record} တစ်ကြောင်းပဲ ထွက်မှာပါ။ အေမီတစ်ယောက်ပဲ \fEn{A} ရပါတယ်။ \fCode{WHERE} နဲ့ပါတ်သက်ပြီး လက်တွေ့စမ်းကြည့်ရအောင် အောက်ပါအတိုင်း ကျောင်းသား \fEn{record} လေးခု ထပ်ထည့်ပါမယ်။  
 %
 \begin{sql}
 INSERT INTO student (name, age, grade) VALUES ('Sandy', 19, 'A');
@@ -166,27 +166,492 @@ INSERT INTO student (name, age, grade) VALUES ('Haymar', 18, NULL);
 \end{sql}
 %
 
+\fEn{Grade A} သို့ \fEn{B} ရတဲ့ ကျောင်းသား \fEn{record} တွေ \fEn{select} လုပ်ဖို့ \fCode{OR} သုံးထားတာပါ။ \fEn{psql} မှာ စမ်းကြည့်ပါ။ \fEn{Amy, Kathy, Sandy, Thida, Peter} တို့ \fEn{A} သို့ \fEn{B} ရကြတယ်။
 %
 \begin{sql}
--- 
 SELECT * FROM student WHERE grade = 'A' OR grade = 'B';
---
-SELECT * FROM student WHERE grade = 'B' AND id <= 5;
---
+\end{sql}
+\fEn{Grade A} သို့ \fEn{B} မရတဲ့ ကျောင်းသားတွေ ထုတ်ချင်ရင် \fCode{NOT} နဲ့ အခုလို ရတယ်
+%
+\begin{sql}
+SELECT name FROM student WHERE NOT(grade = 'A' OR grade = 'B');
+\end{sql}
+ဝေယံ တစ်ယောက်ပဲ ရလဒ်မှာတွေ့ရမှာပါ။ ဟေမာ ဘာကြောင့် မပါရတာလဲ။ စဉ်းစားကြည့်ရင် သူမ \fEn{A} လည်းမရ၊ \fEn{B}  လည်းမရဘူး။ ဒါကြောင့်  ပါသင့်တယ် ယူဆကောင်း ယူဆနိုင်တယ်။ \fCode{NULL} ဟာ မရှိခြင်း၊ မသိခြင်း ကိုဖော်ပြဖို့ \fEn{SQL} မှာ အသုံးပြုတဲ့ \fEn{special value} တစ်ခု ဖြစ်ပါတယ်။ ဟေမာ့ \fEn{grade} က \fCode{NULL} ဖြစ်နေတယ်။ ဆိုလိုတာက သူ့ \fEn{grade} ကို မသိဘူး။ 
+
+\fCode{NULL} နဲ့ အခြားတန်ဖိုးတစ်ခုခု ညီ/မညီ စစ်တဲ့အခါ ရလဒ်က \fCode{NULL} ပဲ ဖြစ်ပါတယ်။ အဓိပ္ပါယ်က ညီ/မညီ ‘မသိဘူး’ ဆိုတဲ့ အဓိပ္ပါယ်။ ဒါ့ကြောင့် ဘူလီယန် အိပ်စ်ပရက်ရှင် \fCode{'A' = NULL} ရဲ့ အဖြေ \fCode{NULL} ဖြစ်သလို \fCode{'A' <> NULL} ရဲ့ အဖြေလည်း \fCode{NULL} ပဲ ဖြစ်တယ်။ 
+
+\fEn{Select} လုပ်တဲ့အခါ \fCode{WHERE} ကွန်ဒီရှင် \fEn{true} ဖြစ်တဲ့ \fEn{record} တွေကို ရွေးထုတ်ပေးတယ်။ \fCode{WHERE} ကွန်ဒီရှင် ရလဒ်တန်ဖိုး \fCode{NULL} ဖြစ်ရင် အဲဒီ \fEn{record} ကို ထုတ်ပေးမှာ မဟုတ်ဘူး။ စောစောက \fEn{select} ရလဒ်မှာ ဟေမာ ဘာ့ကြောင့်  မပါလဲ အောက်ပါအတိုင်း စဉ်းစားကြည့်နိုင်ပါတယ်%
+%
+\begin{align*}
+         &\text{\fEn{WHERE NOT(\textit{NULL} = \`{}A\`{} OR \textit{NULL} = \`{}B\`{})}}\\
+\implies &\text{\fEn{WHERE NOT(\textit{NULL} OR \textit{NULL})}}\\
+\implies &\text{\fEn{WHERE NOT(\textit{NULL})}}\\
+\implies &\text{\fEn{WHERE \textit{NULL}}}\\
+\end{align*}%
+
+\fEn{Grade C} မဟုတ်တဲ့ ကျောင်းသားတွေကို အောက်ပါအတိုင်း နည်းလမ်းနှစ်မျိုးနဲ့ \fEn{select} လုပ်ကြည့်ပါ။ အခုတစ်ခါလည်း ဟေမာ ရလဒ်မှာ မပါတာကို သတိပြုပါ။
+%
+\begin{sql}
 SELECT * FROM student WHERE grade <> 'C';
---
-SELECT * FROM student WHERE grade IS NULL;
---
-SELECT * FROM student WHERE grade IS NOT NULL;
+\end{sql}
+%
+%
+\begin{sql}
+SELECT * FROM student WHERE NOT(grade = 'C');
+\end{sql}
+%
+ဒီတစ်ခု ထပ်စမ်းကြည့်ပါ။ ရှင်းပြဖို့မလိုဘဲ အဓိပ္ပါယ် နားလည်မယ် ထင်ပါတယ်။
+%
+\begin{sql}
+SELECT * FROM student WHERE grade = 'B' AND id <= 5;
 \end{sql}
 %
 
-\subsection*{\fSubSecCodeBf{UPDATE}}
+\fCode{NULL} ဟုတ်/မဟုတ် စစ်ချင်ရင် \fEn{SQL} မှာ \fCode{IS NULL} (သို့) \fCode{IS NOT NULL}  သုံးရပါတယ်။ \fCode{=} နဲ့ \fCode{<>} ကို သုံးလို့မရဘူး။ မှားယွင်း အသုံးပြုမိတတ်လို့ ဒီအချက်ကို အထူးဂရုပြုရပါမယ်။ \fEn{Grade} \fCode{NULL} ဖြစ်တဲ့ \fEn{record} တွေနဲ့ \fCode{NULL} မဟုတ်တဲ့ \fEn{record} တွေကို အခုလို ရွေးထုတ်နိုင်ပါတယ်။
+%
+\begin{sql}
+SELECT * FROM student WHERE grade IS NULL;
+SELECT * FROM student WHERE grade IS NOT NULL;
+\end{sql}
+%
+\fEn{Grade} \fCode{NULL} ဖြစ်တာ ဟေမာတစ်ယောက်ပဲ ရှိတာမို့လို့ ပထမ \fEn{select} က \fEn{record} တစ်ကြောင်းပဲ ထွက်မှာပါ။ အောက်ပါအတိုင်း တစ်ဆင့်ချင်း စဉ်းစားကြည့်ပါ
+\begin{align*}
+    &\text{\fEn{WHERE grade IS \textit{NULL}}}\\
+\implies &\text{\fEn{WHERE \textit{NULL} IS \textit{NULL}}}\\
+\implies &\text{\fEn{WHERE TRUE}}\\
+\end{align*}
+ဒုတိယ \fEn{select} မှာ ကျတော့ ဘာကြောင့် ဟေမာ မပါလဲ။ ကျန်တဲ့သူတွေကရော ဘာကြောင့်ပါလဲ။ အောက်ပါအတိုင်း တစ်ဆင့်ချင်း စဉ်းစားကြည့်ပါ။ ဟေမာ့ \fEn{record} အတွက်%
+%
+\begin{align*}
+    &\text{\fEn{WHERE grade IS NOT \textit{NULL}}}\\
+\implies &\text{\fEn{WHERE \textit{NULL} IS NOT \textit{NULL}}}\\
+\implies &\text{\fEn{WHERE FALSE}}\\
+\end{align*}
+\fEn{A} ရထားတဲ့ ကျောင်းသား \fEn{record} ဆိုရင် ဒီလို 
+\begin{align*}
+    &\text{\fEn{WHERE grade IS NOT \textit{NULL}}}\\
+\implies &\text{\fEn{WHERE \`{}A\`{} IS NOT \textit{NULL}}}\\
+\implies &\text{\fEn{WHERE TRUE}}\\
+\end{align*}
+အခြား \fCode{NULL} မဟုတ်တဲ့ \fEn{grade} အားလုံးအတွက် အလားတူဖြစ်မယ်။ ဒါ့ကြောင့် ဒုတိယ \fEn{select} ရလဒ်မှာ ဟေမာကလွဲလို့ ကျန်တဲ့သူအားလုံး ပါလာတာဖြစ်တယ်။
 
+\subsection*{\fSubSecCodeBf{ORDER BY}}
+\fCode{ORDER BY} က \fEn{record} တွေကို \fEn{column} တန်ဖိုးပေါ် မူတည်ပြီး ‘အစဉ်အတိုင်းစီခြင်း’ \fEn{(sorting)} အတွက်ပါ။
+%
+\begin{sql}
+SELECT * FROM student ORDER BY grade;
+\end{sql}
+%
+\fEn{Grade} အလိုက် \fEn{order by} လုပ်ထားတာပါ။ ရလဒ်ကို ပုံ (\fRefNo{\ref{fig:orderbyasc}}) မှာ ကြည့်ပါ။ ကြီးစဉ်ငယ်လိုက် စီချင်ရင် \fCode{DESC} \fEn{(descending)} နဲ့ ရတယ်။
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=.98\textwidth, trim={0mm 0.5mm 0.5mm 0.5mm},clip]{images/ch12/orderbyasc.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:orderbyasc}
+\end{figure}
+%
+\begin{sql}
+SELECT * FROM student ORDER BY grade DESC;
+\end{sql}
+%
+သူ့ နဂို \fEn{default} ကတော့ \fCode{ASC} \fEn{(ascending)} ပါ။ 
+
+\fEn{Column} တစ်ခုမကနဲ့  စီချင်လည်း ရတယ်။ \fCode{ORDER BY} နောက်မှာ \fEn{sort} လုပ်ရမဲ့ \fEn{column} တွေ ထည့်ပေးရုံပဲ။ \fEn{Age} နဲ့ \fEn{grade} တွဲရက် \fEn{sort} လုပ်မယ်ဆိုရင်
+%
+\begin{sql}
+SELECT * FROM student ORDER BY age, grade;
+\end{sql}
+%
+\fEn{psql} ရလဒ်မှာ အောက်ပါအတိုင်း တွေ့ရမှာပါ။ \fEn{Thida, Peter, Waiyan} တို့ကို သေချာ ဂရုပြုကြည့်ပါ။ \fEn{Age} တူရင် \fEn{grade B} ရတဲ့သူက အရင်လာတာကို တွေ့ရပါမယ်။ \fEn{Grade C} က နောက်မှာပါ။
+\begin{vbtm}
+ß\fEnBf{Output:}ß
+ id |  name  | age | grade
+----+--------+-----+-------
+  7 | Haymar |  18 |
+  4 | Sandy  |  19 | A
+  1 | Amy    |  20 | A
+  5 | Thida  |  21 | B
+  6 | Peter  |  21 | B
+  3 | Waiyan |  21 | C
+  2 | Kathy  |  22 | B
+(7 rows)
+\end{vbtm}
+\fEn{Name} ထပ်ထည့်ကြည့်ပါ။  \fEn{Peter} က \fEn{Thida} ရဲ့ ရှေ့ရောက်သွားတာကလွဲလို့ ခုနက စီထားတာနဲ့ အားလုံးတူပါမယ်။
+%
+\begin{sql}
+SELECT * FROM student ORDER BY age, grade, name;
+\end{sql}
+%
+
+\fEn{Age} နဲ့ \fEn{grade} ကို ရှေ့‌နောက် ပြောင်းကြည့်ပါ။ 
+%
+\begin{sql}
+SELECT * FROM student ORDER BY grade, age;
+\end{sql}
+%
+\fEn{Grade} \fEn{A, B, C} အစဉ်အတိုင်း ဖြစ်မယ်။ \fEn{Grade} တူရင်တော့ \fEn{age} ငယ်တဲ့ \fEn{record} က ရှေ့ရောက်ပါတယ်။ အခုလို စီသွားမှာပါ
+%
+\begin{vbtm}
+ß\fEnBf{Output:}ß
+ id |  name  | age | grade
+----+--------+-----+-------
+  4 | Sandy  |  19 | A
+  1 | Amy    |  20 | A
+  5 | Thida  |  21 | B
+  6 | Peter  |  21 | B
+  2 | Kathy  |  22 | B
+  3 | Waiyan |  21 | C
+  7 | Haymar |  18 |
+(7 rows)
+\end{vbtm}
+%
+
+\fEn{Grade} ကို \fCode{DESC} နဲ့ \fEn{age} ကို \fCode{ASC} ထားကြည့်ပါ။ ခုနကဟာနဲ့ ဘာကွာခြားလဲ သေချာဂရုပြု လေ့လာကြည့်ပါ။
+%
+\begin{sql}
+SELECT * FROM student ORDER BY grade DESC, age ASC;
+\end{sql}
+%
+\begin{vbtm}
+ß\fEnBf{Output:}ß
+ id |  name  | age | grade
+----+--------+-----+-------
+  7 | Haymar |  18 |
+  3 | Waiyan |  21 | C
+  6 | Peter  |  21 | B
+  5 | Thida  |  21 | B
+  2 | Kathy  |  22 | B
+  4 | Sandy  |  19 | A
+  1 | Amy    |  20 | A
+(7 rows)
+\end{vbtm}
+
+\fCode{ORDER BY} နဲ့ စီတဲ့အခါ \fCode{ORDER BY} နောက်မှာ \fEn{list} လုပ်ထားတဲ့ \fEn{column} အစီအစဉ်နဲ့ \fCode{ASC}\fEn{,} \fCode{DESC} တို့ကို လိုသလို အသုံးပြုပြီး လိုချင်တဲ့အတိုင်း ရအောင် \fEn{sort} လုပ်လို့ရပါတယ်။ ပရိုဂရမ်းမင်းမှာရော ဒေတာဘေ့စ်ပိုင်းမှာပါ \fEn{sorting} စီခြင်းဟာ အရေးကြီးတာကြောင့် ကျွမ်းကျင်အောင် လုပ်ထားသင့်ပါတယ်။
+
+
+\subsection*{\fSubSecCodeBf{UPDATE}}
+\fEn{Table record} တွေ \fEn{update} လုပ်ဖို့ အသုံးပြုတဲ့ \fEn{SQL} စတိတ်မန့် ဖြစ်ပါတယ်။ \fCode{id} နံပါတ် \fEn{7} နဲ့ \fEn{record} ရဲ့ \fEn{grade} နဲ့ \fEn{age} ကို \fEn{update} လုပ်တဲ့ ဥပမာ
+%
+\begin{sql}
+UPDATE student SET grade = 'A', age = 19 WHERE id = 7;
+\end{sql}
+%
+\fCode{WHERE} ပါရင် \fCode{WHERE} ကွန်ဒီရှင်နဲ့ ကိုက်ညီတဲ့ \fEn{record} ကိုပဲ \fEn{update} လုပ်တယ်။ အခု \fEn{update} စတိတ်မန့်က \fCode{id} \fEn{7} နဲ့ က ဟေမာ့ \fEn{record} တစ်ခုကိုပဲ \fEn{update} လုပ်မှာပါ။ အကယ်၍ \fCode{WHERE} မပါခဲ့ရင် \fEn{table} မှာရှိတဲ့ \fEn{record} တွေ အကုန်လုံးကို \fEn{update} လုပ် သွားလိမ့်မယ်။
+
+%
+\begin{sql}
+UPDATE student SET grade = 'A+' WHERE id IN (1, 4, 6);
+\end{sql}
+%
+\fCode{id} နံပါတ်က $(1,4,6)$ ထဲမှာပါရင် \fEn{grade} ကို \fEn{A+} \fEn{update} လုပ်ထားတာပါ။ \fCode{WHERE} ကွန်ဒီရှင်မှာ \fCode{IN}  အော်ပရိတ်တာ သုံးထားတယ်။ \fEn{Column} တစ်ခုရဲ့ တန်ဖိုးဟာ \fEn{list} လုပ်ထားတဲ့ တန်ဖိုးတွေထဲမှာ ပါ/မပါ စစ်ချင်ရင် \fCode{IN} သုံးပါတယ်။ \fEn{Update} လုပ်ထားတဲ့ \fEn{record} တွေကို \fEn{select} လုပ်ကြည့်ပါ။ 
+%
+\begin{sql}
+SELECT * FROM student WHERE id IN (1, 4, 6, 7);
+\end{sql}
+%
+ပုံ (\fRefNo{\ref{fig:afterupdate}}) မှာလို တွေ့ရပါမယ်။
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=.98\textwidth, trim={0mm 50mm 0.5mm 0.5mm},clip]{images/ch12/afterupdate.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:afterupdate}
+\end{figure}
 
 \subsection*{\fSubSecCodeBf{DELETE}}
+\fEn{Table row} တွေ ဖျက်ဖို့ အသုံးပြုတဲ့ စတိတ်မန့် ဖြစ်ပါတယ်။ \fEn{Student table} ထဲက \fEn{record} အားလုံး ဖျက်မယ်ဆိုရင် အခုလို ဖျက်ရမှာပါ
+%
+\begin{sql}
+DELETE FROM students;
+\end{sql}
+%
+\fEn{Development/testing} ဒေတာဘေ့စ်မှာ \fEn{table} ဒေတာ အကုန်ဖျက်ပြီး အစမ်းဒေတာ \fEn{(test data)} ပြန်ထည့်ဖို့ ဒီလို လုပ်ရလေ့ရှိပေမဲ့ တကယ်သုံးနေတဲ့ \fEn{production} ဒေတာဘေ့စ်မှာတော့ \fEn{table} ဒေတာ အကုန်ဖျက်ပစ်ရမဲ့ အခြေအနေဆိုတာ ကြုံတောင့်ကြုံခဲပါပဲ။ \fCode{WHERE} နဲ့ ဖျက်ရမဲ့ \fEn{record} ကို ရွေးပြီး ဖျက်တာက ပိုပြီး သဘာဝကျပါတယ်။ ဝေယံ ကျောင်းထွက်သွားလို့ သူ့ \fEn{record} ကို သိမ်းထားဖို့ မလိုတော့ဘူး ဆိုပါစို့၊ အခုလို 
+%
+\begin{sql}
+DELETE FROM student WHERE id = 3;
+\end{sql}
+%
+\fEn{delete} လုပ်နိုင်ပါတယ် (\fEn{id} နံပါတ် \fEn{3} နဲ့ \fEn{record} က ဝေယံ)။
 
-  
+\section{Table Relationships}
+ဒေတာဘေ့စ် တစ်ခုမှာ \fEn{table} တစ်ခုမက \fEn{(multiple tables)} ပါဝင် ဖွဲ့စည်းထားလေ့ ရှိတယ်။ \fEn{Table} တွေနဲ့ ၎င်းတို့ကြား \fEnEmp{relationship} ဟာ \fEn{Relational Data Model} ရဲ့ အဓိကကျတဲ့ သဘောတရားဖြစ်တယ်။ သက်ဆိုင်\allowbreak ရာ \fEn{table} အသီးသီးမှာ အချက်အလက်တွေ စုစည်းသိမ်းဆည်းပုံ သိမ်းဆည်းနည်း စနစ်ကို လေ့လာကြရအောင်။ 
+
+ဘဏ်တစ်ခုကို စိတ်ကူးကြည့်ပါ။ ဘဏ်အကောင့်၊ အကောင့်ပိုင်ရှင်နဲ့ ငွေဝင်ငွေထွက် စာရင်း အချက်\allowbreak အလက်တွေ သိမ်းဆည်းမယ် ဆိုပါစို့။ \fEn{Table} တစ်ခုတည်းနဲ့ အားလုံးသိမ်းလို့ ရပေမဲ့ \fEn{Relational Data Model} အရ \fEn{table} သုံးခုခွဲပြီး သီးခြားစီသိမ်းတာ ပိုကောင်းပါတယ်။  အကောင့်ပိုင်ရှင်နဲ့ သက်ဆိုင်တဲ့ အချက်အလက်တွေအတွက် \fEn{table} တစ်ခု ရှိပါမယ်။
+%
+\begin{sql}
+CREATE TABLE account_holder (
+    holder_id SERIAL PRIMARY KEY,
+    fname VARCHAR(50),
+    lname VARCHAR(50),
+    dob DATE,
+    address TEXT
+);
+\end{sql}
+%
+အကောင့်နဲ့ သက်ဆိုင်တဲ့ အချက်အလက်တွေအတွက် သီးခြား \fEn{table} တစ်ခုရှိမယ်။ (လောလောဆယ် ဒီ \fEn{table} နှစ်ခုကို အရင်ကြည့်ရအောင်၊ ငွေဝင်ငွေထွက် စာရင်းနဲ့ ဆိုင်တဲ့ တတိယ \fEn{table} ကို နောက်ပိုင်းမှာ တွေ့ရမှာပါ)။ 
+%
+\begin{sql}
+CREATE TABLE account (
+    acc_id SERIAL PRIMARY KEY,
+    holder_id INT REFERENCES account_holder(holder_id),
+    acc_no VARCHAR(20) UNIQUE,
+    acc_type VARCHAR(20),
+    balance NUMERIC(12, 2) DEFAULT 0.00
+);
+\end{sql}
+%
+ဒီ \fCode{account} \fEn{table} မှာ \fCode{holder\_id} \fEn{column} က \fCode{account\_holder} \fEn{table} ရဲ့ \fCode{holder\_id} \fEn{column} ကို ရည်ညွှန်းထားပါတယ်။ အကောင့်နဲ့ အကောင့် ပိုင်ရှင် အချက်အလက်တွေကို ဒီ \fEn{table} နှစ်ခုမှာ ဘယ်လို ဆက်စပ် သိမ်းဆည်းလဲ နားလည်အောင် နမူနာ \fEn{record} အနည်းငယ်ထည့်ပြီး ရှင်းပြပါမယ်။ အောက်ပါအတိုင်း \fEn{insert} လုပ်ပါ။
+%
+\begin{sql}
+INSERT INTO account_holder (fname, lname, dob, address)
+VALUES 
+('Amy', 'Moe', '1985-02-15', '123 Main St, Sanchaung'),
+('Sandy', 'Soe', '1990-06-23', '456 Oak St, Kamayaut');
+\end{sql}
+%
+\fEn{Insert} လုပ်ပြီးရင် အေမီနဲ့ စန္ဒီ့ \fCode{holder\_id} နံပါတ်က $1$ နဲ့ $2$ အသီးသီး ဖြစ်မယ်။ အေမီဖွင့်ထားတဲ့ အကောင့်နှစ်ခုနဲ့ စန္ဒီရဲ့ အကောင့်တစ်ခုကို အောက်ပါအတိုင်း \fCode{account} \fEn{table} မှာ သိမ်းနိုင်ပါတယ်။ \fCode{holder\_id} $1$ နဲ့ $2$ ကို အထူး ဂရုပြုပါ။
+%
+\begin{sql}
+INSERT INTO account (holder_id, acc_no, acc_type, balance)
+VALUES 
+(1, '0086-6002-1111', 'Savings', 500000.00),
+(1, '0088-6005-1122', 'Current', 800000.00),
+(2, '0086-6002-3311', 'Savings', 400000.00);
+\end{sql}
+%
+ဒီ \fEn{table} မှာ ကြည့်ရင် အကောင့်ပိုင်ရှင် အသေးစိတ်အချက်အလက်ကို မတွေ့ရပါဘူး။ အကောင့် \fEn{record} တစ်ခုစီအတွက်  ပိုင်ရှင်ရဲ့ \fCode{holder\_id} ကိုပဲ တွေ့ရမှာပါ။ ဒီ \fCode{holder\_id} ဟာ \fCode{account\_holder} \fEn{table} ထဲက \fEn{record} တစ်ခုရဲ့ \fCode{holder\_id} ကို ရည်ညွှန်းရပါမယ်။ 
+
+ပထမ အကောင့်နှစ်ခု \fCode{holder\_id} က $1$ ဖြစ်တယ်။ \fCode{account\_holder} \fEn{table} မှာပြန်ကြည့်ရင် \fCode{holder\_id} $1$ က အေမီ။ ဒါကြောင့် ဒီအကောင့်နှစ်ခုဟာ အေမီ့ရဲ့ အကောင့်ဖြစ်တယ်။ ထိုနည်းတူစွာ \fCode{holder\_id} $2$ က စန္ဒီဖြစ်တဲ့အတွက် တတိယအကောင့်ဟာ သူမရဲ့ အကောင့်ဖြစ်တယ်လို့ သိနိုင်ပါတယ်။ အခု ဖော်ပြခဲ့သလို အချက်အလက် သိမ်းဆည်းပုံ နည်းစနစ်ဟာ \fEn{Relational Model} ရဲ့ အဓိကကျတဲ့ အခြေခံ သဘောတရားလို့ ဆိုရမှာပါ။
+
+\subsection*{Table \fSubSecCodeBf{JOIN}}
+\fEn{Table} နှစ်ခုကို ပေါင်းစပ်ကြည့်ရင် အကောင့်ရော အကောင့်ပိုင်ရှင် အချက်အလက်ကိုပါ အပြည့်အစုံ သိနိုင်မှာပါ။ ဥပမာ အခုလို \fEn{select} လုပ်ကြည့်ရင် အေမီနဲ့ သူမ၏အကောင့် အသေးစိတ် အချက်အလက်တွေကို တွေ့ရပါမယ်
+%
+\begin{sql}
+SELECT * FROM account_holder WHERE holder_id = 1;
+SELECT * FROM account WHERE holder_id = 1;
+\end{sql}
+%
+\begin{vbtm}
+ß\fEnBf{Output:}ß
+ holder_id | fname | lname |    dob     |        address
+-----------+-------+-------+------------+------------------------
+         1 | Amy   | Moe   | 1985-02-15 | 123 Main St, Sanchaung
+(1 row)
+
+
+ acc_id | holder_id |     acc_no     | acc_type |  balance
+--------+-----------+----------------+----------+-----------
+      1 |         1 | 0086-6002-1111 | Savings  | 500000.00
+      2 |         1 | 0088-6005-1122 | Current  | 800000.00
+(2 rows)
+\end{vbtm}
+
+\fEn{Table} နှစ်ခု ချိတ်ဆက်ပြီး အကောင့်နဲ့ အကောင့်ပိုင်ရှင် တစ်ဆက်တည်း ထုတ်ကြည့်မယ် ဆိုရင်တော့ ဒီအတွက် \fEn{SQL} \fCode{JOIN} ရှိပါတယ်။
+%
+\begin{sql}
+SELECT * FROM account_holder JOIN account
+ON account_holder.holder_id = account.holder_id;
+\end{sql}
+%
+\fEn{Psql} မှာ စမ်းကြည့်ရင် အခုလို ရမှာပါ
+
+\begin{figure}[H]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=1.13\textwidth, trim={0mm 50mm 0mm 0.5mm},clip]{images/ch12/join.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:join}
+\end{figure}
+\fCode{account\_holder} \fEn{table} ရဲ့ \fCode{holder\_id} နဲ့  \fCode{account} \fEn{table} ရဲ့ \fCode{holder\_id} တူရင် \fCode{JOIN} က \fEn{record} တွေကို တွဲဆက်ပေးတာ တွေ့ရမှာပါ။ တွဲဆက်ပေးရမဲ့ ကွန်ဒီရှင်ကို \fCode{ON} နောက်မှာ အခုလို ထည့်ပေးထားတယ်
+%
+\begin{sql}
+ON account_holder.holder_id = account.holder_id;
+\end{sql}
+%
+\fCode{JOIN} ကို နောက်ပုံစံတစ်မျိုးနဲ့ ရေးလို့လည်း ရတယ်။ \fCode{account\_holder} \fEn{table} ကို \fCode{t1} နဲ့၊ \fCode{account} ကို \fCode{t2} နဲ့ ရည်ညွှန်းပါတယ်။ \fEn{Alias} လုပ်တာလို့ ခေါ်ပါတယ်။
+%
+\begin{sql}
+SELECT 
+    t1.*,
+    t2.* 
+FROM account_holder t1 JOIN account t2
+    ON t1.holder_id = t2.holder_id;
+\end{sql}
+%
+\fEn{Table} နှစ်ခုကနေ လိုချင်တဲ့ \fEn{column} ကိုပဲ ရွေးထုတ်လည်း ရတယ်။ ဥပမာ
+%
+\begin{sql}
+SELECT 
+    t2.*,
+    t1.fname,
+    t1.lname
+FROM account_holder t1 JOIN account t2
+    ON t1.holder_id = t2.holder_id;
+\end{sql}
+%
+
+\subsection*{Referential Integrity}
+\fEn{Relational Model} ဟာ \fEnEmp{referential integrity} ကို မပျက်ယွင်းအောင် အလေးအနက်ထား  ထိန်းသိမ်းပေးပါတယ်။ \fEn{Record} တစ်ခုကို ဖျက်တဲ့အခါ အဲဒီဖျက်လိုက်တဲ့ \fEn{record} ကို အခြား \fEn{table} မှာရှိတဲ့ \fEn{record} တွေက ရည်ညွှန်းထားမယ်ဆိုရင် ပြဿနာရှိတယ်။ ဥပမာ \fCode{account\_holder} \fEn{table} မှာ အကောင့်ပိုင်ရှင် အေမီ့ \fEn{record} ကို ဖျက်လိုက်တယ် ဆိုပါစို့။ ဒီလိုဆိုရင် \fCode{account} \fEn{table} ထဲက \fCode{holer\_id} $1$ နဲ့ အကောင့်နှစ်ခု ရည်ညွှန်းထားတဲ့ အကောင့်ပိုင်ရှင် \fEn{record} ရှိမှာ မဟုတ်တော့ဘူး။ ဒါဟာ \fEn{referential integrity} ကို ချိုးဖောက်တာ ဖြစ်တဲ့အတွက် \fEn{Relational Model} က အဲဒီလို ဖျက်ခွင့်ပေးမှာ မဟုတ်ပါဘူး။ \fEn{Record} တစ်ခုကို အခြား \fEn{record} တွေက \fEn{reference} လုပ်ထားတာ ရှိနေသ၍ \fEn{Relational Model} က အဲ့ဒီ \fEn{record} ပေးမဖျက်ဘူး။ အခုလို စမ်းပြီး ဖျက်ကြည့်ပါ။ 
+%
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=.98\textwidth, trim={0.5mm 0mm 0mm 0.8mm},clip]{images/ch12/ref_integrity.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:ref_integrity}
+\end{figure}%
+ဖျက်ခွင့်မပေးတာကို တွေ့ရပါလိမ့်မယ်။
+
+\fCode{holer\_id} $1$ နဲ့ \fEn{record} ကို ဖျက်ချင်ရင် ၎င်းကို ရည်ညွှန်းတဲ့ \fEn{record} တွေကို အရင်ဖျက်ရပါမယ်။ ဒါမှမဟုတ် နောက်ထပ်နည်းလမ်းတစ်ခုက \fEn{parent record} ကိုဖျက်ရင် ဆက်စပ်နဲ့တဲ့ \fEn{child record} တွေကိုပါ အလိုအလျောက် ဖျက်အောင် \fCode{ON DELETE CASCADE} \fEn{option} အသုံးပြုတာပါ။ ရည်ညွှန်းတဲ့ \fEn{table/record} ကို \fEn{child table/record} လို့ ယူဆပါ။ ရည်ညွှန်းခြင်း ခံရတဲ့ \fEn{table/record} ကို \fEn{parent table/record} လို့ ယူဆပါ။ \fCode{ON DELETE CASCADE} ကို \fEn{child table} ဆောက်တဲ့အခါ \fCode{holder\_id} \fEn{column} မှာ အခုလို သတ်မှတ်ပေးရမှာပါ။
+%
+\begin{sql}
+CREATE TABLE account (
+    acc_id SERIAL PRIMARY KEY,
+    holder_id INT REFERENCES account_holder(holder_id) ON DELETE CASCADE,
+    ß$\ldots$ß
+);
+\end{sql}
+%
+
+\fEn{Referential integrity} နဲ့ ပါတ်သက်ပြီး နားလည်ထားဖို့ လိုပါတယ်။ ဒါကြောင့် အကျဉ်းချုံး ရှင်းပြထားတာပါ။ \fCode{ON DELETE CASCADE} စမ်းကြည့်မယ်ဆို ဒေတာဘေ့စ် ကိုဖျက်ပြီး \fEn{table} ပြန်ဆောက် (သို့) ဒေတာဘေ့စ် အသစ်တစ်ခု ဆောက်ပြီး စမ်းကြည့်ပါ။ ရှိပြီးသား \fEn{table} ကို \fCode{ON DELETE CASCADE} ဖြစ်အောင် လုပ်လို့ရပေမဲ့ နည်းနည်းပိုရှုပ်ထွေးပါတယ်။
+
+\subsection*{Relationship Between \fSubSecCodeBf{account} and \fSubSecCodeBf{account\_transaction} Tables}
+\fEn{Table relationship} နဲ့ \fCode{JOIN} ကို ပိုပြီး သဘောပေါက်အောင် အားဖြည့်တဲ့အနေနဲ့ နောက်ထပ် ဥပမာတစ်ခု ကြည့်ရအောင်။ အကောင့် ငွေသွင်း/ထုတ်စာရင်း \fEn{(account transaction)} \fEn{table} ပါ။
+%
+\begin{sql}
+CREATE TABLE account_transaction (
+    txn_id SERIAL PRIMARY KEY,
+    -- reference to account table by acc_id
+    acc_id INT REFERENCES account(acc_id),
+    txn_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    txn_type VARCHAR(20),
+    amount NUMERIC(12, 2),
+    balance_after NUMERIC(12, 2)
+);
+\end{sql}
+%
+ဒီ \fEn{table} မှာ \fCode{acc\_id} \fEn{column} က \fCode{account} \fEn{table} ရဲ့ \fCode{acc\_id} \fEn{column} ကို \fEn{reference} လုပ်ထားတာကို ဂရုပြုကြည့်ပါ။ ငွေသွင်း/ထုတ် စာရင်း \fEn{(transaction)} ငါးခု အောက်ပါအတိုင်း ထည့်ပါမယ်။ 
+%
+\begin{sql}
+INSERT INTO account_transaction 
+    (acc_id, txn_date, txn_type, amount, balance_after)
+VALUES 
+    (1, '2024-08-01 09:00:00', 'Deposit', 100000.00, 600000.00),
+    (1, '2024-08-05 14:30:00', 'Withdrawal', 50000.00, 550000.00),
+    (2, '2024-08-02 10:00:00', 'Deposit', 200000.00, 1000000.00),
+    (2, '2024-08-03 16:00:00', 'Withdrawal', 300000.00, 700000.00),
+    (3, '2024-08-04 11:00:00', 'Deposit', 50000.00, 450000.00);
+\end{sql}
+%
+\fEn{Table} နှစ်ခုကို \fCode{acc\_id} နဲ့ ဘယ်လို ချိတ်ဆက်ထားလဲ နားလည်ဖို့ အရေးကြီးတယ်။ ပထမ \fEn{transaction} နှစ်ခုနဲ့ သက်ဆိုင်တဲ့ အကောင့် အချက်အလက် အသေးစိတ်ကို သိချင်ရင် \fCode{account} \fEn{table} မှာ \fCode{acc\_id} နံပါတ် $1$ နဲ့ \fEn{record} ကို ကြည့်ရမှာပါ
+%
+\begin{sql}
+SELECT * FROM account WHERE acc_id = 1;
+\end{sql}
+%
+%
+\begin{vbtm}
+ß\fEnBf{Output:}ß
+ acc_id | holder_id |     acc_no     | acc_type |  balance
+--------+-----------+----------------+----------+-----------
+      1 |         1 | 0086-6002-1111 | Savings  | 500000.00
+\end{vbtm}
+%
+\fCode{account\_transaction} \fEn{table} မှာ \fEn{transaction record} တွေ  \fEn{insert} လုပ်တဲ့အခါမှာလည်း ၎င်းတို့နှင့် သက်ဆိုင်တဲ့ \fCode{acc\_id} ကို မှန်ကန်အောင် သေချာစိစစ်ဖို့ လိုတယ်။ \fEn{Table} နှစ်ခုက အချက်အလက်တွေကို \fCode{JOIN} နဲ့ ချိတ်ဆက် ထုတ်ယူနိုင်တယ်။
+
+%
+\begin{sql}
+SELECT 
+    *
+FROM account t1 JOIN account_transaction t2
+    ON t1.acc_id = t2.acc_id;
+\end{sql}
+%
+\fEn{Table} နှစ်ခုမကလည်း \fCode{JOIN} လို့ရတယ်။ ဥပမာ 
+%
+\begin{sql}
+SELECT 
+    t1.holder_id,
+    t1.fname,
+    t1.lname,
+    t2.acc_no,
+    t2.acc_type,
+    t3.txn_type,
+    t3.amount,
+    t3.balance_after
+FROM account_holder t1 JOIN account t2
+    ON t1.holder_id = t2.holder_id
+JOIN account_transaction t3
+    ON t2.acc_id = t3.acc_id;
+\end{sql}
+%
+
+\fEn{Table} သုံးခုကြား \fEn{relationship} ကို နားလည်အောင် နောက်ဆုံးတစ်ခါ အောက်ပါတို့ကို ဆက်စပ်ကြည့်ပါ။ \fEn{Insert} တစ်ခါလုပ်ပြီး \fEn{auto-generated id} နံပါတ်တွေ \fEn{select} လုပ်ကြည့်ပါ။
+%
+\begin{sql}
+INSERT INTO account_holder (fname, lname, dob, address)
+VALUES 
+('Waiyan', 'Phyo', '1991-07-22', '45 Bawga St, Yankin');
+\end{sql}
+%
+%
+\begin{sql}
+-- Before insert, make sure Waiyan's holder_id is 3
+INSERT INTO account (holder_id, acc_no, acc_type, balance)
+VALUES 
+(3, '0086-6002-4411', 'Savings', 700000.00);
+\end{sql}
+%
+
+%
+\begin{sql}
+-- Before insert, make sure Waiyan's acc_id is 4
+INSERT INTO account_transaction 
+    (acc_id, txn_date, txn_type, amount, balance_after)
+VALUES 
+    (4, '2024-08-05 15:45:00', 'Deposit', 200000.00, 900000.00);
+\end{sql}
+%
+
+
+\section{SQL ဖန်ရှင်များ}
+\fEn{SQL} မှာ \fEn{built-in} ဖန်ရှင်တွေ ပါရှိပါတယ်။ \fCode{to\_char}\fEn{,} \fCode{upper} နဲ့ \fCode{concat} သုံးထားတာ ကြည့်ပါ။ \fEn{Column} ကို \fEn{alias} ပေးလို့ရတယ်။ \fCode{Date\_of\_Birth} နဲ့ \fCode{Full\_Name} က \fEn{alias} တွေ။
+%
+\begin{sql}
+SELECT
+    to_char(dob, 'Mon DD YYYY') Date_of_Birth,
+    upper(concat(fname, ' ', lname)) Full_Name
+FROM account_holder;
+\end{sql}
+%
+%
+\begin{vbtm}
+ß\fEnBf{Output:}ß
+ date_of_birth |  full_name
+---------------+-------------
+ Feb 15 1985   | AMY MOE
+ Jun 23 1990   | SANDY SOE
+ Jul 22 1991   | WAIYAN PHYO
+(3 rows)
+\end{vbtm}
+%
+\fEn{SQL} \fCode{date} (သို့) \fCode{datetime} \fEn{data type} ကနေ လိုချင်တဲ့ \fEn{date/datetime format} ကို \fCode{to\_char} နဲ့ ပြောင်းလို့ရတယ်။ \fCode{'Mon DD YYYY'} က ဘယ်လို \fEn{format} လဲ သတ်မှတ်တာ။
+
+
+
+
+
+
 
 \section{Database API}
 

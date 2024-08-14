@@ -2,6 +2,8 @@
 \setminted[text]{fontfamily=IBMPlexMonoFamily}
 \setminted[python]{fontfamily=IBMPlexMonoFamily}
 \setminted[sql]{fontfamily=IBMPlexMonoFamily}
+\usemintedstyle[sql]{stata-light}
+
 
 
 \AtBeginEnvironment{minted}{\let\special\mintedspecial} 
@@ -61,6 +63,18 @@
     rulecolor=mintrulecolor,
     python3=true
     ,escapeinside=ßß]{sql}}
+ {\end{minted}}
+
+%\newcommand{\mintrule}{0.5pt}
+%\newcommand{\mintsep}{2pt}
+%\newcommand{\mintframe}{leftline}
+%\newcommand{\xlftmargin}{0pt}
+
+\newenvironment{vbtm}
+{\VerbatimEnvironment
+\begin{minted}[
+    frame=none, 
+    ,escapeinside=ßß]{text}}
  {\end{minted}}
 
  
