@@ -19,3 +19,5 @@ out/_minted-test_1/F709ED5621A7C741EEB62923E657F3B5BF745357926405C14E8497D560198
 out/test_1.pdf
 out/test_1.pdf
 out/test_1.pdf
+figures/*.pdf
+figures/*.pdf_tex

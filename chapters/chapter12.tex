@@ -24,9 +24,57 @@
 
 တစ်ခုထက်ပိုတဲ့ \fEn{client} တွေက ဆာဗာတစ်ခုနဲ့ ချိတ်ဆက်အသုံးပြုတဲ့ ဆော့ဖ်ဝဲစနစ်မျိုးကို  \fEn{Client-Server Application} လို့ ခေါ်တယ်။ \fEn{Client} ဆိုတာ အသုံးပြုသူ \fEn{user} (သို့) ၎င်းအသုံးပြုတဲ့ ပရိုဂရမ်ကို ဆိုလိုတာ။ ဒေတာဘေ့စ် \fEn{application} အများစုဟာ \fEn{Client-Server Application} တွေပါ။ \fEn{Web Application} တွေဟာ \fEn{Client-Server Application} ဖြစ်ပြီး ဒေတာသိမ်းဖို့အတွက် နောက်ကွယ်က \fEn{RDBMS} တစ်ခုနဲ့ ချိတ်ဆက်ထားရလေ့ရှိတယ်။ 
 
+\subsection*{Database Transactions}
+$\big\llbracket$ဖြည့်စွက်ရန်$\big\rrbracket$
 
-\section{PostgreSQL}
-ဒီစာအုပ်မှာ \fEn{PostgreSQL RDBMS} အသုံးပြုပါမယ်။ \fEn{PostgreSQL} ဘယ်လို အင်စတောလ်လုပ်မလဲ စာမျက်နှာ \fRefNo{\pageref{apdx3}} နောက်ဆက်တွဲ (\fRefNo{\ref{apdx3}}) မှာ ကြည့်ပါ။ \fEn{psql} ဖွင့်ပြီး \fEn{root user (postgres)} အနေနဲ့ \fEn{PostgreSQL} ဒေတာဘေ့စ်ကို ချိတ်ဆက်ထားပါ။
+\subsection*{Database Concurrency}
+$\big\llbracket$ဖြည့်စွက်ရန်$\big\rrbracket$
+
+\subsection*{ACID Properties}
+$\big\llbracket$ဖြည့်စွက်ရန်$\big\rrbracket$
+
+\subsection*{RDBMS Products}
+ဈေးကွက်မှာ \fEn{Relational Database Management System (RDBMS)} ဆော့ဖ်ဝဲတွေ ရွေးချယ်စရာ အတော်များတယ်။ \fEn{Oracle, Microsoft SQL, MySQL, PostgreSQL} တို့ဟာ လူသိများ၊ အသုံးများတဲ့ \fEn{RDBMS} တွေပါ။ \fEn{PostgreSQL} နဲ့ \fEn{MySQL} က ပိုက်ဆံ ပေးစရာမလိုဘဲ အသုံးပြုနိုင်ပြီး \fEn{Oracle} နဲ့ \fEn{Microsoft SQL} တို့ကတော့ လိုင်စင်ဝယ်သုံးရတာတွေ ဖြစ်ကြပေမဲ့ အလကား သုံးလို့ရတဲ့ \fEn{developer version} တွေလည်း ပေးထားတယ်။ ဒါကြောင့် ကိုယ်လေ့လာချင်တဲ့ ဒေတာဘေ့စ်ကို လေ့လာနိုင်ဖို့ လိုင်စင်အနေနဲ့ စိတ်ပူစရာမရှိဘူး။ 
+
+\fEn{PostgreSQL} နဲ့ \fEn{MySQL} က အလကားရတာမို့လို့ ဝယ်သုံးရတာတွေလောက် အရည်အသွေးကောင်းမှာ မဟုတ်ဘူး ထင်ကောင်းထင်နိုင်ပါတယ်။ အမှန်တကယ်ကတော့ အဲ့ဒီလိုမဟုတ်ပါဘူး။ နှစ်ခုလုံးဟာ လိုင်စင်ဝယ်သုံးရတဲ့ ဟာတွေလိုပဲ အရည်သွေးရော ပါဝင်တဲ့ ဖီချာတွေ စုံလင်မှုအရပါ အားကောင်းကြတယ်။ \fEn{PostgreSQL} အသုံးပြုတဲ့ မှတ်သားဖွယ် ကုမ္ပဏီ/အဖွဲ့အစည်းတွေကို \fEn{Wikipedia} မှာ ဖော်ပြထားတာ တွေ့နိုင်တယ်။
+%
+\begin{vbtm}
+https://en.wikipedia.org/wiki/PostgreSQL#Notable_users
+\end{vbtm}
+% 
+\fEn{MySQL} ကလည်း သူ့ရဲ့ နံမည်ကြီး \fEn{customer} တွေ‌ကို ဒီလင့်မှာ ဖော်ပြထားတာ တွေ့ရတယ်။ 
+\begin{vbtm}
+https://www.mysql.com/customers/
+\end{vbtm}
+% 
+
+\section{PostgreSQL နှင့် SQL မိတ်ဆက်}
+ဒီစာအုပ်မှာ \fEn{PostgreSQL RDBMS} အသုံးပြုပါမယ်။ \fEn{PostgreSQL} ဘယ်လို အင်စတောလ်လုပ်ရမလဲ စာမျက်နှာ \fRefNo{\pageref{apdx3}} နောက်ဆက်တွဲ (\fRefNo{\ref{apdx3}}) မှာ ကြည့်ပါ။ \fEn{psql} ဖွင့်ပြီး \fEn{root user (postgres)} အနေနဲ့ \fEn{PostgreSQL} ဒေတာဘေ့စ်ကို ချိတ်ဆက်ထားပါ။
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=.98\textwidth, trim={0mm 0mm 0mm 0.5mm},clip]{images/ch12/psqlconnect.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:psqlconnect}
+\end{figure}
+
+\fEn{psql} ဖွင့်ပြီး စစချင်းမှာ ဒေတာဘေ့စ်နဲ့ ချိတ်ဆက်ဖို့ လိုအပ်တဲ့ အချက်အလက်တွေ ထည့်ပေးရပါမယ်။ ပုံ (\fRefNo{\ref{fig:psqlconnect}}) မှာ ကြည့်ပါ။ 
+%
+\begin{itemize}
+\item \fEn{Server [localhost]:} (ချိတ်ဆက်မဲ့ ဆာဗာရဲ့ \fEn{Host Name/IP Address})
+\item \fEn{Database [postgres]:} (ချိတ်ဆက်မဲ့ ဒေတာဘေ့စ်နံမည်)
+\item \fEn{Port [5432]:} (\fEn{PostgreSQL port} နံပါတ်)
+\item \fEn{Username [postgres]:} (ဒေတာဘေ့စ် ချိတ်ဆက်အသုံးပြုမဲ့ \fEn{user})
+\item \fEn{Password for user postgres:} (ဒေတာဘေ့စ်ကို ချိတ်ဆက်အသုံးပြုမဲ့ \fEn{user} ရဲ့ \fEn{password})
+\end{itemize}
+%
+
+လေးထောင့်ကွင်းထဲက \fEn{default} တန်ဖိုးတွေပါ။ တကူးတက ဘာမှမထည့်နေပဲ \fEn{Enter} နှိပ်ရင် အဲဒီတန်ဖိုးတွေ ထည့်တာနဲ့ တူတူပါပဲ။ စာမျက်နှာ \fRefNo{\pageref{apdx3}} နောက်ဆက်တွဲ (\fRefNo{\ref{apdx3}}) မှာ ဖော်ပြထားတဲ့အတိုင်း အင်စတောလ်လုပ်ထားတာဆိုရင် \fEn{password} တစ်ခုပဲ ထည့်ပေးဖို့လိုတယ်။ ကျန်တာက \fEn{default} အတိုင်းထားပြီး \fEn{Enter} နှိပ်သွားလို့ရတယ်။ \fEn{Password} က အင်စတောလ်လုပ်တုံးက ပေးခဲ့တဲ့ \fEn{password} ကို ထည့်ပေးရမှာပါ။
+
+\fEnBf{psql} ဆိုတာဘာလဲ။ \fEn{psql} ဟာ \fEn{PostgreSQL} ကို ချိတ်ဆက်အသုံးပြုဖို့ သုံးတဲ့ \fEn{command-line} ပရိုဂရမ်တစ်ခုပါ။ \fEn{Client} ပရိုဂရမ် အနေနဲ့ အသုံးပြုရတာပါ။ ဒေတာဘေ့စ် ချိတ်ဆက်ခြင်း၊ ဒေတာဘေ့စ်ဆီကို \fEn{SQL} ကွန်မန်းတွေ ပေးပို့လုပ်ဆောင်စေခြင်း၊ ဒေတာဘေ့စ် ပြန်ပို့ပေးတဲ့ ရလဒ်တွေပြပေးခြင်း၊ ဒေတာဘေ့စ် စီမံခန့်ခွဲခြင်း \fEn{(database administration)} စတဲ့ ကိစ္စတွေအတွက် အသုံးပြုနိုင်တယ်။ ရိုးရိုးရှင်းရှင်းပေမဲ့ အစွမ်းထက်တဲ့ \fEn{tool} တစ်ခုဖြစ်ပါတယ်။
 
 \subsection*{ဒေတာဘေ့စ် အသစ်ဆောက်ခြင်း}
 ဒေတာဘေ့စ် အသစ်တစ်ခု ဆောက်မယ်ဆိုရင် \fCode{CREATE DATABASE} \fEn{SQL} ကွန်မန်း သုံးပါတယ်။  
@@ -77,11 +125,15 @@ You are now connected to database "students" as user "postgres".
 students=#
 \end{codetxt}
 
+\begin{mytcbox}
+\fEn{SQL} ကွန်မန်းကို \fEn{psql} က လုပ်ဆောင်ပေးတာ မဟုတ်ပါဘူး။ \fEn{psql} က \fEn{SQL} ကွန်မန်းကို ချိတ်ဆက်ထားတဲ့ ဒေတာဘေ့စ်ဆီ ပို့ပဲ ပို့ပေးတာ။ လက်ခံရရှိတဲ့ ဒေတာဘေ့စ်က အဲဒီ \fEn{SQL} ကို လုပ်ဆောင်ပေးတာပါ။ ဒီအချက်ကို ကွဲကွဲပြားပြား နားလည်ဖို့ လိုပါတယ်။
+\end{mytcbox}
 
 \subsection*{Table ဆောက်ခြင်း}
 \fCode{CREATE TABLE} က \fEn{table} ဆောက်တဲ့ \fEn{SQL} ကွန်မန်းပါ။ \fEn{students} ဒေတာဘေ့စ်ထဲမှာ \fEn{student table} အောက်ပါအတိုင်း ဆောက်ပါမယ်
 %
 \begin{sql}
+-- create a table named student 
 CREATE TABLE student (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
@@ -90,7 +142,13 @@ CREATE TABLE student (
 );
 \end{sql}
 %  
-\fEn{psql} မှာ \fEn{SQL} \fEn{run} ရင် လက်ရှိချိတ်ထားတဲ့ ဒေတာဘေ့စ်ကို အဲဒီ \fEn{SQL} ပေးပို့ လုပ်ဆောင်ခိုင်းပါတယ်။ အခုချိတ်ထားတာ \fEn{students} ဒေတာဘေ့စ်ဆိုတော့ \fEn{table} ကို အဲဒီ ဒေတာဘေ့စ်ထဲ ဆောက်ပေးသွားမှာပါ။ ဒီ \fEn{table} မှာ \fCode{id}\fEn{,} \fCode{name}\fEn{,} \fCode{age} နဲ့ \fCode{grade} \fEn{column} လေးခုရှိမယ်။
+\fEn{psql} မှာ \fEn{SQL} \fEn{run} ရင် လက်ရှိချိတ်ထားတဲ့ ဒေတာဘေ့စ်ကို အဲဒီ \fEn{SQL} ပေးပို့ လုပ်ဆောင်ခိုင်းပါတယ်။ အခုချိတ်ထားတာ \fEn{students} ဒေတာဘေ့စ်ဆိုတော့ \fEn{table} ကို အဲဒီ ဒေတာဘေ့စ်ထဲ ဆောက်ပေးသွားမှာပါ။ ဒီ \fEn{table} မှာ \fCode{id}\fEn{,} \fCode{name}\fEn{,} \fCode{age} နဲ့ \fCode{grade} \fEn{column} လေးခုရှိမယ်။ \fCode{--} ကို တစ်ကြောင်းတည်း ကွန်းမန့် အတွက် သုံးတယ်။ တစ်ကြောင်းထက်ပိုရင် \fCode{/*} နဲ့ ဖွင့် \fCode{*/} နဲ့ ပိတ် ရေးလေ့ရှိတယ်။ ဥပမာ
+%
+\begin{sql}
+/* This is a
+   multiline comment */
+\end{sql}
+%
 
 \fEn{Column} တစ်ခုစီမှာ \fEn{data type} ရှိရပါမယ်။ \fCode{VARCHAR(100)} က အများဆုံး ကာရက်တာ အလုံးတစ်ရာ သိမ်းဆည်းနိုင်တယ်။ သိမ်းတဲ့ ကာရက်တာ အရေအတွက်ပေါ် မူတည်ပြီး နေရာယူတာ အနည်းအများ ကွာတယ်။ ငါခုသိမ်းရင် ငါးခုစာ၊ ဆယ်ခုသိမ်းရင် ဆယ်ခုစာပဲ နေရာကုန်မှာပါ။ အမြဲ အလုံး တစ်ရာစာ နေရာကုန်တာ မဟုတ်ဘူး။ \fCode{VARCHAR(2)} ဆိုရင် အများဆုံး  ကာရက်တာ နှစ်လုံး သိမ်းလို့ရမယ်။ \fEn{SQL} \fCode{VARCHAR} က \fEn{Python} \fCode{str} နဲ့ အလားတူတယ်။ \fCode{INT} ကတော့ \fEn{integer} ပါ။
 
@@ -645,24 +703,86 @@ FROM account_holder;
 (3 rows)
 \end{vbtm}
 %
-\fEn{SQL} \fCode{date} (သို့) \fCode{datetime} \fEn{data type} ကနေ လိုချင်တဲ့ \fEn{date/datetime format} ကို \fCode{to\_char} နဲ့ ပြောင်းလို့ရတယ်။ \fCode{'Mon DD YYYY'} က ဘယ်လို \fEn{format} လဲ သတ်မှတ်တာ။
+%
+\begin{flushleft}
+\vspace{1em}
+\setlength{\extrarowheight}{3pt}
+\begin{tabular}[!htb]{*{3}l}
+    \toprule[1.5pt]
+    \fTblHead{Format Code} & \fTblHead{Format}  \\        
+    \midrule
+    \fCode{YYYY}     & \fEn{Year (4 digits)} \\
+    \fCode{YY}       & \fEn{Year (last 2 digits)} \\
+    \fCode{MM}       & \fEn{Month (01-12)} \\
+    \fCode{MON}      & \fEn{Abbreviated month name (e.g., AUG)} \\
+    \fCode{MONTH}    & \fEn{Full month name (e.g., AUGUST)} \\
+    \fCode{DD}       & \fEn{Day of the month (01-31)} \\
+    \fCode{HH24}     & \fEn{Hour (24-hour clock, 00-23)} \\
+    \fCode{HH12}     & \fEn{Hour (12-hour clock, 01-12)} \\
+    \fCode{MI}       & \fEn{Minute (00-59)} \\
+    \fCode{SS}       & \fEn{Second (00-59)} \\
+    \fCode{AM/PM}    & \fEn{Meridian indicator} \\
+    \bottomrule[1.5pt]
+\end{tabular}
+\label{tbl:psqldtfmt}
+\captionof{table}{PostgreSQL Date and Time Format Codes}
+\end{flushleft}
+%
+\fEn{SQL} \fCode{date} (သို့) \fCode{datetime} \fEn{data type} ကနေ လိုချင်တဲ့ \fEn{format} ကို \fCode{to\_char} ဖန်ရှင်နဲ့ ပြောင်းလို့ရတယ်။ \fCode{'Mon DD YYYY'} မှာ \fCode{Mon} က \fEn{month} ကို \fEn{Feb, Jun, Jul} အတိုကောက်ပြဖို့။ \fEn{Format codes} တွေကို ဇယား (\fRefNo{\ref{tbl:psqldtfmt}}) တွင် ကြည့်ပါ။
 
+အောက်ပါအတိုင်း အလွယ်တကူ စမ်းကြည့်လို့ ရပါတယ်။ လက်ရှိအချိန်ကို \fCode{now()} နဲ့ ယူတယ်။ ဒီလို \fEn{format} \fCode{15/08/2024 10:41:36} နဲ့ ထုတ်ပေးမှာပါ။
+%
+\begin{sql}
+SELECT to_char(now(), 'DD/MM/YYYY HH24:MI:SS') formatted_datetime;
+\end{sql}
+%
 
+အခြား ဖန်ရှင်တွေ အများကြီး ရှိပါသေးတယ်။ ဒီစာအုပ်မှာတော့ ဒီလောက်ပဲ အကျဉ်း ဖော်ပြပေးနိုင်ပါတယ်။ ဘီဂင်နာတွေ ဆက်လက်လေ့လာဖို့ စာအုပ်၊ \fEn{YouTube} နဲ့ \fEn{tutorial} လင့်တချို့ကို ဒီအခန်းအဆုံးမှာ ပေးထားတယ်။ 
 
+%https://www.tutorialspoint.com/postgresql/index.htm
+%https://postgrespro.com/community/books/introbook
+%https://www.postgresql.org/docs/15/index.html
+%https://www.youtube.com/playlist?list=PL7D4X4pSOcCGoKVKDNjeKLRDK4TNRxc1x
+%https://pg-sql.com/
+%https://www.youtube.com/playlist?list=PLavw5C92dz9Ef4E-1Zi9KfCTXS_IN8gXZ
+%https://www.youtube.com/watch?v=NTgejLheGeU&t=12290s
 
+\section{Python နှင့် ဒေတာဘေ့စ် ချိတ်ဆက်ခြင်း}
+ဆော့ဖ်ဝဲ အပ်ပလီကေးရှင်းတွေဟာ ဒေတာဘေ့စ်နဲ့ ချိတ်ဆက်လုပ်ဆောင် ရလေ့ရှိတယ်။ \fEn{‘End User’} လို့ခေါ်တဲ့ အသုံးပြုသူတွေဟာ အပ်ပလီကေးရှင်း \fEn{User Interface (UI)} ကနေတစ်ဆင့် ဒေတာဘေ့စ်ကို သုံးကြတာပါ။ ပုံမှန်အားဖြင့် \fEn{end user} အများစုဟာ ဒေတာဘေ့စ်ကို တိုက်ရိုက် အသုံးမပြုကြပါဘူး။ ဒါကြောင့် အပ်ပလီကေးရှင်းတွေကပဲ \fEn{end user} တွေလိုအပ်မဲ့ ဒေတာသွင်းတာ၊ ပြန်ရှာ/ဖတ်တာ၊ အပ်ဒိတ်လုပ်တာ၊ ဖျက်တာ စတဲ့ကိစ္စတွေအတွက် ထည့်သွင်းစဉ်းစား တည်ဆောက်ပေးရတာပါ။ 
 
+ကျောင်းသား စာရင်းသွင်းတဲ့ ပရိုဂရမ်တစ်ခုကို စိတ်ကူးကြည့်ပါ။ ပုံ (\fRefNo{\ref{fig:stuform}}) မှာ ကျောင်းသားသစ် စာရင်းသွင်းတဲ့ \fEn{UI} ကို ပြထားတယ်။ \fEn{Submit} နှိပ်လိုက်ရင် ဖြည့်ထားတဲ့ ကျောင်းသား အချက်အလက်တွေကို ဒေတာဘေ့စ်ထဲ သိမ်းရပါမယ်။ ထိုနည်းတူစွာ ပြန်ရှာတာ၊ ဖျက်တာ၊ \fEn{update} လုပ်တာ ကိုလည်း \fEn{UI} ကနေပဲ လုပ်လို့ရအောင် ပရိုဂရမ်က စီစဉ်ပေးထားရမှာပါ။ 
+%
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=.75\textwidth, trim={0mm 0mm 0mm 0mm},clip]{images/ch12/stuform.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:stuform}
+\end{figure}
+%
 
+ဒီလို အပ်ပလီကေးရှင်းမျိုးတွေကို ဒေတာဘေ့စ် အပ်ပလီကေးရှင်းလို့ ခေါ်ပါတယ်။ အချက်အလက်တွေ \fEn{create, read, update, and delete} လုပ်တဲ့ အခြေခံလုပ်ဆောင်ချက် လေးခု ပါဝင်တာကြောင့်မို့ \fEn{CRUD} အပ်ပလီကေးရှင်းလို့လည်း ခေါ်ကြတယ်။  
 
-\section{Database API}
-
-\subsection*{\fSubSecCodeBf{psycopg2}}
+\subsection*{Psycopg ဒေတာဘေ့စ် ဒရိုက်ဗာ}
 % Psycopg is the most popular PostgreSQL database adapter for the Python programming language. 
-\fEn{Python programming language} အတွက် \fEn{Psycopg} ဟာ \fEn{popular} အဖြစ်ဆုံး  \fEn{PostgreSQL} ဒေတာဘေ့စ် \fEn{adapter} ဖြစ်ပါတယ်။ ဒေတာဘေ့စ် \fEn{adapter} ဆိုတာ \fEn{DBMS} နဲ့ \fEn{programming language} ကြား ပေါင်းကူးတံတားအဖြစ် ဆောင်ရွက်ပေးတဲ့ လိုက်ဘရီပဲ ဖြစ်တယ်။
+\fEn{Python} နဲ့ \fEn{PostgreSQL} ချိတ်ဆက်လုပ်ဆောင်ဖို့အတွက် \fEn{Psycopg} ဟာ လူကြိုက်အများဆုံး ဒေတာဘေ့စ် ဒရိုက်ဗာ ဖြစ်ပါတယ်။ ဒေတာဘေ့စ် ဒရိုက်ဗာဆိုတာ ဒေတာဘေ့စ်နဲ့ \fEn{programming language} ကြား ပေါင်းကူးတံတားအဖြစ် ဆောင်ရွက်ပေးတဲ့ လိုက်ဘရီပါ။ ဒေတာဘေ့စ် အဒပ်တာ \fEn{(adapter)} လို့လည်းခေါ်တယ်။
 
-\fEn{Adapter} သုံးတဲ့အခါ \fEn{DBMS} နဲ့ \fEn{programming language} အလိုက် သက်ဆိုင်ရာ \fEn{adapter} ကို ရွေးချယ်ရမှာပါ။ \fEn{PostgreSQL} အတွက် \fEn{Python} မှာ \fEn{Psycopg 2} နဲ့ \fEn{Psycopg 3} ရှိမယ်။ အခြားဟာတွေလည်း ရှိပါသေးတယ်။ \fEn{MySQL} အတွက် \fEn{MySQL Connector/Python} သုံးကြတယ်။ \fEn{Microsoft SQL} အတွက်ဆိုရင် \fEn{pyodbc}။  
+\fEn{DBMS} နဲ့ \fEn{programming language} အလိုက် သက်ဆိုင်ရာ ဒေတာဘေ့စ် ဒရိုက်ဗာကို ရွေးချယ် အသုံးပြုရမှာပါ။ \fEn{PostgreSQL} အတွက် \fEn{Python} မှာ \fEn{Psycopg 2} နဲ့ \fEn{Psycopg 3} ရှိမယ်။ အခြားဟာတွေလည်း ရှိပါသေးတယ်။ \fEn{MySQL} အတွက် \fEn{MySQL Connector/Python} သုံးကြတယ်။ \fEn{Microsoft SQL} အတွက်ဆိုရင် \fEn{pyodbc} ဒရိုက်ဗာ။ 
+
+\fEn{Psycopg 3} က ဗားရှင်းပိုမြင့်ပေမဲ့ ဒီစာအုပ်မှာ \fEn{Psycopg 2} ကိုပဲ အသုံးပြုပါမယ်။ \fEn{Psycopg 2} သုံးတတ်ရင် \fEn{Psycopg 3} ပြောင်းသုံးလည်း အခက်အခဲ သိပ်မရှိနိုင်ဘူး။ ဘီဂင်နာအတွက် စလေ့လာရတာ ပိုအဆင်ပြေမယ် ယူဆတာကြောင့် \fEn{Psycopg 2} သုံးဖို့ ဆုံးဖြတ်ရတာပါ။ နောက်ပိုင်း အတွေ့အကြုံရှိလာရင် ဗားရှင်းအမြင့်ကို ဆက်လေ့လာလို့ရပါတယ်။ \fEn{Psycopg 2} ကို အောက်ပါအတိုင်း \fCode{pip} ကွန်မန်းနဲ့  အင်စတောလ်လုပ်ပါ။
+%
+\begin{codetxt}
+pip install psycopg2-binary 
+\end{codetxt}
+%
+
 
 \subsection*{Connecting to PostgreSQL}
-\fEn{Python} ကနေတစ်ဆင့် ဒေတာဘေ့စ် အသစ်တစ်ခု ဘယ်လိုဆောက်မလဲ ကြည့်ရအောင်။ စောစောက ပြောတဲ့ \fCode{psycopg2} \fEn{adaptor install} လုပ်ထားပြီး ဖြစ်ရပါမယ်။
+ဒေတာဘေ့စ် အပ်ပလီကေးရှင်းတွေဟာ \fEn{client-server} အပ်ပလီကေးရှင်းတွေလို့ ရှေ့ပိုင်းမှာ ပြောခဲ့တာ မှတ်မိမယ်ထင်ပါတယ်။ အချက်အလက်တွေ အပြန်အလှန် ပေးပို့လုပ်ဆောင်နိုင်ဖို့ \fEn{client} နဲ့ \fEn{server} ကြား ကွန်နက်ရှင် ချိတ်ဆက်ဖို့လိုတယ်။ ဒီလိုချိတ်ဆက်တဲ့အခါ \fEn{TCP/IP (Transmission Control Protocol/Internet Protocol)} ကို အသုံးပြုရပါတယ်။ \fEn{CRUD} အော်ပရေးရှင်း တစ်ခုခု လုပ်မယ်ဆို ပထမဆုံး ကွန်နက်ရှင်အရင် ရှိထားရမှာပါ။ ကွန်နက်ရှင်မရရင် ဒေတာဘေ့စ်နဲ့ ပါတ်သက်တဲ့ အခြားကိစ္စတွေ ဆက်လုပ်လို့ မရနိုင်ဘူး။ 
+
+ပထမ ဥပမာအနေနဲ့ \fEn{Python} ပရိုဂရမ်ကနေ \fEn{PostgreSQL} ဒေတာဘေ့စ် အသစ်တစ်ခု ဘယ်လိုဆောက်ရမလဲ ကြည့်ရအောင်။ 
 %
 \begin{py}
 import psycopg2
@@ -681,6 +801,7 @@ conn.autocommit = True
 cur = conn.cursor()
 
 # Create the "students" database
+cur.execute("DROP DATABASE IF EXISTS students")
 cur.execute("CREATE DATABASE students")
 
 # Close the initial connection
@@ -688,17 +809,19 @@ cur.close()
 conn.close()
 \end{py}
 %
-ဒီပရိုဂရမ်ကို ခွဲခြမ်းစိတ်ဖြာ ကြည့်ရအောင်။ \fCode{psycopg2} မော်ဒျူး အင်ပို့ လုပ်ပါတယ်။ ပြီးတော့ \fCode{connect} ဖန်ရှင်နဲ့ \fEn{connection} ယူတယ်။ ပါရာမီတာ တစ်ခုစီရဲ့ အဓိပ္ပါယ်က
+
+ဒီပရိုဂရမ်ကို တစ်ခုချင်း ခွဲခြမ်းစိတ်ဖြာ ကြည့်ပါမယ်။ \fCode{psycopg2} လိုက်ဘရီ ပထမဆုံး အင်ပို့ လုပ်ထားတယ်။ ပြီးတော့ \fCode{connect} ဖန်ရှင်နဲ့ ကွန်နက်ရှင်ယူတယ်။ \fCode{connect} ဖန်ရှင် ပါရာမီတာတွေက \fEn{psql} နဲ့ ကွန်နက်လုပ်တဲ့အခါ ထည့်ပေးရတာတွေနဲ့ တူတူပါပဲ။
 %
 \begin{itemize}
-    \item \fCode{dbname} မှာ ချိတ်ဆက်မဲ့ ဒေတာဘေ့စ်နံမည် ထည့်ပေးရမယ်၊ \fEn{default} ဒေတာဘေ့စ်နဲ့ ချိတ်ဆက်မှာဆိုတော့ \fCode{postgres} ပဲ
-    \item \fCode{user} က ဘယ်သူအနေနဲ့ ချိတ်ဆက်အသုံးပြုမှာလဲ၊ \fEn{root user} ဖြစ်တဲ့ \fCode{postgres} အနေနဲ့ပဲ ချိတ်ဆက်မှာ 
-    \item \fCode{password} က ချိတ်ဆက် အသုံးပြုမဲ့သူရဲ့ \fEn{password} ၊ \fEn{root user} \fCode{postgres} ရဲ့ \fEn{password} ထည့်မယ် 
-    \item \fCode{host} ကတော့ ဒေတာဘေ့စ် ဆာဗာရဲ့ \fEn{IP address} (သို့) \fEn{host} နံမည်၊ ဒေတာဘေ့စ် ဆာဗာက ကိုယ့်ကွန်ပျူတာမှာပဲဆိုရင် \fEn{127.0.0.1} (သို့) \fEn{localhost} ထည့်နိုင်တယ် (အခြားကွန်ပျူတာမှာ \fEn{run} ထားတဲ့ ဒေတာဘေ့စ် ဆိုရင် အဲ့ဒီ ကွန်ပျူတာရဲ့ \fEn{IP address} သို့ \fEn{domain name} ရှိရင် \fEn{domain name} ထည့်ပေးလို့ရတယ်) 
-    \item \fCode{port} \fEn{PostgreSQL} ဒေတာဘေ့စ် \fEn{port} နံပါတ်၊ အင်စတောလ်လုပ်တုံးက ပေးခဲ့တဲ့ \fEn{port} နံပါတ် ပြန်ထည့်ပေးရမယ်
+    \item \fCode{dbname} (ချိတ်ဆက်မဲ့ ဒေတာဘေ့စ်နံမည်) 
+    \item \fCode{user} (ဒေတာဘေ့စ် ချိတ်ဆက်အသုံးပြုမဲ့ \fEn{user}) 
+    \item \fCode{password} (ဒေတာဘေ့စ်ကို ချိတ်ဆက်အသုံးပြုမဲ့ \fEn{user} ရဲ့ \fEn{password})
+    \item \fCode{host} (ချိတ်ဆက်မဲ့ ဆာဗာရဲ့ \fEn{Host Name/IP Address})
+    \item \fCode{port} (\fEn{PostgreSQL port} နံပါတ်)
 \end{itemize}
 %
-\fEn{Connect} လုပ်တာ အောင်မြင်ရင် \fCode{connect} ဖန်ရှင်က \fCode{Connection} အော့ဘ်ဂျက်တစ်ခု ပြန်ရပါတယ်။ တကယ်လို့ ပြဿနာ တစ်ခုခုကြောင့် \fEn{connect} လုပ်လို့ မရရင်တော့ ဖြစ်ရတဲ့ အကြောင်းအရင်းပေါ် မူတည်ပြီး \fCode{OperationalError}\fEn{,} \fCode{InternalError} စတဲ့ \fEn{exception} တွေ တက်နိုင်တယ်။ ဒီ \fEn{exception} တွေက \fCode{psycopg2.Error}  ရဲ့ \fEn{subclass} တွေပါ။ \fEn{built-in} တွေ မဟုတ်ပါဘူး၊ \fCode{psycopg2} သီးသန့် \fEn{exception} တွေပါ။
+
+\fEn{Connect} လုပ်တာ အောင်မြင်ရင် \fCode{connect} ဖန်ရှင်က \fCode{Connection} အော့ဘ်ဂျက်တစ်ခု ပြန်ရပါတယ်။ တကယ်လို့ ပြဿနာ တစ်ခုခုကြောင့် \fEn{connect} လုပ်လို့ မရရင်တော့ ဖြစ်ရတဲ့ အကြောင်းအရင်းပေါ် မူတည်ပြီး \fCode{OperationalError}\fEn{,} \fCode{InternalError} စတဲ့ \fEn{exception} တွေ တက်နိုင်တယ်။ ဒီ \fEn{exception} တွေက \fCode{psycopg2.Error}  ရဲ့ \fEn{subclass} တွေပါ။
 
 
 %
@@ -706,7 +829,7 @@ conn.close()
 conn.autocommit = True
 \end{py}
 %
-ဒါက ဒေတာဘေ့စ် \fEnEmp{auto-commit} \fEn{mode} ကို \fEn{on} လုပ်ပေးဖို့။ ဒေတာဘေ့စ် \fEn{transaction} နဲ့ ဆိုင်တဲ့ \fEn{setting} တစ်ခုဖြစ်ပြီး နောက်ပိုင်းမှာ အသေးစိတ် ရှင်းပြမှာပါ။ \fEn{PostgreSQL} က နဂိုအတိုင်း  \fEn{auto commit mode} ကို \fEn{off} လုပ်ထားတယ်။ ဒေတာဘေ့စ် အသစ်ဆောက်တဲ့ \fCode{CREATE DATABASE} လို တချို့ \fEn{SQL} စတိတ်မန့်တွေက \fEn{auto commit} ကို \fEn{on} လုပ်ပေးရတယ်လို့ လောလောဆယ် သိထားရင် လုံလောက်ပါပြီ။ \fEn{On} ထားရင် \fEn{SQL} စတိတ်မန့်တွေ \fCode{execute} လုပ်ပြီးရင် \fCode{commit} ဖန်ရှင် ခေါ်ဖို့ မလိုဘူး။ (နောက် ဥပမာမှာ \fCode{commit} ဖန်ရှင် သုံးထားတာ တွေ့ရမှာပါ)။
+ဒါက ဒေတာဘေ့စ် \fEn{auto-commit mode} ကို \fEn{on} လုပ်ပေးဖို့။ ဒေတာဘေ့စ် \fEn{transaction} နဲ့ ဆိုင်တဲ့ \fEn{setting} တစ်ခုဖြစ်ပြီး နောက်ပိုင်းမှာ အသေးစိတ် ရှင်းပြမှာပါ။ \fEn{Psycopg} က သူ့နဂိုအတိုင်းဆိုရင်  \fEn{auto-commit mode} ကို \fEn{off} လုပ်ထားတယ်။ ဒေတာဘေ့စ် အသစ်ဆောက်တဲ့ \fCode{CREATE DATABASE} လို တချို့ \fEn{SQL} စတိတ်မန့်တွေက \fEn{auto commit} ကို \fEn{on} လုပ်ပေးရတယ်လို့ လောလောဆယ် သိထားရင် လုံလောက်ပါပြီ။ \fEn{Auto-commit on} ထားရင် \fEn{SQL} စတိတ်မန့်တွေ \fCode{execute} လုပ်ပြီးရင် \fCode{commit} ဖန်ရှင် ခေါ်ဖို့ မလိုဘူး။ (နောက် ဥပမာမှာ \fCode{commit} ဖန်ရှင် သုံးထားတာ တွေ့ရမှာပါ)။
 
 \fEn{SQL} စတိတ်မန့်တွေ ဒေတာဘေ့စ်ဆီ ပေးပို့လုပ်ဆောင်စေခြင်း၊ ဒေတာဘေ့စ်ဆီက ပြန်ရလာတဲ့ ရလဒ်တွေကို အသုံးပြုခြင်း၊ ဒေတာဘေ့စ် \fEn{transaction} စီမံခြင်း စတဲ့ ကိစ္စတွေအတွက် \fEn{cursor} က အဓိကကျတယ်။ \fEn{Cursor} အော့ဘ်ဂျက်ကို \fEn{connection} ကနေ တစ်ဆင့် အခုလို ယူရပါတယ်
 %
@@ -715,34 +838,30 @@ cur = conn.cursor()
 \end{py}
 %
 
-\fEn{students} ဒေတာဘေ့စ် ဆောက်တဲ့ \fEn{SQL} ကို ဒေတာဘေ့စ် ဆာဗာဆီ \fEn{cursor} နဲ့ ပေးပို့ လုပ်ဆောင်ခိုင်းရပါမယ်။ 
+ချိတ်ဆက်ထားတဲ့ ဒေတာဘေ့စ်ဆီကို \fEn{SQL} စတိတ်မန့်တွေ ပေးပို့ လုပ်ဆောင်ခိုင်းဖို့ \fCode{execute} ဖန်ရှင် အသုံးပြုတယ်။  
 %
 \begin{py}
+cur.execute("DROP DATABASE IF EXISTS students")
 cur.execute("CREATE DATABASE students")
 \end{py}
 %
+ ပထမ တစ်ကြောင်းက \fCode{students} ဒေတာဘေ့စ် ရှိပြီးသားဆိုရင် ဖျက်ပစ်မှာပါ။ ပြီးတော့မှ ဒုတိယ တစ်ကြောင်းမှာ ဒေတာဘေ့စ် အသစ်ဆောက်ပါတယ်။ ရှိပြီးသားဆိုရင် ဖျက်ပြီး အသစ်ပြန်ဆောက်တဲ့ သဘောပါ။ \fEn{psql} နဲ့ဆိုရင် \fEn{SQL} စတိတ်မန့်အဆုံးမှာ \fCode{;} ထည့်ပြီး \fEn{run} ရမှာ ဖြစ်ပေမဲ့ \fEn{Psycopg} မှာတော့ ထည့်စရာ မလိုဘူး။ ထည့်ပေးလည်း ပြဿနာတော့ မရှိဘူး။
 
-\fEn{Cursor} နဲ့ \fEn{connection} ကို အသုံးပြုပြီးသွားရင် ပိတ်ပေးသင့်တယ်။ \fEn{Exception handle} လုပ်မယ်ဆိုရင် \fCode{finally} ထဲမှာ ပိတ်ရမယ်။ ဒီဥပမာမှာတော့ ရိုးရိုးပဲ ပိတ်ထားပါတယ်။
+
+\fEn{Cursor} နဲ့ \fEn{connection} ကို အသုံးပြုပြီးသွားရင် ပိတ်ပေးရပါမယ်။ \fEn{Exception handle} လုပ်မယ်ဆိုရင် \fCode{finally} ထဲမှာ ပိတ်သင့်တယ်။ ဒီဥပမာမှာတော့ ဒီတိုင်းပဲ ပိတ်ထားပါတယ်။
 %
 \begin{py}
 cur.close()
 conn.close()
 \end{py}
 %
-
-ဒီပရိုဂရမ် \fEn{run} ပြီးလို့ ဘာပြဿနာမှမရှိဘဲ အောင်မြင်တယ်ဆိုရင် \fEn{students} ဒေတာဘေ့စ် ဆောက်ပြီးသွားပါပြီ။ \fEn{psql} မှာ \mintinline{text}|\l| ကွန်မန်း \fEn{run} ကြည့်ရင် အခုလို တွေ့ရမှာပါ။
-(သို့) \fEn{pgAdmin} 
+ဒီပရိုဂရမ် \fEn{run} ပြီး \fEn{error} လည်း မတက်ဘူးဆိုရင် \fEn{students} ဒေတာဘေ့စ် ဆောက်ပြီးသွားမှာပါ။ \fEn{psql} ကနေ \mintinline{text}|\l| ကွန်မန်းနဲ့ စစ်ကြည့်နိုင်ပါတယ်။
 
 
-\begin{figure}[tb!]
-\begin{tikzpicture}
-    \node[anchor=south west,inner sep=0] (image) at (0,0)
-        {\includegraphics[width=.98\textwidth, trim={0cm 7cm 38cm 0cm},clip]{images/ch12/lstdbstu.jpg}};
-    \drawshadow{image}
-\end{tikzpicture}
-\caption{}
-\label{fig:lstdbstu}
-\end{figure}
+
+
+
+
 
 
 
@@ -759,6 +878,7 @@ conn = psycopg2.connect(
     host="localhost",
     port="5432"
 )
+conn.autocommit = False
 cur = conn.cursor()
 
 # Create the "student" table
@@ -777,21 +897,703 @@ cur.close()
 conn.close()
 \end{py}
 %
-
-\fEn{Table} ဆောက်တဲ့ \fCode{CREATE TABLE} စတိတ်မန့်က  \fEn{auto-commit mode} \fEn{ON} ဖြစ်ဖြစ်၊ \fEn{OFF} ဖြစ်ဖြစ် \fEn{run} လို့ရတယ်။ \fEn{PostgreSQL} မှာ \fEn{default} က \fEn{OFF} ဖြစ်တယ်။ \fEn{Connection} ယူပြီးတာနဲ့ အခုလို တကူးတက ထည့်ပေးမယ်ဆိုရင်လည်း ပြဿနာတော့ မရှိပါဘူး။ 
+ကွန်နက်ရှင် ရပြီး နောက်မှာ
 %
 \begin{py}
 conn.autocommit = False
 \end{py}
 %
-\fEn{Default} က \fEn{OFF} ဖြစ်ပြီးသားမို့လို့ လိုတော့မလိုအပ်ဘူး။
+နဲ့ \fEn{auto-commit mode} ကို \fEn{off} လုပ်တယ်။ \fEn{Psycopg} \fEn{default} က \fEn{auto-commit off} ဖြစ်တဲ့အတွက် ဒါမပါရင်လည်း \fEn{off} ဖြစ်နေမှာပါ။ ဒါဆို ဘာလို့ တကူးတက ထည့်ထားလည်းဆိုတော့ ကုဒ်ကို ဖတ်တဲ့အခါ \fEn{auto-commit off} ထားတယ်ဆိုတာ သိသာစေချင်တာရော ဒရိုက်ဗာရဲ့ \fEn{default} က \fEn{on/off} ဘာလဲ မသေချာမှာ စိုးလို့ပါ။  
 
-\fEn{Auto-commit} \fEn{OFF} ထားရင် \fEn{SQL} စတိတ်မန့် \fEn{execute} လုပ်ပြီး \fEn{commit} လုပ်ပေးဖို့ လိုတယ်။ ဒီအတွက်
+\fCode{CREATE TABLE} စတိတ်မန့်က  \fEn{auto-commit mode} \fEn{on} ဖြစ်ဖြစ်၊ \fEn{off} ဖြစ်ဖြစ် \fEn{run} လို့ရတယ်။ အခု \fEn{off} လုပ်ထားတာက ရှေကဥပမာမှာ \fEn{on} လုပ်ထားတာနဲ့ ကွာခြားချက်တချို့ကို သိအောင်လို့ပါ။ အခြားထူးခြားတဲ့ အကြောင်းအရင်း မရှိပါဘူး။ နောက်ပိုင်း \fEn{database transaction} အပိုင်းမှာ \fEn{off} လုပ်ကို လုပ်ရတဲ့ အကြောင်းအရင်းကို ရှင်းပြပါမယ်။
+
+
+\fEn{Auto-commit} \fEn{off} ထားရင် \fEn{SQL} စတိတ်မန့် \fEn{execute} လုပ်ပြီး \fEn{commit} လုပ်ပေးဖို့ လိုတယ်။ ဒီအတွက်
 %
 \begin{py}
 conn.commit()
 \end{py}
 %
-လုပ်ရပါမယ်။ ဒါ မေ့ကျန်ခဲ့ရင် \fEn{execute} လုပ်ထားတဲ့ \fEn{SQL} က သက်ရောက်မှု ရှိမှာမဟုတ်ပါဘူး။ တစ်နည်းအားဖြင့် \fEn{student table} အမှန်တကယ် မဆောက်ပေးတော့ဘူး။ အကယ်၍ \fEn{auto-commit} \fEn{OFF} ထားရင်တော့ ကိုယ်တိုင် \fCode{conn.commit()} လုပ်မပေးရဘူး၊ ဒေတာဘေ့စ်က \fEn{SQL} ကွန်မန်း တစ်ခု \fEn{execute} လုပ်ပြီးတိုင်း အလိုအလျောက် \fEn{commit} လုပ်ပေးမှာပါ။ \fEn{OFF} ထားရင် \fCode{conn.commit()} လုပ်ပေးရမယ်၊ \fEn{ON} ဆိုရင် မလုပ်ပေးရဘူး၊ ဒီလို မှတ်ထားလို့ရတယ်။
+လုပ်ရပါမယ်။ \fCode{commit} မလုပ်မိရင် \fEn{execute} လုပ်ထားတဲ့ \fEn{SQL} က သက်ရောက်မှု ရှိမှာမဟုတ်ပါဘူး။ ဆိုလိုတာက \fEn{student table} ဆောက်တဲ့ကိစ္စက အတည်ဖြစ်မသွားဘူး (\fEn{rollback} ဖြစ်သွားတယ်လို့ ခေါ်တယ်)။ \fEn{Commit} နဲ့ \fEn{rollback} အကြောင်း \fEn{transaction} အပိုင်းမှာ ရှင်းပြပါမယ်။
 
+အကယ်၍ \fEn{Auto-commit} \fEn{on} ထားရင်တော့ ကိုယ်တိုင် \fCode{conn.commit()} လုပ်မပေးရဘူး၊ ဒေတာဘေ့စ်က \fEn{SQL} ကွန်မန်း တစ်ခု \fEn{execute} လုပ်ပြီးတိုင်း အလိုအလျောက် \fEn{commit} လုပ်ပေးမှာပါ။ \fEn{Off} ထားရင် \fEn{commit} လုပ်ပေးရမယ်၊ \fEn{on} ဆိုရင် မလုပ်ပေးရဘူးလို့ မှတ်နိုင်ပါတယ်။
+
+
+\section{ပါရာမီတာ}
+
+%
+\begin{py}
+import psycopg2
+
+conn = psycopg2.connect(
+    dbname="students",
+    user="postgres",
+    password="asdfgh",
+    host="localhost",
+    port="5432"
+)
+conn.autocommit = False
+cur = conn.cursor()
+
+# Insert records into the student table one at a time
+students = [
+    ('Amy', 20, 'A'),
+    ('Sandy', 22, 'B'),
+    ('Kathy', 21, 'C')
+]
+
+for student in students:
+    cur.execute("""
+        INSERT INTO student (name, age, grade)
+        VALUES (%s, %s, %s)
+    """, student)
+
+conn.commit()
+cur.close()
+conn.close()
+
+\end{py}
+%
+
+ဒီဥပမာရဲ့ \fCode{INSERT} မှာပါတဲ့ \mintinline{text}|%s| တွေကို သတိပြုမိမှာပါ။ ပါရာမီတာ သတ်မှတ်တာ ဖြစ်ပါတယ်။ \fEn{SQL} \fEn{string} မှာ ပါရာမီတာပါရင် \fCode{execute} ဖန်ရှင် ခေါ်တဲ့အခါ \fEn{tuple} တစ်ခု ထည့်ပေးရပါမယ်။ အဲဒီ \fEn{tuple} ထဲမှာ \mintinline{text}|%s| တစ်ခုစီ နေရာမှာ အစားထိုးရမဲ့ တန်ဖိုးအသီးသီးကို အစဉ်အတိုင်း ထည့်ပေးရမှာဖြစ်ပြီး \fCode{execute} ဖန်ရှင်က ဒေတာဘေ့စ်ဆီကို \fEn{SQL} ပို့တဲ့အခါ ပါရာမီတာတွေနေရာမှာ သက်ဆိုင်ရာတန်ဖိုး အသီးအသီး အစားထိုးပေးမှာပါ။ ဥပမာ
+%
+\begin{py}
+cur.execute("""
+        INSERT INTO student (name, age, grade)
+        VALUES (%s, %s, %s)
+    """, ('Amy', 20, 'A'))
+\end{py}
+%
+ကို လုပ်ဆောင်တဲ့အခါ ဒေတာဘေ့စ်ဆီ ပို့ပေးမဲ့ \fEn{SQL} က ဒီလိုဖြစ်သွားမှာပါ
+% မှာ ပါရာမီတာတွေကို လိုက်ဖက်တန်ဖိုး အသီးသီးနဲ့ အစားထိုးပြီးရင် အခုလို ဖြစ်ပါမယ်။ ဒီ \fEn{SQL} ကို
+%
+\begin{sql}
+INSERT INTO student (name, age, grade)
+VALUES ('Amy', 20, 'A');
+\end{sql}
+%
+ရှေ့က ဥပမာဟာ အောက်ပါ \fEn{insert} စတိတ်မန့် သုံးခုကို တစ်ခုချင်း ဒေတာဘေ့စ်ဆီ ပေးပို့ လုပ်ဆောင်စေမှာပါ။ 
+
+%
+\begin{sql}
+INSERT INTO student (name, age, grade) VALUES ('Amy', 20, 'A');
+INSERT INTO student (name, age, grade) VALUES ('Sandy', 22, 'B');
+INSERT INTO student (name, age, grade) VALUES ('Kathy', 21, 'C');
+\end{sql}
+%
+
+\fEn{Insert} သုံးခုလုံး တစ်ခါတည်းနဲ့ ပေးပို့ လုပ်ဆောင်စေချင်ရင် \fCode{executemany} ကို သုံးပါတယ်။ \fEn{Tuple array} တစ်ခု ထည့်ပေးရပါမယ်။ \fEn{Array} ထဲက \fEn{tuple} တစ်ခုချင်းအတွက် \fEn{SQL} စတိတ်မန့် တစ်ခုစီ ထုတ်ပေးပြီး အသုတ်လိုက် ဒေတာဘေ့စ်ဆီ ပို့ပေးပါတယ်။
+%
+\begin{py}
+students = [
+    ('Amy', 20, 'A'),
+    ('Sandy', 22, 'B'),
+    ('Kathy', 21, 'C')
+]
+
+cur.executemany("""
+    INSERT INTO student (name, age, grade)
+    VALUES (%s, %s, %s)
+""", students)
+\end{py}
+%
+စောစောကဥပမာနဲ့ ရလဒ်အားဖြင့်တော့ တူတူပါပဲ။ တစ်ကြောင်းချင်း ပို့တာနဲ့  သုံးကြောင်းလုံး အသုတ်လိုက် တစ်ခါတည်း ပို့တာပဲ ကွာပါတယ်။ အသုတ်လိုက် ပို့တာက နက်ဝပ်အသွားအပြန် \fEn{(network round-trip)} လုပ်ရတာ မများတဲ့အတွက် \fEn{record} တွေ အများကြီး \fEn{insert} လုပ်တဲ့အခါ သိသိသာသာ ပိုပြီးတော့မြန်မှာပါ။ တစ်ကြောင်းချင်း ပို့တာက တစ်ခါပို့တိုင်း နက်ဝပ်အသွားအပြန် ရှိတဲ့အတွက် ပိုကြာမယ်။ နှစ်မျိုးလုံး သူ့နေရာနဲ့သူ ချင့်ချိန်အသုံးပြုရမှာပါ။ ဒါနဲ့ပါတ်သက်လို့ အခုဆက်လက် ဆွေးနွေးမှာ မဟုတ်ပေမဲ့ ဘယ်လိုအခြေအနေမျိုးမှာ ဘယ်ဟာသုံးသင့်လဲ ဆုံးဖြတ်တတ်အောင် ဆက်လက်လေ့လာဖို့ လိုပါလိမ့်မယ်။ 
+
+%
+\begin{py}
+cur.execute("SELECT * FROM student")
+
+rows = cur.fetchall()
+for row in rows:
+    print(row)
+\end{py}
+%
+
+%
+\begin{py}
+rows = cur.fetchmany(2)
+\end{py}
+%
+
+%
+\begin{py}
+# Update a student's grade where the student's name is 'Amy'
+cur.execute("""
+    UPDATE student
+    SET grade = %s
+    WHERE name = %s
+""", ('A+', 'Amy'))
+
+print(cur.rowcount)
+\end{py}
+%
+
+%
+\begin{py}
+update_query = """
+    UPDATE student
+    SET age=%s, grade = %s
+    WHERE name = %s AND id = %s
+"""
+
+updates = [
+    (21, 'B+', 'Amy', 1),
+    (23, 'B+', 'Sandy', 2),
+    (22, 'C+', 'Kathy', 3)
+]
+
+cur.executemany(update_query, updates)
+
+conn.commit()
+
+# Check the number of rows affected
+print(f"Rows updated: {cur.rowcount}")
+\end{py}
+%
+
+\subsection*{Dynamic SQL}
+ပရိုဂရမ်ကုဒ်ထဲမှာ ပုံသေရေးထားတာ မဟုတ်ဘဲ ပရိုဂရမ် \fEn{run} တဲ့ အချိန်ကျမှ လိုသလို တည်ဆောက်ယူတဲ့ \fEn{SQL} ကို \fEn{Dynamic SQL} လို့ ခေါ်ပါတယ်။ \fEn{Table} နံမည် ထည့်ပေးလိုက်၊ အဲ့ဒီ \fEn{table} ထဲက \fEn{record} တွေကို ထုတ်ပြရမယ်ဆိုပါစို့။ \fEn{Select} စတိတ်မန့်မှာ \fEn{table} နံမည်က ပုံသေဖြစ်လို့ မရတော့ဘူး။ ပထမဆုံး စဉ်းစားမိတာက \fEn{SQL} ကို \fEn{string} နှစ်ခုဆက်ပြီး ထုတ်မယ်ပေါ့။
+%
+\begin{py}
+# Never do like this!!!
+tbl_name = input("Enter table name: ")
+select_tbl_sql = "SELECT * FROM " + tbl_name 
+\end{py}
+%
+ဒါဟာ လူပြိန်းနည်းနဲ့ \fEn{dynamic SQL} ထုတ်တဲ့ အရိုးရှင်းဆုံး ဥပမာတစ်ခုပဲ။ ဒီနည်းနဲ့ ရတယ်ဆိုပေမဲ့ ရှားရှားပါးပါး ကြုံရခဲတဲ့ ချွင်းချက်အခြေအနေ တချို့ကလွဲလို့ \fEn{string} ဆက်ပြီး \fEn{SQL} ထုတ်တာက လုံးဝကို မလုပ်သင့်တဲ့ အရာပါ။ ဒါတင် မဟုတ်သေးဘူး။ \fEn{f-strings}\fEn{,} \fCode{str.format()}\fEn{,} \fEn{template string}\fEn{,} ပုံစံဟောင်း \mintinline{text}|%| အော်ပရိတ်တာ စတာတွေကိုလည်း \fEn{dynamic SQL} ထုတ်ဖို့ မသုံးသင့်ဘူး။ (\fEn{Python} မှာ \fEnEmp{string interpolation} ပုံစံအမျိုးမျိုးရှိတယ်၊ \fEn{f-strings} ကို စာမျက်နှာ \fRefNo{\pageref{ch07:f-string}} အခန်း \fRefNo{\ref{ch:ch07ctlstmt}} မှာ ဖော်ပြခဲ့ဖူးတယ်၊ \fEn{Python string interpolation} အကြောင်း \fCode{https://tinyurl.com/y4jju285} မှာ ပြည့်ပြည့်စုံစုံ ရှင်းပြထားတာ တွေ့နိုင်တယ်)။ ဘာကြောင့် မသုံးသင့်တာလဲ အကြောင်းအရင်းကို ဒီအခန်း နောက်ဆုံးပိုင်းမှာ အားနည်းချက်/ပြဿနာတွေကို ဖော်ပြထားတာ ဖတ်ပြီးရင် နားလည်သွားပါလိမ့်မယ်။ 
+
+
+\fEn{Dynamic SQL} အတွက် \fEn{Psycopg} မှာ \fEn{sql} မော်ဒျူး ရှိပါတယ်။ \fEn{String interpolation} နဲ့ \fEn{SQL} ထုတ်ရင် ဖြစ်နိုင်တဲ့ ပြဿနာတွေကို ဖြေရှင်းပေးထားတယ်။ \fEn{Table} နံမည် \fEn{dynamic SQL} ကို အခုလို ရေးရမယ်။
+%\fEn{SQL string} ထဲမှာ \fEn{table, column} စတဲ့ \fEn{identifier} တွေကို ပါရာမီတာအနေနဲ့ ထားမယ်ဆိုရင် \mintinline{text}|{}| ကို သုံးရပါမယ်။ \fEn{Select} စတိတ်မန့်မှာ \fEn{table} နံမည် ပုံသေမထားဘဲ ပြောင်းလို့ရချင်တယ် ဆိုပါစို့။ အခုလို လုပ်ရမှာပါ
+%
+\begin{py}
+# reqire sql module
+from psycopg2 import sql
+
+tbl_name = input("Enter table name: ")
+select_tbl_sql = sql.SQL("SELECT * FROM {}").format(sql.Identifier(tbl_name))
+cur.execute(select_tbl_sql)
+\end{py}
+%
+\fEn{SQL string} အစိတ်အပိုင်းတစ်ခုကို ကိုယ်စားပြုဖော်ပြဖို့အတွက် \fCode{sql.SQL} အော့ဘ်ဂျက် သုံးရပါတယ်။ ၎င်းအော့ဘ်ဂျက် ကိုယ်စားပြုတဲ့ \fEn{SQL} အစိတ်အပိုင်းထဲမှာ \mintinline{text}|{}| ကို ဖြည့်ပေးရမဲ့ နေရာအဖြစ် ယာယီ သတ်မှတ်ပေးနိုင်တယ်။ အဲဒီနေရာကို ဖြည့်ပေးဖို့ \fCode{format} မက်သဒ်ကို သုံးရပါမယ်။ အပေါ်က \fCode{SELECT} \fEn{SQL} မှာ \mintinline{text}|{}| ကို \fEn{table} နေရာမှာ ပထမ ထည့်ထားတယ်။ ပြီးတော့မှ \fCode{format} မက်သဒ်ခေါ်ပြီး အဲ့ဒီနေရာမှာ \fCode{tbl\_name} ဖြည့်တယ်။ \mintinline{text}|{}| နေရာမှာ \fEn{string} တိုက်ရိုက် အစားမထိုးဘဲ \fCode{sql.Identifier} အော့ဘ်ဂျက် ပြောင်းပေးဖို့တော့ လိုတယ်။
+
+% ဒီအော့ဘ်ဂျက် ကိုယ်စားပြုတာက စတိတ်မန့် တစ်ကြောင်းလုံး အပြည့်အစုံ ဖြစ်နိုင်သလို \fCode{FROM}\fEn{,} \fCode{WHERE}\fEn{,} \fCode{ORDER BY} စတဲ့ \fEn{SQL} အစိတ်အပိုင်း တစ်ခုခုလည်း ဖြစ်လို့လည်းရတယ်။ 
+% အဲဒီနေရာမှာ \fCode{format} မက်သဒ်နဲ့ \fEn{table/column} ရဲ့ နံမည်ကို အစားထိုး ဖြည့်ပေးနိုင်တယ်။ \fEn{Table/column} နံမည်ကို \fCode{sql.Identifier} အော့ဘ်ဂျက် ပြောင်းပြီးမှ အစားရပါမယ်။ \fEn{String} အတိုင်း ထည့်လို့တော့ မရဘူး။
+
+%၊ \fCode{format} က \mintinline{text}|{}| နေရာမှာ \fEn{identifier} (\fEn{table} နံမည်၊ \fEn{column} နံမည် စတာတွေကို ဆိုလိုတာ) တစ်ခုခု အစားထိုးဖို့။ \fCode{format} လုပ်တဲ့အခါ \fEn{string} ကို \mintinline{text}|sql.Identifier| အော့ဘ်ဂျက်အနေနဲ့ ထည့်ပေးရပါမယ်။ 
+
+\mintinline{text}|{}| နဲ့ \mintinline{text}|%s| နှစ်ခုလုံးကို ဖြည့်ပေးရမဲ့ နေရာတွေအတွက် သုံးတယ် ဆိုပေမဲ့ \mintinline{text}|{}| က \fEn{table} နံမည်၊ \fEn{column} နံမည် စတဲ့ \fEn{identifier} တွေအတွက်၊ \mintinline{text}|%s| ကိုက ဒေတာတန်ဖိုးတွေအတွက် သုံးတာ၊ ရည်ရွယ်ချက်ချင်းမတူပါဘူး။ အောက်ပါ ဥပမာကို ကြည့်ပါ။
+%
+\begin{py}
+table = 'student'
+col1 = 'grade'
+col2 = 'age'
+query = sql.SQL("SELECT * FROM {} WHERE {} = %s AND {} = %s").format(
+    sql.Identifier(table), sql.Identifier(col1), sql.Identifier(col2))
+# see the formatted result
+print(query.as_string(conn))
+cur.execute(query, ('A', 20))
+\end{py}
+%
+\fCode{format} မက်သဒ်နဲ့ \fEn{table} နဲ့ \fEn{column} နှစ်ခုနေရာကို \fCode{table}\fEn{,} \fCode{col1}\fEn{,} \fCode{col2} အစားထိုးပေးပါတယ်။ \fCode{WHERE} အပိုင်းမှာ \fEn{column} တစ်ခုချင်းအတွက် တန်ဖိုးကို \mintinline{text}|%s| ထည့်ထားတယ်။ \fCode{query} ကို \fCode{execute} လုပ်တဲ့အခါမှ \mintinline{text}|%| နေရာမှာ \fEn{tuple} \fCode{('A', 20)} ထဲက တန်ဖိုးနဲ့ အစားထိုးမှာပါ။
+
+\fEn{Dynamic SQL} အတွက် \fCode{sql.SQL} အော့ဘ်ဂျက်မှာ \fCode{join} မက်သဒ်ကလည်း အသုံးဝင်တယ်။ နံမည်က \fCode{join} ဆိုတဲ့အတိုင်း \fEn{column} နံမည်တွေ ကော်မာနဲ့ဆက်တာ၊ ကွန်ဒီရှင်တွေ \fCode{AND}\fEn{/}\fCode{OR} နဲ့ ဆက်တာ စတဲ့ကိစ္စတွေအတွက် ကူညီပေးတဲ့ မက်သဒ်ဖြစ်ပါတယ်။ အသုံးပြုပုံ လေ့လာကြည့်ပါ။
+%
+\begin{py}
+col_names = ['id', 'name', 'age', 'grade']
+col_identifiers = []
+for col in col_names:
+    col_identifiers.append(sql.Identifier(col))
+sql_frag1 = sql.SQL(", ").join(col_identifiers)
+print(sql_frag1.as_string(conn))
+
+conditions = []
+for col in col_names:
+    conditions.append(sql.SQL("{} = %s").format(sql.Identifier(col)))
+sql_frag2 = sql.SQL(" AND ").join(conditions)
+print(sql_frag2.as_string(conn))
+
+# generate a full sql statement
+sql_full = (sql.SQL("SELECT ")
+            + sql.SQL(", ").join(col_identifiers)
+            + sql.SQL(" FROM student WHERE ")
+            + sql.SQL(" AND ").join(conditions))
+print(sql_full.as_string(conn))
+cur.execute(sql_full, (1, 'Amy', 20, 'A'))
+\end{py}
+%
+\fCode{sql.SQL} အော့ဘ်ဂျက်တွေကို \fCode{+} အော်ပရိတ်တာနဲ့  ဆက်ထားတာကိုလည်း သတိထားမိမှာပါ။
+
+\fEn{Psycopg} ဒရိုက်ဗာ သုံးရင် အခုဖော်ပြခဲ့တဲ့ နည်းတွေနဲ့ပဲ \fEn{dynamic SQL} ထုတ်ရမယ်ကတော့ ဟုတ်ပါပြီ။ ဘာကြောင့် ဒီလောက် အလုပ်ရှုပ်ခံပြီး \fEn{dynamic SQL} ထုတ်နေရတာလဲ၊ တစ်ခါတည်း ကုဒ်ထဲမှာ \fEn{SQL string} ကိုပဲ အပြည့်အစုံရေးထားလို့ မရဘူးလား စသည်ဖြင့် မေးခွန်းထုတ်စရာ ရှိပါတယ်။ တကယ့်လက်တွေ့ အပ်ပလီကေးရှင်းတွေမှာ လိုအပ်ချက်အများစုဟာ \fEn{dynamic SQL} သုံးရတာပါ။ ပုံသေရေးထားလို့ရတဲ့ \fEn{static SQL} သုံးရတာ နည်းတယ်။ 
+
+ကျောင်းသား \fEn{record} တွေ \fEn{search} လုပ်တဲ့ ပရိုဂရမ် အစိတ်အပိုင်းတစ်ခုကို စိတ်ကူးကြည့်ပါ။ တစ်ခါတစ်ရံ ကျောင်းသားနံမည်နဲ့ ရှာတယ်။ တစ်ခါတစ်ရံမှာတော့ \fEn{grade} နဲ့ ရှာချင်ရှာမယ် (ဥပမာ ဘယ်သူတွေ \fEn{grade A} ရကြလဲ)။ ဒါမှမဟုတ် နံမည်နဲ့ \fEn{grade} နှစ်ခုလုံးနဲ့ ရှာတာလည်း ဖြစ်နိုင်တာပဲ။ \fEn{Dynamic SQL} မသုံးပဲ အခုလို စမ်းကြည့်နိုင်တယ်။
+%
+\begin{py}
+print("Key in the value for each attribute."
+      "Or press enter to ignore the attribute.")
+name = input("Name: ")
+grade = input("Grade: ")
+
+sql0 = "SELECT * FROM student"
+sql1 = "SELECT * FROM student WHERE name = %s"
+sql2 = "SELECT * FROM student WHERE grade = %s"
+sql3 = "SELECT * FROM student WHERE name = %s AND grade = %s"
+
+if name.strip() and grade.strip():
+    cur.execute(sql3, (name, grade.strip()))
+elif name.strip():
+    print(name.strip())
+    cur.execute(sql1, (name.strip(),))
+elif grade.strip():
+    cur.execute(sql2, (grade.strip(),))
+else:
+    cur.execute(sql0)
+\end{py}
+%
+နံမည်နဲ့ \fEn{grade} နှစ်ခုဆိုရင်တောင် \fCode{if} စတိတ်မန့်က အတော်လေး ရှုပ်နေပါပြီ။ \fEn{SQL} စတိတ်မန့် လေးခုကိုလည်း ကြိုတင်သတ်မှတ်ထားရသေးတယ်။ \fEn{Age} နဲ့ ရှာလို့ရအောင် ထပ်ဖြည့်မယ် ဆိုပါစို့။ အောက်ပါအတိုင်း ဖြစ်နိုင်ခြေ ၈ ခု တွဲလို့ရမှာပါ။
+\begin{align*}
+&(name, age, grade),\\
+&(name, age), (name, grade), (grade, age),\\
+&(name), (age), (grade),\\
+&()    
+\end{align*}
+သုံးခုနဲ့တင် အတော်လေး ရှုပ်နေပါပြီ။ ပါရာမီတာတွေသာ ထပ်တိုးလာတာနဲ့အမျှ \fEn{SQL} တွေ၊ ဖြစ်နိုင်တဲ့ အတွဲတွေနဲ့ စစ်ရမဲ့ ကွန်ဒီရှင်တွေကလည်း ဖေါင်းပွလာမှာ။ ဒီလိုအခြေအနေမျိုးမှာ \fEn{Dynamic SQL} က အများကြီး အဆင်ပြေစေတယ်။ အောက်မှာ ရေးထားတဲ့ ပရိုဂရမ်ကုဒ်ကို လေ့လာကြည့်ပါ။
+%
+\begin{py}
+name = input("Name: ")
+grade = input("Grade: ")
+age = input("Age: ")
+
+search_params = {
+    'name': name.strip() if name.strip() else None,
+    'age': int(age.strip()) if age.strip() else None,
+    'grade': grade.strip() if grade.strip() else None
+}
+
+query = sql.SQL("SELECT * FROM student")
+
+# List to hold the WHERE conditions
+conditions = []
+# List to hold the values
+values = []
+
+# Build conditions dynamically based on user input
+for column, value in search_params.items():
+    if value is not None:
+        conditions.append(sql.SQL("{} = %s").format(sql.Identifier(column)))
+        values.append(value)
+
+# If there are any conditions, add them to the query
+if conditions:
+    query = query + sql.SQL(" WHERE ") + sql.SQL(" AND ").join(conditions)
+\end{py}
+%
+နောက်ထပ် ပါရာမီတာတစ်ခု ထပ်ထည့်လည်း နည်းနည်းပဲ ပြင်ဖို့လိုတယ်။ ကျောင်းသား \fEn{id} နဲ့လည်း ရှာလို့ရချင်ရင် \fEn{input} ဖတ်တာနဲ့ ပါရာမီတာတွေ ထည့်တဲ့ \fEn{map} မှာ ထပ်ထည့်ရုံပဲ။
+%
+\begin{py}
+# ß\fEnEmp{others inputs}ß
+id = input("ID: ")
+
+search_params = {
+    # ß\fEnEmp{others params}ß
+    'id': int(id.strip()) if id.strip() else None
+}
+\end{py}
+%
+
+အခုတွေ့ခဲ့တာက \fEn{search} ကို နမူနာအနေနဲ့ ပြထားတာပါ။ \fEn{CRUD} လုပ်တဲ့အခါ \fEn{dynamic SQL} ဟာ \fEn{insert, select, update, delete} လေးခုလုံးအတွက် သုံးရပါတယ်။ (\fEn{Psycopg} မဟုတ်တဲ့) အခြား ဒေတာဘေ့စ် လိုက်ဘရီတွေမှာလည်း \fEn{dynamic SQL} အတွက် သူ့နည်းသူ့ဟန်နဲ့ ထောက်ပံ့ပေးထားတာ တွေ့ရမှာဖြစ်ပြီး လိုက်ဘရီ မတူတဲ့အတွက် အသုံးပြုပုံလည်း ကွာခြားမယ်ဆိုပေမဲ့  အခုဖော်ပြခဲ့တဲ့ အခြေခံ သဘောတရားတွေ နားလည်ရင် သိပ်အခက်အခဲမရှိဘဲ ဆက်လက်လေ့လာလို့ရမှာပါ။
+
+\section{Database Transactions}
+အောက်ဖော်ပြပါ လုပ်ငန်းကိစ္စတချို့ကို စဉ်းစားကြည့်ပါ။
+%
+\begin{itemize}
+    \item ဘဏ်အကောင့် ငွေလွှဲခြင်း
+    \item ဟိုတယ် \fEn{booking}
+    \item \fEn{Online} မှ ပစ္စည်းဝယ်ယူခြင်း
+\end{itemize}
+%
+ဒီလို လုပ်ငန်းကိစ္စတစ်ခု ပြီးမြောက်ဖို့အတွက် ဆောင်ရွက်ပေးရတဲ့ လုပ်ငန်းစဉ်မှာ အဆင့်ဆင့် ပါဝင်တယ်။ ဘဏ်အကောင့်တစ်ခုနဲ့ တစ်ခု ငွေလွှဲတဲ့အခါ လွှဲပေးသူ အကောင့်ကနေ ငွေကြေးပမာဏတစ်ခု နှုတ်ပေးပြီး လက်ခံသူအကောင့်ထဲကို ပေါင်းပေးရပါမယ်။ ဟိုတယ် \fEn{booking}  လုပ်ရင်လည်း ကတ်စတမ်မာ တည်းမဲ့ရက် အခန်းရနိုင်/မရနိုင် စစ်ကြည့်ပြီး အခန်း ဖယ်ထားပေးရပါမယ်။ အခန်းခ စရံငွေအတွက် ကတ်စတမ်မာ အကောင့်ကနေ ပိုက်ဆံပေးချေရမယ်။ နောက်ဆုံးမှာ \fEn{booking} လုပ်ထားပြီးကြောင်း ကွန်ဖန်းလုပ်ဖို့ အီးမေးလ်ပို့ပေးရပါမယ်။ \fEn{Online} ကနေ ပစ္စည်းဝယ်တာကို ခွဲခြမ်းစိတ်ဖြာ ကြည့်ရင်လည်း အဆင့် တစ်ခုမက ပါဝင်နေတာ တွေ့ရမှာပါ။
+
+ဖော်ပြပါ ဥပမာတစ်ခုစီကို ကြည့်ရင် လုပ်ငန်းစဉ်တစ်ခုလုံး  ပြီးမြောက်ဖို့အတွက် ၎င်းလုပ်ငန်းစဉ်မှာ ပါဝင်တဲ့အဆင့်အားလုံး ပြဿနာ တစ်စုံ\allowbreak တစ်ရာ မရှိဘဲ အဆင်ပြေချောမွေ့စွာ လုပ်ဆောင်ပေးနိုင်ရမှာပါ။ ငွေလွှဲတဲ့အခါ ကိုယ့်ဆီကပဲ ပိုက်ဆံဖြတ်သွားပြီး တစ်ဖက်လူဆီ မရောက်မှာ စိုးရိမ်မိတာ ကျွန်တော်တို့အားလုံး ဖြစ်ဖူးမှာပါ။ ဟိုတယ် \fEn{booking} လုပ်တဲ့ ကိစ္စမှာဆိုရင် အခန်းကို ကတ်စတမ်မာအတွက် ချန်ထားပြီးခါမှ အကြောင်းတစ်ခုခုကြောင့် စရံငွေဖြတ်လို့မရရင် ဟိုတယ်အနေနဲ့ ပြဿနာရှိပါတယ်။ အဲဒီ့အခန်းကို အခြားသူအတွက်လည်း ငှါးလို့မရ ဖြစ်နေမှာပါ။ 
+
+\begin{figure}[thb!]%
+\subfloat[]{\hspace{-10.5pt} \incfig[0.98]{txncommit}}\hfill%
+\vspace{1\baselineskip}
+\subfloat[]{\hspace{-10.5pt} \incfig[0.98]{txnrollback}}%
+\caption{Database transaction သဘောတရား။ Dashed စတုဂံအကြီးဟာ transaction စကုပ်၊ ထောင့်လုံး စတုဂံအသေးတွေက အကောင့်နှစ်ခုရဲ့ လက်ကျန်ငွေ အချိန်နဲ့အမျှ ပြောင်းလဲနေပုံ၊ မြှားဟာ အချိန် စီးဆင်းရာ။   (က) Transaction ကို commit လုပ်တဲ့အခါ ၎င်း transaction စကုပ် အတွင်း update လုပ်ထားတာတွေက အတည်ဖြစ်သွားပါတယ်။ (ခ) Rollback လုပ်ရင်တော့ transaction စကုပ်ထဲရှိ update တွေ ပျက်ပြယ်သွားပြီး လက်ကျန်ငွေ မပြောင်းလဲဘဲ နဂိုအတိုင်း ရှိနေမှာပါ}
+\label{fig:a}
+\end{figure}
+
+အခုလို ပြဿနာမျိုးတွေ မဖြစ်အောင် ကာကွယ်ဖို့ ဒေတာဘေ့စ်တွေမှာ \fEnEmp{transaction} သဘောတရားကို ထည့်သွင်းတည်ဆောက် ပေးထားပါတယ်။ \fEn{Transaction} ဆိုတာ လုပ်ငန်းကိစ္စတစ်ခုအနေနဲ့ တစ်ပေါင်းတစ်စည်းတည်း ရှုမြင်တဲ့ ‘လုပ်ငန်းစဉ် အဆင့်ဆင့်’ လို့ ယူဆနိုင်တယ်။ အဲ့ဒီ လုပ်ငန်းစဉ် အဆင့်ဆင့်ဟာ ဒေတာဘေ့စ် \fEn{read/write/update} အော်ပရေးရှင်းတွေ ပါဝင်နိုင်တယ်။ \fEn{Transaction} အတွင်း လုပ်ငန်းစဉ် အဆင့်အားလုံး အောင်မြင်ပြီးစီးသွားတာ၊ ဒါမှမဟုတ် ဘယ်တစ်ခုကိုမှ မလုပ်ဆောင်ဖြစ်တာ နှစ်မျိုးပဲ ဖြစ်နိုင်ပါတယ်။ တချို့ပဲ လုပ်ဖြစ်သွားပြီး အကြောင်း တစ်ခုခုကြောင့် တချို့ကို မလုပ်ဖြစ်ဘဲ ကျန်ခဲ့တယ်ဆိုတာမျိုး လုံးဝမဖြစ်နိုင်ဘူး (ဥပမာ \fEn{transaction} အတွင်းမှာ ငွေလွှဲတဲ့ ကိစ္စလုပ်ရင် အကောင့်တစ်ခုကနေပဲ ပိုက်ဆံဖြတ်သွားပြီး တစ်ဖက်အကောင့်မှာ မဝင်သွားတာ မဖြစ်နိုင်တော့ဘူး)။ ဒါဟာ အချက်အလက် မှန်ကန်ယုံကြည်ရခြင်း \fEn{(data integrity)} အာမခံချက် အပြည့်အဝ ပေးနိုင်ပြီး တစ်ပိုင်းတစ်စ \fEn{update} အချက်အလက်တွေကြောင့် ဒေတာဘေ့စ် မှန်ကန်ကိုက်ညီမှု မရှိခြင်း အခြေအနေကို ကာကွယ်ပေးတယ်။
+
+
+
+
+
+\fEn{Transaction} နဲ့ ပါတ်သက်ပြီး နောက်ထပ်အရေးပါတဲ့ အချက်တစ်ခုက \fEn{isolation} သဘောတရားပါ။ \fEn{Transaction} တစ်ခုအတွင်း လုပ်ဆောင်ထားတဲ့ ဒေတာအပြောင်းအလဲတွေဟာ (\fEn{update, insert, delete} ကို ဆိုလိုတာ) အဲဒီ \fEn{transaction} မပြီးမချင်း ဘယ်သူကမှ မမြင်ရဘူး။ တစ်နည်းအားဖြင့် \fEn{transaction} မပြီးစီးခင် ကြားကာလ တစ်ဝက်တစ်ပျက် အခြေအနေကို လက်ရှိ \fEn{transaction} အတွင်းကလွဲလို့ အခြား \fEn{transaction} တွေကနေ တွေ့မြင်ရမှာ မဟုတ်ပါဘူး (\fEn{Isolation level} ပေါ်တာ့ မူတည်ပါတယ်၊ အောက်မှာကြည့်ပါ)။ \fEn{Isolation} ဟာ ဒေတာမှန်ကန်ကိုက်ညီခြင်း အတွက် အရေးကြီးပါတယ်။ \fEn{Transaction} မပြီးစီးခင် ကြားကာလဟာ မှန်ကန်ကိုက်ညီခြင်း မရှိသေးတဲ့ အခြေအနေမှာ ရှိနေနိုင်ပါတယ်။ \fEn{Isolation} ဆိုတာ အဲဒီအနေအထားကို အခြားကနေ မမြင်ရအောင် ကာကွယ်ပေးထားတာလို့ ယူဆနိုင်တယ်။ 
+
+\begin{mytcboxflt}
+%ဒေတာဘေ့စ်တွေမှာ \fEn{isolation} ဘယ်လောက်ထိ တင်းကြပ်ဖို့ လိုလဲ ဆိုတာပေါ်မူတည်ပြီး ရွေးချယ်နိုင်တဲ့ \fEn{isolation level} လေးမျိုး အနိမ့်ကနေ အမြင့် အခုလို အစဉ်အတိုင်း 
+ဒေတာဘေ့စ်တွေမှာ \fEn{isolation level} (၄) မျိုး ရှိပါတယ်။ \fEn{Isolation} အလျော့အတင်း အလိုက် \fEn{level} အခုလို စဉ်ထားပါတယ်
+%
+\vspace{0.5\baselineskip}
+\begin{itemize}
+    \setlength\itemsep{0.25em}
+    \item \fEn{Read Uncommitted}
+    \item \fEn{Read Committed (default)}
+    \item \fEn{Repeatable Read}
+    \item \fEn{Serializable}
+\end{itemize}
+\vspace{0.5\baselineskip}
+%
+ဒေတာဘေ့စ် အများစုမှာ \fEn{default} အဖြစ် သတ်မှတ်ထားတာက \fEn{Read Committed} ဖြစ်ပါတယ်။ \fEn{Transaction} တစ်ခု \fEn{commit} မလုပ်ရသေးတာတွေကို အခြားကနေ မြင်ရနိုင်တဲ့ \fEn{Read Uncommitted} ကိုတော့ အသုံးပြုတာ မတွေ့ရသလောက်ပါပဲ။ \fEn{Isolation level} မြင့်လေ  \fEn{concurrency} အားနည်းလေလို့ ယေဘုယျ ပြောနိုင်ပါတယ်။   
+\end{mytcboxflt}
+
+\fEn{Transaction} အကြောင်း အတန်အသင့်နားလည်ပြီး \fEn{SQL} နဲ့ \fEn{Psycopg} မှာ ဘယ်လို ဖန်တီးအသုံးပြုရလဲ ကြည့်ရအောင်။ \fCode{BEGIN}\fEn{,} \fCode{COMMIT}\fEn{,} \fCode{ROLLBACK} တို့ဟာ \fEn{transaction} နဲ့ဆိုင်တဲ့ \fEn{SQL} ကွန်မန်းတွေ။ \fCode{BEGIN} က \fEn{transaction} အစပြုပေးတဲ့ ကွန်မန်းဖြစ်တယ်။ \fCode{COMMIT} လုပ်ရင် \fEn{transaction} တစ်ခုလုံးကို (ပါဝင်တဲ့ အဆင့်အားလုံးကိုဆိုလို) အတည်ပြုပေးမှာဖြစ်ပြီး \fCode{ROLLBACK} လုပ်ရင် \fEn{transaction} တစ်ခုလုံးကို ပြန်လည်ရုတ်သိမ်းပေးမှာပါ။ \fCode{COMMIT} (သို့) \fCode{ROLLBACK} လုပ်တဲ့အခါ \fEn{transaction} လည်း ပြီးဆုံးပါတယ်။ နောက်ထပ် အသစ်တစ်ခုလိုအပ်ရင် \fCode{BEGIN} နဲ့ ပြန်စရပါမယ်။  
+
+\fEn{psql} မှာ စမ်းကြည့်မယ်ဆိုရင် \fCode{AUTOCOMMIT} ကို \fEn{off} ပေးရပါမယ် (\fEn{default} က \fEn{on} ထားတယ်)။ \mintinline{text}|\set| ကွန်မန်းနဲ့ အခုလို \fEn{run} ထားပါ။
+%
+\begin{codetxt}
+\set AUTOCOMMIT off
+\end{codetxt}
+%
+အခုလို ပြန်စစ်ကြည့်ပါ။ \fEn{Off} ဖြစ်နေသင့်ပါတယ် (ပုံ \fRefNo{\ref{fig:tx}} မှာ ကြည့်ပါ)။
+\begin{codetxt}
+\echo :AUTOCOMMIT
+\end{codetxt}
+
+ဆက်လက်ပြီး အောက်ပါအတိုင်း စမ်းကြည့်ပါ။ \fCode{BEGIN} ကွန်မန်းနဲ့ \fEn{transaction} ကို စတင်ပါတယ်။ \fEn{Transaction} ထဲမှာ \fCode{UPDATE} နှစ်ခု \fEn{run} ပြီး \fCode{COMMIT} လုပ်တယ်။ \fCode{UPDATE} နှစ်ခုလုံး \fEn{run} ပြီးတော့မှ \fCode{COMMIT} မလုပ်ဘဲ \fCode{ROLLBACK} လုပ်ရင် အကောင့်နှစ်ခုလုံး \fEn{transaction} မစခင် မူလအနေအထားအတိုင်း ရှိနေမှာပါ။ 
+
+\fEn{Isolation} နဲ့ \mintinline{text}|COMMIT/ROLLBACK| အလုပ်လုပ်ပုံ သဘောတရားကို \fEn{psql} နောက်ထပ်တစ်ခု ဖွင့်ပြီး စစ်ဆေး စမ်းသပ် ကြည့်နိုင်ပါတယ်။ ပထမ \fEn{psql} မှာ \fEn{SQL} တစ်ခု \fEn{run} ပြီးတိုင်း နောက် \fEn{psql} တစ်ခုကနေ \fCode{SELECT} လုပ်ပြီး စောင့်ကြည့်လေ့လာပါ။ နမူနာ စမ်းကြည့်ထားတာကို ပုံ (\fRefNo{\ref{fig:txchk}}) မှာ တွေ့နိုင်တယ်။ ပထမ \fCode{SELECT} ရလဒ်တွေမှာ ဒေတာအပြောင်းအလဲ ဖြစ်တာ မတွေ့ရသေးပါဘူး။ နောက်ဆုံး \fCode{SELECT} က ပထမ \fEn{psql} မှာ \fCode{COMMIT} လုပ်ပြီးမှ \fEn{run} ထားတာပါ။ အဲဒီ ရလဒ်မှာ အကောင့် \fEn{record} နှစ်ခု အမှန်တကယ် \fEn{update} ဖြစ်သွားတာကို တွေ့ရမှာပါ။ 
+
+%
+\begin{sql}
+/* ß\fEn{Transaction in SQL}ß */
+BEGIN;
+UPDATE account SET balance = balance - 50000.00 
+    WHERE acc_no = '0086-6002-1111';
+UPDATE account SET balance = balance + 50000.00 
+    WHERE acc_no = '0086-6002-3311';
+-- ß\fEnEmp{etc etc}ß
+COMMIT;
+\end{sql}
+%
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=.98\textwidth, trim={0mm 0mm 0mm 1mm},clip]{images/ch12/tx.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:tx}
+\end{figure}
+
+
+\begin{figure}[tbh!]
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] (image) at (0,0)
+  {\includegraphics[width=.98\textwidth, trim={0mm 0mm 0mm 1mm},clip]{images/ch12/tx_check.jpg}};
+  \drawshadow{image}
+\end{tikzpicture}
+\caption{} 
+\label{fig:txchk}
+\end{figure}
+
+\fEn{Psycopg} ဒရိုက်ဗာက သူ့နဂိုအတိုင်းဆိုရင် \fCode{AUTOCOMMIT} ပိတ်ပြီးသားပါ။ ပထမဆုံး \fCode{execute} လုပ်တဲ့အခါ \fEn{transaction} ကို အလိုအလျောက် စပေးပါတယ် (\fCode{execute} လုပ်ပြီဆိုတာနဲ့ \fCode{BEGIN} ကို အရင်လုပ်ပေးမှာပါ)။ \fCode{COMMIT} လုပ်ရင် \fCode{conn.commit()}\fEn{,} \fCode{ROLLBACK} ဆိုရင် \fCode{conn.rollback()} ခေါ်ပေးရပါမယ်။ \fCode{commit()} မလုပ်မိဘဲ ကွန်နက်ရှင် ပိတ်လိုက်ရင် \fEn{transaction} အတွင်း လုပ်ထားသမျှ ဒေတာအပြောင်းအလဲ အားလုံး အတည်မဖြစ်တော့ဘဲ အားလုံး ပယ်ပျက်သွားပါမယ်။ 
+
+\fEn{Psycopg} နဲ့ \fEn{transaction} စီမံတဲ့ နမူနာပုံစံကို အောက်မှာကြည့်ပါ။ \fEn{Transaction} စီမံတဲ့နေရာမှာ \fEn{exception handling} က အရေးပါပါတယ်။ \fCode{try} ထဲမှာ \fEn{transaction} မှာ ပါဝင်တဲ့ အဆင့်တွေကို လုပ်ဆောင်ရလေ့ရှိတယ်။ အခု ဥပမာမှာ \fEn{update} နှစ်ခု လုပ်ထားတယ်။ နှစ်ခုလုံး ပြဿနာမရှိဘဲ ပြီးရင် \fCode{commit} လုပ်သွားမယ်။ အကြောင်းတစ်ခုခုကြောင့် \fEn{exception} တက်ခဲ့ရင် \fCode{except} ဘလောက်ထဲ ရောက်ပြီး \fCode{rollback} ဖြစ်မှာပါ။
+%
+\begin{py}
+# ß\fEn{Transaction in Python Psycopg}ß
+import psycopg2
+
+conn = psycopg2.connect(dbname="bank", user="postgresql", 
+                        password="asdfgh", host="localhost", port="5432")
+cur = conn.cursor()
+
+try:
+    cur.execute("UPDATE account SET balance = balance - 50000.00 "
+                "WHERE acc_no = '0086-6002-1111'")
+    cur.execute("UPDATE account SET balance = balance + 50000.00 "
+                "WHERE acc_no = '0086-6002-3311'")
+    conn.commit()
+except psycopg2.Error as e:
+    conn.rollback()
+    print("Database error: ", e)
+except Exception as e:
+    conn.rollback()
+    print("Unknown error: ", e)
+finally:
+    cur.close()
+    conn.close()
+\end{py}
+%
+\fCode{except} ဘလောက်တွေမှာ \fCode{rollback} လုပ်ထားဖို့ သေချာဂရုစိုက်ရပါမယ်။ မေ့ကျန်ခဲ့တာ ဖြစ်ဖို့များတယ်။ ဒီပြဿနာ မရှိအောင် ကူညီပေးတဲ့ \fCode{with} စတိတ်မန့်နဲ့ ပုံစံက ပိုပြီးအသုံးများတာ တွေ့ရတယ်။ \fEn{Commit, rollback} နဲ့ \fEn{cursor} ပိတ်တာကို အထူးတလည် လုပ်ပေးစရာ မလိုတော့ဘူး။ \fEn{Connection} ကိုပဲ ဂရုစိုက် ပိတ်ပေးဖို့ လိုတယ်။
+
+%
+\begin{py}
+conn = None
+try:
+    conn = psycopg2.connect(dbname="bank", user="postgresql", 
+                            password="asdfgh", host="localhost", port="5432")
+    with conn:
+        with conn.cursor() as cur:
+            cur.execute("UPDATE account SET balance = balance - 50000.00 "
+                        "WHERE acc_no = '0086-6002-1111'")
+            cur.execute("UPDATE account SET balance = balance + 50000.00 "
+                        "WHERE acc_no = '0086-6002-3311'")
+except psycopg2.Error as e:
+    print("Database error: ", e)
+except Exception as e:
+    print("Unknown error: ", e)
+finally:
+    conn.close()
+\end{py}
+%
+
+
+\begin{mytcboxflt}
+\fEn{Psycopg} ဗားရှင်း \fEn{2.5} ကစပြီး \fEn{connection, cursor} တို့ကို \fCode{with} စတိတ်မန့်နဲ့ တွဲဖက် အသုံးပြုနိုင်ပါတယ်
+%
+\begin{pytc}
+conn = psycopg2.connect()
+
+with conn:
+    with conn.cursor() as cur:
+        cur.execute(SQL1)
+
+conn.close()
+\end{pytc}
+\fEn{Connection} နဲ့ဆိုင်တဲ့ \fCode{with} ဘလောက် \fEn{(outer \fCode{with})} ပြီးဆုံးသွားတယ်၊ \fEn{exception} မဖြစ်ဘူးဆိုရင် \fEn{transaction} ကို \fEn{commit}  လုပ်ပေးမှာဖြစ်ပြီး \fEn{exception} ဖြစ်ခဲ့ရင်တော့ \fEn{rollback} ဖြစ်သွားမှာပါ။ \fEn{Cursor} နဲ့ သက်ဆိုင်တဲ့ \fCode{with} ဘလောက် \fEn{(inner \fCode{with})} ပြီးဆုံးရင် \fEn{cursor} ကို အလိုအလျောက် ပိတ်ပေးမှာဖြစ်ပေမဲ့ \fEn{transaction} က ဆက်ရှိနေအုံးမှာပါ။ \fEn{Transaction commit/rollback} က \fEn{connection} နဲ့ဆိုင်တဲ့ \fCode{with} ဘလောက် အဆုံးမှာ ဖြစ်တာပါ။ \fCode{with} က \fEn{connection} ကို အလိုအလျောက် မပိတ်ပေးပါဘူး။ ဒါကြောင့် ကိုယ်တိုင် ပိတ်ပေးရပါမယ်။
+\end{mytcboxflt}
+
+\section{Concurrency}
+ဒေတာဘေ့စ်တွေဟာ တစ်ချိန်တည်း \fEn{user} အများအပြား တစ်ပြိုင်နက် အသုံးပြုရင် ဖြစ်ပေါ်နိုင်တဲ့ \fEn{concurrency problem} တွေ မဖြစ်ပေါ်အောင် ကာကွယ်ဖို့အတွက် နည်းလမ်းတွေ ထောက်ပံပေးထားပါတယ်။ \fEnEmp{Concurrency} ဆိုတာ တစ်ခုထက်ပိုတဲ့ အလုပ်တွေ ကွန်ပျူတာက တစ်ချိန်တည်းမှာ လုပ်ဆောင်ပေးနေတာကို ဆိုလိုတာပါ။ တစ်ချိန်တည်း လုပ်ဆောင်ပေးတယ် ဆိုပေမဲ့ အားလုံး တစ်ပြိုင်နက်တည်း လုပ်ဆောင်တာ ဟုတ်ချင်မှ ဟုတ်မှာပါ။ အလုပ်တစ်ခုစီကို အလှည့်ကျ လုပ်ဆောင်ပေးပြီး တစ်ပြိုင်နက်ထဲ ဖြစ်ပျက်နေတယ်လို့ ထင်ရအောင် စီမံထားတာလည်း ဖြစ်နိုင်ပါတယ်။ 
+
+ကလပ်စစ် \fEn{concurrency problem} ဥပမာတစ်ခုကို ဒီအပိုင်းမှာ လေ့လာကြည့်ပါမယ်။ အောက်ဖော်ပြပါ ပရိုဂရမ်ကုဒ် အစိတ်အပိုင်းဟာ ငွေထုတ်ယူတဲ့ ကိစ္စအတွက် ဖြစ်ပါတယ်။
+%
+\begin{py}
+# Step 1: select account balance from database
+cur.execute("""
+    SELECT balance FROM account WHERE acc_no = %s
+""", (acc_no,))
+account_balance = cur.fetchone()
+
+# Step 2: check if the balance is enough
+if not account_balance:
+    raise Exception("Account not found.")
+elif account_balance[0] < amount:
+    raise Exception("Insufficient funds in the account.")
+
+# Step 3: Debit the account
+cur.execute("""
+    UPDATE account
+    SET balance = balance - %s
+    WHERE acc_no = %s
+""", (amount, acc_no))
+conn.commit()
+\end{py}
+%
+
+ငွေထုတ်တဲ့ကိစ္စမှာ အကြမ်းဖျဉ်း \fEn{step} သုံးခု ပါဝင်တာ တွေ့ရမှာပါ 
+%
+\begin{itemize}
+    \item လက်ကျန်ငွေ \fEn{select} လုပ်ခြင်း
+    \item လက်ကျန်ငွေ လုံလောက်မှု ရှိ/မရှိ စစ်ဆေးခြင်း
+    \item လက်ကျန်ငွေ \fEn{update} လုပ်ခြင်း
+\end{itemize}
+%
+(ဒါ့ထက် အသေးစိတ် ထပ်ခွဲလို့ ရအုံးမှာပါ၊ ရှေ့ဆက်ရှင်းပြမဲ့ ကိစ္စအတွက် ဒီလောက်နဲ့က နားလည်ရ ပိုလွယ်ပါမယ်)။
+
+\fEn{Concurrent} ပရိုဂရမ်တစ်ခုဟာ ငွေထုတ်သူ တစ်ဦးချင်းစီအတွက် ဒီ အစဉ်လိုက် \fEn{step} သုံးခုကို လုပ်ဆောင်ပေးရမှာပါ။ တစ်ချိန်တည်း နှစ်ယောက်ထုတ်ရင် \fEn{step} တစ်ခုစီကို တစ်ယောက် တစ်လှည့် နှစ်ယောက်လုံးအတွက် တစ်ချိန်တည်းမှာ ဆောင်ရွက်ပေးရပါမယ်။ အနီးစပ်ဆုံး မြင်သာအောင် ပြောမယ်ဆိုရင်  အဖျော်ဆရာတစ်ယောက် လက်ဖက်ရည်ဖျော်သလိုပဲ၊ တစ်ခွက်ပြီးမှ တစ်ခွက်ဖျော်တာ မဟုတ်ဘူး၊ လက်ဖက်ရည်ခွက်တွေ ရှေ့မှာစီချထားပြီး အကျရည်ထည့်၊ နို့ဆီထည့်၊ နို့စိမ်းထည့် အားလုံး တစ်ပြိုင်တည်းနီးပါး အပြီးဖျော်တာ။ အလုပ်တွေကို တစ်ချိန်တည်း လုပ်တယ်ဆိုတာ ဒီသဘောကို ဆိုလိုတာ။ 
+
+အဖျော်ဆရာ အလုပ်လုပ်ပုံနဲ့ \fEn{concurrent} ပရိုဂရမ် လုံးဝမတူတဲ့ အချက်တစ်ခုရှိတယ်။ \fEn{Concurrency} သဘာဝအရ အလုပ်တစ်ခုစီကို အချိန်အနည်းငယ်ကြာ အလှည့်ကျ လုပ်ဆောင်ပေးပါတယ်။ ဒီလို အလှည့်ပေးစနစ်ကို \fEn{operating system} မှာ ပါဝင်တဲ့ \fEn{scheduler} က  စီမံတာဖြစ်ပြီး ပရိုဂရမ်ရေးသားသူ လိုသလို စိတ်ကြိုက် ထိန်းကွပ်လို့ မရနိုင်ပါဘူး။ ဒီအတွက်ကြောင့် အလုပ်နှစ်ခုမှာပါဝင်တဲ့ \fEn{step} တွေ ဘယ်လိုအစဉ်နဲ့ အလှည့်ကျ လုပ်ဆောင်မလဲ ပုံသေတွက်လို့မရတော့ဘူး။  
+
+ပုံ (\fRefNo{\ref{fig:accwithdrawconcur1}}) မှာ အလုပ်နှစ်ခု အလှည့်ကျ လုပ်ဆောင်ပုံ ဖြစ်နိုင်ခြေ သုံးခုကို တွေ့ရပါမယ်။ အလုပ်နှစ်ခုကို အထက်အောက် အရောင်ခွဲ ပြထားတယ်။ စတုဂံငယ် တစ်ခုစီက ပါဝင်တဲ့ \fEn{step} တစ်ခုချင်းကို ကိုယ်စားပြုတာ၊ မြှားဟာ အချိန် စီးဆင်းရာ။ ပုံမှာပြထားတာ သုံးခုအပြင် အခြား ဖြစ်နိုင်တဲ့ အစီအစဉ်တွေ ကျန်ပါသေးတယ်။ သင်္ချာနည်းနည်းကျွမ်းတယ်၊ စိတ်ဝင်စားတယ်ဆိုရင် ဖြစ်နိုင်ခြေ အားလုံး တွက်ကြည့်လို့ရပါတယ် (\fEnEmp{Permutations with repetition} \fEn{or} \fEnEmp{combinatorics} သဘောတရားနဲ့ တွက်ရမှာပါ၊ အခုကိစ္စအတွက် ဖြစ်နိုင်ခြေ အားလုံး အခု ၂၀ ရှိပါမယ်)။
+
+
+\begin{figure}[H]
+    \incfig[0.6]{accwithdrawconcur1}
+    \caption{ငွေထုတ်ကိစ္စ နှစ်ခု concurrent လုပ်ဆောင်ပုံ။ concurrency သဘောအရ ဘယ်လို အလှည့်ကျမလဲ ဆိုတာက random ပဲ၊ ပုံသေမရှိဘူး။ ပရိုဂရမ်မာက အလှည့်ကျ အစီအစဉ်ကို လိုသလို ထိန်းကွပ်လို့ မရနိုင်ဘူး။ (အလှည့်ကျ ဖြစ်နိုင်ခြေ အားလုံး ပြထားတာ မဟုတ်ပါ၊ ၃ ခု ရွေးထုတ် ပြထားတာ)။}
+    \label{fig:accwithdrawconcur1}
+\end{figure}
+
+\fEn{Concurrent} အလုပ်တွေကြားမှာ အချက်အလက် မျှဝေသုံးစွဲတာ မရှိရင် ထူးထူးခြားခြား ပြဿနာ မရှိပါဘူး၊ ပရိုဂရမ် ရေးသားရတာလည်း ပုံမှန်ထက် အများကြီး မခက်ဘူး။ ဒါပေမဲ့ အချက်အလက် မျှဝေသုံးစွဲတာ ရှိခဲ့ရင်တော့ ပြဿနာရှိလာပါတယ်။ ဥပမာ အကောင့်တစ်ခုတည်းကနေ တစ်ပြိုင်တည်း ငွေထုတ်တဲ့ ဖြစ်စဉ်ကို စဉ်းစားကြည့်ပါ။ အေမီနဲ့ ကေသီ နှစ်ယောက်ပေါင်း အကောင့်တစ်ခု ဖွင့်ထားတယ်။ လက်ရှိ အကောင့် လက်ကျန်ငွေ  ၅ သိန်း ရှိပြီး သူတို့ နှစ်ယောက် တစ်နေရာစီကနေ ၄ သိန်း သီးခြား ထုတ်ယူကြတာ တိုက်တိုက်ဆိုင်ဆိုင် တစ်ချိန်တည်းဖြစ်သွားတယ်လို့ စိတ်ကူးကြည့်ပါ။ ဒီဖြစ်စဉ်မှာ အကောင့် \fEn{record} ဟာ \fEn{shared data} ဖြစ်ပြီး အလုပ်နှစ်ခုက တူညီတဲ့ \fEn{record} တစ်ခုတည်းကို တစ်ချိန်တည်းမှာ \fEn{update} လုပ်ဖို့အတွက် ကြိုးစားကြတာကို တွေ့ရမှာပါ။
+
+% (တစ်ယောက် ၄ သိန်း ထုတ်ယူမှာ)။ အကောင့်ထဲ ရှိတာမှ နှစ်ယောက်ပေါင်း ၅ သိန်းပဲ ရှိတဲ့အတွက် ၈ သိန်းထုတ်လို့ ဘယ်နည်းနဲ့မှ မရသင့်ပါဘူး။ %\fEn{Concurrent} ပရိုဂရမ် တည်ဆောက်ရတာကလည်း အများကြီး ရှုပ်ထွေးခက်ခဲလာနိုင်တယ်။ စဉ်းစားတာ တစ်ချက်လေး မှားသွားတာနဲ့  ... (\fEn{Concurrency} မှာ အားသာချက်/အားနည်းချက် အမျိုးမျိုး ရှိပါတယ်၊ အခန်း (\fRefNo{\ref{ch:concurrency}}) မှာ ဆက်လက် ဖော်ပြပေးမှာပါ)။   
+
+
+
+ပုံ (\fRefNo{\ref{fig:accwithdrawconcur1}}) အပေါ်ဆုံးကအတိုင်း အလှည့်ကျ လုပ်ဆောင်တယ် ဆိုပါစို့။ \fEn{Step} တစ်ခုချင်းအလိုက် လက်ကျန်ငွေ \fEn{balance} ပြောင်းလဲပုံကို ပုံ (\fRefNo{\ref{fig:accwithdrawconcur2}}) မှာ ပြထားတယ်။ $K_1, K_2, K_3, S_1, S_2, S_3$ တို့ဟာ ကေသီနဲ့ စန္ဒီ့အတွက် \fEn{step} သုံးခုစီလို့ ယူဆပါ \fEn{($K$ for Kathy, $S$ for Sandy)}။ $S_1, K_1, K_2, S_2$ လုပ်ဆောင်ပြီးချိန်အထိ လက်ကျန်ငွေ ၅ သိန်းဟာ နဂိုအတိုင်း မပြောင်းလဲသေးဘူး။
+
+
+% အပေါ်တန်း စတုဂံ အသေးလေးတွေဟာ ကေသီငွေထုတ်တာ၊ အောက်ဖက်က စန္ဒီလို့ ယူဆပါ။ အပေါ်ဆုံး အလှည့်ကျ ပုံစံအရ $S_1, K_1, K_2, S_2, K_3, S_3$ အစဉ်နဲ့ လုပ်ဆောင်မှာပါ ($S$ နဲ့ $K$ ဟာ စန္ဒီနဲ့ ကေသီကို ကိုယ်စားပြုတာ)။  \fEn{Step} တစ်ခုချင်း ဖြစ်ပျက်တာကို လေ့လာကြည့်ရင် ပုံ (\fRefNo{\ref{fig:accwithdrawconcur2}})
+%
+\begin{figure}[H]
+    \incfig[0.7]{accwithdrawconcur2}
+    \caption{အကောင့် တစ်ခုတည်းကနေ နှစ်ယောက် တစ်ချိန်တည်း ငွေထုတ်တဲ့အခါ step တစ်ခုချင်းအလိုက် လက်ကျန်ငွေ ပြောင်းလဲပုံ ဥပမာ}
+    \label{fig:accwithdrawconcur2}
+\end{figure}
+%
+$K_3$ အပြီးမှာ လက်ကျန်ငွေ \fEn{balance} ဟာ ၁ သိန်း ဖြစ်သွားပြီ။ ဒီအတိုင်းဆိုရင် နောက်\allowbreak ထပ် ၄ သိန်း ထုတ်လို့ မရသင့်တော့ဘူး။ $S_2$ မှာ လက်ကျန်ငွေ လောက်/မလောက် စစ်ခဲ့ချိန်က ဒီလိုမဟုတ်သေးဘူး၊ အဲ့တုန်းက ၅ သိန်းရှိခဲ့တာ။ ဆိုတော့ $S_2$ အရဆိုရင် $S_3$ ကို ဆက်လက်လုပ်ဆောင်ရမှာပဲ။ $S_3$ ပြီးသွားတဲ့အခါ \fEn{balance} ဟာ အနှုတ် ၃ သိန်းဖြစ်သွားပါတယ်။ ကေသီနဲ့ အေမီဟာ သူတို့မှာ ရှိတဲ့ငွေထက် ဘဏ်ကနေ ၃ သိန်း အပိုထုတ်လို့ရသွားတာ ဖြစ်ပါတယ်။  ပုံ (\fRefNo{\ref{fig:accwithdrawconcur1}}) က နောက်ထပ် ဖြစ်နိုင်ခြေ နှစ်ခုမှာလည်း ဒီပြဿနာ တွေ့ရမှာပါ။
+
+ဘာ့ကြောင့် ဒီလို ဖြစ်ရတာလဲ၊ မဖြစ်အောင် ဘယ်လို ကာကွယ်ရမလဲ။ တစ်ချိန်တည်းမှာ ထုတ်ယူကြပေမဲ့ အကောင့်တစ်ခုတည်းကနေ မဟုတ်ရင်  ဒီလိုပြဿနာ မဖြစ်နိုင်ဘူး။ တစ်နည်းအားဖြင့် မတူညီတဲ့ သီးခြားအကောင့်တစ်ခုစီကနေ တစ်ပြိုင်နက် ငွေထုတ်ယူတာဟာ \fEn{concurrency problem} မဖြစ်စေနိုင်ဘူး။ တစ်ချိန်တည်း၊ အကောင့်တစ်ခုတည်းကနေ ငွေထုတ်တဲ့ကိစ္စနှစ်ခု တိုက်ဆိုင်တဲ့အခါ \fEn{concurrency problem} ရှိနိုင်တာပါ။ ဖြေရှင်းဖို့ နည်းလမ်းကတော့ အကောင့်တစ်ခုကို တစ်ချိန်တည်းမှာ အလုပ်တစ်ခုကပဲ \fEn{update} လုပ်လို့ရအောင် ကာကွယ်ပေးထားရပါမယ်။ \fEn{Transaction} တစ်ခုဟာ ၎င်း \fEn{update} လုပ်ဖို့ ရည်ရွယ်တဲ့ \fEn{record} ကို အခြား \fEn{transaction} တွေကနေ \fEn{update} လုပ်လို့မရအောင် \fCode{FOR UPDATE} နဲ့ တားဆီးနိုင်ပါတယ်။ \fCode{SELECT} လုပ်တဲ့အချိန်မှာ အခုလို တွဲသုံးရမှာပါ    
+% အလုပ်နှစ်ခုက \fEn{row} တစ်ခုတည်းကို တစ်ချိန်တည်းမှာ \fEn{update} လုပ်တာဟာ ဒီပြဿနာရဲ့ အဓိက အကြောင်းအရင်း ဖြစ်တယ်။   
+%\fEn{Select} လုပ်တဲ့ \fEn{Record locking}  ဒီလိုမဖြစ်အောင် ကာကွယ်တဲ့ နည်းလမ်းတစ်ခုက \fEn{} \fEn{update} လုပ်ဖို့ ရည်ရွယ်ချက်နဲ့ \fEn{select} အကောင့် \fEn{record} ကို \fEn{lock} လုပ်တာ။  
+%
+\begin{py}
+# Step 1: select account balance from database
+cur.execute("""
+    SELECT balance FROM account WHERE acc_no = %s FOR UPDATE
+""", (acc_no,))
+account_balance = cur.fetchone()
+\end{py}
+% 
+\fEn{Concurrency} စကားနဲ့ ပြောရင် \fCode{FOR UPDATE} ဟာ \fEn{select} လုပ်လိုက်တဲ့ \fEn{row} တွေအပေါ်မှာ \fEn{exclusive lock} ရယူတာဖြစ်တယ်။ ဒါနဲ့ပါတ်သက်တဲ့ အသေးစိတ်ကို \fEn{concurrency} အခန်းမှာ သီးခြားရှင်းပြမှာပါ။ 
+
+\fEn{Concurrency} ဟာ ကျယ်ပြန့်ပြီး သီးခြားအထူးပြု လေ့လာရမဲ့ အပိုင်းဖြစ်ပါတယ်။ စာမျက်နှာ \fRefNo{\pageref{ch:concurrency}} အခန်း (\fRefNo{\ref{ch:concurrency}}) မှာ အခြေခံ \fEn{concurrency} အကြောင်း ဖော်ပြပေးထားတယ်။ အခု တွေ့ခဲ့ရတဲ့ ဥပမာက ဒေတာဘေ့စ် အပ်ပလီကေးရှင်းတွေမှာ ကြုံတွေ့ရနိုင်တဲ့ \fEn{concurrency problem} တွေ အများကြီးထဲကမှ အခြေခံ တစ်ခုလေးပဲ ရွေးထုတ်ထားတာ။ ဒေတာဘေ့စ် \fEn{concurrency} နဲ့ ပါတ်သက်ပြီး ပေးထားတဲ့ ကိုးကားစာအုပ်တွေ၊ ဒါမှမဟုတ် အခြား တစ်နေရာကနေ ဖြည့်စွက်လေ့လာဖို့ တိုက်တွန်းပါတယ်။ 
+
+\section{SQL Injection and Dynamic SQL}
+\fEn{String interpolation} နည်းလမ်းနဲ့ \fEn{Dynamic SQL} မထုတ်သင့်ဘူး ပြောခဲ့ပေမဲ့ ဘာ့ကြောင့်လဲ အကြောင်းအရင်းကို မရှင်းပြခဲ့ဘူး။ ဒါနဲ့ ပါတ်သက်ပြီး အကြောင်းအချက် တချို့ကို ဆက်လက် လေ့လာကြပါမယ်။ အသိသာဆုံး ပြဿနာတစ်ခုက \fEn{SQL} နဲ့ \fEn{Python} တို့ဟာ \fEn{string} ကို ဖော်ပြပုံ မတူတာပါ။ နောက်ဆုံးအမည် \fCode{O'Brian} နဲ့ အကောင့်ပိုင်ရှင်ကို \fEn{SQL} မှာ အခုလို \fEn{select} လုပ်ရပါတယ်။ 
+
+%
+\begin{sql}
+SELECT * FROM account_holder WHERE lname = 'O''Brian';
+\end{sql}
+%
+စာသားကို \fEn{single quote} နှစ်ခုအတွင်းမှာ ရေးတယ်။ စာသားထဲမှာ \fCode{'} ပါနေရင် \fCode{''} (\fEn{single quote} နှစ်ခု) နဲ့ \fEn{escape} လုပ်ပေးရပါမယ်။ 
+
+\fEn{SQL identifier} တွေမှာ စပေ့စ်၊ ဟိုက်ဖန် (သို့) အခြား ထူးခြားသင်္ကေတတွေ ပါဝင်နေတဲ့အခါ \fEn{double quotes} \fEn{(\mintinline{text}|"|)}  နှစ်ခုအတွင်း ထည့်ရေးလေ့ရှိပါတယ်။ \fEn{Identifier} က \fEn{SQL reserved keyword} ဖြစ်နေရင်လည်း အလားတူပဲ \fEn{double quotes} သုံးရတယ်။ (မှတ်ချက်။\qquad ။ \fEn{Identifier} ဆိုတာ \fEn{table, column, function, variable} စတာတွေရဲ့ နံမည်ကို ဆိုလိုတာပါ)။
+
+%
+\begin{sql}
+-- # ß\fEn{and}ß - ß\fEn{are special characters}ß
+SELECT fname "#1st-name" FROM account_holder;
+-- ß\fEn{contains space in the column alias}ß
+SELECT concat(fname, ' ', lname) "Full Name" FROM account_holder;
+-- order ß\fEn{is one of the reserved keywords}ß
+CREATE TABLE "order" (
+    id SERIAL PRIMARY KEY
+);
+\end{sql}
+%
+\fEn{Identifier} ထဲမှာ \fCode{"} ပါနေရင် \fCode{""} (\fEn{double quote} နှစ်ခု) နဲ့ \fEn{escape} လုပ်ရပါမယ်။
+%
+\begin{sql}
+-- ß\fEn{Column alias contains double quotes,} Students(only "Best")ß
+SELECT name "Students(only ""Best"")" FROM student 
+WHERE grade = 'A' OR grade = 'A+';
+\end{sql}
+%
+
+အောက်မှာ ရေးထားတဲ့အတိုင်း စမ်းကြည့်ရင် \fEn{SQL} ဆင်းတက်စ်အယ်ရာ ဖြစ်မှာပါ။ နံမည်မှာပါတဲ့ \fCode{'} ကို \fCode{''} ပြောင်းပေးဖို့ လိုတာက တစ်ကြောင်း၊ နောက်တစ်ချက်က နံမည်ဟာ စာသားဖြစ်တဲ့အတွက် \fEn{SQL} ထဲမှာ \fCode{'O''Brian'} ဖြစ်ရပါမယ်။ အခုလို ဆက်ထားရင်
+%
+\begin{py}
+last_name = "O'Brian"
+cur.execute("SELECT * FROM account_holder WHERE lname = " + last_name)
+\end{py}
+%
+\fEn{SQL string} က 
+%
+\begin{py}
+"SELECT * FROM account_holder WHERE lname = O'Brian"
+\end{py}
+%
+ဖြစ်နေတာကြောင့် ဆင်းတက်စ်မမှန်ဘူး။ အမှန်ဖြစ်အောင်က ဒီလို ဆက်ရမှာပါ
+
+%
+\begin{py}
+cur.execute("SELECT * FROM account_holder "
+            "WHERE lname = '" + last_name.replace("'", "''") + "'")
+\end{py}
+%
+
+\fEn{SQL} ကုဒ်ထဲမှာ \fEn{string} က \fEn{dynamic} အပိုင်းဖြစ်နေတဲ့အခါ မမှားအောင် ဂရုစိုက်ရပြီး အတော်လေး ကရိကထများတယ်။ \fEn{Identifier} တွေက \fEn{dynamic} ဖြစ်နေတယ်၊ \fEn{double quote} လုပ်ရမဲ့ဟာ ဖြစ်နေရင်လည်း အလားတူပြဿနာမျိုး ကြုံရမှာပါ။ ရှေ့ပိုင်းမှာ ဖော်ပြခဲ့တဲ့ နည်းတွေက ဒီလိုကိစ္စတွေကို ကြိုတင်စဉ်းစား ဖြေရှင်းပေးထားတာမို့လို့ ပရိုဂရမ်မာ သိပ်ခေါင်းစားစရာ မလိုတော့ဘူး
+%
+\begin{py}
+cur.execute("SELECT * FROM account_holder WHERE lname = %s", (last_name,))
+\end{py}
+%
+\mintinline{text}|%s| နေရာမှာ အစားထိုးပြီး ရမဲ့ \fEn{SQL} ကို \fCode{mogrify} ဖန်ရှင်သုံးပြီး ထုတ်ကြည့်ပါ
+%
+\begin{py}
+sql_full = cur.mogrify("SELECT * FROM account_holder "
+                       "WHERE lname = %s", (last_name,))
+print(sql_full.decode('utf-8'))
+\end{py}
+%
+ဖြစ်သင့်တဲ့အတိုင်း \fEn{SQL} အမှန် တွေ့ရပါလိမ့်မယ်
+%
+\begin{codetxt}
+SELECT * FROM account_holder WHERE lname = 'O''Brian'
+\end{codetxt}
+%
+
+\subsection*{SQL Injection}
+\fEn{Dynamic SQL} ကို \fEn{string interpolation} နည်းတွေနဲ့ ထုတ်တဲ့အခါ ရှေ့မှာဖော်ပြခဲ့တဲ့ အခက်အခဲတွေအပြင် ပိုပြီး နက်ရှိုင်းတဲ့ ပြဿနာတစ်ခု ကြုံရနိုင်ပါတယ်။ အဲ့ဒါကတော့ \fEn{SQL Injection} လို့ခေါ်တဲ့ နည်းလမ်းတစ်မျိုးနဲ့ ဒေတာဘေ့စ် စီကျူရတီပိုင်း တိုက်ခိုက် ခံရနိုင်ခြင်းပါပဲ။ \fEn{SQL Injection} ဆိုတာ ၎င်းလုပ်ဆောင်စေချင်တဲ့ \fEn{SQL} ကုဒ်တွေကို ဟက်ကာက ပရိုဂရမ် \fEn{input} ကနေတစ်ဆင့် ထည့်သွင်းတဲ့ နည်းလမ်းလို့ အကြမ်းဖျဉ်း ယူဆနိုင်တယ်။
+
+အောက်ပါ ပရိုဂရမ်ကုဒ် ကောက်နုတ်ချက်မှာ အသုံးပြုသူ \fEn{user} က \fCode{last\_name} ကို \fEn{input} ထည့်ပေးမယ်လို့ ယူဆပါ။ \fEn{SQL} နားလည်ကျွမ်းကျင်တဲ့ ဟက်ကာဟာ သူ့ရဲ့ အကောင့် လက်ကျန်ငွေစာရင်းကို \fEn{update} ဖြစ်သွားစေမဲ့ \fEn{input string} ကို မှန်းဆနိုင်ပါတယ်။  
+%
+\begin{py}
+# File: db_sql_inj1.py 
+
+# ß\fEn{SQL injection example}ß
+# ß\fMM{ဒီအတိုင်း ထည့်ပေးမယ်လို့ ယူဆပါ}ß
+last_name = input("Enter last name: ")
+sql = ("SELECT * FROM account_holder "
+       "WHERE lname = '") + last_name + "'"
+print(sql)
+cur.execute(sql)
+\end{py}
+%
+\fEn{Input} ကို အခုလို ထည့်လိုက်မယ် ဆိုပါစို့ 
+\begin{codetxt}
+'; UPDATE account SET balance = 10000000.00 WHERE acc_id = 1;--
+\end{codetxt}
+
+ဒီလိုသာဆိုရင် ဟက်ကာဟာ သူ့ရဲ့အကောင့်မှာ $10000000.00$ ရသွားပါပြီ \fEn{(!)}။ သူ့ \fEn{input} ကြောင့် \fEn{SQL} က အခုလို
+\begin{sql}
+SELECT * FROM account_holder WHERE lname = '';
+UPDATE account SET balance = 10000000.00 WHERE acc_id = 1;--'
+\end{sql}
+ဖြစ်သွားတာ တွေ့ရမှာပါ။ နဂိုရည်ရွယ်တာက အကောင့်ပိုင်ရှင်ကို \fEn{last name} နဲ့ ရှာဖို့ပေမဲ့ ဟက်ကာရဲ့ \fEn{input} ကြောင့် \fEn{update} လုပ်တဲ့ \fEn{SQL} ပါ တွဲရက် ပါသွားတယ်။ အဆုံးမှာ \fCode{--'} ကို သတိပြုပါ။ \fCode{--} ဟာ \fEn{SQL} ကွန်းမန့်ဖြစ်တဲ့အတွက် နောက်မှာ ဘာပဲရှိရှိ အရေးမကြီးတော့ဘူး (နောက်ဆုံး \fEn{single quote} ကို အယ်ရာ မဖြစ်အောင် ကွန်းမန့်ပါ ပိတ်ပေးလိုက်တာ)။ တကယ့်လက်တွေ့မှာ \fEn{SQL Injection} ဟာ ဒီ့ထက် ရှုပ်ထွေခက်ခဲကောင်း ခက်ခဲနိုင်ပေမဲ့ အခုဥပမာကနေ အခြေခံ သဘောတရား နားလည်နိုင်မယ် မျှော်လင့်ပါတယ်။
+
+\fEn{SQL injection} ကြောင့် ကတ်စတမ်မာ ကိုယ်ရေးကိုယ်တာ အချက်အလက်တွေ ပေါက်ကြားကုန်နိုင်ပါတယ်။ ရက်စွဲအလိုက် ငွေဝင်ငွေထွက်စာရင်း စစ်လို့ရတယ် ယူဆပါ။ ရက်စွဲကို အောက်ပါအတိုင်း ထည့်ပေးလိုက်ရင် ဟက်ကာဟာ အခြားသူ စာရင်းတွေကိုပါ ကြည့်လို့ရသွားပါမယ်။ 
+%
+\begin{py}
+# File: db_sql_inj1.py 
+
+acc_id = 1
+
+txn_date = "2024-08-01' OR 1 = 1 --"
+sql = ("SELECT * FROM account_transaction WHERE date(txn_date) = '" 
+       + txn_date + "' AND acc_id = " + str(acc_id))
+print(sql)
+cur.execute(sql)
+transactions = cur.fetchall()
+
+for tx in transactions:
+    print(tx)
+\end{py}
+%
+ထွက်လာတဲ့ \fEn{SQL} ကို ကြည့်တဲ့အခါ
+\begin{sql}
+SELECT * FROM account_transaction 
+WHERE date(txn_date) = '2024-08-01' OR 1 = 1 --' AND acc_id = 1
+\end{sql}
+\fCode{1 = 1} က \fEn{true} ဖြစ်မယ်။ ဒီတော့ \fCode{OR} သုံးထားတဲ့ \fCode{WHERE} ကွန်ဒီရှင်တစ်ခုလုံးကလည်း ဘယ်တော့မဆို \fEn{true} ဖြစ်နေမှာပါ။ နောက်ပိုင်းက ကွန်းမန့်ဖြစ်သွားတော့ \fCode{AND acc\_id = 1} ကလည်း ထူးခြားမှု မရှိတော့ဘူး။ ဒါကြောင့် အကျိုးသက်ရောက်မှုအရ \fCode{WHERE} မပါဘဲ \fEn{table} တစ်ခုလုံး \fEn{select} လုပ်တာနဲ့ တူတူဖြစ်သွားမှာပါ
+\begin{sql}
+SELECT * FROM account_transaction WHERE true;
+-- ß\fEn{, which is effectly the same as below:}ß
+SELECT * FROM account_transaction;
+\end{sql}
+
+အခုတွေ့ခဲ့ရတဲ့ ဥပမာမျိုးတွေဟာ ဘဏ်လုပ်ငန်းလို ကုမ္ပဏီကြီးတွေအတွက်ဆိုရင် အတော်ကို ပြဿ\allowbreak နာကြီးတဲ့ စီကျူရတီ ကျိုးပေါက်မှု ဖြစ်ပါလိမ့်မယ်။ တရားစွဲဆို ခံရတာ ဖြစ်နိုင်တယ်။ ကတ်စတမ်မာတွေ လက်လွှတ်ဆုံးရှုံးရနိုင်တယ်။ \fEn{SQL injection} နဲ့ပါတ်သက်လို့ လုံးဝ ပေါ့ဆလို့မရဘူး၊ အထူးဂရုစိုက်ဖို့ လိုမယ်ဆိုတာ ဒီလောက်ဆိုရင်  သဘောပေါက်မယ် ထင်ပါတယ်။ 
+
+
+
+
+
+% https://castel.dev/post/lecture-notes-2/#code
 

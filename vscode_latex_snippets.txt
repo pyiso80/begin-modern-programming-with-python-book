@@ -4,15 +4,17 @@
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
 	// Example:
-	// "Print to console": {
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
-
+	"X and Y axis": {
+		"prefix": "xy_axis",
+		"body": [
+		    "\\begin{tikzpicture}"
+			,"\t\\draw[] (xstart,-0.1) grid (xend,0.1);% x-ticks"
+			,"\t\\draw[] (-0.1,ystart) grid (0.1,yend);% x-ticks"
+			,"\t\\draw[semithick] (xstart,0) -- (xend,0);"
+			,"\t\\draw[semithick] (0, ystart) -- (0,yend);"
+			,"\\end{tikzpicture}"
+		]
+	},	
 	"Comma separated fCode": {
 		"prefix": "csc",
 		"body": [
@@ -30,13 +32,26 @@
 		]
 	},
 	"Minted Java": {
-		"prefix": "mintava",
+		"prefix": "mintjava",
 		"body": [
 			"%",
 			"\\begin{minted}[frame=lines, framerule=0pt]{java}",
 			"$0",
 			"\\end{minted}",
 			"%"
+		]
+	},
+	"Minted Python" : {
+		"prefix" : "mintpy",
+		"body" : [
+			"%"
+			,"\\setlength{\\fboxsep}{0pt}"
+			,"\\begin{minted}[frame=\\mintframe, framerule=\\mintrule,framesep= \\mintsep, xleftmargin=\\xlftmargin"
+            ,"    , bgcolor=mintbgcolor,rulecolor=mintrulecolor"
+            ,"    , python3=true,escapeinside=ßß]{python}"
+			,"$0"
+			,"\\end{minted}"
+			,"%"
 		]
 	},
 	"fCode": {
@@ -86,58 +101,58 @@
 		"prefix" : "img2",
 		"body" : [
 			"\\begin{figure}[htb!]"
-			"    \\begin{tikzonimage}[width=4in]{images/} %, tsx/show help lines]"
-			"        \\draw[-{Latex[length=3mm]}] (0.7 ,0.8)--(0.645, 0.635);"
-			"    \\end{tikzonimage}"
-			"\\end{figure}"
+			,"    \\begin{tikzonimage}[width=4in]{images/} %, tsx/show help lines]"
+			,"        \\draw[-{Latex[length=3mm]}] (0.7 ,0.8)--(0.645, 0.635);"
+			,"    \\end{tikzonimage}"
+			,"\\end{figure}"
 		]
 	},
 	"image1" : {
 		"prefix" : "img1",
 		"body" : [
 			"\\begin{figure}[htb!]"
-			"\t{\\includegraphics[width=.8\\linewidth]{images/$0}}"
-			"\\caption{}"
-			"\\label{fig:}"
-			"\\end{figure}"
+			,"\t{\\includegraphics[width=.8\\linewidth]{images/$0}}"
+			,"\\caption{}"
+			,"\\label{fig:}"
+			,"\\end{figure}"
 		]
 	},
 	"image3" : {
 		"prefix" : "img3",
 		"body" : [
 			"\\begin{figure}[tb!]"
-			"\\begin{tikzpicture}"
-			"\t\\node[anchor=south west,inner sep=0] (image) at (0,0)" 
-			"\t\t{\\includegraphics[width=.8\\linewidth]{images/ch07/DisplayGRect.jpg}};" 
-			"\t\\drawshadow{image}"             
-			"\\end{tikzpicture}"
-			"\\caption{}"
-			"\\label{fig:meet_karel_1}"
-			"\\end{figure}"
+			,"\\begin{tikzpicture}"
+			,"\t\\node[anchor=south west,inner sep=0] (image) at (0,0)" 
+			,"\t\t{\\includegraphics[width=.8\\linewidth]{images/ch07/DisplayGRect.jpg}};" 
+			,"\t\\drawshadow{image}"             
+			,"\\end{tikzpicture}"
+			,"\\caption{}"
+			,"\\label{fig:meet_karel_1}"
+			,"\\end{figure}"
 		]
 	},
 	"subfig" : {
 		"prefix" : "subfig",
 		"body" : [
-			"%"
-			"\\begin{figure}[htb!]"
-				"\t\\adjincludegraphics[width=2.5in,trim={0 0 0 {.55\\height}}, clip, left]{images/}"
-				"\t\\hfuzz=100pt"
-				"\t\\newcommand{\\figpctw}{0.52}"
-				"\t\\newcommand{\\figscale}{0.165}"
-				"\t\\begin{subfigure}[t]{{\\figpctw}\\textwidth}"
-					"\t\t\\includegraphics[scale=\\figscale]{images/}"
-					"\t\t\\caption{}"   
-					"\t\t\\label{fig:xyz1}"
-				"\t\\end{subfigure}"
-				"\t\\begin{subfigure}[t]{{\\figpctw}\\textwidth}"
-					"\t\t\\includegraphics[scale=\\figscale]{images/}"
-					"\t\t\\caption{}"   
-					"\t\t\\label{fig:xyz2}"
-				"\t\\end{subfigure}"
-				"\t\\caption{}"
-				"\t\\label{fig:xyz}"
-			"\\end{figure}"
+			"%",
+			"\\begin{figure}[htb!]",
+				"\t\\adjincludegraphics[width=2.5in,trim={0 0 0 {.55\\height}}, clip, left]{images/}",
+				"\t\\hfuzz=100pt",
+				"\t\\newcommand{\\figpctw}{0.52}",
+				"\t\\newcommand{\\figscale}{0.165}",
+				"\t\\begin{subfigure}[t]{{\\figpctw}\\textwidth}",
+					"\t\t\\includegraphics[scale=\\figscale]{images/}",
+					"\t\t\\caption{}" ,  
+					"\t\t\\label{fig:xyz1}",
+				"\t\\end{subfigure}",
+				"\t\\begin{subfigure}[t]{{\\figpctw}\\textwidth}",
+					"\t\t\\includegraphics[scale=\\figscale]{images/}",
+					"\t\t\\caption{}" ,  
+					"\t\t\\label{fig:xyz2}",
+				"\t\\end{subfigure}",
+				"\t\\caption{}",
+				"\t\\label{fig:xyz}",
+			"\\end{figure}",
 			"%"
 		]
 	},
@@ -168,12 +183,167 @@
 	"bullets1" : {
 		"prefix" : "bullets1",
 		"body" : [
-			"%"
-			"\\begin{itemize}"
-			"\t\\item "
-			"\t\\item "
-			"\\end{itemize}"
+			"%",
+			"\\begin{itemize}",
+			"\t\\item ",
+			"\t\\item ",
+			"\\end{itemize}",
 			"%"
 		]
-	}	
+	},
+	"grid" : {
+		"prefix" : "gird",
+		"body" : [
+			"\\def\\maxX{12}",
+			"\\def\\maxY{10}",
+			"\\draw[step=.25,lightgray,ultra thin] (0,0) grid (\\maxX,\\maxY);",
+			"\\draw[step=.5,gray,thin] (0,0) grid (\\maxX, \\maxY);",
+			"\\draw[step=1,black,thin] (0,0) grid (\\maxX, \\maxY);",
+			"\\foreach \\x in {1,...,\\maxX}",
+			"{",
+			"    \\node at (\\x,0) [below] {$\\x$};",
+			"}",
+			"\\foreach \\y in {1,...,\\maxY}",
+			"{",
+			"    \\node at (0,\\y) [left] {$\\y$};",
+			"}"
+		]
+	},
+	"figure" : {
+		"prefix" : "fig1",
+		"body" : [
+			"\\begin{figure}[tbh!]"
+			,"\\begin{tikzpicture}"
+			,"  \\node[anchor=south west,inner sep=0] (image) at (0,0)"
+			,"  {\\includegraphics[width=.98\\textwidth, trim={2.4mm 2mm 2mm 2mm},clip]{images/$0}};"
+			,"  \\drawshadow{image}"
+			,"\\end{tikzpicture}"
+			,"\\caption{} "
+			,"\\label{fig:}"
+			,"\\end{figure}"
+		]
+	},
+	"tkzrect" : {
+		"prefix" : "tkzrect",
+		"body" : [
+			"\\draw [draw=red,very thick,rounded corners] (1,1) rectangle (2,2);"
+		]
+	},
+	"mytcboxinl" : {
+		"prefix" : "mytcboxinl",
+		"body" : [
+			"\\mytcboxinl{\\fEnSnd{$0}}"
+		]
+	},
+	"pkmove" : {
+		"prefix" : "pkmove",
+		"body" : [
+			"move"
+		]
+	},
+	"pkturn_left" : {
+		"prefix" : "pkturn_left",
+		"body" : [
+			"turn\\_left"
+		]
+	},"pkturn_right" : {
+		"prefix" : "pkturn_right",
+		"body" : [
+			"turn\\_right"
+		]
+	},
+	"pkpick_beeper" : {
+		"prefix" : "pkpick_beeper",
+		"body" : [
+			"pick\\_beeper"
+		]
+	},
+	"pkput_beeper" : {
+		"prefix" : "pkput_beeper",
+		"body" : [
+			"put\\_beeper"
+		]
+	},
+	"newterm" : {
+		"prefix" : "newterm",
+		"body": [
+			"\\fEn{(\\textit{$0})}"
+		]
+	},
+	"btwnminted" : {
+		"prefix": "btwnminted",
+		"body" : [
+			"\\betweenminted{\\medskipamount}"
+		]
+	},
+	"btwtcboxpar" : {
+		"prefix": "btwtcboxpar",
+		"body" : [
+			"\\betweentcboxpar"
+		]
+	},
+	"sqpairtxt" : {
+		"prefix": "sqpairtxt",
+		"body": [
+			"$\\big\\llbracket$$0$\\big\\rrbracket$"
+		]
+	},
+	"oo" : {
+		"prefix": "ဥ◌ီး",
+		"body": [
+			"$0ဦး"
+		]
+	},
+	"codetxt" : {
+		"prefix": "codetxt",
+		"body": [
+			"\\begin{codetxt}",
+			"$0",
+			"\\end{codetxt}"
+		]
+	},
+	"py" : {
+		"prefix": "py",
+		"body": [
+			"%",
+			"\\begin{py}",
+			"$0",
+			"\\end{py}",
+			"%"
+		]
+	},
+	"sql" : {
+		"prefix": "sql",
+		"body": [
+			"%",
+			"\\begin{sql}",
+			"$0",
+			"\\end{sql}",
+			"%"
+		]
+	},
+	"incfig": { 
+ 		"prefix": "incfig", 
+ 		"body": [ 
+ 			"\\begin{figure}[H]", 
+ 			"\t\\centering", 
+ 			"\t\\incfig{${1:$CLIPBOARD}}", 
+ 			"\t\\caption{${2:title}}", 
+ 			"\t\\label{fig:${1:$CLIPBOARD}}", 
+ 			"\\end{figure}", 
+ 		], 
+ 		"description": "Inserts mathematical diagram" 
+ 	},
+	"mintinl" : {
+		 "prefix": "mintinl",
+		 "body": [
+			 "\\mintinline{text}|$0|"
+		 ]
+	 },
+	 "mintinl2" : {
+		  "prefix": "mintinl2",
+		  "body": [
+			  "\\mintinline[escapeinside=ßß]{text}|$0|"
+		  ]
+	  },
 }

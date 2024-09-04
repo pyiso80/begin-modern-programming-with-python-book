@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="4.501492in"
+   height="3.6974099in"
+   viewBox="0 0 114.3379 93.914209"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="accwithdrawconcur2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1.5"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="none">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <rect
+       x="133.7525"
+       y="210.18251"
+       width="84.475266"
+       height="42.237633"
+       id="rect2" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3266295"
+     inkscape:cx="17.337169"
+     inkscape:cy="190.70886"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="2208"
+     inkscape:window-height="1203"
+     inkscape:window-x="214"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false"
+       originx="-83.243309"
+       originy="-40.075394"
+       visible="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-83.243304,-217.0754)">
+    <rect
+       style="fill:#afc6e9;stroke:#000000;stroke-width:0.352777"
+       id="rect1"
+       width="32.195724"
+       height="10.37713"
+       x="83.419693"
+       y="217.25179" />
+    <rect
+       style="fill:#cccccc;stroke:#000000;stroke-width:0.352777"
+       id="rect1-7"
+       width="32.195724"
+       height="10.37713"
+       x="157.01869"
+       y="232.80844" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.352777"
+       id="rect1-7-3"
+       width="32.195724"
+       height="10.37713"
+       x="120.1692"
+       y="217.25179"
+       ry="2.3947229" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,40.216686,190.75842)"
+       id="text1"
+       style="white-space:pre;shape-inside:url(#rect2);display:inline;fill:none;stroke:#000000;stroke-width:1.33333" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="96.501984"
+       y="223.38216"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="stroke-width:0.352778"
+         x="96.501984"
+         y="223.38216">$S_1$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="169.55692"
+       y="238.93881"
+       id="text3-8"><tspan
+         sodipodi:role="line"
+         id="tspan3-1"
+         style="stroke-width:0.352778"
+         x="169.55692"
+         y="238.93881">$K_1$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="129.04729"
+       y="223.37518"
+       id="text3-80"><tspan
+         sodipodi:role="line"
+         id="tspan3-4"
+         style="stroke-width:0.352778"
+         x="129.04729"
+         y="223.37518">$500,000$</tspan></text>
+    <rect
+       style="fill:#cccccc;stroke:#000000;stroke-width:0.352777"
+       id="rect1-7-9"
+       width="32.195724"
+       height="10.37713"
+       x="157.01869"
+       y="248.3651" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="169.55692"
+       y="254.49547"
+       id="text3-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan3-1-7"
+         style="stroke-width:0.352778"
+         x="169.55692"
+         y="254.49547">$K_2$</tspan></text>
+    <rect
+       style="fill:#afc6e9;stroke:#000000;stroke-width:0.352777"
+       id="rect1-1"
+       width="32.195724"
+       height="10.37713"
+       x="83.419693"
+       y="263.92197" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="96.501984"
+       y="270.05252"
+       id="text3-83"><tspan
+         sodipodi:role="line"
+         id="tspan3-5"
+         style="stroke-width:0.352778"
+         x="96.501984"
+         y="270.05252">$S_2$</tspan></text>
+    <rect
+       style="fill:#cccccc;stroke:#000000;stroke-width:0.352777"
+       id="rect1-7-9-6"
+       width="32.195724"
+       height="10.37713"
+       x="157.01869"
+       y="279.47882" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="169.55692"
+       y="285.60919"
+       id="text3-8-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan3-1-7-7"
+         style="stroke-width:0.352778"
+         x="169.55692"
+         y="285.60919">$K_3$</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.352777"
+       id="rect1-7-3-9-5-8"
+       width="32.195724"
+       height="10.37713"
+       x="120.1692"
+       y="279.47882"
+       ry="2.3947229" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="129.04729"
+       y="285.59674"
+       id="text3-80-5-5-4"><tspan
+         sodipodi:role="line"
+         id="tspan3-4-4-4-1"
+         style="stroke-width:0.352778"
+         x="129.04729"
+         y="285.59674">$100,000$</tspan></text>
+    <rect
+       style="fill:#afc6e9;stroke:#000000;stroke-width:0.352777"
+       id="rect1-1-7"
+       width="32.195724"
+       height="10.37713"
+       x="83.419693"
+       y="295.03546" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.352777"
+       id="rect1-7-3-8-1"
+       width="32.195724"
+       height="10.37713"
+       x="120.1692"
+       y="295.03546"
+       ry="2.3947229" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="96.501984"
+       y="301.16583"
+       id="text3-83-8"><tspan
+         sodipodi:role="line"
+         id="tspan3-5-7"
+         style="stroke-width:0.352778"
+         x="96.501984"
+         y="301.16583">$S_3$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.352777"
+       x="126.54723"
+       y="301.15887"
+       id="text3-80-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan3-4-2-7"
+         style="stroke-width:0.352778"
+         x="126.54723"
+         y="301.15887">$-300,000$</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.328079;stroke-dasharray:none;marker-end:url(#Triangle)"
+       d="m 196.57147,217.0754 v 92.16666"
+       id="path3" />
+  </g>
+</svg>

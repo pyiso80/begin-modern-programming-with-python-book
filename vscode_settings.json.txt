@@ -133,11 +133,28 @@
     "[haskell]": {
       "editor.defaultFormatter": "MaxGabriel.brittany"
     },
-    "workbench.colorTheme": "Default Dark+",
     "haskell.plugin.importLens.codeLensOn": false,
     "haskell.plugin.importLens.codeActionsOn": false,
     "haskell.plugin.refineImports.globalOn": false,
     "breadcrumbs.enabled": false,
     "editor.renderWhitespace": "none",
     "window.commandCenter": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.tabCompletion": "on",
+    "editor.quickSuggestionsDelay": 500,
+    //"editor.suggestOnTriggerCharacters": false,
+    //"editor.autoClosingBrackets": "never",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "C_Cpp.default.compilerPath": "/usr/local/Cellar/gcc/14.1.0/bin/g++-14",
+    "code-runner.runInTerminal": true,
+    "extensions.ignoreRecommendations": true,
+    // Inkscape setup 
+    "command-runner.terminal.name": "runCommand", 
+    "command-runner.terminal.autoClear": true, 
+    "command-runner.terminal.autoFocus": false, 
+    "command-runner.commands": { 
+        "inkscapeCreate": "inkscape-figures create ${selectedText} ${workspaceFolder}/figures/", 
+        "inkscapeEdit": "inkscape-figures edit ${workspaceFolder}/figures/", 
+        "inkscapeStart": "inkscape-figures watch" 
+    }
   }
