@@ -1,0 +1,72 @@
+အလုပ်နှစ်ခု (သို့) နှစ်ခုအထက် တစ်ပြိုင်နက် လုပ်ဆောင်တာလို့ \fEn{parallelism} ကို အဓိပ္ပါယ်ဖွင့်ဆိုတယ်။ 
+
+
+အဆောက်\allowbreak အအုံ နံရံတစ်ခု အုတ်စီမယ် ဆိုပါစို့။ ပန်းရန်ဆရာနှစ်ယောက် တစ်ပိုင်းစီခွဲပြီး တစ်ပြိုင်နက်လုပ်ရင် နှစ်ဆမြန်မြန်ပြီးမှာပါ။ ဒါဟာ \fEn{parallelism} သဘောတ\allowbreak ရား။ ပန်းရန်ဆရာ တစ်ယောက်တည်း လုပ်တယ်ဆိုပါစို့။ အုတ်နံရံစီဖို့ အင်္ဂတေ (အရပ်ခေါ် မဆလာ) နဲ့ အုတ်သယ်တာပါ တွဲလုပ်ရပါမယ်။ ဒါဟာ \fEn{concurrency} သဘောတရား ဖြစ်ပါတယ်။ အုတ်ခဲ (သို့) အင်္ဂတေ သယ်တဲ့အခါ အုတ်စီတာ ခဏရပ်ရပါမယ်။ တစ်ချိန်တည်းမှာ အုတ်စီတာရော အင်္ဂတေသယ်တာပါ တစ်ပြိုင်နက် လုပ်လို့မရဘူး။ ပန်းရံဆရာက အုတ်ပဲစီပြီး အခြားအကူတစ်ယောက်က လိုအပ်တာ သယ်ပေးတယ်ဆိုရင်တော့ အလုပ်နှစ်ခုကို \fEn{parallel} လုပ်ဆောင်တာ ဖြစ်ပါမယ်။ 
+
+\fEn{Parallelism} ဟာ အလုပ်ကို မြန်မြန်ပြီးစေတယ်။ တစ်နည်းအားဖြင့် \fEn{performance} ပိုကောင်းစေတယ်။ \fEn{Concurrency} က အလုပ်မြန်မြန်ပြီးဖို့ အထောက်အကူ သိပ်မဖြစ်ဘူး။ ဒါပေမဲ့ ရှိတဲ့ အရင်းအမြစ်ကိုပဲ အပြည့်အဝ အသုံးချလို့ရအောင် အထောက်အကူပြုနိုင်တယ်။ ဥပမာ စားဖိုမှူးတစ်ယောက်ဟာ တချို့ဟင်းပွဲတွေ ချက်နေရင်း ကြက်သွန်လှီးတာနဲ့ အခြားအသေးအဖွဲ ကိစ္စလေးတွေ ကြားညှပ်လုပ်နိုင်တယ်။ ဒီအတွက်သီးသန့် လူထပ်ခေါ်စရာ မလိုဘူး။ 
+
+\fEn{CPU} နှစ်ခုနဲ့အထက် (သို့) \fEn{Multi-core CPU} ကွန်ပျူတာမှပဲ \fEn{parallelism} စစ်စစ် ရရှိနိုင်မှာပါ။ တစ်ပြိုင်တည်း လုပ်နိုင်တဲ့ \fEn{task} အရေအတွက်နဲ့  \fEn{CPU} အရေအတွက် တိုက်ရိုက် အချိုးကျပါတယ်။
+\fEn{Dual-core CPU} က \fEn{task} နှစ်ခု၊ \fEn{quad-core} ဆိုရင် \fEn{task} လေးခုထိ \fEn{parallel} လုပ်ဆောင်နိုင်မှာပါ။ \fEn{Single-core} ကတော့ အမှန်တကယ် \fEn{parallel} လုပ်လို့ မရနိုင်ဘူး။  
+
+\fEn{Concurrency} ကနေ \fEn{parallelism} ပြောင်းဖို့အတွက်က သိပ်မခက်ပါဘူး။ လူထပ်ခေါ်လိုက်တာနဲ့ \fEn{parallel} လုပ်လို့ရသွားမှာပါ။ ဒီသဘောဟာ \fEn{concurrency} နဲ့ \fEn{parallelism} ဆက်စပ်မှုရဲ့ အဓိကသော့ချက်လို့ ပြောနိုင်ပါတယ်။ \fEn{Concurrent} ပရိုဂရမ်တစ်ခုကို \fEn{parallel} ဖြစ်အောင် လုပ်ဖို့ဆိုတာလည်း ဒီသဘောပါပဲ။ \fEn{Concurrent} လုပ်တာဟာ \fEn{parallel} လုပ်တာ တူတူပဲလို့ မှတ်ယူလို့မရတာကိုတော့ သတိချပ်ရပါမယ်။ 
+
+
+\fEn{Concurrency} ဟာ \fEn{task} နှစ်ခုနဲ့ အထက်ကို အချိန်အပိုင်းအခြား ကာလတစ်ခုအတွင်း အားလုံး တစ်ပြိုင်နက် တိုးတက်မှုရှိအောင် အလှည့်ကျ မျှမျှတတ လုပ်ဆောင်ပေးခြင်းနဲ့ သက်ဆိုင်တယ်။ 
+
+\fEn{Parallelism} ကတော့ \fEn{task} တစ်ခုတည်းကိုပဲ အပိုင်းခွဲ၍ဖြစ်စေ၊ မတူညီတဲ့ \fEn{task} နှစ်ခုနဲ့ အထက်ကိုဖြစ်စေ \fEn{multiple CPU/multi-core CPU} တွေနဲ့ မြန်နိုင်သမျှ အမြန်ဆုံးပြီးအောင် လုပ်ဆောင်ပေးခြင်းနဲ့ သက်ဆိုင်တာ။
+
+\section{Concurrency with Python}
+
+%
+\begin{py}
+import threading
+import time
+
+# Task 1: Print numbers from 1 to 5
+def print_numbers():
+    for i in range(1, 6):
+        print(f"Number: {i}")
+        time.sleep(1)  # Simulate some work with a delay
+
+# Task 2: Print letters from A to E
+def print_letters():
+    for letter in ['A', 'B', 'C', 'D', 'E']:
+        print(f"Letter: {letter}")
+        time.sleep(1)  # Simulate some work with a delay
+
+# Create two threads
+thread1 = threading.Thread(target=print_numbers)
+thread2 = threading.Thread(target=print_letters)
+
+# Start both threads
+thread1.start()
+thread2.start()
+
+# Wait for both threads to finish
+thread1.join()
+thread2.join()
+
+print("Both tasks completed!")
+
+\end{py}
+%
+
+
+
+
+
+
+% a program is a sequence of instructions (statements)
+% data???
+% what is a task?
+% a program is composed of tasks
+% 
+
+% multi tasking
+% distrubuted
+% parallel
+
+% Multitasking
+% Concurrent
+% Distrubuted
+% Parallels
