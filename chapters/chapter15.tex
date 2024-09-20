@@ -32,11 +32,136 @@
 \fEn{Concurrency} အကြောင်း ဖော်ပြတဲ့အခါ \fEnEmp{parallelism} ကိုလည်း ချန်ထားခဲ့လို့မရပါဘူး။ အကြောင်းအ\allowbreak ရာနှစ်ခုက ဆက်နွယ်နေတယ်၊ စကားလုံး တစ်ခုနဲ့တစ်ခု သဘောတရား တူသလိုလို ဖလှယ်သုံးနှုန်းကြတယ် ဆိုပေမဲ့ တကယ်တမ်း တိတိကျကျ စဉ်းစားပြောရင် အဓိပ္ပါယ်  မတူကြဘူး။ အသုံးချရတဲ့ ရည်ရွယ်ချက်ရော အခြေအနေပါ မတူတာမို့လို့ \fEn{concurrent} နဲ့ \fEn{parallel} အခြေခံသဘောတရားအားဖြင့် ဘာကွာခြားလဲ ခွဲခြားမြင်ဖို့ အရေးကြီးပါတယ်။  
 
 
-လုပ်စရာ \fEn{task} တွေ အများကြီးရှိမယ်၊ တစ်ခုစီကို အလှည့်ကျ အချိန်နည်းနည်းစီပေးပြီး အားလုံးရှေ့ကို တိုးတက်မှုရှိနေအောင် မျှမျှတတ ခွဲဝေလုပ်ဆောင်ပေးတာဟာ \fEn{concurrency} သဘောတရားဖြစ်တယ်။ ပုံ (၂.၂) မှာ ဒီသဘောတရားကို တွေ့နိုင်ပါတယ်။ \fEn{Parallelism} ဆိုတာကတော့ \fEn{task} တစ်ခု (သို့) \fEn{task} တွေ အများကြီးကို မြန်နိုင်သမျှ မြန်မြန်ပြီးအောင် \fEn{multi-processor} (သို့) \fEn{multi-core CPU} ကို ခွဲပေးပြီး လုပ်ဆောင်စေတာပါ။ \fEn{Concurrency} ဟာ \fEn{parallelism} အတွက် ဘယ်လိုအထောက်အကူ ပေးနိုင်လဲဆိုတာ နောက်ပိုင်းမှာ တွေ့ရပါမယ်။
+လုပ်စရာ \fEn{task} တွေ အများအပြားရှိမယ်၊ တစ်ခုစီကို အလှည့်ကျ အချိန်နည်းနည်းစီပေးပြီး အားလုံးရှေ့ကို တိုးတက်မှုရှိနေအောင် မျှမျှတတ ခွဲဝေလုပ်ဆောင်ပေးတာဟာ \fEn{concurrency} သဘောတရားဖြစ်တယ်။ ပုံ (၂.၂) မှာ ဒီသဘောတရားကို တွေ့နိုင်ပါတယ်။ \fEn{Parallelism} ဆိုတာကတော့ \fEn{task} တစ်ခု (သို့) \fEn{task} တွေ အများကြီးကို မြန်နိုင်သမျှ မြန်မြန်ပြီးအောင် \fEn{multi-processor} (သို့) \fEn{multi-core CPU} ကို ခွဲပေးပြီး လုပ်ဆောင်စေတာပါ။ \fEn{Concurrency} ဟာ \fEn{parallelism} အတွက် ဘယ်လိုအထောက်အကူ ပေးနိုင်လဲဆိုတာ နောက်ပိုင်းမှာ တွေ့ရပါမယ်။
 
 
+အဆောက်အအုံ နံရံတစ်ခု အုတ်စီတာကို စိတ်ကူးကြည့်ပါ။ ပန်းရန်ဆရာ တစ်ယောက်တည်း ရှိတယ်ဆိုရင် အင်္ဂတေ (အရပ်ခေါ် မဆလာ) နဲ့ အုတ်သယ်တာပါ တွဲလုပ်ရပါမယ်။ အုတ်ခဲ (သို့) အင်္ဂတေ သယ်တဲ့အခါ အုတ်စီတာ ခဏရပ်ရပါမယ်။ တစ်ချိန်တည်းမှာ အုတ်စီတာရော အင်္ဂတေသယ်တာပါ တစ်ပြိုင်နက် လုပ်တာမဟုတ်ဘူး။ ဒါပေမဲ့ နံရံစီတာ တိုးတက်မှုရှိသလို အင်္ဂတေနဲ့ အုတ်သယ်တာကလည်း ရပ်မနေပါဘူး။ ဒါဟာ \fEn{concurrency} သဘောတရား ဖြစ်ပါတယ်။ အလုပ်တွေကို မျှလုပ်ပေးနေတာ။ အာလုံးကလည်း တစ်ချိန်တည်းမှာ တိုးတက်မှု ရှိနေကြတာ တွေ့ရပါမယ်။
+
+ပန်းရန်ဆရာ နောက်ထပ်တစ်ယောက် ထပ်ခေါ်မယ်ဆိုပါစို့။ နံရံတစ်ခုတည်းကို နှစ်ယောက်ဝိုင်းလုပ်ရင် နှစ်ဆပိုပြီး မြန်မြန်ပြီးမယ်။ ဒါမှမဟုတ် တစ်ယောက် နံရံတစ်ဖက် တာဝန်ယူမယ်ဆိုရင် တစ်ချိန်တည်းမှာ နှစ်ခုပြီးမှာပါ။ အုတ်နဲ့ အင်္ဂတေ သယ်ဖို့အတွက်ပါ လူသပ်သပ် ထပ်ခေါ်လိုက်မယ် ဆိုရင်တော့ အလုပ်အများကြီး ပိုတွင်ကျယ်လာနိုင်ပါတယ်။ ဒါဟာ \fEn{parallelism} သဘောတရား ဖြစ်ပါတယ်။ 
+
+ပရိုဂရမ်တွေကို \fEn{concurrency} နဲ့ \fEn{parallelism} ရှုထောင့်ကနေ အောက်ပါအတိုင်း ၄ မျိုး ခွဲကြည့်နိုင်တယ်။ (အခြေခံ အဆင့်အနေနဲ့ အခုလောက် အသေးစိတ် သိဖို့ လိုချင်မှ လိုမှာပါ၊ ဒါပေမဲ့ နားလည်ထားရင် သဘောတရားပိုင်းဆိုင်ရာ အထောက်အကူ ဖြစ်ပါတယ်)။
+%
+\begin{itemize}
+    \item \fEn{Sequential} (တစ်နည်းအားဖြင့် \fEn{Concurrent} လည်းမဟုတ်၊ \fEn{parallel} လည်းမဟုတ်) 
+    \item \fEn{Concurrent} ဖြစ်တယ်၊ ဒါပေမဲ့ \fEn{parallel} မဟုတ်
+    \item \fEn{Parallel} ဖြစ်တယ်၊ ဒါပေမဲ့ \fEn{concurrent} မဟုတ်
+    \item \fEn{Concurrent} လည်းဖြစ်တယ်၊ \fEn{parallel} လည်းဖြစ်တယ်
+\end{itemize}
+%
 
 
+\fEn{Sequential} ပရိုဂရမ်တစ်ခုဟာ \fEn{task} တွေကို တစ်ခုပြီးမှ နောက်တစ်ခု ဆက်လုပ်တယ်။ တစ်ခု မပြီးသေးခင် အခြားတစ်ခုကို မစသေးဘူး။ ဒါကြောင့်မို့ တစ်ချိန်မှာ \fEn{task} တစ်ခုကပဲ တိုးတက်မှုရှိနေမှာပါ။ \fEn{Concurrent} ပရိုဂရမ်တစ်ခုမှာတော့  \fEn{task} အများအပြား လုပ်ဆောင်တယ်။ အားလုံးကို အချိန်ခွဲဝေ မျှလုပ်ပေးတယ်။ \fEn{Task} တစ်ခုစီတိုင်း အချိန်နဲ့အမျှ တိုးတက်မှုရှိနေမယ်။ ဒါပေမဲ့ ဒါဟာ \fEn{parallel} တော့ မဟုတ်သေးဘူး။ အလှည့်ကျ မျှပြီး လုပ်ပေးနေတာ။ \fEn{CPU} တစ်ခုတည်းနဲ့ပဲ \fEn{task} တစ်ခုမက \fEn{concurrent} လုပ်လို့ရတယ်။ အကယ်၍ \fEn{concurrent} ပရိုဂရမ်ကို \fEn{multi-processor/multi-core CPU} ကွန်ပျူတာပေါ် \fEn{run} ရင် \fEn{concurrent} လည်းဖြစ်၊ \fEn{parallel} လည်းဖြစ်တယ် ယူဆရမှာပါ။ မြင်သာအောင် နံရံအုတ်စီတဲ့ ဥပမာနဲ့ ခိုင်းနှိုင်းကြည့်နိုင်တယ်။ ပန်းရံဆရာ တစ်ယောက်တည်းကပဲ အုတ်စီ၊ အင်္ဂတေ/အုတ် သယ်တာက \fEn{concurrent}။ ပန်းရံဆရာက အုတ်စီပြီး အင်္ဂတေ/အုတ် သယ်တာ အခြားတစ်ယောက်က လုပ်ပေးနေရင် \fEn{concurrent} ရော \fEn{parallel} ပါ ဖြစ်တဲ့သဘော။
+
+\fEn{Parallel} တော့ဖြစ်တယ်၊  \fEn{concurrent} မဟုတ်တာလည်း ရှိသေးတယ်။ \fEn{Task} က တစ်ခုတည်းပဲ၊ မြန်မြန်ပြီးအောင် ကွန်ပျူတာစွမ်းအားအရင်းအမြစ် အရေအတွက် (ဥပမာ \fEn{CPU}) များများသုံးပြီး လုပ်တာကို ဆိုလိုတာ။ ကိန်းဂဏန်း အလုံး တစ်သန်းကို ပေါင်းမယ်ဆိုပါစို့။ အလုံးတစ်သန်းကို နှစ်သိန်းခွဲစီ လေးပိုင်း ပိုင်းပြီး တစ်ပိုင်းချင်း ပေါင်းတဲ့အခါ \fEn{quad-core CPU} နဲ့ ဆိုရင် ပုံမှန်ထက် လေးဆနီးပါး ပိုပြီးမြန်မှာပါ။ ဒီလိုမျိုးကို \fEn{parallel} ဖြစ်ပေမဲ့ \fEn{concurrent} မဟုတ်ဘူးလို့ ယူဆပါတယ်။ အုတ်စီတဲ့အလုပ် တစ်ခုတည်းကိုပဲ လေးယောက်ခွဲပြီး လုပ်တာနဲ့ သဘောတရားတူတယ်။ (ဒီကိစ္စမှာ အုတ်ခဲ/အင်္ဂတေ သယ်တဲ့ကိစ္စပါ ထည့်စဉ်းစားရင်တော့ \fEn{task} တစ်ခုမကတော့တဲ့အတွက် \fEn{concurrent} လည်းဖြစ်တယ်၊ \fEn{parallel} လည်းဖြစ်တယ် ယူဆနိုင်မယ်)။
+
+\section{Threads, Process and Concurrency}
+\fEn{Operating system} ဆိုတာ ကွန်ပျူတာပေါ်မှာ \fEn{run} တဲ့ ပရိုဂရမ်တွေကို စီမံကွပ်ကဲတဲ့ စနစ်လို့ ယေဘူ\allowbreak ယျ နားလည်နိုင်တယ်။ ကနေ့ခေတ် ကွန်ပျူတာတွေမှာ အပ်ပလီကေးရှင်း ပရိုဂရမ်တွေ အသုံးပြုနိုင်ဖို့ \fEn{operating system} ရှိရပါမယ်။ ကွန်ပျူတာတစ်လုံးမှာ အပ်ပလီကေးရှင်းတွေ အများကြီး ဖွင့်ထားပြီး တစ်ပြိုင်တည်း သုံးလို့ရအောင် \fEn{operating system} က စီမံပေးထားတာ။ \fEn{Operating system} တစ်ခုပေါ်မှာ \fEn{run} နေတဲ့ ပရိုဂရမ်ကို \fEn{process} လို့ခေါ်တယ်။ အပ်ပလီကေးရှင်းတစ်ခုမက တစ်ပြိုင်တည်း သုံးလို့ရတာကို \fEnEmp{multitasking} ရတယ်လို့ ပြောလေ့ရှိပြီး အဲဒီလို သုံးလို့ရအောင် ဆောင်ရွက်ပေးနိုင်တဲ့ \fEn{operating system} ကို \fEn{Multitasking Operating System} ခေါ်တယ်။ \fEn{Multitasking} ကို \fEn{concurrency} ပုံစံတစ်မျိုး အနေနဲ့ ယူဆနိုင်တယ်။ \fEn{Multitasking} ဆိုတာလည်း တစ်ချိန်တည်းမှာ အလုပ်တစ်ခုမက လုပ်နေတာပဲလေ။ ဒါပေမဲ့ \fEn{operating system} က \fEn{multitasking} ရအောင် ထောက်ပံ့ပေးထားပြီးသား ဆိုတော့ ပုံမှန်အားဖြင့် ပရိုဂရမ်မာက ထူးထူးထွေထွေ ဘာမှလုပ်စရာမလိုဘူး။
 
 
+အခု ကျွန်တော်တို့ အဓိကစိတ်ဝင်စားတာက \fEn{process} (\fEn{run} နေတဲ့ ပရိုဂရမ်) တစ်ခုမှာ ပါဝင်တဲ့ \fEn{task} တွေနဲ့ သက်ဆိုင်တဲ့ \fEn{concurrency} ပါ။ \fEn{Operating system} က စီမံကွပ်ကဲတဲ့ \fEn{process} တစ်ခုရဲ့ \fEn{subtask} တွေကို တစ်ပြိုင်တည်း လုပ်ဆောင်ဖို့ \fEnEmp{thread} ကို အသုံးပြုရပါတယ်။ \fEn{Process} တစ်ခုဟာ \fEn{sequential} ပဲ လုပ်ဆောင်တဲ့အခါ \fEn{thread} တစ်ခုပဲ လိုအပ်တယ်။ \fEn{Task} တွေကို \fEn{concurrent} လုပ်ဆောင်စေချင်ရင် အဲဒီ \fEn{task} တစ်ခုချင်းကို  သီးခြား \fEn{thread} တစ်ခု အနေနဲ့ လုပ်ဆောင်ပေးဖို့ \fEn{operating system} ကို ခိုင်းရပါမယ်။ \fEn{Programming language} တွေမှာ \fEn{thread} ဖန်တီးအသုံးပြုရတာ လွယ်ကူအဆင်ပြေစေမဲ့ ဖီချာတွေ ထည့်သွင်းပေးထားလေ့ရှိပါတယ်။
+% \fEn{Thread} တွေကိုလည်း \fEn{operating system} ကပဲ စီမံပေးတာပါ။
+% \fEn{Sequential} ပရိုဂရမ်တစ်ခုမှာ 
 
+\fEn{Python} မှာ \fEn{task} နှစ်ခု \fEn{concurrent} လုပ်ဆောင်ဖို့ \fEn{thread} အသုံးပြုတဲ့ အရိုးရှင်းဆုံး ဥပမာတစ်ခုကို ကြည့်ရအောင်။ ၁ ကနေ ၁၀ ထိ ထုတ်ပေးတဲ့ \fEn{task} နဲ့ \fEn{A} ကနေ \fEn{J} ထုတ်ပေးတဲ့ \fEn{task} နှစ်ခု ရှိတယ် ယူဆပါ။ \fEn{Python Standard Library} မှာ ပါဝင်တဲ့ \fEn{threading} မော်ဒျူး အသုံးပြုပြီး  \fEn{task} တစ်ခုကို \fEn{thread} တစ်ခုစီမှာ \fEn{concurrent run} မှာပါ။
+
+%
+\begin{py}
+import threading
+import time
+
+# Task 1: Print numbers from 1 to 10
+def print_numbers():
+    for i in range(1, 11):
+        print(f"{i}, ", end="")
+        time.sleep(0.2)  # Simulate some work with a delay
+
+# Task 2: Print letters from A to J
+def print_letters():
+    for letter in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']:
+        print(f"{letter}, ", end="")
+        time.sleep(0.2)  # Simulate some work with a delay
+
+# Create two threads
+thread1 = threading.Thread(target=print_numbers)
+thread2 = threading.Thread(target=print_letters)
+
+# Start both threads
+thread1.start()
+thread2.start()
+
+# Wait for both threads to finish
+thread1.join()
+thread2.join()
+print()
+print("Both tasks completed!")
+\end{py}
+%
+
+ပရိုဂရမ်တစ်ခု \fEn{run} တဲ့အခါ \fEn{operating system} က \fEn{process} တစ်ခု ဖန်တီးပါတယ်။ (\fEn{Process} ဆိုတာ \fEn{operating system} စီမံမှုအောက်မှာရှိတဲ့ \fEn{run} နေတဲ့ ပရိုဂရမ်ဆိုလို့ ပြောခဲ့တယ်)။ စစချင်းမှာ အဲဒီ \fEn{process} ဟာ ပရိုဂရမ်ညွှန်ကြားချက်တွေကို လုပ်ဆောင်ပေးမဲ့ \fEn{thread} တစ်ခုပဲ ရှိပါမယ်။ \fEnEmp{main} \fEn{thread} လို့ ခေါ်တယ်။ \fEn{Sequential} ဖြစ်ဖြစ်၊ \fEn{concurrent} ဖြစ်ဖြစ် \fEn{main thread} ကတော့ ရှိကိုရှိရမှာပါ။ \fEn{main thread} ကနေ အခြား \fEn{thread} တွေ ဖန်တီးပြီး \fEn{task} တွေကို \fEn{concurrent} \fEn{run} နိုင်ပါတယ်။ ဒီပရိုဂရမ် \fEn{run} ရင် \fEn{thread} သုံးခု ပါဝင်မှာပါ။ 
+
+\begin{vbtm}
+A, 1, B, 2, C, 3, D, 4, E, 5, F, 6, G, 7, H, 8, I, 9, J, 10, 
+Both tasks completed!
+\end{vbtm}
+
+%
+\begin{vbtm}
+A, 1, B, 2, 3, C, 4, D, E, 5, 6, F, 7, G, 8, H, 9, I, J, 10, 
+Both tasks completed!
+\end{vbtm}
+%
+
+\fEn{Sequential} ဆိုရင် တစ်ခုပြီးမှ နောက်တစ်ခု ဆက်လုပ်လို့ရမှာ။ ဂဏန်းအားလုံး ထုတ်ပေးပြီးမှ အက္ခရာဆက်ထုတ်လို့ရမယ်။ ဒါမှမဟုတ် အက္ခရာတွေပြီးမှ ဂဏန်းတွေ ထုတ်လို့ရမှာပါ။  \fEn{}
+
+
+%
+\begin{py}
+import threading
+import time
+
+def print_numbers():
+    # same as before
+
+def print_letters():
+    # same as before
+
+# Task 3: Print from M1 to M10
+def print_seq_of_m():
+    for letter in ['M1', 'M2', 'M3', 'M4', 'M5', 
+                   'M6', 'M7', 'M8', 'M9', 'M10']:
+        print(f"{letter}, ", end="")
+        time.sleep(0.2)  # Simulate some work with a delay
+
+print("Main thread started.")
+
+# Create two threads
+thread1 = threading.Thread(target=print_numbers)
+thread2 = threading.Thread(target=print_letters)
+
+# Start both threads
+thread2.start()
+thread1.start()
+
+# run task 3 in main thread
+print_seq_of_m()
+
+# Wait for both threads to finish
+thread1.join()
+thread2.join()
+print()
+print("Both tasks completed!")
+
+\end{py}
+%
+
+
+%
+\begin{py}
+# run task 3 in main thread
+print_seq_of_m()
+
+# Start both threads
+thread2.start()
+thread1.start()
+\end{py}
+%
