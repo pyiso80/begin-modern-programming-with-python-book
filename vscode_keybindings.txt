@@ -1,0 +1,64 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[ 
+    {
+        "key": "shift+cmd+8",
+        "command": "editor.action.toggleColumnSelection"
+    },
+     // Inkscape setup 
+    { 
+        "key": "alt+cmd+n", 
+        "command": "runCommands", 
+        "args": { 
+            "commands": [ 
+                "editor.action.clipboardCopyAction", 
+                "editor.action.insertLineAfter", 
+                "cursorUp", 
+                "editor.action.deleteLines", 
+                { 
+                    "command": "editor.action.insertSnippet", 
+                    "args": { 
+                        "name": "incfig" 
+                    } 
+                }, 
+                { 
+                    "command": "command-runner.run", 
+                    "args": { 
+                        "command": "inkscapeCreate", 
+                    }, 
+                    "terminal": { 
+                        "name": "runCommand", 
+                        "shellArgs": [], 
+                        "autoClear": true, 
+                        "autoFocus": false 
+                    } 
+                }, 
+            ] 
+        }, 
+    },
+    {
+        "key": "alt+cmd+e",
+        "command": "command-runner.run",
+        "args": {
+            "command": "inkscapeEdit",
+            "terminal": {
+                "name": "runCommand",
+                "shellArgs": [],
+                "autoClear": true,
+                "autoFocus": false
+            }
+        },
+    },
+    { 
+        "key": "alt+cmd+w", 
+        "command": "command-runner.run", 
+        "args": { 
+            "command": "inkscapeStart", 
+            "terminal": { 
+                "name": "runCommand", 
+                "shellArgs": [], 
+                "autoClear": true, 
+                "autoFocus": false 
+            } 
+        }, 
+        },
+ ] 

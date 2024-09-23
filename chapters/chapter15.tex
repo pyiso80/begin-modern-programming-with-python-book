@@ -81,13 +81,15 @@ def print_letters():
         print(f"{letter}, ", end="")
         time.sleep(0.2)  # Simulate some work with a delay
 
+print("Main thread started.")
+
 # Create two threads
 thread1 = threading.Thread(target=print_numbers)
 thread2 = threading.Thread(target=print_letters)
 
-# Start both threads
-thread1.start()
+print("Main thread starts both threads.")
 thread2.start()
+thread1.start()
 
 # Wait for both threads to finish
 thread1.join()
@@ -97,21 +99,89 @@ print("Both tasks completed!")
 \end{py}
 %
 
-ပရိုဂရမ်တစ်ခု \fEn{run} တဲ့အခါ \fEn{operating system} က \fEn{process} တစ်ခု ဖန်တီးပါတယ်။ (\fEn{Process} ဆိုတာ \fEn{operating system} စီမံမှုအောက်မှာရှိတဲ့ \fEn{run} နေတဲ့ ပရိုဂရမ်ဆိုလို့ ပြောခဲ့တယ်)။ စစချင်းမှာ အဲဒီ \fEn{process} ဟာ ပရိုဂရမ်ညွှန်ကြားချက်တွေကို လုပ်ဆောင်ပေးမဲ့ \fEn{thread} တစ်ခုပဲ ရှိပါမယ်။ \fEnEmp{main} \fEn{thread} လို့ ခေါ်တယ်။ \fEn{Sequential} ဖြစ်ဖြစ်၊ \fEn{concurrent} ဖြစ်ဖြစ် \fEn{main thread} ကတော့ ရှိကိုရှိရမှာပါ။ \fEn{main thread} ကနေ အခြား \fEn{thread} တွေ ဖန်တီးပြီး \fEn{task} တွေကို \fEn{concurrent} \fEn{run} နိုင်ပါတယ်။ ဒီပရိုဂရမ် \fEn{run} ရင် \fEn{thread} သုံးခု ပါဝင်မှာပါ။ 
+ပရိုဂရမ်တစ်ခု \fEn{run} တဲ့အခါ \fEn{operating system} က \fEn{process} တစ်ခု ဖန်တီးပါတယ်။ (\fEn{Process} ဆိုတာ \fEn{operating system} စီမံမှုအောက်မှာရှိတဲ့ \fEn{run} နေတဲ့ ပရိုဂရမ်ဆိုလို့ ပြောခဲ့တယ်)။ စစချင်းမှာ အဲဒီ \fEn{process} ဟာ ပရိုဂရမ်ညွှန်ကြားချက်တွေကို လုပ်ဆောင်ပေးမဲ့ \fEn{thread} တစ်ခုပဲ ရှိပါမယ်။ \fEnEmp{main} \fEn{thread} လို့ ခေါ်တယ်။ \fEn{Sequential} ဖြစ်စေ၊ \fEn{concurrent} ဖြစ်စေ \fEn{thread} တစ်ခုတော့ ရှိကိုရှိရပါမယ်။ ပရိုဂရမ် စစချင်းမှာ အဲဒီ \fEn{thread} က အလုပ်စလုပ်မှာပါ။ \fEn{main thread} လို့ ခေါ်ပါတယ်။ \fEn{main thread} ကနေ အခြား \fEn{thread} တွေ ဖန်တီးပြီး \fEn{task} တွေကို \fEn{concurrent} \fEn{run} နိုင်ပါတယ်။ 
 
+\fEn{Thread} တစ်ခု လုပ်ဆောင်ပေးရမဲ့ \fEn{task} ကို \mintinline[escapeinside=ßß]{text}|target=ß$task\_name$ß| နဲ့ ညွှန်ပြပေးနိုင်ပါတယ်။ ရှေ့ကဥပမာမှာ  \fEn{thread} နှစ်ခုကို ဖန်တီးထားတာ အခုလိုတွေ့ရမှာပါ
+%
+\begin{py}
+thread1 = threading.Thread(target=print_numbers)
+thread2 = threading.Thread(target=print_letters)
+\end{py}
+%
+လုပ်ဆောင်စေချင်တဲ့ ဖန်ရှင်နံမည်ကို \fEn{target} အနေနဲ့ ထည့်ပေးထားတယ်။ \fEn{Thread} တစ်ခုက ဘယ် \fEn{task} ကို \fEn{run} ပေးရမလဲ ညွှန်ပြဖို့ ဒီနည်းလမ်းတစ်ခုတည်း ရှိတာတော့ မဟုတ်ဘူး။ အခြားနည်းလမ်းတွေ ရှိပါသေးတယ်။ နောက်ပိုင်းမှာ တွေ့ရပါမယ်။
+
+\fEn{Thread} နှစ်ခု ဖန်တီးထားပြီးပြီ။ ဒါပေမဲ့ \fEn{thread} ဖန်တီးထားရုံနဲ့ အဲ့ဒီ \fEn{thread} က အလုပ်စတာ မဟုတ်ပါဘူး။ \fCode{start} ဖန်ရှင် ခေါ်ပေးရပါမယ် 
+%
+\begin{py}
+thread1.start()
+thread2.start()
+\end{py}
+%
+သတိပြုသင့်တာ တစ်ခုက \fCode{start} ခေါ်ပြီးတာနဲ့ ချက်ချင်း အလုပ်စလုပ်မယ်လို့လည်း အာမခံချက် မရှိဘူး။ \fCode{start} ဟာ \fEn{thread} တစ်ခု အလုပ်စလို့ရပြီဆိုတာ အရိပ်အမြွက် ဖော်ပြတဲ့သဘောလို့ပဲ ယူဆရမယ်။ \fCode{start} ခေါ်ပြီးတဲ့အခါ \fEn{thread} က \fEnEmp{ready} \fEn{state} ကို ရောက်သွားတယ်။ \fEn{Thread} တွေကို \fEn{operating system} က စီမံတယ်လို့ ပြောခဲ့တာ ပြန်အမှတ်ရပါ။ ဘယ်အချိန်မှာ တကယ် အလုပ်စလုပ်မလဲ၊ ဘယ်လို့ အလှည့်ကျ လုပ်ဆောင်စေမလဲ စတာတွေက \fEn{operating system} ထိန်းချုပ်မှုအောက်မှာ ရှိတာဖြစ်တယ်။ ဒါကြောင့် \fEnEmp{ready} \fEn{state} မှာ ရှိတဲ့ \fEn{thread} တစ်ခုဟာ \fEn{operating system} က ၎င်းကို အလှည့်ချပေးတဲ့အခါမှပဲ အမှန်တကယ် အလုပ်စလုပ်လို့ရမှာ ဖြစ်တယ်။ လက်ရှိအချိန်မှာ အလုပ်လုပ်နေတဲ့ \fEn{thread} ရဲ့ \fEn{state} ကို \fEnEmp{running} \fEn{state} လို့ သတ်မှတ်တယ်။
+
+\fEn{Concurrent task} တွေ တစ်ခုနဲ့တစ်ခု \fEn{coordinate} လုပ် (ပူးပေါင်းဆောင်ရွက်) ဖို့ လိုလေ့ရှိတယ်။ \fEn{Thread} တစ်ခုက အခြား \fEn{thread} တစ်ခု ပြီးတဲ့ထိ စောင့်တာဟာ \fEn{coordination} ပုံစံတစ်မျိုးပဲ။ အခြား \fEn{coordination} ပုံစံတွေလည်း အတော်များများ ရှိတယ်။ ဥပမာ \fEn{thread} တစ်ခုက အခြား \fEn{thread} တစ်ခု ထုတ်ပေးလိုက်တာကို ယူသုံးတာကလည်း \fEn{coordinate} လုပ်တာပဲ။ အခုဥပမာမှာ \fEn{main thread} ဟာ \fCode{thread1} နဲ့ \fCode{thread2} ပြီးအောင် စောင့်ရပါမယ်။ လက်ရှိ \fEn{thread} က အခြား \fEn{thread} တစ်ခု ပြီးတဲ့ထိ စောင့်မယ်ဆိုရင် \fCode{join} ကို ခေါ်ပေးရပါမယ်။
+%
+\begin{py}
+# Wait for both threads to finish
+thread1.join()
+thread2.join()
+\end{py}
+%
+ဒီလိုဆိုရင် \fCode{thread1} နဲ့ \fCode{thread2} ပြီးတော့မှ \fEn{main thread} ဆက်အလုပ်လုပ်မှာပါ။ ဘယ် \fEn{thread} ပြီးတဲ့ထိ စောင့်ရမလဲ။ အဲ့ဒီ \fEn{thread} ရဲ့ \fCode{join} ကို စောင့်နေချင်တဲ့ \fEn{thread} က ခေါ်ပေးရမှာ။
+
+အခုဥပမာကို အကြိမ်အနည်းငယ် \fEn{run} ကြည့်ပါ။ အခု ဒီစာရေးနေရင်း  စက်မှာ သုံးခေါက် \fEn{run} တာ အခုလို ထွက်တယ်
+%
 \begin{vbtm}
-A, 1, B, 2, C, 3, D, 4, E, 5, F, 6, G, 7, H, 8, I, 9, J, 10, 
+Main thread started.
+Main thread starts both threads.
+1, A, 2, B, 3, C, 4, D, 5, E, 6, F, 7, G, 8, H, 9, I, 10, J, 
 Both tasks completed!
 \end{vbtm}
 
 %
 \begin{vbtm}
-A, 1, B, 2, 3, C, 4, D, E, 5, 6, F, 7, G, 8, H, 9, I, J, 10, 
+Main thread started.
+Main thread starts both threads.
+1, A, 2, B, 3, C, 4, D, 5, E, F, 6, G, 7, 8, H, 9, I, 10, J, 
 Both tasks completed!
 \end{vbtm}
 %
 
-\fEn{Sequential} ဆိုရင် တစ်ခုပြီးမှ နောက်တစ်ခု ဆက်လုပ်လို့ရမှာ။ ဂဏန်းအားလုံး ထုတ်ပေးပြီးမှ အက္ခရာဆက်ထုတ်လို့ရမယ်။ ဒါမှမဟုတ် အက္ခရာတွေပြီးမှ ဂဏန်းတွေ ထုတ်လို့ရမှာပါ။  \fEn{}
+%
+\begin{vbtm}
+Main thread started.
+Main thread starts both threads.
+1, A, B, 2, C, 3, 4, D, 5, E, F, 6, G, 7, H, 8, I, 9, J, 10, 
+Both tasks completed!
+\end{vbtm}
+%
+
+အခု \fEn{output} တွေမှာ သိသိသာသာ ဖြစ်နေတာတစ်ခုက \fEn{thread} နှစ်ခုက ထုတ်ပေးတဲ့ အက္ခရာနဲ့ ဂဏန်းတွေဟာ  အစီအစဉ်တစ်ခုနဲ့ ပုံသေအမြဲ မဖြစ်နေဘူး။ တစ်ခေါက်ကို တစ်မျိုးစီ။ ဂဏန်းတွေဖယ်ပြီး အက္ခရာတွေပဲ ကြည့်ရင် \fEn{A, B, C, D,} $\ldots$ အစဉ်တိုင်းဖြစ်တယ်။ အက္ခရာတွေမပါဘဲ ဂဏန်းတွေချည်း ဆိုလည်း အစဉ်အတိုင်းပါပဲ။ ဒါပေမဲ့ \fEn{thread} နှစ်ခုပေါင်း ထုတ်ပေးတဲ့ \fEn{output} အစီအစဉ်ကိုတော့ ခန့်မှန်းလို့ မရဘူး။ ဒါဟာ \fEn{thread} သုံးတဲ့အခါ သတိပြုရမဲ့ အခြေခံကျတဲ့ အချက်တစ်ခု ဖြစ်တယ်။ ဘယ် \fEn{thread} ကို ဘယ်ချိန်မှာ \fEn{run} ဖို့ အလှည့်ချပေးမလဲ၊ ဘယ်လို အလှည့်ကျ စနစ်သုံးမလဲက \fEn{operating system} နဲ့ သက်ဆိုင်တာ။ ပရိုဂရမ်မာအနေနဲ့ အဲဒီ  အလှည့်ကျစနစ်ရဲ့ \fEn{timing} ကို ခန့်မှန်းတွက်ဆပြီး လိုချင်တဲ့ အစီအစဉ်ဖြစ်အောင် လုပ်ဖို့ မဖြစ်နိုင်ဘူး။
+
+\fCode{join} နဲ့ဆိုင်တဲ့ နှစ်ကြောင်း ကွန်းမန့်ပိတ်ပြီး \fEn{run} ကြည့်ပါ။ \fEn{Task} နှစ်ခု မပြီးသေးဘဲ ပြီးသွားပြီဆိုတဲ့စာသား ထွက်လာတာတွေ့ရပါမယ်။ \fEn{Main thread} က သူ့အလှည့် ရောက်တဲ့အခါ \fCode{thread1} နဲ့ \fCode{thread2} ပြီးအောင် မစောင့်ဘဲ ဆုံးတဲ့ထိ ဆက်လုပ်သွားတာကြောင့် ဖြစ်တယ်။
+
+
+%
+\begin{vbtm}
+Main thread started.
+Main thread starts both threads.
+1, A, 
+Both tasks completed!
+2, B, 3, C, 4, D, E, 5, F, 6, G, 7, H, 8, 9, I, 10, J,
+\end{vbtm}
+%
+
+\section{Race Conditions}
+
+\clearpage
+%ဖန်ရှင်နံမည် \fCode{print\_numbers} နဲ့ \fCode{print\_letters} ကို \fCode{target} အနေနဲ့ ထည့်ထားတယ်။ \fEn{Task} 
+
+
+
+
+
+
+\clearpage \fEn{Sequential} ဆိုရင် တစ်ခုပြီးမှ နောက်တစ်ခု ဆက်လုပ်လို့ရမှာ။ ဂဏန်းအားလုံး ထုတ်ပေးပြီးမှ အက္ခရာဆက်ထုတ်လို့ရမယ်။ ဒါမှမဟုတ် အက္ခရာတွေပြီးမှ ဂဏန်းတွေ ထုတ်လို့ရမှာပါ။  \fEn{}
 
 
 %
